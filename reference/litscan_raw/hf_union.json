@@ -1,0 +1,2304 @@
+[
+ {
+  "id": "2609.00621",
+  "date": "2026-09-01",
+  "title": "Control-Data Flow Separation: Stable Prompt Optimization in Multi-Agent LLMs",
+  "summary": "Prompt optimization can improve multi-agent LLM systems, but the prompts being optimized often serve two entangled roles: generating task-relevant content and specifying execution-critical protocols, such as message routing, output formatting, and termination signals, on which the underlying code relies. As a result, a prompt edit intended to improve content generation can inadvertently corrupt the protocol and cause the entire agent pipeline to fail. Our key observation is that these two roles have different representations: execution protocols are typically structured, while task-relevant co",
+  "queries": [
+   "q01"
+  ]
+ },
+ {
+  "id": "2608.22898",
+  "date": "2026-08-24",
+  "title": "SelFusion: Self-distillation for Diffusion Language Models",
+  "summary": "Diffusion language models (DLMs) alleviate the inherent latency bottleneck of autoregressive (AR) large language models (LLMs), but their degraded generation quality limits practical applicability. Although knowledge distillation (KD) can be a promising direction for improving performance, we empirically find that naively applying conventional KD yields only marginal gains, or even degrades generation quality. Based on these observations, we propose a novel self-distillation framework for DLMs, namely SelFusion. To enable effective KD without an external teacher model, SelFusion performs two f",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2608.15930",
+  "date": "2026-08-16",
+  "title": "UI-Mate: Advancing Open-Weight Foundation GUI Agents with In-Context Demonstrations",
+  "summary": "Foundation GUI agents can automate complex digital tasks, but deployment is hindered by scarce and biased training data, ambiguous prompts, and unreliable execution. Routine workflows rely on user-specific tools and tacit conventions, so unstated instructions can produce arbitrary variations across runs. We present UI-Mate, a foundation GUI agent that integrates an environment-grounded training stack with in-context demonstration learning. UI-Mate makes three contributions: A Scalable Environment-Grounded Training Stack: A closed-loop data engine automates task generation, environment construc",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2608.15008",
+  "date": "2026-08-15",
+  "title": "Harness the Memory: A Holistic Evaluation of Memory Substrates in Memory Agents",
+  "summary": "Memory is becoming core infrastructure for long-horizon LLM agents, yet existing evaluations offer limited guidance on which memory substrate, namely the underlying medium in which memory is represented and stored, should be used under different operating regimes. We present a controlled harness evaluation of memory substrates for memory-augmented agents, covering dense and sparse indices, text records, structural stores, hierarchical stores, refinement-based memories, parametric updates, and activation-compatible context mechanisms. Across three backbone models and four benchmark suites spann",
+  "queries": [
+   "q03",
+   "q07",
+   "q08",
+   "q12",
+   "q15"
+  ]
+ },
+ {
+  "id": "2608.12990",
+  "date": "2026-08-13",
+  "title": "LycheeMemory V2: Efficient Long-Term Memory for LLM Agents via Semantic Segment-Level Consolidation",
+  "summary": "Long-horizon LLM agents must preserve information from past interactions to support future tasks. Existing memory systems typically rely on eager consolidation, invoking LLMs after each interaction to extract, summarize, or update memories. This design makes memory construction increasingly costly as conversations grow. Coarse summarization can reduce construction cost but risks discarding fine-grained contextual evidence, whereas larger retrieval contexts or multi-hop LLM reasoning shift the overhead to query time. We present LycheeMemory V2, an efficient long-term memory framework that repla",
+  "queries": [
+   "q15"
+  ]
+ },
+ {
+  "id": "2608.07169",
+  "date": "2026-08-07",
+  "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory",
+  "summary": "Memory systems have shown promise for improving agent performance, but their potential remains largely unexplored for small language models, which struggle to generate sufficient successful trajectories on their own. We propose Agent Memory Distillation (AMD), a training-free framework that transfers structured knowledge from a large teacher agent to a small student agent through hierarchical memory. AMD constructs three complementary memory types from successful teacher trajectories: Workflow memory encodes task-level strategies, Subtask memory provides concrete behavioral examples at an inte",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2608.03796",
+  "date": "2026-08-04",
+  "title": "Efficient Knowledge Distillation for LLMs: Offline Top-K Logits and a Fused Chunked KL Loss",
+  "summary": "Small language models are often the only option for deployment under tight latency, cost, and on-premises constraints, but they are rarely trained from scratch: a compressed model is usually recovered through knowledge distillation (KD). This recovery step largely decides the final quality, yet it is expensive. We present a practitioner's study of how to make distillation training efficient, organised around two systems contributions. First, we show that offline KD (caching the teacher's top-K logits once and training the student against the cache) matches online distillation at near-identical",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2608.00967",
+  "date": "2026-08-02",
+  "title": "TrajWiki: Source-Grounded Memory Trajectories for Long-Horizon Dialogue Agents",
+  "summary": "Large language model agents have shown strong capabilities in generating coherent and contextually appropriate responses, yet robust long-horizon dialogue remains limited by the lack of external memory that is traceable, updatable, and diagnostically transparent. Existing memory-augmented agents often store memories as isolated records or overwritable states, making it difficult to preserve how information originates, evolves, conflicts, or becomes obsolete over time. We propose TrajWiki, a trajectory-based memory framework for long-horizon conversational agents. Instead of treating memory as ",
+  "queries": [
+   "q12"
+  ]
+ },
+ {
+  "id": "2607.29377",
+  "date": "2026-07-31",
+  "title": "Zero-Mem: Zero-Token Memory Operations for LLM Agents",
+  "summary": "LLM agents need memory to act consistently over long interactions, yet many systems use additional LLM calls to operate that memory. Generating intermediate records and mediating their retrieval adds recurring token and time costs, while omitted or merged details can obscure the original evidence. We ask whether structured memory access requires generation at all. Zero-Mem introduces zero-token memory operations: no step outside final question answering invokes an LLM or consumes LLM input or output tokens; encoder computation is accounted for separately. Zero-Mem preserves original interactio",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2607.26637",
+  "date": "2026-07-29",
+  "title": "Filesystem-Based Memory for LLM Agents: Organization, Evolution, and Sustainability",
+  "summary": "Deployed LLM agents increasingly keep their long-term memory as a filesystem: a directory tree of markdown files that the agent itself reads, writes, and reorganizes through generic file tools. Yet research has largely passed over this medium: prior systems design bespoke memory representations and study retrieval over them, leaving the default's two working assumptions untested: that an agent can keep a growing store organized as memories accumulate, conflict, and go stale, and that this organization pays. We present the first systematic exploration of filesystem-based memory for LLM agents. ",
+  "queries": [
+   "q04"
+  ]
+ },
+ {
+  "id": "2607.20972",
+  "date": "2026-07-23",
+  "title": "Delivery, Not Storage: Cue-Anchored Working Memory as a Harness Property for Coding Agents",
+  "summary": "Coding agents ship with one kind of memory: documents. Instruction files, plan artifacts, and auto-written memory directories are deliberately authored and deliberately retrieved: the agent must choose to write them and choose to read them back. Human expertise runs on a second tier that never gets written down: situationally-bound operational facts (gotchas, locations, local conventions) encoded as a side effect of the work and retrieved involuntarily when the situation cues them. We argue this second tier is the load-bearing one for long-running agents and must be a harness property, not an ",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2607.21051",
+  "date": "2026-07-23",
+  "title": "Sample-Efficient Learning from Agent Experience",
+  "summary": "Real-world agent learning is often constrained by costly environment interactions, such as running time-consuming experiments or obtaining human feedback. In-context learning offers a highly sample-efficient way for agents to learn from their own interaction histories, but its gains disappear once that experience is removed from the context. Separately, context distillation provides a mechanism for internalizing contextual information into model weights. However, applying it to agents' interaction histories without sacrificing environment sample efficiency remains underexplored. We term this p",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2607.21404",
+  "date": "2026-07-23",
+  "title": "MemTools: A Unified Research Framework for Interoperable Agent Memory",
+  "summary": "While memory systems are essential for agent architectures, pervasive architectural fragmentation restricts systematic research. Existing implementations typically couple different stages of the memory lifecycle, entangle evaluation logic with specific datasets, and provide limited support for the management of heterogeneous memory types. We introduce MemTools, an interoperability research framework that decouples memory system components from their underlying deployment environments. MemTools standardizes the memory lifecycle through declarative data contracts, enabling the interchangeable as",
+  "queries": [
+   "q13"
+  ]
+ },
+ {
+  "id": "2607.18110",
+  "date": "2026-07-20",
+  "title": "LLM-as-a-Coach: Experiential Learning for Non-Verifiable Tasks",
+  "summary": "Reinforcement learning (RL) on open-ended tasks compresses an LLM's rubric-based evaluation into a scalar reward, discarding rich textual feedback and conflating responses with distinct quality profiles. We propose Experiential Learning (EL), which repurposes the feedback model from an LLM-as-a-Judge into an LLM-as-a-Coach. The coach distills its assessment of each on-policy response into transferable experiential knowledge, which conditions a teacher model and is internalized by the policy through on-policy context distillation. Compared with scalar rewards, this higher-bandwidth feedback cha",
+  "queries": [
+   "q05"
+  ]
+ },
+ {
+  "id": "2607.13591",
+  "date": "2026-07-15",
+  "title": "Memory as a Controlled Process: Learned Adaptive Memory Management for LLM Agents",
+  "summary": "Large Language Model (LLM) agents increasingly rely on external memory systems to accumulate experience across tasks. Yet nearly all existing approaches, from graph-structured memories to reflective insight stores, access memory through fixed, hand-designed heuristics. We argue that this static view of memory is a core bottleneck for agentic learning because optimal memory behavior is fundamentally context-dependent. The early stages of the tasks, benefit from minimal retrieval because memory is sparse; recurring goal types benefit from plan reuse rather than generic nearest-neighbor lookup; s",
+  "queries": [
+   "q01"
+  ]
+ },
+ {
+  "id": "2607.12893",
+  "date": "2026-07-14",
+  "title": "MemOps: Benchmarking Lifecycle Memory Operations in Long-Horizon Conversations",
+  "summary": "Long-term memory has become a foundational capability for LLM-based agents that accompany users across extended, multi-session interactions. Existing benchmarks, however, evaluate such memory almost exclusively through downstream question answering, scoring only the correctness of a final answer. This black-box formulation conflates the heterogeneous causes of memory failure, such as missing the introduction of a relevant fact, binding an operation to the wrong target, or relying on stale values after a correction. As a result, it can credit correct answers despite their reliance on inconsiste",
+  "queries": [
+   "q02",
+   "q15"
+  ]
+ },
+ {
+  "id": "2607.13157",
+  "date": "2026-07-14",
+  "title": "Oracle Agent Memory as an Enterprise Memory Substrate for Long-Horizon AI Agents",
+  "summary": "Agent memory is a systems problem for long-horizon agents. Practical deployments require retention of task state across extended conversations, recovery of user-specific facts and preferences across sessions, and accumulation of procedural knowledge from prior outcomes. These requirements extend beyond document retrieval: a memory layer must determine which interactions become durable state, how that state is scoped, how it is retrieved under latency constraints, and how it is revised or removed over time. This report studies Oracle Agent Memory as a database-native memory substrate built on O",
+  "queries": [
+   "q15"
+  ]
+ },
+ {
+  "id": "2607.10608",
+  "date": "2026-07-12",
+  "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory",
+  "summary": "Memory is becoming a core component of long-horizon AI agents, allowing agents to reuse past experience when operating web browsers, software tools, and other interactive environments. Existing work mostly treats memory as a supply problem, asking what experience to write, how to store it, and which entry to retrieve for the next task. Yet we still lack a clear account of how models consume retrieved memory across a multi-step action trajectory. This consumption process matters because it determines not only what memories should be retrieved, but also what models and control policies are neede",
+  "queries": [
+   "q07",
+   "q12",
+   "q15"
+  ]
+ },
+ {
+  "id": "2607.08716",
+  "date": "2026-07-09",
+  "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents",
+  "summary": "In long-horizon tasks, decision-relevant state is often scattered across an expanding trajectory, while the action agent must surface it and act. As trajectories grow, task requirements, environment facts, prior attempts, diagnoses, and open subgoals can be buried in the context window or pushed beyond it, failing to influence decisions when needed. We call this failure mode \"behavioral state decay\". We study memory as an active intervention mechanism rather than passive retrieval. A separate memory agent runs alongside an unmodified action agent, updating a structured memory bank from the rec",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2607.04391",
+  "date": "2026-07-05",
+  "title": "Memory-Orchestrated Semantic System (MOSS): An Auditable Agentic Memory Architecture",
+  "summary": "Long-term memory remains a structural weakness of AI agents. The dominant approach, retrieval-augmented generation (RAG), relies on embedding-based similarity search, which is opaque by construction, difficult to audit, and bounded by the theoretical limits of vector representations. We present the Memory-Orchestrated Semantic System (MOSS), an agentic memory architecture in which the agent drives retrieval over a structured relational database. MOSS is model-agnostic, storage-agnostic, and API-agnostic: it runs on any relational engine, connects to any LLM provider (or to deterministic non-LL",
+  "queries": [
+   "q12"
+  ]
+ },
+ {
+  "id": "2607.03726",
+  "date": "2026-07-04",
+  "title": "SelfMem: Self-Optimizing Memory for AI Agents",
+  "summary": "While current AI agents support increasingly long context windows, tool use, and skill execution for long-horizon tasks, they still require memory systems to effectively leverage historical experience. Existing memory frameworks typically rely on fixed storage, retrieval, and summarization mechanisms, which can be rigid across different tasks and often require manual tuning. To address this limitation, we propose SelfMem, a self-optimizing memory framework. Inspired by prior work on self-improving AI, we follow the principle of \"teaching an agent to fish rather than giving it a fish.\" Instead ",
+  "queries": [
+   "q03",
+   "q08",
+   "q13"
+  ]
+ },
+ {
+  "id": "2607.01224",
+  "date": "2026-07-01",
+  "title": "AutoMem: Automated Learning of Memory as a Cognitive Skill",
+  "summary": "Memory expertise is a learned skill: knowing what to encode, when to retrieve, and how to organize knowledge--a capacity known in cognitive science as metamemory. We bring this perspective to LLMs by treating memory management as a trainable skill. We promote file-system operations to first-class memory actions alongside task actions, letting the model itself decide how to manage its memory. This memory skill improves along two axes: the structure that supports it (prompts, file schemas, action vocabulary), and the proficiency of the model exercising it. Both axes resist manual optimization: e",
+  "queries": [
+   "q05"
+  ]
+ },
+ {
+  "id": "2606.29961",
+  "date": "2026-06-29",
+  "title": "DuoMem: Towards Capable On-Device Memory Agents via Dual-Space Distillation",
+  "summary": "Large Language Model (LLM)-based agents can solve complex procedural tasks by interacting with environments over multiple turns, but this ability typically depends on large models, long contexts, and repeated inference calls. This makes advanced memory-augmented agents difficult to deploy on resource-constrained devices. We introduce DuoMem, a dual-space distillation framework that transfers procedural problem-solving ability from a large teacher model to compact student models. DuoMem distils in two complementary spaces: (1)context-space distillation, which replaces student-generated memories",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2606.24775",
+  "date": "2026-06-23",
+  "title": "Are We Ready For An Agent-Native Memory System?",
+  "summary": "Memory for large language model (LLM) agents has rapidly evolved from simple retrieval-augmented mechanisms into a data management system that supports persistent information storage, retrieval, update, consolidation, and dynamic lifecycle governance throughout agent execution. Despite this evolution, existing evaluations still benchmark agent memory mainly through end-to-end task success metrics (e.g., F1, BLEU), while treating the underlying system as a monolithic black box. As a result, critical system-level concerns, including operational costs, architectural trade-offs across memory modul",
+  "queries": [
+   "q04",
+   "q07",
+   "q13"
+  ]
+ },
+ {
+  "id": "2606.24595",
+  "date": "2026-06-23",
+  "title": "MEMPROBE: Probing Long-Term Agent Memory via Hidden User-State Recovery",
+  "summary": "Long-term memory promises LLM agents that grow more capable across sessions, maintaining an accurate, evolving understanding of the user that interaction forms. In practice, however, this memory is evaluated mostly through downstream behavior, such as later answers, personalization quality, or task success, which tests that understanding only indirectly and leaves the memory artifact itself largely unaudited. We argue that long-term memory should instead be evaluated as an auditable post-interaction artifact: after ordinary assistance, what structured user state can be reconstructed from the m",
+  "queries": [
+   "q07",
+   "q13",
+   "q15"
+  ]
+ },
+ {
+  "id": "2606.25161",
+  "date": "2026-06-23",
+  "title": "TRUSTMEM: Learning Trustworthy Memory Consolidation for LLM Agents with Long-Term Memory",
+  "summary": "Large language model (LLM) agents rely on long-term memory to support extended interactions and personalized assistance beyond finite context windows. Existing memory agents actively update external memory through generated write, revise, and delete operations, but these updates may omit important information, corrupt existing memory, or introduce unsupported hallucinated content. Once stored, such errors become persistent system-state failures that can affect future reasoning and generation. In this paper, we propose TrustMem, a framework designed to improve the trustworthiness of memory cons",
+  "queries": [
+   "q13"
+  ]
+ },
+ {
+  "id": "2606.23664",
+  "date": "2026-06-22",
+  "title": "MAS-PromptBench: When Does Prompt Optimization Improve Multi-Agent LLM Systems?",
+  "summary": "Multi-agent systems (MAS) offer a scalable path forward for agentic AI, comprising multiple LLM-based agents, each assigned a system prompt and a position within a workflow that governs inter-agent coordination and output aggregation. System prompts thus form a critical and accessible optimization surface: they specify agents' roles and behaviors, enabling system-level improvements without model finetuning. Although prompt optimization has shown substantial potential for single LLMs, extending it to MAS poses distinct challenges, notably an exponentially growing search space. It remains unclea",
+  "queries": [
+   "q01",
+   "q08"
+  ]
+ },
+ {
+  "id": "2606.22844",
+  "date": "2026-06-22",
+  "title": "RaMem: Contextual Reinstatement for Long-term Agentic Memory",
+  "summary": "Long-term memory has become increasingly important for LLM agents that operate across extended interactions and evolving task contexts. Recent memory systems have made past experiences more persistent, compact, and retrievable, but retrieval alone does not ensure that a memory provides valid evidence for the current query. When experiences are compressed into reusable fragments, memories from different situations may appear equally relevant if they involve recurring entities or user states. We refer to this failure as context collapse: memories lose the surrounding context needed to judge whet",
+  "queries": [
+   "q02",
+   "q15"
+  ]
+ },
+ {
+  "id": "2606.19911",
+  "date": "2026-06-18",
+  "title": "Multi-Agent Transactive Memory",
+  "summary": "The decentralized deployment of LLM agents with diverse capabilities across diverse tasks motivates infrastructure for knowledge sharing across heterogeneous agent populations. Just as search engines index human-generated artifacts to support human problem solving, retrieval systems can organize agent-generated artifacts for reuse across agent populations. We extend retrieval-augmented generation - which demonstrates the value of human-authored artifacts to individual agents - to retrieval of agent-generated artifacts supporting a population of agents. In particular, agent trajectories encode ",
+  "queries": [
+   "q12"
+  ]
+ },
+ {
+  "id": "2606.18829",
+  "date": "2026-06-17",
+  "title": "GateMem: Benchmarking Memory Governance in Multi-Principal Shared-Memory Agents",
+  "summary": "Memory benchmarks for LLM agents largely assume single-user settings, leaving shared assistants for hospitals, workplaces, campuses, and households understudied. In these deployments, multiple principals write to a common memory pool and query it under different roles, scopes, and relationships, so memory quality requires governance as well as recall. We introduce GateMem, a benchmark for multi-principal shared-memory agents. GateMem jointly evaluates utility for legitimate long-horizon requests with state updates, access control across contextual authorization boundaries, and agent-facing act",
+  "queries": [
+   "q13"
+  ]
+ },
+ {
+  "id": "2606.14571",
+  "date": "2026-06-12",
+  "title": "StreamMemBench: Streaming Evaluation of Agent Memory for Future-Oriented Assistance",
+  "summary": "A central role of personal-agent memory is to turn stored information and prior interactions into future-oriented assistance. In daily use, useful cues come from what the agent observes and how the user interacts with the agent, and the agent must carry them forward from the current request to similar future tasks. Existing memory benchmarks usually test dialogue recall or task improvement in isolation, leaving the trajectory from streaming observations to later assistance largely untested. We introduce StreamMemBench, a streaming benchmark that constructs a two-step task sequence around each ",
+  "queries": [
+   "q07"
+  ]
+ },
+ {
+  "id": "2606.11680",
+  "date": "2026-06-10",
+  "title": "Organize then Retrieve: Hierarchical Memory Navigation for Efficient Agents",
+  "summary": "Large language model (LLM) agents struggle with long-horizon tasks due to their inherent statelessness, requiring all task-relevant information to be encoded in growing input contexts. The resulting degraded reasoning quality, increased inference cost, and higher latency necessitate efficient working memory mechanisms. However, existing approaches either rely on lossy compression or similarity-based retrieval, which often fail to capture temporal structure and causal dependencies required for multi-step agentic tasks. In this work, we present HORMA, a Hierarchical Organize-and-Retrieve Memory ",
+  "queries": [
+   "q04"
+  ]
+ },
+ {
+  "id": "2606.05684",
+  "date": "2026-06-04",
+  "title": "AdaMEM: Test-Time Adaptive Memory for Language Agents",
+  "summary": "A central challenge for language agents is utilizing past experience to adapt to dynamic test-time conditions. While recent work demonstrates the promise of agentic memory mechanisms, most systems restrict retrieval to episode initiation. Consequently, agents are forced to rely on static guidance that becomes increasingly misaligned as long-horizon tasks unfold. To address this rigidity, we propose the Adaptive Memory Agent (AdaMEM), a novel framework for agent test-time adaptation. Without updating model parameters online, AdaMEM adapts agent behavior via a hybrid memory architecture: it main",
+  "queries": [
+   "q01",
+   "q03",
+   "q05",
+   "q06",
+   "q08",
+   "q12"
+  ]
+ },
+ {
+  "id": "2606.05761",
+  "date": "2026-06-04",
+  "title": "SubtleMemory: A Benchmark for Fine-Grained Relational Memory Discrimination in Long-Horizon AI Agents",
+  "summary": "Persistent AI assistants, such as OpenClaw, accumulate large collections of related memories over long-term interactions. As these memories grow, they may reinforce one another, diverge across contexts, or directly conflict, making correct assistance depend on memory relations rather than isolated recall. Existing long-term memory benchmarks rarely probe how agents preserve and utilize such relations during downstream tasks. To address this gap, we introduce SubtleMemory, a benchmark for fine-grained relational memory discrimination in long-running AI agents. SubtleMemory constructs relation-c",
+  "queries": [
+   "q04"
+  ]
+ },
+ {
+  "id": "2606.06036",
+  "date": "2026-06-04",
+  "title": "Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents",
+  "summary": "Despite recent progress, LLM agents still struggle with reasoning over long interaction histories. While current memory-augmented agents rely on a static retrieve-then-reason paradigm, this rigid pipeline design prevents them from dynamically adapting memory access to intermediate evidence discovered during inference. To bridge this gap, we propose MRAgent, a framework that combines an associative memory graph with an active reconstruction mechanism. We represent memory as a Cue-Tag-Content graph, where associative tags serve as semantic bridges connecting fine-grained cues to memory contents.",
+  "queries": [
+   "q06"
+  ]
+ },
+ {
+  "id": "2606.05646",
+  "date": "2026-06-04",
+  "title": "Enhancing Software Engineering Through Closed-Loop Memory Optimization",
+  "summary": "Large language models (LLMs) have enabled powerful software engineering (SE) agents capable of navigating complex codebases and resolving real-world issues. However, these agents remain fundamentally episodic: they fail to retain, refine, and reuse experiences across tasks, repeatedly reconstructing context from scratch and reproducing similar mistakes. Even with memory support, they offer no remedy for the absence of a principled, task-agnostic memory utility, making them difficult to evaluate rigorously or generalize across agents and settings. To tackle these limitations, we introduce \\ours",
+  "queries": [
+   "q07"
+  ]
+ },
+ {
+  "id": "2606.04465",
+  "date": "2026-06-03",
+  "title": "SePO: Self-Evolving Prompt Agent for System Prompt Optimization",
+  "summary": "System prompt optimization improves agent behavior without modifying the underlying model, yielding human-readable, model-agnostic instructions. Existing methods build a prompt agent that refines task agents' system prompts, yet leave the prompt agent's own system prompt hand-engineered and fixed. We propose Self-Evolving Prompt Optimization (SePO), which treats the prompt agent's own system prompt as an optimization target alongside task agents' system prompts. SePO adopts a self-referential design. A single prompt agent improves both task agents' system prompts and its own under an open-ende",
+  "queries": [
+   "q01",
+   "q03",
+   "q08",
+   "q10"
+  ]
+ },
+ {
+  "id": "2606.04536",
+  "date": "2026-06-03",
+  "title": "Scaling Self-Evolving Agents via Parametric Memory",
+  "summary": "Existing memory-augmented LLM agents store past experience exclusively in prompt space, as textual summaries or retrieved passages, while keeping model parameters frozen throughout a rollout. Such agents can look up what they have seen but cannot learn from it: their policy is unchanged by experience, and any information dropped from the context is permanently lost. We introduce TMEM, a self-evolving parametric memory framework in which the agent not only compresses history into explicit memory but also absorbs distilled supervision into fast LoRA weights \u0394_t via lightweight online updates, ge",
+  "queries": [
+   "q03",
+   "q12"
+  ]
+ },
+ {
+  "id": "2606.28349",
+  "date": "2026-06-03",
+  "title": "HMARS: A Hierarchical Multi-Agent Memory System for Long-Context Reasoning",
+  "summary": "Long-context reasoning requires models to access, retrieve, and integrate evidence scattered across documents, dialogues, and accumulated interaction histories. Standard retrieval-augmented generation reduces this problem to top-K chunk retrieval, but such passive access can discard relevant evidence before reasoning begins, especially when relevance depends on broader context. We propose HMARS, a hierarchical multi-agent memory system that treats long contexts as managed memory rather than a flat retrieval corpus. Sub-agents maintain grounded access to bounded memory regions, mid-agents manag",
+  "queries": [
+   "q06"
+  ]
+ },
+ {
+  "id": "2606.04315",
+  "date": "2026-06-03",
+  "title": "Exploring Cross-Scenario Generality of Agentic Memory Systems: Diagnostics and a Strong Baseline",
+  "summary": "LLM agents accumulate histories that outgrow their context windows, motivating a growing literature on memory systems. Yet most existing designs are tuned to a single scenario (multi-session chat or a single trajectory format), and there is little evidence that they generalize across the heterogeneous trajectories agents encounter in deployment. We revisit eight memory systems plus an agentic harness for search problems, on five scenarios: single-turn QA, multi-session chat, agentic-trajectory QA, memory stress tests, and long-horizon agentic tasks. The harness, which self-manages flat text-fi",
+  "queries": [
+   "q12"
+  ]
+ },
+ {
+  "id": "2606.03197",
+  "date": "2026-06-02",
+  "title": "MemTrain: Self-Supervised Context Memory Training",
+  "summary": "Memory is an indispensable capability for long-horizon LLM agents, enabling them to preserve and utilize information accumulated across extended interactions. Existing memory-agent approaches are typically trained end-to-end with reinforcement learning on downstream tasks. However, collecting high-quality annotated problems for memory-intensive scenarios is costly, and the resulting training data often lack sufficient diversity to cover general memory behaviors. In this work, we propose MemTrain, a self-supervised training framework for generally enhancing the context-memory capability of LLM ",
+  "queries": [
+   "q03",
+   "q05",
+   "q11",
+   "q13",
+   "q15"
+  ]
+ },
+ {
+  "id": "2606.02461",
+  "date": "2026-06-02",
+  "title": "AgentCL: Toward Rigorous Evaluation of Continual Learning in Language Agents",
+  "summary": "Language agents spend substantial inference time solving individual tasks, yet the experience acquired in one episode is often underutilized in future episodes. Continual learning expects an agent to accumulate reusable experience across a stream of tasks, improve over time, and avoid interference from irrelevant experiences. Unfortunately, existing benchmarks struggle to evaluate continual learning in language agents rigorously. Most efforts focus on retrieval and reasoning over long-context conversations or documents, while recent lifelong-adaptation benchmarks often rely on naive task strea",
+  "queries": [
+   "q04"
+  ]
+ },
+ {
+  "id": "2606.03329",
+  "date": "2026-06-02",
+  "title": "InfoMem: Training Long-Context Memory Agents with Answer-Conditioned Information Gain",
+  "summary": "Long-context tasks require LLMs to identify and preserve answer-relevant information from large contexts. Chunk-wise memory agents address this issue by sequentially reading document chunks, updating a compact memory, and generating the final answer from the accumulated memory. However, existing RL-based chunk-wise agents either rely on sparse final-answer rewards or use lexical intermediate rewards for memory and retrieval actions. These signals supervise task success or local overlap, but do not directly evaluate whether the final memory supports the ground-truth answer. We propose InfoMem, ",
+  "queries": [
+   "q15"
+  ]
+ },
+ {
+  "id": "2606.01967",
+  "date": "2026-06-01",
+  "title": "Training Prompt Matters: State-Adaptive Optimization for Robust Fine-Tuning",
+  "summary": "While prompt engineering is instrumental in maximizing the capabilities of Large Language Models (LLMs) during inference, the role of prompts during training remains critically underexplored. Prevailing fine-tuning paradigms typically treat training prompts as mere surface forms, assuming that semantically equivalent instructions yield identical learning outcomes. However, we reveal that this equivalence is deceptive: while paraphrased prompts often lead to comparable in-task performance, they induce drastically different cross-task impacts regarding catastrophic forgetting and generalization.",
+  "queries": [
+   "q08"
+  ]
+ },
+ {
+  "id": "2606.00619",
+  "date": "2026-05-30",
+  "title": "MemPro: Agentic Memory Systems as Evolvable Programs",
+  "summary": "Long-horizon autonomous agents require memory systems to retain historical information, track evolving states, and reuse relevant knowledge beyond finite context windows. Existing agentic memory systems typically follow a memory construction-retrieval (MCR) pipeline, but often adapt mainly the memory bank while keeping the surrounding pipeline fixed after deployment. This fixed-pipeline design struggles to handle heterogeneous task-specific failure modes and can become misaligned with memory banks that evolve in scale and structure over time. To address these limitations, we propose MemPro, a ",
+  "queries": [
+   "q13"
+  ]
+ },
+ {
+  "id": "2605.31075",
+  "date": "2026-05-29",
+  "title": "Task-Focused Memorization for Multimodal Agents",
+  "summary": "Long-term memory is essential for multimodal agents to build coherent experience, accumulate world knowledge, and achieve continual learning. However, constructing effective memory goes beyond memory module design and basic requirements such as accuracy and fidelity; the key challenge lies in determining what to memorize. Multimodal agents, such as embodied agents, continuously perceive, reason, and act in real or virtual environments, receiving an unbounded stream of multimodal observations. From this combinatorial explosion of information, an agent must selectively retain content that is rel",
+  "queries": [
+   "q05"
+  ]
+ },
+ {
+  "id": "2605.29341",
+  "date": "2026-05-28",
+  "title": "WorldMemArena: Evaluating Multimodal Agent Memory Through Action-World Interaction",
+  "summary": "Multimodal large language models are increasingly deployed as long-horizon agents, where memory must do more than recall: it must track an evolving world, revise what has gone stale, and surface the right evidence at decision time. Existing benchmarks measure recall over static dialogue, collapse memory into a single end-of-task accuracy, and reduce visual observations to captions, leaving us unable to localize failures to writing, maintenance, retrieval, or use. The rise of agent harnesses that author their own memory sharpens this gap, since we have no principled way to compare hand-designed",
+  "queries": [
+   "q07"
+  ]
+ },
+ {
+  "id": "2605.28360",
+  "date": "2026-05-27",
+  "title": "Prompt Codebooks: Discrete Compositional Optimization for Language Model Instruction Refinement",
+  "summary": "Automatic prompt optimization (APO) has driven significant gains in LLM-based agentic workflows. However, existing methods treat each task's prompt as a monolithic, instance-blind string optimized through global edits, producing brittle updates and preventing the reuse of learned sub-behaviors. We propose Prompt Codebooks (PCO), a novel compositional prompt optimization framework that recasts APO as discrete learning over a finite vocabulary of natural-language instincts - atomic, reusable instruction units. PCO organizes prompt-construction knowledge in a discrete codebook and routes each inp",
+  "queries": [
+   "q03"
+  ]
+ },
+ {
+  "id": "2605.28046",
+  "date": "2026-05-27",
+  "title": "MemCog: From Memory-as-Tool to Memory-as-Cognition in Conversational Agents",
+  "summary": "Existing agent memory systems universally follow what we term a Memory-as-Tool paradigm where a single query triggers one-shot retrieval of flat passage lists, suffering from passive invocation, reasoning-retrieval decoupling, and structural mismatch between retrieved fragments and the agent's navigational needs. We propose MemCog, a Memory-as-Cognition system that makes memory access an integral part of the reasoning process. MemCog organizes user knowledge as Navigable Memory Store with associative link graphs, exposes Cross-Dimensional Navigation Interface for multi-step reasoning-driven tr",
+  "queries": [
+   "q04",
+   "q06",
+   "q12"
+  ]
+ },
+ {
+  "id": "2605.24468",
+  "date": "2026-05-23",
+  "title": "SAM: State-Adaptive Memory for Long-Horizon Reasoning Agent",
+  "summary": "Long-horizon agentic reasoning requires large language models to act over long interaction histories containing thoughts, tool calls, observations, and partial conclusions. The challenge is not merely that these histories grow long, but that information needed for the current decision may be scattered across distant steps and only become relevant later. Existing approaches address this difficulty by truncating the interaction history, compressing it into shorter surrogates, or retrieving selected parts of it for reuse, but they do not explicitly model how access to past interaction should adap",
+  "queries": [
+   "q06"
+  ]
+ },
+ {
+  "id": "2605.21781",
+  "date": "2026-05-20",
+  "title": "Reflective Prompt Tuning through Language Model Function-Calling",
+  "summary": "Large language models (LLMs) have become increasingly capable of following instructions and complex reasoning, making prompting a flexible interface for adapting models without parameter updates. Yet prompt design remains labor-intensive and highly sensitive to formatting, phrasing, and instruction order, motivating automated prompt optimization methods that reduce manual effort while preserving inference-time flexibility. However, existing methods often search over prompt candidates or use fixed critique-refine pipelines driven by individual examples or small batches, limiting their ability t",
+  "queries": [
+   "q03"
+  ]
+ },
+ {
+  "id": "2605.21463",
+  "date": "2026-05-20",
+  "title": "Mem-\u03c0: Adaptive Memory through Learning When and What to Generate",
+  "summary": "We present Mem-\u03c0, a framework for adaptive memory in large language model (LLM) agents, where useful guidance is generated on demand rather than retrieved from external memory stores. Existing memory-augmented agents typically rely on similarity-based retrieval from episodic memory banks or skill libraries, returning static entries that often misalign with the current context. In contrast, Mem-\u03c0 uses a dedicated language or vision-language model with its own parameters, separate from the downstream agent, to generate context-specific guidance for complex tasks. Conditioned on the current agent",
+  "queries": [
+   "q04",
+   "q12"
+  ]
+ },
+ {
+  "id": "2605.18565",
+  "date": "2026-05-19",
+  "title": "MINTEval: Evaluating Memory under Multi-Target Interference in Long-Horizon Agent Systems",
+  "summary": "Real-world agents operate over long and evolving horizons, where information is repeatedly updated and may interfere across memories, requiring accurate recall and aggregated reasoning over multiple pieces of information. However, existing benchmarks focus on static, independent recall and fail to capture these dynamic interactions between evolving memories. In this paper, we study how current memory-augmented agents perform in realistic, interference-heavy, long-horizon settings across diverse domains and question types. We introduce MINTEval (Long-Horizon Memory under INTerference Evaluation",
+  "queries": [
+   "q12"
+  ]
+ },
+ {
+  "id": "2605.18421",
+  "date": "2026-05-18",
+  "title": "EvoMemBench: Benchmarking Agent Memory from a Self-Evolving Perspective",
+  "summary": "Recent benchmarks for Large Language Model (LLM) agents mainly evaluate reasoning, planning, and execution. However, memory is also essential for agents, as it enables them to store, update, and retrieve information over time. This ability remains under-evaluated, largely because existing benchmarks do not provide a systematic way to assess memory mechanisms. In this paper, we study agent memory from a self-evolving perspective and introduce EvoMemBench, a unified benchmark organized along two axes: memory scope (in-episode vs. cross-episode) and memory content (knowledge-oriented vs. executio",
+  "queries": [
+   "q04",
+   "q07",
+   "q15"
+  ]
+ },
+ {
+  "id": "2605.23986",
+  "date": "2026-05-16",
+  "title": "MemForest: An Efficient Agent Memory System with Hierarchical Temporal Indexing",
+  "summary": "Memory is a fundamental component for enabling long-context LLM agents, supporting persistent state across interactions through a continuous serve-and-update lifecycle. Despite substantial prior work, existing systems suffer from significant maintenance overhead due to two key limitations: coarse-grained state management and inherently sequential update pipelines. In particular, updates are often tightly coupled with LLM inference and require full-state rewrites, leading to poor scalability and growing latency as memory accumulates. To address these challenges, we present MemForest, a memory f",
+  "queries": [
+   "q13"
+  ]
+ },
+ {
+  "id": "2605.15701",
+  "date": "2026-05-15",
+  "title": "H-Mem: A Novel Memory Mechanism for Evolving and Retrieving Agent Memory via a Hybrid Structure",
+  "summary": "Memory data are ubiquitous in Large Language Model (LLM)-based agents (e.g., OpenClaw and Manus). A few recent works have attempted to exploit agents'memory for improving their performance on the question-answering (QA) task, but they lack a principled mechanism for effectively modeling how memory data evolves over time and retrieving memory data effectively, leading to poor performance in memory utilization. To fill this gap, we present H-Mem, a novel memory mechanism via a hybrid structure that can not only effectively model the evolution of agent memory over a long period of time, but also ",
+  "queries": [
+   "q13"
+  ]
+ },
+ {
+  "id": "2605.15128",
+  "date": "2026-05-14",
+  "title": "MemEye: A Visual-Centric Evaluation Framework for Multimodal Agent Memory",
+  "summary": "Long-term agent memory is increasingly multimodal, yet existing evaluations rarely test whether agents preserve the visual evidence needed for later reasoning. In prior work, many visually grounded questions can be answered using only captions or textual traces, allowing answers to be inferred without preserving the fine-grained visual evidence. Meanwhile, harder cases that require reasoning over changing visual states are largely absent. Therefore, we introduce MemEye, a framework that evaluates memory capabilities from two dimensions: one measures the granularity of decisive visual evidence ",
+  "queries": [
+   "q13"
+  ]
+ },
+ {
+  "id": "2605.12493",
+  "date": "2026-05-12",
+  "title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues",
+  "summary": "Long-term memory is crucial for agents in specialized web environments, where success depends on recalling interface affordances, state dynamics, workflows, and recurring failure modes. However, existing memory benchmarks for agents mostly focus on user histories, short traces, or downstream task success, leaving open how to directly evaluate whether memory systems effectively internalize environment-specific experience. To address this gap, we introduce LongMemEval-V2 (LME-V2), a benchmark for evaluating whether memory systems can help agents acquire the experience needed to become knowledgea",
+  "queries": [
+   "q05",
+   "q07",
+   "q13",
+   "q15"
+  ]
+ },
+ {
+  "id": "2605.10268",
+  "date": "2026-05-11",
+  "title": "MemReread: Enhancing Agentic Long-Context Reasoning via Memory-Guided Rereading",
+  "summary": "To tackle long-context reasoning tasks without the quadratic complexity of standard attention mechanisms, approaches based on agent memory have emerged, which typically maintain a dynamically updated memory when linearly processing document chunks. To mitigate the potential loss of latent evidence in this memorize-while-reading paradigm, recent works have integrated retrieval modules that allow agents to recall information previously discarded during memory overwriting. However, retrieval-based recall suffers from both evidence loss during memory formation and interference induced by invalid q",
+  "queries": [
+   "q06",
+   "q12"
+  ]
+ },
+ {
+  "id": "2605.05583",
+  "date": "2026-05-08",
+  "title": "Belief Memory: Agent Memory Under Partial Observability",
+  "summary": "LLM agents that operate over long context depend on external memory to accumulate knowledge over time. However, existing methods typically store each observation as a single deterministic conclusion (e.g., inferring \"API~X failed\" from temporary errors), even though such observations are inherently partial and potentially ambiguous. By committing to one conclusion and discarding uncertainty, these methods introduce self-reinforcing error: the agent acts on the stored conclusion, never revisits alternatives, and reinforces the conclusion over time. To address this issue, we propose BeliefMem, w",
+  "queries": [
+   "q15"
+  ]
+ },
+ {
+  "id": "2605.06623",
+  "date": "2026-05-07",
+  "title": "MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems",
+  "summary": "Large language model (LLM)-based Multi-agent systems (MAS) have shown promise in tackling complex collaborative tasks, where agents are typically orchestrated via role-specific prompts. While the quality of these prompts is pivotal, jointly optimizing them across interacting agents remains a non-trivial challenge, primarily due to the misalignment between local agent objectives and holistic system goals. To address this, we introduce MASPO, a novel framework designed to automatically and iteratively refine prompts across the entire system. A core innovation of MASPO is its joint evaluation mec",
+  "queries": [
+   "q01"
+  ]
+ },
+ {
+  "id": "2605.00702",
+  "date": "2026-05-01",
+  "title": "Learning How and What to Memorize: Cognition-Inspired Two-Stage Optimization for Evolving Memory",
+  "summary": "Large language model (LLM) agents require long-term user memory for consistent personalization, but limited context windows hinder tracking evolving preferences over long interactions. Existing memory systems mainly rely on static, hand-crafted update rules; although reinforcement learning (RL)-based agents learn memory updates, sparse outcome rewards provide weak supervision, resulting in unstable long-horizon optimization. Drawing on memory schema theory and the functional division between prefrontal regions and hippocampus regions, we introduce MemCoE, a cognition-inspired two-stage optimiz",
+  "queries": [
+   "q08"
+  ]
+ },
+ {
+  "id": "2604.22436",
+  "date": "2026-04-24",
+  "title": "AgentSearchBench: A Benchmark for AI Agent Search in the Wild",
+  "summary": "The rapid growth of AI agent ecosystems is transforming how complex tasks are delegated and executed, creating a new challenge of identifying suitable agents for a given task. Unlike traditional tools, agent capabilities are often compositional and execution-dependent, making them difficult to assess from textual descriptions alone. However, existing research and benchmarks typically assume well-specified functionalities, controlled candidate pools, or only executable task queries, leaving realistic agent search scenarios insufficiently studied. We introduce AgentSearchBench, a large-scale ben",
+  "queries": [
+   "q04"
+  ]
+ },
+ {
+  "id": "2604.23069",
+  "date": "2026-04-24",
+  "title": "ContextWeaver: Selective and Dependency-Structured Memory Construction for LLM Agents",
+  "summary": "Large language model (LLM) agents often struggle in long-context interactions. As the agent accumulates more interaction history, context management approaches such as sliding window and prompt compression may omit earlier structured information that later steps rely on. Recent retrieval-based memory systems surface relevant content but still overlook the causal and logical structure needed for multi-step reasoning. We introduce ContextWeaver, a selective and dependency-structured memory framework that organizes an agent's interaction trace into a graph of reasoning steps and selects the relev",
+  "queries": [
+   "q06"
+  ]
+ },
+ {
+  "id": "2604.20006",
+  "date": "2026-04-21",
+  "title": "From Recall to Forgetting: Benchmarking Long-Term Memory for Personalized Agents",
+  "summary": "Personalized agents that interact with users over long periods must maintain persistent memory across sessions and update it as circumstances change. However, existing benchmarks predominantly frame long-term memory evaluation as fact retrieval from past conversations, providing limited insight into agents' ability to consolidate memory over time or handle frequent knowledge updates. We introduce Memora, a long-term memory benchmark spanning weeks to months long user conversations. The benchmark evaluates three memory-grounded tasks: remembering, reasoning, and recommending. To ensure data qua",
+  "queries": [
+   "q04",
+   "q07",
+   "q08",
+   "q13",
+   "q15"
+  ]
+ },
+ {
+  "id": "2604.18845",
+  "date": "2026-04-20",
+  "title": "Dual-View Training for Instruction-Following Information Retrieval",
+  "summary": "Instruction-following information retrieval (IF-IR) studies retrieval systems that must not only find documents relevant to a query, but also obey explicit user constraints such as required attributes, exclusions, or output preferences. However, most retrievers are trained primarily for semantic relevance and often fail to distinguish documents that match the topic from those that satisfy the instruction. We propose a dual-view data synthesis strategy based on polarity reversal: given a query, a document that is relevant under the instruction, and a hard negative that matches the query but vio",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2604.19821",
+  "date": "2026-04-20",
+  "title": "JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents",
+  "summary": "Large language model (LLM) agents augmented with external tools often struggle as number of tools grow large and become domain-specific. In such settings, ambiguous tool descriptions and under-specified agent instructions frequently lead to tool mis-selection and incorrect slot/value instantiation. We hypothesize that this is due to two root causes: generic, one-size-fits-all prompts that ignore tool-specific nuances, and underspecified tool schemas that lack clear guidance on when and how to use each tool and how to format its parameters. We introduce Joint Tool-Prompt Reflective Optimization",
+  "queries": [
+   "q03"
+  ]
+ },
+ {
+  "id": "2602.15143",
+  "date": "2026-04-16",
+  "title": "Protecting Language Models Against Unauthorized Distillation through Trace Rewriting",
+  "summary": "Knowledge distillation is a widely adopted technique for transferring capabilities from LLMs to smaller, more efficient student models. However, unauthorized use of knowledge distillation takes unfair advantage of the considerable effort and cost put into developing frontier models. We investigate methods for modifying teacher-generated reasoning traces to achieve two objectives that deter unauthorized distillation: (1) anti-distillation, or degrading the training usefulness of query responses, and (2) API watermarking, which embeds verifiable signatures in student models. We introduce several",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2604.11811",
+  "date": "2026-04-10",
+  "title": "M^star: Every Task Deserves Its Own Memory Harness",
+  "summary": "Large language model agents rely on specialized memory systems to accumulate and reuse knowledge during extended interactions. Recent architectures typically adopt a fixed memory design tailored to specific domains, such as semantic retrieval for conversations or skills reused for coding. However, a memory system optimized for one purpose frequently fails to transfer to others. To address this limitation, we introduce M^star, a method that automatically discovers task-optimized memory harnesses through executable program evolution. Specifically, M^star models an agent memory system as a memory",
+  "queries": [
+   "q03"
+  ]
+ },
+ {
+  "id": "2604.08801",
+  "date": "2026-04-09",
+  "title": "p1: Better Prompt Optimization with Fewer Prompts",
+  "summary": "Prompt optimization improves language models without updating their weights by searching for a better system prompt, but its effectiveness varies widely across tasks. We study what makes a task amenable to prompt optimization. We show that the reward variance across different system prompts can be decomposed into two components: variance among responses, which captures generation stochasticity, and variance among system prompts, which captures differences in system prompt quality. Prompt optimization succeeds when variance among system prompts is sufficiently large, but fails when variance amo",
+  "queries": [
+   "q01",
+   "q08",
+   "q14"
+  ]
+ },
+ {
+  "id": "2603.29493",
+  "date": "2026-04-07",
+  "title": "MemFactory: Unified Inference & Training Framework for Agent Memory",
+  "summary": "Memory-augmented Large Language Models (LLMs) are essential for developing capable, long-term AI agents. Recently, applying Reinforcement Learning (RL) to optimize memory operations, such as extraction, updating, and retrieval, has emerged as a highly promising research direction. However, existing implementations remain highly fragmented and task-specific, lacking a unified infrastructure to streamline the integration, training, and evaluation of these complex pipelines. To address this gap, we present MemFactory, the first unified, highly modular training and inference framework specifically",
+  "queries": [
+   "q13"
+  ]
+ },
+ {
+  "id": "2604.04503",
+  "date": "2026-04-06",
+  "title": "Memory Intelligence Agent",
+  "summary": "Deep research agents (DRAs) integrate LLM reasoning with external tools. Memory systems enable DRAs to leverage historical experiences, which are essential for efficient reasoning and autonomous evolution. Existing methods rely on retrieving similar trajectories from memory to aid reasoning, while suffering from key limitations of ineffective memory evolution and increasing storage and retrieval costs. To address these problems, we propose a novel Memory Intelligence Agent (MIA) framework, consisting of a Manager-Planner-Executor architecture. Memory Manager is a non-parametric memory system t",
+  "queries": [
+   "q05",
+   "q06"
+  ]
+ },
+ {
+  "id": "2604.04018",
+  "date": "2026-04-05",
+  "title": "1.x-Distill: Breaking the Diversity, Quality, and Efficiency Barrier in Distribution Matching Distillation",
+  "summary": "Diffusion models produce high-quality text-to-image results, but their iterative denoising is computationally expensive.Distribution Matching Distillation (DMD) emerges as a promising path to few-step distillation, but suffers from diversity collapse and fidelity degradation when reduced to two steps or fewer. We present 1.x-Distill, the first fractional-step distillation framework that breaks the integer-step constraint of prior few-step methods and establishes 1.x-step generation as a practical regime for distilled diffusion models.Specifically, we first analyze the overlooked role of teache",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2604.02268",
+  "date": "2026-04-02",
+  "title": "SKILL0: In-Context Agentic Reinforcement Learning for Skill Internalization",
+  "summary": "Agent skills, structured packages of procedural knowledge and executable resources that agents dynamically load at inference time, have become a reliable mechanism for augmenting LLM agents. Yet inference-time skill augmentation is fundamentally limited: retrieval noise introduces irrelevant guidance, injected skill content imposes substantial token overhead, and the model never truly acquires the knowledge it merely follows. We ask whether skills can instead be internalized into model parameters, enabling zero-shot autonomous behavior without any runtime skill retrieval. We introduce SKILL0, ",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2604.01560",
+  "date": "2026-04-02",
+  "title": "DeltaMem: Towards Agentic Memory Management via Reinforcement Learning",
+  "summary": "Recent advances in persona-centric memory have revealed the powerful capability of multi-agent systems in managing persona memory, especially in conversational scenarios. However, these complex frameworks often suffer from information loss and are fragile across varying scenarios, resulting in suboptimal performance. In this paper, we propose DeltaMem, an agentic memory management system that formulates persona-centric memory management as an end-to-end task within a single-agent setting. To further improve the performance of our agentic memory manager, we draw inspiration from the evolution o",
+  "queries": [
+   "q13"
+  ]
+ },
+ {
+  "id": "2604.02280",
+  "date": "2026-04-02",
+  "title": "Novel Memory Forgetting Techniques for Autonomous AI Agents: Balancing Relevance and Efficiency",
+  "summary": "Long-horizon conversational agents require persistent memory for coherent reasoning, yet uncontrolled accumulation causes temporal decay and false memory propagation. Benchmarks such as LOCOMO and LOCCO report performance degradation from 0.455 to 0.05 across stages, while MultiWOZ shows 78.2% accuracy with 6.8% false memory rate under persistent retention. This work introduces an adaptive budgeted forgetting framework that regulates memory through relevanceguided scoring and bounded optimization. The approach integrates recency, frequency, and semantic alignment to maintain stability under co",
+  "queries": [
+   "q15"
+  ]
+ },
+ {
+  "id": "2604.01348",
+  "date": "2026-04-01",
+  "title": "Procedural Knowledge at Scale Improves Reasoning",
+  "summary": "Test-time scaling has emerged as an effective way to improve language models on challenging reasoning tasks. However, most existing methods treat each problem in isolation and do not systematically reuse knowledge from prior reasoning trajectories. In particular, they underutilize procedural knowledge: how to reframe a problem, choose an approach, and verify or backtrack when needed. We introduce Reasoning Memory, a retrieval-augmented generation (RAG) framework for reasoning models that explicitly retrieves and reuses procedural knowledge at scale. Starting from existing corpora of step-by-st",
+  "queries": [
+   "q04"
+  ]
+ },
+ {
+  "id": "2604.00430",
+  "date": "2026-04-01",
+  "title": "Secure Forgetting: A Framework for Privacy-Driven Unlearning in Large Language Model (LLM)-Based Agents",
+  "summary": "Large language model (LLM)-based agents have recently gained considerable attention due to the powerful reasoning capabilities of LLMs. Existing research predominantly focuses on enhancing the task performance of these agents in diverse scenarios. However, as LLM-based agents become increasingly integrated into real-world applications, significant concerns emerge regarding their accumulation of sensitive or outdated knowledge. Addressing these concerns requires the development of mechanisms that allow agents to selectively forget previously learned knowledge, giving rise to a new term LLM-base",
+  "queries": [
+   "q05"
+  ]
+ },
+ {
+  "id": "2604.14191",
+  "date": "2026-04-01",
+  "title": "Attention to Mamba: A Recipe for Cross-Architecture Distillation",
+  "summary": "State Space Models (SSMs) such as Mamba have become a popular alternative to Transformer models, due to their reduced memory consumption and higher throughput at generation compared to their Attention-based counterparts. On the other hand, the community has built up a considerable body of knowledge on how to train Transformers, and many pretrained Transformer models are readily available. To facilitate the adoption of SSMs while leveraging existing pretrained Transformers, we aim to identify an effective recipe to distill an Attention-based model into a Mamba-like architecture. In prior work o",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2603.25388",
+  "date": "2026-03-26",
+  "title": "Multimodal Dataset Distillation via Phased Teacher Models",
+  "summary": "Multimodal dataset distillation aims to construct compact synthetic datasets that enable efficient compression and knowledge transfer from large-scale image-text data. However, existing approaches often fail to capture the complex, dynamically evolving knowledge embedded in the later training stages of teacher models. This limitation leads to degraded student performance and compromises the quality of the distilled data. To address critical challenges such as pronounced cross-stage performance gaps and unstable teacher trajectories, we propose Phased Teacher Model with Shortcut Trajectory (PTM",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2603.24639",
+  "date": "2026-03-25",
+  "title": "Experiential Reflective Learning for Self-Improving LLM Agents",
+  "summary": "Recent advances in large language models (LLMs) have enabled the development of autonomous agents capable of complex reasoning and multi-step problem solving. However, these agents struggle to adapt to specialized environments and do not leverage past interactions, approaching each new task from scratch regardless of their accumulated experience. We introduce Experiential Reflective Learning (ERL), a simple self-improvement framework that enables rapid environment adaptation through experiential learning. ERL reflects on task trajectories and outcomes to generate heuristics, capturing actionab",
+  "queries": [
+   "q05"
+  ]
+ },
+ {
+  "id": "2603.24690",
+  "date": "2026-03-25",
+  "title": "UniICL: Systematizing Unified Multimodal In-context Learning through a Capability-Oriented Taxonomy",
+  "summary": "In-context Learning enables training-free adaptation via demonstrations but remains highly sensitive to example selection and formatting. In unified multimodal models spanning understanding and generation, this sensitivity is exacerbated by cross-modal interference and varying cognitive demands. Consequently, In-context Learning efficacy is often non-monotonic and highly task-dependent. To diagnose these behaviors, we introduce a six-level capability-oriented taxonomy that categorizes the functional role of demonstrations from basic perception to high-order discernment. Guided by this cognitiv",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2603.21520",
+  "date": "2026-03-23",
+  "title": "Generalizable Self-Evolving Memory for Automatic Prompt Optimization",
+  "summary": "Automatic prompt optimization is a promising approach for adapting large language models (LLMs) to downstream tasks, yet existing methods typically search for a specific prompt specialized to a fixed task. This paradigm limits generalization across heterogeneous queries and prevents models from accumulating reusable prompting knowledge over time. In this paper, we propose MemAPO, a memory-driven framework that reconceptualizes prompt optimization as generalizable and self-evolving experience accumulation. MemAPO maintains a dual-memory mechanism that distills successful reasoning trajectories ",
+  "queries": [
+   "q01",
+   "q03",
+   "q08"
+  ]
+ },
+ {
+  "id": "2603.20667",
+  "date": "2026-03-21",
+  "title": "REVERE: Reflective Evolving Research Engineer for Scientific Workflows",
+  "summary": "Existing prompt-optimization techniques rely on local signals to update behavior, often neglecting broader and recurring patterns across tasks, leading to poor generalization; they further rely on full-prompt rewrites or unstructured merges, resulting in knowledge loss. These limitations are magnified in research-coding workflows, which involve heterogeneous repositories, underspecified environments, and weak feedback, where reproducing results from public codebases is an established evaluation regime. We introduce Reflective Evolving Research Engineer (REVERE), a framework that continuously l",
+  "queries": [
+   "q03"
+  ]
+ },
+ {
+  "id": "2603.18388",
+  "date": "2026-03-19",
+  "title": "Reflection in the Dark: Exposing and Escaping the Black Box in Reflective Prompt Optimization",
+  "summary": "Automatic prompt optimization (APO) has emerged as a powerful paradigm for improving LLM performance without manual prompt engineering. Reflective APO methods such as GEPA iteratively refine prompts by diagnosing failure cases, but the optimization process remains black-box and label-free, leading to uninterpretable trajectories and systematic failure. We identify and empirically demonstrate four limitations: on GSM8K with a defective seed, GEPA degrades accuracy from 23.81% to 13.50%. We propose VISTA, a multi-agent APO framework that decouples hypothesis generation from prompt rewriting, ena",
+  "queries": [
+   "q03",
+   "q08"
+  ]
+ },
+ {
+  "id": "2603.18718",
+  "date": "2026-03-19",
+  "title": "MemMA: Coordinating the Memory Cycle through Multi-Agent Reasoning and In-Situ Self-Evolution",
+  "summary": "Memory-augmented LLM agents maintain external memory banks to support long-horizon interaction, yet most existing systems treat construction, retrieval, and utilization as isolated subroutines. This creates two coupled challenges: strategic blindness on the forward path of the memory cycle, where construction and retrieval are driven by local heuristics rather than explicit strategic reasoning, and sparse, delayed supervision on the backward path, where downstream failures rarely translate into direct repairs of the memory bank. To address these challenges, we propose MemMA, a plug-and-play mu",
+  "queries": [
+   "q13"
+  ]
+ },
+ {
+  "id": "2603.18272",
+  "date": "2026-03-18",
+  "title": "Retrieval-Augmented LLM Agents: Learning to Learn from Experience",
+  "summary": "While large language models (LLMs) have advanced the development of general-purpose agents, achieving robust generalization to unseen tasks remains a significant challenge. Current approaches typically rely on either fine-tuning or training-free memory-augmented generation using retrieved experience; yet both have limitations: fine-tuning often fails to extrapolate to new tasks, while experience retrieval often underperforms compared to supervised baselines. In this work, we propose to combine these approaches and systematically study how to train retrieval-augmented LLM agents to effectively ",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2603.12631",
+  "date": "2026-03-13",
+  "title": "Collaborative Multi-Agent Optimization for Personalized Memory System",
+  "summary": "Memory systems are crucial to personalized LLMs by mitigating the context window limitation in capturing long-term user-LLM conversations. Typically, such systems leverage multiple agents to handle multi-granular memory construction and personalized memory retrieval tasks. To optimize the system, existing methods focus on specializing agents on their local tasks independently via prompt engineering or fine-tuning. However, they overlook cross-agent collaboration, where independent optimization on local agents hardly guarantees the global system performance. To address this issue, we propose a ",
+  "queries": [
+   "q01",
+   "q03",
+   "q08"
+  ]
+ },
+ {
+  "id": "2603.13017",
+  "date": "2026-03-13",
+  "title": "Structured Distillation for Personalized Agent Memory: 11x Token Reduction with Retrieval Preservation",
+  "summary": "Long conversations with an AI agent create a simple problem for one user: the history is useful, but carrying it verbatim is expensive. We study personalized agent memory: one user's conversation history with an agent, distilled into a compact retrieval layer for later search. Each exchange is compressed into a compound object with four fields (exchange_core, specific_context, thematic room_assignments, and regex-extracted files_touched). The searchable distilled text averages 38 tokens per exchange. Applied to 4,182 conversations (14,340 exchanges) from 6 software engineering projects, the me",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2603.09022",
+  "date": "2026-03-09",
+  "title": "MEMO: Memory-Augmented Model Context Optimization for Robust Multi-Turn Multi-Agent LLM Games",
+  "summary": "Multi-turn, multi-agent LLM game evaluations often exhibit substantial run-to-run variance. In long-horizon interactions, small early deviations compound across turns and are amplified by multi-agent coupling. This biases win rate estimates and makes rankings unreliable across repeated tournaments. Prompt choice worsens this further by producing different effective policies. We address both instability and underperformance with MEMO (Memory-augmented MOdel context optimization), a self-play framework that optimizes inference-time context by coupling retention and exploration. Retention maintai",
+  "queries": [
+   "q01",
+   "q08"
+  ]
+ },
+ {
+  "id": "2603.07670",
+  "date": "2026-03-08",
+  "title": "Memory for Autonomous LLM Agents:Mechanisms, Evaluation, and Emerging Frontiers",
+  "summary": "Large language model (LLM) agents increasingly operate in settings where a single context window is far too small to capture what has happened, what was learned, and what should not be repeated. Memory -- the ability to persist, organize, and selectively recall information across interactions -- is what turns a stateless text generator into a genuinely adaptive agent. This survey offers a structured account of how memory is designed, implemented, and evaluated in modern LLM-based agents, covering work from 2022 through early 2026. We formalize agent memory as a write--manage--read loop tightly",
+  "queries": [
+   "q05",
+   "q07",
+   "q12"
+  ]
+ },
+ {
+  "id": "2603.04549",
+  "date": "2026-03-04",
+  "title": "Adaptive Memory Admission Control for LLM Agents",
+  "summary": "LLM-based agents increasingly rely on long-term memory to support multi-session reasoning and interaction, yet current systems provide little control over what information is retained. In practice, agents either accumulate large volumes of conversational content, including hallucinated or obsolete facts, or depend on opaque, fully LLM-driven memory policies that are costly and difficult to audit. As a result, memory admission remains a poorly specified and weakly controlled component in agent architectures. To address this gap, we propose Adaptive Memory Admission Control (A-MAC), a framework ",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2602.22769",
+  "date": "2026-02-26",
+  "title": "AMA-Bench: Evaluating Long-Horizon Memory for Agentic Applications",
+  "summary": "Large Language Models (LLMs) are deployed as autonomous agents in increasingly complex applications, where enabling long-horizon memory is critical for achieving strong performance. However, a significant gap exists between practical applications and current evaluation standards for agent memory: existing benchmarks primarily focus on dialogue-centric, human-agent interactions. In reality, agent memory consists of a continuous stream of agent-environment interactions that are primarily composed of machine-generated representations. To bridge this gap, we introduce AMA-Bench (Agent Memory with ",
+  "queries": [
+   "q03",
+   "q04",
+   "q07",
+   "q12",
+   "q15"
+  ]
+ },
+ {
+  "id": "2602.21611",
+  "date": "2026-02-25",
+  "title": "Structurally Aligned Subtask-Level Memory for Software Engineering Agents",
+  "summary": "Large Language Models (LLMs) have demonstrated significant potential as autonomous software engineering (SWE) agents. Recent work has further explored augmenting these agents with memory mechanisms to support long-horizon reasoning. However, these approaches typically operate at a coarse instance granularity, treating the entire problem-solving episode as the atomic unit of storage and retrieval. We empirically demonstrate that instance-level memory suffers from a fundamental granularity mismatch, resulting in misguided retrieval when tasks with similar surface descriptions require distinct re",
+  "queries": [
+   "q06"
+  ]
+ },
+ {
+  "id": "2602.16313",
+  "date": "2026-02-18",
+  "title": "MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks",
+  "summary": "Existing evaluations of agents with memory typically assess memorization and action in isolation. One class of benchmarks evaluates memorization by testing recall of past conversations or text but fails to capture how memory is used to guide future decisions. Another class focuses on agents acting in single-session tasks without the need for long-term memory. However, in realistic settings, memorization and action are tightly coupled: agents acquire memory while interacting with the environment, and subsequently rely on that memory to solve future tasks. To capture this setting, we introduce M",
+  "queries": [
+   "q03",
+   "q04",
+   "q05",
+   "q07",
+   "q13",
+   "q15"
+  ]
+ },
+ {
+  "id": "2602.16493",
+  "date": "2026-02-18",
+  "title": "MMA: Multimodal Memory Agent",
+  "summary": "Long-horizon multimodal agents depend on external memory; however, similarity-based retrieval often surfaces stale, low-credibility, or conflicting items, which can trigger overconfident errors. We propose Multimodal Memory Agent (MMA), which assigns each retrieved memory item a dynamic reliability score by combining source credibility, temporal decay, and conflict-aware network consensus, and uses this signal to reweight evidence and abstain when support is insufficient. We also introduce MMA-Bench, a programmatically generated benchmark for belief dynamics with controlled speaker reliability",
+  "queries": [
+   "q07",
+   "q15"
+  ]
+ },
+ {
+  "id": "2602.08837",
+  "date": "2026-02-09",
+  "title": "AMEM4Rec: Leveraging Cross-User Similarity for Memory Evolution in Agentic LLM Recommenders",
+  "summary": "Agentic systems powered by Large Language Models (LLMs) have shown strong potential in recommender systems but remain hindered by several challenges. Fine-tuning LLMs is parameter-inefficient, and prompt-based agentic reasoning is limited by context length and hallucination risk. Moreover, existing agentic recommendation systems predominantly leverages semantic knowledge while neglecting the collaborative filtering (CF) signals essential for implicit preference modeling. To address these limitations, we propose AMEM4Rec, an agentic LLM-based recommender that learns collaborative signals in an ",
+  "queries": [
+   "q08"
+  ]
+ },
+ {
+  "id": "2602.07398",
+  "date": "2026-02-07",
+  "title": "AgentSys: Secure and Dynamic LLM Agents Through Explicit Hierarchical Memory Management",
+  "summary": "Indirect prompt injection threatens LLM agents by embedding malicious instructions in external content, enabling unauthorized actions and data theft. LLM agents maintain working memory through their context window, which stores interaction history for decision-making. Conventional agents indiscriminately accumulate all tool outputs and reasoning traces in this memory, creating two critical vulnerabilities: (1) injected instructions persist throughout the workflow, granting attackers multiple opportunities to manipulate behavior, and (2) verbose, non-essential content degrades decision-making c",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2603.03296",
+  "date": "2026-02-06",
+  "title": "PlugMem: A Task-Agnostic Plugin Memory Module for LLM Agents",
+  "summary": "Long-term memory is essential for large language model (LLM) agents operating in complex environments, yet existing memory designs are either task-specific and non-transferable, or task-agnostic but less effective due to low task-relevance and context explosion from raw memory retrieval. We propose PlugMem, a task-agnostic plugin memory module that can be attached to arbitrary LLM agents without task-specific redesign. Motivated by the fact that decision-relevant information is concentrated as abstract knowledge rather than raw experience, we draw on cognitive science to structure episodic mem",
+  "queries": [
+   "q04"
+  ]
+ },
+ {
+  "id": "2602.17692",
+  "date": "2026-02-06",
+  "title": "Agentic Unlearning: When LLM Agent Meets Machine Unlearning",
+  "summary": "In this paper, we introduce agentic unlearning which removes specified information from both model parameters and persistent memory in agents with closed-loop interaction. Existing unlearning methods target parameters alone, leaving two critical gaps: (i) parameter-memory backflow, where retrieval reactivates parametric remnants or memory artifacts reintroduce sensitive content, and (ii) the absence of a unified strategy that covers both parameter and memory pathways. We present Synchronized Backflow Unlearning (SBU), a framework that unlearns jointly across parameter and memory pathways. The ",
+  "queries": [
+   "q05"
+  ]
+ },
+ {
+  "id": "2602.04284",
+  "date": "2026-02-04",
+  "title": "Agent-Omit: Training Efficient LLM Agents for Adaptive Thought and Observation Omission via Agentic Reinforcement Learning",
+  "summary": "Managing agent thought and observation during multi-turn agent-environment interactions is an emerging strategy to improve agent efficiency. However, existing studies treat the entire interaction trajectories equally, overlooking the thought necessity and observation utility varies across turns. To this end, we first conduct quantitative investigations into how thought and observation affect agent effectiveness and efficiency. Based on our findings, we propose Agent-Omit, a unified training framework that empowers LLM agents to adaptively omit redundant thoughts and observations. Specifically,",
+  "queries": [
+   "q05"
+  ]
+ },
+ {
+  "id": "2603.00026",
+  "date": "2026-02-04",
+  "title": "ActMem: Bridging the Gap Between Memory Retrieval and Reasoning in LLM Agents",
+  "summary": "Effective memory management is essential for large language model (LLM) agents handling long-term interactions. Current memory frameworks typically treat agents as passive \"recorders\" and retrieve information without understanding its deeper implications. They may fail in scenarios requiring conflict detection and complex decision-making. To bridge this critical gap, we propose a novel actionable memory framework called ActMem that integrates memory retrieval with active causal reasoning. ActMem transforms unstructured dialogue history into a structured causal and semantic graph. By leveraging",
+  "queries": [
+   "q06"
+  ]
+ },
+ {
+  "id": "2602.03036",
+  "date": "2026-02-03",
+  "title": "LatentMem: Customizing Latent Memory for Multi-Agent Systems",
+  "summary": "Large language model (LLM)-powered multi-agent systems (MAS) demonstrate remarkable collective intelligence, wherein multi-agent memory serves as a pivotal mechanism for continual adaptation. However, existing multi-agent memory designs remain constrained by two fundamental bottlenecks: (i) memory homogenization arising from the absence of role-aware customization, and (ii) information overload induced by excessively fine-grained memory entries. To address these limitations, we propose LatentMem, a learnable multi-agent memory framework designed to customize agent-specific memories in a token-",
+  "queries": [
+   "q01"
+  ]
+ },
+ {
+  "id": "2602.03315",
+  "date": "2026-02-03",
+  "title": "Memora: A Harmonic Memory Representation Balancing Abstraction and Specificity",
+  "summary": "Agent memory systems must accommodate continuously growing information while supporting efficient, context-aware retrieval for downstream tasks. Abstraction is essential for scaling agent memory, yet it often comes at the cost of specificity, obscuring the fine-grained details required for effective reasoning. We introduce Memora, a harmonic memory representation that structurally balances abstraction and specificity. Memora organizes information via its primary abstractions that index concrete memory values and consolidate related updates into unified memory entries, while cue anchors expand ",
+  "queries": [
+   "q04",
+   "q06",
+   "q12"
+  ]
+ },
+ {
+  "id": "2602.03955",
+  "date": "2026-02-03",
+  "title": "AgentArk: Distilling Multi-Agent Intelligence into a Single LLM Agent",
+  "summary": "While large language model (LLM) multi-agent systems achieve superior reasoning performance through iterative debate, practical deployment is limited by their high computational cost and error propagation. This paper proposes AgentArk, a novel framework to distill multi-agent dynamics into the weights of a single model, effectively transforming explicit test-time interactions into implicit model capabilities. This equips a single agent with the intelligence of multi-agent systems while remaining computationally efficient. Specifically, we investigate three hierarchical distillation strategies ",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2602.06075",
+  "date": "2026-02-03",
+  "title": "MemGUI-Bench: Benchmarking Memory of Mobile GUI Agents in Dynamic Environments",
+  "summary": "Current mobile GUI agent benchmarks systematically fail to assess memory capabilities, with only 5.2-11.8% memory-related tasks and no cross-session learning evaluation. We introduce MemGUI-Bench, a comprehensive memory-centric benchmark with pass@k and staged LLM-as-judge evaluation. Our contributions include: (1) a systematic memory taxonomy analyzing 11 agents across 5 architectures; (2) 128 tasks across 26 applications where 89.8% challenge memory through cross-temporal and cross-spatial retention; (3) MemGUI-Eval, an automated pipeline with Progressive Scrutiny and 7 hierarchical metrics;",
+  "queries": [
+   "q13"
+  ]
+ },
+ {
+  "id": "2602.02007",
+  "date": "2026-02-02",
+  "title": "Beyond RAG for Agent Memory: Retrieval by Decoupling and Aggregation",
+  "summary": "Agent memory systems often adopt the standard Retrieval-Augmented Generation (RAG) pipeline, yet its underlying assumptions differ in this setting. RAG targets large, heterogeneous corpora where retrieved passages are diverse, whereas agent memory is a bounded, coherent dialogue stream with highly correlated spans that are often duplicates. Under this shift, fixed top-k similarity retrieval tends to return redundant context, and post-hoc pruning can delete temporally linked prerequisites needed for correct reasoning. We argue retrieval should move beyond similarity matching and instead operate",
+  "queries": [
+   "q04",
+   "q12"
+  ]
+ },
+ {
+  "id": "2602.01395",
+  "date": "2026-02-01",
+  "title": "Rethinking Selective Knowledge Distillation",
+  "summary": "Growing efforts to improve knowledge distillation (KD) in large language models (LLMs) replace dense teacher supervision with selective distillation, which uses a subset of token positions, vocabulary classes, or training samples for supervision. However, it remains unclear which importance signals, selection policies, and their interplay are most effective. In this work, we revisit where and how to distill in autoregressive LLMs. We disentangle selective KD along the position, class, and sample axes and systematically compare importance signals and selection policies. Then, guided by this ana",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2506.00641",
+  "date": "2026-01-31",
+  "title": "AgentAuditor: Human-Level Safety and Security Evaluation for LLM Agents",
+  "summary": "Despite the rapid advancement of LLM-based agents, the reliable evaluation of their safety and security remains a significant challenge. Existing rule-based or LLM-based evaluators often miss dangers in agents' step-by-step actions, overlook subtle meanings, fail to see how small issues compound, and get confused by unclear safety or security rules. To overcome this evaluation crisis, we introduce AgentAuditor, a universal, training-free, memory-augmented reasoning framework that empowers LLM evaluators to emulate human expert evaluators. AgentAuditor constructs an experiential memory by havin",
+  "queries": [
+   "q05"
+  ]
+ },
+ {
+  "id": "2601.23014",
+  "date": "2026-01-30",
+  "title": "Mem-T: Densifying Rewards for Long-Horizon Memory Agents",
+  "summary": "Memory agents, which depart from predefined memory-processing pipelines by endogenously managing the processing, storage, and retrieval of memories, have garnered increasing attention for their autonomy and adaptability. However, existing training paradigms remain constrained: agents often traverse long-horizon sequences of memory operations before receiving sparse and delayed rewards, which hinders truly end-to-end optimization of memory management policies. To address this limitation, we introduce Mem-T, an autonomous memory agent that interfaces with a lightweight hierarchical memory databa",
+  "queries": [
+   "q03",
+   "q13"
+  ]
+ },
+ {
+  "id": "2601.21468",
+  "date": "2026-01-29",
+  "title": "MemOCR: Layout-Aware Visual Memory for Efficient Long-Horizon Reasoning",
+  "summary": "Long-horizon agentic reasoning necessitates effectively compressing growing interaction histories into a limited context window. Most existing memory systems serialize history as text, where token-level cost is uniform and scales linearly with length, often spending scarce budget on low-value details. To this end, we introduce MemOCR, a multimodal memory agent that improves long-horizon reasoning under tight context budgets by allocating memory space with adaptive information density through visual layout. Concretely, MemOCR maintains a structured rich-text memory (e.g., headings, highlights) ",
+  "queries": [
+   "q06"
+  ]
+ },
+ {
+  "id": "2601.21557",
+  "date": "2026-01-29",
+  "title": "Meta Context Engineering via Agentic Skill Evolution",
+  "summary": "The operational efficacy of large language models relies heavily on their inference-time context. This has established Context Engineering (CE) as a formal discipline for optimizing these inputs. Current CE methods rely on manually crafted harnesses, such as rigid generation-reflection workflows and predefined context schemas. They impose structural biases and restrict context optimization to a narrow, intuition-bound design space. To address this, we introduce Meta Context Engineering (MCE), a bi-level framework that supersedes static CE heuristics by co-evolving CE skills and context artifac",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2601.20352",
+  "date": "2026-01-28",
+  "title": "AMA: Adaptive Memory via Multi-Agent Collaboration",
+  "summary": "The rapid evolution of Large Language Model (LLM) agents has necessitated robust memory systems to support cohesive long-term interaction and complex reasoning. Benefiting from the strong capabilities of LLMs, recent research focus has shifted from simple context extension to the development of dedicated agentic memory systems. However, existing approaches typically rely on rigid retrieval granularity, accumulation-heavy maintenance strategies, and coarse-grained update mechanisms. These design choices create a persistent mismatch between stored information and task-specific reasoning demands,",
+  "queries": [
+   "q04",
+   "q06",
+   "q12"
+  ]
+ },
+ {
+  "id": "2601.20465",
+  "date": "2026-01-28",
+  "title": "BMAM: Brain-inspired Multi-Agent Memory Framework",
+  "summary": "Language-model-based agents operating over extended interaction horizons face persistent challenges in preserving temporally grounded information and maintaining behavioral consistency across sessions, a failure mode we term soul erosion. We present BMAM (Brain-inspired Multi-Agent Memory), a general-purpose memory architecture that models agent memory as a set of functionally specialized subsystems rather than a single unstructured store. Inspired by cognitive memory systems, BMAM decomposes memory into episodic, semantic, salience-aware, and control-oriented components that operate at comple",
+  "queries": [
+   "q05"
+  ]
+ },
+ {
+  "id": "2601.18642",
+  "date": "2026-01-26",
+  "title": "FadeMem: Biologically-Inspired Forgetting for Efficient Agent Memory",
+  "summary": "Large language models deployed as autonomous agents face critical memory limitations, lacking selective forgetting mechanisms that lead to either catastrophic forgetting at context boundaries or information overload within them. While human memory naturally balances retention and forgetting through adaptive decay processes, current AI systems employ binary retention strategies that preserve everything or lose it entirely. We propose FadeMem, a biologically-inspired agent memory architecture that incorporates active forgetting mechanisms mirroring human cognitive efficiency. FadeMem implements ",
+  "queries": [
+   "q05"
+  ]
+ },
+ {
+  "id": "2601.11653",
+  "date": "2026-01-15",
+  "title": "AI Agents Need Memory Control Over More Context",
+  "summary": "AI agents are increasingly used in long, multi-turn workflows in both research and enterprise settings. As interactions grow, agent behavior often degrades due to loss of constraint focus, error accumulation, and memory-induced drift. This problem is especially visible in real-world deployments where context evolves, distractions are introduced, and decisions must remain consistent over time. A common practice is to equip agents with persistent memory through transcript replay or retrieval-based mechanisms. While convenient, these approaches introduce unbounded context growth and are vulnerabl",
+  "queries": [
+   "q05",
+   "q07"
+  ]
+ },
+ {
+  "id": "2602.06052",
+  "date": "2026-01-14",
+  "title": "Rethinking Memory Mechanisms of Foundation Agents in the Second Half: A Survey",
+  "summary": "The research of artificial intelligence is undergoing a paradigm shift from prioritizing model innovations over benchmark scores towards emphasizing problem definition and rigorous real-world evaluation. As the field enters the \"second half,\" the central challenge becomes real utility in long-horizon, dynamic, and user-dependent environments, where agents face context explosion and must continuously accumulate, manage, and selectively reuse large volumes of information across extended interactions. Memory, with hundreds of papers released this year, therefore emerges as the critical solution t",
+  "queries": [
+   "q01",
+   "q07"
+  ]
+ },
+ {
+  "id": "2601.09113",
+  "date": "2026-01-14",
+  "title": "The AI Hippocampus: How Far are We From Human Memory?",
+  "summary": "Memory plays a foundational role in augmenting the reasoning, adaptability, and contextual fidelity of modern Large Language Models and Multi-Modal LLMs. As these models transition from static predictors to interactive systems capable of continual learning and personalized inference, the incorporation of memory mechanisms has emerged as a central theme in their architectural and functional evolution. This survey presents a comprehensive and structured synthesis of memory in LLMs and MLLMs, organizing the literature into a cohesive taxonomy comprising implicit, explicit, and agentic memory para",
+  "queries": [
+   "q04"
+  ]
+ },
+ {
+  "id": "2601.19935",
+  "date": "2026-01-13",
+  "title": "Mem2ActBench: A Benchmark for Evaluating Long-Term Memory Utilization in Task-Oriented Autonomous Agents",
+  "summary": "Large Language Model (LLM)-based agents are increasingly deployed for complex, tool-based tasks where long-term memory is critical to driving actions. Existing benchmarks, however, primarily test a angent's ability to passively retrieve isolated facts in response to explicit questions. They fail to evaluate the more crucial capability of actively applying memory to execute tasks. To address this gap, we introduce Mem2ActBench, a benchmark for evaluating whether agents can proactively leverage long-term memory to execute tool-based actions by selecting appropriate tools and grounding their para",
+  "queries": [
+   "q07"
+  ]
+ },
+ {
+  "id": "2601.08323",
+  "date": "2026-01-13",
+  "title": "AtomMem : Learnable Dynamic Agentic Memory with Atomic Memory Operation",
+  "summary": "Equipping agents with memory is essential for solving real-world long-horizon problems. However, most existing agent memory mechanisms rely on static and hand-crafted workflows. This limits the performance and generalization ability of these memory designs, which highlights the need for a more flexible, learning-based memory framework. In this paper, we propose AtomMem, which reframes memory management as a dynamic decision-making problem. We deconstruct high-level memory processes into fundamental atomic CRUD (Create, Read, Update, Delete) operations, transforming the memory workflow into a l",
+  "queries": [
+   "q13"
+  ]
+ },
+ {
+  "id": "2508.08997",
+  "date": "2026-01-12",
+  "title": "Intrinsic Memory Agents: Heterogeneous Multi-Agent LLM Systems through Structured Contextual Memory",
+  "summary": "Multi-agent systems built on Large Language Models (LLMs) show exceptional promise for complex collaborative problem-solving, yet they face fundamental challenges stemming from context window limitations that impair memory consistency, role adherence, and procedural integrity. This paper introduces Intrinsic Memory Agents, a novel framework that addresses these limitations through agent-specific memories that evolve intrinsically with agent outputs. Specifically, our method maintains role-aligned memory that preserves specialized perspectives while focusing on task-relevant information. Our ap",
+  "queries": [
+   "q01",
+   "q03",
+   "q04",
+   "q05",
+   "q08",
+   "q15"
+  ]
+ },
+ {
+  "id": "2601.08079",
+  "date": "2026-01-12",
+  "title": "MemoBrain: Executive Memory as an Agentic Brain for Reasoning",
+  "summary": "Complex reasoning in tool-augmented agent frameworks is inherently long-horizon, causing reasoning traces and transient tool artifacts to accumulate and strain the bounded working context of large language models. Without explicit memory mechanisms, such accumulation disrupts logical continuity and undermines task alignment. This positions memory not as an auxiliary efficiency concern, but as a core component for sustaining coherent, goal-directed reasoning over long horizons.\n  We propose MemoBrain, an executive memory model for tool-augmented agents that constructs a dependency-aware memory ",
+  "queries": [
+   "q06"
+  ]
+ },
+ {
+  "id": "2601.06490",
+  "date": "2026-01-10",
+  "title": "Bi-Mem: Bidirectional Construction of Hierarchical Memory for Personalized LLMs via Inductive-Reflective Agents",
+  "summary": "Constructing memory from users' long-term conversations overcomes LLMs' contextual limitations and enables personalized interactions. Recent studies focus on hierarchical memory to model users' multi-granular behavioral patterns via clustering and aggregating historical conversations. However, conversational noise and memory hallucinations can be amplified during clustering, causing locally aggregated memories to misalign with the user's global persona. To mitigate this issue, we propose Bi-Mem, an agentic framework ensuring hierarchical memory fidelity through bidirectional construction. Spec",
+  "queries": [
+   "q03"
+  ]
+ },
+ {
+  "id": "2601.05107",
+  "date": "2026-01-08",
+  "title": "Controllable Memory Usage: Balancing Anchoring and Innovation in Long-Term Human-Agent Interaction",
+  "summary": "As LLM-based agents are increasingly used in long-term interactions, cumulative memory is critical for enabling personalization and maintaining stylistic consistency. However, most existing systems adopt an ``all-or-nothing'' approach to memory usage: incorporating all relevant past information can lead to Memory Anchoring, where the agent is trapped by past interactions, while excluding memory entirely results in under-utilization and the loss of important interaction history. We show that an agent's reliance on memory can be modeled as an explicit and user-controllable dimension. We first in",
+  "queries": [
+   "q01",
+   "q07",
+   "q08",
+   "q12"
+  ]
+ },
+ {
+  "id": "2601.06152",
+  "date": "2026-01-06",
+  "title": "HiMeS: Hippocampus-inspired Memory System for Personalized AI Assistants",
+  "summary": "Large language models (LLMs) power many interactive systems such as chatbots, customer-service agents, and personal assistants. In knowledge-intensive scenarios requiring user-specific personalization, conventional retrieval-augmented generation (RAG) pipelines exhibit limited memory capacity and insufficient coordination between retrieval mechanisms and user-specific conversational history, leading to redundant clarification, irrelevant documents, and degraded user experience. Inspired by the hippocampus-neocortex memory mechanism, we propose HiMeS, an AI-assistant architecture that fuses sho",
+  "queries": [
+   "q11",
+   "q12"
+  ]
+ },
+ {
+  "id": "2601.01885",
+  "date": "2026-01-05",
+  "title": "Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents",
+  "summary": "Large language model (LLM) agents face fundamental limitations in long-horizon reasoning due to finite context windows, making effective memory management critical. Existing methods typically handle long-term memory (LTM) and short-term memory (STM) as separate components, relying on heuristics or auxiliary controllers, which limits adaptability and end-to-end optimization. In this paper, we propose Agentic Memory (AgeMem), a unified framework that integrates LTM and STM management directly into the agent's policy. AgeMem exposes memory operations as tool-based actions, enabling the LLM agent ",
+  "queries": [
+   "q15"
+  ]
+ },
+ {
+  "id": "2512.23343",
+  "date": "2025-12-29",
+  "title": "AI Meets Brain: Memory Systems from Cognitive Neuroscience to Autonomous Agents",
+  "summary": "Memory serves as the pivotal nexus bridging past and future, providing both humans and AI systems with invaluable concepts and experience to navigate complex tasks. Recent research on autonomous agents has increasingly focused on designing efficient memory workflows by drawing on cognitive neuroscience. However, constrained by interdisciplinary barriers, existing works struggle to assimilate the essence of human memory mechanisms. To bridge this gap, we systematically synthesizes interdisciplinary knowledge of memory, connecting insights from cognitive neuroscience with LLM-driven agents. Spec",
+  "queries": [
+   "q07"
+  ]
+ },
+ {
+  "id": "2512.20237",
+  "date": "2025-12-23",
+  "title": "MemR^3: Memory Retrieval via Reflective Reasoning for LLM Agents",
+  "summary": "Memory systems have been designed to leverage past experiences in Large Language Model (LLM) agents. However, many deployed memory systems primarily optimize compression and storage, with comparatively less emphasis on explicit, closed-loop control of memory retrieval. From this observation, we build memory retrieval as an autonomous, accurate, and compatible agent system, named MemR^3, which has two core mechanisms: 1) a router that selects among retrieve, reflect, and answer actions to optimize answer quality; 2) a global evidence-gap tracker that explicitly renders the answering process tra",
+  "queries": [
+   "q04"
+  ]
+ },
+ {
+  "id": "2512.18746",
+  "date": "2025-12-21",
+  "title": "MemEvolve: Meta-Evolution of Agent Memory Systems",
+  "summary": "Self-evolving memory systems are unprecedentedly reshaping the evolutionary paradigm of large language model (LLM)-based agents. Prior work has predominantly relied on manually engineered memory architectures to store trajectories, distill experience, and synthesize reusable tools, enabling agents to evolve on the fly within environment interactions. However, this paradigm is fundamentally constrained by the staticity of the memory system itself: while memory facilitates agent-level evolving, the underlying memory architecture cannot be meta-adapted to diverse task contexts. To address this ga",
+  "queries": [
+   "q05"
+  ]
+ },
+ {
+  "id": "2512.13564",
+  "date": "2025-12-15",
+  "title": "Memory in the Age of AI Agents",
+  "summary": "Memory has emerged, and will continue to remain, a core capability of foundation model-based agents. As research on agent memory rapidly expands and attracts unprecedented attention, the field has also become increasingly fragmented. Existing works that fall under the umbrella of agent memory often differ substantially in their motivations, implementations, and evaluation protocols, while the proliferation of loosely defined memory terminologies has further obscured conceptual clarity. Traditional taxonomies such as long/short-term memory have proven insufficient to capture the diversity of co",
+  "queries": [
+   "q01",
+   "q05",
+   "q07",
+   "q12",
+   "q15"
+  ]
+ },
+ {
+  "id": "2512.12856",
+  "date": "2025-12-14",
+  "title": "Forgetful but Faithful: A Cognitive Memory Architecture and Benchmark for Privacy-Aware Generative Agents",
+  "summary": "As generative agents become increasingly sophisticated and deployed in long-term interactive scenarios, their memory management capabilities emerge as a critical bottleneck for both performance and privacy. Current approaches either maintain unlimited memory stores, leading to computational intractability and privacy concerns, or employ simplistic forgetting mechanisms that compromise agent coherence and functionality. This paper introduces the Memory-Aware Retention Schema (MaRS), a novel framework for human-centered memory management in generative agents, coupled with six theoretically-groun",
+  "queries": [
+   "q05"
+  ]
+ },
+ {
+  "id": "2512.12818",
+  "date": "2025-12-14",
+  "title": "Hindsight is 20/20: Building Agent Memory that Retains, Recalls, and Reflects",
+  "summary": "Agent memory has been touted as a dimension of growth for LLM-based applications, enabling agents that can accumulate experience, adapt across sessions, and move beyond single-shot question answering. The current generation of agent memory systems treats memory as an external layer that extracts salient snippets from conversations, stores them in vector or graph-based stores, and retrieves top-k items into the prompt of an otherwise stateless model. While these systems improve personalization and context carry-over, they still blur the line between evidence and inference, struggle to organize ",
+  "queries": [
+   "q06"
+  ]
+ },
+ {
+  "id": "2512.02543",
+  "date": "2025-12-02",
+  "title": "In-Context Distillation with Self-Consistency Cascades: A Simple, Training-Free Way to Reduce LLM Agent Costs",
+  "summary": "The world currently has an abundance of ideas for how to use new LLM agents, and developers seek to rapidly prototype and test new agentic designs. However, executing agents at scale using high-capacity LLMs incurs high inference costs. We propose a simple method for reducing LLM agent inference costs without incurring the development friction costs associated with LLM fine-tuning (long training cycles, optimization hyperparameter tweaking loops) or manual prompt engineering (laborious trial and error). Most importantly, we introduce in-context distillation, which adapts the idea of knowledge ",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2512.01945",
+  "date": "2025-12-01",
+  "title": "Agentic Policy Optimization via Instruction-Policy Co-Evolution",
+  "summary": "Reinforcement Learning with Verifiable Rewards (RLVR) has advanced the reasoning capability of large language models (LLMs), enabling autonomous agents that can conduct effective multi-turn and tool-integrated reasoning. While instructions serve as the primary protocol for defining agents, RLVR typically relies on static and manually designed instructions. However, those instructions may be suboptimal for the base model, and the optimal instruction may change as the agent's policy improves and explores the interaction with the environment. To bridge the gap, we introduce INSPO, a novel Instruc",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2511.18423",
+  "date": "2025-11-23",
+  "title": "General Agentic Memory Via Deep Research",
+  "summary": "Memory is critical for AI agents, yet the widely-adopted static memory, aiming to create readily available memory in advance, is inevitably subject to severe information loss. To address this limitation, we propose a novel framework called general agentic memory (GAM). GAM follows the principle of \"just-in time (JIT) compilation\" where it focuses on creating optimized contexts for its client at runtime while keeping only simple but useful memory during the offline stage. To this end, GAM employs a duo-design with the following components. 1) Memorizer, which highlights key historical informati",
+  "queries": [
+   "q01",
+   "q03"
+  ]
+ },
+ {
+  "id": "2511.17839",
+  "date": "2025-11-21",
+  "title": "Show Me: Unifying Instructional Image and Video Generation with Diffusion Models",
+  "summary": "Generating visual instructions in a given context is essential for developing interactive world simulators. While prior works address this problem through either text-guided image manipulation or video prediction, these tasks are typically treated in isolation. This separation reveals a fundamental issue: image manipulation methods overlook how actions unfold over time, while video prediction models often ignore the intended outcomes. To this end, we propose ShowMe, a unified framework that enables both tasks by selectively activating the spatial and temporal components of video diffusion mode",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2510.27684",
+  "date": "2025-10-31",
+  "title": "Phased DMD: Few-step Distribution Matching Distillation via Score\n  Matching within Subintervals",
+  "summary": "Distribution Matching Distillation (DMD) distills score-based generative\nmodels into efficient one-step generators, without requiring a one-to-one\ncorrespondence with the sampling trajectories of their teachers. However,\nlimited model capacity causes one-step distilled models underperform on complex\ngenerative tasks, e.g., synthesizing intricate object motions in text-to-video\ngeneration. Directly extending DMD to multi-step distillation increases memory\nusage and computational depth, leading to instability and reduced efficiency.\nWhile prior works propose stochastic gradient truncation as a p",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2510.16932",
+  "date": "2025-10-19",
+  "title": "Prompt-MII: Meta-Learning Instruction Induction for LLMs",
+  "summary": "A popular method to adapt large language models (LLMs) to new tasks is\nin-context learning (ICL), which is effective but incurs high inference costs\nas context length grows. In this paper we propose a method to perform\ninstruction induction, where we take training examples and reduce them to a\ncompact but descriptive prompt that can achieve performance comparable to ICL\nover the full training set. Specifically, we propose PROMPT-MII, a\nreinforcement learning (RL) based framework to meta-learn an instruction\ninduction model that can generate compact instructions on the fly for an\narbitrary new ",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2510.16724",
+  "date": "2025-10-19",
+  "title": "A Comprehensive Survey on Reinforcement Learning-based Agentic Search: Foundations, Roles, Optimizations, Evaluations, and Applications",
+  "summary": "The advent of large language models (LLMs) has transformed information access and reasoning through open-ended natural language interaction. However, LLMs remain limited by static knowledge, factual hallucinations, and the inability to retrieve real-time or domain-specific information. Retrieval-Augmented Generation (RAG) mitigates these issues by grounding model outputs in external evidence, but traditional RAG pipelines are often single turn and heuristic, lacking adaptive control over retrieval and reasoning. Recent advances in agentic search address these limitations by enabling LLMs to pl",
+  "queries": [
+   "q12"
+  ]
+ },
+ {
+  "id": "2510.09720",
+  "date": "2025-10-10",
+  "title": "Preference-Aware Memory Update for Long-Term LLM Agents",
+  "summary": "One of the key factors influencing the reasoning capabilities of LLM-based agents is their ability to leverage long-term memory. Integrating long-term memory mechanisms allows agents to make informed decisions grounded in historical interactions. While recent advances have significantly improved the storage and retrieval components, by encoding memory into dense vectors for similarity search or organizing memory as structured knowledge graphs most existing approaches fall short in memory updating. In particular, they lack mechanisms for dynamically refining preference memory representations in",
+  "queries": [
+   "q06"
+  ]
+ },
+ {
+  "id": "2510.00444",
+  "date": "2025-10-01",
+  "title": "TokMem: Tokenized Procedural Memory for Large Language Models",
+  "summary": "Large language models rely heavily on prompts to specify tasks, recall knowledge and guide reasoning. However, this reliance is inefficient as prompts must be re-read at each step, scale poorly across tasks, and lack mechanisms for modular reuse. We introduce TokMem, a tokenized procedural memory that stores recurring procedures as compact, trainable embeddings. Each memory token encodes both an address to a procedure and a control signal that steers generation, enabling targeted behavior with constant-size overhead. To support continual adaptation, TokMem keeps the backbone model frozen, allo",
+  "queries": [
+   "q02",
+   "q04"
+  ]
+ },
+ {
+  "id": "2510.01353",
+  "date": "2025-10-01",
+  "title": "MEMTRACK: Evaluating Long-Term Memory and State Tracking in\n  Multi-Platform Dynamic Agent Environments",
+  "summary": "Recent works on context and memory benchmarking have primarily focused on\nconversational instances but the need for evaluating memory in dynamic\nenterprise environments is crucial for its effective application. We introduce\nMEMTRACK, a benchmark designed to evaluate long-term memory and state tracking\nin multi-platform agent environments. MEMTRACK models realistic organizational\nworkflows by integrating asynchronous events across multiple communication and\nproductivity platforms such as Slack, Linear and Git. Each benchmark instance\nprovides a chronologically platform-interleaved timeline, wit",
+  "queries": [
+   "q13"
+  ]
+ },
+ {
+  "id": "2509.25140",
+  "date": "2025-09-29",
+  "title": "ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory",
+  "summary": "With the growing adoption of large language model agents in persistent\nreal-world roles, they naturally encounter continuous streams of tasks. A key\nlimitation, however, is their failure to learn from the accumulated interaction\nhistory, forcing them to discard valuable insights and repeat past errors. We\npropose ReasoningBank, a novel memory framework that distills generalizable\nreasoning strategies from an agent's self-judged successful and failed\nexperiences. At test time, an agent retrieves relevant memories from\nReasoningBank to inform its interaction and then integrates new learnings bac",
+  "queries": [
+   "q06"
+  ]
+ },
+ {
+  "id": "2510.02373",
+  "date": "2025-09-29",
+  "title": "A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory",
+  "summary": "Large Language Model (LLM) agents use memory to learn from past interactions,\nenabling autonomous planning and decision-making in complex environments.\nHowever, this reliance on memory introduces a critical security risk: an\nadversary can inject seemingly harmless records into an agent's memory to\nmanipulate its future behavior. This vulnerability is characterized by two core\naspects: First, the malicious effect of injected records is only activated\nwithin a specific context, making them hard to detect when individual memory\nentries are audited in isolation. Second, once triggered, the manipul",
+  "queries": [
+   "q13"
+  ]
+ },
+ {
+  "id": "2509.07098",
+  "date": "2025-09-08",
+  "title": "Instruction Agent: Enhancing Agent with Expert Demonstration",
+  "summary": "Graphical user interface (GUI) agents have advanced rapidly but still\nstruggle with complex tasks involving novel UI elements, long-horizon actions,\nand personalized trajectories. In this work, we introduce Instruction Agent, a\nGUI agent that leverages expert demonstrations to solve such tasks, enabling\ncompletion of otherwise difficult workflows. Given a single demonstration, the\nagent extracts step-by-step instructions and executes them by strictly\nfollowing the trajectory intended by the user, which avoids making mistakes\nduring execution. The agent leverages the verifier and backtracker mo",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2508.19828",
+  "date": "2025-08-27",
+  "title": "Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize\n  Memories via Reinforcement Learning",
+  "summary": "Large Language Models (LLMs) have demonstrated impressive capabilities across\na wide range of NLP tasks, but they remain fundamentally stateless, constrained\nby limited context windows that hinder long-horizon reasoning. Recent efforts\nto address this limitation often augment LLMs with an external memory bank, yet\nmost existing pipelines are static and heuristic-driven, lacking any learned\nmechanism for deciding what to store, update, or retrieve. We present\nMemory-R1, a reinforcement learning (RL) framework that equips LLMs with the\nability to actively manage and utilize external memory throu",
+  "queries": [
+   "q06"
+  ]
+ },
+ {
+  "id": "2508.15214",
+  "date": "2025-08-21",
+  "title": "Self-Guided Function Calling in Large Language Models via Stepwise Experience Recall",
+  "summary": "Function calling enables large language models (LLMs) to interact with external systems by leveraging tools and APIs. When faced with multi-step tool usage, LLMs still struggle with tool selection, parameter generation, and tool-chain planning. Existing methods typically rely on manually designing task-specific demonstrations, or retrieving from a curated library. These approaches demand substantial expert effort and prompt engineering becomes increasingly complex and inefficient as tool diversity and task difficulty scale. To address these challenges, we propose a self-guided method, Stepwise",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2508.06433",
+  "date": "2025-08-08",
+  "title": "Memp: Exploring Agent Procedural Memory",
+  "summary": "Large Language Models (LLMs) based agents excel at diverse tasks, yet they\nsuffer from brittle procedural memory that is manually engineered or entangled\nin static parameters. In this work, we investigate strategies to endow agents\nwith a learnable, updatable, and lifelong procedural memory. We propose Memp\nthat distills past agent trajectories into both fine-grained, step-by-step\ninstructions and higher-level, script-like abstractions, and explore the impact\nof different strategies for Build, Retrieval, and Update of procedural memory.\nCoupled with a dynamic regimen that continuously updates,",
+  "queries": [
+   "q04",
+   "q13"
+  ]
+ },
+ {
+  "id": "2508.02452",
+  "date": "2025-08-04",
+  "title": "LatentPrompt: Optimizing Promts in Latent Space",
+  "summary": "Recent advances have shown that optimizing prompts for Large Language Models\n(LLMs) can significantly improve task performance, yet many optimization\ntechniques rely on heuristics or manual exploration. We present LatentPrompt, a\nmodel-agnostic framework for prompt optimization that leverages latent semantic\nspace to automatically generate, evaluate, and refine candidate prompts without\nrequiring hand-crafted rules. Beginning with a set of seed prompts, our method\nembeds them in a continuous latent space and systematically explores this space\nto identify prompts that maximize task-specific per",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2507.19457",
+  "date": "2025-07-25",
+  "title": "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning",
+  "summary": "Large language models (LLMs) are increasingly adapted to downstream tasks via\nreinforcement learning (RL) methods like Group Relative Policy Optimization\n(GRPO), which often require thousands of rollouts to learn new tasks. We argue\nthat the interpretable nature of language can often provide a much richer\nlearning medium for LLMs, compared with policy gradients derived from sparse,\nscalar rewards. To test this, we introduce GEPA (Genetic-Pareto), a prompt\noptimizer that thoroughly incorporates natural language reflection to learn\nhigh-level rules from trial and error. Given any AI system conta",
+  "queries": [
+   "q03"
+  ]
+ },
+ {
+  "id": "2507.22925",
+  "date": "2025-07-23",
+  "title": "Hierarchical Memory for High-Efficiency Long-Term Reasoning in LLM\n  Agents",
+  "summary": "Long-term memory is one of the key factors influencing the reasoning\ncapabilities of Large Language Model Agents (LLM Agents). Incorporating a\nmemory mechanism that effectively integrates past interactions can\nsignificantly enhance decision-making and contextual coherence of LLM Agents.\nWhile recent works have made progress in memory storage and retrieval, such as\nencoding memory into dense vectors for similarity-based search or organizing\nknowledge in the form of graph, these approaches often fall short in structured\nmemory organization and efficient retrieval. To address these limitations, w",
+  "queries": [
+   "q04",
+   "q06",
+   "q15"
+  ]
+ },
+ {
+  "id": "2507.14241",
+  "date": "2025-07-17",
+  "title": "Promptomatix: An Automatic Prompt Optimization Framework for Large\n  Language Models",
+  "summary": "Large Language Models (LLMs) perform best with well-crafted prompts, yet\nprompt engineering remains manual, inconsistent, and inaccessible to\nnon-experts. We introduce Promptomatix, an automatic prompt optimization\nframework that transforms natural language task descriptions into high-quality\nprompts without requiring manual tuning or domain expertise. Promptomatix\nsupports both a lightweight meta-prompt-based optimizer and a DSPy-powered\ncompiler, with modular design enabling future extension to more advanced\nframeworks. The system analyzes user intent, generates synthetic training data,\nsele",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2507.06968",
+  "date": "2025-07-09",
+  "title": "Scaling Towards the Information Boundary of Instruction Set: InfinityInstruct-Subject Technical Report",
+  "summary": "Instruction tuning has become a foundation for unlocking the capabilities of large-scale pretrained models and improving their performance on complex tasks. Thus, the construction of high-quality instruction datasets is crucial for enhancing model performance and generalizability. Although current instruction datasets have reached tens of millions of samples, models finetuned on them may still struggle with complex instruction following and tasks in rare domains. This is primarily due to limited expansion in both ``coverage'' (coverage of task types and knowledge areas) and ``depth'' (instruct",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2507.08038",
+  "date": "2025-07-09",
+  "title": "AblationBench: Evaluating Automated Planning of Ablations in Empirical\n  AI Research",
+  "summary": "Autonomous agents built on language models (LMs) are showing increasing\npopularity in many fields, including scientific research. AI co-scientists aim\nto support or automate parts of the research process using these agents. A key\ncomponent of empirical AI research is the design of ablation experiments. To\nthis end, we introduce AblationBench, a benchmark suite for evaluating agents\non ablation planning tasks in empirical AI research. It includes two tasks:\nAuthorAblation, which helps authors propose ablation experiments based on a\nmethod section and contains 83 instances, and ReviewerAblation,",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2507.05257",
+  "date": "2025-07-07",
+  "title": "Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions",
+  "summary": "Recent benchmarks for Large Language Model (LLM) agents primarily focus on\nevaluating reasoning, planning, and execution capabilities, while another\ncritical component-memory, encompassing how agents memorize, update, and\nretrieve long-term information-is under-evaluated due to the lack of\nbenchmarks. We term agents with memory mechanisms as memory agents. In this\npaper, we identify four core competencies essential for memory agents: accurate\nretrieval, test-time learning, long-range understanding, and conflict\nresolution. Existing datasets either rely on limited context lengths or are\ntailore",
+  "queries": [
+   "q03",
+   "q04",
+   "q05",
+   "q06",
+   "q07",
+   "q08",
+   "q12",
+   "q13",
+   "q15"
+  ]
+ },
+ {
+  "id": "2506.17930",
+  "date": "2025-06-22",
+  "title": "Evolving Prompts In-Context: An Open-ended, Self-replicating Perspective",
+  "summary": "We propose a novel prompt design paradigm that challenges conventional wisdom\nin large language model (LLM) prompting. While conventional wisdom prioritizes\nwell-crafted instructions and demonstrations for in-context learning (ICL), we\nshow that pruning random demonstrations into seemingly incoherent \"gibberish\"\ncan remarkably improve performance across diverse tasks. Notably, the\n\"gibberish\" always matches or surpasses state-of-the-art automatic prompt\noptimization techniques, achieving substantial gains regardless of LLM\nalignment. Nevertheless, discovering an effective pruning strategy is\nn",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2506.21605",
+  "date": "2025-06-20",
+  "title": "MemBench: Towards More Comprehensive Evaluation on the Memory of LLM-based Agents",
+  "summary": "Recent works have highlighted the significance of memory mechanisms in LLM-based agents, which enable them to store observed information and adapt to dynamic environments. However, evaluating their memory capabilities still remains challenges. Previous evaluations are commonly limited by the diversity of memory levels and interactive scenarios. They also lack comprehensive metrics to reflect the memory capabilities from multiple aspects. To address these problems, in this paper, we construct a more comprehensive dataset and benchmark to evaluate the memory capability of LLM-based agents. Our d",
+  "queries": [
+   "q07",
+   "q13"
+  ]
+ },
+ {
+  "id": "2506.15841",
+  "date": "2025-06-18",
+  "title": "MEM1: Learning to Synergize Memory and Reasoning for Efficient\n  Long-Horizon Agents",
+  "summary": "Modern language agents must operate over long-horizon, multi-turn\ninteractions, where they retrieve external information, adapt to observations,\nand answer interdependent queries. Yet, most LLM systems rely on full-context\nprompting, appending all past turns regardless of their relevance. This leads\nto unbounded memory growth, increased computational costs, and degraded\nreasoning performance on out-of-distribution input lengths. We introduce MEM1,\nan end-to-end reinforcement learning framework that enables agents to operate\nwith constant memory across long multi-turn tasks. At each turn, MEM1 ",
+  "queries": [
+   "q06"
+  ]
+ },
+ {
+  "id": "2506.14728",
+  "date": "2025-06-17",
+  "title": "AgentDistill: Training-Free Agent Distillation with Generalizable MCP Boxes",
+  "summary": "While knowledge distillation has become a mature field for compressing large language models (LLMs) into smaller ones by aligning their outputs or internal representations, the distillation of LLM-based agents, which involve planning, memory, and tool use, remains relatively underexplored. Existing agent distillation methods typically replay full teacher trajectories or imitate step-by-step teacher tool usage, but they often struggle to train student agents to dynamically plan and act in novel environments. We propose AgentDistill, a novel, training-free agent distillation framework that enabl",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2506.07398",
+  "date": "2025-06-09",
+  "title": "G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems",
+  "summary": "Large language model (LLM)-powered multi-agent systems (MAS) have\ndemonstrated cognitive and execution capabilities that far exceed those of\nsingle LLM agents, yet their capacity for self-evolution remains hampered by\nunderdeveloped memory architectures. Upon close inspection, we are alarmed to\ndiscover that prevailing MAS memory mechanisms (1) are overly simplistic,\ncompletely disregarding the nuanced inter-agent collaboration trajectories, and\n(2) lack cross-trial and agent-specific customization, in stark contrast to the\nexpressive memory developed for single agents. To bridge this gap, we ",
+  "queries": [
+   "q07"
+  ]
+ },
+ {
+  "id": "2505.12831",
+  "date": "2025-05-19",
+  "title": "Contrastive Prompting Enhances Sentence Embeddings in LLMs through\n  Inference-Time Steering",
+  "summary": "Extracting sentence embeddings from large language models (LLMs) is a\npractical direction, as it requires neither additional data nor fine-tuning.\nPrevious studies usually focus on prompt engineering to guide LLMs to encode\nthe core semantic information of the sentence into the embedding of the last\ntoken. However, the last token in these methods still encodes an excess of\nnon-essential information, such as stop words, limiting its encoding capacity.\nTo this end, we propose a Contrastive Prompting (CP) method that introduces an\nextra auxiliary prompt to elicit better sentence embedding. By con",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2505.09666",
+  "date": "2025-05-14",
+  "title": "System Prompt Optimization with Meta-Learning",
+  "summary": "Large Language Models (LLMs) have shown remarkable capabilities, with\noptimizing their input prompts playing a pivotal role in maximizing their\nperformance. However, while LLM prompts consist of both the task-agnostic\nsystem prompts and task-specific user prompts, existing work on prompt\noptimization has focused on user prompts specific to individual queries or\ntasks, and largely overlooked the system prompt that is, once optimized,\napplicable across different tasks and domains. Motivated by this, we introduce\nthe novel problem of bilevel system prompt optimization, whose objective is to\ndesig",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2505.02273",
+  "date": "2025-05-04",
+  "title": "Demystifying optimized prompts in language models",
+  "summary": "Modern language models (LMs) are not robust to out-of-distribution inputs.\nMachine generated (``optimized'') prompts can be used to modulate LM outputs\nand induce specific behaviors while appearing completely uninterpretable. In\nthis work, we investigate the composition of optimized prompts, as well as the\nmechanisms by which LMs parse and build predictions from optimized prompts. We\nfind that optimized prompts primarily consist of punctuation and noun tokens\nwhich are more rare in the training data. Internally, optimized prompts are\nclearly distinguishable from natural language counterparts b",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2504.13032",
+  "date": "2025-04-17",
+  "title": "InstructRAG: Leveraging Retrieval-Augmented Generation on Instruction\n  Graphs for LLM-Based Task Planning",
+  "summary": "Recent advancements in large language models (LLMs) have enabled their use as\nagents for planning complex tasks. Existing methods typically rely on a\nthought-action-observation (TAO) process to enhance LLM performance, but these\napproaches are often constrained by the LLMs' limited knowledge of complex\ntasks. Retrieval-augmented generation (RAG) offers new opportunities by\nleveraging external databases to ground generation in retrieved information. In\nthis paper, we identify two key challenges (enlargability and transferability)\nin applying RAG to task planning. We propose InstructRAG, a novel",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2504.09037",
+  "date": "2025-04-12",
+  "title": "A Survey of Frontiers in LLM Reasoning: Inference Scaling, Learning to\n  Reason, and Agentic Systems",
+  "summary": "Reasoning is a fundamental cognitive process that enables logical inference,\nproblem-solving, and decision-making. With the rapid advancement of large\nlanguage models (LLMs), reasoning has emerged as a key capability that\ndistinguishes advanced AI systems from conventional models that empower\nchatbots. In this survey, we categorize existing methods along two orthogonal\ndimensions: (1) Regimes, which define the stage at which reasoning is achieved\n(either at inference time or through dedicated training); and (2)\nArchitectures, which determine the components involved in the reasoning\nprocess, di",
+  "queries": [
+   "q06"
+  ]
+ },
+ {
+  "id": "2504.08525",
+  "date": "2025-04-11",
+  "title": "Task Memory Engine (TME): A Structured Memory Framework with Graph-Aware\n  Extensions for Multi-Step LLM Agent Tasks",
+  "summary": "Large Language Models (LLMs) are increasingly used as autonomous agents for\nmulti-step tasks. However, most existing frameworks fail to maintain a\nstructured understanding of the task state, often relying on linear prompt\nconcatenation or shallow memory buffers. This leads to brittle performance,\nfrequent hallucinations, and poor long-range coherence. In this work, we\npropose the Task Memory Engine (TME), a lightweight and structured memory\nmodule that tracks task execution using a hierarchical Task Memory Tree (TMT).\nEach node in the tree corresponds to a task step, storing relevant input,\nou",
+  "queries": [
+   "q03"
+  ]
+ },
+ {
+  "id": "2503.16874",
+  "date": "2025-03-21",
+  "title": "MARS: A Multi-Agent Framework Incorporating Socratic Guidance for\n  Automated Prompt Optimization",
+  "summary": "The basic question-answering format of large language models involves\ninputting a prompt and receiving a response, and the quality of the prompt\ndirectly impacts the effectiveness of the response. Automated Prompt\nOptimization (APO) aims to break free from the cognitive biases of manually\ndesigned prompts and explores a broader design space for prompts. However,\nexisting APO methods suffer from limited flexibility of fixed templates and\ninefficient search in prompt spaces as key issues. To this end, we propose a\nMulti-Agent framework Incorporating Socratic guidance (MARS), which utilizes\nmulti",
+  "queries": [
+   "q01"
+  ]
+ },
+ {
+  "id": "2503.14887",
+  "date": "2025-03-19",
+  "title": "Pseudo Relevance Feedback is Enough to Close the Gap Between Small and\n  Large Dense Retrieval Models",
+  "summary": "Scaling dense retrievers to larger large language model (LLM) backbones has\nbeen a dominant strategy for improving their retrieval effectiveness. However,\nthis has substantial cost implications: larger backbones require more expensive\nhardware (e.g. GPUs with more memory) and lead to higher indexing and querying\ncosts (latency, energy consumption). In this paper, we challenge this paradigm\nby introducing PromptPRF, a feature-based pseudo-relevance feedback (PRF)\nframework that enables small LLM-based dense retrievers to achieve\neffectiveness comparable to much larger models.\n  PromptPRF uses L",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2503.13222",
+  "date": "2025-03-17",
+  "title": "Can Language Models Follow Multiple Turns of Entangled Instructions?",
+  "summary": "Despite significant achievements in improving the instruction-following\ncapabilities of large language models (LLMs), the ability to process multiple\npotentially entangled or conflicting instructions remains a considerable\nchallenge. Real-world scenarios often require consistency across multiple\ninstructions over time, such as secret privacy, personal preferences, and\nprioritization, which demand sophisticated abilities to integrate multiple\nturns and carefully balance competing objectives when instructions intersect or\nconflict. This work presents a systematic investigation of LLMs' capabilit",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2503.01611",
+  "date": "2025-03-17",
+  "title": "In-context Learning vs. Instruction Tuning: The Case of Small and Multilingual Language Models",
+  "summary": "Instruction following is a critical ability for Large Language Models to perform downstream tasks. The standard approach to instruction alignment has relied on a specific phase of model tuning over curated instruction datasets, optionally complemented with an alignment step over human preferences. Recent work has shown the potential of in-context learning (ICL) alternatives to guide base models towards instruction following. This type of approach is particularly relevant to extend instruction following across languages and models of varying sizes adapted to different types of usage. In this wo",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2503.12434",
+  "date": "2025-03-16",
+  "title": "A Survey on the Optimization of Large Language Model-based Agents",
+  "summary": "With the rapid development of Large Language Models (LLMs), LLM-based agents\nhave been widely adopted in various fields, becoming essential for autonomous\ndecision-making and interactive tasks. However, current work typically relies\non prompt design or fine-tuning strategies applied to vanilla LLMs, which often\nleads to limited effectiveness or suboptimal performance in complex\nagent-related environments. Although LLM optimization techniques can improve\nmodel performance across many general tasks, they lack specialized optimization\ntowards critical agent functionalities such as long-term plann",
+  "queries": [
+   "q01",
+   "q08"
+  ]
+ },
+ {
+  "id": "2503.07274",
+  "date": "2025-03-10",
+  "title": "Efficient Distillation of Classifier-Free Guidance using Adapters",
+  "summary": "While classifier-free guidance (CFG) is essential for conditional diffusion\nmodels, it doubles the number of neural function evaluations (NFEs) per\ninference step. To mitigate this inefficiency, we introduce adapter guidance\ndistillation (AGD), a novel approach that simulates CFG in a single forward\npass. AGD leverages lightweight adapters to approximate CFG, effectively\ndoubling the sampling speed while maintaining or even improving sample quality.\nUnlike prior guidance distillation methods that tune the entire model, AGD\nkeeps the base model frozen and only trains minimal additional paramete",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2503.05944",
+  "date": "2025-03-07",
+  "title": "Enhancing Reasoning with Collaboration and Memory",
+  "summary": "We envision a continuous collaborative learning system where groups of LLM\nagents work together to solve reasoning problems, drawing on memory they\ncollectively build to improve performance as they gain experience. This work\nestablishes the foundations for such a system by studying the interoperability\nof chain-of-thought reasoning styles, multi-agent collaboration, and memory\nbanks. Extending beyond the identical agents of self-consistency, we introduce\nvaried-context agents with diverse exemplars and a summarizer agent in place of\nvoting. We generate frozen and continuously learned memory ba",
+  "queries": [
+   "q06",
+   "q12"
+  ]
+ },
+ {
+  "id": "2503.02268",
+  "date": "2025-03-04",
+  "title": "AppAgentX: Evolving GUI Agents as Proficient Smartphone Users",
+  "summary": "Recent advancements in Large Language Models (LLMs) have led to the\ndevelopment of intelligent LLM-based agents capable of interacting with\ngraphical user interfaces (GUIs). These agents demonstrate strong reasoning and\nadaptability, enabling them to perform complex tasks that traditionally\nrequired predefined rules. However, the reliance on step-by-step reasoning in\nLLM-based agents often results in inefficiencies, particularly for routine\ntasks. In contrast, traditional rule-based systems excel in efficiency but lack\nthe intelligence and flexibility to adapt to novel scenarios. To address th",
+  "queries": [
+   "q06"
+  ]
+ },
+ {
+  "id": "2502.13791",
+  "date": "2025-02-19",
+  "title": "From Tools to Teammates: Evaluating LLMs in Multi-Session Coding\n  Interactions",
+  "summary": "Large Language Models (LLMs) are increasingly used in working environments\nfor a wide range of tasks, excelling at solving individual problems in\nisolation. However, are they also able to effectively collaborate over\nlong-term interactions? To investigate this, we introduce MemoryCode, a\nsynthetic multi-session dataset designed to test LLMs' ability to track and\nexecute simple coding instructions amid irrelevant information, simulating a\nrealistic setting. While all the models we tested handle isolated instructions\nwell, even the performance of state-of-the-art models like GPT-4o deteriorates\n",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2502.11560",
+  "date": "2025-02-17",
+  "title": "A Survey of Automatic Prompt Engineering: An Optimization Perspective",
+  "summary": "The rise of foundation models has shifted focus from resource-intensive fine-tuning to prompt engineering, a paradigm that steers model behavior through input design rather than weight updates. While manual prompt engineering faces limitations in scalability, adaptability, and cross-modal alignment, automated methods, spanning foundation model (FM) based optimization, evolutionary methods, gradient-based optimization, and reinforcement learning, offer promising solutions. Existing surveys, however, remain fragmented across modalities and methodologies. This paper presents the first comprehensi",
+  "queries": [
+   "q01"
+  ]
+ },
+ {
+  "id": "2502.07315",
+  "date": "2025-02-11",
+  "title": "Prompt-Based Document Modifications In Ranking Competitions",
+  "summary": "We study prompting-based approaches with Large Language Models (LLMs) for\nmodifying documents so as to promote their ranking in a competitive search\nsetting. Our methods are inspired by prior work on leveraging LLMs as rankers.\nWe evaluate our approach by deploying it as a bot in previous ranking\ncompetitions and in competitions we organized. Our findings demonstrate that\nour approach effectively improves document ranking while preserving high levels\nof faithfulness to the original content and maintaining overall document\nquality.",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2502.04644",
+  "date": "2025-02-07",
+  "title": "Agentic Reasoning: Reasoning LLMs with Tools for the Deep Research",
+  "summary": "We introduce Agentic Reasoning, a framework that enhances large language\nmodel (LLM) reasoning by integrating external tool-using agents. Unlike\nconventional LLM-based reasoning approaches, which rely solely on internal\ninference, Agentic Reasoning dynamically engages web search, code execution,\nand structured reasoning-context memory to solve complex problems requiring\ndeep research and multi-step logical deduction. Our framework introduces the\nMind Map agent, which constructs a structured knowledge graph to track logical\nrelationships, improving deductive reasoning. Additionally, the integra",
+  "queries": [
+   "q06"
+  ]
+ },
+ {
+  "id": "2502.06855",
+  "date": "2025-02-07",
+  "title": "Self-Supervised Prompt Optimization",
+  "summary": "Well-designed prompts are crucial for enhancing Large language models' (LLMs)\nreasoning capabilities while aligning their outputs with task requirements\nacross diverse domains. However, manually designed prompts require expertise\nand iterative experimentation. While existing prompt optimization methods aim\nto automate this process, they rely heavily on external references such as\nground truth or by humans, limiting their applicability in real-world scenarios\nwhere such data is unavailable or costly to obtain. To address this, we propose\nSelf-Supervised Prompt Optimization (SPO), a cost-efficie",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2501.03486",
+  "date": "2025-01-07",
+  "title": "Align-Pro: A Principled Approach to Prompt Optimization for LLM\n  Alignment",
+  "summary": "The alignment of large language models (LLMs) with human values is critical\nas these models become increasingly integrated into various societal and\ndecision-making processes. Traditional methods, such as reinforcement learning\nfrom human feedback (RLHF), achieve alignment by fine-tuning model parameters,\nbut these approaches are often computationally expensive and impractical when\nmodels are frozen or inaccessible for parameter modification. In contrast,\nprompt optimization is a viable alternative to RLHF for LLM alignment. While\nthe existing literature has shown empirical promise of prompt o",
+  "queries": [
+   "q01",
+   "q08"
+  ]
+ },
+ {
+  "id": "2501.00353",
+  "date": "2024-12-31",
+  "title": "RAG-Instruct: Boosting LLMs with Diverse Retrieval-Augmented\n  Instructions",
+  "summary": "Retrieval-Augmented Generation (RAG) has emerged as a key paradigm for\nenhancing large language models (LLMs) by incorporating external knowledge.\nHowever, current RAG methods face two limitations: (1) they only cover limited\nRAG scenarios. (2) They suffer from limited task diversity due to the lack of a\ngeneral RAG dataset. To address these limitations, we propose RAG-Instruct, a\ngeneral method for synthesizing diverse and high-quality RAG instruction data\nbased on any source corpus. Our approach leverages (1) five RAG paradigms,\nwhich encompass diverse query-document relationships, and (2) i",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2412.15689",
+  "date": "2024-12-20",
+  "title": "DOLLAR: Few-Step Video Generation via Distillation and Latent Reward\n  Optimization",
+  "summary": "Diffusion probabilistic models have shown significant progress in video\ngeneration; however, their computational efficiency is limited by the large\nnumber of sampling steps required. Reducing sampling steps often compromises\nvideo quality or generation diversity. In this work, we introduce a\ndistillation method that combines variational score distillation and\nconsistency distillation to achieve few-step video generation, maintaining both\nhigh quality and diversity. We also propose a latent reward model fine-tuning\napproach to further enhance video generation performance according to any\nspecif",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2412.15266",
+  "date": "2024-12-17",
+  "title": "On the Structural Memory of LLM Agents",
+  "summary": "Memory plays a pivotal role in enabling large language model~(LLM)-based\nagents to engage in complex and long-term interactions, such as question\nanswering (QA) and dialogue systems. While various memory modules have been\nproposed for these tasks, the impact of different memory structures across\ntasks remains insufficiently explored. This paper investigates how memory\nstructures and memory retrieval methods affect the performance of LLM-based\nagents. Specifically, we evaluate four types of memory structures, including\nchunks, knowledge triples, atomic facts, and summaries, along with mixed mem",
+  "queries": [
+   "q04",
+   "q12",
+   "q15"
+  ]
+ },
+ {
+  "id": "2412.06531",
+  "date": "2024-12-09",
+  "title": "Unraveling the Complexity of Memory in RL Agents: an Approach for\n  Classification and Evaluation",
+  "summary": "The incorporation of memory into agents is essential for numerous tasks\nwithin the domain of Reinforcement Learning (RL). In particular, memory is\nparamount for tasks that require the utilization of past information,\nadaptation to novel environments, and improved sample efficiency. However, the\nterm ``memory'' encompasses a wide range of concepts, which, coupled with the\nlack of a unified methodology for validating an agent's memory, leads to\nerroneous judgments about agents' memory capabilities and prevents objective\ncomparison with other memory-enhanced agents. This paper aims to streamline ",
+  "queries": [
+   "q07"
+  ]
+ },
+ {
+  "id": "2411.07773",
+  "date": "2024-11-12",
+  "title": "Likelihood as a Performance Gauge for Retrieval-Augmented Generation",
+  "summary": "Recent work finds that retrieval-augmented generation with large language\nmodels is prone to be influenced by the order of retrieved documents in the\ncontext. However, the lack of in-depth analysis limits the use of this\nphenomenon for prompt engineering in practice. In this study, we posit that\nlikelihoods serve as an effective gauge for language model performance. Through\nexperiments on two question-answering datasets with a variety of\nstate-of-the-art language models, we reveal correlations between answer\naccuracy and the likelihood of the question at both the corpus level and the\ninstance ",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2410.20482",
+  "date": "2024-10-27",
+  "title": "What Factors Affect Multi-Modal In-Context Learning? An In-Depth\n  Exploration",
+  "summary": "Recently, rapid advancements in Multi-Modal In-Context Learning (MM-ICL) have\nachieved notable success, which is capable of achieving superior performance\nacross various tasks without requiring additional parameter tuning. However,\nthe underlying rules for the effectiveness of MM-ICL remain under-explored. To\nfill this gap, this work aims to investigate the research question: \"What\nfactors affect the performance of MM-ICL?'' To this end, we investigate\nextensive experiments on the three core steps of MM-ICL including demonstration\nretrieval, demonstration ordering, and prompt construction usin",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2410.15397",
+  "date": "2024-10-20",
+  "title": "IPO: Interpretable Prompt Optimization for Vision-Language Models",
+  "summary": "Pre-trained vision-language models like CLIP have remarkably adapted to\nvarious downstream tasks. Nonetheless, their performance heavily depends on the\nspecificity of the input text prompts, which requires skillful prompt template\nengineering. Instead, current approaches to prompt optimization learn the\nprompts through gradient descent, where the prompts are treated as adjustable\nparameters. However, these methods tend to lead to overfitting of the base\nclasses seen during training and produce prompts that are no longer\nunderstandable by humans. This paper introduces a simple but interpretable",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2410.13464",
+  "date": "2024-10-17",
+  "title": "IterSelectTune: An Iterative Training Framework for Efficient\n  Instruction-Tuning Data Selection",
+  "summary": "As large language models (LLMs) continue to advance, instruction tuning has\nbecome critical for improving their ability to generate accurate and\ncontextually appropriate responses. Although numerous instruction-tuning\ndatasets have been developed to enhance LLM performance, selecting high-quality\ninstruction data from large source datasets typically demands significant human\neffort. In this work, we introduce IterSelectTune, an efficient,\ncost-effective iterative training policy for selecting high-quality instruction\ndata with no human involvement and limited reliance on GPT-4. By fine-tuning ",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2410.08133",
+  "date": "2024-10-10",
+  "title": "Assessing Episodic Memory in LLMs with Sequence Order Recall Tasks",
+  "summary": "Current LLM benchmarks focus on evaluating models' memory of facts and\nsemantic relations, primarily assessing semantic aspects of long-term memory.\nHowever, in humans, long-term memory also includes episodic memory, which links\nmemories to their contexts, such as the time and place they occurred. The\nability to contextualize memories is crucial for many cognitive tasks and\neveryday functions. This form of memory has not been evaluated in LLMs with\nexisting benchmarks. To address the gap in evaluating memory in LLMs, we\nintroduce Sequence Order Recall Tasks (SORT), which we adapt from tasks us",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2409.13449",
+  "date": "2024-09-20",
+  "title": "Minstrel: Structural Prompt Generation with Multi-Agents Coordination\n  for Non-AI Experts",
+  "summary": "LLMs have demonstrated commendable performance across diverse domains.\nNevertheless, formulating high-quality prompts to assist them in their work\nposes a challenge for non-AI experts. Existing research in prompt engineering\nsuggests somewhat scattered optimization principles and designs empirically\ndependent prompt optimizers. Unfortunately, these endeavors lack a structural\ndesign, incurring high learning costs and it is not conducive to the iterative\nupdating of prompts, especially for non-AI experts. Inspired by structured\nreusable programming languages, we propose LangGPT, a structural pr",
+  "queries": [
+   "q01"
+  ]
+ },
+ {
+  "id": "2409.11136",
+  "date": "2024-09-17",
+  "title": "Promptriever: Instruction-Trained Retrievers Can Be Prompted Like\n  Language Models",
+  "summary": "Instruction-tuned language models (LM) are able to respond to imperative\ncommands, providing a more natural user interface compared to their base\ncounterparts. In this work, we present Promptriever, the first retrieval model\nable to be prompted like an LM. To train Promptriever, we curate and release a\nnew instance-level instruction training set from MS MARCO, spanning nearly 500k\ninstances. Promptriever not only achieves strong performance on standard\nretrieval tasks, but also follows instructions. We observe: (1) large gains\n(reaching SoTA) on following detailed relevance instructions (+14.3",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2408.13296",
+  "date": "2024-08-23",
+  "title": "The Ultimate Guide to Fine-Tuning LLMs from Basics to Breakthroughs: An\n  Exhaustive Review of Technologies, Research, Best Practices, Applied Research\n  Challenges and Opportunities",
+  "summary": "This report examines the fine-tuning of Large Language Models (LLMs),\nintegrating theoretical insights with practical applications. It outlines the\nhistorical evolution of LLMs from traditional Natural Language Processing (NLP)\nmodels to their pivotal role in AI. A comparison of fine-tuning methodologies,\nincluding supervised, unsupervised, and instruction-based approaches,\nhighlights their applicability to different tasks. The report introduces a\nstructured seven-stage pipeline for fine-tuning LLMs, spanning data\npreparation, model initialization, hyperparameter tuning, and model deployment.\n",
+  "queries": [
+   "q08"
+  ]
+ },
+ {
+  "id": "2408.09559",
+  "date": "2024-08-18",
+  "title": "HiAgent: Hierarchical Working Memory Management for Solving Long-Horizon\n  Agent Tasks with Large Language Model",
+  "summary": "Large Language Model (LLM)-based agents exhibit significant potential across\nvarious domains, operating as interactive systems that process environmental\nobservations to generate executable actions for target tasks. The effectiveness\nof these agents is significantly influenced by their memory mechanism, which\nrecords historical experiences as sequences of action-observation pairs. We\ncategorize memory into two types: cross-trial memory, accumulated across\nmultiple attempts, and in-trial memory (working memory), accumulated within a\nsingle attempt. While considerable research has optimized perf",
+  "queries": [
+   "q07",
+   "q15"
+  ]
+ },
+ {
+  "id": "2407.04208",
+  "date": "2024-07-05",
+  "title": "AMD: Automatic Multi-step Distillation of Large-scale Vision Models",
+  "summary": "Transformer-based architectures have become the de-facto standard models for\ndiverse vision tasks owing to their superior performance. As the size of the\nmodels continues to scale up, model distillation becomes extremely important in\nvarious real applications, particularly on devices limited by computational\nresources. However, prevailing knowledge distillation methods exhibit\ndiminished efficacy when confronted with a large capacity gap between the\nteacher and the student, e.g, 10x compression rate. In this paper, we present a\nnovel approach named Automatic Multi-step Distillation (AMD) for l",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2407.03955",
+  "date": "2024-07-04",
+  "title": "Meta-prompting Optimized Retrieval-augmented Generation",
+  "summary": "Retrieval-augmented generation resorts to content retrieved from external\nsources in order to leverage the performance of large language models in\ndownstream tasks. The excessive volume of retrieved content, the possible\ndispersion of its parts, or their out of focus range may happen nevertheless to\neventually have a detrimental rather than an incremental effect. To mitigate\nthis issue and improve retrieval-augmented generation, we propose a method to\nrefine the retrieved content before it is included in the prompt by resorting\nto meta-prompting optimization. Put to empirical test with the dem",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2407.00256",
+  "date": "2024-06-28",
+  "title": "One Prompt is not Enough: Automated Construction of a Mixture-of-Expert\n  Prompts",
+  "summary": "Large Language Models (LLMs) exhibit strong generalization capabilities to\nnovel tasks when prompted with language instructions and in-context demos.\nSince this ability sensitively depends on the quality of prompts, various\nmethods have been explored to automate the instruction design. While these\nmethods demonstrated promising results, they also restricted the searched\nprompt to one instruction. Such simplification significantly limits their\ncapacity, as a single demo-free instruction might not be able to cover the\nentire complex problem space of the targeted task. To alleviate this issue, we",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2406.14596",
+  "date": "2024-06-20",
+  "title": "ICAL: Continual Learning of Multimodal Agents by Transforming\n  Trajectories into Actionable Insights",
+  "summary": "Large-scale generative language and vision-language models (LLMs and VLMs)\nexcel in few-shot in-context learning for decision making and instruction\nfollowing. However, they require high-quality exemplar demonstrations to be\nincluded in their context window. In this work, we ask: Can LLMs and VLMs\ngenerate their own prompt examples from generic, sub-optimal demonstrations? We\npropose In-Context Abstraction Learning (ICAL), a method that builds a memory\nof multimodal experience insights from sub-optimal demonstrations and human\nfeedback. Given a noisy demonstration in a new domain, VLMs abstrac",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2406.11706",
+  "date": "2024-06-17",
+  "title": "Prompts as Auto-Optimized Training Hyperparameters: Training\n  Best-in-Class IR Models from Scratch with 10 Gold Labels",
+  "summary": "We develop a method for training small-scale (under 100M parameter) neural\ninformation retrieval models with as few as 10 gold relevance labels. The\nmethod depends on generating synthetic queries for documents using a language\nmodel (LM), and the key step is that we automatically optimize the LM prompt\nthat is used to generate these queries based on training quality. In\nexperiments with the BIRCO benchmark, we find that models trained with our\nmethod outperform RankZephyr and are competitive with RankLLama, both of which\nare 7B parameter models trained on over 100K labels. These findings point",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2405.20750",
+  "date": "2024-06-07",
+  "title": "Diffusion Models Are Innate One-Step Generators",
+  "summary": "Diffusion Models (DMs) have achieved great success in image generation and other fields. By fine sampling through the trajectory defined by the SDE/ODE solver based on a well-trained score model, DMs can generate remarkable high-quality results. However, this precise sampling often requires multiple steps and is computationally demanding. To address this problem, instance-based distillation methods have been proposed to distill a one-step generator from a DM by having a simpler student model mimic a more complex teacher model. Yet, our research reveals an inherent limitations in these methods:",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2405.13009",
+  "date": "2024-05-13",
+  "title": "MetaReflection: Learning Instructions for Language Agents using Past\n  Reflections",
+  "summary": "The popularity of Large Language Models (LLMs) have unleashed a new age\nofLanguage Agents for solving a diverse range of tasks. While contemporary\nfrontier LLMs are capable enough to power reasonably good Language agents, the\nclosed-API model makes it hard to improve in cases they perform sub-optimally.\nTo address this, recent works have explored ways to improve their performance\nusing techniques like self-reflection and prompt optimization. Unfortunately,\ntechniques like self-reflection can be used only in an online setup, while\ncontemporary prompt optimization techniques are designed and tes",
+  "queries": [
+   "q03"
+  ]
+ },
+ {
+  "id": "2404.18424",
+  "date": "2024-04-29",
+  "title": "PromptReps: Prompting Large Language Models to Generate Dense and Sparse\n  Representations for Zero-Shot Document Retrieval",
+  "summary": "The current use of large language models (LLMs) for zero-shot document\nranking follows one of two ways: 1) prompt-based re-ranking methods, which\nrequire no further training but are feasible for only re-ranking a handful of\ncandidate documents due to the associated computational costs; and 2)\nunsupervised contrastive trained dense retrieval methods, which can retrieve\nrelevant documents from the entire corpus but require a large amount of paired\ntext data for contrastive training. In this paper, we propose PromptReps, which\ncombines the advantages of both categories: no need for training and t",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2404.05875",
+  "date": "2024-04-08",
+  "title": "CodecLM: Aligning Language Models with Tailored Synthetic Data",
+  "summary": "Instruction tuning has emerged as the key in aligning large language models\n(LLMs) with specific task instructions, thereby mitigating the discrepancy\nbetween the next-token prediction objective and users' actual goals. To reduce\nthe labor and time cost to collect or annotate data by humans, researchers\nstart to explore the use of LLMs to generate instruction-aligned synthetic\ndata. Recent works focus on generating diverse instructions and applying LLM to\nincrease instruction complexity, often neglecting downstream use cases. It\nremains unclear how to tailor high-quality data to elicit better\n",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2404.02717",
+  "date": "2024-04-03",
+  "title": "Automatic Prompt Selection for Large Language Models",
+  "summary": "Large Language Models (LLMs) can perform various natural language processing\ntasks with suitable instruction prompts. However, designing effective prompts\nmanually is challenging and time-consuming. Existing methods for automatic\nprompt optimization either lack flexibility or efficiency. In this paper, we\npropose an effective approach to automatically select the optimal prompt for a\ngiven input from a finite set of synthetic candidate prompts. Our approach\nconsists of three steps: (1) clustering the training data and generating\ncandidate prompts for each cluster using an LLM-based prompt gener",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2403.11487",
+  "date": "2024-03-18",
+  "title": "Can LLMs Generate Human-Like Wayfinding Instructions? Towards\n  Platform-Agnostic Embodied Instruction Synthesis",
+  "summary": "We present a novel approach to automatically synthesize \"wayfinding\ninstructions\" for an embodied robot agent. In contrast to prior approaches that\nare heavily reliant on human-annotated datasets designed exclusively for\nspecific simulation platforms, our algorithm uses in-context learning to\ncondition an LLM to generate instructions using just a few references. Using an\nLLM-based Visual Question Answering strategy, we gather detailed information\nabout the environment which is used by the LLM for instruction synthesis. We\nimplement our approach on multiple simulation platforms including Matter",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2403.08350",
+  "date": "2024-03-13",
+  "title": "CoIN: A Benchmark of Continual Instruction tuNing for Multimodel Large\n  Language Model",
+  "summary": "Instruction tuning represents a prevalent strategy employed by Multimodal\nLarge Language Models (MLLMs) to align with human instructions and adapt to new\ntasks. Nevertheless, MLLMs encounter the challenge of adapting to users'\nevolving knowledge and demands. Therefore, how to retain existing skills while\nacquiring new knowledge needs to be investigated. In this paper, we present a\ncomprehensive benchmark, namely Continual Instruction tuNing (CoIN), to assess\nexisting MLLMs in the sequential instruction tuning paradigm. CoIN comprises 10\ncommonly used datasets spanning 8 task categories, ensuri",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2403.07794",
+  "date": "2024-03-12",
+  "title": "Fine-tuning Large Language Models with Sequential Instructions",
+  "summary": "Large language models (LLMs) struggle to follow a sequence of instructions in\na single query as they may ignore or misinterpret part of it. This impairs\ntheir performance in complex problems whose solution requires multiple\nintermediate steps, such as multilingual (translate then answer) and multimodal\n(caption then answer) tasks. We empirically verify this with open-source LLMs\nas large as LLaMA-2 70B and Mixtral-8x7B. Targeting the scarcity of sequential\ninstructions in present-day data, we propose sequential instruction tuning, a\nsimple yet effective strategy to automatically augment instru",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2403.02993",
+  "date": "2024-03-05",
+  "title": "Localized Zeroth-Order Prompt Optimization",
+  "summary": "The efficacy of large language models (LLMs) in understanding and generating\nnatural language has aroused a wide interest in developing prompt-based methods\nto harness the power of black-box LLMs. Existing methodologies usually\nprioritize a global optimization for finding the global optimum, which however\nwill perform poorly in certain tasks. This thus motivates us to re-think the\nnecessity of finding a global optimum in prompt optimization. To answer this,\nwe conduct a thorough empirical study on prompt optimization and draw two major\ninsights. Contrasting with the rarity of global optimum, l",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2402.17574",
+  "date": "2024-02-27",
+  "title": "Agent-Pro: Learning to Evolve via Policy-Level Reflection and\n  Optimization",
+  "summary": "Large Language Models (LLMs) exhibit robust problem-solving capabilities for\ndiverse tasks. However, most LLM-based agents are designed as specific task\nsolvers with sophisticated prompt engineering, rather than agents capable of\nlearning and evolving through interactions. These task solvers necessitate\nmanually crafted prompts to inform task rules and regulate LLM behaviors,\ninherently incapacitating to address complex dynamic scenarios e.g., large\ninteractive games. In light of this, we propose Agent-Pro: an LLM-based Agent\nwith Policy-level Reflection and Optimization that can learn a wealt",
+  "queries": [
+   "q01"
+  ]
+ },
+ {
+  "id": "2402.14334",
+  "date": "2024-02-22",
+  "title": "INSTRUCTIR: A Benchmark for Instruction Following of Information\n  Retrieval Models",
+  "summary": "Despite the critical need to align search targets with users' intention,\nretrievers often only prioritize query information without delving into the\nusers' intended search context. Enhancing the capability of retrievers to\nunderstand intentions and preferences of users, akin to language model\ninstructions, has the potential to yield more aligned search targets. Prior\nstudies restrict the application of instructions in information retrieval to a\ntask description format, neglecting the broader context of diverse and evolving\nsearch scenarios. Furthermore, the prevailing benchmarks utilized for\ne",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2402.10949",
+  "date": "2024-02-09",
+  "title": "The Unreasonable Effectiveness of Eccentric Automatic Prompts",
+  "summary": "Large Language Models (LLMs) have demonstrated remarkable problem-solving and\nbasic mathematics abilities. However, their efficacy is highly contingent on\nthe formulation of the prompt. This study endeavors to quantify the influence\nof incorporating \"positive thinking\" into the system message of the prompt,\nthen compare that to systematic prompt optimization. We assess the performance\nof 60 combinations of system message snippets, tested with and without Chain of\nThought prompting, across three models with parameters ranging from 7 to 70\nbillion on the GSM8K dataset. Our findings reveal that r",
+  "queries": [
+   "q08"
+  ]
+ },
+ {
+  "id": "2402.03049",
+  "date": "2024-02-05",
+  "title": "EasyInstruct: An Easy-to-use Instruction Processing Framework for Large\n  Language Models",
+  "summary": "In recent years, instruction tuning has gained increasing attention and\nemerged as a crucial technique to enhance the capabilities of Large Language\nModels (LLMs). To construct high-quality instruction datasets, many instruction\nprocessing approaches have been proposed, aiming to achieve a delicate balance\nbetween data quantity and data quality. Nevertheless, due to inconsistencies\nthat persist among various instruction processing methods, there is no standard\nopen-source instruction processing implementation framework available for the\ncommunity, which hinders practitioners from further devel",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2402.02101",
+  "date": "2024-02-03",
+  "title": "Are Large Language Models Good Prompt Optimizers?",
+  "summary": "LLM-based Automatic Prompt Optimization, which typically utilizes LLMs as\nPrompt Optimizers to self-reflect and refine prompts, has shown promising\nperformance in recent studies. Despite the success, the underlying mechanism of\nthis approach remains unexplored, and the true effectiveness of LLMs as Prompt\nOptimizers requires further validation. In this work, we conducted a\ncomprehensive study to uncover the actual mechanism of LLM-based Prompt\nOptimization. Our findings reveal that the LLM optimizers struggle to identify\nthe true causes of errors during reflection, tending to be biased by thei",
+  "queries": [
+   "q01",
+   "q03",
+   "q08"
+  ]
+ },
+ {
+  "id": "2401.06532",
+  "date": "2024-01-12",
+  "title": "INTERS: Unlocking the Power of Large Language Models in Search with\n  Instruction Tuning",
+  "summary": "Large language models (LLMs) have demonstrated impressive capabilities in\nvarious natural language processing tasks. Despite this, their application to\ninformation retrieval (IR) tasks is still challenging due to the infrequent\noccurrence of many IR-specific concepts in natural language. While prompt-based\nmethods can provide task descriptions to LLMs, they often fall short in\nfacilitating comprehensive understanding and execution of IR tasks, thereby\nlimiting LLMs' applicability. To address this gap, in this work, we explore the\npotential of instruction tuning to enhance LLMs' proficiency in ",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2312.17025",
+  "date": "2023-12-28",
+  "title": "Experiential Co-Learning of Software-Developing Agents",
+  "summary": "Recent advancements in large language models (LLMs) have brought significant\nchanges to various domains, especially through LLM-driven autonomous agents.\nThese agents are now capable of collaborating seamlessly, splitting tasks and\nenhancing accuracy, thus minimizing the need for human involvement. However,\nthese agents often approach a diverse range of tasks in isolation, without\nbenefiting from past experiences. This isolation can lead to repeated mistakes\nand inefficient trials in task solving. To this end, this paper introduces\nExperiential Co-Learning, a novel framework in which instructo",
+  "queries": [
+   "q05"
+  ]
+ },
+ {
+  "id": "2311.08364",
+  "date": "2023-11-14",
+  "title": "Plum: Prompt Learning using Metaheuristic",
+  "summary": "Since the emergence of large language models, prompt learning has become a\npopular method for optimizing and customizing these models. Special prompts,\nsuch as Chain-of-Thought, have even revealed previously unknown reasoning\ncapabilities within these models. However, the progress of discovering\neffective prompts has been slow, driving a desire for general prompt\noptimization methods. Unfortunately, few existing prompt learning methods\nsatisfy the criteria of being truly \"general\", i.e., automatic, discrete,\nblack-box, gradient-free, and interpretable all at once. In this paper, we\nintroduce m",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2310.16427",
+  "date": "2023-10-25",
+  "title": "PromptAgent: Strategic Planning with Language Models Enables\n  Expert-level Prompt Optimization",
+  "summary": "Highly effective, task-specific prompts are often heavily engineered by\nexperts to integrate detailed instructions and domain insights based on a deep\nunderstanding of both instincts of large language models (LLMs) and the\nintricacies of the target task. However, automating the generation of such\nexpert-level prompts remains elusive. Existing prompt optimization methods tend\nto overlook the depth of domain knowledge and struggle to efficiently explore\nthe vast space of expert-level prompts. Addressing this, we present\nPromptAgent, an optimization method that autonomously crafts prompts equival",
+  "queries": [
+   "q01"
+  ]
+ },
+ {
+  "id": "2310.16730",
+  "date": "2023-10-25",
+  "title": "MultiPrompter: Cooperative Prompt Optimization with Multi-Agent\n  Reinforcement Learning",
+  "summary": "Recently, there has been an increasing interest in automated prompt\noptimization based on reinforcement learning (RL). This approach offers\nimportant advantages, such as generating interpretable prompts and being\ncompatible with black-box foundation models. However, the substantial prompt\nspace size poses challenges for RL-based methods, often leading to suboptimal\npolicy convergence. This paper introduces MultiPrompter, a new framework that\nviews prompt optimization as a cooperative game between prompters which take\nturns composing a prompt together. Our cooperative prompt optimization\neffect",
+  "queries": [
+   "q01"
+  ]
+ },
+ {
+  "id": "2310.15127",
+  "date": "2023-10-23",
+  "title": "Open-Ended Instructable Embodied Agents with Memory-Augmented Large\n  Language Models",
+  "summary": "Pre-trained and frozen large language models (LLMs) can effectively map\nsimple scene rearrangement instructions to programs over a robot's visuomotor\nfunctions through appropriate few-shot example prompting. To parse open-domain\nnatural language and adapt to a user's idiosyncratic procedures, not known\nduring prompt engineering time, fixed prompts fall short. In this paper, we\nintroduce HELPER, an embodied agent equipped with an external memory of\nlanguage-program pairs that parses free-form human-robot dialogue into action\nprograms through retrieval-augmented LLM prompting: relevant memories ",
+  "queries": [
+   "q12"
+  ]
+ },
+ {
+  "id": "2310.13961",
+  "date": "2023-10-21",
+  "title": "Ensemble-Instruct: Generating Instruction-Tuning Data with a\n  Heterogeneous Mixture of LMs",
+  "summary": "Using in-context learning (ICL) for data generation, techniques such as\nSelf-Instruct (Wang et al., 2023) or the follow-up Alpaca (Taori et al., 2023)\ncan train strong conversational agents with only a small amount of human\nsupervision. One limitation of these approaches is that they resort to very\nlarge language models (around 175B parameters) that are also proprietary and\nnon-public. Here we explore the application of such techniques to language\nmodels that are much smaller (around 10B--40B parameters) and have permissive\nlicenses. We find the Self-Instruct approach to be less effective at t",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2310.12823",
+  "date": "2023-10-19",
+  "title": "AgentTuning: Enabling Generalized Agent Abilities for LLMs",
+  "summary": "Open large language models (LLMs) with great performance in various tasks\nhave significantly advanced the development of LLMs. However, they are far\ninferior to commercial models such as ChatGPT and GPT-4 when acting as agents\nto tackle complex tasks in the real world. These agent tasks employ LLMs as the\ncentral controller responsible for planning, memorization, and tool\nutilization, necessitating both fine-grained prompting methods and robust LLMs\nto achieve satisfactory performance. Though many prompting methods have been\nproposed to complete particular agent tasks, there is lack of researc",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2310.12774",
+  "date": "2023-10-19",
+  "title": "Survival of the Most Influential Prompts: Efficient Black-Box Prompt\n  Search via Clustering and Pruning",
+  "summary": "Prompt-based learning has been an effective paradigm for large pretrained\nlanguage models (LLM), enabling few-shot or even zero-shot learning. Black-box\nprompt search has received growing interest recently for its distinctive\nproperties of gradient-free optimization, proven particularly useful and\npowerful for model-as-a-service usage. However, the discrete nature and the\ncomplexity of combinatorial optimization hinder the efficiency of modern\nblack-box approaches. Despite extensive research on search algorithms, the\ncrucial aspect of search space design and optimization has been largely\noverl",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2310.04484",
+  "date": "2023-10-06",
+  "title": "Ada-Instruct: Adapting Instruction Generators for Complex Reasoning",
+  "summary": "Generating diverse and sophisticated instructions for downstream tasks by\nLarge Language Models (LLMs) is pivotal for advancing the effect. Current\napproaches leverage closed-source LLMs, employing in-context prompting for\ninstruction generation. However, in this paper, we found that in-context\nprompting cannot generate complex instructions with length ge 100 for tasks\nlike code completion.\n  To solve this problem, we introduce Ada-Instruct, an adaptive instruction\ngenerator developed by fine-tuning open-source LLMs. Our pivotal finding\nillustrates that fine-tuning open-source LLMs with a mere",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2308.12711",
+  "date": "2023-08-24",
+  "title": "Harnessing the Power of David against Goliath: Exploring Instruction\n  Data Generation without Using Closed-Source Models",
+  "summary": "Instruction tuning is instrumental in enabling Large Language Models~(LLMs)\nto follow user instructions to complete various open-domain tasks. The success\nof instruction tuning depends on the availability of high-quality instruction\ndata. Owing to the exorbitant cost and substandard quality of human annotation,\nrecent works have been deeply engaged in the exploration of the utilization of\npowerful closed-source models to generate instruction data automatically.\nHowever, these methods carry potential risks arising from the usage\nrequirements of powerful closed-source models, which strictly forb",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2308.10144",
+  "date": "2023-08-20",
+  "title": "ExpeL: LLM Agents Are Experiential Learners",
+  "summary": "The recent surge in research interest in applying large language models\n(LLMs) to decision-making tasks has flourished by leveraging the extensive\nworld knowledge embedded in LLMs. While there is a growing demand to tailor\nLLMs for custom decision-making tasks, finetuning them for specific tasks is\nresource-intensive and may diminish the model's generalization capabilities.\nMoreover, state-of-the-art language models like GPT-4 and Claude are primarily\naccessible through API calls, with their parametric weights remaining\nproprietary and unavailable to the public. This scenario emphasizes the gr",
+  "queries": [
+   "q05"
+  ]
+ },
+ {
+  "id": "2308.03279",
+  "date": "2023-08-07",
+  "title": "UniversalNER: Targeted Distillation from Large Language Models for Open\n  Named Entity Recognition",
+  "summary": "Large language models (LLMs) have demonstrated remarkable generalizability,\nsuch as understanding arbitrary entities and relations. Instruction tuning has\nproven effective for distilling LLMs into more cost-efficient models such as\nAlpaca and Vicuna. Yet such student models still trail the original LLMs by\nlarge margins in downstream applications. In this paper, we explore targeted\ndistillation with mission-focused instruction tuning to train student models\nthat can excel in a broad application class such as open information\nextraction. Using named entity recognition (NER) for case study, we s",
+  "queries": [
+   "q11"
+  ]
+ },
+ {
+  "id": "2306.07863",
+  "date": "2023-06-13",
+  "title": "Synapse: Trajectory-as-Exemplar Prompting with Memory for Computer\n  Control",
+  "summary": "Building agents with large language models (LLMs) for computer control is a\nburgeoning research area, where the agent receives computer states and performs\nactions to complete complex tasks. Previous computer agents have demonstrated\nthe benefits of in-context learning (ICL); however, their performance is\nhindered by several issues. First, the limited context length of LLMs and\ncomplex computer states restrict the number of exemplars, as a single webpage\ncan consume the entire context. Second, the exemplars in current methods, such\nas high-level plans and multi-choice questions, cannot represe",
+  "queries": [
+   "q05"
+  ]
+ },
+ {
+  "id": "2305.16338",
+  "date": "2023-05-24",
+  "title": "Think Before You Act: Decision Transformers with Internal Working Memory",
+  "summary": "Large language model (LLM)-based decision-making agents have shown the\nability to generalize across multiple tasks. However, their performance relies\non massive data and compute. We argue that this inefficiency stems from the\nforgetting phenomenon, in which a model memorizes its behaviors in parameters\nthroughout training. As a result, training on a new task may deteriorate the\nmodel's performance on previous tasks. In contrast to LLMs' implicit memory\nmechanism, the human brain utilizes distributed memory storage, which helps\nmanage and organize multiple skills efficiently, mitigating the for",
+  "queries": [
+   "q08"
+  ]
+ },
+ {
+  "id": "2305.13729",
+  "date": "2023-05-23",
+  "title": "Discrete Prompt Optimization via Constrained Generation for Zero-shot\n  Re-ranker",
+  "summary": "Re-rankers, which order retrieved documents with respect to the relevance\nscore on the given query, have gained attention for the information retrieval\n(IR) task. Rather than fine-tuning the pre-trained language model (PLM), the\nlarge-scale language model (LLM) is utilized as a zero-shot re-ranker with\nexcellent results. While LLM is highly dependent on the prompts, the impact and\nthe optimization of the prompts for the zero-shot re-ranker are not explored\nyet. Along with highlighting the impact of optimization on the zero-shot\nre-ranker, we propose a novel discrete prompt optimization method,",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2305.12517",
+  "date": "2023-05-21",
+  "title": "Retrieving Texts based on Abstract Descriptions",
+  "summary": "In this work, we aim to connect two research areas: instruction models and\nretrieval-based models. While instruction-tuned Large Language Models (LLMs)\nexcel at extracting information from text, they are not suitable for semantic\nretrieval. Similarity search over embedding vectors allows to index and query\nvectors, but the similarity reflected in the embedding is sub-optimal for many\nuse cases. We identify the task of retrieving sentences based on abstract\ndescriptions of their content. We demonstrate the inadequacy of current text\nembeddings and propose an alternative model that significantly",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2305.11170",
+  "date": "2023-05-18",
+  "title": "Efficient Prompting via Dynamic In-Context Learning",
+  "summary": "The primary way of building AI applications is shifting from training\nspecialist models to prompting generalist models. A common practice for\nprompting generalist models, often referred to as in-context learning, is to\nappend a few examples (demonstrations) to the prompt to help the model better\nunderstand the task. While effective, in-context learning can be inefficient\nbecause it makes the input prompt much longer, consuming valuable space in the\ncontext window and leading to larger computational costs. In this paper, we\npropose DynaICL, a recipe for efficient prompting with black-box genera",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2305.03653",
+  "date": "2023-05-05",
+  "title": "Query Expansion by Prompting Large Language Models",
+  "summary": "Query expansion is a widely used technique to improve the recall of search\nsystems. In this paper, we propose an approach to query expansion that\nleverages the generative abilities of Large Language Models (LLMs). Unlike\ntraditional query expansion approaches such as Pseudo-Relevance Feedback (PRF)\nthat relies on retrieving a good set of pseudo-relevant documents to expand\nqueries, we rely on the generative and creative abilities of an LLM and\nleverage the knowledge inherent in the model. We study a variety of different\nprompts, including zero-shot, few-shot and Chain-of-Thought (CoT). We find",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2304.07575",
+  "date": "2023-04-15",
+  "title": "What Makes Good In-context Demonstrations for Code Intelligence Tasks\n  with LLMs?",
+  "summary": "Pre-trained models of source code have gained widespread popularity in many\ncode intelligence tasks. Recently, with the scaling of the model and corpus\nsize, large language models have shown the ability of in-context learning\n(ICL). ICL employs task instructions and a few examples as demonstrations, and\nthen inputs the demonstrations to the language models for making predictions.\nThis new learning paradigm is training-free and has shown impressive\nperformance in various natural language processing and code intelligence tasks.\nHowever, the performance of ICL heavily relies on the quality of\ndem",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2302.03668",
+  "date": "2023-02-07",
+  "title": "Hard Prompts Made Easy: Gradient-Based Discrete Optimization for Prompt\n  Tuning and Discovery",
+  "summary": "The strength of modern generative models lies in their ability to be\ncontrolled through text-based prompts. Typical \"hard\" prompts are made from\ninterpretable words and tokens, and must be hand-crafted by humans. There are\nalso \"soft\" prompts, which consist of continuous feature vectors. These can be\ndiscovered using powerful optimization methods, but they cannot be easily\ninterpreted, re-used across models, or plugged into a text-based interface.\n  We describe an approach to robustly optimize hard text prompts through\nefficient gradient-based optimization. Our approach automatically generates",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2212.09710",
+  "date": "2022-12-19",
+  "title": "Continual Learning for Instruction Following from Realtime Feedback",
+  "summary": "We propose and deploy an approach to continually train an\ninstruction-following agent from feedback provided by users during\ncollaborative interactions. During interaction, human users instruct an agent\nusing natural language, and provide realtime binary feedback as they observe\nthe agent following their instructions. We design a contextual bandit learning\napproach, converting user feedback to immediate reward. We evaluate through\nthousands of human-agent interactions, demonstrating 15.4% absolute improvement\nin instruction execution accuracy over time. We also show our approach is\nrobust to s",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2211.09260",
+  "date": "2022-11-16",
+  "title": "Task-aware Retrieval with Instructions",
+  "summary": "We study the problem of retrieval with instructions, where users of a\nretrieval system explicitly describe their intent along with their queries. We\naim to develop a general-purpose task-aware retrieval system using multi-task\ninstruction tuning, which can follow human-written instructions to find the\nbest documents for a given query. We introduce the first large-scale collection\nof approximately 40 retrieval datasets with instructions, BERRI, and present\nTART, a multi-task retrieval system trained on BERRI with instructions. TART\nshows strong capabilities to adapt to a new retrieval task via ",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2211.01910",
+  "date": "2022-11-03",
+  "title": "Large Language Models Are Human-Level Prompt Engineers",
+  "summary": "By conditioning on natural language instructions, large language models\n(LLMs) have displayed impressive capabilities as general-purpose computers.\nHowever, task performance depends significantly on the quality of the prompt\nused to steer the model, and most effective prompts have been handcrafted by\nhumans. Inspired by classical program synthesis and the human approach to\nprompt engineering, we propose Automatic Prompt Engineer (APE) for automatic\ninstruction generation and selection. In our method, we treat the instruction\nas the \"program,\" optimized by searching over a pool of instruction c",
+  "queries": [
+   "q02"
+  ]
+ },
+ {
+  "id": "2210.04457",
+  "date": "2022-10-10",
+  "title": "XPrompt: Exploring the Extreme of Prompt Tuning",
+  "summary": "Prompt tuning learns soft prompts to condition frozen Pre-trained Language\nModels (PLMs) for performing downstream tasks in a parameter-efficient manner.\nWhile prompt tuning has gradually reached the performance level of fine-tuning\nas the model scale increases, there is still a large performance gap between\nprompt tuning and fine-tuning for models of moderate and small scales\n(typically less than 11B parameters). In this paper, we empirically show that\nthe trained prompt tokens can have a negative impact on a downstream task and\nthus degrade its performance. To bridge the gap, we propose a no",
+  "queries": [
+   "q08"
+  ]
+ },
+ {
+  "id": "2210.03821",
+  "date": "2022-10-07",
+  "title": "Large Language Models can Implement Policy Iteration",
+  "summary": "This work presents In-Context Policy Iteration, an algorithm for performing\nReinforcement Learning (RL), in-context, using foundation models. While the\napplication of foundation models to RL has received considerable attention,\nmost approaches rely on either (1) the curation of expert demonstrations\n(either through manual design or task-specific pretraining) or (2) adaptation\nto the task of interest using gradient methods (either fine-tuning or training\nof adapter layers). Both of these techniques have drawbacks. Collecting\ndemonstrations is labor-intensive, and algorithms that rely on them do",
+  "queries": [
+   "q10"
+  ]
+ },
+ {
+  "id": "2209.11755",
+  "date": "2022-09-23",
+  "title": "Promptagator: Few-shot Dense Retrieval From 8 Examples",
+  "summary": "Much recent research on information retrieval has focused on how to transfer\nfrom one task (typically with abundant supervised data) to various other tasks\nwhere supervision is limited, with the implicit assumption that it is possible\nto generalize from one task to all the rest. However, this overlooks the fact\nthat there are many diverse and unique retrieval tasks, each targeting\ndifferent search intents, queries, and search domains. In this paper, we\nsuggest to work on Few-shot Dense Retrieval, a setting where each task comes\nwith a short description and a few examples. To amplify the power ",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2205.10782",
+  "date": "2022-05-22",
+  "title": "Instruction Induction: From Few Examples to Natural Language Task\n  Descriptions",
+  "summary": "Large language models are able to perform a task by conditioning on a few\ninput-output demonstrations - a paradigm known as in-context learning. We show\nthat language models can explicitly infer an underlying task from a few\ndemonstrations by prompting them to generate a natural language instruction\nthat fits the examples. To explore this ability, we introduce the instruction\ninduction challenge, compile a dataset consisting of 24 tasks, and define a\nnovel evaluation metric based on executing the generated instruction. We\ndiscover that, to a large extent, the ability to generate instructions d",
+  "queries": [
+   "q02",
+   "q10"
+  ]
+ },
+ {
+  "id": "2204.04392",
+  "date": "2022-04-09",
+  "title": "Contrastive Demonstration Tuning for Pre-trained Language Models",
+  "summary": "Pretrained language models can be effectively stimulated by textual prompts\nor demonstrations, especially in low-data scenarios. Recent works have focused\non automatically searching discrete or continuous prompts or optimized\nverbalizers, yet studies for the demonstration are still limited. Concretely,\nthe demonstration examples are crucial for an excellent final performance of\nprompt-tuning. In this paper, we propose a novel pluggable, extensible, and\nefficient approach named contrastive demonstration tuning, which is free of\ndemonstration sampling. Furthermore, the proposed approach can be: ",
+  "queries": [
+   "q14"
+  ]
+ },
+ {
+  "id": "2110.07602",
+  "date": "2021-10-14",
+  "title": "P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally\n  Across Scales and Tasks",
+  "summary": "Prompt tuning, which only tunes continuous prompts with a frozen language\nmodel, substantially reduces per-task storage and memory usage at training.\nHowever, in the context of NLU, prior work reveals that prompt tuning does not\nperform well for normal-sized pretrained models. We also find that existing\nmethods of prompt tuning cannot handle hard sequence labeling tasks, indicating\na lack of universality. We present a novel empirical finding that properly\noptimized prompt tuning can be universally effective across a wide range of\nmodel scales and NLU tasks. It matches the performance of finetu",
+  "queries": [
+   "q08"
+  ]
+ },
+ {
+  "id": "2105.14039",
+  "date": "2021-05-28",
+  "title": "Towards mental time travel: a hierarchical memory for reinforcement\n  learning agents",
+  "summary": "Reinforcement learning agents often forget details of the past, especially\nafter delays or distractor tasks. Agents with common memory architectures\nstruggle to recall and integrate across multiple timesteps of a past event, or\neven to recall the details of a single timestep that is followed by distractor\ntasks. To address these limitations, we propose a Hierarchical Chunk Attention\nMemory (HCAM), which helps agents to remember the past in detail. HCAM stores\nmemories by dividing the past into chunks, and recalls by first performing\nhigh-level attention over coarse summaries of the chunks, and",
+  "queries": [
+   "q15"
+  ]
+ },
+ {
+  "id": "1812.09195",
+  "date": "2018-12-21",
+  "title": "Learning to Navigate the Web",
+  "summary": "Learning in environments with large state and action spaces, and sparse\nrewards, can hinder a Reinforcement Learning (RL) agent's learning through\ntrial-and-error. For instance, following natural language instructions on the\nWeb (such as booking a flight ticket) leads to RL settings where input\nvocabulary and number of actionable elements on a page can grow very large.\nEven though recent approaches improve the success rate on relatively simple\nenvironments with the help of human demonstrations to guide the exploration,\nthey still fail in environments where the set of possible instructions can\n",
+  "queries": [
+   "q10"
+  ]
+ }
+]
