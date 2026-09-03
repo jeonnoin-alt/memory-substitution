@@ -1,0 +1,18 @@
+# bulk experiment outputs (NFS only; regenerate from scripts)
+data/*
+!data/README.md
+!data/PROVENANCE.md
+!data/SHA256SUMS
+runs/*
+!runs/README.md
+# local envs / caches
+.venv/
+vllm-env/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.log
+# never commit keys
+*.env
+.anthropic_env
+.github_env

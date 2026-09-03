@@ -1,0 +1,6 @@
+{
+ "instruction_text": "Before giving a final answer, output a line 'Evidence: \"<exact quote>\" | \"<exact quote>\"' quoting passages you retrieved in this episode that support the answer. If you cannot quote supporting passages, search for more evidence first.",
+ "memory_arm": "ANCHOR",
+ "floor": "hard",
+ "max_calls": 8
+}

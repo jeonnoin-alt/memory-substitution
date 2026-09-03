@@ -1,0 +1,6 @@
+{
+ "instruction_text": "Answer in the exact surface form found in the source text (spelling, singular/plural, digits vs words). For multi-hop questions resolve the bridge entity first. Quote your supporting line as Evidence: \"...\" before Finish.",
+ "memory_arm": "M1",
+ "floor": "none",
+ "max_calls": 8
+}

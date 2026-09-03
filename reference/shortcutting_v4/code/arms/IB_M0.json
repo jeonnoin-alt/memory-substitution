@@ -1,0 +1,6 @@
+{
+ "instruction_text": "Before giving a final answer, output a line 'Tools: <list>' stating which searches you ran this episode and in what order.",
+ "memory_arm": null,
+ "floor": "none",
+ "max_calls": 8
+}

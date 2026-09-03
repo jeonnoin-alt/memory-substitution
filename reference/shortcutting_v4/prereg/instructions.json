@@ -1,0 +1,4 @@
+{
+ "I_star": "Before giving a final answer, output a line 'Evidence: \"<exact quote>\" | \"<exact quote>\"' quoting passages you retrieved in this episode that support the answer. If you cannot quote supporting passages, search for more evidence first.",
+ "I_B": "Before giving a final answer, output a line 'Tools: <list>' stating which searches you ran this episode and in what order."
+}
