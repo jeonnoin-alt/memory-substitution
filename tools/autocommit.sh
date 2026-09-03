@@ -24,7 +24,7 @@ fi
 # mirror session transcripts + memory + settings to NAS (survives node recycle)
 if [ -d /home/work/.claude/projects ] && [ ! -L /home/work/.claude/projects ]; then
   mkdir -p "$NAS/projects"
-  rsync -a --exclude '*.lock' /home/work/.claude/projects/ "$NAS/projects/" 2>/dev/null || true
+  cp -au /home/work/.claude/projects/. "$NAS/projects/" 2>/dev/null || true
 fi
 [ -f /home/work/.claude/settings.json ] && [ ! -L /home/work/.claude/settings.json ] && cp /home/work/.claude/settings.json "$NAS/settings.json" 2>/dev/null
 exit 0
