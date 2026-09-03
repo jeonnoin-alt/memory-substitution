@@ -1,0 +1,237 @@
+# Proposal v4.2 — memory_or_instruction (2026-09-03; v4.1 revised after the Opus 5 judging round, see reviews/v4_opus/SUMMARY.md)
+
+Lineage: v1 6.73 → **v2 6.97** → v3 5.73 (pivot, superseded) → v4 6.02 (sonnet) / 5.93 (opus) → v4.1 (scope fixes, not separately judged) → **v4.2 (this file)**. Judging uses only the 11 IDEA_FIELDS below; the decision log is context.
+
+## Decision log (cumulative; rows 15–24 are new in v4.2)
+
+| # | Objection (source) | Answer |
+|---|---|---|
+| 1 | Fairness constraint not enforced (v1 R2) | One training pool feeds both containers; GEPA coverage instrumented per run; coverage-matched bank B_touched; S recomputed with it. |
+| 2 | I2 omission is self-serving (v1 R1) | I2 (optimize with the bank in context) reinstated; v4.2 runs it at 4 seeds. |
+| 3 | LoRA third container (v1 R2) | Descriptive Tier-2 arm on the same episodes. |
+| 4 | Whole-bank-in-context baseline (v3 R2; EvoMemBench) | M_all added. |
+| 5 | Citation verifiability (v1 R2, v3 3/3) | Every ID in `reference/litscan_2026-09-03.md`; five wrongly-retracted IDs reinstated. |
+| 6 | Track scope: engage coupling (v3 3/3) | I2 cells, residual complementarity, moderator. |
+| 7 | ≥10pt gate unattainable on this program's agents | Gate re-derived from measured effects; S_dev n=300; CI-based. |
+| 8 | EvoAgentBench already compares Memento/ReasoningBank/GEPA on shared trajectories | Named as closest work; claim scoped to what its table cannot yield. |
+| 9 | Compile prediction no longer a surprise | Quantified equivalence at matched tokens; ladder retrieval → compile → dump. |
+| 10 | 120B outside the 7B–32B track scope (v4 sonnet 3/3, opus 3/3) | Primary grid on an in-scope agent chosen by pre-registered screening over {Qwen3.5-27B, Qwen3-32B} × {ExpeL, ReasoningBank-style}; 120B is a Tier-2 scale check. |
+| 11 | ReasoningBank-style bank missing (v4 sonnet 3/3; opus R2 "match supervision") | B_rb (self-judged success and failure) screened on equal footing with B_expel. |
+| 12 | Add test-time self-editing memory (v4 sonnet R3) | Refused with reasons (breaks pairing and exposure matching); format adopted, update step frozen. |
+| 13 | Scope exceeds "days, not weeks" (v4 sonnet R1, R2) | Tiers 0/1/2 with a must-ship core. |
+| 14 | Pilot and scan are unpublished context (v4 sonnet R3) | Both are appendices. |
+| **15** | **S is not identified: headroom/saturation compression explains the shrinkage without any information transfer (v4 opus 3/3)** | **Crossover identification design.** Two disjoint training halves a/b → banks B_a, B_b and instructions I1a(s), I1b(s). At the *same* instruction and *same* instances, the gain of the bank whose episodes the instruction was optimized on ("own") is compared with the gain of the other half's bank ("other"). Headroom is identical by construction; optimizer-seed variance cancels within instruction; bank-half content cancels across the crossover. Primary quantity S_info = 1 − g(own)/g(other). The old S (vs I0) becomes descriptive, with a headroom-normalized version and a measured "headroom share". |
+| 16 | TOST ±4pt and S ≥ 0.6 are misaligned (opus R2) | Replaced by a one-sided test on Δ_info and a bootstrap CI on S_info; no fixed-margin equivalence in the primary claim. |
+| 17 | Gates at n=150 sit below the documented noise floor (opus R1, R3) | S_dev n=300; gate requires point ≥6pt and lower 80% CI ≥3pt. |
+| 18 | Denominator selection / regression to the mean; no branch when S_test denominator < gate (opus R2, R3) | Denominator estimated on S_test; branch pre-registered; S_info does not depend on the I0 denominator at all. |
+| 19 | I1×C never measured — the recommended deployment (opus R1, R3) | I1b×C_a added (compiled block from the bank the instruction never saw). |
+| 20 | Positive control is leakage-sized; need a graded one (opus R1, R2) | Near-duplicates for a random 10% of S_test diluted into the ordinary bank: an engineered ≈3pt non-substitutable component, tested on the same runs. |
+| 21 | Bank side gets no search budget (opus R3) | B_tuned: k, dedup and item format tuned on S_dev with one GEPA run's rollout budget. |
+| 22 | "Token-matched per instance" undefined for a static block (opus R2) | C is fixed at the median per-instance injection length of M_a; its M0 comparator is padded to the same prompt length. |
+| 23 | MIPROv2 instruction-vs-demonstration ablations are the older framing collision; add an optimized static demo set (opus R1) | Cited as the prior on S; D_opt (search-selected static demonstrations, token-matched) as Tier 2. |
+| 24 | Re-measure a published memory result under the protocol (opus R2) | Refused with reasons: the targets' settings (WebArena, ALFWorld-with-their-scaffold) are not reproducible on this node and the paper audits the evaluation *template*, not a specific number; stated as a limitation. |
+
+---
+
+## Name
+
+memory_or_instruction
+
+## Title
+
+Is Your Agent's Memory Just an Un-Optimized Prompt? A Crossover Measurement of Information-Specific Substitution Between Retrieved Experience and Optimized Instructions
+
+## Short Hypothesis
+
+Published agentic-memory gains are measured against a hand-written instruction. For procedural experience memory (ExpeL/ReasoningBank-style banks retrieved per query), we hypothesize that most of that gain is *substitutable*: when a reflective prompt optimizer is given exactly the same training episodes that built the bank, the bank adds less on top of the resulting instruction than an equally good bank built from episodes the optimizer never saw — at the same instruction, on the same test instances, so that headroom cannot explain the difference. A frozen instruction compiled once from the whole bank, with no retrieval at inference, is equivalent to per-instance top-k retrieval at matched injected tokens. Co-adapting the optimizer to the bank (I2) does not produce gains that neither container reaches alone. The residual, non-substitutable value of memory is instance-specific, which we verify with a graded positive control (near-duplicate items diluted into the ordinary bank) whose contribution must survive optimization. The claim is agent- and bank-relative and is tested inside the track's model class: a pre-registered screening over two open-weight 27–32B agents and two bank formats selects the pairing where memory has a measurable effect at the hand-written instruction, and the pairings where it does not are reported as the memory-null regime.
+
+## Related Work
+
+**(1) Procedural experience memory — the targets.** ExpeL (arXiv 2308.10144) gathers training-task experiences, extracts natural-language insights, and recalls them at inference. ReasoningBank (arXiv 2509.25140) distills strategies from self-judged successes and failures. Memp (arXiv 2508.06433), A-MEM (arXiv 2502.12110) and retrieval-augmented agents trained to use retrieved trajectories (arXiv 2603.18272) share the evaluation template: the memory-vs-no-memory delta is measured at a fixed, hand-written scaffold, or memory is compared against fine-tuning. The template assumes memory and instruction are non-substitutable containers.
+
+**(2) Reflective prompt optimizers.** GEPA (arXiv 2507.19457, ICLR 2026 oral) samples trajectories, reflects in natural language, and proposes prompt updates, outperforming MIPROv2 by >10% and GRPO by ~10% with up to 35× fewer rollouts. GEPA and ExpeL run the same learning principle — reflect on trajectories, distill lessons — and differ in where the lesson is stored. The older and closer framing precedent is MIPROv2 (arXiv 2406.11695), which factorizes a prompt into instructions and bootstrapped demonstrations and optimizes both on the same training set; its instruction-only versus demonstration-only ablations are the nearest published prior on how much of a training set's value each container can carry, with the recurring finding that the split is task-dependent. A retrieved experience bank is a demonstration container with a query-conditioned read; our study is that ablation with retrieval, distillation and a held-out-episode crossover added. "Prompt Optimization Is a Coin Flip" (arXiv 2604.14585) shows that in compound systems 49% of optimizer runs land below zero-shot and that gains require exploitable output structure; this is the prerequisite risk for any optimizer-as-control design and we treat I1 > I0 as a gated result, not an assumption.
+
+**(3) Three-way comparisons on shared trajectories — the closest work.** EvoAgentBench (arXiv 2607.05202) evaluates Vanilla, Memento (retrieve nearest retained case), ReasoningBank (retrieve distilled memory), GEPA (evolve one prompt) and a curated reference on a shared 528/267 train/test split across four domains and three backbones, and reports that ReasoningBank gains ≈ +7 on Qwen backbones, GEPA nearly matches the curated reference on Gemma-4-31B, and no automatic method is positive in every cell. It is the first published table with a retriever and GEPA on the same training trajectories. It contains no combined optimizer-plus-memory cell, no token matching, no compiled-bank arm, and no paired statistics, so it cannot say how much of memory's value survives once the instruction container is filled — which is our object. EvoClinician (arXiv 2601.22964) lists "prompt optimization agent" and "memory agent" as baseline categories in a clinical application (excluded domain here). TERMS-Bench (arXiv 2605.13909) uses GEPA as a prompt-ablation to test whether prompt engineering saturates a negotiation benchmark — the logical move "run an optimizer as the control for a non-prompt claim", in a different domain and without memory.
+
+**(4) The confound-audit literature.** MemDelta (arXiv 2606.29914) shows headline memory gains flip under one-variable changes (embedding swap +6.2pp; Mem0 vs RAG reverses). "Diagnosing Retrieval vs. Utilization Bottlenecks" (arXiv 2603.02473) finds retrieval method spans 20 points while write strategy spans 3–8, and raw chunks match lossy writes. Memory-R2 (arXiv 2605.21768) fixes credit-assignment unfairness in RL-trained memory. EvoMemBench (arXiv 2605.18421) finds long-context baselines "remain highly competitive" against 15 memory methods. All audit confounds inside the memory pipeline or against context-dumping; none posits an optimized instruction as a rival container.
+
+**(5) Memory harm.** "When Continual Learning Moves to Memory" (arXiv 2604.27003) documents retrieval pollution, context competition and dilution, with negative transfer concentrated on hard cases; MemHarness (arXiv 2607.28272) reports raw memory injection at 70.1% versus 76.4% for no-memory RL on ALFWorld. A pre-registered study in this program (proposal ①, 33 arms, ~29,500 episodes, 2026-08) found an ExpeL bank's paired effect TOST-equivalent to zero on Qwen3.5-27B (+0.6pt, 90% CI [−1.2, +2.5]) and +7.7pt (p=.0018) on gpt-oss-120b, and that a one-line instruction dominated every memory manipulation on the strong agent. That result is why v4.1 screens agent×bank pairings inside the track's model class before committing the primary grid, and reports the memory-null pairings alongside the winner; the pilot's design, gate log and results are an appendix of this proposal.
+
+**(6) Containers other than the prompt.** Experience Distillation (arXiv 2607.21051) measures how much of an in-context-learning gain survives when the experience is moved into weights by context distillation (≥64.8%) versus SFT (3.8%) — the same "retention ratio" shape as S, with weights as the second container. TMEM (arXiv 2606.04536) stores experience in fast LoRA weights; experience-internalization work (arXiv 2606.04703) finds principle-level experience more durable than instance-level. These establish that the container question is live; none uses an optimized instruction as the container, and none needs gradient access to the served model, which S does not.
+
+**(7) Compiled procedures.** Skills (distilled SKILL.md) beat Workflow Memory by 6.06pt in matched comparison, with 65.7% of the benefit attributable to procedural anchoring rather than fact injection, and retrieval precision collapsing from 29.6% to 3.3% as the pool grows (arXiv 2608.14036); model-generated skills help on average but hurt 25% of cases (arXiv 2605.23899); a single rewrite given the full training signal matches 10 rounds of refinement within 0.2% (arXiv 2606.30775); embedding retrieval of procedures degrades under vocabulary shift while LLM abstractions transfer (arXiv 2511.21730). These make "compile once" a plausible direction; none tests a compiled artifact against live per-instance retrieval at matched tokens with the same bank, which is what our compiled arm C does. MemAPO (arXiv 2603.21520) runs the coupling in the opposite direction (memory inside the optimizer) and MAS-PromptBench (arXiv 2606.23664) studies prompt optimization without memory.
+
+**Our position.** A memory bank and an optimized instruction are two containers for the same training-episode information. MIPROv2 established the two-container ablation for static demonstrations; EvoAgentBench put a retriever and GEPA in one table; nobody has measured how much of the first container's value survives when the second is filled first, at matched information exposure and matched tokens, with the combined cell, a compiled-bank arm, a whole-bank arm, and a positive control that certifies the instrument can detect non-substitutable value.
+
+## Abstract
+
+Agentic memory systems are evaluated by comparing an agent with a retrieved-experience bank against the same agent without one, holding a hand-written scaffold prompt fixed. Recent audits show such comparisons flip under retrieval-pipeline changes, and the first shared-trajectory benchmark now places memory retrievers and a prompt optimizer side by side. We ask the question that table cannot answer: a bank distilled from training episodes and an instruction optimized on those same episodes are two containers for the same information, and the second is cheaper to serve. How much of memory's value survives once the instruction container is filled — and is what disappears *information*, or merely headroom? We answer with a crossover: two disjoint training halves each yield a bank and a GEPA-optimized instruction; at the same instruction and the same test instances we compare the gain of the bank whose episodes that instruction was optimized on against the gain of the other half's bank. Headroom is identical by construction, so the difference is information-specific substitution, S_info. Around this core we measure the classic substitution ratio against the hand-written instruction (with a headroom-normalized version and the share of its drop reproduced by a bank the optimizer never saw), a frozen instruction compiled once from the bank and token-matched to retrieval, the whole bank dumped into context, an instruction co-optimized with the bank in context, a coverage-matched bank, and a graded positive control that must survive optimization. The agent is a 27–32B open-weight model chosen by a pre-registered screening over two agents and two bank formats, because a pre-registered study in this program found the same ExpeL bank equivalent to no memory on one such agent. Scope: one primary tool-augmented multi-hop QA environment (n=1000 paired, 4 optimizer seeds per half), one replication environment (ALFWorld), ≈45,000 must-ship episodes, instance-paired tests with cluster bootstrap over instances and optimizer runs, null replicates, and a minimum detectable effect derived from this program's measured seed variance.
+
+## Experiments
+
+**HELD FIXED THROUGHOUT.** ReAct scaffold; tool stack (BM25 search over each dataset's fixed corpus); step limit (8 calls, +3 under any enforcement); retriever (MiniLM dense, CPU); decoding temperature and seed schedule {11, 23, 37}; the two training halves from which all learned artifacts derive; the held-out test split. Only the instruction slot and the memory-injection variant differ.
+
+**AGENTS (all inside the track's 7B–32B class, all local).** Candidates: Qwen3.5-27B and Qwen3-32B (thinking disabled), one vLLM replica per A100. **Screening (pre-registered, S_dev n=300, published either way):** each agent runs bare I0 on both training halves (bank-gen), both bank formats are distilled from half a, and the paired gain acc(I0×M_a) − acc(I0×M0) is measured on S_dev for the four agent×format pairings. **A1** is the pairing with the largest gain that clears G1; ties within 2pt resolve to ExpeL on Qwen3.5-27B for comparability with the program's prior study. The other format on A1's agent is **B'** (Tier 1); the losing agent is **A2** (Tier 2, memory-null or memory-weak regime). If no pairing clears G1, the bank is enriched once (larger k, relaxed dedup) and screening is re-measured; if it still fails, the study stops and reports four TOST-equivalence results. gpt-oss-120b is a Tier-2 out-of-scope scale check, never load-bearing. Frontier API model (Claude) as GEPA reflector, distiller and compiler, identical across conditions; pre-registered fallback Qwen3-32B if the key is unavailable, reported as a deviation. Scoring is programmatic (normalized EM primary, F1 descriptive; ALFWorld success).
+
+**ENVIRONMENTS.** *E1 (primary):* tool-augmented multi-hop QA over fixed corpora, pooled HotpotQA-distractor / MuSiQue / 2WikiMultihopQA (HippoRAG subsets; provenance and SHA256 committed). *E2 (replication, Tier 1):* ALFWorld, all 274 eval tasks (134 unseen reported separately), ~25 calls/episode; task templates recur across train and test, so procedural memory is maximally compilable. Public data only.
+
+**SPLITS (seeded, stratified 50/30/20 by dataset, IDs pre-registered).** S_train_a 400, S_train_b 400 (disjoint halves; every learned artifact is tagged with its half), S_dev 300 (screening, gates, compiler prompt, length control, bank tuning), S_test 1000 (touched once, by the final grid). Gold-document title overlap between either training half and S_test removed and counted. Reserve untouched except for gate-triggered rebuilds, logged.
+
+**ARTIFACTS (built once, frozen, hashed).**
+- **B_a, B_b:** banks of the screened format, one per half: ExpeL-style (INSIGHT / PROCEDURE / OUTCOME from solved episodes) or ReasoningBank-style (self-judged success and failure distilled into strategy items). Same distiller prompt, same dedup, same retriever, k=7. Item counts reported per half.
+- **B_a', B_b':** the other format, for the bank-format invariance cells.
+- **B_tuned:** B_a with k ∈ {3, 5, 7}, dedup threshold and item template selected on S_dev under a 350-rollout budget — the memory side's search budget, matching one GEPA run.
+- **B_touched(s):** the subset of B_a whose source episodes were touched by GEPA run I1a(s) (minibatch evaluations or reflector-visible summaries). Distillation only.
+- **B_a+dup10:** B_a plus distilled near-duplicates (paraphrased questions, same answers) of a random pre-registered 10% of S_test instances — the graded positive control. Its non-substitutable component is ≈0.1 × the near-duplicate gain, engineered to land near 3pt in aggregate and ≈30pt on the targeted instances.
+- **I1a(s), I1b(s):** GEPA-style reflective optimization of the instruction slot, seeded with I0 verbatim, 350 rollouts, memory absent from context, on S_train_a and S_train_b respectively, the same 4 seeds for both halves. Coverage instrumented per run.
+- **I2a(s):** as I1a but with B_a retrieved into context during optimization, 4 seeds.
+- **I_H:** an information-free hand-written instruction that raises accuracy — the one-line evidence-citation instruction from the program's prior study (verbatim, hashed), which moved a 27B agent by +4–6pt with no training-episode content. Titrated control for the headroom account (Tier 1).
+- **I3:** I0 padded with task-generic boilerplate to the median token length of I1a (length control).
+- **C_a:** the compiler reads all of B_a offline and writes one static instruction block whose length is fixed at the median per-instance injection length of M_a on S_dev; its M0 comparator is I0 padded to the same total prompt length. Compiler prompt fixed on S_dev, reported verbatim. An instrument, not a method.
+- **R_a:** raw few-shot: the same retriever over the undistilled solved S_train_a trajectories, injected verbatim, token-matched to M_a.
+- **M_all_a:** all of B_a in context, unretrieved and uncompiled (≈15–30k tokens; served with a raised context length).
+- **D_opt (Tier 2):** a static demonstration set selected by search on S_dev from S_train_a trajectories (bootstrap-few-shot style), token-matched to M_a — the optimized representative of the demonstration container.
+- **L (Tier 2):** LoRA-SFT of A1 on the solved S_train_a trajectories, one seed, descriptive.
+
+**GATES (S_dev n=300, published either way; any fail → stop and report).** G1 bank effect at I0 on the screened pairing: paired gain ≥6pt with lower 80% bootstrap CI ≥3pt and fixes ≥12. G2 optimizer headroom: I1a > I0 by ≥2pt on S_dev for ≥3 of 4 seeds, else the optimizer-failure branch (Risk 2). G3 retriever relevance ≥60% on a 100-item audit. G4 stored-record truthfulness ≥70%. G5 throughput ≥400 episodes/hour aggregate, else the matrix is re-scoped before running. G6 bank-half balance: |g(I0,B_a) − g(I0,B_b)| ≤ 3pt on S_dev, else halves are re-drawn once from the reserve (logged).
+
+**E1 CONDITION GRID (A1), fully instance-paired on S_test.** Notation: M_a, M_b = retrieval from B_a, B_b; "own" = the bank from the half the instruction was optimized on.
+| # | Cell | n | seeds | Tier | Purpose |
+|---|---|---|---|---|---|
+| 1 | I0×M0 | 1000 | 2 decoding | 0 | baseline |
+| 2 | I0×M_a | 1000 | 2 decoding | 0 | the standard memory-paper comparison; denominator of S_raw |
+| 3 | I0×M_b | 1000 | 2 decoding | 0 | the other half's bank at I0 (balance check, headroom share) |
+| 4 | I0×C_a | 1000 | 2 decoding | 0 | compiled static, token-matched |
+| 5 | I1a×M0 | 1000 | 4 optimizer | 0 | optimized instruction alone (half a) |
+| 6 | I1a×M_a | 1000 | 4 | 0 | **own** |
+| 7 | I1a×M_b | 1000 | 4 | 0 | **other** |
+| 8 | I1b×M0 | 1000 | 4 | 0 | optimized instruction alone (half b) |
+| 9 | I1b×M_a | 1000 | 4 | 0 | **other** |
+| 10 | I1b×M_b | 1000 | 4 | 0 | **own** |
+| 11 | I2a×M_a, I2a×M0 | 500 | 4 | 0 | co-adaptation; dependence when memory is removed |
+| 12 | I0×M_a+dup10, I1a×M_a+dup10 | 1000 | 1, 2 | 0 | graded positive control (same instances as cells 2 and 6) |
+| 13 | NULL: I0×M0, I0×M_a @ seed 37 | 500 | 1 | 0 | treatment-free replicate |
+| 14 | I_H×M0, I_H×M_a | 1000 | 2 decoding | 1 | information-free accuracy-raising control |
+| 15 | I3×M0 | 1000 | 1 | 1 | length control |
+| 16 | I0×R_a | 1000 | 2 decoding | 1 | distillation vs raw exemplars |
+| 17 | I0×M_all_a | 500 | 1 | 1 | content present, no retrieval, no compilation |
+| 18 | I1b×C_a | 1000 | 2 | 1 | compiled block on top of an instruction that never saw the bank — the recommended deployment |
+| 19 | I1a×M_touched | 500 | 4 | 1 | coverage-matched bank |
+| 20 | I0×M_a', I1a×M_a' | 500 | 1, 2 | 1 | bank-format invariance |
+| 21 | I0×M_tuned, I1a×M_tuned | 500 | 1, 2 | 1 | search-budget-matched bank |
+| 22 | I0×D_opt, I1b×D_opt | 500 | 1, 2 | 2 | optimized static demonstrations |
+| 23 | L×M0, L×M_a | 500 | 1 | 2 | parametric third container (descriptive) |
+| 24 | A2 (losing pairing): cells 1, 2, 5, 6 | 500 | 1 / 2 | 2 | memory-null or memory-weak regime |
+| 25 | gpt-oss-120b: cells 1, 2, 5, 6 | 500 | 1 / 2 | 2 | out-of-scope scale check |
+
+**PRIMARY ENDPOINT — information-specific substitution.** For instruction I and bank B, g(I,B) is the paired gain acc(I×M_B) − acc(I×M0) on S_test. For each seed s, own and other gains are g(I1a(s),B_a), g(I1b(s),B_b) and g(I1a(s),B_b), g(I1b(s),B_a). Δ_info = mean(other) − mean(own), computed at the instance level as (y_other − y_own) within instruction and seed, so headroom and instruction identity are held fixed; S_info = 1 − mean(own)/mean(other). Test: one-sided Δ_info > 0 at α=.05 with a cluster bootstrap over instances and optimizer runs (seeds as random effects); S_info reported with its bootstrap CI. If mean(other) < 3pt, S_info is undefined and Δ_info alone is reported. Every cell reports its fix/break decomposition.
+
+**HEADLINE (descriptive) ENDPOINTS.** S_raw = 1 − mean_s g(I1a(s),B_a) / g(I0,B_a), the number a memory paper would compute; S_rel, the same on the error-reduction scale g/(1 − acc(I×M0)); and the **headroom share** = [g(I0,B_b) − mean_s g(I1a(s),B_b)] / [g(I0,B_a) − mean_s g(I1a(s),B_a)], the fraction of S_raw's drop reproduced by a bank the optimizer never saw. The I_H cells give the same share at an information-free instruction. If the S_test denominator g(I0,B_a) is below 4pt, S_raw and S_rel are not reported (branch pre-registered); S_info is unaffected.
+
+**SECONDARY ENDPOINTS.** (a) Compilation sufficiency: I0×C_a vs I0×M_a, TOST ±4; and at I1b (cell 18 vs I1b×M_a). (b) Ladder: I0×M_a vs I0×C_a vs I0×M_all_a. (c) Distillation value: I0×M_a vs I0×R_a. (d) Coupling: synergy I2a×M_a vs max(I1a×M_a, I1a×M0); dependence I2a×M0 vs I1a×M0; and S_info recomputed with I2a in place of I1a on the memory side. (e) Coverage: |S_info(B_touched) − S_info(B_a)| ≤ 0.15. (f) Bank format: |S_info(B') − S_info(B)| ≤ 0.2. (g) Search budget: g(I0,B_tuned) vs g(I0,B_a) and S_info with B_tuned. (h) Positive control: on the 100 dup-targeted instances, g at I1a retains ≥60% of g at I0; on the other 900, Δ_info holds. (i) Generality (Tier 2): MIPROv2-style optimizer for I1a, 2 seeds, n=300.
+
+**MODERATOR ANALYSIS (reuses runs).** Per test instance: max dense similarity to any B_a item plus an "instance-specific reusable content" label (100 cases human-validated, κ reported). The own-vs-other instance-level difference regressed on similarity with instance and run as crossed random effects.
+
+**E2 (ALFWorld, Tier 1).** Crossover-lite: I0×{M0, M_a, M_b}, I1a×{M0, M_a, M_b}, I0×C_a; 2 optimizer seeds; 2 decoding seeds for the I0 cells; banks from 100 training episodes per half.
+
+**COMPUTE ARITHMETIC.** Screening: bank-gen 2 agents × 800 = 1,600; screening cells 1,800. Tier 0: cells 1–4 = 8,000; cells 5–10 = 24,000; 11 = 4,000; 12 = 3,000; 13 = 1,000; GEPA rollouts 8 × 350 + I2 4 × 350 = 4,200 → **≈44,200 (+3,400 screening)**. Tier 1: 14 = 4,000; 15 = 1,000; 16 = 2,000; 17 = 500; 18 = 2,000; 19 = 2,000; 20–21 = 3,000; E2 ≈ 2,500 (×25 calls) + 400 + 700 → **≈18,100**. Tier 2: 22 = 1,500 + 350; 23 = 1,000; 24 = 2,000 + 700; 25 = 3,000 + 700 + 400; MIPROv2 1,200 + 700; iso-cost 4,400 → **≈16,000**. Node: 2×A100-80GB, one replica per GPU. The program measured 985–1,380 episodes/hour on one replica for a 27B agent in this pipeline: Tier 0 ≈ 17–23 h, Tier 0+1 ≈ 25–33 h, everything ≈ 32–42 h. At the G5 floor of 400/hour Tier 0 alone is ≈4.6 days, which is the re-scope trigger (Tier 0 seeds drop 4 → 3 before anything else). API: reflection ≈ 12 runs × ~60 calls, distillation ≈ 1,600 episodes × 2 formats, compiler, moderator labels — ≈ $60–120.
+
+**ORDERED CONTINGENCY CUTS.** Tier 2: 25 → iso-cost → MIPROv2 → 22 → 23 → 24. Tier 1: E2 decoding replicate → 20 → 21 → 16 → 17 → 15 → 19 → 14 → 18 → E2. Tier 0: optimizer seeds 4 → 3 (never below 3); cells 12–13 never cut; cells 5–10 never cut. Unrun arms are reported as unrun, never as nulls.
+
+## Baselines and Ablations
+
+**Baselines that could plausibly win and would refute us.**
+(i) **Δ_info ≈ 0 while S_raw is large** — the drop in memory's gain at an optimized instruction is headroom, not information; the paper reports that the memory literature's fixed-prompt comparison overstates memory only in the trivial sense that any better prompt would, and the "un-optimized prompt" framing is withdrawn.
+(ii) **Δ_info ≈ 0 and S_raw ≈ 0** — complementarity: memory and instruction optimization contribute independently.
+(iii) **I0×M_a beats I0×C_a beyond the TOST margin**, or **I1b×M_a beats I1b×C_a** — per-instance retrieval carries value no static compilation holds; the compile recommendation dies.
+(iv) **I0×R_a ≈ I0×M_a** — the memory system is a demonstration selector; distillation buys nothing.
+(v) **I0×M_all_a ≈ I0×M_a while I0×C_a < I0×M_a** — presence of content, not retrieval or compilation, does the work.
+(vi) **I2a×M_a > max(I1a×M_a, I1a×M0) by more than the MDE** — co-adaptation synergy; the coupling the track is named for is real.
+(vii) **S_info(B_touched) ≪ S_info(B_a)** — exposure, not absorption.
+(viii) **S_info(B_tuned) ≪ S_info(B_a)** — the memory side merely lacked search; "search beats no search" is the finding.
+(ix) **|S_info(B') − S_info(B)| > 0.2** — substitution is a property of the distillation recipe.
+(x) **The graded positive control fails** (dup-targeted gain does not survive I1a) — the instrument cannot detect instance-specific value at the effect size that matters; the study is reported as uninterpretable at that scale.
+(xi) **No in-scope pairing clears G1** — memory has nothing to substitute on 27–32B agents here; the paper is the four-pairing TOST report.
+
+**Ablations that isolate the mechanism.**
+- **Crossover (cells 5–10)** — the identification: same instruction, same instances, own vs other bank. Essential.
+- **I_H and I3** — information-free level control and length control, separating "any better prompt" from "this prompt's content".
+- **Coverage-matched and search-budget-matched banks** — exposure and search cannot masquerade as absorption.
+- **Token-matched C_a and R_a; fixed-length C_a with a padded comparator** — compile-vs-retrieve ties are not budget artifacts.
+- **M_all_a** — the third rung of retrieval → compile → dump.
+- **Graded positive control on the same instances** — the instrument's sensitivity at ≈3pt is demonstrated inside the primary runs.
+- **I2a at 4 seeds** — the only arm that tests whether memory adds anything to an instruction that was allowed to see it.
+- **Two bank formats, two in-scope agents, one out-of-scope scale check** — relativity of the claim is measured, not assumed.
+- **D_opt (Tier 2)** — the demonstration container's optimized representative, so C_a > M_a cannot be "prose beats exemplars".
+- **Shuffled-bank retrieval sanity check** — retrieval is functioning in M_a.
+
+## Falsifiable Predictions
+
+1. **Identification (primary).** Δ_info > 0 (one-sided, α=.05) with Δ_info ≥ 3pt, and S_info ≥ 0.5 with its 90% bootstrap CI excluding 0.2, on A1/E1; direction consistent in ≥3 of 4 seeds and in both crossover directions.
+2. **Headroom share.** Between 30% and 70% of S_raw's drop is reproduced by the other half's bank (cell 3 vs 7) — i.e. headroom is real but does not account for the whole drop. If the share is ≥90%, prediction 1 is expected to fail and the "un-optimized prompt" framing is withdrawn.
+3. **Length and level.** I3 recovers <20% of I1a's improvement over I0; at I_H the memory gain drops by no more than the headroom share predicts.
+4. **Compilation.** I0×C_a is TOST-equivalent (±4) to I0×M_a at matched tokens, on E1 and E2; I1b×C_a ≥ I1b×M_a − 2pt.
+5. **Ladder.** I0×M_all_a is within 4pt of I0×M_a at bank size ≤400.
+6. **Graded positive control.** On the 100 dup-targeted instances the memory gain at I1a retains ≥60% of its I0 value; on the remaining 900, Δ_info holds.
+7. **Moderator.** The own-vs-other instance-level difference is concentrated in the top decile of instance-to-bank similarity.
+8. **Distillation.** I0×M_a exceeds I0×R_a by <3pt.
+9. **Coupling.** I2a×M_a ≤ max(I1a×M_a, I1a×M0) + MDE; I2a×M0 < I1a×M0 by ≥3pt; S_info with I2a on the memory side is within 0.15 of S_info with I1a.
+10. **Coverage and search.** |S_info(B_touched) − S_info(B_a)| ≤ 0.15; S_info(B_tuned) ≥ S_info(B_a) − 0.15.
+11. **Bank format and screening.** At least one in-scope pairing clears G1; |S_info(B') − S_info(B)| ≤ 0.2; if ExpeL on Qwen3.5-27B is again within ±3pt of no memory, the ReasoningBank-style bank is the one that clears.
+12. **Regimes.** A2's paired gain at I0 is within ±4pt (TOST) and S is not computed there; the gpt-oss-120b scale check has the same sign of Δ_info as A1.
+13. **Iso-cost and third container (Tier 2, descriptive).** Instruction optimization reaches the full-memory accuracy at ≤ half the training-time call budget; L×M_a − L×M0 is closer to the I1 contrast than to the I0 contrast.
+
+**Refutation.** Δ_info's CI covering zero with S_raw large (outcome i) is the most likely way the hypothesis dies and is reported as the primary result: memory's apparent redundancy with prompt optimization is headroom. Δ_info's CI covering zero with S_raw ≈ 0 is complementarity. If the graded control fails, the instrument is not sensitive at the relevant scale and no substitution claim is made. If cells 3 and 2 differ by more than G6 allows on S_test, the halves were unbalanced and the crossover is reported per direction without pooling.
+
+## Measurement and Noise Control
+
+Three variance sources handled separately, per this program's house rules, with variance components taken from the program's own measurements rather than assumed.
+
+**(a) Evaluation variance.** Every S_test instance runs under every cell with the same seed schedule; all comparisons are within-instance. Superiority tests are exact McNemar on fix/break counts (or their instance-level difference-of-differences analogue for Δ_info), Holm-corrected within pre-declared families: F-A {crossover: 6 vs 7, 9 vs 10}, F-B {ladder: 2, 4, 17}, F-C {coupling: 11 vs 5, 6}, F-D {controls: 14–16, 19–21}. Equivalence claims use TOST via 90% instance-level bootstrap CI (10k resamples); absence of significance is never reported as equivalence. Every delta carries its fix/break decomposition.
+
+**(b) Optimizer variance.** 4 GEPA seeds per half and 4 for I2a. The program measured the between-seed spread of optimized-instruction accuracy at 1.0–1.6pt (n=500, two GEPA runs and two MIPROv2 runs), and the treatment-free decoding-seed spread at 2.8–3.4pt (three seeds). The crossover's primary contrast is computed *within* instruction and seed, so between-run variance enters only through the interaction of instruction identity with bank half, which is bounded above by the measured 1.6pt. Cell comparisons use a mixed-effects logistic model with test instance and optimizer run as crossed random effects; CIs from a cluster bootstrap resampling runs as well as instances. S_info is reported per seed and per crossover direction, never as one number.
+
+**(c) Null replicates and the null floor.** Cells 1 and 2 are re-run at seed 37 (n=500); together with the three-seed spread already measured (2.8–3.4pt on a 500-instance set), they define the treatment-free |Δ| floor. No effect is claimed unless it exceeds both its test threshold and the 95th percentile of that floor. The floor is expected to halve at n=1000.
+
+**Minimum detectable effect (stated before running).** *Primary (Δ_info):* per seed and direction, the own-vs-other contrast is a paired difference on the same instances at the same instruction; with 15–20% discordance its SE is ≈1.1pt at n=1000. Eight such contrasts (4 seeds × 2 directions) with a between-run SD of the contrast ≤1.6pt give SE(Δ_info) ≈ 0.7pt and a one-sided 80%-power MDE of ≈2pt; we pre-register 3pt as the claim threshold and report the achieved MDE from the fitted variance components. *Headline (S_raw):* the I0-side gain has SE ≈0.95pt (two decoding seeds); the I1a-side gain averages four runs with between-run SD ≤1.6pt, SE ≈1.0pt; the difference of the two gains has MDE ≈3.9pt, so S_raw is resolvable to roughly ±0.25 at a 7pt denominator and is reported with its CI, not tested. *Gates:* G1 at n=300 has SE ≈2.4pt for the paired gain; the lower-80%-CI requirement makes a true effect near 2pt unlikely to pass (≈10%), and the S_test denominator branch covers the remainder. E2 (n=274), A2 and the Tier-2 arms are directional. Sub-MDE differences are reported as inconclusive in either direction.
+
+**Instrumentation per episode.** Tool calls, distinct documents, injected memory tokens and item IDs, instruction hash and half tag, seed, outcome; optimizer runs log per-rollout episode IDs (coverage), candidate lineage, and reflector inputs. A single script produces every table from the JSONL logs.
+
+## Preprint Collision Check
+
+**Method.** Fresh scan on 2026-09-03 (prior scan 2026-08-21): 15 HuggingFace Papers queries (244 unique papers, 44 dated ≥2026-06), by-id abstract verification for 54 arXiv IDs, and Claude server-side web search for targeted collision queries and for IDs not indexed on HF. Every ID cited here appears in `reference/litscan_2026-09-03.md` with title, date, verification channel and role. Semantic Scholar was reachable but rate-limited without a key; arXiv is unreachable from this node, so arXiv pages were confirmed through web search results only.
+
+**Closest work: EvoAgentBench (arXiv 2607.05202, 2026-07-06).** Memento, ReasoningBank and GEPA evaluated on the same 528/267 training/test trajectories across four domains and three backbones. This is the three-way comparison v2 said did not exist; the sentence "no published work uses one as the control for the other" is withdrawn. What remains ours: the combined cells (I1×M1, I2×M1, I2×M0), token-matched compiled and raw arms, the whole-bank arm, the coverage-matched bank, the substitution ratio with paired statistics, and the positive control. EvoAgentBench's own headline — no automatic method is positive in every cell, and GEPA approaches the curated reference on one backbone — is consistent with our hypothesis and is cited as motivation.
+
+**Older framing collision: MIPROv2 (arXiv 2406.11695, 2024).** Instruction-only vs demonstration-only vs joint optimization on one training set is the two-container question for static bootstrapped demonstrations. It does not retrieve, distill, token-match, hold episodes out across containers, or report a residual; but it is the precedent a reviewer will name first, and it is now cited as the prior on S rather than treated as methods work.
+
+**Nearest measurement object: Experience Distillation (arXiv 2607.21051).** "Retains ≥64.8% of the in-context gain" is the same ratio shape as S with weights as the second container. Our second container is an instruction: cheaper to serve, no gradient access, and — the risky part — testable at matched tokens against a compiled static block.
+
+**Compile prediction is partially pre-empted in direction:** skills > Workflow Memory by 6.06pt matched (arXiv 2608.14036); single rewrite ≈ iterative refinement (arXiv 2606.30775); model-generated skills help on average and hurt 25% (arXiv 2605.23899). None compares against live per-instance retrieval from the same bank at matched tokens. Prediction 3 is therefore stated as a quantified equivalence, not as a surprise, and the whole-bank arm is added so the three rungs of the ladder are measured together.
+
+**MemDelta (arXiv 2606.29914)** remains the direct methodological precedent for "the baseline is the confound"; its confound is inside the retrieval pipeline, ours is a rival container. **EvoMemBench (arXiv 2605.18421)** motivates M_all. **"Prompt Optimization Is a Coin Flip" (arXiv 2604.14585)** motivates gate G2 and the optimizer-failure branch. **TERMS-Bench (arXiv 2605.13909)** ran GEPA as a control for whether prompting saturates a benchmark — the same logical move in a different domain without memory. **MemAPO (arXiv 2603.21520)** couples memory into the optimizer (opposite direction). **TMEM (arXiv 2606.04536), experience internalization (arXiv 2606.04703) and arXiv 2603.18272** establish the parametric container and justify the LoRA arm.
+
+**Correction to v2's check.** v2 retracted ActMem (2603.00026), MAS-PromptBench (2606.23664), TERMS-Bench (2605.13909), MemAPO (2603.21520) and StructMemEval (2602.11243) as unverifiable. All five exist; the August search failed, not the citations. They are reinstated with their actual roles (only TERMS-Bench and MemAPO bear on this proposal). The lesson is procedural and is now enforced: a citation is dropped only when a by-id lookup or an abs-page match fails on two independent channels.
+
+**Appendices.** The pre-registered pilot that fixes the agent-screening logic and the gate threshold (design, gate log, deviation log, abstract, code: `reference/shortcutting_v4/`) and the scan records (`reference/litscan_2026-09-03.md`, `reference/litscan_raw/`) ship with this proposal so that the numbers quoted here can be checked rather than trusted.
+
+**Verification limits.** arXiv is unreachable from the compute node, so EvoAgentBench's PDF was not opened; its absence claim (no combined optimizer-plus-memory cell, no token matching, no paired statistics) rests on the abstract, the project page's method list (Vanilla, +Memento, +RB, +GEPA, +Anchor) and search-surfaced descriptions of its Table 3 and turn-efficiency analysis. The same holds for the appendix of arXiv 2608.14036. Both are flagged for a PDF check by the PI before the design freeze, and the 15 HuggingFace queries plus the targeted web-search queries are listed verbatim in the scan record.
+
+**Residual risk.** ICLR 2027 submissions are not yet public; NeurIPS 2026 camera-readies may surface in October; a "GEPA + memory" ablation may exist in an appendix of a systems paper. The check will be re-run before the design freeze and again before submission; the scan records are committed.
+
+## Risk Factors and Limitations
+
+1. **Screening failure (G1).** If no in-scope pairing clears the CI-based 6pt gate, the bank is enriched once and re-measured; if it still fails, the study stops and reports four TOST results. A live branch given the program's prior null on one pairing.
+2. **Optimizer failure (G2).** GEPA-style optimization may not beat I0 (the coin-flip result). Branch: I1 vs I0 reported as the prerequisite; if I1 ≈ I0 in ≥2 of 4 seeds, S_info is still defined (own vs other at whatever instruction was found) but the paper's framing shifts to the ladder and coupling cells.
+3. **Half imbalance.** B_a and B_b may differ in quality by chance; G6 checks balance on S_dev and cell 3 vs 2 on S_test; the crossover averages both directions and is also reported per direction. Each half has 400 episodes, the same as v2's single bank.
+4. **Lossy compilation.** C_a depends on the compiler prompt; fixed on S_dev, reported verbatim, treated as a lower bound; M_all_a bounds it from the other side.
+5. **Agent and bank specificity.** S_info is reported per agent and per format and never pooled. Two 27–32B dense agents and one out-of-scope MoE bound the claim. No 8B-class weights are available locally.
+6. **Positive-control artificiality.** Near-duplicates are synthetic; the graded control demonstrates sensitivity at ≈3pt aggregate, not that natural instance-specific content exists at that scale — the moderator analysis addresses the latter.
+7. **Statistical reach.** Δ_info's MDE ≈2–3pt rests on the measured ≤1.6pt between-run spread transferring to the contrast; the achieved MDE is reported and, if it exceeds 4pt, prediction 1 is downgraded to directional before unblinding the test set.
+8. **Selection.** A1 is chosen on S_dev for the size of its memory effect; the primary test runs on S_test and S_info does not use the I0 denominator, so the selection cannot inflate it. S_raw can be inflated and is descriptive; the other three pairings are reported next to the winner.
+9. **Coverage control is partial.** B_touched matches which episodes the optimizer touched, not how much it learned from each. Reported with the coverage statistics.
+10. **No test-time self-editing (refused).** Substitution requires that both containers see identical episodes and that test instances stay paired; a bank that updates during evaluation gains exposure the instruction cannot match and breaks pairing. ReasoningBank's distillation format is adopted; its update step is held after training. Named as future work.
+11. **No re-measurement of a published number (refused).** The targets' own settings (WebArena, ALFWorld with their scaffolds) cannot be reproduced on this node; the paper audits the evaluation template and states this as a limitation.
+12. **Verification of the closest work.** EvoAgentBench's PDF could not be opened from the node; the absence claim is qualified and flagged for a check before the design freeze.
+13. **Infrastructure.** 2×A100; non-persistent root filesystem; runs resumable and append-only; frontier key may be unavailable (local reflector fallback declared).
+14. **Scope.** Procedural experience memory in agent benchmarks with recurring task structure; nothing is claimed about episodic personal memory or long-conversation memory.
