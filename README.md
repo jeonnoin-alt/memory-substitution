@@ -3,7 +3,7 @@
 **Is Your Agent's Memory Just an Un-Optimized Prompt?** — measuring how much of a retrieved-experience
 memory bank's value survives once a prompt optimizer is given the same training episodes.
 
-This repo executes **proposal ③ v2** (`memory_or_instruction`, score 6.97) from the agent-memory ×
+This repo executes **proposal ③** (`memory_or_instruction`; frozen text: `reference/proposal_v5.2.md`, lineage from v2 6.97) from the agent-memory ×
 prompt-optimization ideation program run in `AI-Scientist-v2`. Lineage: v1 6.73 → **v2 6.97** → v3 5.73
 ("When Is a Retriever Decorative?", superseded). The HANDOFF that started this work is `HANDOFF.md`.
 
@@ -57,6 +57,19 @@ and a non-compilable positive-control bank B-dup that must show S < 0.25. Full t
   `reviews/v4.4_opus/SUMMARY.md` lays out the three ways forward (A: move the confirmatory environment to one with
   recurring procedural structure, e.g. ALFWorld with held-out training games; B: re-scope to the memory-null/headroom
   report; C: v4.5 in E1 with the instrument fixes) and recommends A pending an ALFWorld feasibility check. Awaiting the PI.
+- 2026-09-04 (later): the PI chose **direction A** (ALFWorld primary, no API key, local models only) and asked for the
+  loop to run automatically: an Opus author agent writes each version from a brief (`tools/author_brief_v5*.md`), three
+  Opus judges score it. v5 5.25 → **v5.1 5.57** (`reviews/v5.1_opus/`). The v5.1 round's one new design-blocking
+  finding (the ratio endpoint's denominator Inner(I_oth) is not neutral: a mis-specified off-type instruction is
+  repaired by the on-type bank, inflating A) is answered in **`reference/proposal_v5.2.md`, the frozen proposal text**
+  (rows 82–91 of its decision log): A0 with the I0\* denominator is co-primary, I_all × {B_own, B_oth} and B′_own join
+  Tier 0, M_shuf is promoted, the reserve is spent in a stated order, prediction 6 becomes a TOST, AutoManual/AutoGuide
+  are cited as the pre-2026 ALFWorld precedents. v5.2 is not re-judged (THRESHOLDS T-A: round-3 blockers resolved or
+  descoped, logged, then freeze). ALFWorld feasibility on this node: `reference/alfworld_feasibility_2026-09-04.md`.
+- **Stage 3 next:** `DESIGN.md` from v5.2, with two data-forced amendments found on 2026-09-04 — ALFWorld's 3,553
+  training games are trials of **1,465 unique tasks** (allocate and cluster by task), and clean/cool/heat exist only in
+  kitchens (the type partition also partitions rooms) — then code adapted from `reference/shortcutting_v4/code`.
+  DESIGN.md is hashed only after the PI runs the freeze-blocking literature obligation (provenance-crossover search).
 - The GitHub repo was renamed to `memory-substitution`; the old `experiments-mem` URL redirects.
 
 ## House rules (from HANDOFF)
