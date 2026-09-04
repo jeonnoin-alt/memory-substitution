@@ -1,0 +1,525 @@
+[
+ {
+  "name": "memory_item_value_reliability",
+  "title": "Item Value Is Not an Item Property: A Generalizability Audit of Per-Item Utility Estimates in Self-Editing Agent Memory",
+  "pool": "agent_memory_v2_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 6.7,
+  "sonnet_verdict": "borderline",
+  "opus": 6.12,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 5.7,
+   "significance": 6.0,
+   "soundness": 5.7,
+   "feasibility": 7.0,
+   "clarity": 8.0
+  },
+  "delta": -0.58,
+  "missing_fields": []
+ },
+ {
+  "name": "provenance_gap_selection_not_authorship",
+  "title": "Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It",
+  "pool": "agent_memory_v2_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 6.17,
+  "sonnet_verdict": "borderline",
+  "opus": 6.07,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 5.7,
+   "significance": 6.0,
+   "soundness": 5.3,
+   "feasibility": 7.3,
+   "clarity": 8.0
+  },
+  "delta": -0.1,
+  "missing_fields": []
+ },
+ {
+  "name": "compile_dont_retrieve",
+  "title": "Compile, Don't Retrieve: The Query-Conditioned Read in Agentic Experience Memory Is Inert",
+  "pool": "agent_memory_top4_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 6.77,
+  "sonnet_verdict": "borderline",
+  "opus": 6.0,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 5.3,
+   "significance": 6.0,
+   "soundness": 6.0,
+   "feasibility": 6.0,
+   "clarity": 8.0
+  },
+  "delta": -0.77,
+  "missing_fields": []
+ },
+ {
+  "name": "memory_or_instruction",
+  "title": "Is Your Agent's Memory Just an Un-Optimized Prompt? Measuring the Residual Value of Retrieved Experience After Instruction Optimization",
+  "pool": "agent_memory_v2_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 6.7,
+  "sonnet_verdict": "borderline",
+  "opus": 5.92,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.3,
+   "soundness": 5.3,
+   "feasibility": 6.7,
+   "clarity": 8.3
+  },
+  "delta": -0.78,
+  "missing_fields": []
+ },
+ {
+  "name": "failure_signature_routing",
+  "title": "Transfer Is Predicted by How Tasks Fail, Not by What Tasks Are About: A Routing Study for Textual Prompt Transfer",
+  "pool": "transferable_prompt_optimization_reviews.json",
+  "brief": "transferable_prompt_optimization.md",
+  "sonnet": 5.8,
+  "sonnet_verdict": "borderline",
+  "opus": 5.87,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 5.3,
+   "significance": 5.7,
+   "soundness": 5.7,
+   "feasibility": 6.3,
+   "clarity": 8.0
+  },
+  "delta": 0.07,
+  "missing_fields": [
+   "Preprint Collision Check"
+  ]
+ },
+ {
+  "name": "collection_policy_coupling_collapse",
+  "title": "Rich Get Richer, Twice: The Collection Policy — Not Content Quality — Drives Diversity Collapse When Self-Editing Memory and Prompt Optimization Share the Same Episodes",
+  "pool": "agent_memory_v2_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 6.3,
+  "sonnet_verdict": "borderline",
+  "opus": 5.85,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 5.3,
+   "significance": 5.7,
+   "soundness": 5.3,
+   "feasibility": 7.0,
+   "clarity": 8.0
+  },
+  "delta": -0.45,
+  "missing_fields": []
+ },
+ {
+  "name": "instruction_conditioned_complementarity",
+  "title": "What Does the Prompt Already Say? Instruction-Conditioned Complementarity Decides When Retrieved Experience Helps, Hurts, or Just Costs Tokens",
+  "pool": "agent_memory_v2_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 6.58,
+  "sonnet_verdict": "borderline",
+  "opus": 5.82,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.7,
+   "soundness": 5.3,
+   "feasibility": 8.0,
+   "clarity": 7.7
+  },
+  "delta": -0.76,
+  "missing_fields": []
+ },
+ {
+  "name": "coadaptation_transplant_ccr",
+  "title": "Who Broke It, the Instruction or the Memory? A Transplant Diagnostic for Prompt–Memory Co-Adaptation, and a Counterfactual Routing Fix",
+  "pool": "agent_memory_v2_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 6.15,
+  "sonnet_verdict": "borderline",
+  "opus": 5.77,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 5.3,
+   "feasibility": 6.3,
+   "clarity": 8.0
+  },
+  "delta": -0.38,
+  "missing_fields": []
+ },
+ {
+  "name": "decorative_retriever",
+  "title": "When Is a Retriever Decorative? Retrieval-Set Overlap Predicts Whether Procedural Agent Memory Must Be Retrieved or Can Be Frozen",
+  "pool": "agent_memory_top4_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 5.73,
+  "sonnet_verdict": "borderline",
+  "opus": 5.75,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 5.0,
+   "feasibility": 7.0,
+   "clarity": 8.0
+  },
+  "delta": 0.02,
+  "missing_fields": []
+ },
+ {
+  "name": "memory_induced_shortcutting",
+  "title": "Memory Makes Agents Stop Looking: Premature Termination of Evidence Gathering Mediates Memory Harm, and Instruction Optimization Cannot Repair It",
+  "pool": "agent_memory_v2_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 6.88,
+  "sonnet_verdict": "borderline",
+  "opus": 5.72,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 5.0,
+   "feasibility": 6.7,
+   "clarity": 8.0
+  },
+  "delta": -1.16,
+  "missing_fields": []
+ },
+ {
+  "name": "memory_vetoes_instruction_slot",
+  "title": "The Instruction Slot Is Not Independent of the Memory Slot: Answer-Bearing Experience Suppresses Instruction Compliance Even Without Imitation, and Makes Optimized Prompts Bank-Specific",
+  "pool": "agent_memory_top4_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 6.4,
+  "sonnet_verdict": "borderline",
+  "opus": 5.72,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 5.3,
+   "significance": 6.0,
+   "soundness": 5.0,
+   "feasibility": 7.0,
+   "clarity": 6.7
+  },
+  "delta": -0.68,
+  "missing_fields": []
+ },
+ {
+  "name": "coverage_currency_coupling",
+  "title": "Concentration Is the Common Currency: Self-Editing Memory and Prompt Optimization Both Buy pass@1 by Spending Solve-Set Coverage, and Stacking Them Pays Twice",
+  "pool": "agent_memory_v2_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 6.45,
+  "sonnet_verdict": "borderline",
+  "opus": 5.68,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 5.0,
+   "feasibility": 6.3,
+   "clarity": 8.0
+  },
+  "delta": -0.77,
+  "missing_fields": []
+ },
+ {
+  "name": "memory_budget_confound",
+  "title": "One Item Is the Budget: Token Volume, Not Memory Content, Explains Both the Harm and the Apparent Gains of Agentic Memory Curation",
+  "pool": "agent_memory_v2_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 6.58,
+  "sonnet_verdict": "borderline",
+  "opus": 5.63,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.7,
+   "soundness": 5.0,
+   "feasibility": 6.7,
+   "clarity": 8.0
+  },
+  "delta": -0.95,
+  "missing_fields": []
+ },
+ {
+  "name": "substitutes_not_complements",
+  "title": "Substitutes, Not Complements: Clause-Level Evidence That Optimized Instructions Shrink an Agent's Useful Memory-Injection Budget",
+  "pool": "agent_memory_optimizer_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 6.42,
+  "sonnet_verdict": "borderline",
+  "opus": 5.47,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 4.7,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 7.7,
+   "clarity": 8.0
+  },
+  "delta": -0.95,
+  "missing_fields": []
+ },
+ {
+  "name": "counterfactual_memory_screening_under_selection_noise",
+  "title": "Does Counterfactual Screening of Agent Memory Survive Its Own Noise? Neighborhood-Conditional Utility, Winner's Curse, and Interference",
+  "pool": "agent_memory_optimizer_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 6.0,
+  "sonnet_verdict": "borderline",
+  "opus": 5.45,
+  "opus_verdict": "reject",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.3,
+   "soundness": 4.3,
+   "feasibility": 7.3,
+   "clarity": 8.0
+  },
+  "delta": -0.55,
+  "missing_fields": []
+ },
+ {
+  "name": "memory_dropout_coadaptation",
+  "title": "Don't Co-Adapt: A Bank-Swap Diagnostic for Prompt Optimizers Coupled to Self-Editing Memory, and Which Fix Actually Survives Bank Turnover",
+  "pool": "agent_memory_optimizer_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 5.95,
+  "sonnet_verdict": "borderline",
+  "opus": 5.45,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 4.0,
+   "significance": 5.0,
+   "soundness": 6.0,
+   "feasibility": 7.0,
+   "clarity": 8.0
+  },
+  "delta": -0.5,
+  "missing_fields": []
+ },
+ {
+  "name": "coverage_selection_division_of_labour",
+  "title": "Coverage Failures Are the Only Thing Memory Can Sell: A Stratified Division of Labour Between Self-Editing Memory and Prompt Optimization, Judged Against a Compute-Matched Sampling Control",
+  "pool": "agent_memory_optimizer_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 5.7,
+  "sonnet_verdict": "borderline",
+  "opus": 5.4,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 4.0,
+   "significance": 5.0,
+   "soundness": 5.7,
+   "feasibility": 7.3,
+   "clarity": 8.0
+  },
+  "delta": -0.3,
+  "missing_fields": []
+ },
+ {
+  "name": "clause_level_portability",
+  "title": "Prompt Optimizers Discover Two Kinds of Text: A Clause-Level Attribution Study of What Transfers Across Domains",
+  "pool": "transferable_prompt_optimization_reviews.json",
+  "brief": "transferable_prompt_optimization.md",
+  "sonnet": 5.95,
+  "sonnet_verdict": "borderline",
+  "opus": 5.38,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 4.3,
+   "significance": 5.7,
+   "soundness": 5.3,
+   "feasibility": 5.3,
+   "clarity": 8.0
+  },
+  "delta": -0.57,
+  "missing_fields": [
+   "Preprint Collision Check"
+  ]
+ },
+ {
+  "name": "commit_then_consult_slot_discipline",
+  "title": "Anchoring, Not Overload: Commitment Order Explains Why Optimized Instructions and Agent Experience Memory Fight Each Other",
+  "pool": "agent_memory_v2_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 6.45,
+  "sonnet_verdict": "borderline",
+  "opus": 5.38,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 4.7,
+   "significance": 5.3,
+   "soundness": 5.0,
+   "feasibility": 6.0,
+   "clarity": 8.0
+  },
+  "delta": -1.07,
+  "missing_fields": []
+ },
+ {
+  "name": "breadth_routed_memory",
+  "title": "Consolidate the Broad, Retrieve the Narrow: Coverage — Not Utility, Not Usage — Decides Where Agent Experience Should Live",
+  "pool": "agent_memory_optimizer_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 5.67,
+  "sonnet_verdict": "borderline",
+  "opus": 5.35,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 4.0,
+   "significance": 5.0,
+   "soundness": 5.3,
+   "feasibility": 7.7,
+   "clarity": 8.0
+  },
+  "delta": -0.32,
+  "missing_fields": []
+ },
+ {
+  "name": "playbook_transfer",
+  "title": "Transfer the Optimizer, Not the Prompt: A Domain-General Failure→Edit Playbook for Sample-Efficient Reflective Prompt Optimization",
+  "pool": "transferable_prompt_optimization_reviews.json",
+  "brief": "transferable_prompt_optimization.md",
+  "sonnet": 5.97,
+  "sonnet_verdict": "reject",
+  "opus": 5.33,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 4.3,
+   "significance": 5.3,
+   "soundness": 6.0,
+   "feasibility": 4.0,
+   "clarity": 8.0
+  },
+  "delta": -0.64,
+  "missing_fields": [
+   "Preprint Collision Check"
+  ]
+ },
+ {
+  "name": "meta_prompt_generalization",
+  "title": "How Many Tasks Does It Take to Optimize an Optimizer? Meta-Generalization of Learned Reflection Prompts",
+  "pool": "transferable_prompt_optimization_reviews.json",
+  "brief": "transferable_prompt_optimization.md",
+  "sonnet": 5.9,
+  "sonnet_verdict": "reject",
+  "opus": 5.3,
+  "opus_verdict": "reject",
+  "means": {
+   "novelty": 4.7,
+   "significance": 5.0,
+   "soundness": 5.7,
+   "feasibility": 4.7,
+   "clarity": 7.7
+  },
+  "delta": -0.6,
+  "missing_fields": [
+   "Preprint Collision Check"
+  ]
+ },
+ {
+  "name": "action_prior_imprinting",
+  "title": "Majority-Action Bias in Retrieved Agent Memory: A Query-Independent Action Prior, and Why Removing It Requires Per-Retrieval Calibration",
+  "pool": "agent_memory_optimizer_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 5.83,
+  "sonnet_verdict": "reject",
+  "opus": 5.27,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 3.7,
+   "significance": 5.0,
+   "soundness": 5.7,
+   "feasibility": 7.0,
+   "clarity": 8.0
+  },
+  "delta": -0.56,
+  "missing_fields": []
+ },
+ {
+  "name": "optimizer_substitutes_for_memory_scaffold",
+  "title": "Instructions Already Say It: Optimized and Hand-Written Instructions Substitute for Agent Memory's Scaffold and Leave Only Its Content Harm",
+  "pool": "agent_memory_optimizer_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 6.12,
+  "sonnet_verdict": "borderline",
+  "opus": 5.22,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 4.0,
+   "significance": 5.3,
+   "soundness": 5.0,
+   "feasibility": 6.3,
+   "clarity": 8.0
+  },
+  "delta": -0.9,
+  "missing_fields": []
+ },
+ {
+  "name": "query_agnostic_curation_ceiling",
+  "title": "Bounded Before the Query: A Measured Ceiling on Query-Agnostic Memory Curation in LLM Agents",
+  "pool": "agent_memory_top4_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 5.67,
+  "sonnet_verdict": "borderline",
+  "opus": 5.18,
+  "opus_verdict": "borderline",
+  "means": {
+   "novelty": 4.7,
+   "significance": 5.3,
+   "soundness": 4.3,
+   "feasibility": 6.0,
+   "clarity": 7.7
+  },
+  "delta": -0.49,
+  "missing_fields": []
+ },
+ {
+  "name": "memory_volume_amplifies_optimizer_curse",
+  "title": "Does Retrieved Memory Inflate the Optimizer's Curse? Injection Budget as a Lever on Selection Bias in Agent Prompt Search",
+  "pool": "agent_memory_optimizer_reviews.json",
+  "brief": "agent_memory_optimizer.md",
+  "sonnet": 5.47,
+  "sonnet_verdict": "borderline",
+  "opus": 5.05,
+  "opus_verdict": "reject",
+  "means": {
+   "novelty": 4.0,
+   "significance": 5.0,
+   "soundness": 4.7,
+   "feasibility": 7.0,
+   "clarity": 7.3
+  },
+  "delta": -0.42,
+  "missing_fields": []
+ },
+ {
+  "name": "allocation_prior_transfer",
+  "title": "What Actually Transfers Is the Noise Model: Cross-Task Priors on Candidate Quality Make Reflective Prompt Optimization Sample-Efficient",
+  "pool": "transferable_prompt_optimization_reviews.json",
+  "brief": "transferable_prompt_optimization.md",
+  "sonnet": 5.53,
+  "sonnet_verdict": "borderline",
+  "opus": 5.0,
+  "opus_verdict": "reject",
+  "means": {
+   "novelty": 4.3,
+   "significance": 4.7,
+   "soundness": 5.3,
+   "feasibility": 4.0,
+   "clarity": 8.0
+  },
+  "delta": -0.53,
+  "missing_fields": [
+   "Preprint Collision Check"
+  ]
+ }
+]
