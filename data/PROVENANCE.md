@@ -1,6 +1,8 @@
 # Data provenance
-Source: https://github.com/OSU-NLP-Group/HippoRAG (public benchmark subsets committed in-repo)
-Commit: 2f52a86dd04e4633703bd2fb3bb6a37683ac3cfb
-Retrieved: 2026-08-24 via git partial clone over github.com (only reachable bulk channel on this network)
-Contents: 1,000-question eval subsets + retrieval corpora for HotpotQA-distractor / MuSiQue / 2WikiMultihopQA
-Note: public benchmark data only. No NACC/patient data may ever enter this directory (lab DUA).
+Source: ALFWorld (Shridhar et al., ICLR 2021) text games, `json_2.1.1` split, reconstructed from the public Hugging Face
+dataset `awawa-agi/alfworld-raw` via `datasets-server.huggingface.co/rows` (the only reachable channel; GitHub release
+assets and the HF file CDN are blocked here). Fetch script: `tools/alfworld/fetch_games.py`; stubs: `make_stubs.py`.
+Location: `/home/work/neuro/alfworld-data/json_2.1.1/{train,valid_seen,valid_unseen}/<task>/<trial>/{game.tw-pddl,traj_data.json}`
+Integrity: `/home/work/neuro/alfworld-data/raw/SHA256SUMS` (train d3093a70…, valid_seen adf77999…, valid_unseen 900d5c3b…).
+Counts: train 3,553 trials / 1,465 tasks; valid_seen 140 / 136; valid_unseen 134 / 46. Logic: `alfworld-data/logic/`.
+Public benchmark data only. No NACC/patient data may ever enter this directory (lab DUA).
