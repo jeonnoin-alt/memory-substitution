@@ -35,11 +35,29 @@ and a non-compilable positive-control bank B-dup that must show S < 0.25. Full t
 | `tools/` | Harness-side helpers (zero-credit judging, literature scan) |
 
 ## Status
-- 2026-09-03: repo created. Stage 1 (reproduce) done earlier (see `reference/REPRO_stage1_2026-08-24.md`);
-  Stage 2 (fresh literature scan → v4 text answering the objections → ≥3-reviewer judging) next.
-- Constraint discovered before design: proposal ① measured the ExpeL bank's effect on this node's agents —
-  **+0.6pt (equivalent to none) for Qwen3.5-27B, +7.7pt for gpt-oss-120b**. v2's precheck gate requires
-  ≥10pt. Agent choice and gate threshold must be settled in DESIGN.md before anything runs.
+- 2026-09-03: repo created. Stage 1 (reproduce) done earlier (see `reference/REPRO_stage1_2026-08-24.md`).
+  Stage 2 run the same day: literature scan (`reference/litscan_2026-09-03.md`, 32 verified IDs, EvoAgentBench
+  PDF read), then v4 → v4.1 → v4.2 → v4.3 with harness judging after each round
+  (`reviews/`: v4 sonnet 6.02, v4 opus 5.93, v4.2 opus 6.40, v4.3 opus 6.05; every round's objections and the
+  answers are in the decision log at the top of each `reference/proposal_v4.x.md`).
+- 2026-09-04: v4.3's round-3 finding (the confirmatory endpoint was placed where the phenomenon is least likely
+  to exist, gated in the wrong place, and equivalence margins wider than the effects) resolved in
+  **`reference/proposal_v4.4.md`** — the resolution text under the freeze rule: primary endpoint is now
+  *absorption beyond headroom* (memory's gain at the optimized instruction vs. at an accuracy-matched
+  information-free instruction, full data), the provenance crossover is the specificity probe with a planted
+  control, environment joins agent and bank format as a split-sample screening axis, completion mechanics are
+  held fixed across all arms (proposal ①'s 2026-09-04 finding), and the grid is cut to 11 must-ship rows.
+- Constraints carried into DESIGN.md: proposal ① measured the ExpeL bank at **+0.6pt bare / +2.4pt with fair
+  completion mechanics on Qwen3.5-27B** and +7.7pt on gpt-oss-120b; EvoAgentBench reports +3.6 (ReasoningBank)
+  and +1.2 (GEPA) on Qwen3.5-27B. Gates are set from these numbers, not from the literature's ≥10pt.
+- 2026-09-04, confirmatory Opus round on v4.4: **5.83** (`reviews/v4.4_opus/`). New design-blocking findings — the
+  hand-written headroom family does not identify Δ_abs, the bank is off-policy at the optimized instruction (distilled
+  under I0), and the 2pt threshold sits below the MDE and the null floor. **Not frozen.** The reviewers' third-round-in-a-row
+  point stands: on 27–32B agents in multi-hop QA the memory effect is 0–4pt, so any decomposition is at the noise floor.
+  `reviews/v4.4_opus/SUMMARY.md` lays out the three ways forward (A: move the confirmatory environment to one with
+  recurring procedural structure, e.g. ALFWorld with held-out training games; B: re-scope to the memory-null/headroom
+  report; C: v4.5 in E1 with the instrument fixes) and recommends A pending an ALFWorld feasibility check. Awaiting the PI.
+- The GitHub repo was renamed to `memory-substitution`; the old `experiments-mem` URL redirects.
 
 ## House rules (from HANDOFF)
 Paired within-instance comparisons · exact McNemar + Holm with fix/break decomposition · TOST for every
