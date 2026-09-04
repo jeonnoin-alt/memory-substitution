@@ -18,7 +18,7 @@ for split, outdir in SPLITS.items():
             # pddl_params reconstructed from the task directory name
             # (task_type-object_target-mrecep_target-parent_or_toggle_target-scene); the handcoded
             # expert reads object_target / parent_target / toggle_target and nothing else.
-            task_dir = os.path.basename(os.path.dirname(r["game_file_path"]))
+            task_dir = os.path.basename(os.path.dirname(os.path.dirname(r["game_file_path"])))  # <task>/<trial>/game.tw-pddl
             tt, obj, mrecep, third, scene = task_dir.rsplit("-", 4)
             pp = {"object_target": obj, "mrecep_target": "" if mrecep == "None" else mrecep,
                   "parent_target": "", "toggle_target": "", "object_sliced": obj.endswith("Sliced")}
