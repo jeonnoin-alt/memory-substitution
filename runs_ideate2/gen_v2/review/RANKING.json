@@ -1,36 +1,19 @@
 [
  {
-  "name": "failure_memory_framing_drag",
-  "score": 6.3,
-  "verdict": "borderline",
-  "means": {
-   "novelty": 6.0,
-   "significance": 6.0,
-   "soundness": 6.0,
-   "feasibility": 7.0,
-   "clarity": 8.0
-  },
-  "n_reviews": 1,
-  "verified_collisions": [],
-  "novelty_capped": false,
-  "escalate": true,
-  "closest": "Contextual Drag (arXiv:2602.04288, verified via s2cli/Semantic Scholar: 'the presence of failed attempts in the context biases subsequent generations toward str"
- },
- {
   "name": "abstraction_discards_bindings_and_repairs",
-  "score": 6.1,
+  "score": 5.95,
   "verdict": "borderline",
   "means": {
-   "novelty": 6.0,
-   "significance": 6.0,
+   "novelty": 5.67,
+   "significance": 5.67,
    "soundness": 6.0,
-   "feasibility": 5.0,
+   "feasibility": 5.33,
    "clarity": 8.0
   },
-  "n_reviews": 1,
+  "n_reviews": 3,
   "verified_collisions": [],
   "novelty_capped": false,
-  "escalate": true,
+  "escalate": false,
   "closest": "SkillEvolBench, arXiv:2605.24117 (verified via the literature command; its indexed abstract reads 'raw trajectory reuse often outperforming distilled skills due"
  },
  {
@@ -66,6 +49,23 @@
   "novelty_capped": false,
   "escalate": true,
   "closest": "MemoHarness (arXiv:2607.14159, verified via the literature command, hf channel) is the sharpest threat: it evolves an agent harness from execution experience an"
+ },
+ {
+  "name": "failure_memory_framing_drag",
+  "score": 5.72,
+  "verdict": "reject",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.33,
+   "soundness": 5.67,
+   "feasibility": 7.0,
+   "clarity": 7.67
+  },
+  "n_reviews": 3,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "Contextual Drag (arXiv:2602.04288, verified via s2cli/Semantic Scholar: 'the presence of failed attempts in the context biases subsequent generations toward str"
  },
  {
   "name": "order_randomized_leakage_audit",
@@ -304,6 +304,23 @@
   "novelty_capped": false,
   "escalate": false,
   "closest": "Two threats, both verified via the literature command (s2cli / Semantic Scholar + HF). (1) arXiv:1911.05248, 'What Do Compressed Deep Neural Networks Forget?' ("
+ },
+ {
+  "name": "contributor_conflict_not_size",
+  "score": 4.85,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 3.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "SkillAligner (arXiv:2608.06880, 2026-08-07, VERIFIED via the literature command on both s2 and hf channels): a training-free execution-time skill adaptation fra"
  },
  {
   "name": "wrong_action_fraction_dose",

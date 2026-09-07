@@ -2,10 +2,10 @@
 
 | # | idea | n | score | verdict | nov | sig | snd | fea | cla | collision | escalate |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | failure_memory_framing_drag | 1 | 6.3 | borderline | 6.0 | 6.0 | 6.0 | 7.0 | 8.0 | - | yes |
-| 2 | abstraction_discards_bindings_and_repairs | 1 | 6.1 | borderline | 6.0 | 6.0 | 6.0 | 5.0 | 8.0 | - | yes |
-| 3 | closer_beats_stronger | 1 | 5.75 | borderline | 6.0 | 6.0 | 5.0 | 4.0 | 8.0 | - | yes |
-| 4 | model_shaped_instruction_task_shaped_store | 1 | 5.75 | borderline | 6.0 | 5.0 | 6.0 | 4.0 | 8.0 | - | yes |
+| 1 | abstraction_discards_bindings_and_repairs | 3 | 5.95 | borderline | 5.67 | 5.67 | 6.0 | 5.33 | 8.0 | - | - |
+| 2 | closer_beats_stronger | 1 | 5.75 | borderline | 6.0 | 6.0 | 5.0 | 4.0 | 8.0 | - | yes |
+| 3 | model_shaped_instruction_task_shaped_store | 1 | 5.75 | borderline | 6.0 | 5.0 | 6.0 | 4.0 | 8.0 | - | yes |
+| 4 | failure_memory_framing_drag | 3 | 5.72 | reject | 5.0 | 5.33 | 5.67 | 7.0 | 7.67 | - | - |
 | 5 | order_randomized_leakage_audit | 1 | 5.7 | borderline | 5.0 | 6.0 | 6.0 | 4.0 | 8.0 | - | yes |
 | 6 | memory_in_the_loop_training_decomposition | 1 | 5.65 | borderline | 5.0 | 6.0 | 5.0 | 6.0 | 8.0 | - | yes |
 | 7 | optimizer_writes_the_read_policy | 1 | 5.6 | borderline | 6.0 | 5.0 | 5.0 | 5.0 | 8.0 | - | yes |
@@ -20,8 +20,9 @@
 | 16 | memory_surrogate_validity | 1 | 5.15 | reject | 5.0 | 5.0 | 4.0 | 6.0 | 8.0 | - | - |
 | 17 | opposite_sided_failure_under_shift | 1 | 5.05 | borderline | 5.0 | 5.0 | 4.0 | 6.0 | 7.0 | - | yes |
 | 18 | utility_pruning_is_frequency_pruning | 1 | 4.9 | reject | 4.0 | 5.0 | 5.0 | 4.0 | 8.0 | - | - |
-| 19 | wrong_action_fraction_dose | 1 | 4.85 | borderline | 5.0 | 5.0 | 4.0 | 4.0 | 7.0 | - | yes |
-| 20 | cross_episode_drag_content_not_label | 1 | 4.8 | reject | 4.0 | 5.0 | 5.0 | 4.0 | 7.0 | - | - |
-| 21 | lineage_blast_radius | 1 | 4.75 | reject | 5.0 | 5.0 | 4.0 | 3.0 | 7.0 | - | - |
-| 22 | coupling_variance_components | 1 | 4.65 | reject | 4.0 | 5.0 | 4.0 | 4.0 | 8.0 | - | - |
-| 23 | retrieved_set_disagreement_gate | 1 | 4.65 | reject | 5.0 | 5.0 | 4.0 | 3.0 | 6.0 | - | - |
+| 19 | contributor_conflict_not_size | 1 | 4.85 | borderline | 5.0 | 5.0 | 4.0 | 3.0 | 8.0 | - | yes |
+| 20 | wrong_action_fraction_dose | 1 | 4.85 | borderline | 5.0 | 5.0 | 4.0 | 4.0 | 7.0 | - | yes |
+| 21 | cross_episode_drag_content_not_label | 1 | 4.8 | reject | 4.0 | 5.0 | 5.0 | 4.0 | 7.0 | - | - |
+| 22 | lineage_blast_radius | 1 | 4.75 | reject | 5.0 | 5.0 | 4.0 | 3.0 | 7.0 | - | - |
+| 23 | coupling_variance_components | 1 | 4.65 | reject | 4.0 | 5.0 | 4.0 | 4.0 | 8.0 | - | - |
+| 24 | retrieved_set_disagreement_gate | 1 | 4.65 | reject | 5.0 | 5.0 | 4.0 | 3.0 | 6.0 | - | - |
