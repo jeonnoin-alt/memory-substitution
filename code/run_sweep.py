@@ -26,7 +26,8 @@ os.makedirs(os.path.dirname(a.out), exist_ok=True)
 done = set()
 if os.path.exists(a.out):
     for l in open(a.out):
-        d = json.loads(l); done.add((d["game_file"], d["seed"], d["k"]))
+        d = json.loads(l)
+        if not d.get("error"): done.add((d["game_file"], d["seed"], d["k"]))   # errored episodes are re-run
 fout = open(a.out, "a")
 # goal text for retrieval comes from the game's initial observation (cheap: reset once per game)
 GOAL_CACHE = os.path.join(os.path.dirname(a.out), "goals.json")

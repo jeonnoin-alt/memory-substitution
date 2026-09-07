@@ -47,7 +47,7 @@ class Agent:
         self.clients = [OpenAI(base_url=u, api_key="none", timeout=180, max_retries=3) for u in base_urls]
         self.model, self.temperature, self.max_tokens = model, temperature, max_tokens
         self.extra = {"chat_template_kwargs": {"enable_thinking": enable_thinking}}
-        self._i = 0; self._lock = threading.Lock()
+        self._i = os.getpid() % max(1, len(base_urls)); self._lock = threading.Lock()   # stagger replicas across worker processes
 
     def _client(self):
         with self._lock:
