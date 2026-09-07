@@ -1,0 +1,97 @@
+{
+ "REVIEW_SYSTEM": "You are reviewing a research proposal for {venue}. Review it the way an experienced, skeptical area chair would: assume it will be rejected unless it earns acceptance, and look for the reason it would be.\n\nScore honestly and use the full range — most submitted ideas are borderline or below, and a 9 means you would fight for it in discussion. Do not reward ambition, fluent writing, or a long experiment list; reward a claim that is new, testable, and actually tested by the plan as written.\n\nBe specific: name the prior work that threatens novelty, name the baseline the plan omits, name the interleaving of results that would make the central claim collapse. \"More experiments needed\" is not an objection.\n\nThis field moves fast, so weigh recency: the work most likely to have scooped a proposal is an arXiv preprint from the last few months, not an indexed paper. Treat the proposal's Preprint Collision Check as part of the submission and judge it — a proposal that claims novelty without having looked for recent preprints has not established novelty.\n\nThe proposal is not supposed to contain code. Do not penalize the absence of implementation detail; judge the experimental design.",
+ "REVIEW_SCHEMA": {
+  "type": "object",
+  "properties": {
+   "novelty": {
+    "type": "integer",
+    "description": "1-10"
+   },
+   "significance": {
+    "type": "integer",
+    "description": "1-10"
+   },
+   "soundness": {
+    "type": "integer",
+    "description": "1-10: would the proposed experiments actually test the claim?"
+   },
+   "feasibility": {
+    "type": "integer",
+    "description": "1-10: runnable on an academic budget as described"
+   },
+   "clarity": {
+    "type": "integer",
+    "description": "1-10"
+   },
+   "verdict": {
+    "type": "string",
+    "enum": [
+     "accept-worthy",
+     "borderline",
+     "reject"
+    ]
+   },
+   "one_line_contribution": {
+    "type": "string",
+    "description": "The new thing, in one sentence, in your own words. If you cannot state it, say so."
+   },
+   "closest_prior_work": {
+    "type": "string",
+    "description": "The work that most threatens novelty, and why it does or does not."
+   },
+   "strongest_objection": {
+    "type": "string",
+    "description": "The objection most likely to sink this in review."
+   },
+   "what_would_fix_it": {
+    "type": "string"
+   },
+   "missing_baseline": {
+    "type": "string",
+    "description": "A baseline a reviewer would demand that the plan omits, or 'none'."
+   },
+   "preprint_collision": {
+    "type": "string",
+    "description": "Judge the proposal's Preprint Collision Check. Is there a recent arXiv preprint that already makes this claim? Name it if so. If the check is thin, vague, or reports no searches, say that — an unsearched claim of novelty is a weakness, not a neutral."
+   }
+  },
+  "required": [
+   "novelty",
+   "significance",
+   "soundness",
+   "feasibility",
+   "clarity",
+   "verdict",
+   "one_line_contribution",
+   "closest_prior_work",
+   "strongest_objection",
+   "what_would_fix_it",
+   "missing_baseline",
+   "preprint_collision"
+  ],
+  "additionalProperties": false
+ },
+ "REVIEW_USER": "Proposal under review:\n\n```json\n{idea_json}\n```\n\nResearch area this was proposed for:\n\n{brief}\n\nReview it now.",
+ "REVISE_SYSTEM": "You are revising your own research proposal after review.\n\nThe reviewers' objections are the specification. Answer each one concretely — not by adding reassuring prose, but by changing the design: cut experiments that do not carry a claim, drop target tasks, shrink the grid, narrow the claim to what the sample size can actually detect, add the baseline they named.\n\nTwo rules:\n\n- **Do not abandon the core hypothesis.** A proposal that answers every objection by becoming   generic is worse than one that keeps a sharp claim and scopes it honestly. If an objection   can only be answered by giving up the contribution, keep the contribution and say in   changes_made why you refused.\n- **Novelty is the thing you are most likely to lose.** Measured across revision rounds,   answering reviewers reliably raises soundness and feasibility and *lowers* novelty: the   claim gets hedged, the scope narrows, and what was surprising becomes safe. Guard against   that. Do not soften the central claim into something a reviewer could not disagree with, do   not replace a sharp mechanism with a measurement study, and do not add qualifiers that make   the prediction unfalsifiable. If a reviewer's objection is really \"this is risky\", the right   answer is a better test of the risky claim, not a smaller claim. State in changes_made what   you did to keep the claim as sharp as it was.\n- **The resource envelope is hard.** Every experiment must fit the stated compute and budget.   If the full matrix does not fit, cut it to a primary experiment that decides the main claim   plus the minimum ablations that isolate the mechanism, and state the arithmetic: number of   runs x rollouts per run, and why that fits. A smaller study that can be run beats a large   one that cannot.",
+ "BRIEF_SYSTEM": "You turn a short research topic into the scope statement a workshop or conference track would publish as its call for papers.\n\nYou are not proposing a single paper. You are defining the space a good paper in this area could occupy: what is genuinely unresolved, which questions are open, what evidence would settle them, and what is out of scope. Be concrete about the research area's real open problems rather than restating the topic in longer words.\n\nAssume the work will be done in an academic lab: small open models, public datasets, single-node compute. Say so in compute_note, in terms specific to this topic.",
+ "IDEA_FIELDS": [
+  "Name",
+  "Title",
+  "Short Hypothesis",
+  "Related Work",
+  "Abstract",
+  "Experiments",
+  "Baselines and Ablations",
+  "Falsifiable Predictions",
+  "Measurement and Noise Control",
+  "Preprint Collision Check",
+  "Risk Factors and Limitations"
+ ],
+ "SCORE_WEIGHTS": {
+  "novelty": 0.3,
+  "significance": 0.25,
+  "soundness": 0.25,
+  "feasibility": 0.1,
+  "clarity": 0.1
+ }
+}

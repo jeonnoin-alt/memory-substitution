@@ -76,6 +76,7 @@ def main():
     ap.add_argument("--keys", help="JSON {name: keys} from the LLM key-extraction jobs; omit for rule-based keys")
     ap.add_argument("--backend", default=None, help="harness|api: emit key-extraction jobs and stop")
     ap.add_argument("--per-query", type=int, default=8); ap.add_argument("--top", type=int, default=10)
+    ap.add_argument("--s2-queries", type=int, default=2, help="how many of the queries also go to S2 (HF gets all)")
     a = ap.parse_args()
     ideas = json.load(open(a.ideas))
     os.makedirs(a.out, exist_ok=True)
@@ -93,8 +94,10 @@ def main():
         k = keys_all.get(name) or rule_keys(i)
         qs = queries_from_keys(k)
         papers: list[Paper] = []
-        for q in qs:
-            papers += s2.search(q, a.per_query, year_from=year_from) + s2.search(q, 4) + hf.search(q, a.per_query)
+        for n_, q in enumerate(qs):
+            papers += hf.search(q, a.per_query)
+            if n_ < a.s2_queries:                      # S2 is rate-limited to ~1 req/s across all agents; keep it for the top queries
+                papers += s2.search(q, a.per_query, year_from=year_from)
         papers = dedupe(papers)
         card, rows = build_card(i, papers, embed, a.top) if papers else ("(no candidates returned)\n", [])
         open(os.path.join(a.out, f"{name}.card.md"), "w").write(card)

@@ -13,13 +13,20 @@ try:
     BRIEF_SYSTEM = _ideate.BRIEF_SYSTEM
     IDEA_FIELDS = _ideate.IDEA_FIELDS
     SCORE_WEIGHTS = _ideate.SCORE_WEIGHTS
-except Exception as e:  # tiktoken etc. missing in a bare interpreter
-    REVIEW_SYSTEM = REVIEW_USER = REVISE_SYSTEM = BRIEF_SYSTEM = ""
-    REVIEW_SCHEMA = {}
-    IDEA_FIELDS = ["Name", "Title", "Short Hypothesis", "Related Work", "Abstract", "Experiments",
-                   "Baselines and Ablations", "Falsifiable Predictions", "Measurement and Noise Control",
-                   "Preprint Collision Check", "Risk Factors and Limitations"]
-    SCORE_WEIGHTS = {"novelty": .3, "significance": .25, "soundness": .25, "feasibility": .1, "clarity": .1}
+except Exception as e:  # tiktoken etc. missing in a bare interpreter → use the frozen snapshot of the same constants
+    import json as _json
+    _snap = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ideate_constants.json")
+    if os.path.exists(_snap):
+        _c = _json.load(open(_snap))
+        REVIEW_SYSTEM, REVIEW_SCHEMA, REVIEW_USER = _c["REVIEW_SYSTEM"], _c["REVIEW_SCHEMA"], _c["REVIEW_USER"]
+        REVISE_SYSTEM, BRIEF_SYSTEM, IDEA_FIELDS, SCORE_WEIGHTS = _c["REVISE_SYSTEM"], _c["BRIEF_SYSTEM"], _c["IDEA_FIELDS"], _c["SCORE_WEIGHTS"]
+    else:
+        REVIEW_SYSTEM = REVIEW_USER = REVISE_SYSTEM = BRIEF_SYSTEM = ""
+        REVIEW_SCHEMA = {}
+        IDEA_FIELDS = ["Name", "Title", "Short Hypothesis", "Related Work", "Abstract", "Experiments",
+                       "Baselines and Ablations", "Falsifiable Predictions", "Measurement and Noise Control",
+                       "Preprint Collision Check", "Risk Factors and Limitations"]
+        SCORE_WEIGHTS = {"novelty": .3, "significance": .25, "soundness": .25, "feasibility": .1, "clarity": .1}
     IMPORT_ERROR = repr(e)
 
 PRESCAN_AXES_SYSTEM = """You are planning a literature pre-scan for a research area. Read the seed brief. Propose 4-7 orthogonal AXES along

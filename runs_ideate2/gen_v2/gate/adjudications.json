@@ -1,0 +1,406 @@
+{
+ "wrong_action_fraction_dose__brief:Q2 Dose-response of inje": {
+  "label": "same_claim_reworded",
+  "reason": "B is the truncated research question that A instantiates verbatim — both ask whether the pilot's injection harm is driven by item count, token count, or something else on agent traces, so A is the same claim written out at length rather than a different one."
+ },
+ "need_blind_compaction_audit__digest:arxiv:2606.22528: Conte": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both rest on the mechanism that lossy summarization silently drops history items a later step needs, but A adds counterfactual per-item masking to label load-bearing items, measures summarizers' load-bearing versus non-load-bearing retention rates and fidelity-versus-success dissociation across six compaction families, which generalizes B's single governance-constraint case and would change a reader's conclusion about whether fidelity metrics are usable."
+ },
+ "dormant_is_not_dead__archive:archive:memory_budget_": {
+  "label": "distinct",
+  "reason": "A is about write-side deletion policy — whether recency/usage decay destroys records a dormant task family needs on return, with redundancy pruning as the alternative criterion — whereas B is about read-side injection volume claiming token load rather than content explains harm and curation gains; different intervention point, different causal variable."
+ },
+ "stall_triggered_injection__archive:archive:memory_induced": {
+  "label": "distinct",
+  "reason": "A claims the sign of memory's effect is set by when identical items are revealed (entry versus first detected stall) and that a two-parameter static trigger matches learned when-to-retrieve policies, while B claims harm is mediated by premature termination of evidence gathering caused by outcome-bearing items and repaired by a control-flow evidence floor; the causal variables (reveal time versus outcome content and search depth) and the proposed fixes are different."
+ },
+ "retrieved_set_disagreement_gate__digest:arxiv:2608.23471: Agent": {
+  "label": "distinct",
+  "reason": "A studies organically accumulated banks with no planted conflicts and claims harm is a set-level disagreement property fixable by a read-time abstention gate, while B is an adversarial memory-injection vulnerability in which an attacker plants a record to steer a target topic; adversarial planting is explicitly excluded from A's setting and the claims share no mechanism."
+ },
+ "failure_memory_framing_drag__archive:archive:memory_induced": {
+  "label": "distinct",
+  "reason": "A claims verbatim erroneous action content in failure-derived items causes the agent to reproduce that error class regardless of the failure label, with a write-time positive rewrite as the fix, whereas B claims outcome-bearing items make the agent stop gathering evidence early, with a control-flow evidence floor as the fix; different failure mode (imitation of bad actions versus truncated search) and different repair layer."
+ },
+ "retrieved_set_disagreement_gate__archive:archive:memory_budget_": {
+  "label": "distinct",
+  "reason": "These are competing explanations rather than the same one: B attributes harm to injected token volume independent of relevance and prescribes k=1 raw retrieval, while A attributes it to disagreement among the retrieved items about the next action at fixed k and prescribes a content-sensitive abstention gate that B's volume account predicts would not help."
+ },
+ "memory_surrogate_validity__archive:archive:memory_or_inst": {
+  "label": "distinct",
+  "reason": "A is a surrogate-endpoint validity study asking whether recall, LLM-judge quality and admission F1 rank memory configurations by execution success, while B asks whether memory's gain survives instruction optimization; A's object is the measurement instruments, B's is the memory-versus-optimized-prompt comparison, and neither claim entails the other."
+ },
+ "memory_in_the_loop_training_decomposition__archive:archive:memory_or_inst": {
+  "label": "distinct",
+  "reason": "B substitutes retrieved experience with a GEPA-optimized or bank-compiled instruction at inference and measures a substitution ratio, while A holds training trajectories fixed and varies whether the retrieved block is present during training and inference to decompose weight-level gains into content, untrained read benefit and a learned read-skill interaction plus bank co-adaptation; the container being tested (weights versus instruction slot) and every measured quantity differ."
+ },
+ "failure_memory_framing_drag__digest:arxiv:2607.10608: When ": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both turn on the agent adopting and reproducing wrong action content that appears in retrieved memory, but A adds the measurements B lacks — a within-item dose of verbatim erroneous steps at fixed tokens, and content-matched label/framing variants (verbatim, negation, positive rewrite, contrastive) showing the explicit failure label does not protect — which would change a reader's conclusion from 'avoid conflicting memory' to 'rewrite failures positively'."
+ },
+ "dormant_is_not_dead__digest:arxiv:2512.12856: A mem": {
+  "label": "distinct",
+  "reason": "B proposes a hybrid retention/forgetting schema that improves a budgeted generative agent across coherence, privacy and cost, whereas A is a negative audit claiming time/usage-decay deletion is irreversibly harmful at task-family return and that redundancy, not recency, should be the deletion criterion — different claim, different mechanism and endpoint."
+ },
+ "gate_reads_style_not_truth__brief:Q4 Write-gate audit. Adm": {
+  "label": "same_claim_reworded",
+  "reason": "B is the truncated brief for exactly this write-gate audit, naming the same gates (ReMe LLM-judge, A-MAC five-factor, utility tagging), and A is that same audit written out as a full proposal."
+ },
+ "memory_surrogate_validity__gate_reads_style_not_truth": {
+  "label": "distinct",
+  "reason": "A asks whether development surrogates (recall, judge scores, gate F1) rank whole memory configurations by execution success, while B asks what a write-time gate's admission decision is a function of (style versus planted truth); gate precision appears in A only as one of several surrogates, and the mechanisms and designs (config sweep with Freedman/selection regret versus planted-record classification audit) do not coincide."
+ },
+ "optimizer_writes_the_read_policy__archive:archive:memory_vetoes_": {
+  "label": "distinct",
+  "reason": "B's mechanism is memory vetoing instruction compliance (answer-bearing items suppress a verification requirement, making optimized prompts bank-specific), while A's is that the optimizer authors read-policy clauses that mediate the joint gain; A explicitly frames the archived veto/substitution account as the competing explanation it would concede to."
+ },
+ "order_randomized_leakage_audit__stall_triggered_injection": {
+  "label": "distinct",
+  "reason": "A attributes reported memory gains to near-duplicate solved predecessors in the store (a benchmark-leakage claim measured by order randomization and LNO curves), while B holds bank and items fixed and claims the reveal time of injection sets the sign of the effect — different causes and different manipulations."
+ },
+ "dormant_is_not_dead__retrieved_set_disagreement_gat": {
+  "label": "distinct",
+  "reason": "A is about write-side deletion policy over a long stream (what to forget, and the cost of decay at task-family return), B is about a read-time abstention gate keyed to disagreement within the retrieved set; neither the intervention point nor the causal claim overlaps."
+ },
+ "stall_triggered_injection__retrieved_set_disagreement_gat": {
+  "label": "distinct",
+  "reason": "Both are read-time interventions on ALFWorld with overlapping baselines, but A's claim is about when items are revealed (a stall gives the agent its own trajectory evidence to arbitrate against), while B's is about which retrievals are harmful (set-level action disagreement rather than item properties) — the mechanism carrying the effect differs, not just the measurement."
+ },
+ "wrong_action_fraction_dose__archive:archive:commit_then_co": {
+  "label": "distinct",
+  "reason": "Both reject the injection-volume account, but A locates harm in the number of injected items whose recommended action is off the expert path (a content dose-response with a knee), while B locates it in commitment order and slot violation, fixed by drafting before consulting — different mechanisms and different interventions."
+ },
+ "order_randomized_leakage_audit__archive:archive:memory_or_inst": {
+  "label": "distinct",
+  "reason": "B claims memory's gain is substitutable by an instruction optimized on the same episodes (a container-of-information claim), whereas A claims the gain is concentrated on test tasks with near-duplicate solved predecessors and is largely reproducible by nearest-neighbour replay (a leakage claim); the estimands, controls and remedies differ."
+ },
+ "memory_in_the_loop_training_decomposition__digest:arxiv:2601.01885: Integ": {
+  "label": "distinct",
+  "reason": "B is the positive system claim that RL-trained memory tool actions beat heuristic memory controllers; A takes such systems as its target and claims the learned read skill is equivalent to zero once content absorption and untrained read benefit are separated in a train-by-infer 2x2 with bank swap — a decomposition and a contrary claim, not a restatement."
+ },
+ "cross_episode_drag_content_not_label__failure_memory_framing_drag": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both claim the same mechanism — a retrieved failed prior episode makes the agent reproduce its error class, with the drag carried by the verbatim erroneous action content and invariant to the outcome label — but B adds a within-item dose manipulation of erroneous steps at fixed tokens and a positive-rewrite/negation framing ladder, which yields a write-time framing rule rather than A's failure-fraction-dependent abstraction-level rule, changing what a reader would conclude to do."
+ },
+ "order_randomized_leakage_audit__digest:arxiv:2603.15666: Compi": {
+  "label": "distinct",
+  "reason": "A claims reported experience-memory gains are largely near-duplicate leakage, measured with leave-neighbourhood-out curves and stream-order randomization, whereas B claims a particular write path (compiling experience into verified system-prompt sub-bullets) beats retrieval injection and is task-shaped; different claims and different mechanisms."
+ },
+ "order_randomized_leakage_audit__dormant_is_not_dead": {
+  "label": "distinct",
+  "reason": "A is about how much of a memory system's measured gain comes from near-duplicate solved predecessors in the store, while B is about which deletion criterion (recency/usage decay vs redundancy) destroys value when a dormant task family returns; the manipulated variable, the claim and the mechanism all differ."
+ },
+ "dormant_is_not_dead__failure_memory_framing_drag": {
+  "label": "distinct",
+  "reason": "A concerns forgetting/pruning policies and irreversible loss at task-family return, B concerns whether retrieved failure-derived items make the agent reproduce their errors and how the item is written; no shared mechanism."
+ },
+ "dormant_is_not_dead__stall_triggered_injection": {
+  "label": "distinct",
+  "reason": "A is a write/deletion-side claim about decay pruning versus redundancy pruning across a long stream, B is a read-side claim that the timing of injecting fixed retrieved items flips the sign of memory's effect; different levers and different mechanisms."
+ },
+ "stall_triggered_injection__wrong_action_fraction_dose": {
+  "label": "distinct",
+  "reason": "Both study harm from injected experience and both benchmark a swept static rule against a learned policy, but A's causal variable is when the same items are revealed (entry versus stall, arbitration against own trajectory evidence) whereas B's is how many injected items are off the expert path at matched tokens; the central claims are about different factors."
+ },
+ "memory_surrogate_validity__digest:arxiv:2603.04549: Treat": {
+  "label": "distinct",
+  "reason": "B claims a five-factor structured admission gate improves the precision-recall/latency tradeoff over LLM-native memory, whereas A claims such development-time surrogates (including A-MAC-style gate F1) do not rank memories by execution success; A only reuses that gate as one arm in a config family, so the central claim and mechanism are not B's."
+ },
+ "memory_surrogate_validity__failure_memory_framing_drag": {
+  "label": "distinct",
+  "reason": "A is a measurement-validity claim about whether recall, judge scores and admission F1 predict execution success across memory configurations, B is a content claim about failure-derived items inducing error reproduction and the fix being positive rewriting; different objects and mechanisms."
+ },
+ "stale_true_state_facts_redaction__failure_memory_framing_drag": {
+  "label": "distinct",
+  "reason": "Both isolate a content unit whose count, not token load, drives harm, but A locates the harm in stale-true state facts inside procedurally correct items (explicitly not wrong items) fixed by read-time fact redaction, while B locates it in verbatim erroneous action content from failed episodes fixed by write-time positive rewriting; the causal item class and the intervention point differ."
+ },
+ "need_blind_compaction_audit__state_load_not_length": {
+  "label": "distinct",
+  "reason": "A's claim is that compaction summarizers are need-blind, so load-bearing retention (from counterfactual masking of real history) rather than fidelity or compression ratio predicts success loss; B's claim is that long-horizon failure scales with cumulative state load rather than context length under a scripted length-matched prefix factorial; the summarizer-drops-what-is-needed observation is shared incidentally but the central claims and manipulations differ."
+ },
+ "stall_triggered_injection__digest:arxiv:2607.10608: When": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "A adopts B's entry-time compliance-trap mechanism (blind adoption at the first exposed decision point, similar compliance rates but collapsed success) but manipulates reveal time for identical items and measures success conditional on compliance at a stall versus entry plus a tuned static trigger against learned policies, controls B never runs and that would change the conclusion from 'memory harms' to 'entry timing harms'."
+ },
+ "dormant_is_not_dead__lineage_blast_radius": {
+  "label": "distinct",
+  "reason": "A is about deletion criteria in a single-agent experience store and the irreversible loss when a dormant task family returns, while B is about poisoned records from a low-trust contributor surviving consolidation in a shared multi-contributor memory and the fan-in cost of lineage-based provenance enforcement; different causal variables, interventions and outcomes."
+ },
+ "optimizer_writes_the_read_policy__digest:arxiv:2603.04549: Treat": {
+  "label": "distinct",
+  "reason": "B is a write-time admission policy scoring candidate memories on five interpretable factors for precision-recall and latency, whereas A claims the joint instruction-memory gain is mediated by read-policy clauses a reflective prompt optimizer evolves into the instruction; different pipeline stage, different mechanism and different estimand."
+ },
+ "stale_true_state_facts_redaction__stall_triggered_injection": {
+  "label": "distinct",
+  "reason": "A holds timing fixed and attributes harm to item content (episode-specific stale-true state facts) with fact-level redaction as the fix, while B holds content fixed and attributes the sign of the effect to when the same items are revealed with a stall trigger as the fix; the manipulated variable and the proposed remedy differ even though both invoke the entry compliance trap."
+ },
+ "lineage_blast_radius__archive:archive:memory_volume_": {
+  "label": "distinct",
+  "reason": "A concerns poison laundering through consolidation and the utility cost of lineage-based trust enforcement in a shared memory, while B concerns injection volume inflating validation-score variance so a prompt optimizer's reported gain is selection bias; no shared mechanism, population or estimand."
+ },
+ "failure_memory_framing_drag__stall_triggered_injection": {
+  "label": "distinct",
+  "reason": "A varies how a failure-derived item is written (verbatim erroneous actions versus negation versus positive rewrite) and predicts a dose-response in reproduced error class at fixed retrieval and timing, while B holds content fixed and varies only injection time; different independent variable and different outcome measure."
+ },
+ "contributor_conflict_not_size__archive:archive:collection_pol": {
+  "label": "distinct",
+  "reason": "A attributes shared-skill-library degradation to co-retrieved cross-contributor conflicts and tests activation-time reconciliation, while B attributes self-evolving-agent degradation to the collection policy (episodes collected under retrieval conditioning contracting bank support) and tests decoupled collection; different causes, different manipulations, and B's setting is single-agent self-editing rather than multi-writer sharing."
+ },
+ "stale_true_state_facts_redaction__retrieved_set_disagreement_gat": {
+  "label": "distinct",
+  "reason": "The two proposals localize the harm at different units and give incompatible remedies: A says harm is carried by stale-true state facts inside individually procedurally-correct items and is removed by fact-level typed-placeholder redaction, while B explicitly denies an item-level account and says harm is a property of the retrieved set (top-k disagreement about the next action) removed by an abstention gate; the shared ALFWorld organic-bank setting and shared control baselines are design overlap, not the same claim."
+ },
+ "abstraction_discards_bindings_and_repairs__archive:archive:instruction_co": {
+  "label": "distinct",
+  "reason": "A's causal variable is which cue classes a representation retains (scene bindings, failure-to-repair pairs) and its test is scene overlap between training and evaluation, while B's is the relation of each guidance unit to what the task instruction already asserts (redundant/novel/conflicting); the shared method of unit annotation plus matched-token transplant surgery does not make the claims the same."
+ },
+ "model_shaped_instruction_task_shaped_store__optimizer_writes_the_read_poli": {
+  "label": "distinct",
+  "reason": "A's estimand is transfer loss across backbones - whether the instruction is model-shaped and the store task-shaped, so the measured substitution interaction is backbone-specific - whereas B stays on one backbone and asks which clause class (read-policy versus task) mediates the joint gain; different manipulations (backbone swap versus clause ablation/transplant) and different conclusions."
+ },
+ "memory_surrogate_validity__stall_triggered_injection": {
+  "label": "distinct",
+  "reason": "A asks whether development-time surrogate metrics (recall, judge scores, gate F1) rank memory configurations by execution success, while B holds content fixed and varies only injection timing (entry vs. detected stall) against learned when-to-retrieve policies; different claims and different manipulated variables."
+ },
+ "model_shaped_instruction_task_shaped_store__digest:arxiv:2601.12906: Test-": {
+  "label": "distinct",
+  "reason": "A concerns portability of a GEPA-optimized instruction versus a retrieval store across backbones and the instruction-by-store interaction, whereas B is a test-time-adaptation method that gates which context regions get written into transient weight updates; no shared claim or mechanism."
+ },
+ "model_shaped_instruction_task_shaped_store__memory_in_the_loop_training_de": {
+  "label": "distinct",
+  "reason": "Both use a 2x2 with an interaction term, but A's channels are a prompt-optimized instruction versus an in-context store transferred across backbones, while B's are memory present during fine-tuning versus at inference on a fixed trajectory set with bank swaps; the substitution being decomposed is a different pair of mechanisms."
+ },
+ "state_load_not_length__digest:arxiv:2510.00615: Optim": {
+  "label": "distinct",
+  "reason": "A is a diagnostic dissociation of cumulative state load from token count on real agent traces plus a comparison of which context manager closes which effect, while B claims that optimizing natural-language compression guidelines from failure analysis cuts tokens and raises success; a cause-identification claim versus a method-efficacy claim."
+ },
+ "dormant_is_not_dead__abstraction_discards_bindings_": {
+  "label": "distinct",
+  "reason": "A is about deletion policy over a non-stationary stream (usage/recency decay destroys records a dormant task family needs, redundancy-based pruning does not), while B is about which cue classes a representation preserves at matched tokens; write/prune policy versus item representation."
+ },
+ "stale_true_state_facts_redaction__archive:archive:memory_induced": {
+  "label": "distinct",
+  "reason": "A locates memory harm in procedurally correct items carrying state facts that are stale in the target, with the agent complying and navigating to the wrong receptacle, whereas B explicitly denies the follow-bad-advice route and attributes harm to outcome-bearing items truncating evidence gathering, repaired by a control-flow evidence floor rather than fact-level redaction."
+ },
+ "opposite_sided_failure_under_shift__digest:arxiv:2604.27003: Exter": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "A's in-context account is B's mechanism—pre-shift and post-shift items competing for retrieval slots under a limited window—but A additionally measures the stale-retrieved-fraction as a predictor, recovery time, and a same-stream continual-LoRA arm with replay cost, which would change B's conclusion that the dilemma is merely relocated by showing the in-context failure is read-path only and self-correcting with no pre-shift erosion."
+ },
+ "gate_reads_style_not_truth__failure_memory_framing_drag": {
+  "label": "distinct",
+  "reason": "A audits write-time admission gates with planted records to show they classify surface style rather than correctness, while B claims retrieved failure-derived items induce reproduction of the flagged error class as a function of verbatim erroneous content and that positive rewriting removes it; different stage of the pipeline and different causal claim."
+ },
+ "wrong_action_fraction_dose__digest:arxiv:2607.10608: When ": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "A adopts B's mechanism—task-wrong retrieved items adopted at the first exposed decision producing a compliance trap with weak recovery—but adds the dose decomposition B never runs (token count versus item count versus wrong-item count, length-matched neutral padding, knee-versus-linear fits, static k against a learned budget), which changes the conclusion about what the injection budget is a budget of and even qualifies B's repeated-exposure amplification with a first-item step effect."
+ },
+ "abstraction_discards_bindings_and_repairs__digest:arxiv:2606.11213: Struc": {
+  "label": "distinct",
+  "reason": "A explains when distilled experience beats raw trajectories via two preserved cue classes at matched token budgets, while B is an eviction/compaction policy for keeping a long-horizon context within budget; retention policy over context versus content of stored experience items."
+ },
+ "coupling_variance_components__digest:arxiv:2603.21520: Autom": {
+  "label": "distinct",
+  "reason": "A is a variance-decomposition and cost-matched audit that asks where the variance of a memory-coupled optimizer comes from and whether its mean gain survives budget matching, while B proposes a dual-memory experience-accumulation method to improve prompt optimization accuracy and cost, so neither the claim nor the mechanism coincide."
+ },
+ "lineage_blast_radius__digest:arxiv:2512.12856: A mem": {
+  "label": "distinct",
+  "reason": "A concerns whether consolidation launders poisoned records from a low-trust contributor and what lineage-based provenance enforcement costs in utility, whereas B is about retention/forgetting schedules for budgeted generative agents balancing coherence, recall, privacy and cost, with no trust, poisoning or provenance mechanism in common."
+ },
+ "coupling_variance_components__archive:archive:memory_volume_": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both claim that the reported gain of a memory-coupled prompt optimizer is inflated because the optimizer selects on the particular noisy memory-injected evaluation rather than on real improvement, but A adds a crossed optimizer-by-bank-by-eval-seed random-effects decomposition (with an in-bank minus cross-bank gap) and an equal-episode cost-matched comparison against instruction-only and store-only channels, which the archived null-optimizer/injection-budget study does not run and which would change what a reader concludes about where the variance sits and whether the mean survives."
+ },
+ "failure_memory_framing_drag__retrieved_set_disagreement_gat": {
+  "label": "distinct",
+  "reason": "A locates harm in the write-time framing of a single failure-derived item (verbatim erroneous action content induces reproduction, positive rewriting removes it), while B locates harm in a set-level property of the retrieved top-k (mutual disagreement about the next action) and proposes a read-time abstention gate, so the causal variable and the intervention point differ."
+ },
+ "optimizer_writes_the_read_policy__memory_in_the_loop_training_de": {
+  "label": "distinct",
+  "reason": "A is about a reflective prompt optimizer evolving read-policy clauses in an instruction and tests mediation by clause ablation and transplant, whereas B is about weight-level fine-tuning with a bank in the training context and decomposes its gain into absorbed content, untrained read benefit and a learned read-skill interaction via a train-by-infer 2x2 with bank swap; different artifacts, different estimands, and opposite predicted roles for the joint term."
+ },
+ "abstraction_discards_bindings_and_repairs__stall_triggered_injection": {
+  "label": "distinct",
+  "reason": "A varies what content a representation preserves (scene bindings and failure-to-repair pairs) at matched tokens to explain the raw-versus-distilled disagreement, while B holds the items and content fixed and varies only the time of injection (episode start versus first detected stall), so the manipulated variable and the mechanism are different."
+ },
+ "model_shaped_instruction_task_shaped_store__archive:archive:memory_dropout": {
+  "label": "distinct",
+  "reason": "The archived proposal swaps the bank to show the instruction is co-adapted to the optimization-time memory context and tests memory dropout as a fix, whereas A swaps the backbone to claim the instruction encodes corrections to the optimizing model's own failure modes while the store encodes task facts, making the substitution interaction a property of the (backbone, optimizer) pair; different swapped factor, different mechanism, different deliverable."
+ },
+ "wrong_action_fraction_dose__retrieved_set_disagreement_gat": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both attribute agent-memory harm to retrieved items that recommend off-path actions, labelled against ALFWorld expert plans and traced with Entry-Propagation-Recovery tallies, but B adds set-level agreement labels, a likelihood-ratio test of item-level versus set-level explanations, and a disagreement gate benchmarked against utility filtering, a measurement A never makes and one that directly overturns A's conclusion that the wrong-item count alone is the dose."
+ },
+ "abstraction_discards_bindings_and_repairs__failure_memory_framing_drag": {
+  "label": "distinct",
+  "reason": "A tests which cue classes survive across six representations of successful trajectories at matched tokens and predicts a scene-overlap-dependent ordering, while B tests whether cross-episode failure-derived items make the agent reproduce the flagged error class as a function of verbatim erroneous action content and whether positive rewriting removes it; the item sources, the outcome measured, and the proposed mechanism differ."
+ },
+ "stale_true_state_facts_redaction__wrong_action_fraction_dose": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both re-attribute the same pilot's 7-to-3 effect to content rather than token load and posit the same pathway (a count of task-mismatched content units in the retrieved items, with harm entering at the first exposed action), but they operationalize and intervene differently — A labels facts against the target's ground-truth initial state and tests typed-placeholder redaction against abstention/filtering/gating, while B labels items by off-expert-path actions and fits knee-vs-linear dose models to set a static k — and that difference changes what a reader concludes the harmful unit and the fix are."
+ },
+ "order_randomized_leakage_audit__abstraction_discards_bindings_": {
+  "label": "distinct",
+  "reason": "A claims measured memory gains are largely benchmark leakage from near-duplicate solved predecessors and proposes evaluation instruments (LNO curve, order randomization), whereas B claims the raw-versus-distilled disagreement is explained by two transplantable cue classes (scene bindings, failure-to-repair pairs) rather than abstraction level; scene overlap appears in both only as a shared moderator, not as the same central claim."
+ },
+ "order_randomized_leakage_audit__failure_memory_framing_drag": {
+  "label": "distinct",
+  "reason": "A is about how much of the reported gain is near-duplicate leakage in streaming evaluation, while B is about failure-derived memory reproducing the flagged error class in proportion to verbatim erroneous action content and being fixed by positive rewriting; different claims, mechanisms and interventions."
+ },
+ "order_randomized_leakage_audit__memory_surrogate_validity": {
+  "label": "distinct",
+  "reason": "A asks what fraction of the execution-success gain is attributable to near-duplicate predecessors in the store, while B asks whether development proxies (recall, judge scores, admission F1) rank memories by execution success at all; one audits the benchmark's task stream, the other audits the metric."
+ },
+ "memory_surrogate_validity__stale_true_state_facts_redacti": {
+  "label": "distinct",
+  "reason": "A's claim is that surrogate endpoints fail to rank memory configurations by execution success and proposes a prefix-agreement probe, while B's is a mechanistic attribution of natural harm to stale-true state facts plus a redaction remedy; the overlap is only that both include utility filtering/judge gating among many conditions."
+ },
+ "order_randomized_leakage_audit__stale_true_state_facts_redacti": {
+  "label": "distinct",
+  "reason": "A explains where memory's benefit comes from (near-duplicate solved predecessors, a leakage-controlled evaluation claim), whereas B explains where its harm comes from (episode-specific state facts that are stale in the target) and how to remove it by read-time fact redaction; different dependent phenomena and mechanisms."
+ },
+ "retrieved_set_disagreement_gate__lineage_blast_radius": {
+  "label": "distinct",
+  "reason": "A claims harm from an organically accumulated single-agent bank is a property of the retrieved set and that a cheap action-disagreement abstention gate dominates item-level filters, while B claims consolidation launders a low-trust contributor's poison in a shared multi-contributor memory and quantifies the fan-in cost of lineage enforcement; different threat models, mechanisms and interventions."
+ },
+ "memory_surrogate_validity__dormant_is_not_dead": {
+  "label": "distinct",
+  "reason": "A is about the construct validity of development proxies for execution success across memory configurations, while B is about forgetting policies: recency/usage decay deleting records a dormant task family needs on return, with redundancy-based pruning as the replacement criterion; no shared mechanism."
+ },
+ "cross_episode_drag_content_not_label__stall_triggered_injection": {
+  "label": "distinct",
+  "reason": "A claims cross-episode drag is carried by the prior trajectory's action content rather than its outcome label and that abstraction strips failure drag faster than success benefit, while B holds the items fixed and claims injection timing (entry versus first detected stall) flips the sign of memory's effect, with a two-parameter static trigger matching learned retrieval policies."
+ },
+ "cross_episode_drag_content_not_label__stale_true_state_facts_redacti": {
+  "label": "distinct",
+  "reason": "A attributes cross-episode harm to erroneous action content copied from failed prior episodes and tests outcome-label and abstraction-level manipulations, whereas B explicitly locates harm in procedurally correct items whose episode-specific state facts are stale in the target and tests fact-level redaction against abstention, so the causal agent and the intervention differ."
+ },
+ "dormant_is_not_dead__stale_true_state_facts_redacti": {
+  "label": "distinct",
+  "reason": "A is about write/forget-time deletion policies and the irreversible loss when a dormant task family returns, while B is about which retrieved items cause harm at read time and whether redacting state facts removes it; different variables, streams and interventions."
+ },
+ "failure_memory_framing_drag__wrong_action_fraction_dose": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both claim harm is carried by verbatim wrong-action content in injected items rather than by tokens or failure labels, but B measures the across-item dose-response shape (knee versus linear, first-wrong-item step, length-matched padding, static k versus a learned budget) that A never estimates, while A only varies within-item framing, so the two yield different practical rules."
+ },
+ "memory_surrogate_validity__lineage_blast_radius": {
+  "label": "distinct",
+  "reason": "A measures whether retrieval/judge/admission proxies rank memory configurations by execution success, whereas B measures whether consolidation launders poisoned records across contributor lineage and what provenance enforcement costs in fan-in; unrelated claims and mechanisms."
+ },
+ "cross_episode_drag_content_not_label__abstraction_discards_bindings_": {
+  "label": "distinct",
+  "reason": "A claims abstraction level is the operative lever because it strips failure drag faster than success benefit (failure-fraction-dependent choice), while B claims abstraction level is not the variable at all and that scene bindings and failure-to-repair pairs, tested via cue transplants across seen and unseen scenes, explain the raw-versus-distilled disagreement."
+ },
+ "stall_triggered_injection__lineage_blast_radius": {
+  "label": "distinct",
+  "reason": "A varies only the time at which fixed retrieved items are revealed and compares a static stall trigger with learned when-to-retrieve policies, while B studies poison survival through consolidation and trust enforcement in a shared multi-contributor memory."
+ },
+ "stale_true_state_facts_redaction__lineage_blast_radius": {
+  "label": "distinct",
+  "reason": "A studies naturally stale state facts in a single-agent organically grown bank and a read-time redaction, whereas B studies deliberately planted poison from a low-trust contributor propagating through consolidation and the utility cost of lineage-based provenance gating; provenance gating appears only as one baseline in A."
+ },
+ "order_randomized_leakage_audit__retrieved_set_disagreement_gat": {
+  "label": "distinct",
+  "reason": "A is an evaluation-validity audit asking whether reported memory gains concentrate on near-duplicate solved predecessors under stream-order randomization, while B asks which retrievals cause harm (set-level disagreement versus item properties) and evaluates a disagreement abstention gate."
+ },
+ "memory_surrogate_validity__retrieved_set_disagreement_gat": {
+  "label": "distinct",
+  "reason": "A asks whether development-time surrogate metrics rank whole memory configurations by execution success, while B asks whether harm is a property of the retrieved set rather than the item and benchmarks read-time gates; the units of analysis (configuration versus retrieval) and the claims differ."
+ },
+ "cross_episode_drag_content_not_label__wrong_action_fraction_dose": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both rest on the same mechanism, that the agent adopts wrong action content present in injected experience while tokens and labels are not the lever, but B measures the dose-response over the number of off-expert-path items with length-matched padding and knee-versus-linear fits, whereas A instead measures label-invariance and abstraction-level filtering of failure drag versus success benefit."
+ },
+ "order_randomized_leakage_audit__lineage_blast_radius": {
+  "label": "distinct",
+  "reason": "A claims reported experience-memory gains are near-duplicate leakage measured by stream-order randomization and LNO curves, whereas B claims consolidation launders poison from a low-trust contributor and prices lineage-based provenance enforcement by fan-in; different phenomena, manipulations and outcomes."
+ },
+ "order_randomized_leakage_audit__gate_reads_style_not_truth": {
+  "label": "distinct",
+  "reason": "A is a read/evaluation-side claim that gains concentrate on tasks with near-duplicate solved predecessors, while B is a write-side claim that text-only admission gates classify surface style rather than correctness; neither mechanism nor measured quantity overlaps."
+ },
+ "order_randomized_leakage_audit__cross_episode_drag_content_not": {
+  "label": "distinct",
+  "reason": "A attributes memory gains to structural near-duplicate leakage in template-generated benchmarks, whereas B claims failed prior episodes inject label-invariant error-copying drag across the episode boundary that abstraction filters asymmetrically; opposite sign of effect and unrelated causal variables."
+ },
+ "gate_reads_style_not_truth__stall_triggered_injection": {
+  "label": "distinct",
+  "reason": "A audits write-time admission gates for truth-sensitivity with planted records, while B holds bank and items fixed and varies only injection time, claiming stall-triggered reveal flips the sign of memory's effect and that a two-parameter static trigger matches learned policies."
+ },
+ "failure_memory_framing_drag__lineage_blast_radius": {
+  "label": "distinct",
+  "reason": "A claims failure-memory harm scales with verbatim erroneous action content and is removed by positive rewriting, whereas B claims multi-contributor consolidation launders planted poison and quantifies the utility cost of lineage-based trust enforcement; different content classes, threat models and interventions."
+ },
+ "gate_reads_style_not_truth__stale_true_state_facts_redacti": {
+  "label": "distinct",
+  "reason": "Although both use ALFWorld and both consider stale records, A's claim is about write-time gate decision behavior (style versus truth) and gate precision's failure to predict success, while B's is that stale-true state facts inside procedurally correct items carry organic harm and that read-time typed-placeholder redaction removes it at no clean-task cost."
+ },
+ "memory_surrogate_validity__wrong_action_fraction_dose": {
+  "label": "distinct",
+  "reason": "A claims development-time surrogate metrics (recall, judge quality, admission F1) fail to rank memory configurations by execution success and validates a prefix-agreement probe, while B claims the dose-response of injected experience is a step function of wrong-action item count rather than tokens or item count; different claim objects and estimands."
+ },
+ "gate_reads_style_not_truth__abstraction_discards_bindings_": {
+  "label": "distinct",
+  "reason": "A concerns what write-time gates admit and whether gate precision predicts success, whereas B concerns which content cues (scene bindings, failure-to-repair pairs) rather than abstraction level explain a representation's benefit at matched tokens; unrelated mechanisms."
+ },
+ "abstraction_discards_bindings_and_repairs__lineage_blast_radius": {
+  "label": "distinct",
+  "reason": "A explains a representation-level disagreement by two surviving cue classes and scene overlap, while B studies multi-contributor poison laundering through consolidation and the fan-in cost of provenance enforcement; no shared claim or mechanism."
+ },
+ "abstraction_discards_bindings_and_repairs__wrong_action_fraction_dose": {
+  "label": "distinct",
+  "reason": "Both use matched-token controls to argue content matters more than load, but A's claim is that scene bindings and repair pairs determine when distilled beats raw representations, while B's is that harm is a knee-shaped function of the number of off-expert-path items, so the manipulated variable, predicted functional form and deliverable differ."
+ },
+ "gate_reads_style_not_truth__retrieved_set_disagreement_gat": {
+  "label": "distinct",
+  "reason": "A audits write-time admission gates with planted records to show text-only gates classify style rather than truth, while B studies an organically accumulated bank and claims harm is a property of the retrieved set, defended by a read-time disagreement-abstention gate; different intervention point, different causal variable, and different manipulation (planted vs deliberately unplanted)."
+ },
+ "cross_episode_drag_content_not_label__dormant_is_not_dead": {
+  "label": "distinct",
+  "reason": "A claims failed prior episodes bias a new episode toward the same error category via action content rather than outcome labels, with abstraction as the filter, whereas B claims recency/usage-decay deletion policies destroy records a dormant task family needs on return and that redundancy should replace time-since-use; injection-content drag versus store-deletion policy are unrelated mechanisms."
+ },
+ "abstraction_discards_bindings_and_repairs__retrieved_set_disagreement_gat": {
+  "label": "distinct",
+  "reason": "A attributes representation effects to two surviving cue classes (scene bindings and failure-to-repair pairs) at matched token budgets with cue transplants, while B attributes harm to disagreement within the retrieved set and evaluates read-time abstention gates; one is about what content a representation keeps, the other about set-level consistency filtering."
+ },
+ "gate_reads_style_not_truth__lineage_blast_radius": {
+  "label": "distinct",
+  "reason": "Both concern gating bad records, but A's claim is that text-only admission gates decide on surface form rather than correctness so only execution-referenced gates are truth-sensitive, while B's claim is that consolidation launders low-trust content into derived records so trust must be enforced through lineage at a fan-in cost law 1-(1-s)^f; different failure mode, different remedy, different variable swept."
+ },
+ "dormant_is_not_dead__wrong_action_fraction_dose": {
+  "label": "distinct",
+  "reason": "A is about forgetting policies destroying dormant-family records over a long stream, judged by return-block success, whereas B is about the read-time dose-response of injected items being a step function of the wrong-action count rather than tokens or item count; deletion policy versus injection budget are separate mechanisms."
+ },
+ "wrong_action_fraction_dose__lineage_blast_radius": {
+  "label": "distinct",
+  "reason": "A characterizes how many injected items and how many wrong ones drive success on a single agent's traces, while B studies multi-contributor shared memory where poison survives consolidation and provenance must be enforced by lineage; no shared mechanism beyond both involving task-wrong content."
+ },
+ "memory_surrogate_validity__abstraction_discards_bindings_": {
+  "label": "distinct",
+  "reason": "A's claim is metrological, that recall, LLM-judge quality and admission F1 are invalid surrogates for execution success across a configuration family, while B's claim is substantive, that scene bindings and failure-to-repair pairs rather than abstraction level explain when distilled experience beats raw; different dependent constructs and different manipulations."
+ },
+ "gate_reads_style_not_truth__dormant_is_not_dead": {
+  "label": "distinct",
+  "reason": "A audits what write-time admission gates let in, claiming text-only gates read style rather than truth, whereas B audits what forgetting policies throw out, claiming usage/recency decay loses a returning task family irreversibly; admission versus deletion are opposite ends of the store lifecycle with no shared mechanism."
+ },
+ "gate_reads_style_not_truth__wrong_action_fraction_dose": {
+  "label": "distinct",
+  "reason": "Although both label records as right or wrong against ALFWorld expert execution and use entry-propagation-recovery traces, A's claim is about the decision basis of write-time gates (style features versus truth) while B's is about the shape of the read-time dose-response (a step function of wrong-item count, not tokens); neither measures the other's quantity."
+ },
+ "cross_episode_drag_content_not_label__lineage_blast_radius": {
+  "label": "distinct",
+  "reason": "A tests whether a failed prior episode's action content drags a new episode toward the same error class and whether abstraction filters that drag, while B tests whether consolidation amplifies a low-trust contributor's planted poison and what lineage-based trust enforcement costs; single-agent contextual drag versus multi-contributor provenance governance are different phenomena."
+ },
+ "cross_episode_drag_content_not_label__retrieved_set_disagreement_gat": {
+  "label": "distinct",
+  "reason": "A claims failed prior episodes carry error-copying drag through action content rather than outcome labels and that abstraction filters failure drag before success benefit, whereas B claims harm from an organically accumulated bank is a property of the retrieved set's internal disagreement and proposes a read-time abstention gate, so the mechanisms (content-driven imitation of a single prior vs. set-level conflict at retrieval) and the tested interventions differ."
+ },
+ "memory_surrogate_validity__cross_episode_drag_content_not": {
+  "label": "distinct",
+  "reason": "A is a surrogate-endpoint validity study asking whether recall, LLM-judge and admission-gate metrics rank memory configurations by execution success, while B is a mechanistic causal study of how failed prior episodes bias a new episode's errors through action content and how abstraction level modulates that drag; neither the claim nor the mechanism overlaps."
+ },
+ "cross_episode_drag_content_not_label__gate_reads_style_not_truth": {
+  "label": "distinct",
+  "reason": "A concerns read-time effects of injected prior episodes (label-invariant, asymmetric drag and its removal by abstraction), whereas B audits write-time admission gates and claims text-only gates classify surface style rather than truth with only execution-referenced gates being truth-sensitive; despite a shared ALFWorld/EPR toolkit the claims and mechanisms are different."
+ }
+}

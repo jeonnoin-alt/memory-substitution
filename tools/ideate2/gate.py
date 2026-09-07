@@ -33,7 +33,10 @@ def brief_bullets(brief_md: str) -> list[str]:
     for line in brief_md.splitlines():
         s = line.strip()
         if s.startswith("- **") or re.match(r"^\d+\.\s+\*\*", s):
-            out.append(re.sub(r"\*\*", "", s.lstrip("- ")))
+            t = re.sub(r"\*\*", "", s.lstrip("- "))
+            if re.match(r"^Q\d+\b", t):      # open questions are what generators were told to attack, not prior results
+                continue
+            out.append(t)
     return out
 
 
@@ -134,6 +137,8 @@ def apply(report_path: str, adjudications: dict[str, dict], out: str) -> dict:
         adj = adjudications.get(p.get("pair_id") or f"{p['a']}__{p['b'][:30]}")
         if not adj:
             continue
+        if p["kind"] == "idea-brief" and re.match(r"^Q\d+\b", p.get("prior_text", "")):
+            p["label"] = adj["label"]; p["reason"] = adj["reason"]; p["ignored"] = "brief open question"; continue
         p["label"] = adj["label"]; p["reason"] = adj["reason"]
         if adj["label"] == "same_claim_reworded":
             if p["kind"] == "idea-idea":
