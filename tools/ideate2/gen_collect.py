@@ -9,6 +9,10 @@ G, mapping = sys.argv[1], json.load(open(sys.argv[2]))
 REQ = ["Name", "Title", "Short Hypothesis", "Related Work", "Abstract", "Experiments", "Baselines and Ablations",
        "Falsifiable Predictions", "Measurement and Noise Control", "Preprint Collision Check", "Risk Factors and Limitations",
        "Addresses gap", "Not a restatement of"]
+def _norm(i):   # generators sometimes return list-valued fields; downstream code expects strings
+    for k, v in list(i.items()):
+        if isinstance(v, list): i[k] = "\n".join(f"- {x}" for x in v)
+    return i
 done, missing, total = [], [], 0
 for axis, tid in mapping.items():
     path = os.path.join(TASKS_DIR, tid + ".output")
@@ -21,6 +25,7 @@ for axis, tid in mapping.items():
             if isinstance(x, list) and x and isinstance(x[0], dict) and "Short Hypothesis" in x[0]: d = {"proposals": x}; break
     if d is None: missing.append(axis); continue
     for p in d["proposals"]:
+        _norm(p)
         p["_missing_fields"] = [k for k in REQ if not p.get(k)]
     json.dump(d, open(os.path.join(G, "jobs", f"axis_gen__{axis}.result.json"), "w"), indent=1, ensure_ascii=False)
     done.append(axis); total += len(d["proposals"])
