@@ -1,0 +1,138 @@
+[
+ {
+  "arxiv": "2602.04942",
+  "title": "Privileged Information Distillation for Language Models"
+ },
+ {
+  "arxiv": "2507.14805",
+  "title": "Subliminal Learning: Language models transmit behavioral traits via hidden signals in data"
+ },
+ {
+  "arxiv": "2604.27003",
+  "title": "When Continual Learning Moves to Memory: A Study of Experience Reuse in LLM Agents"
+ },
+ {
+  "arxiv": "2603.12056",
+  "title": "XSkill: Continual Learning from Experience and Skills in Multimodal Agents"
+ },
+ {
+  "arxiv": "2601.03938",
+  "title": "FOREVER: Forgetting Curve-Inspired Memory Replay for Language Model Continual Learning"
+ },
+ {
+  "arxiv": "2608.09228",
+  "title": "Privileged Solutions or Context-Induced Teacher Behavior? Dissecting On-Policy Self-Distillation"
+ },
+ {
+  "arxiv": "2604.15559",
+  "title": "Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation"
+ },
+ {
+  "arxiv": "2601.03641",
+  "title": "Agent-Dice: Disentangling Knowledge Updates via Geometric Consensus for Agent Continual Learning"
+ },
+ {
+  "arxiv": "2606.22019",
+  "title": "Channel Location Constrains the Auditability of Subliminal Learning"
+ },
+ {
+  "arxiv": "2509.06100",
+  "title": "Orthogonal Low-rank Adaptation in Lie Groups for Continual Learning of Large Language Models"
+ },
+ {
+  "arxiv": "2606.11559",
+  "title": "HERO: Hindsight-Enhanced Reflection from Environment Observations for Agentic Self-Distillation"
+ },
+ {
+  "arxiv": "2608.02508",
+  "title": "RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States"
+ },
+ {
+  "arxiv": "2603.09517",
+  "title": "You Didn't Have to Say It like That: Subliminal Learning from Faithful Paraphrases"
+ },
+ {
+  "arxiv": "2608.05219",
+  "title": "When Privileged Guidance Misaligns: State-Matched Routing and Contextualized Self-Distillation for Multi-Turn Agents"
+ },
+ {
+  "arxiv": "2606.00995",
+  "title": "Subliminal Learning Is Steering Vector Distillation"
+ },
+ {
+  "arxiv": "2505.24842",
+  "title": "Cascading Adversarial Bias from Injection to Distillation in Language Models"
+ },
+ {
+  "arxiv": "2606.04703",
+  "title": "Rethinking Continual Experience Internalization for Self-Evolving LLM Agents"
+ },
+ {
+  "arxiv": "2602.12275",
+  "title": "On-Policy Context Distillation for Language Models"
+ },
+ {
+  "arxiv": "2603.18272",
+  "title": "Retrieval-Augmented LLM Agents: Learning to Learn from Experience"
+ },
+ {
+  "arxiv": "2606.29502",
+  "title": "UCOB: Learning to Utilize and Evolve Agentic Skills via Credit-Aware On-Policy Bidirectional Self-Distillation"
+ },
+ {
+  "arxiv": "2607.29468",
+  "title": "Self-Play Meets Skill Evolution: Self-Evolving Search Agents that Pose, Solve, and Remember"
+ },
+ {
+  "arxiv": "2512.02543",
+  "title": "In-Context Distillation with Self-Consistency Cascades: A Simple, Training-Free Way to Reduce LLM Agent Costs"
+ },
+ {
+  "arxiv": "2607.21051",
+  "title": "Sample-Efficient Learning from Agent Experience"
+ },
+ {
+  "arxiv": "2607.01480",
+  "title": "Procedural Memory Distillation: Online Reflection for Self-Improving Language Models"
+ },
+ {
+  "arxiv": "2606.02355",
+  "title": "SIRI: Self-Internalizing Reinforcement Learning with Intrinsic Skills for LLM Agent Training"
+ },
+ {
+  "arxiv": "2605.27762",
+  "title": "PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft"
+ },
+ {
+  "arxiv": "2607.28272",
+  "title": "MemHarness: Memory Is Reconstructed, Not Replayed"
+ },
+ {
+  "arxiv": "2608.01735",
+  "title": "DAPD: Dual-Anchored Policy Distillation"
+ },
+ {
+  "arxiv": "2606.30626",
+  "title": "DOPD: Dual On-policy Distillation"
+ },
+ {
+  "arxiv": "2605.09315",
+  "title": "Do Self-Evolving Agents Forget? Capability Degradation and Preservation in Lifelong LLM Agent Adaptation"
+ },
+ {
+  "arxiv": "2601.03192",
+  "title": "MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory"
+ },
+ {
+  "arxiv": "2512.10696",
+  "title": "Remember Me, Refine Me: A Dynamic Procedural Memory Framework for Experience-Driven Agent Evolution"
+ },
+ {
+  "arxiv": "2607.10608",
+  "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+ },
+ {
+  "arxiv": "2608.12218",
+  "title": "Information Abundance Paradox: Long-Context Training Undermines Parametric Knowledge"
+ }
+]

@@ -1,0 +1,23 @@
+{"author": "Fable 5.1, 2026-09-07; Stage 0 for the parametric-vs-in-context experience brief",
+ "axes": [
+ {"name": "internalization objectives",
+  "definition": "how experience is moved into weights: SFT on trajectories, context distillation from a memory-conditioned teacher, on-policy or privileged distillation, RL with memory in the loop, and what each objective retains",
+  "queries": ["context distillation agent experience into weights retain in-context gains","procedural memory distillation memory-conditioned teacher self-distillation agent","on-policy distillation privileged context teacher student agent trajectories","reinforcement learning with skill library or memory in the loop internalize skills"],
+  "foundational": "context distillation learning by distilling context prompts into model parameters"},
+ {"name": "what survives internalization",
+  "definition": "which properties of in-context experience transfer to weights and which do not: task content, harmful dispositions, style, subliminal traits, context-dependent behavior (privilege illusion)",
+  "queries": ["privilege illusion student trained from privileged context teacher fails without context","subliminal learning behavioral traits transmit through distillation","injected bias propagates from teacher context to distilled student","distilled agent inherits errors of retrieved demonstrations negative transfer through fine-tuning"],
+  "foundational": "knowledge distillation what is transferred dark knowledge student teacher"},
+ {"name": "hybrids and routing between weights and context",
+  "definition": "keeping some experience in context after distillation, deciding per item or per task which substrate, and whether the two add or substitute",
+  "queries": ["hybrid parametric and retrieval memory agent when to keep experience in context","episodic to parametric consolidation routing task streams agent memory","retrieval-augmented fine-tuned agent evaluated without retrieval crutch","memory as optional external store after policy learning skill memory"],
+  "foundational": "retrieval augmented generation versus fine-tuning knowledge injection comparison"},
+ {"name": "continual adaptation and shift",
+  "definition": "behaviour of each substrate over long streams with distribution shift: capability erosion under updates, staleness of stored items, replay cost, recovery time",
+  "queries": ["continual LoRA fine-tuning agent task stream forgetting replay versus memory bank","capability erosion self-evolving agents distribution shift stale experience recovery","stability plasticity external memory versus parametric updates LLM agent","continual learning language agents controlled task streams evaluation"],
+  "foundational": "catastrophic forgetting continual learning replay language models"},
+ {"name": "evaluation and cost of the two substrates",
+  "definition": "how to compare the routes fairly: matched training compute, inference token cost, amortization horizon, seeds and noise floors, held-out and unseen-scene splits",
+  "queries": ["matched compute comparison fine-tuning versus in-context learning agent cost per solved task","amortized training cost versus inference token cost memory agent break-even","seed variance noise floor agent benchmark paired evaluation fine-tuned versus prompted","ALFWorld unseen split generalization fine-tuned agent versus in-context exemplars"],
+  "foundational": "in-context learning versus fine-tuning comparison generalization few-shot"}
+]}

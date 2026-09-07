@@ -29,11 +29,13 @@ if os.path.exists(a.out):
         d = json.loads(l); done.add((d["game_file"], d["seed"], d["k"]))
 fout = open(a.out, "a")
 # goal text for retrieval comes from the game's initial observation (cheap: reset once per game)
-goal_cache = {}
+GOAL_CACHE = os.path.join(os.path.dirname(a.out), "goals.json")
+goal_cache = json.load(open(GOAL_CACHE)) if os.path.exists(GOAL_CACHE) else {}
 def goal_for(gf):
     if gf not in goal_cache:
         env = make_env(gf); obs, _ = env.reset(); env.close()
         goal_cache[gf] = goal_of(obs[0] if isinstance(obs, (list, tuple)) else obs)
+        json.dump(goal_cache, open(GOAL_CACHE, "w"))
     return goal_cache[gf]
 jobs = [(s, gf, seed, k) for (s, gf) in games for seed in seeds for k in ks if (gf, seed, k) not in done]
 random.Random(0).shuffle(jobs)
