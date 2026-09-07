@@ -46,5 +46,5 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("cmd", choices=["emit", "merge"])
     ap.add_argument("--axes"); ap.add_argument("--brief"); ap.add_argument("--cards"); ap.add_argument("--gaps")
     ap.add_argument("--n", type=int, default=3); ap.add_argument("--out", required=True)
-    ap.add_argument("--backend", default="harness"); ap.add_argument("--model", default="opus")
+    ap.add_argument("--backend", default="harness"); ap.add_argument("--model", default="fable", help="generation model; PI policy 2026-09-07: Fable 5.1 generates, Opus judges, Sonnet prohibited")
     a = ap.parse_args(); emit(a) if a.cmd == "emit" else merge(a)

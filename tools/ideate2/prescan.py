@@ -87,7 +87,7 @@ def cards(args, be: Backend):
                           f"Conclusion text: {p.sections.get('conclusion','not available')}")
         user = (f"Axes: {axes_txt}\n\nWrite one card per paper below. Return a JSON ARRAY of card objects, in the same order.\n\n"
                 + "\n\n".join(blocks))
-        jobs.append(be.call("prescan_card", f"batch{b // args.batch:02d}", P.PRESCAN_CARD_SYSTEM, user, model="sonnet"))
+        jobs.append(be.call("prescan_card", f"batch{b // args.batch:02d}", P.PRESCAN_CARD_SYSTEM, user))
     print(f"{len(jobs)} card jobs ({args.batch} papers each) -> {be.jobs_dir}")
 
 

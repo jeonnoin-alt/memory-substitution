@@ -325,7 +325,7 @@ class SectionReader:
     def websearch_job(self, arxiv_id: str) -> dict:
         """Job spec for a harness subagent with WebSearch (server-side, not firewalled)."""
         job = {
-            "kind": "section_read", "arxiv": arxiv_id, "tools": ["WebSearch"], "model": "sonnet",
+            "kind": "section_read", "arxiv": arxiv_id, "tools": ["WebSearch"], "model": "opus",
             "prompt": (f"Using WebSearch only (at most 4 searches), find the text of the Limitations / Future work "
                        f"and Conclusion sections of arXiv:{arxiv_id}, and one sentence stating its method. Search "
                        f"'arxiv {arxiv_id} limitations', 'arxiv {arxiv_id} conclusion', and the paper title. Return "

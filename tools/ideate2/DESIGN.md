@@ -185,6 +185,7 @@ novelty on what you verified, not on what the proposal asserts.
 Unchanged from `ideate.py`; the reviser receives the novelty card and the same open-book tool.
 
 ## 5. Scoring and stop rules
+- Model policy (PI, 2026-09-07): Stage 2 generators = Fable 5.1; all other LLM roles = Opus; Sonnet prohibited. (§8 validation predates this and used Sonnet for cards, gate and section reads.)
 - Weights and worst-verdict-wins unchanged (comparability with every earlier round).
 - Verified-collision cap: novelty ≤ 4 in the aggregate when any judge writes `VERIFIED COLLISION`.
 - Escalation: 1 judge → +2 if not reject and no verified collision.

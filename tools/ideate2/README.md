@@ -16,6 +16,10 @@ Reachability from this node (checked 2026-09-07): S2 (key + pinned IP) ✓, HF p
 Claude Code WebSearch (server-side) ✓; arXiv/ar5iv/OpenAlex/alphaXiv/openreview/WebFetch ✗.
 Full text therefore comes only through WebSearch subagents (`SectionReader.websearch_job`).
 
+## Model policy (PI, 2026-09-07)
+
+Generation (Stage 2 `axis_gen`) = **Fable 5.1**; every other LLM role (pre-scan cards/synth, gate adjudication, novelty keys, section reads, judges) = **Opus**. **Sonnet is prohibited.** The 2026-09-07 validation runs below predate this rule and used Sonnet for cards/gate/section reads.
+
 ## Backends
 
 `--backend harness` (default; no Anthropic key needed): every LLM step is written as a job
@@ -31,7 +35,7 @@ prescan.py collect --slug S --axes W/axes.json --out W --rerank --top 32 --secti
                                                               # S2/HF/(OpenAlex/arXiv if reachable) → papers.jsonl
                                                               # + web_queries.json + jobs_sections/*.json
 ingest_sections.py W/papers.jsonl mapping.json                # after the section-read subagents finish
-prescan.py cards   --slug S --axes W/axes.json --out W --batch 8 --model sonnet   # card jobs (PRESCAN_CARD)
+prescan.py cards   --slug S --axes W/axes.json --out W --batch 8 --model opus     # card jobs (PRESCAN_CARD)
    → concatenate the card arrays into W/cards.jsonl (one card per line)
 prescan.py synth   --slug S --out W --model opus              # 1 job per axis (PRESCAN_SYNTH) → W/gaps.json
 prescan.py digest  --slug S --out W --brief brief.md          # digest.md + brief_with_digest.md
@@ -54,7 +58,7 @@ multi-axis cards; WebSearch enabled; output = `{"proposals":[<11-field idea>...]
 ```
 gate.py --ideas G/ideas.json --brief brief.md --cards W/cards.jsonl --out G/gate --backend harness
    thresholds default to mean + 1.5·SD of the pairwise cosine (absolute 0.55 put 27/27 ideas in one cluster)
-   → gate_report.{md,json}; adjudication jobs batched 10 pairs each (GATE_ADJUDICATE, sonnet)
+   → gate_report.{md,json}; adjudication jobs batched 10 pairs each (GATE_ADJUDICATE, opus)
 gate_collect.py G/gate mapping.json           # flatten batches → adjudications.json → gate_decisions.json
 ```
 Labels: `distinct` / `same_mechanism_new_measurement` (keep, note) / `same_claim_reworded`

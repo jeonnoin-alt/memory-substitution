@@ -102,7 +102,7 @@ def run(ideas: list[dict], bullets: list[str], claims: list[dict], thr_idea: flo
                 blocks.append(f"### pair_id: {p['pair_id']}\n" + P.GATE_ADJUDICATE_USER.format(a=a_txt, b=b_txt))
             user = ("Judge each pair below independently. Return a JSON ARRAY of objects {\"pair_id\",\"label\",\"reason\"} "
                     "in the same order.\n\n" + "\n\n".join(blocks))
-            be.call("gate_adjudicate", f"batch{b // batch:02d}", P.GATE_ADJUDICATE_SYSTEM, user, model="sonnet")
+            be.call("gate_adjudicate", f"batch{b // batch:02d}", P.GATE_ADJUDICATE_SYSTEM, user)
         json.dump(report, open(os.path.join(out, "gate_report.json"), "w"), indent=1, ensure_ascii=False)
     # human-readable
     L = [f"# Repackaging gate report", f"thresholds: idea-idea ≥ {thr_idea}, idea-prior ≥ {thr_prior}", ""]
@@ -152,6 +152,6 @@ if __name__ == "__main__":
     ideas = json.load(open(a.ideas))
     bullets = brief_bullets(open(a.brief).read()) if a.brief else []
     claims = [json.loads(l) for l in open(a.cards)] if a.cards else []
-    be = Backend(a.backend, os.path.join(a.out, "jobs"), "sonnet") if a.backend else None
+    be = Backend(a.backend, os.path.join(a.out, "jobs"), "opus") if a.backend else None
     rep = run(ideas, bullets, claims, a.thr_idea, a.thr_prior, be, a.out, a.z)
     print(f"clusters: {len(rep['clusters'])}, prior flags: {len(rep['prior_flags'])}, pairs to adjudicate: {len(rep['pairs'])} -> {a.out}/gate_report.md")

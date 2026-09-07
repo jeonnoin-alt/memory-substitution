@@ -80,9 +80,9 @@ def main():
     ideas = json.load(open(a.ideas))
     os.makedirs(a.out, exist_ok=True)
     if a.backend:
-        be = Backend(a.backend, os.path.join(a.out, "jobs"), "sonnet")
+        be = Backend(a.backend, os.path.join(a.out, "jobs"), "opus")
         for i in ideas:
-            be.call("novelty_keys", i.get("Name", "idea"), P.NOVELTY_KEYS_SYSTEM, json.dumps(i, ensure_ascii=False), model="sonnet")
+            be.call("novelty_keys", i.get("Name", "idea"), P.NOVELTY_KEYS_SYSTEM, json.dumps(i, ensure_ascii=False))
         print(f"{len(ideas)} key-extraction jobs -> {be.jobs_dir}"); return
     keys_all = json.load(open(a.keys)) if a.keys else {}
     from gate import embed
