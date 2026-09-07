@@ -113,30 +113,30 @@ statistics around that. Pre-registration (thresholds, gates, amendments) is expe
 ## Appendix: the 27 ideas already generated in this program (do not restate; differentiate or move on)
 Scores are the 3-judge Opus mean (0-10) from `reviews/ideation/RANKING.md`.
 
-- memory_item_value_reliability (None): Item Value Is Not an Item Property: A Generalizability Audit of Per-Item Utility Estimates in Self-Editing Agent Memory
-- provenance_gap_selection_not_authorship (None): Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It
-- compile_dont_retrieve (None): Compile, Don't Retrieve: The Query-Conditioned Read in Agentic Experience Memory Is Inert
-- memory_or_instruction (None): Is Your Agent's Memory Just an Un-Optimized Prompt? Measuring the Residual Value of Retrieved Experience After Instruction Optimization
-- failure_signature_routing (None): Transfer Is Predicted by How Tasks Fail, Not by What Tasks Are About: A Routing Study for Textual Prompt Transfer
-- collection_policy_coupling_collapse (None): Rich Get Richer, Twice: The Collection Policy — Not Content Quality — Drives Diversity Collapse When Self-Editing Memory and Prompt Optimiza
-- instruction_conditioned_complementarity (None): What Does the Prompt Already Say? Instruction-Conditioned Complementarity Decides When Retrieved Experience Helps, Hurts, or Just Costs Toke
-- coadaptation_transplant_ccr (None): Who Broke It, the Instruction or the Memory? A Transplant Diagnostic for Prompt–Memory Co-Adaptation, and a Counterfactual Routing Fix
-- decorative_retriever (None): When Is a Retriever Decorative? Retrieval-Set Overlap Predicts Whether Procedural Agent Memory Must Be Retrieved or Can Be Frozen
-- memory_induced_shortcutting (None): Memory Makes Agents Stop Looking: Premature Termination of Evidence Gathering Mediates Memory Harm, and Instruction Optimization Cannot Repa
-- memory_vetoes_instruction_slot (None): The Instruction Slot Is Not Independent of the Memory Slot: Answer-Bearing Experience Suppresses Instruction Compliance Even Without Imitati
-- coverage_currency_coupling (None): Concentration Is the Common Currency: Self-Editing Memory and Prompt Optimization Both Buy pass@1 by Spending Solve-Set Coverage, and Stacki
-- memory_budget_confound (None): One Item Is the Budget: Token Volume, Not Memory Content, Explains Both the Harm and the Apparent Gains of Agentic Memory Curation
-- substitutes_not_complements (None): Substitutes, Not Complements: Clause-Level Evidence That Optimized Instructions Shrink an Agent's Useful Memory-Injection Budget
-- counterfactual_memory_screening_under_selection_noise (None): Does Counterfactual Screening of Agent Memory Survive Its Own Noise? Neighborhood-Conditional Utility, Winner's Curse, and Interference
-- memory_dropout_coadaptation (None): Don't Co-Adapt: A Bank-Swap Diagnostic for Prompt Optimizers Coupled to Self-Editing Memory, and Which Fix Actually Survives Bank Turnover
-- coverage_selection_division_of_labour (None): Coverage Failures Are the Only Thing Memory Can Sell: A Stratified Division of Labour Between Self-Editing Memory and Prompt Optimization, J
-- clause_level_portability (None): Prompt Optimizers Discover Two Kinds of Text: A Clause-Level Attribution Study of What Transfers Across Domains
-- commit_then_consult_slot_discipline (None): Anchoring, Not Overload: Commitment Order Explains Why Optimized Instructions and Agent Experience Memory Fight Each Other
-- breadth_routed_memory (None): Consolidate the Broad, Retrieve the Narrow: Coverage — Not Utility, Not Usage — Decides Where Agent Experience Should Live
-- playbook_transfer (None): Transfer the Optimizer, Not the Prompt: A Domain-General Failure→Edit Playbook for Sample-Efficient Reflective Prompt Optimization
-- meta_prompt_generalization (None): How Many Tasks Does It Take to Optimize an Optimizer? Meta-Generalization of Learned Reflection Prompts
-- action_prior_imprinting (None): Majority-Action Bias in Retrieved Agent Memory: A Query-Independent Action Prior, and Why Removing It Requires Per-Retrieval Calibration
-- optimizer_substitutes_for_memory_scaffold (None): Instructions Already Say It: Optimized and Hand-Written Instructions Substitute for Agent Memory's Scaffold and Leave Only Its Content Harm
-- query_agnostic_curation_ceiling (None): Bounded Before the Query: A Measured Ceiling on Query-Agnostic Memory Curation in LLM Agents
-- memory_volume_amplifies_optimizer_curse (None): Does Retrieved Memory Inflate the Optimizer's Curse? Injection Budget as a Lever on Selection Bias in Agent Prompt Search
-- allocation_prior_transfer (None): What Actually Transfers Is the Noise Model: Cross-Task Priors on Candidate Quality Make Reflective Prompt Optimization Sample-Efficient
+- memory_induced_shortcutting (6.88): Memory Makes Agents Stop Looking: Premature Termination of Evidence Gathering Mediates Memory Harm, and Instruction Optimization Cannot Repa
+- compile_dont_retrieve (6.77): Compile, Don't Retrieve: The Query-Conditioned Read in Agentic Experience Memory Is Inert
+- memory_item_value_reliability (6.7): Item Value Is Not an Item Property: A Generalizability Audit of Per-Item Utility Estimates in Self-Editing Agent Memory
+- memory_or_instruction (6.7): Is Your Agent's Memory Just an Un-Optimized Prompt? Measuring the Residual Value of Retrieved Experience After Instruction Optimization
+- instruction_conditioned_complementarity (6.58): What Does the Prompt Already Say? Instruction-Conditioned Complementarity Decides When Retrieved Experience Helps, Hurts, or Just Costs Toke
+- memory_budget_confound (6.58): One Item Is the Budget: Token Volume, Not Memory Content, Explains Both the Harm and the Apparent Gains of Agentic Memory Curation
+- coverage_currency_coupling (6.45): Concentration Is the Common Currency: Self-Editing Memory and Prompt Optimization Both Buy pass@1 by Spending Solve-Set Coverage, and Stacki
+- commit_then_consult_slot_discipline (6.45): Anchoring, Not Overload: Commitment Order Explains Why Optimized Instructions and Agent Experience Memory Fight Each Other
+- substitutes_not_complements (6.42): Substitutes, Not Complements: Clause-Level Evidence That Optimized Instructions Shrink an Agent's Useful Memory-Injection Budget
+- memory_vetoes_instruction_slot (6.4): The Instruction Slot Is Not Independent of the Memory Slot: Answer-Bearing Experience Suppresses Instruction Compliance Even Without Imitati
+- collection_policy_coupling_collapse (6.3): Rich Get Richer, Twice: The Collection Policy — Not Content Quality — Drives Diversity Collapse When Self-Editing Memory and Prompt Optimiza
+- provenance_gap_selection_not_authorship (6.17): Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It
+- coadaptation_transplant_ccr (6.15): Who Broke It, the Instruction or the Memory? A Transplant Diagnostic for Prompt–Memory Co-Adaptation, and a Counterfactual Routing Fix
+- optimizer_substitutes_for_memory_scaffold (6.12): Instructions Already Say It: Optimized and Hand-Written Instructions Substitute for Agent Memory's Scaffold and Leave Only Its Content Harm
+- counterfactual_memory_screening_under_selection_noise (6.0): Does Counterfactual Screening of Agent Memory Survive Its Own Noise? Neighborhood-Conditional Utility, Winner's Curse, and Interference
+- playbook_transfer (5.97): Transfer the Optimizer, Not the Prompt: A Domain-General Failure→Edit Playbook for Sample-Efficient Reflective Prompt Optimization
+- memory_dropout_coadaptation (5.95): Don't Co-Adapt: A Bank-Swap Diagnostic for Prompt Optimizers Coupled to Self-Editing Memory, and Which Fix Actually Survives Bank Turnover
+- clause_level_portability (5.95): Prompt Optimizers Discover Two Kinds of Text: A Clause-Level Attribution Study of What Transfers Across Domains
+- meta_prompt_generalization (5.9): How Many Tasks Does It Take to Optimize an Optimizer? Meta-Generalization of Learned Reflection Prompts
+- action_prior_imprinting (5.83): Majority-Action Bias in Retrieved Agent Memory: A Query-Independent Action Prior, and Why Removing It Requires Per-Retrieval Calibration
+- failure_signature_routing (5.8): Transfer Is Predicted by How Tasks Fail, Not by What Tasks Are About: A Routing Study for Textual Prompt Transfer
+- decorative_retriever (5.73): When Is a Retriever Decorative? Retrieval-Set Overlap Predicts Whether Procedural Agent Memory Must Be Retrieved or Can Be Frozen
+- coverage_selection_division_of_labour (5.7): Coverage Failures Are the Only Thing Memory Can Sell: A Stratified Division of Labour Between Self-Editing Memory and Prompt Optimization, J
+- breadth_routed_memory (5.67): Consolidate the Broad, Retrieve the Narrow: Coverage — Not Utility, Not Usage — Decides Where Agent Experience Should Live
+- query_agnostic_curation_ceiling (5.67): Bounded Before the Query: A Measured Ceiling on Query-Agnostic Memory Curation in LLM Agents
+- allocation_prior_transfer (5.53): What Actually Transfers Is the Noise Model: Cross-Task Priors on Candidate Quality Make Reflective Prompt Optimization Sample-Efficient
+- memory_volume_amplifies_optimizer_curse (5.47): Does Retrieved Memory Inflate the Optimizer's Curse? Injection Budget as a Lever on Selection Bias in Agent Prompt Search
