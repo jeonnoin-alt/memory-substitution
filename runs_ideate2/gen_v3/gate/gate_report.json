@@ -1,0 +1,782 @@
+{
+ "thresholds": {
+  "idea": 0.682,
+  "prior": 0.605,
+  "pair_mean": 0.559,
+  "pair_sd": 0.082
+ },
+ "clusters": [
+  [
+   "reversal_savings_latent_retention",
+   "first_item_additive_rest_substitutive",
+   "context_ceiling_substitution",
+   "train_dose_sets_substrate",
+   "instance_share_is_the_illusion",
+   "student_side_abundance",
+   "memory_carried_traits_need_tokens",
+   "retrieved_memory_privilege_is_scene_bound"
+  ]
+ ],
+ "prior_flags": [
+  {
+   "idea": "stale_dose_law_context_vs_weights",
+   "sim": 0.654,
+   "source": "archive",
+   "text": "archive:stale_true_state_facts_redaction: Stale-True, Not Wrong: Episode-Specific State Facts Carry the Natural Harm of Agent Experience Memory, and Fact-Level Redaction Beats Abstention. In an organi"
+  },
+  {
+   "idea": "reversal_savings_latent_retention",
+   "sim": 0.649,
+   "source": "archive",
+   "text": "archive:dormant_is_not_dead: Dormant Is Not Dead: Usage-Decay Forgetting in Agent Experience Memory Buys Stationary Savings with an Irreversible Loss at Task-Family Return. Recency- and usage-decay pr"
+  },
+  {
+   "idea": "reversal_savings_latent_retention",
+   "sim": 0.617,
+   "source": "digest",
+   "text": "arxiv:2605.10268: For agentic long-context reasoning with a streaming memory, skipping intermediate retrieval and instead triggering question decomposition and rereading when the final memory is insuf"
+  },
+  {
+   "idea": "success_filter_lockin_under_shift",
+   "sim": 0.681,
+   "source": "archive",
+   "text": "archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from Organically Accumulated Agent Memory Lives in the Retrieved Set, Not the Item, and a Disagreement Gate Beats Item-Level U"
+  },
+  {
+   "idea": "success_filter_lockin_under_shift",
+   "sim": 0.67,
+   "source": "digest",
+   "text": "arxiv:2607.10608: Agents consuming conflicting retrieved memory fall into a compliance trap: they adopt task-wrong memory at the first exposed decision point, repeated exposure amplifies the error, re"
+  },
+  {
+   "idea": "context_pays_for_its_own_tokens_breakeven",
+   "sim": 0.738,
+   "source": "archive",
+   "text": "archive:memory_budget_confound: One Item Is the Budget: Token Volume, Not Memory Content, Explains Both the Harm and the Apparent Gains of Agentic Memory Curation. In experience-memory agents, the val"
+  },
+  {
+   "idea": "context_pays_for_its_own_tokens_breakeven",
+   "sim": 0.612,
+   "source": "digest",
+   "text": "arxiv:2607.10608: Agents consuming conflicting retrieved memory fall into a compliance trap: they adopt task-wrong memory at the first exposed decision point, repeated exposure amplifies the error, re"
+  },
+  {
+   "idea": "first_item_additive_rest_substitutive",
+   "sim": 0.647,
+   "source": "digest",
+   "text": "arxiv:2607.21051: In-context learning gains from agent interaction histories vanish when the experience leaves the context, but Experience Distillation (context distillation applied to those histories"
+  },
+  {
+   "idea": "first_item_additive_rest_substitutive",
+   "sim": 0.642,
+   "source": "archive",
+   "text": "archive:memory_budget_confound: One Item Is the Budget: Token Volume, Not Memory Content, Explains Both the Harm and the Apparent Gains of Agentic Memory Curation. In experience-memory agents, the val"
+  },
+  {
+   "idea": "context_ceiling_substitution",
+   "sim": 0.724,
+   "source": "digest",
+   "text": "arxiv:2607.21051: In-context learning gains from agent interaction histories vanish when the experience leaves the context, but Experience Distillation (context distillation applied to those histories"
+  },
+  {
+   "idea": "context_ceiling_substitution",
+   "sim": 0.643,
+   "source": "archive",
+   "text": "archive:harm_does_not_distill: Gain Distills, Harm Does Not: Context Distillation Is an Asymmetric Filter on Agent Experience, and What That Says About Where Memory Harm Lives. For one fixed experienc"
+  },
+  {
+   "idea": "train_dose_sets_substrate",
+   "sim": 0.733,
+   "source": "archive",
+   "text": "archive:memory_or_instruction: Is Your Agent's Memory Just an Un-Optimized Prompt? Measuring the Residual Value of Retrieved Experience After Instruction Optimization. Published agentic-memory gains a"
+  },
+  {
+   "idea": "train_dose_sets_substrate",
+   "sim": 0.694,
+   "source": "digest",
+   "text": "arxiv:2607.21051: In-context learning gains from agent interaction histories vanish when the experience leaves the context, but Experience Distillation (context distillation applied to those histories"
+  },
+  {
+   "idea": "context_wins_substrate_conflict",
+   "sim": 0.612,
+   "source": "archive",
+   "text": "archive:memory_in_the_loop_training_decomposition: Crutch, Content, or Read Skill? A Train-by-Infer 2x2 with Bank Swap Decomposes What Memory-in-the-Loop Training Actually Teaches an Agent. When an ag"
+  },
+  {
+   "idea": "instance_share_is_the_illusion",
+   "sim": 0.701,
+   "source": "archive",
+   "text": "archive:memory_or_instruction: Is Your Agent's Memory Just an Un-Optimized Prompt? Measuring the Residual Value of Retrieved Experience After Instruction Optimization. Published agentic-memory gains a"
+  },
+  {
+   "idea": "instance_share_is_the_illusion",
+   "sim": 0.61,
+   "source": "digest",
+   "text": "arxiv:2606.30626: Injecting privileged information into on-policy distillation induces a privilege illusion that conflates the closable capability gap with an unreplicable information-asymmetry gap, a"
+  },
+  {
+   "idea": "student_side_abundance",
+   "sim": 0.711,
+   "source": "archive",
+   "text": "archive:memory_or_instruction: Is Your Agent's Memory Just an Un-Optimized Prompt? Measuring the Residual Value of Retrieved Experience After Instruction Optimization. Published agentic-memory gains a"
+  },
+  {
+   "idea": "student_side_abundance",
+   "sim": 0.662,
+   "source": "digest",
+   "text": "arxiv:2608.07169: Structured hierarchical memory built from a large teacher agent's successful trajectories can be transferred to small student agents without any training and substantially improves t"
+  },
+  {
+   "idea": "memory_carried_traits_need_tokens",
+   "sim": 0.642,
+   "source": "digest",
+   "text": "arxiv:2606.22019: Whether subliminal trait transfer can be audited before training depends on channel location, the carrier through which the trait reaches the student, rather than on model identity o"
+  },
+  {
+   "idea": "memory_carried_traits_need_tokens",
+   "sim": 0.633,
+   "source": "archive",
+   "text": "archive:memory_in_the_loop_training_decomposition: Crutch, Content, or Read Skill? A Train-by-Infer 2x2 with Bank Swap Decomposes What Memory-in-the-Loop Training Actually Teaches an Agent. When an ag"
+  },
+  {
+   "idea": "retrieved_memory_privilege_is_scene_bound",
+   "sim": 0.705,
+   "source": "archive",
+   "text": "archive:memory_or_instruction: Is Your Agent's Memory Just an Un-Optimized Prompt? Measuring the Residual Value of Retrieved Experience After Instruction Optimization. Published agentic-memory gains a"
+  },
+  {
+   "idea": "retrieved_memory_privilege_is_scene_bound",
+   "sim": 0.676,
+   "source": "digest",
+   "text": "arxiv:2608.07169: Structured hierarchical memory built from a large teacher agent's successful trajectories can be transferred to small student agents without any training and substantially improves t"
+  },
+  {
+   "idea": "harm_spillover_is_substrate_bound",
+   "sim": 0.693,
+   "source": "archive",
+   "text": "archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from Organically Accumulated Agent Memory Lives in the Retrieved Set, Not the Item, and a Disagreement Gate Beats Item-Level U"
+  },
+  {
+   "idea": "harm_spillover_is_substrate_bound",
+   "sim": 0.636,
+   "source": "digest",
+   "text": "arxiv:2607.10608: Agents consuming conflicting retrieved memory fall into a compliance trap: they adopt task-wrong memory at the first exposed decision point, repeated exposure amplifies the error, re"
+  },
+  {
+   "idea": "style_outruns_content",
+   "sim": 0.627,
+   "source": "archive",
+   "text": "archive:commit_then_consult_slot_discipline: Anchoring, Not Overload: Commitment Order Explains Why Optimized Instructions and Agent Experience Memory Fight Each Other. Harm from injected agent memory"
+  }
+ ],
+ "pairs": [
+  {
+   "a": "reversal_savings_latent_retention",
+   "b": "first_item_additive_rest_substitutive",
+   "sim": 0.739,
+   "kind": "idea-idea",
+   "pair_id": "reversal_savings_latent_retention__first_item_additive_rest_subst"
+  },
+  {
+   "a": "reversal_savings_latent_retention",
+   "b": "context_ceiling_substitution",
+   "sim": 0.602,
+   "kind": "idea-idea",
+   "pair_id": "reversal_savings_latent_retention__context_ceiling_substitution"
+  },
+  {
+   "a": "reversal_savings_latent_retention",
+   "b": "train_dose_sets_substrate",
+   "sim": 0.488,
+   "kind": "idea-idea",
+   "pair_id": "reversal_savings_latent_retention__train_dose_sets_substrate"
+  },
+  {
+   "a": "reversal_savings_latent_retention",
+   "b": "instance_share_is_the_illusion",
+   "sim": 0.514,
+   "kind": "idea-idea",
+   "pair_id": "reversal_savings_latent_retention__instance_share_is_the_illusion"
+  },
+  {
+   "a": "reversal_savings_latent_retention",
+   "b": "student_side_abundance",
+   "sim": 0.576,
+   "kind": "idea-idea",
+   "pair_id": "reversal_savings_latent_retention__student_side_abundance"
+  },
+  {
+   "a": "reversal_savings_latent_retention",
+   "b": "memory_carried_traits_need_tokens",
+   "sim": 0.554,
+   "kind": "idea-idea",
+   "pair_id": "reversal_savings_latent_retention__memory_carried_traits_need_tok"
+  },
+  {
+   "a": "reversal_savings_latent_retention",
+   "b": "retrieved_memory_privilege_is_scene_bound",
+   "sim": 0.513,
+   "kind": "idea-idea",
+   "pair_id": "reversal_savings_latent_retention__retrieved_memory_privilege_is_"
+  },
+  {
+   "a": "first_item_additive_rest_substitutive",
+   "b": "context_ceiling_substitution",
+   "sim": 0.768,
+   "kind": "idea-idea",
+   "pair_id": "first_item_additive_rest_substitutive__context_ceiling_substitution"
+  },
+  {
+   "a": "first_item_additive_rest_substitutive",
+   "b": "train_dose_sets_substrate",
+   "sim": 0.608,
+   "kind": "idea-idea",
+   "pair_id": "first_item_additive_rest_substitutive__train_dose_sets_substrate"
+  },
+  {
+   "a": "first_item_additive_rest_substitutive",
+   "b": "instance_share_is_the_illusion",
+   "sim": 0.613,
+   "kind": "idea-idea",
+   "pair_id": "first_item_additive_rest_substitutive__instance_share_is_the_illusion"
+  },
+  {
+   "a": "first_item_additive_rest_substitutive",
+   "b": "student_side_abundance",
+   "sim": 0.679,
+   "kind": "idea-idea",
+   "pair_id": "first_item_additive_rest_substitutive__student_side_abundance"
+  },
+  {
+   "a": "first_item_additive_rest_substitutive",
+   "b": "memory_carried_traits_need_tokens",
+   "sim": 0.592,
+   "kind": "idea-idea",
+   "pair_id": "first_item_additive_rest_substitutive__memory_carried_traits_need_tok"
+  },
+  {
+   "a": "first_item_additive_rest_substitutive",
+   "b": "retrieved_memory_privilege_is_scene_bound",
+   "sim": 0.613,
+   "kind": "idea-idea",
+   "pair_id": "first_item_additive_rest_substitutive__retrieved_memory_privilege_is_"
+  },
+  {
+   "a": "context_ceiling_substitution",
+   "b": "train_dose_sets_substrate",
+   "sim": 0.698,
+   "kind": "idea-idea",
+   "pair_id": "context_ceiling_substitution__train_dose_sets_substrate"
+  },
+  {
+   "a": "context_ceiling_substitution",
+   "b": "instance_share_is_the_illusion",
+   "sim": 0.464,
+   "kind": "idea-idea",
+   "pair_id": "context_ceiling_substitution__instance_share_is_the_illusion"
+  },
+  {
+   "a": "context_ceiling_substitution",
+   "b": "student_side_abundance",
+   "sim": 0.624,
+   "kind": "idea-idea",
+   "pair_id": "context_ceiling_substitution__student_side_abundance"
+  },
+  {
+   "a": "context_ceiling_substitution",
+   "b": "memory_carried_traits_need_tokens",
+   "sim": 0.547,
+   "kind": "idea-idea",
+   "pair_id": "context_ceiling_substitution__memory_carried_traits_need_tok"
+  },
+  {
+   "a": "context_ceiling_substitution",
+   "b": "retrieved_memory_privilege_is_scene_bound",
+   "sim": 0.56,
+   "kind": "idea-idea",
+   "pair_id": "context_ceiling_substitution__retrieved_memory_privilege_is_"
+  },
+  {
+   "a": "train_dose_sets_substrate",
+   "b": "instance_share_is_the_illusion",
+   "sim": 0.573,
+   "kind": "idea-idea",
+   "pair_id": "train_dose_sets_substrate__instance_share_is_the_illusion"
+  },
+  {
+   "a": "train_dose_sets_substrate",
+   "b": "student_side_abundance",
+   "sim": 0.786,
+   "kind": "idea-idea",
+   "pair_id": "train_dose_sets_substrate__student_side_abundance"
+  },
+  {
+   "a": "train_dose_sets_substrate",
+   "b": "memory_carried_traits_need_tokens",
+   "sim": 0.584,
+   "kind": "idea-idea",
+   "pair_id": "train_dose_sets_substrate__memory_carried_traits_need_tok"
+  },
+  {
+   "a": "train_dose_sets_substrate",
+   "b": "retrieved_memory_privilege_is_scene_bound",
+   "sim": 0.658,
+   "kind": "idea-idea",
+   "pair_id": "train_dose_sets_substrate__retrieved_memory_privilege_is_"
+  },
+  {
+   "a": "instance_share_is_the_illusion",
+   "b": "student_side_abundance",
+   "sim": 0.636,
+   "kind": "idea-idea",
+   "pair_id": "instance_share_is_the_illusion__student_side_abundance"
+  },
+  {
+   "a": "instance_share_is_the_illusion",
+   "b": "memory_carried_traits_need_tokens",
+   "sim": 0.693,
+   "kind": "idea-idea",
+   "pair_id": "instance_share_is_the_illusion__memory_carried_traits_need_tok"
+  },
+  {
+   "a": "instance_share_is_the_illusion",
+   "b": "retrieved_memory_privilege_is_scene_bound",
+   "sim": 0.86,
+   "kind": "idea-idea",
+   "pair_id": "instance_share_is_the_illusion__retrieved_memory_privilege_is_"
+  },
+  {
+   "a": "student_side_abundance",
+   "b": "memory_carried_traits_need_tokens",
+   "sim": 0.599,
+   "kind": "idea-idea",
+   "pair_id": "student_side_abundance__memory_carried_traits_need_tok"
+  },
+  {
+   "a": "student_side_abundance",
+   "b": "retrieved_memory_privilege_is_scene_bound",
+   "sim": 0.688,
+   "kind": "idea-idea",
+   "pair_id": "student_side_abundance__retrieved_memory_privilege_is_"
+  },
+  {
+   "a": "memory_carried_traits_need_tokens",
+   "b": "retrieved_memory_privilege_is_scene_bound",
+   "sim": 0.708,
+   "kind": "idea-idea",
+   "pair_id": "memory_carried_traits_need_tokens__retrieved_memory_privilege_is_"
+  },
+  {
+   "a": "stale_dose_law_context_vs_weights",
+   "b": "archive:archive:stale_true_state_facts_redaction: Stale-True, Not Wrong: Episode-Specifi",
+   "sim": 0.654,
+   "kind": "idea-archive",
+   "prior_text": "archive:stale_true_state_facts_redaction: Stale-True, Not Wrong: Episode-Specific State Facts Carry the Natural Harm of Agent Experience Memory, and Fact-Level Redaction Beats Abstention. In an organically accumulated ALFWorld experience bank, the items that hurt are not procedurally wrong items but procedurally right items carrying state facts (object-receptacle placements, open/closed states) that were true in the source episode and are false in the target task. Per-task harm scales with the number of stale-true facts injected, not with injected tokens; the compliance-trap entry point is the first navigation action, which targets a receptacle named in a stale fact; and a read-time redaction that replaces state facts with typed placeholders at matched token length removes the harm at zero clean-task cost, whereas abstention, utility filtering and provenance gating buy safety with clean-task loss. Negative transfer from agent experience memory has been diagnosed with deliberately injected conflicts, in-task failed attempts, or misleading external documents; how much harm an organically accumulated bank causes, and through which items, is unmeasured. We build an experience bank over an ALFWorld task stream with a standard success-gated write path, retrieve it for a disjoint evaluation set, and label every injected item post hoc against the target task's ground-truth initial state, which is available from the game file. This yields a deterministic, LLM-judge-free label for each stored fact (true-in-target or stale) and for each item (right, stale-true, wrong, conflicting). We claim that the harm is carried by stale-true facts inside procedurally correct items: per-task net failure flips are explained by the count of stale facts and not by injected tokens, and the first divergent action in harmed episodes targets a receptacle named in a stale fact at well above the rate of a permuted-fact control. We then compare read-time controls head to head at matched k and matched tokens: typed-placeholder redaction of state facts, permuted facts, oracle facts, abstention, utility filtering, provenance gating and reliance steering, each on clean and on stale tasks separately. The prediction is that redaction alone removes the harm at the same k that produced it without paying on clean tasks. The design directly tests the program's earlier conclusion that volume rather than content was the lever.",
+   "pair_id": "stale_dose_law_context_vs_weights__archive:archive:stale_true_sta"
+  },
+  {
+   "a": "reversal_savings_latent_retention",
+   "b": "archive:archive:dormant_is_not_dead: Dormant Is Not Dead: Usage-Decay Forgetting in Agen",
+   "sim": 0.649,
+   "kind": "idea-archive",
+   "prior_text": "archive:dormant_is_not_dead: Dormant Is Not Dead: Usage-Decay Forgetting in Agent Experience Memory Buys Stationary Savings with an Irreversible Loss at Task-Family Return. Recency- and usage-decay pruning (FadeMem-style differential decay, ReMe utility pruning, CraniMem bounded buffers with scheduled consolidation) deletes exactly the records a task family needs when it returns after a dormant period: on a long ALFWorld stream with a return block, the success loss at return exceeds any stationary gain the pruning bought, is not closed by re-learning within the block, and is larger than the loss from random pruning to the same store size, whereas a redundancy-based (coverage-preserving, time-agnostic) prune at the same size keeps return-block success within noise of the unpruned store; the maintenance LLM calls of decay and consolidation policies cost more tokens than they save at read time. Forgetting policies for agent memory are validated on short, stationary streams where deleting rarely used records is free. We test the case they never face: a task family that goes dormant and returns. On ALFWorld we run a 1,050-episode stream in seven blocks of 150, covering the six task families and then returning to the first, and grow one experience store per policy from the same fixed writer, capped at 30 percent of the unpruned size: recency decay (FadeMem-style), usage-utility pruning (ReMe-style), bounded FIFO with scheduled consolidation (CraniMem-style), a redundancy-based prune that keeps one representative per coverage cluster regardless of age, random pruning, the unpruned store, and a hindsight oracle. A fixed probe set stratified by family is evaluated before and after the return block, and the return block itself is scored in thirds to expose re-learning. Two diagnostics attribute any loss: reinserting the deleted family records at the start of the return block with the same seed, and counting deleted records that the unpruned run retrieved and adopted in successes where the pruned run failed. We predict that recency and usage pruning fall below the unpruned store at return by more than the minimum detectable effect, that random pruning loses less than they do, that reinsertion recovers most of the deficit, that redundancy pruning stays within noise of the unpruned store at the same size, and that decay and consolidation maintenance tokens exceed read-time savings. A no-return control stream and a return-distance sweep separate dormancy from generic drift. The result would replace time-since-use with redundancy as the deletion criterion for agent experience stores.",
+   "pair_id": "reversal_savings_latent_retention__archive:archive:dormant_is_not"
+  },
+  {
+   "a": "reversal_savings_latent_retention",
+   "b": "digest:arxiv:2605.10268: For agentic long-context reasoning with a streaming memory, sk",
+   "sim": 0.617,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2605.10268: For agentic long-context reasoning with a streaming memory, skipping intermediate retrieval and instead triggering question decomposition and rereading when the final memory is insufficient recovers prematurely discarded indirect facts and outperforms retrieval-augmented memorize-while-reading baselines while keeping linear time complexity.",
+   "pair_id": "reversal_savings_latent_retention__digest:arxiv:2605.10268: For a"
+  },
+  {
+   "a": "success_filter_lockin_under_shift",
+   "b": "archive:archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from O",
+   "sim": 0.681,
+   "kind": "idea-archive",
+   "prior_text": "archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from Organically Accumulated Agent Memory Lives in the Retrieved Set, Not the Item, and a Disagreement Gate Beats Item-Level Utility Filtering at Zero Clean-Setting Cost. When a bank is accumulated organically over a task stream with no planted conflicts, the items that break tasks are not individually low-utility; harm concentrates in retrievals where the top-k items disagree about the next action for the current state. A read-time gate that abstains from injection when a cheap action-consistency score over the retrieved set falls below a threshold, with no extra LLM call, removes at least 70 percent of the natural paired harm while keeping at least 80 percent of the gain on agreeing retrievals, whereas item-level utility filtering, validity or provenance and recency gating, spurious-cue calibration, learned abstention and reliance steering do not, because they act on item properties that do not predict which retrievals break tasks. Every proposed defence against harmful retrieved memory acts on items: utility scores, validity or provenance states, recency, spurious-cue calibration, a learned abstain decision, or a global reliance setting. We test the alternative that harm from an organically accumulated experience bank is a property of the retrieved set. Over three randomized ALFWorld task streams, a 27B agent accumulates raw and distilled items through a ReMe-style write path with no planted conflicts, and banks are frozen at three checkpoints so staleness arises naturally. On held-out tasks every retrieval is labelled post hoc from expert plans and bank timestamps at the item level (right, wrong, stale, conflicting) and at the set level (agree-right, agree-wrong, disagree), and per-retrieval harm is estimated with paired no-memory runs and Entry-Propagation-Recovery tallies. A likelihood-ratio test asks which label explains broken outcomes. Eight read-time controls are then run head to head on the same seeds and banks: a disagreement gate based on a cheap action-consistency score, MemRL-style utility filtering, validity and provenance or recency gating, CAMEL-style calibration, an RSCB-MC-style learned abstain policy, reliance-steering instructions, an LLM-judge conflict verifier, and an oracle gate, each scored on harm removed, gain retained, clean-setting cost on agree-right retrievals, and token cost. A by-product is the first task-execution partition of failures into wrong retrieval, arbitration failure, and failure to apply a correctly retrieved item.",
+   "pair_id": "success_filter_lockin_under_shift__archive:archive:retrieved_set_"
+  },
+  {
+   "a": "success_filter_lockin_under_shift",
+   "b": "digest:arxiv:2607.10608: Agents consuming conflicting retrieved memory fall into a comp",
+   "sim": 0.67,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2607.10608: Agents consuming conflicting retrieved memory fall into a compliance trap: they adopt task-wrong memory at the first exposed decision point, repeated exposure amplifies the error, recovery is weak, and once they comply success collapses to a low floor, so stronger agents suffer larger absolute damage.",
+   "pair_id": "success_filter_lockin_under_shift__digest:arxiv:2607.10608: Agent"
+  },
+  {
+   "a": "context_pays_for_its_own_tokens_breakeven",
+   "b": "archive:archive:memory_budget_confound: One Item Is the Budget: Token Volume, Not Memory",
+   "sim": 0.738,
+   "kind": "idea-archive",
+   "prior_text": "archive:memory_budget_confound: One Item Is the Budget: Token Volume, Not Memory Content, Explains Both the Harm and the Apparent Gains of Agentic Memory Curation. In experience-memory agents, the value of injected retrieved experience saturates after roughly one item, while its cost grows with injected tokens regardless of relevance. Two consequences follow, both falsifiable: (i) length-matched decoy experience — same environment, wrong task — reproduces most of the harm of correctly retrieved experience at the same injection volume; (ii) published curation methods (reconstruction, self-organizing memory) lose most or all of their advantage over raw top-k retrieval once the raw baseline is given the same per-instance injected-token budget the curated output happens to consume. The practical corollary is that k=1 raw retrieval, tuned once, is competitive with curation at a fraction of the cost. Agentic memory systems retrieve distilled past experience and inject it into an LLM agent's context. A 2026 wave of papers documents that this often hurts, attributes the harm to memory content — staleness, conflict, the abstraction gap between stored experience and the current state — and proposes a content-side remedy: reconstruction, reorganization, pruning. Each remedy also changes how many tokens get injected, and none of the papers we could find matches its raw-retrieval baseline on that budget. We ask whether the harm, and the reported cure, are about content at all. A pilot observation motivates the doubt: for a fixed memory bank, cutting injection from seven retrieved items to three eliminated a significant harm (McNemar p<0.05, replicated) without changing a single item. We propose a decomposition that separates the *content* value of retrieved experience from the *load* cost of the tokens carrying it. Holding bank, retriever, scaffold, tools and decoding fixed, we vary relevance (correct retrieval vs. length-matched decoys drawn from the same environment but the wrong task, and from an unrelated environment), item count, and total injected tokens (equalized by padding and truncation), with a gold-trajectory oracle bounding content value from above and a cross-encoder reranker instantiating the content-selection alternative. We then apply the missing control to two reimplemented curation methods: give raw top-k the same per-instance injected-token budget the curated output consumes, and add a compression-only rewrite that strips situational grounding from reconstruction. The sharp prediction is that content value saturates after about one item while load cost is roughly linear in tokens and largely relevance-independent, so that tuned k=1 raw retrieval lands within 2 points of the best curation method. Analysis is fully paired, with null replicates that fix the noise floor and a pre-registered minimum detectable effect.",
+   "pair_id": "context_pays_for_its_own_tokens_breakeven__archive:archive:memory_budget_"
+  },
+  {
+   "a": "context_pays_for_its_own_tokens_breakeven",
+   "b": "digest:arxiv:2607.10608: Agents consuming conflicting retrieved memory fall into a comp",
+   "sim": 0.612,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2607.10608: Agents consuming conflicting retrieved memory fall into a compliance trap: they adopt task-wrong memory at the first exposed decision point, repeated exposure amplifies the error, recovery is weak, and once they comply success collapses to a low floor, so stronger agents suffer larger absolute damage.",
+   "pair_id": "context_pays_for_its_own_tokens_breakeven__digest:arxiv:2607.10608: Agent"
+  },
+  {
+   "a": "first_item_additive_rest_substitutive",
+   "b": "digest:arxiv:2607.21051: In-context learning gains from agent interaction histories van",
+   "sim": 0.647,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2607.21051: In-context learning gains from agent interaction histories vanish when the experience leaves the context, but Experience Distillation (context distillation applied to those histories) retains most of the gains in the weights without any further environment interaction, whereas direct SFT on the same experience recovers almost none.",
+   "pair_id": "first_item_additive_rest_substitutive__digest:arxiv:2607.21051: In-co"
+  },
+  {
+   "a": "first_item_additive_rest_substitutive",
+   "b": "archive:archive:memory_budget_confound: One Item Is the Budget: Token Volume, Not Memory",
+   "sim": 0.642,
+   "kind": "idea-archive",
+   "prior_text": "archive:memory_budget_confound: One Item Is the Budget: Token Volume, Not Memory Content, Explains Both the Harm and the Apparent Gains of Agentic Memory Curation. In experience-memory agents, the value of injected retrieved experience saturates after roughly one item, while its cost grows with injected tokens regardless of relevance. Two consequences follow, both falsifiable: (i) length-matched decoy experience — same environment, wrong task — reproduces most of the harm of correctly retrieved experience at the same injection volume; (ii) published curation methods (reconstruction, self-organizing memory) lose most or all of their advantage over raw top-k retrieval once the raw baseline is given the same per-instance injected-token budget the curated output happens to consume. The practical corollary is that k=1 raw retrieval, tuned once, is competitive with curation at a fraction of the cost. Agentic memory systems retrieve distilled past experience and inject it into an LLM agent's context. A 2026 wave of papers documents that this often hurts, attributes the harm to memory content — staleness, conflict, the abstraction gap between stored experience and the current state — and proposes a content-side remedy: reconstruction, reorganization, pruning. Each remedy also changes how many tokens get injected, and none of the papers we could find matches its raw-retrieval baseline on that budget. We ask whether the harm, and the reported cure, are about content at all. A pilot observation motivates the doubt: for a fixed memory bank, cutting injection from seven retrieved items to three eliminated a significant harm (McNemar p<0.05, replicated) without changing a single item. We propose a decomposition that separates the *content* value of retrieved experience from the *load* cost of the tokens carrying it. Holding bank, retriever, scaffold, tools and decoding fixed, we vary relevance (correct retrieval vs. length-matched decoys drawn from the same environment but the wrong task, and from an unrelated environment), item count, and total injected tokens (equalized by padding and truncation), with a gold-trajectory oracle bounding content value from above and a cross-encoder reranker instantiating the content-selection alternative. We then apply the missing control to two reimplemented curation methods: give raw top-k the same per-instance injected-token budget the curated output consumes, and add a compression-only rewrite that strips situational grounding from reconstruction. The sharp prediction is that content value saturates after about one item while load cost is roughly linear in tokens and largely relevance-independent, so that tuned k=1 raw retrieval lands within 2 points of the best curation method. Analysis is fully paired, with null replicates that fix the noise floor and a pre-registered minimum detectable effect.",
+   "pair_id": "first_item_additive_rest_substitutive__archive:archive:memory_budget_"
+  },
+  {
+   "a": "context_ceiling_substitution",
+   "b": "digest:arxiv:2607.21051: In-context learning gains from agent interaction histories van",
+   "sim": 0.724,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2607.21051: In-context learning gains from agent interaction histories vanish when the experience leaves the context, but Experience Distillation (context distillation applied to those histories) retains most of the gains in the weights without any further environment interaction, whereas direct SFT on the same experience recovers almost none.",
+   "pair_id": "context_ceiling_substitution__digest:arxiv:2607.21051: In-co"
+  },
+  {
+   "a": "context_ceiling_substitution",
+   "b": "archive:archive:harm_does_not_distill: Gain Distills, Harm Does Not: Context Distillatio",
+   "sim": 0.643,
+   "kind": "idea-archive",
+   "prior_text": "archive:harm_does_not_distill: Gain Distills, Harm Does Not: Context Distillation Is an Asymmetric Filter on Agent Experience, and What That Says About Where Memory Harm Lives. For one fixed experience pool, moving it from the context window into LoRA weights by context distillation preserves the pool's in-context gain but not its high-dose harm: a student distilled from a teacher that consumes the harmful k=7 bank ends up statistically indistinguishable (paired, item-level) from a student distilled from the benign k=3 teacher and shows no one-sided break signature, because the harm is a read-time interference between the specific retrieved items and the current query rather than a behavioral disposition carried by the teacher's outputs. If instead the harm is dispositional (shortcutting, majority-action prior), the k=7 student must inherit it. Experience memories and weight-space distillation are treated as interchangeable routes to the same knowledge, but the program's pilot showed the in-context route has a dose-dependent harm channel: seven retrieved items broke six to seven held-out tasks and fixed none, three items did not. We use that harm as a probe of the substrate. From one pool of trajectories collected by the base model on the training split of ALFWorld, we materialize experience four ways at matched training compute and report inference cost: in context at k in {1,3,7}; direct SFT on pool successes; context distillation from a teacher consuming k=3; and context distillation from a teacher consuming the harmful k=7, trained on all teacher outputs (not success-filtered) so that any dispositional harm has a path into the weights. Paired item-level evaluation on held-out tasks tests two pre-registered claims: (1) the k=3 student retains at least half of the in-context gain at zero injected tokens, replicating and cost-normalizing Experience Distillation; (2) the k=7 student is within an equivalence margin of the k=3 student and shows no one-sided break signature, whereas in-context k=7 does. Outcome (2) would locate memory harm on the read path (query-item interference under load) and imply that distillation is an asymmetric filter that keeps content and discards interference; its rejection would show the harm is a learned disposition, which is what the shortcutting and action-prior accounts predict. Either result is a substrate-level fact that no current parametric-memory paper measures, and it is obtained on 7B and 27B open models on one node.",
+   "pair_id": "context_ceiling_substitution__archive:archive:harm_does_not_"
+  },
+  {
+   "a": "train_dose_sets_substrate",
+   "b": "archive:archive:memory_or_instruction: Is Your Agent's Memory Just an Un-Optimized Promp",
+   "sim": 0.733,
+   "kind": "idea-archive",
+   "prior_text": "archive:memory_or_instruction: Is Your Agent's Memory Just an Un-Optimized Prompt? Measuring the Residual Value of Retrieved Experience After Instruction Optimization. Published agentic-memory gains are measured against a hand-written instruction. We hypothesize that for procedural experience memory (ExpeL/ReasoningBank-style), most of that gain is *substitutable*: when a reflective prompt optimizer is given exactly the same training episodes that built the memory bank, the memory-vs-no-memory gap collapses by at least 60%, and a frozen instruction compiled offline from the whole bank — with no retrieval at inference — matches per-instance top-k retrieval at matched injected tokens. The residual, non-substitutable value of memory is concentrated in instances with genuinely instance-specific reusable content, which we verify with a deliberately non-compilable positive-control bank where substitution must fail. Agentic memory systems are evaluated by comparing an agent with a retrieved-experience bank against the same agent without one, holding a hand-written scaffold prompt fixed. Recent audits (MemDelta) show such comparisons are confounded by retrieval engineering; we identify a different and sharper confound. A memory bank distilled from training episodes and an instruction optimized on those *same* episodes are two containers for the same information, and the second is dramatically cheaper to serve — one prompt paid once, versus retrieved tokens paid every episode. We test substitution directly. Holding the agent, tools, retriever, training split and evaluation fixed, we build (i) an ExpeL-style bank with per-instance top-k retrieval, (ii) an instruction optimized by GEPA that never sees the bank, and (iii) a frozen instruction compiled offline from the whole bank with no retrieval at all, token-matched per instance to (i). The primary endpoint is the substitution ratio S: the fraction of memory's paired gain over no-memory at the hand-written instruction that disappears at the optimized instruction. We predict S ≥ 0.6 on a tool-augmented multi-hop QA agent and ≥ 0.7 on ALFWorld, and we predict the compiled static arm comes within 2 points of live retrieval. A deliberately non-compilable positive-control bank, seeded with near-duplicates of held-out instances, must show S < 0.25 — so a null on the main benchmarks is a finding rather than a power failure. The study is scoped to one primary environment (n=600 paired instances, 3 optimizer seeds), one replication environment, and ~30,000 evaluation episodes, with instance-paired McNemar tests, crossed random effects for optimizer seed, null replicates, and a stated minimum detectable effect.",
+   "pair_id": "train_dose_sets_substrate__archive:archive:memory_or_inst"
+  },
+  {
+   "a": "train_dose_sets_substrate",
+   "b": "digest:arxiv:2607.21051: In-context learning gains from agent interaction histories van",
+   "sim": 0.694,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2607.21051: In-context learning gains from agent interaction histories vanish when the experience leaves the context, but Experience Distillation (context distillation applied to those histories) retains most of the gains in the weights without any further environment interaction, whereas direct SFT on the same experience recovers almost none.",
+   "pair_id": "train_dose_sets_substrate__digest:arxiv:2607.21051: In-co"
+  },
+  {
+   "a": "context_wins_substrate_conflict",
+   "b": "archive:archive:memory_in_the_loop_training_decomposition: Crutch, Content, or Read Skil",
+   "sim": 0.612,
+   "kind": "idea-archive",
+   "prior_text": "archive:memory_in_the_loop_training_decomposition: Crutch, Content, or Read Skill? A Train-by-Infer 2x2 with Bank Swap Decomposes What Memory-in-the-Loop Training Actually Teaches an Agent. When an agent is fine-tuned with retrieved experience in its context (retrieval-aware SFT, memory-tool RL), the reported gain over an untrained memoryless base decomposes into content absorbed from the training trajectories (available with memory removed), the untrained read benefit an unmodified backbone gets from the same bank, and a learned read skill equal to the interaction term. We claim the interaction term is within an equivalence margin of zero, that the trained model is bank-co-adapted (it loses more than the untrained model when its bank is swapped for an equally good disjoint bank), and that stripped of memory it underperforms a model trained on identical trajectories with the memory removed from the training context: memory in the training loop is a crutch that displaces internalization, not a skill. A growing family of agents is trained with a memory bank in the loop and then credited with 'learning to use memory'. Every such report compares against training without the memory, which changes the training data, or against an untrained model without the memory, which changes both. We hold the training trajectories fixed and vary only whether the retrieved block is present during training and at inference, producing a train-by-infer 2x2 on the same backbone and the same LoRA budget, then extend the inference axis with a disjoint equally-good bank (swap), a relevance-matched decoy bank, and no bank. Four contrasts fall out: content absorbed (trained-without-memory, no bank, versus base); untrained read benefit (base with bank versus base without); learned read skill (the interaction term); and bank co-adaptation (own bank versus swapped bank, trained versus untrained). We pre-register that the read-skill interaction is equivalent to zero within 3 points, that the memory-trained model stripped of memory falls at least 3 points below the memory-stripped-trained model on the same trajectories (crutch), and that its own-bank-minus-swapped-bank drop exceeds the untrained model's. Action-copy logging separates selective from indiscriminate reading. A secondary arm repeats the design with a short GRPO stage with and without a memory tool at matched rollout budget, and a cross-backbone cell tests whether the untrained read benefit of a bank is backbone-agnostic. The outcome tells the field whether 'trained to use memory' is content, crutch, or skill, on 7B-8B open models in days on one node.",
+   "pair_id": "context_wins_substrate_conflict__archive:archive:memory_in_the_"
+  },
+  {
+   "a": "instance_share_is_the_illusion",
+   "b": "archive:archive:memory_or_instruction: Is Your Agent's Memory Just an Un-Optimized Promp",
+   "sim": 0.701,
+   "kind": "idea-archive",
+   "prior_text": "archive:memory_or_instruction: Is Your Agent's Memory Just an Un-Optimized Prompt? Measuring the Residual Value of Retrieved Experience After Instruction Optimization. Published agentic-memory gains are measured against a hand-written instruction. We hypothesize that for procedural experience memory (ExpeL/ReasoningBank-style), most of that gain is *substitutable*: when a reflective prompt optimizer is given exactly the same training episodes that built the memory bank, the memory-vs-no-memory gap collapses by at least 60%, and a frozen instruction compiled offline from the whole bank — with no retrieval at inference — matches per-instance top-k retrieval at matched injected tokens. The residual, non-substitutable value of memory is concentrated in instances with genuinely instance-specific reusable content, which we verify with a deliberately non-compilable positive-control bank where substitution must fail. Agentic memory systems are evaluated by comparing an agent with a retrieved-experience bank against the same agent without one, holding a hand-written scaffold prompt fixed. Recent audits (MemDelta) show such comparisons are confounded by retrieval engineering; we identify a different and sharper confound. A memory bank distilled from training episodes and an instruction optimized on those *same* episodes are two containers for the same information, and the second is dramatically cheaper to serve — one prompt paid once, versus retrieved tokens paid every episode. We test substitution directly. Holding the agent, tools, retriever, training split and evaluation fixed, we build (i) an ExpeL-style bank with per-instance top-k retrieval, (ii) an instruction optimized by GEPA that never sees the bank, and (iii) a frozen instruction compiled offline from the whole bank with no retrieval at all, token-matched per instance to (i). The primary endpoint is the substitution ratio S: the fraction of memory's paired gain over no-memory at the hand-written instruction that disappears at the optimized instruction. We predict S ≥ 0.6 on a tool-augmented multi-hop QA agent and ≥ 0.7 on ALFWorld, and we predict the compiled static arm comes within 2 points of live retrieval. A deliberately non-compilable positive-control bank, seeded with near-duplicates of held-out instances, must show S < 0.25 — so a null on the main benchmarks is a finding rather than a power failure. The study is scoped to one primary environment (n=600 paired instances, 3 optimizer seeds), one replication environment, and ~30,000 evaluation episodes, with instance-paired McNemar tests, crossed random effects for optimizer seed, null replicates, and a stated minimum detectable effect.",
+   "pair_id": "instance_share_is_the_illusion__archive:archive:memory_or_inst"
+  },
+  {
+   "a": "instance_share_is_the_illusion",
+   "b": "digest:arxiv:2606.30626: Injecting privileged information into on-policy distillation i",
+   "sim": 0.61,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2606.30626: Injecting privileged information into on-policy distillation induces a privilege illusion that conflates the closable capability gap with an unreplicable information-asymmetry gap, and routing token-level supervision between privileged teacher and privileged student by advantage gap alleviates it.",
+   "pair_id": "instance_share_is_the_illusion__digest:arxiv:2606.30626: Injec"
+  },
+  {
+   "a": "student_side_abundance",
+   "b": "archive:archive:memory_or_instruction: Is Your Agent's Memory Just an Un-Optimized Promp",
+   "sim": 0.711,
+   "kind": "idea-archive",
+   "prior_text": "archive:memory_or_instruction: Is Your Agent's Memory Just an Un-Optimized Prompt? Measuring the Residual Value of Retrieved Experience After Instruction Optimization. Published agentic-memory gains are measured against a hand-written instruction. We hypothesize that for procedural experience memory (ExpeL/ReasoningBank-style), most of that gain is *substitutable*: when a reflective prompt optimizer is given exactly the same training episodes that built the memory bank, the memory-vs-no-memory gap collapses by at least 60%, and a frozen instruction compiled offline from the whole bank — with no retrieval at inference — matches per-instance top-k retrieval at matched injected tokens. The residual, non-substitutable value of memory is concentrated in instances with genuinely instance-specific reusable content, which we verify with a deliberately non-compilable positive-control bank where substitution must fail. Agentic memory systems are evaluated by comparing an agent with a retrieved-experience bank against the same agent without one, holding a hand-written scaffold prompt fixed. Recent audits (MemDelta) show such comparisons are confounded by retrieval engineering; we identify a different and sharper confound. A memory bank distilled from training episodes and an instruction optimized on those *same* episodes are two containers for the same information, and the second is dramatically cheaper to serve — one prompt paid once, versus retrieved tokens paid every episode. We test substitution directly. Holding the agent, tools, retriever, training split and evaluation fixed, we build (i) an ExpeL-style bank with per-instance top-k retrieval, (ii) an instruction optimized by GEPA that never sees the bank, and (iii) a frozen instruction compiled offline from the whole bank with no retrieval at all, token-matched per instance to (i). The primary endpoint is the substitution ratio S: the fraction of memory's paired gain over no-memory at the hand-written instruction that disappears at the optimized instruction. We predict S ≥ 0.6 on a tool-augmented multi-hop QA agent and ≥ 0.7 on ALFWorld, and we predict the compiled static arm comes within 2 points of live retrieval. A deliberately non-compilable positive-control bank, seeded with near-duplicates of held-out instances, must show S < 0.25 — so a null on the main benchmarks is a finding rather than a power failure. The study is scoped to one primary environment (n=600 paired instances, 3 optimizer seeds), one replication environment, and ~30,000 evaluation episodes, with instance-paired McNemar tests, crossed random effects for optimizer seed, null replicates, and a stated minimum detectable effect.",
+   "pair_id": "student_side_abundance__archive:archive:memory_or_inst"
+  },
+  {
+   "a": "student_side_abundance",
+   "b": "digest:arxiv:2608.07169: Structured hierarchical memory built from a large teacher agen",
+   "sim": 0.662,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2608.07169: Structured hierarchical memory built from a large teacher agent's successful trajectories can be transferred to small student agents without any training and substantially improves their tool use, outperforming existing memory-based baselines.",
+   "pair_id": "student_side_abundance__digest:arxiv:2608.07169: Struc"
+  },
+  {
+   "a": "memory_carried_traits_need_tokens",
+   "b": "digest:arxiv:2606.22019: Whether subliminal trait transfer can be audited before traini",
+   "sim": 0.642,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2606.22019: Whether subliminal trait transfer can be audited before training depends on channel location, the carrier through which the trait reaches the student, rather than on model identity or scale alone, and an audit used outside its carrier regime can give false assurance.",
+   "pair_id": "memory_carried_traits_need_tokens__digest:arxiv:2606.22019: Wheth"
+  },
+  {
+   "a": "memory_carried_traits_need_tokens",
+   "b": "archive:archive:memory_in_the_loop_training_decomposition: Crutch, Content, or Read Skil",
+   "sim": 0.633,
+   "kind": "idea-archive",
+   "prior_text": "archive:memory_in_the_loop_training_decomposition: Crutch, Content, or Read Skill? A Train-by-Infer 2x2 with Bank Swap Decomposes What Memory-in-the-Loop Training Actually Teaches an Agent. When an agent is fine-tuned with retrieved experience in its context (retrieval-aware SFT, memory-tool RL), the reported gain over an untrained memoryless base decomposes into content absorbed from the training trajectories (available with memory removed), the untrained read benefit an unmodified backbone gets from the same bank, and a learned read skill equal to the interaction term. We claim the interaction term is within an equivalence margin of zero, that the trained model is bank-co-adapted (it loses more than the untrained model when its bank is swapped for an equally good disjoint bank), and that stripped of memory it underperforms a model trained on identical trajectories with the memory removed from the training context: memory in the training loop is a crutch that displaces internalization, not a skill. A growing family of agents is trained with a memory bank in the loop and then credited with 'learning to use memory'. Every such report compares against training without the memory, which changes the training data, or against an untrained model without the memory, which changes both. We hold the training trajectories fixed and vary only whether the retrieved block is present during training and at inference, producing a train-by-infer 2x2 on the same backbone and the same LoRA budget, then extend the inference axis with a disjoint equally-good bank (swap), a relevance-matched decoy bank, and no bank. Four contrasts fall out: content absorbed (trained-without-memory, no bank, versus base); untrained read benefit (base with bank versus base without); learned read skill (the interaction term); and bank co-adaptation (own bank versus swapped bank, trained versus untrained). We pre-register that the read-skill interaction is equivalent to zero within 3 points, that the memory-trained model stripped of memory falls at least 3 points below the memory-stripped-trained model on the same trajectories (crutch), and that its own-bank-minus-swapped-bank drop exceeds the untrained model's. Action-copy logging separates selective from indiscriminate reading. A secondary arm repeats the design with a short GRPO stage with and without a memory tool at matched rollout budget, and a cross-backbone cell tests whether the untrained read benefit of a bank is backbone-agnostic. The outcome tells the field whether 'trained to use memory' is content, crutch, or skill, on 7B-8B open models in days on one node.",
+   "pair_id": "memory_carried_traits_need_tokens__archive:archive:memory_in_the_"
+  },
+  {
+   "a": "retrieved_memory_privilege_is_scene_bound",
+   "b": "archive:archive:memory_or_instruction: Is Your Agent's Memory Just an Un-Optimized Promp",
+   "sim": 0.705,
+   "kind": "idea-archive",
+   "prior_text": "archive:memory_or_instruction: Is Your Agent's Memory Just an Un-Optimized Prompt? Measuring the Residual Value of Retrieved Experience After Instruction Optimization. Published agentic-memory gains are measured against a hand-written instruction. We hypothesize that for procedural experience memory (ExpeL/ReasoningBank-style), most of that gain is *substitutable*: when a reflective prompt optimizer is given exactly the same training episodes that built the memory bank, the memory-vs-no-memory gap collapses by at least 60%, and a frozen instruction compiled offline from the whole bank — with no retrieval at inference — matches per-instance top-k retrieval at matched injected tokens. The residual, non-substitutable value of memory is concentrated in instances with genuinely instance-specific reusable content, which we verify with a deliberately non-compilable positive-control bank where substitution must fail. Agentic memory systems are evaluated by comparing an agent with a retrieved-experience bank against the same agent without one, holding a hand-written scaffold prompt fixed. Recent audits (MemDelta) show such comparisons are confounded by retrieval engineering; we identify a different and sharper confound. A memory bank distilled from training episodes and an instruction optimized on those *same* episodes are two containers for the same information, and the second is dramatically cheaper to serve — one prompt paid once, versus retrieved tokens paid every episode. We test substitution directly. Holding the agent, tools, retriever, training split and evaluation fixed, we build (i) an ExpeL-style bank with per-instance top-k retrieval, (ii) an instruction optimized by GEPA that never sees the bank, and (iii) a frozen instruction compiled offline from the whole bank with no retrieval at all, token-matched per instance to (i). The primary endpoint is the substitution ratio S: the fraction of memory's paired gain over no-memory at the hand-written instruction that disappears at the optimized instruction. We predict S ≥ 0.6 on a tool-augmented multi-hop QA agent and ≥ 0.7 on ALFWorld, and we predict the compiled static arm comes within 2 points of live retrieval. A deliberately non-compilable positive-control bank, seeded with near-duplicates of held-out instances, must show S < 0.25 — so a null on the main benchmarks is a finding rather than a power failure. The study is scoped to one primary environment (n=600 paired instances, 3 optimizer seeds), one replication environment, and ~30,000 evaluation episodes, with instance-paired McNemar tests, crossed random effects for optimizer seed, null replicates, and a stated minimum detectable effect.",
+   "pair_id": "retrieved_memory_privilege_is_scene_bound__archive:archive:memory_or_inst"
+  },
+  {
+   "a": "retrieved_memory_privilege_is_scene_bound",
+   "b": "digest:arxiv:2608.07169: Structured hierarchical memory built from a large teacher agen",
+   "sim": 0.676,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2608.07169: Structured hierarchical memory built from a large teacher agent's successful trajectories can be transferred to small student agents without any training and substantially improves their tool use, outperforming existing memory-based baselines.",
+   "pair_id": "retrieved_memory_privilege_is_scene_bound__digest:arxiv:2608.07169: Struc"
+  },
+  {
+   "a": "harm_spillover_is_substrate_bound",
+   "b": "archive:archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from O",
+   "sim": 0.693,
+   "kind": "idea-archive",
+   "prior_text": "archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from Organically Accumulated Agent Memory Lives in the Retrieved Set, Not the Item, and a Disagreement Gate Beats Item-Level Utility Filtering at Zero Clean-Setting Cost. When a bank is accumulated organically over a task stream with no planted conflicts, the items that break tasks are not individually low-utility; harm concentrates in retrievals where the top-k items disagree about the next action for the current state. A read-time gate that abstains from injection when a cheap action-consistency score over the retrieved set falls below a threshold, with no extra LLM call, removes at least 70 percent of the natural paired harm while keeping at least 80 percent of the gain on agreeing retrievals, whereas item-level utility filtering, validity or provenance and recency gating, spurious-cue calibration, learned abstention and reliance steering do not, because they act on item properties that do not predict which retrievals break tasks. Every proposed defence against harmful retrieved memory acts on items: utility scores, validity or provenance states, recency, spurious-cue calibration, a learned abstain decision, or a global reliance setting. We test the alternative that harm from an organically accumulated experience bank is a property of the retrieved set. Over three randomized ALFWorld task streams, a 27B agent accumulates raw and distilled items through a ReMe-style write path with no planted conflicts, and banks are frozen at three checkpoints so staleness arises naturally. On held-out tasks every retrieval is labelled post hoc from expert plans and bank timestamps at the item level (right, wrong, stale, conflicting) and at the set level (agree-right, agree-wrong, disagree), and per-retrieval harm is estimated with paired no-memory runs and Entry-Propagation-Recovery tallies. A likelihood-ratio test asks which label explains broken outcomes. Eight read-time controls are then run head to head on the same seeds and banks: a disagreement gate based on a cheap action-consistency score, MemRL-style utility filtering, validity and provenance or recency gating, CAMEL-style calibration, an RSCB-MC-style learned abstain policy, reliance-steering instructions, an LLM-judge conflict verifier, and an oracle gate, each scored on harm removed, gain retained, clean-setting cost on agree-right retrievals, and token cost. A by-product is the first task-execution partition of failures into wrong retrieval, arbitration failure, and failure to apply a correctly retrieved item.",
+   "pair_id": "harm_spillover_is_substrate_bound__archive:archive:retrieved_set_"
+  },
+  {
+   "a": "harm_spillover_is_substrate_bound",
+   "b": "digest:arxiv:2607.10608: Agents consuming conflicting retrieved memory fall into a comp",
+   "sim": 0.636,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2607.10608: Agents consuming conflicting retrieved memory fall into a compliance trap: they adopt task-wrong memory at the first exposed decision point, repeated exposure amplifies the error, recovery is weak, and once they comply success collapses to a low floor, so stronger agents suffer larger absolute damage.",
+   "pair_id": "harm_spillover_is_substrate_bound__digest:arxiv:2607.10608: Agent"
+  },
+  {
+   "a": "style_outruns_content",
+   "b": "archive:archive:commit_then_consult_slot_discipline: Anchoring, Not Overload: Commitment",
+   "sim": 0.627,
+   "kind": "idea-archive",
+   "prior_text": "archive:commit_then_consult_slot_discipline: Anchoring, Not Overload: Commitment Order Explains Why Optimized Instructions and Agent Experience Memory Fight Each Other. Harm from injected agent memory is a *slot violation resolved by order*: retrieved experience that is directive (imperative procedural content) occupies the demonstration slot but functions as an instruction, and because it arrives before the agent has committed to anything, it overrides plans the agent would otherwise have executed correctly. Three consequences, all testable at fixed injected-token count. (1) Ordering fix: commit-then-consult — draft and log a plan/answer with no memory, then revise against your own logged draft plus the *identical* retrieved items — sharply cuts breaks while preserving fixes, which the injection-volume account predicts it cannot. (2) Slot fix: routing the directive content out of the memory slot into the optimizer-owned instruction slot, where GEPA vets it against a training signal, neutralizes the same harm, and the two fixes are redundant rather than additive because they target one mechanism. (3) The risky coupling prediction: prompt optimization and memory are *anti-synergistic under memory-first ordering* — a GEPA-optimized instruction gives the agent a stronger correct prior to abandon, so memory harm gets **larger**, not smaller, after instruction optimization, and the anti-synergy disappears under commit-then-consult. Agentic memory systems retrieve distilled past experience and place it in the agent's context before it acts. A 2026 wave of results shows this frequently hurts, and every proposed remedy edits the memory: prune it, reconstruct it, restructure retrieval, or retrieve less. We propose that a large share of the harm is neither content nor volume but **order**. Retrieved experience that reads as a directive (\"always search the entity page first\") is instruction-shaped content sitting in the demonstration slot; presented before the agent has committed to anything, it functions as a command rather than as evidence, and the agent abandons plans it would have executed correctly. A pilot is consistent with this: injecting a retrieved bank fixed zero items and broke six to seven — a one-sided signature noise does not produce.\n\nWe test the anchoring account with an intervention that changes only ordering: **commit-then-consult**, where the agent first produces and logs a plan/answer with no memory, then sees its own logged draft alongside the *identical* retrieved items. The deciding pass contains the same memory tokens as the standard agent, so the volume account predicts no benefit. We then push the account into the space the track cares about: if the harm is instruction-shaped content in the wrong slot, then (i) routing directives into the optimizer-owned instruction slot should fix it the same way, redundantly rather than additively, and (ii) **GEPA-optimized instructions should make memory-first injection more harmful, not less**, because a better instruction is a better prior to abandon. That anti-synergy, and its disappearance under commit-then-consult, is our sharpest and riskiest prediction. Fully paired McNemar designs, null replicates, a stated minimum detectable effect, a directly implemented single-pass reconciliation baseline, a content-rewriting baseline, and a smaller-k baseline that could each refute us.",
+   "pair_id": "style_outruns_content__archive:archive:commit_then_co"
+  }
+ ],
+ "nearest": {
+  "stale_dose_law_context_vs_weights": [
+   [
+    "coverage_limited_context_count_limited_weights",
+    0.638
+   ],
+   [
+    "first_item_additive_rest_substitutive",
+    0.621
+   ],
+   [
+    "reversal_savings_latent_retention",
+    0.612
+   ]
+  ],
+  "reversal_savings_latent_retention": [
+   [
+    "first_item_additive_rest_substitutive",
+    0.739
+   ],
+   [
+    "coverage_limited_context_count_limited_weights",
+    0.62
+   ],
+   [
+    "stale_dose_law_context_vs_weights",
+    0.612
+   ]
+  ],
+  "success_filter_lockin_under_shift": [
+   [
+    "context_pays_for_its_own_tokens_breakeven",
+    0.642
+   ],
+   [
+    "context_wins_substrate_conflict",
+    0.625
+   ],
+   [
+    "train_dose_sets_substrate",
+    0.615
+   ]
+  ],
+  "context_pays_for_its_own_tokens_breakeven": [
+   [
+    "success_filter_lockin_under_shift",
+    0.642
+   ],
+   [
+    "train_dose_sets_substrate",
+    0.62
+   ],
+   [
+    "coverage_limited_context_count_limited_weights",
+    0.609
+   ]
+  ],
+  "first_item_additive_rest_substitutive": [
+   [
+    "context_ceiling_substitution",
+    0.768
+   ],
+   [
+    "reversal_savings_latent_retention",
+    0.739
+   ],
+   [
+    "student_side_abundance",
+    0.679
+   ]
+  ],
+  "coverage_limited_context_count_limited_weights": [
+   [
+    "stale_dose_law_context_vs_weights",
+    0.638
+   ],
+   [
+    "reversal_savings_latent_retention",
+    0.62
+   ],
+   [
+    "context_pays_for_its_own_tokens_breakeven",
+    0.609
+   ]
+  ],
+  "context_ceiling_substitution": [
+   [
+    "first_item_additive_rest_substitutive",
+    0.768
+   ],
+   [
+    "train_dose_sets_substrate",
+    0.698
+   ],
+   [
+    "student_side_abundance",
+    0.624
+   ]
+  ],
+  "train_dose_sets_substrate": [
+   [
+    "student_side_abundance",
+    0.786
+   ],
+   [
+    "context_ceiling_substitution",
+    0.698
+   ],
+   [
+    "style_outruns_content",
+    0.663
+   ]
+  ],
+  "context_wins_substrate_conflict": [
+   [
+    "train_dose_sets_substrate",
+    0.627
+   ],
+   [
+    "success_filter_lockin_under_shift",
+    0.625
+   ],
+   [
+    "memory_carried_traits_need_tokens",
+    0.595
+   ]
+  ],
+  "instance_share_is_the_illusion": [
+   [
+    "retrieved_memory_privilege_is_scene_bound",
+    0.86
+   ],
+   [
+    "memory_carried_traits_need_tokens",
+    0.693
+   ],
+   [
+    "student_side_abundance",
+    0.636
+   ]
+  ],
+  "student_side_abundance": [
+   [
+    "train_dose_sets_substrate",
+    0.786
+   ],
+   [
+    "retrieved_memory_privilege_is_scene_bound",
+    0.688
+   ],
+   [
+    "first_item_additive_rest_substitutive",
+    0.679
+   ]
+  ],
+  "memory_carried_traits_need_tokens": [
+   [
+    "retrieved_memory_privilege_is_scene_bound",
+    0.708
+   ],
+   [
+    "instance_share_is_the_illusion",
+    0.693
+   ],
+   [
+    "student_side_abundance",
+    0.599
+   ]
+  ],
+  "retrieved_memory_privilege_is_scene_bound": [
+   [
+    "instance_share_is_the_illusion",
+    0.86
+   ],
+   [
+    "memory_carried_traits_need_tokens",
+    0.708
+   ],
+   [
+    "student_side_abundance",
+    0.688
+   ]
+  ],
+  "harm_spillover_is_substrate_bound": [
+   [
+    "stale_dose_law_context_vs_weights",
+    0.586
+   ],
+   [
+    "success_filter_lockin_under_shift",
+    0.558
+   ],
+   [
+    "first_item_additive_rest_substitutive",
+    0.558
+   ]
+  ],
+  "style_outruns_content": [
+   [
+    "train_dose_sets_substrate",
+    0.663
+   ],
+   [
+    "success_filter_lockin_under_shift",
+    0.607
+   ],
+   [
+    "student_side_abundance",
+    0.593
+   ]
+  ]
+ }
+}
