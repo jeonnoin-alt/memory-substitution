@@ -1,0 +1,135 @@
+{
+ "name": "harm_spillover_is_substrate_bound",
+ "keys": {
+  "mechanism": [
+   "Retrieved Harm Stays Retrieved Internalized Harm Spreads Substrate-Dependent",
+   "wrong-procedure items harm agent through different channels two substrates",
+   "context harm retrieval-gated scales linearly poisoned fraction retrieved set reaches sibling task"
+  ],
+  "estimand": [
+   "wrong-procedure items harm agent through different channels two substrates context"
+  ],
+  "controls": [
+   "Clean p",
+   "S_empty as the",
+   "P-CD0"
+  ],
+  "environment": [],
+  "methods": []
+ },
+ "queries": [
+  "Retrieved Harm Stays Retrieved Internalized Harm Spreads Substrate-Dependent",
+  "wrong-procedure items harm agent through different channels two substrates",
+  "wrong-procedure items harm agent through different channels two substrates context"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2604.18847",
+   "date": "2026-04-20",
+   "venue": "",
+   "sim": 0.578,
+   "channels": [
+    "hf"
+   ],
+   "title": "Human-Guided Harm Recovery for Computer Use Agents"
+  },
+  {
+   "id": "arxiv:2607.23693",
+   "date": "2026-07-26",
+   "venue": "",
+   "sim": 0.479,
+   "channels": [
+    "hf"
+   ],
+   "title": "Compute Globally, Materialize Locally: The Memory Contract of Sparse Event-KV"
+  },
+  {
+   "id": "arxiv:2604.09544",
+   "date": "2026-08-24",
+   "venue": "",
+   "sim": 0.443,
+   "channels": [
+    "hf"
+   ],
+   "title": "Large Language Models Generate Harmful Responses Using a Distinct Mechanism, Shared Across Harm Types"
+  },
+  {
+   "id": "arxiv:2607.12406",
+   "date": "2026-07-14",
+   "venue": "",
+   "sim": 0.418,
+   "channels": [
+    "hf"
+   ],
+   "title": "Isolation as a First-Class Principle for LLM-Agent System Safety: Concepts, Taxonomy, Challenges and Future Directions"
+  },
+  {
+   "id": "arxiv:2601.07395",
+   "date": "2026-01-12",
+   "venue": "",
+   "sim": 0.408,
+   "channels": [
+    "hf"
+   ],
+   "title": "MCP-ITP: An Automated Framework for Implicit Tool Poisoning in MCP"
+  },
+  {
+   "id": "arxiv:2507.21815",
+   "date": "2025-07-29",
+   "venue": "",
+   "sim": 0.385,
+   "channels": [
+    "hf"
+   ],
+   "title": "HRIPBench: Benchmarking LLMs in Harm Reduction Information Provision to\n  Support People Who Use Drugs"
+  },
+  {
+   "id": "arxiv:2508.14925",
+   "date": "2025-08-19",
+   "venue": "",
+   "sim": 0.374,
+   "channels": [
+    "hf"
+   ],
+   "title": "MCPTox: A Benchmark for Tool Poisoning Attack on Real-World MCP Servers"
+  },
+  {
+   "id": "arxiv:2604.02656",
+   "date": "2026-04-06",
+   "venue": "",
+   "sim": 0.331,
+   "channels": [
+    "hf"
+   ],
+   "title": "Transfer Learning for Meta-analysis Under Covariate Shift"
+  },
+  {
+   "id": "arxiv:2411.03923",
+   "date": "2024-11-06",
+   "venue": "",
+   "sim": 0.299,
+   "channels": [
+    "hf"
+   ],
+   "title": "Evaluation data contamination in LLMs: how do we measure it and (when)\n  does it matter?"
+  },
+  {
+   "id": "arxiv:2511.21757",
+   "date": "2025-11-24",
+   "venue": "",
+   "sim": 0.271,
+   "channels": [
+    "hf"
+   ],
+   "title": "Medical Malice: A Dataset for Context-Aware Safety in Healthcare LLMs"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Retrieved Harm Stays Retrieved Internalized Harm Spreads Substrate-Dependent 2025 arXiv"
+  },
+  {
+   "query": "wrong-procedure items harm agent through different channels two substrates 2025 arXiv"
+  }
+ ]
+}

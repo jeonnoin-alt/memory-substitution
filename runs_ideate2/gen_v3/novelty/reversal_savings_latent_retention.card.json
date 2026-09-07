@@ -1,0 +1,138 @@
+{
+ "name": "reversal_savings_latent_retention",
+ "keys": {
+  "mechanism": [
+   "Silenced Erased Savings Rule Reversal Separate Latent Retention",
+   "rule stream ALFWorld continual QLoRA rule-A accuracy has eroded reset-LoRA floor during",
+   "Retrieval memory has latent state bounded FIFO bank no-retention reference bank policies"
+  ],
+  "estimand": [
+   "rule stream ALFWorld continual QLoRA rule-A accuracy has eroded reset-LoRA"
+  ],
+  "controls": [
+   "Reset",
+   "LoRA is the",
+   "FIFO bank is"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": []
+ },
+ "queries": [
+  "Silenced Erased Savings Rule Reversal Separate Latent Retention",
+  "rule stream ALFWorld continual QLoRA rule-A accuracy has eroded reset-LoRA floor during",
+  "rule stream ALFWorld continual QLoRA rule-A accuracy has eroded reset-LoRA",
+  "Silenced Erased Savings Rule Reversal Separate Latent Retention ALFWorld"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2511.04228",
+   "date": "2025-11-06",
+   "venue": "",
+   "sim": 0.551,
+   "channels": [
+    "hf"
+   ],
+   "title": "REMIND: Input Loss Landscapes Reveal Residual Memorization in Post-Unlearning LLMs"
+  },
+  {
+   "id": "arxiv:2606.26560",
+   "date": "2026-06-25",
+   "venue": "",
+   "sim": 0.546,
+   "channels": [
+    "hf"
+   ],
+   "title": "Erase-then-Delta Attention: Decoupling Erase and Write Addresses in Delta-Rule Linear Attention"
+  },
+  {
+   "id": "arxiv:2511.17100",
+   "date": "2025-11-21",
+   "venue": "",
+   "sim": 0.533,
+   "channels": [
+    "hf"
+   ],
+   "title": "Geometric-Disentangelment Unlearning"
+  },
+  {
+   "id": "arxiv:2509.05316",
+   "date": "2025-08-29",
+   "venue": "",
+   "sim": 0.527,
+   "channels": [
+    "hf"
+   ],
+   "title": "Standard vs. Modular Sampling: Best Practices for Reliable LLM Unlearning"
+  },
+  {
+   "id": "arxiv:2410.14713",
+   "date": "2024-10-09",
+   "venue": "",
+   "sim": 0.519,
+   "channels": [
+    "hf"
+   ],
+   "title": "QuAILoRA: Quantization-Aware Initialization for LoRA"
+  },
+  {
+   "id": "arxiv:2505.16831",
+   "date": "2025-09-26",
+   "venue": "",
+   "sim": 0.506,
+   "channels": [
+    "hf"
+   ],
+   "title": "Unlearning Isn't Deletion: Investigating Reversibility of Machine Unlearning in LLMs"
+  },
+  {
+   "id": "arxiv:2601.10566",
+   "date": "2026-03-17",
+   "venue": "",
+   "sim": 0.505,
+   "channels": [
+    "hf"
+   ],
+   "title": "Representation-Aware Unlearning via Activation Signatures: From Suppression to Knowledge-Signature Erasure"
+  },
+  {
+   "id": "arxiv:2509.14624",
+   "date": "2025-09-18",
+   "venue": "",
+   "sim": 0.503,
+   "channels": [
+    "hf"
+   ],
+   "title": "Reveal and Release: Iterative LLM Unlearning with Self-generated Data"
+  },
+  {
+   "id": "arxiv:2607.09236",
+   "date": "2026-07-10",
+   "venue": "",
+   "sim": 0.481,
+   "channels": [
+    "hf"
+   ],
+   "title": "Forget Narrowly, Retain Broadly: Unlearning as an Asymmetric Generalization Problem"
+  },
+  {
+   "id": "arxiv:2402.05445",
+   "date": "2024-02-08",
+   "venue": "",
+   "sim": 0.47,
+   "channels": [
+    "hf"
+   ],
+   "title": "Accurate LoRA-Finetuning Quantization of LLMs via Information Retention"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Silenced Erased Savings Rule Reversal Separate Latent Retention 2025 arXiv"
+  },
+  {
+   "query": "rule stream ALFWorld continual QLoRA rule-A accuracy has eroded reset-LoRA floor during 2025 arXiv"
+  }
+ ]
+}

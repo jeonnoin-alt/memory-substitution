@@ -1,0 +1,138 @@
+{
+ "name": "stale_dose_law_context_vs_weights",
+ "keys": {
+  "mechanism": [
+   "Entry-Gated Majority-Gated Dose Law Outdated Experience Read Context",
+   "After hidden rule change ALFWorld outdated experience items harm agent under two",
+   "Read context fixed fixed injected tokens harm entry-gated one stale item among"
+  ],
+  "estimand": [
+   "After hidden rule change ALFWorld outdated experience items harm agent"
+  ],
+  "controls": [
+   "Decoy at d",
+   "Fresh student",
+   "Gate"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": []
+ },
+ "queries": [
+  "Entry-Gated Majority-Gated Dose Law Outdated Experience Read Context",
+  "After hidden rule change ALFWorld outdated experience items harm agent under two",
+  "After hidden rule change ALFWorld outdated experience items harm agent",
+  "Entry-Gated Majority-Gated Dose Law Outdated Experience Read Context ALFWorld"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2606.02540",
+   "date": "2026-06-01",
+   "venue": "",
+   "sim": 0.457,
+   "channels": [
+    "hf"
+   ],
+   "title": "SkillHarm: Lifecycle-Aware Skill-Based Attacks via Automated Construction"
+  },
+  {
+   "id": "arxiv:2410.13886",
+   "date": "2024-10-11",
+   "venue": "",
+   "sim": 0.395,
+   "channels": [
+    "hf"
+   ],
+   "title": "Refusal-Trained LLMs Are Easily Jailbroken As Browser Agents"
+  },
+  {
+   "id": "arxiv:2603.15994",
+   "date": "2026-03-16",
+   "venue": "",
+   "sim": 0.39,
+   "channels": [
+    "hf"
+   ],
+   "title": "Selective Memory for Artificial Intelligence: Write-Time Gating with Hierarchical Archiving"
+  },
+  {
+   "id": "arxiv:2608.02276",
+   "date": "2026-08-03",
+   "venue": "",
+   "sim": 0.382,
+   "channels": [
+    "hf"
+   ],
+   "title": "Harness-R1: Learning to Edit Executable Runtime Harnesses from Agent Failure Trajectories"
+  },
+  {
+   "id": "arxiv:2506.00641",
+   "date": "2026-01-31",
+   "venue": "",
+   "sim": 0.37,
+   "channels": [
+    "hf"
+   ],
+   "title": "AgentAuditor: Human-Level Safety and Security Evaluation for LLM Agents"
+  },
+  {
+   "id": "arxiv:2605.05413",
+   "date": "2026-05-06",
+   "venue": "",
+   "sim": 0.365,
+   "channels": [
+    "hf"
+   ],
+   "title": "From History to State: Constant-Context Skill Learning for LLM Agents"
+  },
+  {
+   "id": "arxiv:2605.10663",
+   "date": "2026-05-11",
+   "venue": "",
+   "sim": 0.355,
+   "channels": [
+    "hf"
+   ],
+   "title": "Evolving-RL: End-to-End Optimization of Experience-Driven Self-Evolving Capability within Agents"
+  },
+  {
+   "id": "arxiv:2412.14470",
+   "date": "2024-12-19",
+   "venue": "",
+   "sim": 0.354,
+   "channels": [
+    "hf"
+   ],
+   "title": "Agent-SafetyBench: Evaluating the Safety of LLM Agents"
+  },
+  {
+   "id": "arxiv:2503.04957",
+   "date": "2025-03-06",
+   "venue": "",
+   "sim": 0.343,
+   "channels": [
+    "hf"
+   ],
+   "title": "SafeArena: Evaluating the Safety of Autonomous Web Agents"
+  },
+  {
+   "id": "arxiv:2607.21419",
+   "date": "2026-07-23",
+   "venue": "",
+   "sim": 0.333,
+   "channels": [
+    "hf"
+   ],
+   "title": "PATS: Policy-Aware Training Scaffolding for Agentic Reinforcement Learning"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Entry-Gated Majority-Gated Dose Law Outdated Experience Read Context 2025 arXiv"
+  },
+  {
+   "query": "After hidden rule change ALFWorld outdated experience items harm agent under two 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "name": "student_side_abundance",
+ "keys": {
+  "mechanism": [
+   "Information Abundance Student-Side Effect Training-Time Memory Dose Suppresses",
+   "Putting retrieved episodes student prompt during step-level SFT lowers action-token loss student",
+   "token-matched relevance-destroyed decoys produce drop"
+  ],
+  "estimand": [
+   "Putting retrieved episodes student prompt during step-level SFT lowers action-token"
+  ],
+  "controls": [
+   "Base agent k",
+   "Measurement",
+   "Measurement"
+  ],
+  "environment": [],
+  "methods": [
+   "Paradox"
+  ]
+ },
+ "queries": [
+  "Information Abundance Student-Side Effect Training-Time Memory Dose Suppresses",
+  "Putting retrieved episodes student prompt during step-level SFT lowers action-token loss student",
+  "Putting retrieved episodes student prompt during step-level SFT lowers action-token",
+  "Paradox Information Abundance Student-Side Effect Training-Time Memo"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.12218",
+   "date": "2026-08-12",
+   "venue": "",
+   "sim": 0.598,
+   "channels": [
+    "hf"
+   ],
+   "title": "Information Abundance Paradox: Long-Context Training Undermines Parametric Knowledge"
+  },
+  {
+   "id": "arxiv:2603.15994",
+   "date": "2026-03-16",
+   "venue": "",
+   "sim": 0.586,
+   "channels": [
+    "hf"
+   ],
+   "title": "Selective Memory for Artificial Intelligence: Write-Time Gating with Hierarchical Archiving"
+  },
+  {
+   "id": "arxiv:2510.04454",
+   "date": "2025-10-06",
+   "venue": "",
+   "sim": 0.574,
+   "channels": [
+    "hf"
+   ],
+   "title": "Mitigating Forgetting Between Supervised and Reinforcement Learning Yields Stronger Reasoners"
+  },
+  {
+   "id": "arxiv:2410.21750",
+   "date": "2024-10-29",
+   "venue": "",
+   "sim": 0.567,
+   "channels": [
+    "hf"
+   ],
+   "title": "Learning and Unlearning of Fabricated Knowledge in Language Models"
+  },
+  {
+   "id": "arxiv:2410.01380",
+   "date": "2024-10-02",
+   "venue": "",
+   "sim": 0.547,
+   "channels": [
+    "hf"
+   ],
+   "title": "Knowledge Entropy Decay during Language Model Pretraining Hinders New Knowledge Acquisition"
+  },
+  {
+   "id": "arxiv:2608.18852",
+   "date": "2026-08-19",
+   "venue": "",
+   "sim": 0.545,
+   "channels": [
+    "hf"
+   ],
+   "title": "SkillGate: Training In-Policy Skill Selection in Long-Horizon Agents"
+  },
+  {
+   "id": "arxiv:2511.23271",
+   "date": "2025-11-28",
+   "venue": "",
+   "sim": 0.509,
+   "channels": [
+    "hf"
+   ],
+   "title": "Behavior-Equivalent Token: Single-Token Replacement for Long Prompts in LLMs"
+  },
+  {
+   "id": "arxiv:2603.10359",
+   "date": "2026-03-11",
+   "venue": "",
+   "sim": 0.491,
+   "channels": [
+    "hf"
+   ],
+   "title": "HEAL: Hindsight Entropy-Assisted Learning for Reasoning Distillation"
+  },
+  {
+   "id": "arxiv:2307.06948",
+   "date": "2023-07-13",
+   "venue": "",
+   "sim": 0.482,
+   "channels": [
+    "hf"
+   ],
+   "title": "Self-regulating Prompts: Foundational Model Adaptation without\n  Forgetting"
+  },
+  {
+   "id": "arxiv:2608.20965",
+   "date": "2026-08-21",
+   "venue": "",
+   "sim": 0.48,
+   "channels": [
+    "hf"
+   ],
+   "title": "Training, learning and inference: unified dynamics of neural systems"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Information Abundance Student-Side Effect Training-Time Memory Dose Suppresses 2025 arXiv"
+  },
+  {
+   "query": "Putting retrieved episodes student prompt during step-level SFT lowers action-token loss student 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,141 @@
+{
+ "name": "instance_share_is_the_illusion",
+ "keys": {
+  "mechanism": [
+   "Privilege Illusion Retrieved Agent Memory Instance-Bound Share Memory-Conditioned",
+   "retrieved episodes privileged information self-teacher in-context gain ALFWorld splits type-level procedure share",
+   "type share replicable memory-free student"
+  ],
+  "estimand": [
+   "retrieved episodes privileged information self-teacher in-context gain ALFWorld splits type-level"
+  ],
+  "controls": [
+   "Base agent k",
+   "Measurement",
+   "P-CD0"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": [
+   "OP2SD"
+  ]
+ },
+ "queries": [
+  "Privilege Illusion Retrieved Agent Memory Instance-Bound Share Memory-Conditioned",
+  "retrieved episodes privileged information self-teacher in-context gain ALFWorld splits type-level procedure share",
+  "retrieved episodes privileged information self-teacher in-context gain ALFWorld splits type-level",
+  "Privilege Illusion Retrieved Agent Memory Instance-Bound Share Memory-Conditioned ALFWorld",
+  "OP2SD Privilege Illusion Retrieved Agent Memory Instance-Bound Sha"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2601.07470",
+   "date": "2026-01-12",
+   "venue": "",
+   "sim": 0.582,
+   "channels": [
+    "hf"
+   ],
+   "title": "Learning How to Remember: A Meta-Cognitive Management Method for Structured and Transferable Agent Memory"
+  },
+  {
+   "id": "arxiv:2607.20972",
+   "date": "2026-07-23",
+   "venue": "",
+   "sim": 0.566,
+   "channels": [
+    "hf"
+   ],
+   "title": "Delivery, Not Storage: Cue-Anchored Working Memory as a Harness Property for Coding Agents"
+  },
+  {
+   "id": "arxiv:2607.28272",
+   "date": "2026-07-30",
+   "venue": "",
+   "sim": 0.563,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemHarness: Memory Is Reconstructed, Not Replayed"
+  },
+  {
+   "id": "arxiv:2605.29463",
+   "date": "2026-05-31",
+   "venue": "",
+   "sim": 0.555,
+   "channels": [
+    "hf"
+   ],
+   "title": "Honest Lying: Understanding Memory Confabulation in Reflexive Agents"
+  },
+  {
+   "id": "arxiv:2605.20616",
+   "date": "2026-05-20",
+   "venue": "",
+   "sim": 0.552,
+   "channels": [
+    "hf"
+   ],
+   "title": "Auto-Dreamer: Learning Offline Memory Consolidation for Language Agents"
+  },
+  {
+   "id": "arxiv:2512.16962",
+   "date": "2025-12-18",
+   "venue": "",
+   "sim": 0.55,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemoryGraft: Persistent Compromise of LLM Agents via Poisoned Experience Retrieval"
+  },
+  {
+   "id": "arxiv:2606.29502",
+   "date": "2026-07-17",
+   "venue": "",
+   "sim": 0.52,
+   "channels": [
+    "hf"
+   ],
+   "title": "UCOB: Learning to Utilize and Evolve Agentic Skills via Credit-Aware On-Policy Bidirectional Self-Distillation"
+  },
+  {
+   "id": "arxiv:2608.09228",
+   "date": "2026-08-10",
+   "venue": "",
+   "sim": 0.518,
+   "channels": [
+    "hf"
+   ],
+   "title": "Privileged Solutions or Context-Induced Teacher Behavior? Dissecting On-Policy Self-Distillation"
+  },
+  {
+   "id": "arxiv:2608.05219",
+   "date": "2026-08-05",
+   "venue": "",
+   "sim": 0.509,
+   "channels": [
+    "hf"
+   ],
+   "title": "When Privileged Guidance Misaligns: State-Matched Routing and Contextualized Self-Distillation for Multi-Turn Agents"
+  },
+  {
+   "id": "arxiv:2512.13564",
+   "date": "2025-12-15",
+   "venue": "",
+   "sim": 0.501,
+   "channels": [
+    "hf"
+   ],
+   "title": "Memory in the Age of AI Agents"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Privilege Illusion Retrieved Agent Memory Instance-Bound Share Memory-Conditioned 2025 arXiv"
+  },
+  {
+   "query": "retrieved episodes privileged information self-teacher in-context gain ALFWorld splits type-level procedure share 2025 arXiv"
+  }
+ ]
+}

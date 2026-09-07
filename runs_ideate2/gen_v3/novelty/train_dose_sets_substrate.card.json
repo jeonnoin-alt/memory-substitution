@@ -1,0 +1,143 @@
+{
+ "name": "train_dose_sets_substrate",
+ "keys": {
+  "mechanism": [
+   "Training-Time Memory Dose Chooses Substrate Information-Abundance Effect Agent",
+   "agent fine-tuned distilled experience retrieved episodes training prompt amount memory present training"
+  ],
+  "estimand": [
+   "agent fine-tuned distilled experience retrieved episodes training prompt amount memory"
+  ],
+  "controls": [
+   "P-CD0",
+   "SFT-k0 as the",
+   "SFT-decoy3 as the"
+  ],
+  "environment": [
+   "Qwen3-32B"
+  ],
+  "methods": [
+   "MemHarness",
+   "PMD",
+   "UCOB",
+   "OPSD"
+  ]
+ },
+ "queries": [
+  "Training-Time Memory Dose Chooses Substrate Information-Abundance Effect Agent",
+  "agent fine-tuned distilled experience retrieved episodes training prompt amount memory present training",
+  "agent fine-tuned distilled experience retrieved episodes training prompt amount memory",
+  "Training-Time Memory Dose Chooses Substrate Information-Abundance Effect Agent Qwen3-32B",
+  "MemHarness PMD UCOB Training-Time Memory Dose Chooses Substrate Information-Abun"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2607.21051",
+   "date": "2026-07-23",
+   "venue": "",
+   "sim": 0.672,
+   "channels": [
+    "hf"
+   ],
+   "title": "Sample-Efficient Learning from Agent Experience"
+  },
+  {
+   "id": "arxiv:2608.00017",
+   "date": "2026-06-29",
+   "venue": "",
+   "sim": 0.636,
+   "channels": [
+    "hf"
+   ],
+   "title": "Memory Reward Inflation in Self-Improving LLM Agents"
+  },
+  {
+   "id": "arxiv:2603.13017",
+   "date": "2026-03-13",
+   "venue": "",
+   "sim": 0.616,
+   "channels": [
+    "hf"
+   ],
+   "title": "Structured Distillation for Personalized Agent Memory: 11x Token Reduction with Retrieval Preservation"
+  },
+  {
+   "id": "arxiv:2603.18272",
+   "date": "2026-03-18",
+   "venue": "",
+   "sim": 0.61,
+   "channels": [
+    "hf"
+   ],
+   "title": "Retrieval-Augmented LLM Agents: Learning to Learn from Experience"
+  },
+  {
+   "id": "arxiv:2603.15666",
+   "date": "2026-03-12",
+   "venue": "arXiv.org",
+   "sim": 0.607,
+   "channels": [
+    "s2"
+   ],
+   "title": "Compiled Memory: Not More Information, but More Precise Instructions for Language Agents"
+  },
+  {
+   "id": "arxiv:2608.07169",
+   "date": "2026-08-07",
+   "venue": "",
+   "sim": 0.604,
+   "channels": [
+    "hf"
+   ],
+   "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory"
+  },
+  {
+   "id": "arxiv:2305.16338",
+   "date": "2023-05-24",
+   "venue": "",
+   "sim": 0.602,
+   "channels": [
+    "hf"
+   ],
+   "title": "Think Before You Act: Decision Transformers with Internal Working Memory"
+  },
+  {
+   "id": "arxiv:2607.08716",
+   "date": "2026-07-09",
+   "venue": "",
+   "sim": 0.601,
+   "channels": [
+    "hf"
+   ],
+   "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents"
+  },
+  {
+   "id": "arxiv:2403.02757",
+   "date": "2024-03-05",
+   "venue": "",
+   "sim": 0.596,
+   "channels": [
+    "hf"
+   ],
+   "title": "In-Memory Learning: A Declarative Learning Framework for Large Language\n  Models"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.593,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Training-Time Memory Dose Chooses Substrate Information-Abundance Effect Agent 2025 arXiv"
+  },
+  {
+   "query": "agent fine-tuned distilled experience retrieved episodes training prompt amount memory present training 2025 arXiv"
+  }
+ ]
+}

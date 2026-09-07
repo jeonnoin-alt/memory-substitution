@@ -1,0 +1,138 @@
+{
+ "name": "coverage_limited_context_count_limited_weights",
+ "keys": {
+  "mechanism": [
+   "Coverage-Limited Context Count-Limited Weights Substrate Crossover Lives Experience-Collection",
+   "in-context route gain ALFWorld same-type procedure copy saturates bank holds items per",
+   "therefore substrate cheaper decided experiences have been collected episodes will deployed"
+  ],
+  "estimand": [
+   "in-context route gain ALFWorld same-type procedure copy saturates bank holds"
+  ],
+  "controls": [
+   "Context",
+   "MiniLM",
+   "Weights"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": []
+ },
+ "queries": [
+  "Coverage-Limited Context Count-Limited Weights Substrate Crossover Lives Experience-Collection",
+  "in-context route gain ALFWorld same-type procedure copy saturates bank holds items per",
+  "in-context route gain ALFWorld same-type procedure copy saturates bank holds",
+  "Coverage-Limited Context Count-Limited Weights Substrate Crossover Lives Experience-Collection ALFWorld"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2606.17016",
+   "date": "2026-06-15",
+   "venue": "",
+   "sim": 0.546,
+   "channels": [
+    "hf"
+   ],
+   "title": "TokenPilot: Cache-Efficient Context Management for LLM Agents"
+  },
+  {
+   "id": "arxiv:2608.22695",
+   "date": "2026-08-24",
+   "venue": "",
+   "sim": 0.487,
+   "channels": [
+    "hf"
+   ],
+   "title": "Enrich-Retrieve-Rank: Scaling Capability Discovery Beyond In-Context Routing"
+  },
+  {
+   "id": "arxiv:2602.11748",
+   "date": "2026-02-12",
+   "venue": "",
+   "sim": 0.452,
+   "channels": [
+    "hf"
+   ],
+   "title": "Think Longer to Explore Deeper: Learn to Explore In-Context via Length-Incentivized Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2407.21787",
+   "date": "2024-07-31",
+   "venue": "",
+   "sim": 0.43,
+   "channels": [
+    "hf"
+   ],
+   "title": "Large Language Monkeys: Scaling Inference Compute with Repeated Sampling"
+  },
+  {
+   "id": "arxiv:2606.05633",
+   "date": "2026-06-04",
+   "venue": "",
+   "sim": 0.427,
+   "channels": [
+    "hf"
+   ],
+   "title": "Answer Presence Drives RAG Rewriting Gains"
+  },
+  {
+   "id": "arxiv:2605.25997",
+   "date": "2026-05-25",
+   "venue": "",
+   "sim": 0.425,
+   "channels": [
+    "hf"
+   ],
+   "title": "Deployment-complete benchmarking"
+  },
+  {
+   "id": "arxiv:2606.25852",
+   "date": "2026-06-24",
+   "venue": "",
+   "sim": 0.424,
+   "channels": [
+    "hf"
+   ],
+   "title": "Semantic Consistency Policy Optimization for Reinforcement Learning of LLM Agents"
+  },
+  {
+   "id": "arxiv:2609.02217",
+   "date": "2026-09-02",
+   "venue": "",
+   "sim": 0.417,
+   "channels": [
+    "hf"
+   ],
+   "title": "SkillGLoW: Procedural-Family Skill Consolidation for Self-Improving Agents on Long-Horizon Task Streams"
+  },
+  {
+   "id": "arxiv:2410.16848",
+   "date": "2024-10-22",
+   "venue": "",
+   "sim": 0.397,
+   "channels": [
+    "hf"
+   ],
+   "title": "ETHIC: Evaluating Large Language Models on Long-Context Tasks with High\n  Information Coverage"
+  },
+  {
+   "id": "arxiv:2505.23522",
+   "date": "2025-05-29",
+   "venue": "",
+   "sim": 0.388,
+   "channels": [
+    "hf"
+   ],
+   "title": "OmniEarth-Bench: Towards Holistic Evaluation of Earth's Six Spheres and\n  Cross-Spheres Interactions with Multimodal Observational Earth Data"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Coverage-Limited Context Count-Limited Weights Substrate Crossover Lives Experience-Collection 2025 arXiv"
+  },
+  {
+   "query": "in-context route gain ALFWorld same-type procedure copy saturates bank holds items per 2025 arXiv"
+  }
+ ]
+}

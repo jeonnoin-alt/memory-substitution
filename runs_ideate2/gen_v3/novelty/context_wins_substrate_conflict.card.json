@@ -1,0 +1,144 @@
+{
+ "name": "context_wins_substrate_conflict",
+ "keys": {
+  "mechanism": [
+   "Weights Memory Disagree Substrate Agent Follows After Rule",
+   "hybrid conflicts between procedure trained weights procedure retrieved context resolved favour context",
+   "therefore staleness hybrid under shift governed bank eviction policy retraining recovery time"
+  ],
+  "estimand": [
+   "hybrid conflicts between procedure trained weights procedure retrieved context resolved"
+  ],
+  "controls": [
+   "Single-substrate arms at",
+   "W_none",
+   "C_post"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": [
+   "STALE",
+   "PLUG",
+   "UniMem",
+   "COVE"
+  ]
+ },
+ "queries": [
+  "Weights Memory Disagree Substrate Agent Follows After Rule",
+  "hybrid conflicts between procedure trained weights procedure retrieved context resolved favour context",
+  "hybrid conflicts between procedure trained weights procedure retrieved context resolved",
+  "Weights Memory Disagree Substrate Agent Follows After Rule ALFWorld",
+  "STALE PLUG UniMem Weights Memory Disagree Substrate Agent Follows After Rule"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.02508",
+   "date": "2026-08-10",
+   "venue": "",
+   "sim": 0.609,
+   "channels": [
+    "hf"
+   ],
+   "title": "RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States"
+  },
+  {
+   "id": "arxiv:2608.04574",
+   "date": "2026-08-05",
+   "venue": "",
+   "sim": 0.587,
+   "channels": [
+    "hf"
+   ],
+   "title": "When Memory Lies: An Empirical Study of Spatial Memory Staleness in VLM Agents"
+  },
+  {
+   "id": "arxiv:2608.15008",
+   "date": "2026-08-15",
+   "venue": "",
+   "sim": 0.583,
+   "channels": [
+    "hf"
+   ],
+   "title": "Harness the Memory: A Holistic Evaluation of Memory Substrates in Memory Agents"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.58,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2601.11653",
+   "date": "2026-01-15",
+   "venue": "",
+   "sim": 0.552,
+   "channels": [
+    "hf"
+   ],
+   "title": "AI Agents Need Memory Control Over More Context"
+  },
+  {
+   "id": "arxiv:2606.25449",
+   "date": "2026-07-21",
+   "venue": "",
+   "sim": 0.527,
+   "channels": [
+    "hf"
+   ],
+   "title": "Reclaim Evaluation: A Lossy Memory Is Worse Than an Empty One"
+  },
+  {
+   "id": "arxiv:2601.07470",
+   "date": "2026-01-12",
+   "venue": "",
+   "sim": 0.527,
+   "channels": [
+    "hf"
+   ],
+   "title": "Learning How to Remember: A Meta-Cognitive Management Method for Structured and Transferable Agent Memory"
+  },
+  {
+   "id": "arxiv:2606.26511",
+   "date": "2026-06-25",
+   "venue": "",
+   "sim": 0.507,
+   "channels": [
+    "hf"
+   ],
+   "title": "Temporal Validity in Retrieval Memory: Eliminating Stale-Fact Errors for AI Agents over Evolving Knowledge"
+  },
+  {
+   "id": "arxiv:2605.06527",
+   "date": "2026-05-07",
+   "venue": "",
+   "sim": 0.493,
+   "channels": [
+    "hf"
+   ],
+   "title": "STALE: Can LLM Agents Know When Their Memories Are No Longer Valid?"
+  },
+  {
+   "id": "arxiv:2606.25161",
+   "date": "2026-06-23",
+   "venue": "",
+   "sim": 0.491,
+   "channels": [
+    "hf"
+   ],
+   "title": "TRUSTMEM: Learning Trustworthy Memory Consolidation for LLM Agents with Long-Term Memory"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Weights Memory Disagree Substrate Agent Follows After Rule 2025 arXiv"
+  },
+  {
+   "query": "hybrid conflicts between procedure trained weights procedure retrieved context resolved favour context 2025 arXiv"
+  }
+ ]
+}

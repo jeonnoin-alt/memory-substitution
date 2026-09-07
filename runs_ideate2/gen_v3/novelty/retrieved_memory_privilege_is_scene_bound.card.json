@@ -1,0 +1,139 @@
+{
+ "name": "retrieved_memory_privilege_is_scene_bound",
+ "keys": {
+  "mechanism": [
+   "Decomposing Privilege Illusion Privileged Information Retrieved Agent Memory",
+   "retrieved agent episodes privileged information on-policy self-distillation part teacher advantage memory-free student",
+   "item-specific part object receptacle scene bindings matched item internalized generalizable content shows"
+  ],
+  "estimand": [
+   "retrieved agent episodes privileged information on-policy self-distillation part teacher advantage"
+  ],
+  "controls": [
+   "Untrained in",
+   "MATCH",
+   "PROC"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B"
+  ],
+  "methods": []
+ },
+ "queries": [
+  "Decomposing Privilege Illusion Privileged Information Retrieved Agent Memory",
+  "retrieved agent episodes privileged information on-policy self-distillation part teacher advantage memory-free student",
+  "retrieved agent episodes privileged information on-policy self-distillation part teacher advantage",
+  "Decomposing Privilege Illusion Privileged Information Retrieved Agent Memory ALFWorld Qwen3-32B"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.09228",
+   "date": "2026-08-10",
+   "venue": "",
+   "sim": 0.61,
+   "channels": [
+    "hf"
+   ],
+   "title": "Privileged Solutions or Context-Induced Teacher Behavior? Dissecting On-Policy Self-Distillation"
+  },
+  {
+   "id": "arxiv:2607.20972",
+   "date": "2026-07-23",
+   "venue": "",
+   "sim": 0.588,
+   "channels": [
+    "hf"
+   ],
+   "title": "Delivery, Not Storage: Cue-Anchored Working Memory as a Harness Property for Coding Agents"
+  },
+  {
+   "id": "arxiv:2512.12856",
+   "date": "2025-12-14",
+   "venue": "",
+   "sim": 0.575,
+   "channels": [
+    "hf"
+   ],
+   "title": "Forgetful but Faithful: A Cognitive Memory Architecture and Benchmark for Privacy-Aware Generative Agents"
+  },
+  {
+   "id": "arxiv:2512.16962",
+   "date": "2025-12-18",
+   "venue": "",
+   "sim": 0.515,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemoryGraft: Persistent Compromise of LLM Agents via Poisoned Experience Retrieval"
+  },
+  {
+   "id": "arxiv:2605.11458",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.493,
+   "channels": [
+    "hf"
+   ],
+   "title": "Adaptive Teacher Exposure for Self-Distillation in LLM Reasoning"
+  },
+  {
+   "id": "arxiv:2602.04942",
+   "date": "2026-02-04",
+   "venue": "",
+   "sim": 0.488,
+   "channels": [
+    "hf"
+   ],
+   "title": "Privileged Information Distillation for Language Models"
+  },
+  {
+   "id": "arxiv:2608.01735",
+   "date": "2026-08-03",
+   "venue": "",
+   "sim": 0.485,
+   "channels": [
+    "hf"
+   ],
+   "title": "DAPD: Dual-Anchored Policy Distillation"
+  },
+  {
+   "id": "arxiv:2604.10674",
+   "date": "2026-04-12",
+   "venue": "",
+   "sim": 0.482,
+   "channels": [
+    "hf"
+   ],
+   "title": "Skill-SD: Skill-Conditioned Self-Distillation for Multi-turn LLM Agents"
+  },
+  {
+   "id": "arxiv:2606.30626",
+   "date": "2026-06-29",
+   "venue": "",
+   "sim": 0.474,
+   "channels": [
+    "hf"
+   ],
+   "title": "DOPD: Dual On-policy Distillation"
+  },
+  {
+   "id": "arxiv:2608.13040",
+   "date": "2026-08-13",
+   "venue": "",
+   "sim": 0.473,
+   "channels": [
+    "hf"
+   ],
+   "title": "Latent On-Policy Self-Distillation"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Decomposing Privilege Illusion Privileged Information Retrieved Agent Memory 2025 arXiv"
+  },
+  {
+   "query": "retrieved agent episodes privileged information on-policy self-distillation part teacher advantage memory-free student 2025 arXiv"
+  }
+ ]
+}

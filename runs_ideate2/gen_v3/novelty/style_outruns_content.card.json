@@ -1,0 +1,138 @@
+{
+ "name": "style_outruns_content",
+ "keys": {
+  "mechanism": [
+   "Style Outruns Content Planted Dispositions Agent Memory Generalize",
+   "agent experience internalized task-irrelevant dispositions carried items task content they carry part",
+   "under one further epoch clean marker-free data dispositions decay baseline faster content"
+  ],
+  "estimand": [
+   "agent experience internalized task-irrelevant dispositions carried items task content they"
+  ],
+  "controls": [
+   "S_empty",
+   "P-CD0",
+   "S_clean isolate self"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": []
+ },
+ "queries": [
+  "Style Outruns Content Planted Dispositions Agent Memory Generalize",
+  "agent experience internalized task-irrelevant dispositions carried items task content they carry part",
+  "agent experience internalized task-irrelevant dispositions carried items task content they",
+  "Style Outruns Content Planted Dispositions Agent Memory Generalize ALFWorld"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2512.12818",
+   "date": "2025-12-14",
+   "venue": "",
+   "sim": 0.633,
+   "channels": [
+    "hf"
+   ],
+   "title": "Hindsight is 20/20: Building Agent Memory that Retains, Recalls, and Reflects"
+  },
+  {
+   "id": "arxiv:2607.08716",
+   "date": "2026-07-09",
+   "venue": "",
+   "sim": 0.613,
+   "channels": [
+    "hf"
+   ],
+   "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents"
+  },
+  {
+   "id": "arxiv:2607.26637",
+   "date": "2026-07-29",
+   "venue": "",
+   "sim": 0.572,
+   "channels": [
+    "hf"
+   ],
+   "title": "Filesystem-Based Memory for LLM Agents: Organization, Evolution, and Sustainability"
+  },
+  {
+   "id": "arxiv:2501.01702",
+   "date": "2025-01-03",
+   "venue": "",
+   "sim": 0.553,
+   "channels": [
+    "hf"
+   ],
+   "title": "AgentRefine: Enhancing Agent Generalization through Refinement Tuning"
+  },
+  {
+   "id": "arxiv:2604.17091",
+   "date": "2026-04-18",
+   "venue": "",
+   "sim": 0.548,
+   "channels": [
+    "hf"
+   ],
+   "title": "GenericAgent: A Token-Efficient Self-Evolving LLM Agent via Contextual Information Density Maximization (V1.0)"
+  },
+  {
+   "id": "arxiv:2605.12493",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.542,
+   "channels": [
+    "hf"
+   ],
+   "title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues"
+  },
+  {
+   "id": "arxiv:2505.16348",
+   "date": "2025-05-22",
+   "venue": "",
+   "sim": 0.538,
+   "channels": [
+    "hf"
+   ],
+   "title": "Embodied Agents Meet Personalization: Exploring Memory Utilization for\n  Personalized Assistance"
+  },
+  {
+   "id": "arxiv:2607.20972",
+   "date": "2026-07-23",
+   "venue": "",
+   "sim": 0.537,
+   "channels": [
+    "hf"
+   ],
+   "title": "Delivery, Not Storage: Cue-Anchored Working Memory as a Harness Property for Coding Agents"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.537,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2605.31075",
+   "date": "2026-05-29",
+   "venue": "",
+   "sim": 0.521,
+   "channels": [
+    "hf"
+   ],
+   "title": "Task-Focused Memorization for Multimodal Agents"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Style Outruns Content Planted Dispositions Agent Memory Generalize 2025 arXiv"
+  },
+  {
+   "query": "agent experience internalized task-irrelevant dispositions carried items task content they carry part 2025 arXiv"
+  }
+ ]
+}

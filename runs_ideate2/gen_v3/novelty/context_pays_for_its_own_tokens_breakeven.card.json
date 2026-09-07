@@ -1,0 +1,138 @@
+{
+ "name": "context_pays_for_its_own_tokens_breakeven",
+ "keys": {
+  "mechanism": [
+   "Memory Pays Tokens Total-Episode Cost Accounting Flips Weights-versus-Context",
+   "multi-step agent tasks retrieved experience shortens episodes tokens injects because memory-free agent",
+   "therefore injected-token convention memory literature gets sign context route cost wrong"
+  ],
+  "estimand": [
+   "multi-step agent tasks retrieved experience shortens episodes tokens injects because"
+  ],
+  "controls": [
+   "Context route",
+   "Weights route",
+   "SFT"
+  ],
+  "environment": [
+   "Qwen3-8B"
+  ],
+  "methods": []
+ },
+ "queries": [
+  "Memory Pays Tokens Total-Episode Cost Accounting Flips Weights-versus-Context",
+  "multi-step agent tasks retrieved experience shortens episodes tokens injects because memory-free agent",
+  "multi-step agent tasks retrieved experience shortens episodes tokens injects because",
+  "Memory Pays Tokens Total-Episode Cost Accounting Flips Weights-versus-Context Qwen3-8B"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.598,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2607.21503",
+   "date": "2026-07-23",
+   "venue": "",
+   "sim": 0.565,
+   "channels": [
+    "hf"
+   ],
+   "title": "Agentic Context Management: Solving Agent Memory and Cost by Treating Them as Lifecycle and Architecture Problems"
+  },
+  {
+   "id": "arxiv:2602.16313",
+   "date": "2026-02-18",
+   "venue": "",
+   "sim": 0.537,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks"
+  },
+  {
+   "id": "arxiv:2601.11969",
+   "date": "2026-01-17",
+   "venue": "",
+   "sim": 0.522,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemoryRewardBench: Benchmarking Reward Models for Long-Term Memory Management in Large Language Models"
+  },
+  {
+   "id": "arxiv:2606.03329",
+   "date": "2026-06-02",
+   "venue": "",
+   "sim": 0.507,
+   "channels": [
+    "hf"
+   ],
+   "title": "InfoMem: Training Long-Context Memory Agents with Answer-Conditioned Information Gain"
+  },
+  {
+   "id": "arxiv:2105.14039",
+   "date": "2021-05-28",
+   "venue": "",
+   "sim": 0.479,
+   "channels": [
+    "hf"
+   ],
+   "title": "Towards mental time travel: a hierarchical memory for reinforcement\n  learning agents"
+  },
+  {
+   "id": "arxiv:2608.04003",
+   "date": "2026-08-04",
+   "venue": "",
+   "sim": 0.45,
+   "channels": [
+    "hf"
+   ],
+   "title": "PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents"
+  },
+  {
+   "id": "arxiv:2605.29341",
+   "date": "2026-05-28",
+   "venue": "",
+   "sim": 0.435,
+   "channels": [
+    "hf"
+   ],
+   "title": "WorldMemArena: Evaluating Multimodal Agent Memory Through Action-World Interaction"
+  },
+  {
+   "id": "arxiv:2603.23971",
+   "date": "2026-03-25",
+   "venue": "",
+   "sim": 0.434,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Price Reversal Phenomenon: When Cheaper Reasoning Models End Up Costing More"
+  },
+  {
+   "id": "arxiv:2608.18852",
+   "date": "2026-08-19",
+   "venue": "",
+   "sim": 0.43,
+   "channels": [
+    "hf"
+   ],
+   "title": "SkillGate: Training In-Policy Skill Selection in Long-Horizon Agents"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Memory Pays Tokens Total-Episode Cost Accounting Flips Weights-versus-Context 2025 arXiv"
+  },
+  {
+   "query": "multi-step agent tasks retrieved experience shortens episodes tokens injects because memory-free agent 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "name": "memory_carried_traits_need_tokens",
+ "keys": {
+  "mechanism": [
+   "Subliminal Transfer Needs Parameter Inherit Memory-Carried Agent Traits",
+   "behavioural trait planted retrieved memory self-teacher teacher weights identical student transfers memory-free",
+   "trait planted teacher parameters trait-LoRA teacher rate-matched transfers through clean tokens under"
+  ],
+  "estimand": [
+   "behavioural trait planted retrieved memory self-teacher teacher weights identical student"
+  ],
+  "controls": [
+   "MC-0 and",
+   "PC-0 neutral teachers",
+   "P-CD0 analogue for"
+  ],
+  "environment": [],
+  "methods": [
+   "Distillation"
+  ]
+ },
+ "queries": [
+  "Subliminal Transfer Needs Parameter Inherit Memory-Carried Agent Traits",
+  "behavioural trait planted retrieved memory self-teacher teacher weights identical student transfers memory-free",
+  "behavioural trait planted retrieved memory self-teacher teacher weights identical student",
+  "Distillation Subliminal Transfer Needs Parameter Inherit Memory-Carried A"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2604.14004",
+   "date": "2026-04-15",
+   "venue": "",
+   "sim": 0.692,
+   "channels": [
+    "hf"
+   ],
+   "title": "Memory Transfer Learning: How Memories are Transferred Across Domains in Coding Agents"
+  },
+  {
+   "id": "arxiv:2601.07470",
+   "date": "2026-01-12",
+   "venue": "",
+   "sim": 0.622,
+   "channels": [
+    "hf"
+   ],
+   "title": "Learning How to Remember: A Meta-Cognitive Management Method for Structured and Transferable Agent Memory"
+  },
+  {
+   "id": "arxiv:2606.22019",
+   "date": "2026-06-20",
+   "venue": "",
+   "sim": 0.617,
+   "channels": [
+    "hf"
+   ],
+   "title": "Channel Location Constrains the Auditability of Subliminal Learning"
+  },
+  {
+   "id": "arxiv:2608.07169",
+   "date": "2026-08-07",
+   "venue": "",
+   "sim": 0.582,
+   "channels": [
+    "hf"
+   ],
+   "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory"
+  },
+  {
+   "id": "arxiv:2604.25783",
+   "date": "2026-04-28",
+   "venue": "",
+   "sim": 0.57,
+   "channels": [
+    "hf"
+   ],
+   "title": "Subliminal Steering: Stronger Encoding of Hidden Signals"
+  },
+  {
+   "id": "arxiv:2606.00995",
+   "date": "2026-06-03",
+   "venue": "",
+   "sim": 0.549,
+   "channels": [
+    "hf"
+   ],
+   "title": "Subliminal Learning Is Steering Vector Distillation"
+  },
+  {
+   "id": "arxiv:2507.14805",
+   "date": "2025-07-20",
+   "venue": "",
+   "sim": 0.549,
+   "channels": [
+    "hf"
+   ],
+   "title": "Subliminal Learning: Language models transmit behavioral traits via\n  hidden signals in data"
+  },
+  {
+   "id": "arxiv:2606.29502",
+   "date": "2026-07-17",
+   "venue": "",
+   "sim": 0.53,
+   "channels": [
+    "hf"
+   ],
+   "title": "UCOB: Learning to Utilize and Evolve Agentic Skills via Credit-Aware On-Policy Bidirectional Self-Distillation"
+  },
+  {
+   "id": "arxiv:2608.00017",
+   "date": "2026-06-29",
+   "venue": "",
+   "sim": 0.516,
+   "channels": [
+    "hf"
+   ],
+   "title": "Memory Reward Inflation in Self-Improving LLM Agents"
+  },
+  {
+   "id": "arxiv:2511.05903",
+   "date": "2025-11-08",
+   "venue": "",
+   "sim": 0.462,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Imperfect Learner: Incorporating Developmental Trajectories in Memory-based Student Simulation"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Subliminal Transfer Needs Parameter Inherit Memory-Carried Agent Traits 2025 arXiv"
+  },
+  {
+   "query": "behavioural trait planted retrieved memory self-teacher teacher weights identical student transfers memory-free 2025 arXiv"
+  }
+ ]
+}

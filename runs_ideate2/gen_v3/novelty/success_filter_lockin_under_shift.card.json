@@ -1,0 +1,135 @@
+{
+ "name": "success_filter_lockin_under_shift",
+ "keys": {
+  "mechanism": [
+   "Locked Successes Success-Filtered Self-Collected Experience after Hidden Rule",
+   "agent stores successes hidden rule change couples read write sides memory stale",
+   "claim loop produces practical lock-in unbounded retrieval bank recovery within post-shift episodes"
+  ],
+  "estimand": [
+   "agent stores successes hidden rule change couples read write sides"
+  ],
+  "controls": [
+   "Explorer",
+   "FIFO bank",
+   "Failure-decayed bank tests"
+  ],
+  "environment": [],
+  "methods": []
+ },
+ "queries": [
+  "Locked Successes Success-Filtered Self-Collected Experience after Hidden Rule",
+  "agent stores successes hidden rule change couples read write sides memory stale",
+  "agent stores successes hidden rule change couples read write sides"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.04003",
+   "date": "2026-08-04",
+   "venue": "",
+   "sim": 0.649,
+   "channels": [
+    "hf"
+   ],
+   "title": "PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents"
+  },
+  {
+   "id": "arxiv:2607.10526",
+   "date": "2026-07-14",
+   "venue": "",
+   "sim": 0.632,
+   "channels": [
+    "hf"
+   ],
+   "title": "Agents Don't Just Agree, They Remember: Benchmarking Persistent Sycophancy in Stateful Personal Agents"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.585,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2607.13396",
+   "date": "2026-07-15",
+   "venue": "",
+   "sim": 0.574,
+   "channels": [
+    "hf"
+   ],
+   "title": "Set-shifting Behavioral Test for Harnessed Agents"
+  },
+  {
+   "id": "arxiv:2606.06448",
+   "date": "2026-06-04",
+   "venue": "",
+   "sim": 0.563,
+   "channels": [
+    "hf"
+   ],
+   "title": "Agent Memory: Characterization and System Implications of Stateful Long-Horizon Workloads"
+  },
+  {
+   "id": "arxiv:2606.17591",
+   "date": "2026-06-16",
+   "venue": "",
+   "sim": 0.547,
+   "channels": [
+    "hf"
+   ],
+   "title": "Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2608.18852",
+   "date": "2026-08-19",
+   "venue": "",
+   "sim": 0.536,
+   "channels": [
+    "hf"
+   ],
+   "title": "SkillGate: Training In-Policy Skill Selection in Long-Horizon Agents"
+  },
+  {
+   "id": "arxiv:2605.26252",
+   "date": "2026-05-25",
+   "venue": "",
+   "sim": 0.525,
+   "channels": [
+    "hf"
+   ],
+   "title": "Is Agent Memory a Database? Rethinking Data Foundations for Long-Term AI Agent Memory"
+  },
+  {
+   "id": "arxiv:2608.26730",
+   "date": "2026-08-27",
+   "venue": "",
+   "sim": 0.508,
+   "channels": [
+    "hf"
+   ],
+   "title": "Knowing When Not to Reuse: Conditional Experience Transfer in Autonomous LLM Post-Training"
+  },
+  {
+   "id": "arxiv:2412.17256",
+   "date": "2024-12-23",
+   "venue": "",
+   "sim": 0.489,
+   "channels": [
+    "hf"
+   ],
+   "title": "B-STaR: Monitoring and Balancing Exploration and Exploitation in\n  Self-Taught Reasoners"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Locked Successes Success-Filtered Self-Collected Experience after Hidden Rule 2025 arXiv"
+  },
+  {
+   "query": "agent stores successes hidden rule change couples read write sides memory stale 2025 arXiv"
+  }
+ ]
+}
