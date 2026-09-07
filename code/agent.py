@@ -50,9 +50,9 @@ class Agent:
         self._i = os.getpid() % max(1, len(base_urls)); self._lock = threading.Lock()   # stagger replicas across worker processes
 
     def _client(self):
-        with self._lock:
-            c = self.clients[self._i % len(self.clients)]; self._i += 1
-        return c
+        # one replica per worker process (pid-hashed): balances load without lock-step, and keeps each episode's
+        # growing prefix on one server so vLLM prefix caching hits
+        return self.clients[os.getpid() % len(self.clients)]
 
     def call(self, messages: list[dict], seed: int) -> tuple[str, int, int]:
         r = self._client().chat.completions.create(model=self.model, messages=messages, temperature=self.temperature,
