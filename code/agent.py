@@ -109,4 +109,5 @@ class Agent:
             try: env.close()
             except Exception: pass
         log["won"] = won; log["wall_s"] = round(time.time() - t0, 1)
+        log["init_obs"] = obs; log["history"] = [{"action": a_, "obs": o_} for a_, o_ in history]   # for own-rollout banks
         return log
