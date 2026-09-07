@@ -137,11 +137,11 @@ class S2Client:
             return orig(address, *a, **kw)
         _conn.create_connection = patched
         try:
-            for attempt in range(4):
+            for attempt in range(6):
                 self._last = time.time()
                 r = s.get(url, params=params, headers=headers, timeout=timeout)
                 if r.status_code == 429:
-                    time.sleep(2.0 * (attempt + 1)); self._throttle_across_processes(); continue
+                    time.sleep(1.5 * (attempt + 1)); self._throttle_across_processes(); continue
                 if r.status_code == 200:
                     return r.json()
                 if r.status_code == 404:
