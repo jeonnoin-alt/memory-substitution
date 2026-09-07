@@ -128,4 +128,23 @@ def parse_json(s: str) -> Any:
             return json.loads(c)
         except Exception:
             pass
+    # Truncated tail (subagent transcripts have been observed to drop the final closing brace):
+    # find the last top-level opener, replay the bracket stack and append the missing closers.
+    starts = [i for i, ch in enumerate(s) if ch in "{["]
+    if starts:
+        i = starts[0]; stack = []; instr = esc = False
+        for c in s[i:]:
+            if instr:
+                if esc: esc = False
+                elif c == "\\": esc = True
+                elif c == '"': instr = False
+                continue
+            if c == '"': instr = True
+            elif c in "{[": stack.append("}" if c == "{" else "]")
+            elif c in "}]" and stack: stack.pop()
+        if stack:
+            try:
+                return json.loads(s[i:] + "".join(reversed(stack)))
+            except Exception:
+                pass
     raise ValueError("no JSON found")

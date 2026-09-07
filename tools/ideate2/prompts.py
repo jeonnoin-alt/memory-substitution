@@ -3,7 +3,7 @@
 review scores stay comparable with the v2–v6 rounds."""
 import os, sys
 sys.path.insert(0, "/home/work/neuro/AI-Scientist-v2")
-os.environ.setdefault("ANTHROPIC_API_KEY", "sk-ant-dummy-for-construction")
+os.environ.setdefault("ANTHROPIC_API_KEY", "dummy-key-for-import-only")
 try:
     import ideate as _ideate  # noqa: E402
     REVIEW_SYSTEM = _ideate.REVIEW_SYSTEM

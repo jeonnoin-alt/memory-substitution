@@ -1,0 +1,118 @@
+[
+ {
+  "axis": "coupling with prompt optimization",
+  "gaps": [
+   {
+    "gap": "It is unresolved whether prompt optimizers actually gain anything from being coupled to an external episodic memory or experience store, because the methods that optimize prompts do so without any memory bank and the one paper that does couple memory with optimization studies interaction only inside its own closed loop.",
+    "card_ids": [
+     "arxiv:2509.18158",
+     "arxiv:2509.11361",
+     "arxiv:2605.28360",
+     "arxiv:2606.01967",
+     "arxiv:2607.11944"
+    ],
+    "evidence_needed": "A controlled comparison running the same prompt optimizer with and without an attached episodic memory/experience store on the same tasks, models, and budget, reporting the isolated contribution of the memory component."
+   },
+   {
+    "gap": "How the memory retrieval mechanism inside a coupled optimizer affects the optimization outcome is untested, since the only system that reports cross-task interference attributes it to lexical Jaccard retrieval and merely recommends dense retrieval without evaluating it, while pipeline-level and codebook-level alternatives change the retrieval/selection unit without isolating this factor.",
+    "card_ids": [
+     "arxiv:2607.11944",
+     "arxiv:2606.00619",
+     "arxiv:2605.28360"
+    ],
+    "evidence_needed": "An ablation holding the optimizer fixed and swapping only the retrieval mechanism (Jaccard word-overlap vs. dense sentence-embedding retrieval vs. task-type-filtered retrieval), measuring cross-task interference and final accuracy per condition."
+   },
+   {
+    "gap": "Whether the reported gains and the variance amplification of coupled multi-component optimizers survive across model families and scales is unresolved, as each method validates on a narrow and non-overlapping model set and explicitly defers broader validation.",
+    "card_ids": [
+     "arxiv:2607.11944",
+     "arxiv:2605.28360",
+     "arxiv:2606.00619"
+    ],
+    "evidence_needed": "Multi-model replication of the same optimizers across families and scales (e.g., GPT-4o, Mistral-7B, and models beyond 8B) with multiple seeds, reporting both mean gain and variance per model."
+   },
+   {
+    "gap": "It is unresolved whether optimization is worth running at all relative to a well-designed fixed scaffold, and whether coupled optimizers add anything when started from an already-strong initialization, since the one paper that measures this finds fixed prompts winning in low-data regimes and leaves strong-scaffold initialization open while other methods report gains only against zero-shot or weak baselines.",
+    "card_ids": [
+     "arxiv:2607.11944",
+     "arxiv:2605.28360",
+     "arxiv:2509.18158"
+    ],
+    "evidence_needed": "A sweep over training-set size and initialization quality (zero-init vs. CoT-zero/CoT-math or other strong fixed scaffolds) showing the crossover point at which optimized prompts beat the best fixed scaffold."
+   },
+   {
+    "gap": "The optimization signals used for coupled prompt refinement are of unverified validity, because scoring depends on automatic metrics without human judgment in one case and on self-generated retry traces whose dependence on the generating model is untested in another, while several methods report no benchmark, model, or numeric detail at all.",
+    "card_ids": [
+     "arxiv:2509.18158",
+     "arxiv:2604.17937",
+     "arxiv:2509.11361",
+     "arxiv:2606.01967"
+    ],
+    "evidence_needed": "Human evaluation of optimized outputs on open-ended tasks alongside the automatic metrics, plus generation of the contrastive retry traces with multiple different models to test whether the extracted rules transfer or are generator-specific, reported with named benchmarks and headline numbers."
+   }
+  ]
+ },
+ {
+  "axis": "memory structure and write policy",
+  "gaps": [
+   {
+    "gap": "No study isolates how much of a memory system's gain comes from the write/consolidation policy (what is extracted, structured, and pruned) versus the retrieval mechanism that surfaces it, so reported improvements cannot be attributed to memory structure itself.",
+    "card_ids": [
+     "arxiv:2602.02474",
+     "s2:586aeda2a926a91a83568355f27dd5cb33372453",
+     "arxiv:2608.16114",
+     "s2:10eda7b0f9ee189889663da64d5660eb34a4cab7",
+     "arxiv:2512.18746"
+    ],
+    "evidence_needed": "A factorial ablation holding one factor fixed while varying the other — same write/consolidation policy across two or more retrieval mechanisms and the same retriever across two or more write policies, on shared benchmarks and backbones with per-cell deltas."
+   },
+   {
+    "gap": "It is unresolved whether distilling episodic traces into abstracted units (skills, four-field records, workflow/subtask hierarchies, Abilities) actually beats reusing raw trajectories, since cards report directly conflicting outcomes and none tests which contextual cues abstraction discards.",
+    "card_ids": [
+     "arxiv:2605.24117",
+     "s2:a1f92275e52aa45a10727068a76b337dc08f6087",
+     "arxiv:2608.07169",
+     "arxiv:2607.05202"
+    ],
+    "evidence_needed": "A controlled comparison of raw-trajectory reuse against multiple abstraction levels under a matched token budget, across task families that differ in context shift and composition demands, with error analysis attributing failures to information lost in distillation."
+   },
+   {
+    "gap": "The claim that memory management should become learnable or decision-theoretic rather than hand-designed heuristic remains empirically ungrounded, and the compute/latency overhead such adaptive write policies impose is not measured against the fixed heuristics they aim to replace.",
+    "card_ids": [
+     "arxiv:2512.21567",
+     "arxiv:2602.06052",
+     "arxiv:2512.18746",
+     "arxiv:2608.16114",
+     "arxiv:2602.02474",
+     "arxiv:2603.07379"
+    ],
+    "evidence_needed": "Head-to-head runs of learned/evolved memory-management policies against strong heuristic baselines on the same benchmarks, reporting both task accuracy and the full cost of construction, maintenance, and periodic refinement (LLM calls, tokens, wall-clock) at matched budgets."
+   },
+   {
+    "gap": "Whether memory write policy and prompt/instruction optimization interact — reinforcing, substituting for, or destabilizing each other — is untested, even though one card reports that stochastic optimization signals inside a closed reflective loop couple in ways not predictable from components in isolation.",
+    "card_ids": [
+     "arxiv:2607.11944",
+     "arxiv:2602.02474",
+     "arxiv:2605.28360",
+     "s2:a1f92275e52aa45a10727068a76b337dc08f6087",
+     "arxiv:2608.16114",
+     "arxiv:2606.17628"
+    ],
+    "evidence_needed": "A crossed design running memory evolution with and without prompt optimization (and from weak versus already-strong fixed scaffolds) over multiple seeds, reporting the interaction term in both mean performance and variance rather than each component's solo gain."
+   },
+   {
+    "gap": "Reported write-policy gains are not shown to survive changes of backbone, model scale, or memory substrate, and are often stated without variance or significance, so it is unclear whether any structure choice generalizes or merely fits one operating regime.",
+    "card_ids": [
+     "arxiv:2608.15008",
+     "arxiv:2607.11944",
+     "s2:586aeda2a926a91a83568355f27dd5cb33372453",
+     "arxiv:2607.01480",
+     "s2:6094a768eb65600c71177ce0e49056ce6c1d0f07",
+     "arxiv:2607.05202",
+     "arxiv:2606.17628"
+    ],
+    "evidence_needed": "Multi-backbone, multi-scale replications of the same write policy under one unified harness with multiple seeds and reported variance/significance, including parametric versus retrieval-based substrates and long-horizon regimes where substrate effectiveness is said to invert."
+   }
+  ]
+ }
+]
