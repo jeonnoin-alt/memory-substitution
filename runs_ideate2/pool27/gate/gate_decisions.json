@@ -1,0 +1,1351 @@
+{
+ "thresholds": {
+  "idea": 0.649,
+  "prior": 0.536,
+  "pair_mean": 0.493,
+  "pair_sd": 0.104
+ },
+ "clusters": [
+  [
+   "action_prior_imprinting",
+   "breadth_routed_memory",
+   "commit_then_consult_slot_discipline",
+   "compile_dont_retrieve",
+   "counterfactual_memory_screening_under_selection_noise",
+   "instruction_conditioned_complementarity",
+   "memory_budget_confound",
+   "memory_induced_shortcutting",
+   "memory_or_instruction",
+   "memory_volume_amplifies_optimizer_curse",
+   "optimizer_substitutes_for_memory_scaffold",
+   "provenance_gap_selection_not_authorship",
+   "substitutes_not_complements"
+  ],
+  [
+   "coadaptation_transplant_ccr",
+   "memory_dropout_coadaptation"
+  ]
+ ],
+ "prior_flags": [
+  {
+   "idea": "action_prior_imprinting",
+   "sim": 0.571,
+   "source": "brief",
+   "text": "2. The injection budget as a first-class object. If volume is the causal lever, the budget is a decision variable, not a hyperparameter. Can an agent decide *how much* retrieved experience to admit per step, and does a learned or calibrated budget dominate a fixed one?"
+  },
+  {
+   "idea": "allocation_prior_transfer",
+   "sim": 0.544,
+   "source": "brief",
+   "text": "5. Measurement standards for agent claims. Much of the 2026 literature reports single-run deltas smaller than the noise floor measured here. A contribution could be a protocol — paired designs, null replicates, minimum detectable effect — plus a re-examination of published claims under it. This is a methods contribution and must be judged as one: it needs to overturn or qualify specific existing results to be interesting."
+  },
+  {
+   "idea": "coadaptation_transplant_ccr",
+   "sim": 0.552,
+   "source": "brief",
+   "text": "Memory can be one-sidedly harmful. In a controlled paired evaluation, injecting a full retrieved memory bank fixed zero items and broke six to seven (McNemar p=0.031 and p=0.016, replicated across independent runs). Noise scatters in both directions; this did not. The harm is a real phenomenon, not variance."
+  },
+  {
+   "idea": "collection_policy_coupling_collapse",
+   "sim": 0.537,
+   "source": "brief",
+   "text": "4. Co-adaptation and drift. When the optimizer evolves instructions against a memory that is itself being rewritten, does the pair overfit to each other? What happens under distribution shift, and does a frozen-memory ablation expose it?"
+  },
+  {
+   "idea": "commit_then_consult_slot_discipline",
+   "sim": 0.575,
+   "source": "brief",
+   "text": "Injection volume, not memory content, was the causal lever. Cutting injection from seven retrieved items to three eliminated the harm from the *same* bank. Restricting injection to a single reasoning stage did not help, so the mechanism is not \"the wrong stage sees it\"."
+  },
+  {
+   "idea": "counterfactual_memory_screening_under_selection_noise",
+   "sim": 0.571,
+   "source": "brief",
+   "text": "5. Measurement standards for agent claims. Much of the 2026 literature reports single-run deltas smaller than the noise floor measured here. A contribution could be a protocol — paired designs, null replicates, minimum detectable effect — plus a re-examination of published claims under it. This is a methods contribution and must be judged as one: it needs to overturn or qualify specific existing results to be interesting."
+  },
+  {
+   "idea": "coverage_currency_coupling",
+   "sim": 0.556,
+   "source": "brief",
+   "text": "Memory can be one-sidedly harmful. In a controlled paired evaluation, injecting a full retrieved memory bank fixed zero items and broke six to seven (McNemar p=0.031 and p=0.016, replicated across independent runs). Noise scatters in both directions; this did not. The harm is a real phenomenon, not variance."
+  },
+  {
+   "idea": "coverage_selection_division_of_labour",
+   "sim": 0.594,
+   "source": "brief",
+   "text": "Memory can be one-sidedly harmful. In a controlled paired evaluation, injecting a full retrieved memory bank fixed zero items and broke six to seven (McNemar p=0.031 and p=0.016, replicated across independent runs). Noise scatters in both directions; this did not. The harm is a real phenomenon, not variance."
+  },
+  {
+   "idea": "decorative_retriever",
+   "sim": 0.536,
+   "source": "brief",
+   "text": "2. The injection budget as a first-class object. If volume is the causal lever, the budget is a decision variable, not a hyperparameter. Can an agent decide *how much* retrieved experience to admit per step, and does a learned or calibrated budget dominate a fixed one?"
+  },
+  {
+   "idea": "instruction_conditioned_complementarity",
+   "sim": 0.594,
+   "source": "brief",
+   "text": "3. Predicting and preventing negative transfer. Given a memory item and a query, can harm be predicted before injection? Retrieval scores are not obviously the right signal, since the harmful bank retrieved items that were topically correct."
+  },
+  {
+   "idea": "memory_budget_confound",
+   "sim": 0.623,
+   "source": "brief",
+   "text": "Memory can be one-sidedly harmful. In a controlled paired evaluation, injecting a full retrieved memory bank fixed zero items and broke six to seven (McNemar p=0.031 and p=0.016, replicated across independent runs). Noise scatters in both directions; this did not. The harm is a real phenomenon, not variance."
+  },
+  {
+   "idea": "memory_dropout_coadaptation",
+   "sim": 0.594,
+   "source": "brief",
+   "text": "4. Co-adaptation and drift. When the optimizer evolves instructions against a memory that is itself being rewritten, does the pair overfit to each other? What happens under distribution shift, and does a frozen-memory ablation expose it?"
+  },
+  {
+   "idea": "memory_induced_shortcutting",
+   "sim": 0.568,
+   "source": "brief",
+   "text": "Memory can be one-sidedly harmful. In a controlled paired evaluation, injecting a full retrieved memory bank fixed zero items and broke six to seven (McNemar p=0.031 and p=0.016, replicated across independent runs). Noise scatters in both directions; this did not. The harm is a real phenomenon, not variance."
+  },
+  {
+   "idea": "memory_volume_amplifies_optimizer_curse",
+   "sim": 0.601,
+   "source": "brief",
+   "text": "3. Predicting and preventing negative transfer. Given a memory item and a query, can harm be predicted before injection? Retrieval scores are not obviously the right signal, since the harmful bank retrieved items that were topically correct."
+  }
+ ],
+ "pairs": [
+  {
+   "a": "action_prior_imprinting",
+   "b": "breadth_routed_memory",
+   "sim": 0.653,
+   "kind": "idea-idea",
+   "pair_id": "action_prior_imprinting__breadth_routed_memory",
+   "label": "distinct",
+   "reason": "A's mechanism is query-independent action-histogram imprinting causing behavioral harm in sequential agents, while B's mechanism concerns optimal placement of items between an always-on instruction and a retrieval bank based on deployment coverage breadth — entirely different phenomena, causal variables, and interventions."
+  },
+  {
+   "a": "action_prior_imprinting",
+   "b": "commit_then_consult_slot_discipline",
+   "sim": 0.655,
+   "kind": "idea-idea",
+   "pair_id": "action_prior_imprinting__commit_then_consult_slot_disci",
+   "label": "distinct",
+   "reason": "Both explain the same pilot data (zero fixed, six-to-seven broken) but via different mechanisms — A says the agent copies the injected block's action histogram onto its policy regardless of relevance (fixed by per-retrieval marginal calibration), while B says harm is a commitment-order/slot violation (fixed by reordering or slot-routing) — distinct diagnostics, fixes, and predictions."
+  },
+  {
+   "a": "action_prior_imprinting",
+   "b": "compile_dont_retrieve",
+   "sim": 0.642,
+   "kind": "idea-idea",
+   "pair_id": "action_prior_imprinting__compile_dont_retrieve",
+   "label": "distinct",
+   "reason": "A's imprinting account requires per-retrieval, query-specific recalibration because the harmful signal (the injected block's action histogram) changes with what is retrieved each query, implying query-conditioning is causally essential, whereas B claims query-conditioned retrieval is inert and a fixed prepended set works just as well — directly contradictory claims about the role of per-query retrieval."
+  },
+  {
+   "a": "action_prior_imprinting",
+   "b": "counterfactual_memory_screening_under_selection_noise",
+   "sim": 0.57,
+   "kind": "idea-idea",
+   "pair_id": "action_prior_imprinting__counterfactual_memory_screenin",
+   "label": "distinct",
+   "reason": "A's mechanism is action-histogram imprinting removed by per-retrieval calibration, while B's mechanism is selection-on-noise in utility-based write-time screening of memory items; they target unrelated failure modes with unrelated fixes."
+  },
+  {
+   "a": "action_prior_imprinting",
+   "b": "instruction_conditioned_complementarity",
+   "sim": 0.565,
+   "kind": "idea-idea",
+   "pair_id": "action_prior_imprinting__instruction_conditioned_comple",
+   "label": "distinct",
+   "reason": "A attributes harm to an implicit, state-independent action-histogram prior copied from retrieved trajectories (fixed via per-retrieval MAC calibration), while B attributes fix/break/cost to explicit redundant/novel/conflicting content relative to the instruction (fixed via NLI unit labeling) — different causal variables and different remedies."
+  },
+  {
+   "a": "action_prior_imprinting",
+   "b": "memory_budget_confound",
+   "sim": 0.632,
+   "kind": "idea-idea",
+   "pair_id": "action_prior_imprinting__memory_budget_confound",
+   "label": "distinct",
+   "reason": "A attributes harm to a content-specific action-histogram imprinted on the agent's action prior, holding topical relevance and token count fixed to isolate this content effect, while B attributes the same harm to token volume/load independent of content and predicts irrelevant length-matched decoys reproduce most of the harm — competing, mutually exclusive explanations."
+  },
+  {
+   "a": "action_prior_imprinting",
+   "b": "memory_induced_shortcutting",
+   "sim": 0.579,
+   "kind": "idea-idea",
+   "pair_id": "action_prior_imprinting__memory_induced_shortcutting",
+   "label": "distinct",
+   "reason": "A's mechanism is a query-independent action-histogram prior imprinted onto the policy and removed by per-retrieval calibration, whereas B's mechanism is premature termination of evidence gathering caused by outcome content and removed by an evidence floor; distinct causal accounts and distinct interventions."
+  },
+  {
+   "a": "action_prior_imprinting",
+   "b": "memory_or_instruction",
+   "sim": 0.718,
+   "kind": "idea-idea",
+   "pair_id": "action_prior_imprinting__memory_or_instruction",
+   "label": "distinct",
+   "reason": "A proposes a query-independent action-histogram-copying bias fixed by per-retrieval calibration, whereas B proposes that memory's benefit is substitutable by an optimized instruction; the mechanisms and proposed fixes share no common cause."
+  },
+  {
+   "a": "action_prior_imprinting",
+   "b": "memory_volume_amplifies_optimizer_curse",
+   "sim": 0.709,
+   "kind": "idea-idea",
+   "pair_id": "action_prior_imprinting__memory_volume_amplifies_optimi",
+   "label": "distinct",
+   "reason": "A is about a behavioral action-prior bias from retrieved trajectories, while B is about injection volume inflating validation-score variance and thus optimizer selection bias; no shared mechanism."
+  },
+  {
+   "a": "action_prior_imprinting",
+   "b": "optimizer_substitutes_for_memory_scaffold",
+   "sim": 0.588,
+   "kind": "idea-idea",
+   "pair_id": "action_prior_imprinting__optimizer_substitutes_for_memo",
+   "label": "distinct",
+   "reason": "A attributes breakage to a query-independent action-histogram prior (majority-action bias) fixed by per-retrieval calibration, while B attributes it to a scaffold-versus-content split fixed by instructions — different mechanisms."
+  },
+  {
+   "a": "action_prior_imprinting",
+   "b": "provenance_gap_selection_not_authorship",
+   "sim": 0.616,
+   "kind": "idea-idea",
+   "pair_id": "action_prior_imprinting__provenance_gap_selection_not_a",
+   "label": "distinct",
+   "reason": "A attributes harm to a query-independent action-histogram prior copied from retrieved trajectories, requiring per-retrieval marginal calibration (MAC) to fix, while B attributes harm to the signed writer-to-reader capability gap, cured by reader-in-the-loop selection — distinct mechanisms tested with entirely different manipulations (action-mix injection vs. writer/reader transplant)."
+  },
+  {
+   "a": "action_prior_imprinting",
+   "b": "substitutes_not_complements",
+   "sim": 0.562,
+   "kind": "idea-idea",
+   "pair_id": "action_prior_imprinting__substitutes_not_complements",
+   "label": "distinct",
+   "reason": "A's mechanism is implicit, state-independent copying of an action-histogram prior, while B's mechanism is explicit informational substitution between instruction procedural clauses and memory items that shrinks the optimal injection budget — different constructs, different manipulations, different remedies."
+  },
+  {
+   "a": "breadth_routed_memory",
+   "b": "commit_then_consult_slot_discipline",
+   "sim": 0.534,
+   "kind": "idea-idea",
+   "pair_id": "breadth_routed_memory__commit_then_consult_slot_disci",
+   "label": "distinct",
+   "reason": "A's mechanism is coverage-breadth-based instruction/bank placement, while B's mechanism is commitment-order anchoring and slot violation — unrelated causal accounts, predictions, and interventions."
+  },
+  {
+   "a": "breadth_routed_memory",
+   "b": "compile_dont_retrieve",
+   "sim": 0.645,
+   "kind": "idea-idea",
+   "pair_id": "breadth_routed_memory__compile_dont_retrieve",
+   "label": "distinct",
+   "reason": "A's breadth-routing account predicts narrow items gain value specifically through per-query top-k retrieval (query-conditioning matters and drives the hybrid's gain), while B claims query-conditioned retrieval contributes nothing and a single fixed prepended set matches live top-k, so the two make contradictory predictions about whether retrieval-time conditioning has any causal effect."
+  },
+  {
+   "a": "breadth_routed_memory",
+   "b": "counterfactual_memory_screening_under_selection_noise",
+   "sim": 0.538,
+   "kind": "idea-idea",
+   "pair_id": "breadth_routed_memory__counterfactual_memory_screenin",
+   "label": "distinct",
+   "reason": "A's mechanism is coverage-breadth-driven placement of items between instruction and retrieval bank, while B's mechanism is noisy per-item utility screening (winner's curse/interference) governing admission — different decisive statistics and different claims."
+  },
+  {
+   "a": "breadth_routed_memory",
+   "b": "instruction_conditioned_complementarity",
+   "sim": 0.513,
+   "kind": "idea-idea",
+   "pair_id": "breadth_routed_memory__instruction_conditioned_comple",
+   "label": "distinct",
+   "reason": "A's placement variable is coverage breadth — the fraction of deployment queries for which an item enters top-k — determining instruction-vs-bank residency, while B's placement/value variable is semantic redundancy, novelty, or conflict of item content with the instruction, a different decision statistic and different causal claim entirely."
+  },
+  {
+   "a": "breadth_routed_memory",
+   "b": "memory_budget_confound",
+   "sim": 0.555,
+   "kind": "idea-idea",
+   "pair_id": "breadth_routed_memory__memory_budget_confound",
+   "label": "distinct",
+   "reason": "A's claim is that coverage breadth (not utility or usage) governs instruction-vs-bank placement, while B's claim is that content value saturates after ~1 item and cost/harm scale with token volume regardless of relevance — different explanatory variables (breadth-based routing vs. volume-saturation) and different fixes (breadth routing vs. tuned k=1 raw retrieval)."
+  },
+  {
+   "a": "breadth_routed_memory",
+   "b": "memory_induced_shortcutting",
+   "sim": 0.472,
+   "kind": "idea-idea",
+   "pair_id": "breadth_routed_memory__memory_induced_shortcutting",
+   "label": "distinct",
+   "reason": "A claims placement (instruction vs. retrieval bank) should be routed by an item's coverage breadth over the query distribution, a slot-competition/caching argument, whereas B claims memory harm arises from outcome-bearing items causing agents to prematurely stop gathering evidence, a control-flow mechanism unfixable by instruction optimization; the two propose unrelated causal mechanisms for different symptoms (slot crowding vs. evidence shortcutting)."
+  },
+  {
+   "a": "breadth_routed_memory",
+   "b": "memory_or_instruction",
+   "sim": 0.606,
+   "kind": "idea-idea",
+   "pair_id": "breadth_routed_memory__memory_or_instruction",
+   "label": "distinct",
+   "reason": "A's mechanism is item-level coverage breadth deciding placement between an always-on instruction and a retrieval-gated bank, predicting a breadth-routed hybrid beats both pure extremes (retrieval still needed for narrow items); B's mechanism is substitutability, predicting an optimizer-trained instruction captures most of memory's value and a compiled zero-retrieval instruction nearly matches live retrieval — B's near-total-substitution prediction is in tension with A's claim that a retrieval component remains necessary, so the two propose distinct mechanisms."
+  },
+  {
+   "a": "breadth_routed_memory",
+   "b": "memory_volume_amplifies_optimizer_curse",
+   "sim": 0.55,
+   "kind": "idea-idea",
+   "pair_id": "breadth_routed_memory__memory_volume_amplifies_optimi",
+   "label": "distinct",
+   "reason": "A's claim concerns where experience should reside based on coverage breadth of the deployment query distribution, while B's claim concerns injection volume inflating a prompt optimizer's validation-score variance and hence selection bias — unrelated mechanisms addressing different questions (placement vs. optimizer noise)."
+  },
+  {
+   "a": "breadth_routed_memory",
+   "b": "optimizer_substitutes_for_memory_scaffold",
+   "sim": 0.554,
+   "kind": "idea-idea",
+   "pair_id": "breadth_routed_memory__optimizer_substitutes_for_memo",
+   "label": "distinct",
+   "reason": "A explains placement via coverage-breadth competition for scarce injection slots, while B explains memory's benefit as a decomposable scaffold (syntax + procedural schema) that instructions can substitute for, leaving only content-driven harm — distinct mechanisms and distinct predicted interventions."
+  },
+  {
+   "a": "breadth_routed_memory",
+   "b": "provenance_gap_selection_not_authorship",
+   "sim": 0.468,
+   "kind": "idea-idea",
+   "pair_id": "breadth_routed_memory__provenance_gap_selection_not_a",
+   "label": "distinct",
+   "reason": "A's mechanism is coverage-breadth-based routing between an always-on instruction and a retrieval-gated bank to avoid slot crowding, while B's mechanism is a signed writer-reader capability gap in memory provenance, cured by reader-in-the-loop selection (not authorship) and masked by GEPA-style optimizers; these address unrelated questions (where to place items vs. who should write them and how selection interacts with provenance) with no shared causal claim."
+  },
+  {
+   "a": "breadth_routed_memory",
+   "b": "substitutes_not_complements",
+   "sim": 0.535,
+   "kind": "idea-idea",
+   "pair_id": "breadth_routed_memory__substitutes_not_complements",
+   "label": "distinct",
+   "reason": "A's mechanism is coverage-breadth crowding out narrow items from scarce top-k slots, while B's mechanism is clause-level informational substitution between an optimized instruction and memory items shrinking the optimal injection budget — distinct causal accounts despite shared setting."
+  },
+  {
+   "a": "commit_then_consult_slot_discipline",
+   "b": "compile_dont_retrieve",
+   "sim": 0.582,
+   "kind": "idea-idea",
+   "pair_id": "commit_then_consult_slot_discipline__compile_dont_retrieve",
+   "label": "distinct",
+   "reason": "A locates memory's harm in the temporal order of exposure relative to the agent's commitment (an anchoring/slot-violation account), while B locates it in whether retrieval is query-specific versus a fixed compiled set — different explanatory axes."
+  },
+  {
+   "a": "commit_then_consult_slot_discipline",
+   "b": "counterfactual_memory_screening_under_selection_noise",
+   "sim": 0.55,
+   "kind": "idea-idea",
+   "pair_id": "commit_then_consult_slot_discipline__counterfactual_memory_screenin",
+   "label": "distinct",
+   "reason": "A explains memory harm as an order/slot-violation (anchoring) effect fixed by commit-then-consult or instruction-slot routing, while B explains the same class of harm as noisy per-item utility screening producing winner's-curse and interference — different causal mechanisms and different interventions."
+  },
+  {
+   "a": "commit_then_consult_slot_discipline",
+   "b": "instruction_conditioned_complementarity",
+   "sim": 0.582,
+   "kind": "idea-idea",
+   "pair_id": "commit_then_consult_slot_discipline__instruction_conditioned_comple",
+   "label": "distinct",
+   "reason": "A attributes memory harm to presentation order (a slot violation fixed by reordering), while B attributes it to content redundancy relative to the instruction, and the two make opposite predictions about what happens when the instruction is optimized (A: harm gets larger; B: the bank goes inert), so they are incompatible, distinct mechanisms."
+  },
+  {
+   "a": "commit_then_consult_slot_discipline",
+   "b": "memory_budget_confound",
+   "sim": 0.671,
+   "kind": "idea-idea",
+   "pair_id": "commit_then_consult_slot_discipline__memory_budget_confound",
+   "label": "distinct",
+   "reason": "Both explain the same pilot (memory fixes zero, breaks six-to-seven) but with rival, mutually exclusive mechanisms — A attributes harm to commitment ordering/slot violation (fixed by reordering at constant token count) while B attributes it to token volume alone (saturating content value, linear load cost) — and A's design is explicitly built to refute the volume account B proposes."
+  },
+  {
+   "a": "commit_then_consult_slot_discipline",
+   "b": "memory_induced_shortcutting",
+   "sim": 0.651,
+   "kind": "idea-idea",
+   "pair_id": "commit_then_consult_slot_discipline__memory_induced_shortcutting",
+   "label": "distinct",
+   "reason": "A attributes memory harm to directive content anchoring the agent before it commits to a plan (fixed by reordering), while B attributes it to outcome-bearing memory items causing premature termination of evidence-gathering (fixed by a content-free evidence floor in the control flow, explicitly not by any instruction-level repair) — different causal pathways and different fixes for what they each frame as central."
+  },
+  {
+   "a": "commit_then_consult_slot_discipline",
+   "b": "memory_or_instruction",
+   "sim": 0.697,
+   "kind": "idea-idea",
+   "pair_id": "commit_then_consult_slot_discipline__memory_or_instruction",
+   "label": "distinct",
+   "reason": "A attributes memory harm to ordering/anchoring (directive content in the wrong slot before commitment), while B attributes it to content being substitutable by an optimized instruction; the mechanisms and remedies (reordering vs. instruction compilation) are unrelated."
+  },
+  {
+   "a": "commit_then_consult_slot_discipline",
+   "b": "memory_volume_amplifies_optimizer_curse",
+   "sim": 0.65,
+   "kind": "idea-idea",
+   "pair_id": "commit_then_consult_slot_discipline__memory_volume_amplifies_optimi",
+   "label": "distinct",
+   "reason": "A explains memory-induced behavioral harm via commitment-order/slot violation, while B explains inflated optimizer-reported gains via injection volume increasing validation-score variance that biases candidate selection — one is about direct task harm to the agent, the other about a statistical artifact in prompt-optimizer evaluation; unrelated mechanisms."
+  },
+  {
+   "a": "commit_then_consult_slot_discipline",
+   "b": "optimizer_substitutes_for_memory_scaffold",
+   "sim": 0.644,
+   "kind": "idea-idea",
+   "pair_id": "commit_then_consult_slot_discipline__optimizer_substitutes_for_memo",
+   "label": "distinct",
+   "reason": "A locates memory harm in presentation order/slot (directive content overriding an uncommitted plan, fixed by reordering, worsened by optimized instructions via anti-synergy), while B locates it in a scaffold-vs-content decomposition where an optimized instruction substitutes for syntax/schema and only content-borne harm survives; these are different causal mechanisms with different predicted direction of the optimizer-memory interaction."
+  },
+  {
+   "a": "commit_then_consult_slot_discipline",
+   "b": "provenance_gap_selection_not_authorship",
+   "sim": 0.619,
+   "kind": "idea-idea",
+   "pair_id": "commit_then_consult_slot_discipline__provenance_gap_selection_not_a",
+   "label": "distinct",
+   "reason": "A locates harm in retrieval ordering relative to agent commitment (a slot-violation fixed by commit-then-consult or instruction-slot routing, with an anti-synergy-with-GEPA prediction), while B locates it in the signed writer-reader capability gap and cures it via reader-in-the-loop selection tested with a writer/reader transplant matrix — different causal levers and different confirmatory designs."
+  },
+  {
+   "a": "commit_then_consult_slot_discipline",
+   "b": "substitutes_not_complements",
+   "sim": 0.623,
+   "kind": "idea-idea",
+   "pair_id": "commit_then_consult_slot_discipline__substitutes_not_complements",
+   "label": "distinct",
+   "reason": "A's order/slot mechanism predicts optimized instructions make memory-first injection more harmful (anti-synergy), fixable only by reordering, while B's substitution mechanism predicts optimized instructions reduce the useful memory-injection budget because they absorb overlapping procedural content — different mechanisms with different predicted direction of instruction-memory interaction."
+  },
+  {
+   "a": "compile_dont_retrieve",
+   "b": "counterfactual_memory_screening_under_selection_noise",
+   "sim": 0.573,
+   "kind": "idea-idea",
+   "pair_id": "compile_dont_retrieve__counterfactual_memory_screenin",
+   "label": "distinct",
+   "reason": "A's claim is that per-query retrieval conditioning is inert compared to offline compilation, while B's claim is that noisy per-item utility estimates make write-time admission screening suffer from winner's-curse selection-on-noise; different objects of study and different mechanisms."
+  },
+  {
+   "a": "compile_dont_retrieve",
+   "b": "instruction_conditioned_complementarity",
+   "sim": 0.59,
+   "kind": "idea-idea",
+   "pair_id": "compile_dont_retrieve__instruction_conditioned_comple",
+   "label": "distinct",
+   "reason": "A claims the query-conditioned retrieval act is inert regardless of instruction state (decoys match correct items even under live optimization), while B claims value is conditional on redundancy with the instruction and predicts memory helps under a non-optimized instruction — competing, not equivalent, accounts."
+  },
+  {
+   "a": "compile_dont_retrieve",
+   "b": "memory_budget_confound",
+   "sim": 0.616,
+   "kind": "idea-idea",
+   "pair_id": "compile_dont_retrieve__memory_budget_confound",
+   "label": "distinct",
+   "reason": "A claims query-conditioned retrieval is completely inert — predicting zero correct-vs-decoy accuracy gap and that a fully compiled zero-retrieval instruction matches live top-k — while B claims content value saturates after ~1 item and bounds it above zero with an oracle, with harm driven by token load independent of relevance; these make different, partly conflicting predictions about whether retrieved content carries any residual value."
+  },
+  {
+   "a": "compile_dont_retrieve",
+   "b": "memory_induced_shortcutting",
+   "sim": 0.582,
+   "kind": "idea-idea",
+   "pair_id": "compile_dont_retrieve__memory_induced_shortcutting",
+   "label": "distinct",
+   "reason": "A's claim is that per-query retrieval conditioning is inert relative to a compiled fixed instruction, while B's claim is that harm comes from premature termination of evidence-gathering triggered by outcome-bearing items, fixed by a control-flow evidence floor; these are unrelated mechanisms and remedies."
+  },
+  {
+   "a": "compile_dont_retrieve",
+   "b": "memory_or_instruction",
+   "sim": 0.675,
+   "kind": "idea-idea",
+   "pair_id": "compile_dont_retrieve__memory_or_instruction",
+   "label": "same_mechanism_new_measurement",
+   "reason": "Both predict an offline instruction compiled from the same bank matches live per-query retrieval at matched tokens, but B additionally measures a substitution ratio against an instruction optimized on raw episodes that never sees the bank (and a positive control where substitution must fail), while A extends the claim to relevance-blind decoys — each adds a control/quantity the other lacks that would change how complete a reader judges the substitution to be."
+  },
+  {
+   "a": "compile_dont_retrieve",
+   "b": "memory_volume_amplifies_optimizer_curse",
+   "sim": 0.568,
+   "kind": "idea-idea",
+   "pair_id": "compile_dont_retrieve__memory_volume_amplifies_optimi",
+   "label": "distinct",
+   "reason": "A claims query-conditioned retrieval is inert (value is a query-independent prior; a compiled instruction strictly dominates), while B claims injection volume inflates validation-score variance and thereby a prompt optimizer's selection bias — unrelated mechanisms (retrieval inertness vs. optimizer noise/selection artifact) with no shared causal claim."
+  },
+  {
+   "a": "compile_dont_retrieve",
+   "b": "optimizer_substitutes_for_memory_scaffold",
+   "sim": 0.52,
+   "kind": "idea-idea",
+   "pair_id": "compile_dont_retrieve__optimizer_substitutes_for_memo",
+   "label": "distinct",
+   "reason": "A shows query-conditioned retrieval is inert relative to a compiled fixed instruction (a claim about retrieval timing/specificity), while B decomposes memory's benefit into a generic syntax/schema \"scaffold\" versus task content and claims instructions substitute only for the scaffold, a different unit of analysis and different core manipulations."
+  },
+  {
+   "a": "compile_dont_retrieve",
+   "b": "provenance_gap_selection_not_authorship",
+   "sim": 0.585,
+   "kind": "idea-idea",
+   "pair_id": "compile_dont_retrieve__provenance_gap_selection_not_a",
+   "label": "distinct",
+   "reason": "A claims query-conditioned retrieval carries no value beyond a compiled query-independent prior, while B claims utility depends on the signed writer-reader capability gap and reader-side selection — distinct mechanisms."
+  },
+  {
+   "a": "compile_dont_retrieve",
+   "b": "substitutes_not_complements",
+   "sim": 0.533,
+   "kind": "idea-idea",
+   "pair_id": "compile_dont_retrieve__substitutes_not_complements",
+   "label": "distinct",
+   "reason": "A's mechanism is that per-query retrieval conditioning is inert because a compiled fixed instruction matches live top-k retrieval exactly, while B's mechanism is that instructions and retrieved memory are informational substitutes whose overlap shrinks the accuracy-optimal injection budget k*, so the two propose different causal variables (retrieval timing/specificity vs instruction-content overlap) and different measured quantities."
+  },
+  {
+   "a": "counterfactual_memory_screening_under_selection_noise",
+   "b": "instruction_conditioned_complementarity",
+   "sim": 0.531,
+   "kind": "idea-idea",
+   "pair_id": "counterfactual_memory_screening_under_selection_noise__instruction_conditioned_comple",
+   "label": "distinct",
+   "reason": "A attributes memory harm to noisy per-item utility estimation causing winner's-curse selection errors in the admission/write path, while B attributes it to semantic redundancy/novelty/conflict between item content and the instruction, which are unrelated causal accounts tested with unrelated designs."
+  },
+  {
+   "a": "counterfactual_memory_screening_under_selection_noise",
+   "b": "memory_budget_confound",
+   "sim": 0.546,
+   "kind": "idea-idea",
+   "pair_id": "counterfactual_memory_screening_under_selection_noise__memory_budget_confound",
+   "label": "distinct",
+   "reason": "A attributes the harm to selection-on-noise in per-item utility estimates (winner's curse/interference), whereas B attributes the identical pilot phenomenon to token-volume/injection-budget saturation independent of item identity or utility, a materially different mechanism."
+  },
+  {
+   "a": "counterfactual_memory_screening_under_selection_noise",
+   "b": "memory_induced_shortcutting",
+   "sim": 0.715,
+   "kind": "idea-idea",
+   "pair_id": "counterfactual_memory_screening_under_selection_noise__memory_induced_shortcutting",
+   "label": "distinct",
+   "reason": "A concerns which items should be admitted to a memory bank given noisy utility estimation (winner's curse/interference), while B concerns a behavioral mechanism (premature stopping) triggered by outcome content already in the bank; different phenomena and different levers."
+  },
+  {
+   "a": "counterfactual_memory_screening_under_selection_noise",
+   "b": "memory_or_instruction",
+   "sim": 0.643,
+   "kind": "idea-idea",
+   "pair_id": "counterfactual_memory_screening_under_selection_noise__memory_or_instruction",
+   "label": "distinct",
+   "reason": "A is about the correct estimand and noise-correction for admitting individual items into a retrieval bank (neighborhood-conditional utility, winner's curse, interference), while B is about whether a single optimized instruction can substitute for the entire bank (a global substitution ratio S); different objects of study and unrelated mechanisms."
+  },
+  {
+   "a": "counterfactual_memory_screening_under_selection_noise",
+   "b": "memory_volume_amplifies_optimizer_curse",
+   "sim": 0.616,
+   "kind": "idea-idea",
+   "pair_id": "counterfactual_memory_screening_under_selection_noise__memory_volume_amplifies_optimi",
+   "label": "distinct",
+   "reason": "A is about leave-one-out counterfactual utility estimation for admitting individual memory items and decomposing winner's-curse vs. interference in that screening, while B is about injection volume inflating validation-score variance that biases a prompt optimizer's candidate selection — different selection targets (memory items vs. prompt candidates) and different statistical mechanisms, despite both invoking selection-on-noise language."
+  },
+  {
+   "a": "counterfactual_memory_screening_under_selection_noise",
+   "b": "optimizer_substitutes_for_memory_scaffold",
+   "sim": 0.514,
+   "kind": "idea-idea",
+   "pair_id": "counterfactual_memory_screening_under_selection_noise__optimizer_substitutes_for_memo",
+   "label": "distinct",
+   "reason": "A concerns noisy utility estimation and winner's-curse bias in deciding which items to keep, while B concerns a scaffold-versus-content decomposition of why retrieved memory helps at all, with no shared mechanism or measured quantity."
+  },
+  {
+   "a": "counterfactual_memory_screening_under_selection_noise",
+   "b": "provenance_gap_selection_not_authorship",
+   "sim": 0.52,
+   "kind": "idea-idea",
+   "pair_id": "counterfactual_memory_screening_under_selection_noise__provenance_gap_selection_not_a",
+   "label": "distinct",
+   "reason": "A's mechanism is statistical selection-on-noise (winner's curse and non-additive interference) in utility-based item admission, while B's mechanism is a signed writer-reader capability gap producing directional transfer harm — both mention selection as a remedy but the underlying causal accounts are unrelated."
+  },
+  {
+   "a": "counterfactual_memory_screening_under_selection_noise",
+   "b": "substitutes_not_complements",
+   "sim": 0.478,
+   "kind": "idea-idea",
+   "pair_id": "counterfactual_memory_screening_under_selection_noise__substitutes_not_complements",
+   "label": "distinct",
+   "reason": "A's mechanism is that per-item utility estimates are too noisy for naive threshold admission, producing winner's-curse bias decomposed via empirical-Bayes shrinkage and interference, while B's mechanism is that optimized instructions and retrieved memory are informational substitutes whose overlap shrinks the optimal injection budget k*, a claim tested via clause-knockout rather than probe-noise decomposition; despite sharing pilot data they identify unrelated causal levers (estimation noise vs. instruction-memory redundancy)."
+  },
+  {
+   "a": "instruction_conditioned_complementarity",
+   "b": "memory_budget_confound",
+   "sim": 0.677,
+   "kind": "idea-idea",
+   "pair_id": "instruction_conditioned_complementarity__memory_budget_confound",
+   "label": "distinct",
+   "reason": "A explains memory outcomes via content-relational classification (novel/redundant/conflicting units against the instruction), while B explains the same phenomena as content-agnostic token-volume/load effects where decoys reproduce real-content harm; the two proposals make opposing predictions about whether content specifics matter."
+  },
+  {
+   "a": "instruction_conditioned_complementarity",
+   "b": "memory_induced_shortcutting",
+   "sim": 0.493,
+   "kind": "idea-idea",
+   "pair_id": "instruction_conditioned_complementarity__memory_induced_shortcutting",
+   "label": "distinct",
+   "reason": "A's mechanism is instruction-content redundancy determining a memory unit's marginal value, while B's mechanism is memory-induced premature termination of evidence-gathering via outcome leakage, repairable only at the control-flow level and explicitly not by the instruction — unrelated causal pathways for memory harm."
+  },
+  {
+   "a": "instruction_conditioned_complementarity",
+   "b": "memory_or_instruction",
+   "sim": 0.668,
+   "kind": "idea-idea",
+   "pair_id": "instruction_conditioned_complementarity__memory_or_instruction",
+   "label": "distinct",
+   "reason": "A's mechanism is unit-level semantic redundancy/novelty/conflict between a retrieved item and whatever instruction is present (retrieval is always kept, causal unit-surgery and a new retrieval rule are the contributions), whereas B's mechanism is that an instruction optimizer trained on the same raw episodes can replace retrieval entirely — different theoretical accounts and different experimental designs despite both noting instruction improvement reduces memory's marginal value."
+  },
+  {
+   "a": "instruction_conditioned_complementarity",
+   "b": "memory_volume_amplifies_optimizer_curse",
+   "sim": 0.636,
+   "kind": "idea-idea",
+   "pair_id": "instruction_conditioned_complementarity__memory_volume_amplifies_optimi",
+   "label": "distinct",
+   "reason": "A attributes memory's fix/break/token-cost structure to unit-level redundancy/novelty/conflict relative to instruction content, while B attributes reported memory+optimizer gains to injection-volume-driven variance inflation causing selection bias in the optimizer's search — unrelated mechanisms (content overlap vs. optimizer selection noise)."
+  },
+  {
+   "a": "instruction_conditioned_complementarity",
+   "b": "optimizer_substitutes_for_memory_scaffold",
+   "sim": 0.501,
+   "kind": "idea-idea",
+   "pair_id": "instruction_conditioned_complementarity__optimizer_substitutes_for_memo",
+   "label": "distinct",
+   "reason": "A locates memory's value in semantic content overlap with the instruction (redundant/novel/conflicting units), while B locates most of memory's value in generic structural scaffolding (syntax and step-schema) rather than in semantic content, making them distinct accounts of what memory actually contributes."
+  },
+  {
+   "a": "instruction_conditioned_complementarity",
+   "b": "provenance_gap_selection_not_authorship",
+   "sim": 0.53,
+   "kind": "idea-idea",
+   "pair_id": "instruction_conditioned_complementarity__provenance_gap_selection_not_a",
+   "label": "distinct",
+   "reason": "A explains item value via content-level redundancy/novelty/conflict with the instruction, while B explains it via a signed writer-reader capability gap requiring reader-in-loop selection rather than authorship, so the decisive variable and predicted phenomenon (content overlap flipping value vs directional transfer asymmetry) differ entirely."
+  },
+  {
+   "a": "instruction_conditioned_complementarity",
+   "b": "substitutes_not_complements",
+   "sim": 0.51,
+   "kind": "idea-idea",
+   "pair_id": "instruction_conditioned_complementarity__substitutes_not_complements",
+   "label": "distinct",
+   "reason": "Both probe instruction-memory content overlap, but A predicts breaks arise specifically from conflicting units while purely redundant units are harmless token cost, whereas B predicts even non-conflicting duplicative content still carries a full share of interference-driven harm and centers its measurement on a shift in the optimal injection budget k* rather than per-instance fix/break attribution, so the two make different and partly conflicting predictions about the source of harm."
+  },
+  {
+   "a": "memory_budget_confound",
+   "b": "memory_induced_shortcutting",
+   "sim": 0.621,
+   "kind": "idea-idea",
+   "pair_id": "memory_budget_confound__memory_induced_shortcutting",
+   "label": "distinct",
+   "reason": "A attributes harm and gain purely to injected token volume/load, predicting content-irrelevant length-matched decoys reproduce most of the harm regardless of relevance, while B attributes harm to a specific content channel (outcome-bearing items inducing premature evidence-gathering termination) and predicts token-matched process-only items do NOT cause harm, directly contradicting a pure-volume account."
+  },
+  {
+   "a": "memory_budget_confound",
+   "b": "memory_or_instruction",
+   "sim": 0.746,
+   "kind": "idea-idea",
+   "pair_id": "memory_budget_confound__memory_or_instruction",
+   "label": "distinct",
+   "reason": "A attributes memory's harm/gains to injected token volume/load independent of content, while B attributes memory's value to information that a prompt optimizer can equally capture from the same training episodes; these are non-overlapping causal mechanisms (budget vs. substitutability)."
+  },
+  {
+   "a": "memory_budget_confound",
+   "b": "memory_volume_amplifies_optimizer_curse",
+   "sim": 0.67,
+   "kind": "idea-idea",
+   "pair_id": "memory_budget_confound__memory_volume_amplifies_optimi",
+   "label": "distinct",
+   "reason": "A claims injection volume directly harms task accuracy via a content-saturates/load-grows decomposition, whereas B claims injection volume instead inflates evaluation variance that biases a prompt optimizer's reported validation gains (a selection-artifact story about measurement, not about direct behavioral harm) — different mechanisms and different target phenomena."
+  },
+  {
+   "a": "memory_budget_confound",
+   "b": "optimizer_substitutes_for_memory_scaffold",
+   "sim": 0.596,
+   "kind": "idea-idea",
+   "pair_id": "memory_budget_confound__optimizer_substitutes_for_memo",
+   "label": "distinct",
+   "reason": "A attributes memory's harm and gains to injected token volume/load independent of relevance, while B attributes them to memory supplying a scaffold (syntax and procedural schema) that instructions can substitute for, leaving only content harm — different causal mechanisms."
+  },
+  {
+   "a": "memory_budget_confound",
+   "b": "provenance_gap_selection_not_authorship",
+   "sim": 0.594,
+   "kind": "idea-idea",
+   "pair_id": "memory_budget_confound__provenance_gap_selection_not_a",
+   "label": "distinct",
+   "reason": "A explains memory effects via token-budget/load cost saturating after one item, while B explains them via a signed writer-reader capability gap cured by reader-in-loop selection — unrelated mechanisms."
+  },
+  {
+   "a": "memory_budget_confound",
+   "b": "substitutes_not_complements",
+   "sim": 0.606,
+   "kind": "idea-idea",
+   "pair_id": "memory_budget_confound__substitutes_not_complements",
+   "label": "distinct",
+   "reason": "A attributes harm and gain to content-independent token volume/load (decoys reproduce harm regardless of relevance, value saturates fast), while B attributes harm to content-specific redundancy between optimized-instruction clauses and memory items, demonstrated by a clause-knockout difference-in-differences showing relational, content-dependent effects — these are opposing explanations (load-based vs. content-relational) despite sharing the same pilot background."
+  },
+  {
+   "a": "memory_induced_shortcutting",
+   "b": "memory_or_instruction",
+   "sim": 0.716,
+   "kind": "idea-idea",
+   "pair_id": "memory_induced_shortcutting__memory_or_instruction",
+   "label": "distinct",
+   "reason": "A's mechanism is premature termination of evidence-gathering triggered by outcome-bearing memory items, fixable only by a control-flow evidence floor, while B's mechanism is content substitutability via instruction optimization; these are unrelated causal stories."
+  },
+  {
+   "a": "memory_induced_shortcutting",
+   "b": "memory_volume_amplifies_optimizer_curse",
+   "sim": 0.618,
+   "kind": "idea-idea",
+   "pair_id": "memory_induced_shortcutting__memory_volume_amplifies_optimi",
+   "label": "distinct",
+   "reason": "A's mechanism is premature termination of evidence-gathering (shortcutting) fixable only by a control-flow evidence floor that GEPA cannot replicate, whereas B's mechanism is injection volume inflating validation-score variance that biases a prompt optimizer's selection (optimizer's curse) — unrelated causal chains, objects of measurement, and remedies."
+  },
+  {
+   "a": "memory_induced_shortcutting",
+   "b": "optimizer_substitutes_for_memory_scaffold",
+   "sim": 0.544,
+   "kind": "idea-idea",
+   "pair_id": "memory_induced_shortcutting__optimizer_substitutes_for_memo",
+   "label": "distinct",
+   "reason": "A's mechanism is premature termination of evidence-gathering triggered by outcome-bearing memory content (a control-flow/behavioral account), while B's mechanism is memory supplying a substitutable syntax/schema scaffold that instructions can also provide (a content-decomposition account)."
+  },
+  {
+   "a": "memory_induced_shortcutting",
+   "b": "provenance_gap_selection_not_authorship",
+   "sim": 0.564,
+   "kind": "idea-idea",
+   "pair_id": "memory_induced_shortcutting__provenance_gap_selection_not_a",
+   "label": "distinct",
+   "reason": "A's mechanism is premature termination of evidence gathering (a control-flow account repairable by an evidence floor), while B's mechanism is a signed writer-reader capability gap where downward transfer is harmful and the fix is reader-in-the-loop selection — unrelated causal accounts and unrelated remedies."
+  },
+  {
+   "a": "memory_induced_shortcutting",
+   "b": "substitutes_not_complements",
+   "sim": 0.569,
+   "kind": "idea-idea",
+   "pair_id": "memory_induced_shortcutting__substitutes_not_complements",
+   "label": "distinct",
+   "reason": "A's mechanism is premature termination of evidence gathering fixed by a control-flow evidence floor, while B's mechanism is informational substitution between instruction and memory content that shrinks the optimal injection budget; distinct causal claims and distinct remedies."
+  },
+  {
+   "a": "memory_or_instruction",
+   "b": "memory_volume_amplifies_optimizer_curse",
+   "sim": 0.702,
+   "kind": "idea-idea",
+   "pair_id": "memory_or_instruction__memory_volume_amplifies_optimi",
+   "label": "distinct",
+   "reason": "A claims memory's value is substitutable by instruction optimization on the same episodes, while B claims injection volume inflates optimizer selection bias (optimizer's curse); these describe different causal pathways involving memory and optimizers."
+  },
+  {
+   "a": "memory_or_instruction",
+   "b": "optimizer_substitutes_for_memory_scaffold",
+   "sim": 0.68,
+   "kind": "idea-idea",
+   "pair_id": "memory_or_instruction__optimizer_substitutes_for_memo",
+   "label": "distinct",
+   "reason": "A's mechanism requires an instruction compiled from the same training episodes to capture memory's content value (implying content itself has residual value), while B claims memory's benefit is almost entirely a generic scaffold (format/schema) that even a non-bank-derived hand-written instruction supplies, with content mostly causing harm — these are conflicting accounts of what substitutes and why, not the same mechanism."
+  },
+  {
+   "a": "memory_or_instruction",
+   "b": "provenance_gap_selection_not_authorship",
+   "sim": 0.665,
+   "kind": "idea-idea",
+   "pair_id": "memory_or_instruction__provenance_gap_selection_not_a",
+   "label": "distinct",
+   "reason": "A explains memory's value via substitutability by an optimizer trained on the same episodes, while B explains it via a signed writer-reader capability gap (downward transfer harmful) cured by reader-in-the-loop selection rather than authorship — unrelated independent variables (training-data overlap vs. writer/reader capability) and unrelated causal stories."
+  },
+  {
+   "a": "memory_or_instruction",
+   "b": "substitutes_not_complements",
+   "sim": 0.637,
+   "kind": "idea-idea",
+   "pair_id": "memory_or_instruction__substitutes_not_complements",
+   "label": "same_mechanism_new_measurement",
+   "reason": "Both propose that optimized instructions and retrieved memory are substitutable carriers of the same overlapping procedural information so instruction-side improvement collapses memory's marginal value, but B adds a clause-level causal knockout (deleting the specific duplicated clause vs. a length-matched unrelated clause) and a k*-regime measurement that A never runs, which is exactly the control needed to distinguish true content-substitution from a generic instruction-quality/ceiling effect that A's global substitution-ratio design cannot rule out."
+  },
+  {
+   "a": "memory_volume_amplifies_optimizer_curse",
+   "b": "optimizer_substitutes_for_memory_scaffold",
+   "sim": 0.588,
+   "kind": "idea-idea",
+   "pair_id": "memory_volume_amplifies_optimizer_curse__optimizer_substitutes_for_memo",
+   "label": "distinct",
+   "reason": "A's mechanism is that injection volume inflates validation-score variance and amplifies a prompt optimizer's selection bias (optimizer's curse), while B's is scaffold substitution by instructions — unrelated mechanisms."
+  },
+  {
+   "a": "memory_volume_amplifies_optimizer_curse",
+   "b": "provenance_gap_selection_not_authorship",
+   "sim": 0.613,
+   "kind": "idea-idea",
+   "pair_id": "memory_volume_amplifies_optimizer_curse__provenance_gap_selection_not_a",
+   "label": "distinct",
+   "reason": "A's mechanism is injection-volume-driven variance inflation causing optimizer's-curse selection bias in prompt search, while B's mechanism is the signed writer-reader capability gap cured by reader-in-the-loop selection — unrelated causal accounts and experimental designs (null-optimizer/CRN analysis vs. writer/reader transplant matrix)."
+  },
+  {
+   "a": "memory_volume_amplifies_optimizer_curse",
+   "b": "substitutes_not_complements",
+   "sim": 0.599,
+   "kind": "idea-idea",
+   "pair_id": "memory_volume_amplifies_optimizer_curse__substitutes_not_complements",
+   "label": "distinct",
+   "reason": "A's mechanism is injection-volume-driven variance inflation causing optimizer's-curse selection bias, while B's mechanism is clause-level informational substitution between optimized instructions and memory items shrinking the optimal injection budget — distinct causal mechanisms tested with distinct designs (null-optimizer/CRN decomposition vs. clause-knockout ladder)."
+  },
+  {
+   "a": "optimizer_substitutes_for_memory_scaffold",
+   "b": "provenance_gap_selection_not_authorship",
+   "sim": 0.543,
+   "kind": "idea-idea",
+   "pair_id": "optimizer_substitutes_for_memory_scaffold__provenance_gap_selection_not_a",
+   "label": "distinct",
+   "reason": "A's mechanism is scaffold substitution between instructions and memory on syntax/schema channels, while B's mechanism is a signed writer-reader capability gap cured by reader-in-the-loop selection rather than authorship — unrelated causal accounts."
+  },
+  {
+   "a": "optimizer_substitutes_for_memory_scaffold",
+   "b": "substitutes_not_complements",
+   "sim": 0.702,
+   "kind": "idea-idea",
+   "pair_id": "optimizer_substitutes_for_memory_scaffold__substitutes_not_complements",
+   "label": "same_claim_reworded",
+   "reason": "Both propose the identical central claim that instructions and retrieved memory are substitutes (not complements) because they encode overlapping procedural/scaffold information, so absorbing that content into the instruction collapses memory's marginal value — differing mainly in decomposition granularity (syntax/schema channels vs. specific clause knockouts)."
+  },
+  {
+   "a": "provenance_gap_selection_not_authorship",
+   "b": "substitutes_not_complements",
+   "sim": 0.578,
+   "kind": "idea-idea",
+   "pair_id": "provenance_gap_selection_not_authorship__substitutes_not_complements",
+   "label": "distinct",
+   "reason": "A's mechanism is a signed writer-reader capability gap cured by reader-in-the-loop selection, while B's mechanism is informational substitution/redundancy between instruction and memory content that shrinks the optimal injection budget; unrelated causal stories about why memory and instructions interact."
+  },
+  {
+   "a": "coadaptation_transplant_ccr",
+   "b": "memory_dropout_coadaptation",
+   "sim": 0.654,
+   "kind": "idea-idea",
+   "pair_id": "coadaptation_transplant_ccr__memory_dropout_coadaptation",
+   "label": "distinct",
+   "reason": "Both diagnose the same co-adaptation problem with similar bank-swap-style designs, but propose competing fixes with contradictory predictions: A's counterfactual credit routing is claimed to preserve accuracy in a way that a 'blind regularizer' like memory dropout cannot, while B's central proposed and validated fix is exactly that memory dropout — the papers disagree on whether the simpler regularization suffices."
+  },
+  {
+   "a": "action_prior_imprinting",
+   "b": "brief:2. The injection budget as a first-class object. If volume is the causal lever, ",
+   "sim": 0.571,
+   "kind": "idea-brief",
+   "prior_text": "2. The injection budget as a first-class object. If volume is the causal lever, the budget is a decision variable, not a hyperparameter. Can an agent decide *how much* retrieved experience to admit per step, and does a learned or calibrated budget dominate a fixed one?",
+   "pair_id": "action_prior_imprinting__brief:2. The injection budget "
+  },
+  {
+   "a": "allocation_prior_transfer",
+   "b": "brief:5. Measurement standards for agent claims. Much of the 2026 literature reports s",
+   "sim": 0.544,
+   "kind": "idea-brief",
+   "prior_text": "5. Measurement standards for agent claims. Much of the 2026 literature reports single-run deltas smaller than the noise floor measured here. A contribution could be a protocol — paired designs, null replicates, minimum detectable effect — plus a re-examination of published claims under it. This is a methods contribution and must be judged as one: it needs to overturn or qualify specific existing results to be interesting.",
+   "pair_id": "allocation_prior_transfer__brief:5. Measurement standards",
+   "label": "distinct",
+   "reason": "A proposes a specific mechanism (transferable rho/effect-size priors enabling sequential testing for optimizer efficiency), while B is a generic call for a measurement-standards protocol with no proposed mechanism, so there is no shared claim to compare."
+  },
+  {
+   "a": "coadaptation_transplant_ccr",
+   "b": "brief:Memory can be one-sidedly harmful. In a controlled paired evaluation, injecting ",
+   "sim": 0.552,
+   "kind": "idea-brief",
+   "prior_text": "Memory can be one-sidedly harmful. In a controlled paired evaluation, injecting a full retrieved memory bank fixed zero items and broke six to seven (McNemar p=0.031 and p=0.016, replicated across independent runs). Noise scatters in both directions; this did not. The harm is a real phenomenon, not variance.",
+   "pair_id": "coadaptation_transplant_ccr__brief:Memory can be one-sidedl",
+   "label": "distinct",
+   "reason": "A's mechanism is optimizer/memory co-adaptation, where a reflective optimizer misattributes memory-caused failures to the instruction (fixed via counterfactual credit routing), while B is the bare finding that a memory bank asymmetrically breaks items with no mechanism stated — the central claims differ."
+  },
+  {
+   "a": "collection_policy_coupling_collapse",
+   "b": "brief:4. Co-adaptation and drift. When the optimizer evolves instructions against a me",
+   "sim": 0.537,
+   "kind": "idea-brief",
+   "prior_text": "4. Co-adaptation and drift. When the optimizer evolves instructions against a memory that is itself being rewritten, does the pair overfit to each other? What happens under distribution shift, and does a frozen-memory ablation expose it?",
+   "pair_id": "collection_policy_coupling_collapse__brief:4. Co-adaptation and dri",
+   "label": "distinct",
+   "reason": "A supplies a specific, falsifiable mechanism (retrieval-conditioned collection policy causing diversity collapse, with its own transplant/decoupling test), whereas B is an open question about optimizer-memory co-adaptation with no mechanism of its own to match against."
+  },
+  {
+   "a": "commit_then_consult_slot_discipline",
+   "b": "brief:Injection volume, not memory content, was the causal lever. Cutting injection fr",
+   "sim": 0.575,
+   "kind": "idea-brief",
+   "prior_text": "Injection volume, not memory content, was the causal lever. Cutting injection from seven retrieved items to three eliminated the harm from the *same* bank. Restricting injection to a single reasoning stage did not help, so the mechanism is not \"the wrong stage sees it\".",
+   "pair_id": "commit_then_consult_slot_discipline__brief:Injection volume, not me",
+   "label": "distinct",
+   "reason": "The prior finding claims injection volume alone is the causal lever, but the proposal explicitly holds volume fixed and manipulates order to show volume is not sufficient and that order/slot placement is the real mechanism, directly contesting rather than reproducing or merely re-measuring B's claim."
+  },
+  {
+   "a": "counterfactual_memory_screening_under_selection_noise",
+   "b": "brief:5. Measurement standards for agent claims. Much of the 2026 literature reports s",
+   "sim": 0.571,
+   "kind": "idea-brief",
+   "prior_text": "5. Measurement standards for agent claims. Much of the 2026 literature reports single-run deltas smaller than the noise floor measured here. A contribution could be a protocol — paired designs, null replicates, minimum detectable effect — plus a re-examination of published claims under it. This is a methods contribution and must be judged as one: it needs to overturn or qualify specific existing results to be interesting.",
+   "pair_id": "counterfactual_memory_screening_under_selection_noise__brief:5. Measurement standards",
+   "label": "distinct",
+   "reason": "A makes a specific mechanistic claim about winner's-curse-driven failure of counterfactual utility screening, while B is a broad, field-wide call for a measurement-standards protocol and re-examination of published claims, a much broader and different claim."
+  },
+  {
+   "a": "coverage_currency_coupling",
+   "b": "brief:Memory can be one-sidedly harmful. In a controlled paired evaluation, injecting ",
+   "sim": 0.556,
+   "kind": "idea-brief",
+   "prior_text": "Memory can be one-sidedly harmful. In a controlled paired evaluation, injecting a full retrieved memory bank fixed zero items and broke six to seven (McNemar p=0.031 and p=0.016, replicated across independent runs). Noise scatters in both directions; this did not. The harm is a real phenomenon, not variance.",
+   "pair_id": "coverage_currency_coupling__brief:Memory can be one-sidedl",
+   "label": "distinct",
+   "reason": "A proposes that memory and prompt optimization both act as distribution-concentration devices that trade pass@1 for solve-set coverage, while B is the bare finding that a memory bank asymmetrically breaks items with no stated mechanism and no coverage/pass@k claim — the central claims are not equivalent."
+  },
+  {
+   "a": "coverage_selection_division_of_labour",
+   "b": "brief:Memory can be one-sidedly harmful. In a controlled paired evaluation, injecting ",
+   "sim": 0.594,
+   "kind": "idea-brief",
+   "prior_text": "Memory can be one-sidedly harmful. In a controlled paired evaluation, injecting a full retrieved memory bank fixed zero items and broke six to seven (McNemar p=0.031 and p=0.016, replicated across independent runs). Noise scatters in both directions; this did not. The harm is a real phenomenon, not variance.",
+   "pair_id": "coverage_selection_division_of_labour__brief:Memory can be one-sidedl",
+   "label": "distinct",
+   "reason": "B only reports that memory injection was one-sidedly harmful with no proposed mechanism, while A introduces a distinct coverage-versus-selection failure stratification with new decisive controls (compute-matched sampling, disjoint fix-sets with an optimizer) not implied by B."
+  },
+  {
+   "a": "decorative_retriever",
+   "b": "brief:2. The injection budget as a first-class object. If volume is the causal lever, ",
+   "sim": 0.536,
+   "kind": "idea-brief",
+   "prior_text": "2. The injection budget as a first-class object. If volume is the causal lever, the budget is a decision variable, not a hyperparameter. Can an agent decide *how much* retrieved experience to admit per step, and does a learned or calibrated budget dominate a fixed one?",
+   "pair_id": "decorative_retriever__brief:2. The injection budget "
+  },
+  {
+   "a": "instruction_conditioned_complementarity",
+   "b": "brief:3. Predicting and preventing negative transfer. Given a memory item and a query,",
+   "sim": 0.594,
+   "kind": "idea-brief",
+   "prior_text": "3. Predicting and preventing negative transfer. Given a memory item and a query, can harm be predicted before injection? Retrieval scores are not obviously the right signal, since the harmful bank retrieved items that were topically correct.",
+   "pair_id": "instruction_conditioned_complementarity__brief:3. Predicting and preven",
+   "label": "distinct",
+   "reason": "B only poses the open question of predicting harm before injection and rules out retrieval-score similarity, while A supplies its own distinct mechanism (instruction-relative redundant/novel/conflicting unit labeling) that B neither states nor implies."
+  },
+  {
+   "a": "memory_budget_confound",
+   "b": "brief:Memory can be one-sidedly harmful. In a controlled paired evaluation, injecting ",
+   "sim": 0.623,
+   "kind": "idea-brief",
+   "prior_text": "Memory can be one-sidedly harmful. In a controlled paired evaluation, injecting a full retrieved memory bank fixed zero items and broke six to seven (McNemar p=0.031 and p=0.016, replicated across independent runs). Noise scatters in both directions; this did not. The harm is a real phenomenon, not variance.",
+   "pair_id": "memory_budget_confound__brief:Memory can be one-sidedl",
+   "label": "same_mechanism_new_measurement",
+   "reason": "B is the raw prior finding that memory injection is one-sidedly harmful and not noise (the very pilot A cites as motivation), while A keeps that same phenomenon but adds an entire new measurement apparatus (item-count/token manipulation, relevance-matched decoys, budget-matched curation baselines) to determine whether the harm is caused by volume or content, a distinction B's finding alone cannot establish and that would change a reader's causal conclusion."
+  },
+  {
+   "a": "memory_dropout_coadaptation",
+   "b": "brief:4. Co-adaptation and drift. When the optimizer evolves instructions against a me",
+   "sim": 0.594,
+   "kind": "idea-brief",
+   "prior_text": "4. Co-adaptation and drift. When the optimizer evolves instructions against a memory that is itself being rewritten, does the pair overfit to each other? What happens under distribution shift, and does a frozen-memory ablation expose it?",
+   "pair_id": "memory_dropout_coadaptation__brief:4. Co-adaptation and dri",
+   "label": "same_mechanism_new_measurement",
+   "reason": "Both probe the same optimizer-memory co-adaptation/overfitting mechanism via distribution shift (bank swap) and a frozen/no-memory ablation as B's brief calls for, but A adds a memory-dropout fix and a deployment-time top-k control B lacks, which would change whether the remedy belongs at optimization time or deployment time."
+  },
+  {
+   "a": "memory_induced_shortcutting",
+   "b": "brief:Memory can be one-sidedly harmful. In a controlled paired evaluation, injecting ",
+   "sim": 0.568,
+   "kind": "idea-brief",
+   "prior_text": "Memory can be one-sidedly harmful. In a controlled paired evaluation, injecting a full retrieved memory bank fixed zero items and broke six to seven (McNemar p=0.031 and p=0.016, replicated across independent runs). Noise scatters in both directions; this did not. The harm is a real phenomenon, not variance.",
+   "pair_id": "memory_induced_shortcutting__brief:Memory can be one-sidedl",
+   "label": "distinct",
+   "reason": "A posits a specific procedural mechanism (premature evidence-gathering termination) with a control-flow repair, whereas B is a bare statistical finding (asymmetric fix/break counts, replicated) asserting only that the harm is real and not variance, with no mechanism stated at all."
+  },
+  {
+   "a": "memory_volume_amplifies_optimizer_curse",
+   "b": "brief:3. Predicting and preventing negative transfer. Given a memory item and a query,",
+   "sim": 0.601,
+   "kind": "idea-brief",
+   "prior_text": "3. Predicting and preventing negative transfer. Given a memory item and a query, can harm be predicted before injection? Retrieval scores are not obviously the right signal, since the harmful bank retrieved items that were topically correct.",
+   "pair_id": "memory_volume_amplifies_optimizer_curse__brief:3. Predicting and preven",
+   "label": "distinct",
+   "reason": "B is a brief, unelaborated research question about predicting per-item harm before injection from retrieval-score signals, with no proposed mechanism, whereas A proposes a specific variance/selection-bias mechanism (optimizer's curse) with a null-optimizer test — no shared mechanism or comparable scope."
+  }
+ ],
+ "nearest": {
+  "action_prior_imprinting": [
+   [
+    "memory_or_instruction",
+    0.718
+   ],
+   [
+    "memory_volume_amplifies_optimizer_curse",
+    0.709
+   ],
+   [
+    "commit_then_consult_slot_discipline",
+    0.655
+   ]
+  ],
+  "allocation_prior_transfer": [
+   [
+    "playbook_transfer",
+    0.631
+   ],
+   [
+    "failure_signature_routing",
+    0.611
+   ],
+   [
+    "meta_prompt_generalization",
+    0.523
+   ]
+  ],
+  "breadth_routed_memory": [
+   [
+    "action_prior_imprinting",
+    0.653
+   ],
+   [
+    "compile_dont_retrieve",
+    0.645
+   ],
+   [
+    "memory_or_instruction",
+    0.606
+   ]
+  ],
+  "clause_level_portability": [
+   [
+    "playbook_transfer",
+    0.615
+   ],
+   [
+    "memory_volume_amplifies_optimizer_curse",
+    0.565
+   ],
+   [
+    "failure_signature_routing",
+    0.557
+   ]
+  ],
+  "coadaptation_transplant_ccr": [
+   [
+    "memory_dropout_coadaptation",
+    0.654
+   ],
+   [
+    "memory_vetoes_instruction_slot",
+    0.569
+   ],
+   [
+    "memory_induced_shortcutting",
+    0.554
+   ]
+  ],
+  "collection_policy_coupling_collapse": [
+   [
+    "memory_volume_amplifies_optimizer_curse",
+    0.603
+   ],
+   [
+    "provenance_gap_selection_not_authorship",
+    0.592
+   ],
+   [
+    "coverage_selection_division_of_labour",
+    0.582
+   ]
+  ],
+  "commit_then_consult_slot_discipline": [
+   [
+    "memory_or_instruction",
+    0.697
+   ],
+   [
+    "memory_budget_confound",
+    0.671
+   ],
+   [
+    "action_prior_imprinting",
+    0.655
+   ]
+  ],
+  "compile_dont_retrieve": [
+   [
+    "memory_or_instruction",
+    0.675
+   ],
+   [
+    "breadth_routed_memory",
+    0.645
+   ],
+   [
+    "action_prior_imprinting",
+    0.642
+   ]
+  ],
+  "counterfactual_memory_screening_under_selection_noise": [
+   [
+    "memory_induced_shortcutting",
+    0.715
+   ],
+   [
+    "memory_or_instruction",
+    0.643
+   ],
+   [
+    "memory_volume_amplifies_optimizer_curse",
+    0.616
+   ]
+  ],
+  "coverage_currency_coupling": [
+   [
+    "coverage_selection_division_of_labour",
+    0.604
+   ],
+   [
+    "collection_policy_coupling_collapse",
+    0.574
+   ],
+   [
+    "memory_budget_confound",
+    0.557
+   ]
+  ],
+  "coverage_selection_division_of_labour": [
+   [
+    "coverage_currency_coupling",
+    0.604
+   ],
+   [
+    "memory_induced_shortcutting",
+    0.601
+   ],
+   [
+    "memory_budget_confound",
+    0.592
+   ]
+  ],
+  "decorative_retriever": [
+   [
+    "action_prior_imprinting",
+    0.627
+   ],
+   [
+    "instruction_conditioned_complementarity",
+    0.612
+   ],
+   [
+    "compile_dont_retrieve",
+    0.61
+   ]
+  ],
+  "failure_signature_routing": [
+   [
+    "playbook_transfer",
+    0.645
+   ],
+   [
+    "allocation_prior_transfer",
+    0.611
+   ],
+   [
+    "meta_prompt_generalization",
+    0.604
+   ]
+  ],
+  "instruction_conditioned_complementarity": [
+   [
+    "memory_budget_confound",
+    0.677
+   ],
+   [
+    "memory_or_instruction",
+    0.668
+   ],
+   [
+    "memory_volume_amplifies_optimizer_curse",
+    0.636
+   ]
+  ],
+  "memory_budget_confound": [
+   [
+    "memory_or_instruction",
+    0.746
+   ],
+   [
+    "instruction_conditioned_complementarity",
+    0.677
+   ],
+   [
+    "commit_then_consult_slot_discipline",
+    0.671
+   ]
+  ],
+  "memory_dropout_coadaptation": [
+   [
+    "coadaptation_transplant_ccr",
+    0.654
+   ],
+   [
+    "playbook_transfer",
+    0.573
+   ],
+   [
+    "memory_volume_amplifies_optimizer_curse",
+    0.555
+   ]
+  ],
+  "memory_induced_shortcutting": [
+   [
+    "memory_or_instruction",
+    0.716
+   ],
+   [
+    "counterfactual_memory_screening_under_selection_noise",
+    0.715
+   ],
+   [
+    "commit_then_consult_slot_discipline",
+    0.651
+   ]
+  ],
+  "memory_item_value_reliability": [
+   [
+    "instruction_conditioned_complementarity",
+    0.602
+   ],
+   [
+    "counterfactual_memory_screening_under_selection_noise",
+    0.599
+   ],
+   [
+    "memory_volume_amplifies_optimizer_curse",
+    0.568
+   ]
+  ],
+  "memory_or_instruction": [
+   [
+    "memory_budget_confound",
+    0.746
+   ],
+   [
+    "action_prior_imprinting",
+    0.718
+   ],
+   [
+    "memory_induced_shortcutting",
+    0.716
+   ]
+  ],
+  "memory_vetoes_instruction_slot": [
+   [
+    "memory_or_instruction",
+    0.594
+   ],
+   [
+    "provenance_gap_selection_not_authorship",
+    0.571
+   ],
+   [
+    "coadaptation_transplant_ccr",
+    0.569
+   ]
+  ],
+  "memory_volume_amplifies_optimizer_curse": [
+   [
+    "action_prior_imprinting",
+    0.709
+   ],
+   [
+    "memory_or_instruction",
+    0.702
+   ],
+   [
+    "memory_budget_confound",
+    0.67
+   ]
+  ],
+  "meta_prompt_generalization": [
+   [
+    "playbook_transfer",
+    0.631
+   ],
+   [
+    "failure_signature_routing",
+    0.604
+   ],
+   [
+    "clause_level_portability",
+    0.545
+   ]
+  ],
+  "optimizer_substitutes_for_memory_scaffold": [
+   [
+    "substitutes_not_complements",
+    0.702
+   ],
+   [
+    "memory_or_instruction",
+    0.68
+   ],
+   [
+    "commit_then_consult_slot_discipline",
+    0.644
+   ]
+  ],
+  "playbook_transfer": [
+   [
+    "failure_signature_routing",
+    0.645
+   ],
+   [
+    "meta_prompt_generalization",
+    0.631
+   ],
+   [
+    "allocation_prior_transfer",
+    0.631
+   ]
+  ],
+  "provenance_gap_selection_not_authorship": [
+   [
+    "memory_or_instruction",
+    0.665
+   ],
+   [
+    "commit_then_consult_slot_discipline",
+    0.619
+   ],
+   [
+    "action_prior_imprinting",
+    0.616
+   ]
+  ],
+  "query_agnostic_curation_ceiling": [
+   [
+    "substitutes_not_complements",
+    0.643
+   ],
+   [
+    "memory_or_instruction",
+    0.61
+   ],
+   [
+    "memory_budget_confound",
+    0.597
+   ]
+  ],
+  "substitutes_not_complements": [
+   [
+    "optimizer_substitutes_for_memory_scaffold",
+    0.702
+   ],
+   [
+    "query_agnostic_curation_ceiling",
+    0.643
+   ],
+   [
+    "memory_or_instruction",
+    0.637
+   ]
+  ]
+ },
+ "decisions": {
+  "compile_dont_retrieve": "keep_note",
+  "memory_or_instruction": "keep_note",
+  "substitutes_not_complements": "differentiate",
+  "memory_budget_confound": "keep_note",
+  "memory_dropout_coadaptation": "keep_note"
+ }
+}

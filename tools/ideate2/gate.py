@@ -54,7 +54,7 @@ def clusters(sim: np.ndarray, thr: float) -> list[list[int]]:
 
 
 def run(ideas: list[dict], bullets: list[str], claims: list[dict], thr_idea: float | None, thr_prior: float | None,
-        be: Backend | None, out: str, z: float = 1.5) -> dict:
+        be: Backend | None, out: str, z: float = 1.5, batch: int = 10) -> dict:
     """thr_idea / thr_prior = None → auto: mean + z·SD of the pairwise similarities (the absolute scale of a
     sentence embedder is corpus-dependent; within one research area everything sits at 0.5–0.75)."""
     os.makedirs(out, exist_ok=True)
@@ -88,14 +88,22 @@ def run(ideas: list[dict], bullets: list[str], claims: list[dict], thr_idea: flo
     # top-3 nearest neighbours for every idea (descriptive)
     report["nearest"] = {names[k]: [(names[int(j)], round(float(sim[k, j]), 3)) for j in np.argsort(-sim[k])[:3]] for k in range(len(ideas))}
     json.dump(report, open(os.path.join(out, "gate_report.json"), "w"), indent=1, ensure_ascii=False)
-    # adjudication jobs
+    # adjudication jobs, batched (harness economy): each job returns a JSON array of {pair_id,label,reason}
     if be is not None:
         by = {n: i for n, i in zip(names, ideas)}
-        for p in report["pairs"]:
-            a_txt = idea_text(by[p["a"]])
-            b_txt = idea_text(by[p["b"]]) if p["kind"] == "idea-idea" else p["prior_text"]
-            be.call("gate_adjudicate", f"{p['a']}__{p['b'][:30]}", P.GATE_ADJUDICATE_SYSTEM,
-                    P.GATE_ADJUDICATE_USER.format(a=a_txt, b=b_txt), model="sonnet")
+        pairs = sorted(report["pairs"], key=lambda p: -p["sim"])
+        for b in range(0, len(pairs), batch):
+            chunk = pairs[b:b + batch]
+            blocks = []
+            for p in chunk:
+                a_txt = idea_text(by[p["a"]])
+                b_txt = idea_text(by[p["b"]]) if p["kind"] == "idea-idea" else p["prior_text"]
+                p["pair_id"] = f"{p['a']}__{p['b'][:30]}"
+                blocks.append(f"### pair_id: {p['pair_id']}\n" + P.GATE_ADJUDICATE_USER.format(a=a_txt, b=b_txt))
+            user = ("Judge each pair below independently. Return a JSON ARRAY of objects {\"pair_id\",\"label\",\"reason\"} "
+                    "in the same order.\n\n" + "\n\n".join(blocks))
+            be.call("gate_adjudicate", f"batch{b // batch:02d}", P.GATE_ADJUDICATE_SYSTEM, user, model="sonnet")
+        json.dump(report, open(os.path.join(out, "gate_report.json"), "w"), indent=1, ensure_ascii=False)
     # human-readable
     L = [f"# Repackaging gate report", f"thresholds: idea-idea ≥ {thr_idea}, idea-prior ≥ {thr_prior}", ""]
     L.append(f"## Idea clusters ({len(report['clusters'])})")
@@ -112,11 +120,11 @@ def run(ideas: list[dict], bullets: list[str], claims: list[dict], thr_idea: flo
 
 
 def apply(report_path: str, adjudications: dict[str, dict], out: str) -> dict:
-    """adjudications: {job_name: {"label","reason"}} keyed as f"{a}__{b[:30]}"."""
+    """adjudications: {pair_id: {"label","reason"}} (flatten the batched job results first)."""
     rep = json.load(open(report_path))
     decisions: dict[str, str] = {}
     for p in rep["pairs"]:
-        adj = adjudications.get(f"{p['a']}__{p['b'][:30]}")
+        adj = adjudications.get(p.get("pair_id") or f"{p['a']}__{p['b'][:30]}")
         if not adj:
             continue
         p["label"] = adj["label"]; p["reason"] = adj["reason"]

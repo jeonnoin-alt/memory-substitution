@@ -51,20 +51,6 @@ def queries_from_keys(k: dict) -> list[str]:
     return [re.sub(r"\s+", " ", x).strip()[:200] for x in q if x and x.strip()]
 
 
-def _unused_old_queries(k: dict) -> list[str]:  # kept for reference; superseded above
-
-
-def queries_from_keys(k: dict) -> list[str]:
-    q = []
-    for m in k.get("mechanism", [])[:2]:
-        q.append(m)
-    for e in k.get("estimand", [])[:1]:
-        q.append(e)
-    env = " ".join(k.get("environment", [])[:2])
-    if env and k.get("mechanism"):
-        q.append(f"{k['mechanism'][0]} {env}")
-    return [re.sub(r"\s+", " ", x)[:200] for x in q if x]
-
 
 def build_card(idea: dict, papers: list[Paper], embed_fn, top: int = 10) -> tuple[str, list[dict]]:
     hyp = f"{idea.get('Title','')}. {idea.get('Short Hypothesis','')}"

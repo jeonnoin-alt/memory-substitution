@@ -105,8 +105,9 @@ def parse_json(s: str) -> Any:
     """Return the last balanced JSON object/array in s."""
     s = re.sub(r"^```(?:json)?\s*", "", s.strip()); s = re.sub(r"\s*```$", "", s)
     cands = []
+    skip_to = -1
     for i, ch in enumerate(s):
-        if ch not in "{[":
+        if ch not in "{[" or i < skip_to:   # only top-level spans: nested brackets are inside an earlier span
             continue
         depth, instr, esc = 0, False, False
         for j in range(i, len(s)):
@@ -121,7 +122,7 @@ def parse_json(s: str) -> Any:
             elif c in "}]":
                 depth -= 1
                 if depth == 0:
-                    cands.append(s[i:j + 1]); break
+                    cands.append(s[i:j + 1]); skip_to = j + 1; break
     for c in reversed(cands):
         try:
             return json.loads(c)
