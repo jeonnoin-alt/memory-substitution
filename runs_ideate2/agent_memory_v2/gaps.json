@@ -1,0 +1,681 @@
+[
+ {
+  "axis": "coupling with prompt optimization",
+  "gaps": [
+   {
+    "gap": "When an experience memory is coupled with a prompt optimizer, no card isolates how much of the reported gain comes from the memory, from the prompt optimization, or from their interaction, so whether the two substitute for or interfere with each other remains unresolved.",
+    "card_ids": [
+     "arxiv:2607.11944",
+     "arxiv:2603.09022",
+     "arxiv:2603.20667",
+     "arxiv:2508.18749",
+     "arxiv:2603.21520",
+     "arxiv:2510.23730"
+    ],
+    "evidence_needed": "A factorial ablation (memory-only, prompt-optimization-only, both, neither) run under matched token and API-call budgets across several seeds, reporting the interaction term rather than only the combined system."
+   },
+   {
+    "gap": "Results for memory-coupled prompt optimizers are almost entirely confined to single-turn math or reasoning benchmarks or synthetic conversational QA, leaving their behavior on long-horizon multi-step agent tasks untested.",
+    "card_ids": [
+     "arxiv:2603.18388",
+     "arxiv:2606.04465",
+     "arxiv:2506.17930",
+     "arxiv:2607.11944",
+     "arxiv:2508.18749",
+     "arxiv:2605.13941",
+     "arxiv:2510.23730"
+    ],
+    "evidence_needed": "Re-running these optimizers, with and without an experience memory, on multi-step agentic benchmarks such as AppWorld, GAIA, or OfficeBench and comparing against their reported single-turn gains."
+   },
+   {
+    "gap": "Whether optimized prompts, compression guidelines, extraction prompts, or accumulated optimization experience transfer to unseen backbones, domains, or shifted deployment distributions without re-optimization is largely unaddressed.",
+    "card_ids": [
+     "arxiv:2510.00615",
+     "arxiv:2603.09022",
+     "arxiv:2603.20667",
+     "arxiv:2604.20714",
+     "arxiv:2604.11610",
+     "arxiv:2506.17930"
+    ],
+    "evidence_needed": "Held-out evaluations in which artifacts optimized on one backbone or task family are applied unchanged to a different backbone and a distribution-shifted task set, reporting retained versus lost gain."
+   },
+   {
+    "gap": "Most gains are reported without seed variance or cost normalization, even though one card shows that coupling stochastic components raises mean performance while amplifying variance and others acknowledge multi-fold compute overheads, so the stability and cost-efficiency of memory-coupled optimizers relative to simpler baselines is unknown.",
+    "card_ids": [
+     "arxiv:2607.11944",
+     "arxiv:2508.18749",
+     "arxiv:2603.09022",
+     "arxiv:2603.18388",
+     "arxiv:2606.04465",
+     "arxiv:2510.18257",
+     "arxiv:2603.20667",
+     "arxiv:2605.13941",
+     "arxiv:2603.15666"
+    ],
+    "evidence_needed": "Multi-seed runs reporting mean and variance alongside total optimization cost (tokens, API calls, self-play or verification budget), with baselines given an equal budget."
+   },
+   {
+    "gap": "How accumulated memories and evolved prompts behave over long training when entries become stale, conflict with the current task, or overfit the failure logs they were evolved from has not been tested.",
+    "card_ids": [
+     "arxiv:2603.21520",
+     "arxiv:2603.15666",
+     "arxiv:2605.13941",
+     "arxiv:2604.11610",
+     "arxiv:2607.11944"
+    ],
+    "evidence_needed": "Longitudinal experiments with strict train/test separation that inject stale or conflicting entries and track prompt growth, retrieval conflicts, and held-out accuracy across many evolution rounds."
+   }
+  ]
+ },
+ {
+  "axis": "evaluation methodology and reproducibility",
+  "gaps": [
+   {
+    "gap": "Reported memory and optimization gains are almost never accompanied by seed counts, run-to-run variance, task-order sensitivity or a no-memory noise floor, so it is unresolved whether most headline improvements (and observed erosion or decay) exceed stochastic run-to-run instability.",
+    "card_ids": [
+     "arxiv:2602.16313",
+     "arxiv:2605.23296",
+     "arxiv:2602.06052",
+     "arxiv:2507.21504",
+     "arxiv:2607.11944",
+     "arxiv:2606.06337",
+     "arxiv:2604.27003",
+     "arxiv:2604.17308",
+     "arxiv:2605.09315",
+     "arxiv:2608.12990",
+     "arxiv:2608.15008",
+     "arxiv:2511.20857",
+     "arxiv:2510.23730",
+     "arxiv:2606.04465",
+     "arxiv:2605.13941"
+    ],
+    "evidence_needed": "Multi-seed and task-order-permuted reruns of the headline memory-versus-baseline comparisons on the same benchmarks, reporting per-seed distributions, confidence intervals and a matched no-memory noise floor so each gain can be judged against run-to-run variance."
+   },
+   {
+    "gap": "Most memory evaluations score conversational QA, probes or recall metrics, and it is untested whether those scores predict success when memory must drive downstream task execution, tool use or multi-step agentic decisions.",
+    "card_ids": [
+     "arxiv:2602.16313",
+     "arxiv:2605.15128",
+     "arxiv:2606.06337",
+     "arxiv:2603.27343",
+     "arxiv:2605.12493",
+     "arxiv:2601.11969",
+     "arxiv:2604.20006",
+     "arxiv:2507.05257",
+     "arxiv:2608.04843",
+     "arxiv:2607.12893",
+     "arxiv:2608.12990",
+     "arxiv:2510.23730",
+     "arxiv:2605.13941",
+     "arxiv:2412.15266",
+     "arxiv:2601.05107",
+     "arxiv:2512.12856",
+     "arxiv:2606.24775"
+    ],
+    "evidence_needed": "Paired evaluation of the same memory systems and backbones on a QA/probe benchmark and on an agentic task-execution benchmark, reporting the rank correlation between QA-style scores and task success to measure the predictive validity of the QA framing."
+   },
+   {
+    "gap": "Accuracy gains from memory, compaction, consolidation and evolution loops are reported without token, latency or hardware cost accounting and without cost-matched baselines, so the true cost-quality trade-off and the sensitivity of method rankings to the chosen cost definition remain unknown.",
+    "card_ids": [
+     "arxiv:2602.16313",
+     "arxiv:2606.22528",
+     "arxiv:2606.06448",
+     "arxiv:2608.04843",
+     "arxiv:2606.04315",
+     "arxiv:2603.15642",
+     "arxiv:2605.09315",
+     "arxiv:2603.09022",
+     "arxiv:2412.15266",
+     "arxiv:2511.20857",
+     "arxiv:2605.13941",
+     "arxiv:2603.18388",
+     "arxiv:2606.04465",
+     "arxiv:2507.05257",
+     "arxiv:2605.12493"
+    ],
+    "evidence_needed": "Per-phase token, latency and dollar accounting (construction, retrieval, generation, optimization) reported alongside accuracy for every method and baseline on a shared harness, with comparisons made at matched budgets and a check of whether rankings change under alternative cost definitions."
+   },
+   {
+    "gap": "Memory systems are rarely compared under a common protocol against simpler or alternative controls (a strong fixed or optimized instruction, raw trajectory retrieval, eviction, parametric fine-tuning or RL) at matched budgets, and combined memory-plus-prompt-optimization pipelines are not ablated, so how much of a reported gain is attributable to the memory component versus scaffold, prompt or retrieval choices is unresolved.",
+    "card_ids": [
+     "arxiv:2602.06052",
+     "arxiv:2512.23760",
+     "arxiv:2508.19005",
+     "arxiv:2607.11944",
+     "arxiv:2604.27003",
+     "arxiv:2604.17308",
+     "arxiv:2603.09022",
+     "arxiv:2512.12856",
+     "arxiv:2603.15642",
+     "arxiv:2606.06337",
+     "arxiv:2605.23296",
+     "arxiv:2501.07278",
+     "arxiv:2512.13564",
+     "arxiv:2511.20857",
+     "arxiv:2510.23730",
+     "arxiv:2608.15008",
+     "arxiv:2603.18388",
+     "arxiv:2506.17930",
+     "arxiv:2606.04465",
+     "arxiv:2507.21504",
+     "arxiv:2601.19935"
+    ],
+    "evidence_needed": "Factorial ablations on one shared harness that add an experience memory, an optimized fixed instruction, raw-trajectory retrieval and parametric adaptation separately and in combination at matched compute, isolating each component's marginal contribution and interaction effects."
+   },
+   {
+    "gap": "Many memory benchmarks are built from synthetic, merged or deliberately injected data with unvalidated filtering gates, no contamination audit and sometimes no train/test separation for evolved configurations, so whether their findings replicate on real usage and are free of overfitting or contamination is unresolved.",
+    "card_ids": [
+     "arxiv:2602.16313",
+     "arxiv:2507.21504",
+     "arxiv:2605.15128",
+     "arxiv:2606.06337",
+     "arxiv:2607.12893",
+     "arxiv:2601.19935",
+     "arxiv:2510.23730",
+     "arxiv:2605.13941",
+     "arxiv:2607.10608"
+    ],
+    "evidence_needed": "Replication of method rankings on held-out real (non-synthetic) sessions and naturally retrieved memories, human-agreement audits of validation gates, contamination checks against backbone training data, and explicit train/test separation for any evolved or optimized configuration."
+   }
+  ]
+ },
+ {
+  "axis": "long-horizon context management",
+  "gaps": [
+   {
+    "gap": "Nearly every compaction scheme (folding, summarization, overwrite, parallel blocks, eviction, indexing) reports only end-task success, so what information is actually discarded, and how often a locally plausible summary silently drops a fact, decision or governance constraint that a later step needs, remains unmeasured beyond the single ConstraintRot case.",
+    "card_ids": [
+     "arxiv:2510.11967",
+     "arxiv:2509.13313",
+     "arxiv:2510.06727",
+     "arxiv:2605.23296",
+     "arxiv:2607.05378",
+     "arxiv:2507.02259",
+     "arxiv:2603.00680",
+     "arxiv:2603.04257",
+     "arxiv:2606.22528"
+    ],
+    "evidence_needed": "Content-level retention audits with gold traces of facts, decisions and constraints present before compaction, scored after each compaction event across the different schemes and linked by deterministic grading to the downstream failures each dropped item causes, including a comparison against index-and-dereference recovery."
+   },
+   {
+    "gap": "It is unresolved whether the gains of trained context-management agents come from the management mechanism itself or from the co-trained policy and synthesized data, because no matched control (same RL/SFT budget without the mechanism, or an untrained backbone given the same tool) isolates it, component contributions are unablated, and learned managers or guidelines are not shown to port across backbones, capability levels or domains.",
+    "card_ids": [
+     "arxiv:2512.22087",
+     "arxiv:2605.05191",
+     "arxiv:2607.05378",
+     "arxiv:2510.11967",
+     "arxiv:2608.01964",
+     "arxiv:2510.08790",
+     "arxiv:2605.30785",
+     "arxiv:2510.00615",
+     "arxiv:2601.01885",
+     "arxiv:2606.11680",
+     "arxiv:2603.00680",
+     "arxiv:2603.07670",
+     "arxiv:2606.11213",
+     "arxiv:2603.04257"
+    ],
+    "evidence_needed": "A factorial study crossing mechanism on/off with training on/off at matched compute and data, with per-component ablations, plus a transfer matrix applying each learned manager or guideline to unseen backbones and domains stratified by base capability."
+   },
+   {
+    "gap": "No cost-accounted, matched-budget head-to-head exists across the competing context-management families (LLM summarization, deterministic eviction, indexed or visual retrieval, graph-structured state, multi-agent managers and parametric working memory), since each paper compares against at most one summarization or truncation baseline and omits the token, latency and training overhead of its own manager, auditor, dereference or construction stages.",
+    "card_ids": [
+     "arxiv:2605.23296",
+     "arxiv:2606.11213",
+     "arxiv:2606.06337",
+     "arxiv:2510.06727",
+     "arxiv:2601.12906",
+     "arxiv:2507.02259",
+     "arxiv:2608.15008",
+     "arxiv:2603.04257",
+     "arxiv:2604.26622",
+     "arxiv:2608.01964",
+     "arxiv:2607.08716",
+     "arxiv:2601.11913",
+     "arxiv:2510.08790",
+     "arxiv:2512.22087",
+     "arxiv:2606.22528",
+     "arxiv:2606.11680",
+     "arxiv:2602.06052"
+    ],
+    "evidence_needed": "A common harness running the families on the same agentic benchmarks and backbones under equal peak-context and total-token budgets, reporting success alongside end-to-end tokens, wall time and offline training or construction cost, and testing whether a substrate router beats the best fixed family."
+   },
+   {
+    "gap": "Almost all condensed state (folds, summaries, indices, memory banks, overwritten or parametric working memory) lives inside one episode, so whether carrying it across tasks helps, when abstraction beats raw-trajectory storage, and whether stale, conflicting or failed prior episodes induce the contextual drag observed within tasks is untested.",
+    "card_ids": [
+     "arxiv:2510.11967",
+     "arxiv:2509.13313",
+     "arxiv:2510.06727",
+     "arxiv:2603.04257",
+     "arxiv:2510.00615",
+     "arxiv:2608.01964",
+     "arxiv:2512.22087",
+     "arxiv:2605.05191",
+     "arxiv:2607.08716",
+     "arxiv:2507.02259",
+     "arxiv:2601.12906",
+     "arxiv:2508.08997",
+     "arxiv:2606.03197",
+     "arxiv:2607.05378",
+     "arxiv:2605.30785",
+     "arxiv:2511.20639",
+     "arxiv:2602.07398",
+     "arxiv:2605.06716",
+     "arxiv:2602.04288",
+     "arxiv:2606.05684"
+    ],
+    "evidence_needed": "Continual task streams in which each scheme's condensed state persists across episodes, measured against fresh-session and raw-trajectory-storage controls over multiple seeds, with deliberately stale, conflicting or failed prior episodes injected to quantify harm."
+   },
+   {
+    "gap": "The diagnostic findings on why long contexts fail (length alone, hard distractors, cumulative working-memory load, contextual drag, attentional dilution, reward-model judgments of memory quality) are established on static inputs, scratchpad-free probes or synthetic conversations, so whether they predict long-horizon agent failures on real tool-use traces, or whether any context-management scheme closes them, is unknown.",
+    "card_ids": [
+     "arxiv:2510.05381",
+     "arxiv:2603.27343",
+     "arxiv:2605.10828",
+     "arxiv:2602.04288",
+     "arxiv:2603.07670",
+     "arxiv:2601.11969",
+     "arxiv:2607.12893"
+    ],
+    "evidence_needed": "Applying the same probes to logged agent trajectories and correlating probe scores with task outcomes, then re-running the agents under compaction, eviction, external memory or recitation to see which interventions remove the measured degradation."
+   }
+  ]
+ },
+ {
+  "axis": "memory structure and write policy",
+  "gaps": [
+   {
+    "gap": "Write-time admission and validation gates (LLM-judge scoring, utility tagging, batch-improvement gating, verifier-backed promotion) are never audited for what they actually admit: no card measures how many wrong, stale, or adversarially injected items pass the gate, what harm those items cause downstream, or whether gate precision translates into task success rather than store-level F1.",
+    "card_ids": [
+     "arxiv:2512.10696",
+     "arxiv:2603.04549",
+     "arxiv:2603.15642",
+     "arxiv:2603.15666",
+     "arxiv:2512.23760",
+     "arxiv:2604.20006",
+     "arxiv:2602.01869",
+     "arxiv:2608.23471",
+     "arxiv:2505.18279"
+    ],
+    "evidence_needed": "A controlled write stream with planted wrong, obsolete, and injected records, reporting per-gate admission precision/recall against ground-truth labels together with the downstream task-success delta versus an ungated store on the same tasks and seeds."
+   },
+   {
+    "gap": "Forgetting, pruning, overwrite, and consolidation policies are evaluated only on short or small-scale streams, so it is unknown whether they discard dormant-but-later-critical items, how stale or conflicting entries accumulate as the store grows, and what the maintenance calls cost relative to the savings claimed.",
+    "card_ids": [
+     "arxiv:2601.18642",
+     "arxiv:2512.03627",
+     "arxiv:2507.02259",
+     "arxiv:2603.00680",
+     "arxiv:2603.04257",
+     "arxiv:2603.07670",
+     "arxiv:2512.17102",
+     "arxiv:2604.04804",
+     "arxiv:2604.07791",
+     "arxiv:2602.02474",
+     "arxiv:2608.12990",
+     "arxiv:2512.11485",
+     "arxiv:2603.15642",
+     "arxiv:2605.09315"
+    ],
+    "evidence_needed": "Long task streams with distribution shift and planted facts that become decisive only after long dormancy, reporting recall failures attributable to each forgetting/consolidation policy, store size and staleness over time, and construction-plus-maintenance tokens alongside task success."
+   },
+   {
+    "gap": "Which representation and abstraction level of experience memory (raw trajectories, summaries with indices, distilled insights or skills, graphs, mixed structures) best supports downstream task execution is unresolved, because structure comparisons come from conversational QA or recall metrics while the agentic studies do not quantify when cross-trajectory abstraction beats raw storage or with what variance.",
+    "card_ids": [
+     "arxiv:2412.15266",
+     "arxiv:2605.06716",
+     "arxiv:2604.27003",
+     "arxiv:2608.15008",
+     "arxiv:2606.24775",
+     "arxiv:2608.12990",
+     "arxiv:2608.04843",
+     "arxiv:2607.12893",
+     "arxiv:2605.12493",
+     "arxiv:2606.06337",
+     "arxiv:2510.23730"
+    ],
+    "evidence_needed": "The same trajectory pool materialized at several abstraction levels and structures, injected under a matched token budget into sequential agentic tasks, scored by task success with seeds and task-order variance rather than fact-recall F1."
+   },
+   {
+    "gap": "Learned or self-managed write/manage policies (RL-trained store/summarize/discard actions, bandit controllers, evolved extraction skills, runtime utility updates) are not shown to transfer across backbones or task distributions, are not compared against a tuned static heuristic at matched tokens, and their training or controller cost is not accounted against the gains.",
+    "card_ids": [
+     "arxiv:2607.13591",
+     "arxiv:2601.01885",
+     "arxiv:2602.02474",
+     "arxiv:2603.04257",
+     "arxiv:2603.00680",
+     "arxiv:2606.11680",
+     "arxiv:2603.07670",
+     "arxiv:2604.11610",
+     "arxiv:2605.27762",
+     "arxiv:2606.04315",
+     "arxiv:2601.03192"
+    ],
+    "evidence_needed": "Train a write/manage policy on one backbone and task distribution, evaluate it frozen on held-out backbones and distributions against a swept static heuristic, reporting mean gain with seed variance and total tokens including training and controller calls."
+   },
+   {
+    "gap": "Whether accumulated experience should be written to a retrievable store or compiled into the standing instruction is unsettled: memory systems are not compared against a memoryless agent with an optimized prompt, prompt-memory hybrids do not ablate the memory bank from the prompt edits, and substitution versus interference between the two channels is untested.",
+    "card_ids": [
+     "arxiv:2512.10696",
+     "arxiv:2603.21520",
+     "arxiv:2504.07952",
+     "arxiv:2604.17308",
+     "arxiv:2608.15008",
+     "arxiv:2606.05684",
+     "arxiv:2603.20667",
+     "arxiv:2603.09022",
+     "arxiv:2510.23730",
+     "arxiv:2603.15666",
+     "arxiv:2508.18749",
+     "arxiv:2510.18257"
+    ],
+    "evidence_needed": "A 2x2 factorial on the same tasks and seeds (optimized instruction on/off by experience store on/off) at matched token budget, reporting the marginal gain of each channel and their interaction term."
+   }
+  ]
+ },
+ {
+  "axis": "negative transfer conflict and drift",
+  "gaps": [
+   {
+    "gap": "Negative transfer from wrong, stale, or conflicting experience has been diagnosed only for deliberately injected memory, in-task failed attempts, or retrieved external documents, so it is unresolved how much harm naturally accumulated cross-task experiential memory (insights, mistake notes, edit paths, trajectory hierarchies) actually causes in agentic task execution.",
+    "card_ids": [
+     "arxiv:2602.04288",
+     "arxiv:2607.10608",
+     "arxiv:2605.10828",
+     "arxiv:2512.11485",
+     "arxiv:2607.13884",
+     "arxiv:2606.11680",
+     "arxiv:2512.10696"
+    ],
+    "evidence_needed": "Multi-seed runs on agentic benchmarks (e.g., ALFWorld, WebArena, AppWorld) where memory is accumulated organically over a task stream, with per-episode labeling of whether each retrieved item was wrong or stale and the resulting success delta against both a memoryless agent and an agent given only validated memory."
+   },
+   {
+    "gap": "No read-time or write-time control for conflicting or poisoned memory (conflict detection, provenance gating, admission filtering, sanitization, steerable reliance, utility filtering) has been shown to prevent the compliance-trap or contextual-drag failure in a task-execution setting, and the proposed controls have not been compared against each other or against adaptive attackers.",
+    "card_ids": [
+     "arxiv:2607.10608",
+     "arxiv:2601.03192",
+     "arxiv:2608.10509",
+     "arxiv:2603.04549",
+     "arxiv:2608.23471",
+     "arxiv:2601.05107",
+     "arxiv:2602.07398"
+    ],
+    "evidence_needed": "A head-to-head evaluation of these controls on one agentic benchmark with both injected and naturally arising conflicts, reporting task success under attack, clean-setting utility cost, and robustness to adversaries that adapt to the filter."
+   },
+   {
+    "gap": "Forgetting, decay, utility pruning, compaction, and distillation-into-weights are all claimed to reduce noise or storage, but their collateral cost, deleting rarely accessed yet later-critical facts or safety-critical constraints, is unmeasured and no write/update policy has been shown to reduce reliance on invalidated memory.",
+    "card_ids": [
+     "arxiv:2601.18642",
+     "arxiv:2603.07670",
+     "arxiv:2606.22528",
+     "arxiv:2512.03627",
+     "arxiv:2604.20006",
+     "arxiv:2603.15642"
+    ],
+    "evidence_needed": "Benchmarks with planted low-frequency but later-critical items and governance constraints, run under each forgetting scheme (decay, utility pruning, summarization, eviction, distillation), reporting induced recall failures and constraint violations alongside storage or token savings."
+   },
+   {
+    "gap": "Capability erosion and non-monotonic drift under long continual streams with distribution shift (drift toward reflection-like behavior at low task similarity, stale notes, non-transferring learned policies, per-model regressions) are reported without effect sizes relative to run-to-run noise or beyond short adaptation horizons.",
+    "card_ids": [
+     "arxiv:2605.09315",
+     "arxiv:2604.27003",
+     "arxiv:2601.03192",
+     "arxiv:2607.13591",
+     "arxiv:2604.17308",
+     "arxiv:2512.11485",
+     "arxiv:2603.07670"
+    ],
+    "evidence_needed": "Long sequential-task streams with explicit distribution shifts, multiple seeds and task orderings, tracking retained-task and new-task performance over time with confidence intervals for memory-based adaptation versus parametric adaptation under matched budgets."
+   },
+   {
+    "gap": "Most conflict-resolution, knowledge-update, and structure-versus-noise findings come from conversational fact memory or external-text retrieval (synthetic dialogues, QA workloads), so whether their conclusions transfer to memory distilled from an agent's own task episodes is unknown.",
+    "card_ids": [
+     "arxiv:2607.12893",
+     "arxiv:2604.20006",
+     "arxiv:2507.05257",
+     "arxiv:2603.04549",
+     "arxiv:2606.24775",
+     "arxiv:2412.15266",
+     "arxiv:2605.13941"
+    ],
+    "evidence_needed": "Operation-level and forgetting-aware conflict probes ported onto agentic task-execution benchmarks with experiential memory (insights, skills, trajectories), with held-out task splits and reported success deltas against the conversational results."
+   }
+  ]
+ },
+ {
+  "axis": "parametric versus in-context experience",
+  "gaps": [
+   {
+    "gap": "No card compares keeping a fixed pool of experience in context (retrieved trajectories, skills, cheatsheets, utility-scored episodes) against distilling that same pool into weights (SFT/RL/adapters) on the same backbone at matched compute and token cost, so whether the in-context or the parametric route wins, and when, remains unresolved in both directions.",
+    "card_ids": [
+     "arxiv:2602.01869",
+     "arxiv:2601.03192",
+     "arxiv:2608.07169",
+     "arxiv:2604.27003",
+     "arxiv:2306.07929",
+     "arxiv:2607.01480",
+     "arxiv:2606.02355",
+     "arxiv:2601.14209",
+     "arxiv:2601.12906",
+     "arxiv:2512.23760",
+     "arxiv:2508.19005",
+     "arxiv:2603.00680",
+     "arxiv:2605.27762"
+    ],
+    "evidence_needed": "A controlled study that takes one identical experience pool and evaluates (a) in-context injection or retrieval, (b) fine-tuning or RL distillation into weights, and (c) their combination, on the same backbone and benchmarks under matched training plus inference budgets with multiple seeds, reporting success, per-task inference cost, and adaptability after a distribution shift."
+   },
+   {
+    "gap": "Gains attributed to trained context-management or memory policies (folding, compaction, context tools, context operations, skill-integrated RL, memory plus prompt evolution) are confounded with the extra training data or RL they require, because no card includes a control that holds training constant and removes only the memory or context mechanism.",
+    "card_ids": [
+     "arxiv:2607.05378",
+     "arxiv:2512.22087",
+     "arxiv:2605.05191",
+     "arxiv:2512.17102",
+     "arxiv:2603.04257",
+     "arxiv:2603.09022",
+     "arxiv:2510.08790"
+    ],
+    "evidence_needed": "Same-data ablations such as RL without compaction versus CompactionRL, an untrained model given the same context tool, SFT on the same trajectories without context operations, SFT-only versus SFT plus skill-library RL, and memory-only versus prompt-evolution-only, each reporting per-component deltas with seeds."
+   },
+   {
+    "gap": "Whether a learned memory or context-management policy, an optimized compression guideline, or a set of internalized or distilled skills transfers to a different backbone, capability level, or task domain without retraining is untested or only reported as weaker without characterization.",
+    "card_ids": [
+     "arxiv:2510.11967",
+     "arxiv:2601.01885",
+     "arxiv:2603.00680",
+     "arxiv:2605.30785",
+     "arxiv:2510.00615",
+     "arxiv:2512.17102",
+     "arxiv:2606.02355",
+     "arxiv:2605.27762",
+     "arxiv:2608.07169",
+     "arxiv:2606.03197"
+    ],
+    "evidence_needed": "Transfer matrices in which a policy, guideline, or skill set learned on one backbone or domain is applied unchanged to capability-matched and mismatched backbones and to unseen task families, compared against retraining from scratch and training-free baselines."
+   },
+   {
+    "gap": "Trained compression, folding, summarization, and overwrite-memory methods measure information loss only through end-task success and keep the condensed state within a single episode, so what is discarded, whether lossy summaries beat index-and-retrieve recovery, and whether condensed context can serve as cross-episode experience memory are unresolved.",
+    "card_ids": [
+     "arxiv:2510.11967",
+     "arxiv:2509.13313",
+     "arxiv:2510.06727",
+     "arxiv:2607.05378",
+     "arxiv:2507.02259",
+     "arxiv:2603.00680",
+     "arxiv:2603.04257",
+     "arxiv:2512.22087",
+     "arxiv:2605.05191",
+     "arxiv:2601.12906",
+     "arxiv:2606.03197"
+    ],
+    "evidence_needed": "Direct information-loss measurement (probe questions on discarded content, recovery rate of later-needed evidence, dereference success and cost) reported alongside task success, a head-to-head of lossy summarization versus indexed full-fidelity recovery at matched context budgets, and experiments that carry condensed context across episodes or repositories."
+   },
+   {
+    "gap": "Neither the parametric route (distillation or consolidation into weights) nor the in-context route (growing skill libraries, mistake notes, episodic stores) is evaluated over long adaptation streams with distribution shift for capability erosion, stale or conflicting items, and the cost of preservation, so the stability-plasticity trade-off between the two substrates is uncharacterized.",
+    "card_ids": [
+     "arxiv:2512.03627",
+     "arxiv:2605.09315",
+     "arxiv:2606.02355",
+     "arxiv:2605.27762",
+     "arxiv:2604.27003",
+     "arxiv:2512.17102",
+     "arxiv:2512.11485",
+     "arxiv:2601.03192",
+     "arxiv:2306.07929",
+     "arxiv:2601.01885",
+     "arxiv:2602.06052"
+    ],
+    "evidence_needed": "Sequential task streams with induced distribution shift that track retained performance on earlier tasks, harm from stale or conflicting entries, and preservation overhead (replay, re-evaluation, consolidation compute) for weight-consolidated versus in-context memory at matched budgets, with enough seeds to separate erosion from run-to-run noise."
+   }
+  ]
+ },
+ {
+  "axis": "retrieval routing and injection budget",
+  "gaps": [
+   {
+    "gap": "It is unresolved whether retrieving once at task start, retrieving continuously mid-episode, or a learned when-to-retrieve policy is best, and whether learned retrieval policies beat a tuned static heuristic or transfer across task distributions and backbones without relearning.",
+    "card_ids": [
+     "arxiv:2512.10696",
+     "arxiv:2606.05684",
+     "arxiv:2607.13591",
+     "arxiv:2601.01885",
+     "arxiv:2607.08716",
+     "arxiv:2603.07670"
+    ],
+    "evidence_needed": "A matched-token comparison on the same agentic benchmarks of start-only retrieval, mid-episode retrieval, a swept static threshold, and a learned policy, each trained on one task distribution or backbone and evaluated on another, with seeds and variance reported."
+   },
+   {
+    "gap": "The dose-response of injected experiential memory (how many items or tokens to inject and where) is uncharacterized for agent traces, since the length-alone degradation, attentional dilution, and nonlinear distractor effects were shown only on static text inputs or asserted without measurement.",
+    "card_ids": [
+     "arxiv:2510.05381",
+     "arxiv:2605.10828",
+     "arxiv:2603.07670",
+     "arxiv:2412.15266",
+     "arxiv:2608.15008",
+     "arxiv:2603.15666"
+    ],
+    "evidence_needed": "Controlled experiments on agentic tool-use or sequential-decision benchmarks that vary injected memory count, token volume, and prompt position while holding retrieval quality fixed, separating length effects from content effects and reporting success per injected token."
+   },
+   {
+    "gap": "Substrate and structure routing is motivated but never built or costed: no single memory structure or retrieval method dominates across regimes and backbone strengths, evolved retrieval configurations may overfit the evaluation set, and the read-path cost of iterative, agentic, dereferencing, or vision-based retrieval is not accounted for.",
+    "card_ids": [
+     "arxiv:2608.15008",
+     "arxiv:2605.13941",
+     "arxiv:2606.24775",
+     "arxiv:2606.04315",
+     "arxiv:2510.23730",
+     "arxiv:2412.15266",
+     "arxiv:2604.26622",
+     "arxiv:2603.04257",
+     "arxiv:2606.06448",
+     "arxiv:2608.04843"
+    ],
+    "evidence_needed": "An explicit router evaluated with train/test separation across QA and agentic regimes and weak-to-strong backbones, reporting task success together with latency and token cost of the retrieval path under a shared cost definition."
+   },
+   {
+    "gap": "No retrieval-side control (conflict detection, verification, abstention, gating, or automatic reliance setting) has been shown to limit the damage from retrieved-but-wrong, stale, conflicting, or injected memory, and the harm itself is mostly measured with deliberately injected rather than naturally retrieved conflicts.",
+    "card_ids": [
+     "arxiv:2607.10608",
+     "arxiv:2512.10696",
+     "arxiv:2601.03192",
+     "arxiv:2608.23471",
+     "arxiv:2608.10509",
+     "arxiv:2601.05107",
+     "arxiv:2607.13884",
+     "arxiv:2604.26622",
+     "arxiv:2603.21520",
+     "arxiv:2306.07929",
+     "arxiv:2601.01885",
+     "arxiv:2606.11680",
+     "arxiv:2604.27003"
+    ],
+    "evidence_needed": "Experiments that seed naturally retrieved memory pools with controlled proportions of stale, conflicting, or adversarial items and compare net task success and entry-propagation-recovery traces with and without gating, verification, or abstention policies, including against adaptive attackers."
+   },
+   {
+    "gap": "Benchmarks do not disentangle retrieving the wrong memory from failing to apply a correctly retrieved one, and gains measured on synthetic conversational QA or evidence-gathering probes are not shown to carry over to downstream task-execution success.",
+    "card_ids": [
+     "arxiv:2601.19935",
+     "arxiv:2605.12493",
+     "arxiv:2605.15128",
+     "arxiv:2607.12893",
+     "arxiv:2608.12990",
+     "arxiv:2608.04843"
+    ],
+    "evidence_needed": "Evaluations that log retrieved items per step, score retrieval correctness and application correctness separately, and correlate both with end-task success on real agentic workloads rather than QA accuracy."
+   }
+  ]
+ },
+ {
+  "axis": "shared and multi-agent memory and skill libraries",
+  "gaps": [
+   {
+    "gap": "Whether a skill library or memory built by one agent transfers to consumer agents of different architecture, size or base capability, and what determines builder-consumer compatibility, is unresolved: SAGE, SIRI and MemSkill test one backbone, SkillX and Agent Memory Distillation only strong-to-weak, LatentMAS assumes identical architectures, and the learned context manager transfers poorly across dissimilar agents.",
+    "card_ids": [
+     "arxiv:2512.17102",
+     "arxiv:2602.01869",
+     "arxiv:2604.04804",
+     "arxiv:2511.20639",
+     "arxiv:2605.30785",
+     "arxiv:2608.07169",
+     "arxiv:2602.02474",
+     "arxiv:2604.20714",
+     "arxiv:2606.02355",
+     "arxiv:2603.15666"
+    ],
+    "evidence_needed": "A fixed library built by one backbone evaluated on a grid of consumer backbones spanning families, sizes and vanilla capability on the same benchmarks with multiple seeds, reporting gain over each consumer's own baseline and whether the builder itself benefits."
+   },
+   {
+    "gap": "No system shows how a growing shared skill library should be pruned or reconciled so that stale, conflicting or wrongly activated skills do not degrade performance over long deployment, even though SkillFlow finds high skill usage does not imply utility and one model regresses below vanilla.",
+    "card_ids": [
+     "arxiv:2512.17102",
+     "arxiv:2602.01869",
+     "arxiv:2604.04804",
+     "arxiv:2604.07791",
+     "arxiv:2604.17308",
+     "arxiv:2603.15666",
+     "arxiv:2602.02474",
+     "arxiv:2603.07670"
+    ],
+    "evidence_needed": "Long task streams with a mid-stream distribution shift that track library size, activation rate and per-activation utility, comparing maintenance policies against a frozen library and a no-library baseline."
+   },
+   {
+    "gap": "Provenance, access-control and isolation mechanisms for shared memory are demonstrated only on synthetic tasks, within-task settings or framework descriptions, so robustness to adaptive poisoning, laundering or leakage through transformed views, and the utility cost of governance, remain unmeasured.",
+    "card_ids": [
+     "arxiv:2505.18279",
+     "arxiv:2608.10509",
+     "arxiv:2602.07398",
+     "arxiv:2512.23760",
+     "arxiv:2602.06052",
+     "arxiv:2603.07670"
+    ],
+    "evidence_needed": "Red-team evaluation on real multi-agent workflows with adaptive adversaries injecting laundered or schema-valid poisoned fragments, reporting attack success, leakage and benign task success relative to ungoverned shared memory."
+   },
+   {
+    "gap": "Reported gains from shared or multi-agent memory are rarely isolated from co-varying factors (expert SFT, prompt evolution, per-agent structure) or compared at matched cost against simpler baselines such as raw trajectory retrieval, a fixed optimized prompt, or fine-tuning on the same experience, and seed variance is mostly unreported.",
+    "card_ids": [
+     "arxiv:2512.17102",
+     "arxiv:2603.09022",
+     "arxiv:2508.08997",
+     "arxiv:2604.17308",
+     "arxiv:2608.07169",
+     "arxiv:2512.23760",
+     "arxiv:2602.06052",
+     "arxiv:2606.02355",
+     "arxiv:2602.01869",
+     "arxiv:2604.04804"
+    ],
+    "evidence_needed": "Factorial ablations on a common benchmark with multiple seeds and matched token and compute budgets, including a fine-tuning arm on the same experience and a non-skill memory arm."
+   },
+   {
+    "gap": "Multi-agent memory-sharing mechanisms (shared latent working memory, role-aligned intrinsic memory, isolated worker contexts) operate within a single query or task, so whether they extend to persistent cross-task memory without harming tasks that need cross-subtask or long-horizon context is untested.",
+    "card_ids": [
+     "arxiv:2511.20639",
+     "arxiv:2508.08997",
+     "arxiv:2602.07398",
+     "arxiv:2605.30785"
+    ],
+    "evidence_needed": "Multi-session evaluations where the shared memory persists across tasks, measuring reuse benefit, token overhead and any loss on tasks requiring cross-subtask context relative to per-task memory."
+   }
+  ]
+ }
+]
