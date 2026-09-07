@@ -34,20 +34,28 @@ def main():
     papers = load_jsonl(sys.argv[1]); mapping = json.load(open(sys.argv[2]))
     by = {p.arxiv: p for p in papers if p.arxiv}
     n = 0
-    for arx, tid in mapping.items():
+    # mapping: {"<arxiv>": "<task id>"} (one paper per agent) or {"tasks": ["<task id>", ...]} (agents that
+    # return a JSON array of records; each record is matched to a paper by its "arxiv" field)
+    tids = mapping["tasks"] if "tasks" in mapping else list(mapping.values())
+    for tid in tids:
         path = os.path.join(TASKS_DIR, tid + ".output")
-        if not os.path.exists(path) or arx not in by:
+        if not os.path.exists(path):
             continue
+        recs = None
         for t in reversed(assistant_texts(path)):
             try:
                 d = parse_json(t)
             except Exception:
                 continue
-            if isinstance(d, dict) and "arxiv" in d:
-                by[arx].sections = {k: d.get(k, "") for k in ("limitations", "conclusion", "method") if d.get(k)}
-                by[arx].sections["_sources"] = d.get("sources", [])
-                n += 1
-                break
+            if isinstance(d, dict) and "arxiv" in d: recs = [d]; break
+            if isinstance(d, list) and d and isinstance(d[0], dict) and "arxiv" in d[0]: recs = d; break
+        for d in recs or []:
+            arx = str(d.get("arxiv", "")).replace("arXiv:", "").strip()
+            if arx not in by:
+                continue
+            by[arx].sections = {k: d.get(k, "") for k in ("limitations", "conclusion", "method") if d.get(k)}
+            by[arx].sections["_sources"] = d.get("sources", [])
+            n += 1
     save_jsonl(papers, sys.argv[1])
     print(f"ingested sections for {n}/{len(mapping)} papers")
 

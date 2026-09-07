@@ -1,0 +1,9 @@
+{
+ "kind": "section_read",
+ "arxiv": "2602.16313",
+ "tools": [
+  "WebSearch"
+ ],
+ "model": "opus",
+ "prompt": "Using WebSearch only (at most 4 searches), find the text of the Limitations / Future work and Conclusion sections of arXiv:2602.16313, and one sentence stating its method. Search 'arxiv 2602.16313 limitations', 'arxiv 2602.16313 conclusion', and the paper title. Return ONLY JSON: {\"arxiv\": \"2602.16313\", \"limitations\": \"<=250 words or 'not found'\", \"conclusion\": \"<=200 words or 'not found'\", \"method\": \"one sentence\", \"sources\": [urls]}. Quote or closely paraphrase; do not invent."
+}

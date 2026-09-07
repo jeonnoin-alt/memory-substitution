@@ -1,0 +1,114 @@
+[
+ {
+  "arxiv": "2510.11967",
+  "title": "Scaling Long-Horizon LLM Agent via Context-Folding"
+ },
+ {
+  "arxiv": "2602.16313",
+  "title": "MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks"
+ },
+ {
+  "arxiv": "2509.13313",
+  "title": "ReSum: Unlocking Long-Horizon Search Intelligence via Context Summarization"
+ },
+ {
+  "arxiv": "2512.10696",
+  "title": "Remember Me, Refine Me: A Dynamic Procedural Memory Framework for Experience-Driven Agent Evolution"
+ },
+ {
+  "arxiv": "2512.17102",
+  "title": "Reinforcement Learning for Self-Improving Agent with Skill Library"
+ },
+ {
+  "arxiv": "2510.06727",
+  "title": "Scaling LLM Multi-turn RL with End-to-end Summarization-based Context Management"
+ },
+ {
+  "arxiv": "2602.01869",
+  "title": "ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents"
+ },
+ {
+  "arxiv": "2604.04804",
+  "title": "SkillX: Automatically Constructing Skill Knowledge Bases for Agents"
+ },
+ {
+  "arxiv": "2510.05381",
+  "title": "Context Length Alone Hurts LLM Performance Despite Perfect Retrieval"
+ },
+ {
+  "arxiv": "2603.04257",
+  "title": "Memex(RL): Scaling Long-Horizon LLM Agents via Indexed Experience Memory"
+ },
+ {
+  "arxiv": "2601.03192",
+  "title": "MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory"
+ },
+ {
+  "arxiv": "2512.03627",
+  "title": "MemVerse: Multimodal Memory for Lifelong Learning Agents"
+ },
+ {
+  "arxiv": "2605.23296",
+  "title": "Parallel Context Compaction for Long-Horizon LLM Agent Serving"
+ },
+ {
+  "arxiv": "2602.06052",
+  "title": "Rethinking Memory Mechanisms of Foundation Agents in the Second Half: A Survey"
+ },
+ {
+  "arxiv": "2511.20639",
+  "title": "Latent Collaboration in Multi-Agent Systems"
+ },
+ {
+  "arxiv": "2507.21504",
+  "title": "Evaluation and Benchmarking of LLM Agents: A Survey"
+ },
+ {
+  "arxiv": "2607.11944",
+  "title": "MAGE: Understanding Stability-Performance Trade-offs in Multi-component Prompt Optimization"
+ },
+ {
+  "arxiv": "2603.21520",
+  "title": "Generalizable Self-Evolving Memory for Automatic Prompt Optimization"
+ },
+ {
+  "arxiv": "2508.08997",
+  "title": "Intrinsic Memory Agents: Heterogeneous Multi-Agent LLM Systems through Structured Contextual Memory"
+ },
+ {
+  "arxiv": "2508.18749",
+  "title": "Reflection-Enhanced Meta-Optimization Integrating TextGrad-style Prompt Optimization with Memory-Driven Self-Evolution"
+ },
+ {
+  "arxiv": "2603.09022",
+  "title": "MEMO: Memory-Augmented Model Context Optimization for Robust Multi-Turn Multi-Agent LLM Games"
+ },
+ {
+  "arxiv": "2510.18257",
+  "title": "DelvePO: Direction-Guided Self-Evolving Framework for Flexible Prompt Optimization"
+ },
+ {
+  "arxiv": "2607.12893",
+  "title": "MemOps: Benchmarking Lifecycle Memory Operations in Long-Horizon Conversations"
+ },
+ {
+  "arxiv": "2605.05191",
+  "title": "LongSeeker: Elastic Context Orchestration for Long-Horizon Search Agents"
+ },
+ {
+  "arxiv": "2603.07670",
+  "title": "Memory for Autonomous LLM Agents:Mechanisms, Evaluation, and Emerging Frontiers"
+ },
+ {
+  "arxiv": "2605.12493",
+  "title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues"
+ },
+ {
+  "arxiv": "2608.07169",
+  "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory"
+ },
+ {
+  "arxiv": "2606.03197",
+  "title": "MemTrain: Self-Supervised Context Memory Training"
+ }
+]
