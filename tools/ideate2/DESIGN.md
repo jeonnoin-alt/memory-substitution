@@ -241,3 +241,40 @@ token-matched placebo arm exists; (2) the 27B memory channel (+0.6) cannot suppo
 belong on the 120B or in a manufactured high-harm regime; (3) predictions entailed by policy definitions (decay deletes dormant
 items; replay is truth-sensitive; a bank forgets nothing) were called out as non-findings; (4) the field's mechanism claims are
 mostly published, so the surviving novelty is measurement design, which caps novelty at 5–6 under this rubric.
+
+## 10. Second topic run: parametric vs in-context experience (2026-09-07, `runs_ideate2/parametric` + `gen_v3`)
+
+Same policy (Fable Stage 0/1/2, Opus gate and judges), no WebSearch at all (quota spent on the first topic), every literature
+call through `s2cli.py`. New this round: a measured starting position (`runs/STEP0_RESULTS.md`: k-sweep +27/+32 net on
+Qwen3-32B, QLoRA 2 GPU-h/epoch) written into the brief, a rules section derived from the previous round's 28 reviews, and the
+51-idea archive passed to the gate (`--archive`).
+
+| Stage | Calls | Result |
+|---|---|---|
+| 0 cards / synth | 8 + 5 Fable | 79 cards (5 axes), 26 gaps; digest 113 KB |
+| 1 brief | Fable (session) | `brief_v3.md`: starting numbers, 10 binding rules, Q1–Q6, appendix A (51 archived) + B (3 objections) |
+| 2 generation | 5 Fable | 15 proposals; two generators converged on the same idea (instance-bound share of the privilege) |
+| 2.5 gate | 6 Opus batches | 53 pairs: 43 distinct, 9 same-mechanism-new-measurement, 1 same_claim_reworded (the convergent pair; one withdrawn) |
+| 2.7 novelty | network | 15 cards (rule keys, S2 2 queries + HF) |
+| 3 review r1 | 14 Opus | 12 borderline / 2 reject; scores 4.35–5.55; novelty 5 from 12 of 14 judges; 0 verified collisions |
+| 3 revise → r2 | 3 Fable + 3 Opus | top 3 revised against their reviews, re-judged (see below) |
+
+Structural findings across the 14 reviews (they repeat the previous round's, with two additions):
+1. **Definitional predictions still slip through the generators** even with the rule in the brief: an algebraic identity
+   presented as a regression (context_ceiling P1), a null guaranteed by the train/eval partition (instance_share P2), a
+   spillover ratio set to zero by type-matched retrieval (harm_spillover P1), append-only-vs-chunked-SGD as a "lock-in"
+   finding, a warm-start advantage as a "savings ratio", unconditional marker emission as "generalization". The gate cannot
+   catch these (they are not restatements); only the judge does. A cheap pre-review pass that asks "which outcome of each
+   prediction is impossible under the stated arms" would remove most of them before Opus time is spent.
+2. **Power arithmetic is wrong in the same direction every time**: equivalence margins are set at or below the stated CI,
+   gates guarantee the headline effect but not the ratio the paper is about, per-type cells (±13–15) carry the claims.
+3. **Budgets are understated 2–3×** once every arm × condition × seed × task is multiplied out; judges did the multiplication.
+4. **Collision checks are one-sided**: generators searched the agent-memory phrasing and missed the mechanism's home
+   literature every time (RAG dose 2410.05983/2310.01558; near-constant poison count 2510.07192; emergent-misalignment
+   generalization 2608.29118; spurious forgetting 2501.13453; knowledge-preference QA 2407.13048; DIVE diversity-vs-quantity
+   2603.11076; paraphrase subliminal transfer 2603.09517). The novelty card's rule keys have the same blind spot.
+5. **The cheap baseline that kills the paper is a sentence**: a static per-type procedure prompt or a one-line rule statement
+   (named by four judges) dominates both substrates on the cost axis for procedure-templated ALFWorld; any weights-vs-context
+   claim on this environment must run it first.
+6. Novelty is capped at 5 because the mechanisms are published (information abundance, compliance trap, subliminal transfer,
+   spurious forgetting, privilege illusion); what is new is the paired-substrate design, which the rubric scores as measurement.

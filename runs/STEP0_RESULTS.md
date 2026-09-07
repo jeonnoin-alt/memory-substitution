@@ -44,3 +44,12 @@ throughput scales linearly with examples, so a pool-size sweep (10 %, 30 %, 100 
 run on the second GPU while the first serves. The vLLM server needs a restart to serve a merged or LoRA-loaded checkpoint
 (`--enable-lora` with rank 32 is supported by vLLM 0.13 for Qwen3), so evaluation of a trained arm costs one server
 restart (~3 min) plus the k=0 sweep (~274 games × seeds). Files: `code/lora_sft.py`, `runs/lora/*/train_log.json`.
+
+# Self-rollout pool (own k=0 successes on train tasks), 2026-09-07
+
+`runs/bank/own_rollouts_train.jsonl`, Qwen3-32B k=0, seed 11, 30-step cap, both replicas (32 workers, ~20 episodes/min).
+First pass (`--limit 1500`, alphabetical, so three types only): 1,500 episodes, 0 errors, 1,046 won (0.697); by type
+pick_and_place 0.81, look_at_in_light 0.76, clean_then_place 0.42; mean 11.5 steps per won episode. The remaining 2,053 train
+games (cool / heat / pick_two types) are being collected with the same launcher (`start_own_rollouts.sh 32 <servers> 0`).
+Use: the brief's "both pools" rule (expert = off-policy text, self-rollout = on-policy); note the pool is success-filtered and
+type-skewed toward what the k=0 agent already solves, which several judges flagged as a selection confound for dose claims.
