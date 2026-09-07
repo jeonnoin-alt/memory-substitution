@@ -1,0 +1,16 @@
+{
+ "stale_dose_law_context_vs_weights_r1": "a757caf9582fd4a40",
+ "reversal_savings_latent_retention_r1": "ad3d902a6a2ce3db4",
+ "success_filter_lockin_under_shift_r1": "a68a0d49addca6846",
+ "context_pays_for_its_own_tokens_breakeven_r1": "a13ad9c0b8496c792",
+ "first_item_additive_rest_substitutive_r1": "a4590dcb00efc937b",
+ "coverage_limited_context_count_limited_weights_r1": "a3a9840349077baf8",
+ "context_ceiling_substitution_r1": "af358319519c565aa",
+ "train_dose_sets_substrate_r1": "acc7b884841a7489b",
+ "context_wins_substrate_conflict_r1": "ae496ebd8ba22b814",
+ "instance_share_is_the_illusion_r1": "a163ffcab9eb85b11",
+ "student_side_abundance_r1": "a34e1ebcc00fd5b1a",
+ "memory_carried_traits_need_tokens_r1": "ae6883b2c319ef7ab",
+ "harm_spillover_is_substrate_bound_r1": "a9feeba717be59dfd",
+ "style_outruns_content_r1": "a364242389c994c74"
+}

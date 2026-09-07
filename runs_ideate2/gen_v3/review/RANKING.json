@@ -1,0 +1,240 @@
+[
+ {
+  "name": "memory_carried_traits_need_tokens",
+  "score": 5.55,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 5.0,
+   "feasibility": 6.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Two, and the second is the one that hurts. (a) Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation (arXiv:2604.15559, verified on S2 via title sear"
+ },
+ {
+  "name": "context_pays_for_its_own_tokens_breakeven",
+  "score": 5.45,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 6.0,
+   "feasibility": 4.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "2512.02543 (VERIFIED via the literature command; S2 title 'Inference-Time Distillation: Cost-Efficient Agents Without Fine-Tuning or Manual Prompt Engineering',"
+ },
+ {
+  "name": "context_wins_substrate_conflict",
+  "score": 5.45,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 5.0,
+   "feasibility": 5.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "The Compliance Trap, arXiv:2607.10608 (verified via s2cli, 2026-07-12): its Enter-Propagation-Recovery framework already establishes that agents adopt task-wron"
+ },
+ {
+  "name": "success_filter_lockin_under_shift",
+  "score": 5.45,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 5.0,
+   "feasibility": 5.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Verified: 'Honest Lying: Understanding Memory Confabulation in Reflexive Agents' (arXiv:2605.29463, verified via s2cli paper, S2 channel) already shows self-wri"
+ },
+ {
+  "name": "context_ceiling_substitution",
+  "score": 5.4,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 6.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "UCOB (arXiv:2606.29502, VERIFIED on S2, 2026-06-28, 8 citations): credit-aware on-policy bidirectional self-distillation between skill-conditioned and no-skill "
+ },
+ {
+  "name": "first_item_additive_rest_substitutive",
+  "score": 5.4,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 6.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "SESA (arXiv:2607.29468, verified via the literature command, 2026-07-31): its own summary says evolving skill memory 'changes policy learning and the future tra"
+ },
+ {
+  "name": "instance_share_is_the_illusion",
+  "score": 5.4,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 6.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 4.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Verified: UCOB (arXiv:2606.29502, verified via s2cli search and paper lookup, 8 citations) is the closest agent-side threat — it already treats retrieved skill "
+ },
+ {
+  "name": "coverage_limited_context_count_limited_weights",
+  "score": 5.35,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 6.0,
+   "feasibility": 4.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Verified: 2608.15008 (Harness the Memory, 2026-08-15, verified via s2cli paper) is the closest substrate-comparison work; it evaluates dense/sparse indices, tex"
+ },
+ {
+  "name": "student_side_abundance",
+  "score": 5.1,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 4.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "arXiv:2608.12218 (Information Abundance Paradox: Long-Context Training Undermines Parametric Knowledge, 2026-08-12, verified via s2cli `paper`, cit 2). It alrea"
+ },
+ {
+  "name": "reversal_savings_latent_retention",
+  "score": 5.05,
+  "verdict": "reject",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 5.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "Verified: Spurious Forgetting in Continual Learning of Language Models (arXiv:2501.13453, ICLR, 57 cits; verified with `paper`) and Unlearning Isn't Deletion (a"
+ },
+ {
+  "name": "stale_dose_law_context_vs_weights",
+  "score": 5.05,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 5.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "The Compliance Trap (arXiv:2607.10608, verified via s2cli, appears on both S2 and HF) is the nearest and the proposal is right that it is in-context only: it al"
+ },
+ {
+  "name": "harm_spillover_is_substrate_bound",
+  "score": 4.95,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 5.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Three verified papers box this in from different sides. (1) arXiv:2608.29118 'Emergent Misalignment Is Not Magical' (verified with s2cli paper; 2026-08-29) conc"
+ },
+ {
+  "name": "train_dose_sets_substrate",
+  "score": 4.9,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 4.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 5.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "arXiv:2608.12218 (Information Abundance Paradox: Long-Context Training Undermines Parametric Knowledge, 2026-08-12) — VERIFIED twice this session, once by `s2cl"
+ },
+ {
+  "name": "style_outruns_content",
+  "score": 4.35,
+  "verdict": "reject",
+  "means": {
+   "novelty": 5.0,
+   "significance": 4.0,
+   "soundness": 3.0,
+   "feasibility": 4.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "VERIFIED: arXiv:2604.15559, 'Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation' (2026-04-16, 4 citations, s2 channel) — the same substrate (agent"
+ }
+]
