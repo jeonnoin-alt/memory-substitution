@@ -54,7 +54,7 @@ def clusters(sim: np.ndarray, thr: float) -> list[list[int]]:
 
 
 def run(ideas: list[dict], bullets: list[str], claims: list[dict], thr_idea: float | None, thr_prior: float | None,
-        be: Backend | None, out: str, z: float = 1.5, batch: int = 10) -> dict:
+        be: Backend | None, out: str, z: float = 1.5, batch: int = 10, archive: list[dict] | None = None) -> dict:
     """thr_idea / thr_prior = None → auto: mean + z·SD of the pairwise similarities (the absolute scale of a
     sentence embedder is corpus-dependent; within one research area everything sits at 0.5–0.75)."""
     os.makedirs(out, exist_ok=True)
@@ -74,15 +74,22 @@ def run(ideas: list[dict], bullets: list[str], claims: list[dict], thr_idea: flo
                 i, j = g[a], g[b]
                 report["pairs"].append({"a": names[i], "b": names[j], "sim": round(float(sim[i, j]), 3), "kind": "idea-idea"})
     prior_texts = bullets + [f"{c.get('id','')}: {c.get('claim','')}" for c in claims]
+    prior_src = ["brief"] * len(bullets) + ["digest"] * len(claims)
+    for a_ in archive or []:   # archived ideas of this program: restating one of them is the failure mode the PI named
+        prior_texts.append(f"archive:{a_.get('Name','')}: {idea_text(a_)}"); prior_src.append("archive")
     if prior_texts:
         Pm = embed(prior_texts); S = E @ Pm.T
         if thr_prior is None:
             thr_prior = float(S.mean() + z * S.std()); report["thresholds"]["prior"] = round(thr_prior, 3)
         for k, i in enumerate(ideas):
-            j = int(S[k].argmax()); s = float(S[k, j])
-            if s >= thr_prior:
-                src = "brief" if j < len(bullets) else "digest"
-                report["prior_flags"].append({"idea": names[k], "sim": round(s, 3), "source": src, "text": prior_texts[j]})
+            order = np.argsort(-S[k])
+            seen_src = set()
+            for j in order[:6]:            # best match per source class (brief / digest / archive), each above threshold
+                j = int(j); s = float(S[k, j]); src = prior_src[j]
+                if s < thr_prior or src in seen_src:
+                    continue
+                seen_src.add(src)
+                report["prior_flags"].append({"idea": names[k], "sim": round(s, 3), "source": src, "text": prior_texts[j][:200]})
                 report["pairs"].append({"a": names[k], "b": f"{src}:{prior_texts[j][:80]}", "sim": round(s, 3),
                                         "kind": f"idea-{src}", "prior_text": prior_texts[j]})
     # top-3 nearest neighbours for every idea (descriptive)
@@ -148,10 +155,13 @@ if __name__ == "__main__":
     ap.add_argument("--thr-idea", type=float, default=None, help="absolute cosine; default auto = mean + z·SD")
     ap.add_argument("--thr-prior", type=float, default=None); ap.add_argument("--z", type=float, default=1.5)
     ap.add_argument("--backend", default=None, help="harness|api to emit adjudication jobs; omit for report only")
+    ap.add_argument("--archive", help="JSON list of this program's archived ideas (compared as prior texts)")
+    ap.add_argument("--model", default="opus")
     a = ap.parse_args()
     ideas = json.load(open(a.ideas))
     bullets = brief_bullets(open(a.brief).read()) if a.brief else []
     claims = [json.loads(l) for l in open(a.cards)] if a.cards else []
-    be = Backend(a.backend, os.path.join(a.out, "jobs"), "opus") if a.backend else None
-    rep = run(ideas, bullets, claims, a.thr_idea, a.thr_prior, be, a.out, a.z)
+    be = Backend(a.backend, os.path.join(a.out, "jobs"), a.model) if a.backend else None
+    archive = json.load(open(a.archive)) if a.archive else None
+    rep = run(ideas, bullets, claims, a.thr_idea, a.thr_prior, be, a.out, a.z, archive=archive)
     print(f"clusters: {len(rep['clusters'])}, prior flags: {len(rep['prior_flags'])}, pairs to adjudicate: {len(rep['pairs'])} -> {a.out}/gate_report.md")
