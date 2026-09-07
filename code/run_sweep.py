@@ -50,10 +50,14 @@ def work(job):
     r = _agent.run_episode(gf, seed, memory_items=items, instruction=_instruction); r["split"] = s
     return r
 # retrieval in the parent (one MiniLM), episodes in worker processes
+import torch; torch.set_num_threads(4)
+ret_cache = {}                       # one retrieval per game (top max(k)); k-cells share the prefix
 jobs2 = []
 for (s, gf, seed, k) in jobs:
-    items = bank.retrieve(goal_for(gf), max(ks), exclude_task=task_of(gf))[:k] if k > 0 else []
-    jobs2.append((s, gf, seed, k, items))
+    if gf not in ret_cache:
+        ret_cache[gf] = bank.retrieve(goal_for(gf), max(ks), exclude_task=task_of(gf))
+    jobs2.append((s, gf, seed, k, ret_cache[gf][:k] if k > 0 else []))
+print(f"retrieval cached for {len(ret_cache)} games", flush=True)
 n = 0; won = 0
 with Pool(a.workers, initializer=_init, initargs=(a.servers.split(","), a.instruction)) as pool:
     for r in pool.imap_unordered(work, jobs2):
