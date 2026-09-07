@@ -26,3 +26,21 @@ do not" does not reproduce here. (3) unseen ≈ seen, so the gain is not scene-b
 near-duplicate-template leakage concern (same task type ⇒ near-identical procedure) the previous round's judges raised.
 (4) look-at-in-light is the one type where retrieval nets negative — a candidate harm regime for the parametric comparison.
 Files: `runs/sweep/k_sweep_final.jsonl` (episodes with full histories), `code/stats.py`.
+
+# Measurement B — parametric route cost (QLoRA on Qwen3-32B, one A100 80GB), 2026-09-07
+
+Step-level SFT on the expert bank (1,465 won trajectories → 8,854 (prompt, action) examples, ~300 tokens each; chat
+template, loss on the action tokens only). QLoRA nf4, rank 32, lr 1e-4, max-len 2048, `--enforce` none (HF peft 0.20,
+bitsandbytes 0.50, inside `vllm-env`). Loss falls from ~0.8 to ~0.1 within 20–60 optimizer steps (procedure is easy to fit).
+
+| config | examples seen | wall | tok/s | s/example | peak GPU mem | epoch (8,854 ex) est. |
+|---|---|---|---|---|---|---|
+| batch 1, grad-accum 4, 60 steps | 240 | 377 s | 190 | 1.57 | 29.8 GB | 3.9 h |
+| batch 4, grad-accum 2, 20 steps | 160 | 128 s | 385 | 0.80 | 31.5 GB | 2.0 h |
+
+Reading: one epoch of the whole expert pool costs ~2 GPU-hours on one A100 at batch 4 (memory headroom allows batch 8–16,
+so ~1 h is plausible); the same pool in context costs ~430 prompt tokens per episode at k=3 (~1,010 at k=7). Training
+throughput scales linearly with examples, so a pool-size sweep (10 %, 30 %, 100 % of the bank) is 0.2–2 h per arm and can
+run on the second GPU while the first serves. The vLLM server needs a restart to serve a merged or LoRA-loaded checkpoint
+(`--enable-lora` with rank 32 is supported by vLLM 0.13 for Qwen3), so evaluation of a trained arm costs one server
+restart (~3 min) plus the k=0 sweep (~274 games × seeds). Files: `code/lora_sft.py`, `runs/lora/*/train_log.json`.

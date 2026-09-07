@@ -23,7 +23,10 @@ for b, tid in sorted(mapping.items()):
         ax = c.get("axes") or []
         if isinstance(ax, str):   # model wrote prose: map back to axis names by substring
             ax = [n for n in axis_names if n.lower() in ax.lower()]
-        c["axes"] = [a for a in ax if a in axis_names] or [n for n in axis_names if n.lower() in json.dumps(c).lower()][:1]
+        # list entries may carry the axis description ("name: desc"): map each entry by prefix / substring
+        ax = [next((n for n in axis_names if a == n or a.lower().startswith(n.lower()) or n.lower() in a.lower()), a)
+              for a in ax if isinstance(a, str)]
+        c["axes"] = [a for a in dict.fromkeys(ax) if a in axis_names] or [n for n in axis_names if n.lower() in json.dumps(c).lower()][:1]
         p = papers.get(c.get("id"))
         if p is None: c["_unknown_id"] = True
         else: c["title"] = p.title; c["date"] = c.get("date") or p.date or p.year
