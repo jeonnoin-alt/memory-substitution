@@ -53,6 +53,63 @@
   ]
  },
  {
+  "axis": "evaluation methodology",
+  "gaps": [
+   {
+    "gap": "It is unresolved whether the headline gains claimed for memory and evolution systems survive run-to-run stochasticity, since several papers report single point-estimate percentage improvements with no variance or significance testing while the papers that do measure variance show it can be amplified several-fold by the very design choices that raise the mean (candidate-pool size) and that three runs per cell supports only paradigm-level, not per-condition, conclusions.",
+    "card_ids": [
+     "s2:6094a768eb65600c71177ce0e49056ce6c1d0f07",
+     "arxiv:2512.18746",
+     "arxiv:2606.17628",
+     "arxiv:2607.11944",
+     "arxiv:2607.05202"
+    ],
+    "evidence_needed": "Re-running the same memory conditions over many seeds and reporting the full per-seed distribution with paired significance tests (as done for the MAGE-vs-GEPA and holistic-vs-atomic-judge comparisons) would show which reported deltas exceed seed noise."
+   },
+   {
+    "gap": "Whether memory-system gains are worth their compute is unresolved, because the construction, maintenance, and meta-search costs of the more elaborate designs (hypergraph building and pruning, meta-evolution over architectures, iterative pipeline evolution) are not reported alongside their accuracy gains, so no comparison is made at matched budget against a fixed heuristic memory.",
+    "card_ids": [
+     "arxiv:2608.16114",
+     "arxiv:2512.18746",
+     "arxiv:2606.00619",
+     "arxiv:2608.15008"
+    ],
+    "evidence_needed": "Budget-matched comparisons that hold tokens, wall-clock latency, and dollar cost fixed across substrates and report accuracy as a function of that budget — the efficiency instrumentation the unified-harness study describes but has not released — would settle whether the elaborate designs dominate simple ones per unit of compute."
+   },
+   {
+    "gap": "The number of memory items injected per query is treated as an unreported implementation detail rather than an experimental variable, so it is unknown how much of any reported gain or harm is attributable to injection dose rather than to memory structure, even though separate evidence shows broad retrieval helps factual QA while hurting sequential decision-making and that repeated exposure to conflicting memory amplifies failure.",
+    "card_ids": [
+     "arxiv:2608.16114",
+     "arxiv:2606.17628",
+     "arxiv:2607.10608",
+     "arxiv:2608.15008",
+     "arxiv:2603.07379"
+    ],
+    "evidence_needed": "A dose-response sweep varying only the number of retrieved items per query within a fixed substrate and backbone, reporting task success and conflicting-memory compliance jointly across both QA and decision-making suites, would separate the effect of injection budget from that of memory structure."
+   },
+   {
+    "gap": "The instruments used to score memory experiments — LLM judges, automatic ability/skill extractors, and noise-injection pipelines — are themselves largely unvalidated in the memory setting, since judge behavior is shown to be highly sensitive to reference quality but never tested in interaction with a memory system, extraction vocabulary reflects a single extractor's idiosyncrasies, one robustness framework reports no benchmarks, models, or numbers at all, and process-aware multi-view evaluation has been demonstrated only where no memory mechanism is present.",
+    "card_ids": [
+     "arxiv:2603.28005",
+     "arxiv:2607.05202",
+     "arxiv:2602.11348",
+     "arxiv:2601.08462"
+    ],
+    "evidence_needed": "Holding a human-annotated ground truth fixed while varying the judge design, the ability extractor, and the noise level, and checking whether the induced ranking of memory conditions changes, would establish whether current memory results are artifacts of the measurement instrument."
+   },
+   {
+    "gap": "Evaluation horizons are too short to test the consolidation claims memory systems are built on: durability of distilled skills past a single frozen deployment phase, stability of evolved pipelines over many more iterations, and substrate behavior at long histories are all left untested, even though the substrate study already observes that designs effective at moderate history lengths become costly or brittle at longer ones and the survey names cross-task consolidation as the central open challenge.",
+    "card_ids": [
+     "arxiv:2602.06052",
+     "arxiv:2605.24117",
+     "arxiv:2608.15008",
+     "arxiv:2606.00619"
+    ],
+    "evidence_needed": "Longitudinal runs that extend the same agent and memory store across many task episodes and evolution iterations, reporting accuracy, retrieval quality, and store size over time rather than at a single endpoint, would show whether apparent consolidation gains persist, plateau, or degrade into clutter."
+   }
+  ]
+ },
+ {
   "axis": "memory structure and write policy",
   "gaps": [
    {
@@ -112,6 +169,60 @@
      "arxiv:2606.17628"
     ],
     "evidence_needed": "Multi-backbone, multi-scale replications of the same write policy under one unified harness with multiple seeds and reported variance/significance, including parametric versus retrieval-based substrates and long-horizon regimes where substrate effectiveness is said to invert."
+   }
+  ]
+ },
+ {
+  "axis": "retrieval mechanism and injection budget",
+  "gaps": [
+   {
+    "gap": "Across systems whose gains are attributed to memory, no card isolates how much of the improvement comes from the write/consolidation policy versus the retrieval mechanism that surfaces those memories at query time, so the causal locus of the reported gains is unresolved.",
+    "card_ids": [
+     "arxiv:2602.02474",
+     "s2:586aeda2a926a91a83568355f27dd5cb33372453",
+     "s2:10eda7b0f9ee189889663da64d5660eb34a4cab7",
+     "arxiv:2512.10696"
+    ],
+    "evidence_needed": "A factorial ablation that crosses each write/consolidation policy with a fixed common retriever and each retrieval mechanism with a fixed common memory pool, on the same benchmarks and backbones, reporting per-cell task performance."
+   },
+   {
+    "gap": "Memory content is increasingly made adaptive or learned while the retrieval step stays a predefined similarity/top-k procedure, and no card establishes whether a learned or corpus-aware retriever would add anything on top of adaptive memory content in an agent setting.",
+    "card_ids": [
+     "arxiv:2602.02474",
+     "s2:a1f92275e52aa45a10727068a76b337dc08f6087",
+     "arxiv:2606.17910"
+    ],
+    "evidence_needed": "A head-to-head comparison, within one agent memory system, of fixed dense top-k against learned and jointly-decoded retrieval (e.g. NNN-style) over the same memory store, reporting both task success and the retrieval compute/latency cost."
+   },
+   {
+    "gap": "The size of the injection budget — how many memory items are read, used, or proactively placed in context per query — is unmeasured as a controlled variable, so the shape of the accuracy-versus-tokens tradeoff and the point at which more injected memory stops helping are unknown.",
+    "card_ids": [
+     "arxiv:2608.16114",
+     "arxiv:2606.17628",
+     "arxiv:2608.07169",
+     "s2:a1f92275e52aa45a10727068a76b337dc08f6087"
+    ],
+    "evidence_needed": "A sweep over the number and token volume of injected memory items (and over proactive versus reactive placement) at fixed retriever and memory pool, reporting task performance and context-token consumption per setting."
+   },
+   {
+    "gap": "Retrieved memory can actively harm agents — by shifting attention away from action-critical context in sequential decision-making, and by inducing compliance with conflicting entries from which agents rarely recover — but no card tests an admission, gating, or routing policy that decides when to retrieve or inject at all.",
+    "card_ids": [
+     "arxiv:2608.15008",
+     "arxiv:2607.10608",
+     "arxiv:2603.07379"
+    ],
+    "evidence_needed": "Controlled experiments in which a gating or substrate-routing policy is switched on and off against always-retrieve and never-retrieve baselines, on both long-context QA and sequential decision-making tasks, measuring entry-level compliance with bad memories alongside end-task success."
+   },
+   {
+    "gap": "Retrieval and injection results are reported under narrow and non-overlapping conditions — single backbones, single benchmark families, no variance reporting — so it is unresolved whether any retrieval mechanism's advantage survives a change of backbone, task domain, or horizon length.",
+    "card_ids": [
+     "s2:586aeda2a926a91a83568355f27dd5cb33372453",
+     "s2:6094a768eb65600c71177ce0e49056ce6c1d0f07",
+     "arxiv:2606.17628",
+     "arxiv:2608.15008",
+     "arxiv:2602.06052"
+    ],
+    "evidence_needed": "Evaluation of the same retrieval/injection configurations across multiple backbones and several benchmark suites under one unified harness, with repeated runs reporting variance or significance tests and results broken out by interaction-history length."
    }
   ]
  }

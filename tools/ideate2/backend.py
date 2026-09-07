@@ -101,50 +101,68 @@ class Backend:
         raise ValueError(f"no parseable result in {path}")
 
 
-def parse_json(s: str) -> Any:
-    """Return the last balanced JSON object/array in s."""
-    s = re.sub(r"^```(?:json)?\s*", "", s.strip()); s = re.sub(r"\s*```$", "", s)
-    cands = []
-    skip_to = -1
-    for i, ch in enumerate(s):
-        if ch not in "{[" or i < skip_to:   # only top-level spans: nested brackets are inside an earlier span
+def _close_index(s: str, i: int):
+    """Index of the bracket closing s[i] (string-aware), or None if the span never closes."""
+    depth, instr, esc = 0, False, False
+    for j in range(i, len(s)):
+        c = s[j]
+        if instr:
+            if esc: esc = False
+            elif c == "\\": esc = True
+            elif c == '"': instr = False
             continue
-        depth, instr, esc = 0, False, False
-        for j in range(i, len(s)):
-            c = s[j]
-            if instr:
-                if esc: esc = False
-                elif c == "\\": esc = True
-                elif c == '"': instr = False
-                continue
-            if c == '"': instr = True
-            elif c in "{[": depth += 1
-            elif c in "}]":
-                depth -= 1
-                if depth == 0:
-                    cands.append(s[i:j + 1]); skip_to = j + 1; break
-    for c in reversed(cands):
-        try:
-            return json.loads(c)
-        except Exception:
-            pass
-    # Truncated tail (subagent transcripts have been observed to drop the final closing brace):
-    # find the last top-level opener, replay the bracket stack and append the missing closers.
-    starts = [i for i, ch in enumerate(s) if ch in "{["]
-    if starts:
-        i = starts[0]; stack = []; instr = esc = False
-        for c in s[i:]:
-            if instr:
-                if esc: esc = False
-                elif c == "\\": esc = True
-                elif c == '"': instr = False
-                continue
-            if c == '"': instr = True
-            elif c in "{[": stack.append("}" if c == "{" else "]")
-            elif c in "}]" and stack: stack.pop()
-        if stack:
-            try:
-                return json.loads(s[i:] + "".join(reversed(stack)))
-            except Exception:
-                pass
+        if c == '"': instr = True
+        elif c in "{[": depth += 1
+        elif c in "}]":
+            depth -= 1
+            if depth == 0: return j
+    return None
+
+
+def _repair(s: str):
+    """Append the closers a truncated JSON text is missing (subagent transcripts have been observed to
+    drop the final brace even though the agent returned it)."""
+    stack, instr, esc = [], False, False
+    for c in s:
+        if instr:
+            if esc: esc = False
+            elif c == "\\": esc = True
+            elif c == '"': instr = False
+            continue
+        if c == '"': instr = True
+        elif c in "{[": stack.append("}" if c == "{" else "]")
+        elif c in "}]" and stack: stack.pop()
+    return json.loads(s + "".join(reversed(stack))) if stack else json.loads(s)
+
+
+def parse_json(s: str) -> Any:
+    """Return the last top-level JSON object/array in s. Preference: (1) last closed top-level span,
+    (2) repair of an unclosed top-level span (truncated tail), (3) closed spans nested inside an unclosed one."""
+    s = re.sub(r"^```(?:json)?\s*", "", s.strip()); s = re.sub(r"\s*```$", "", s)
+    closed, unclosed, nested = [], [], []
+    i = 0
+    while i < len(s):
+        if s[i] not in "{[":
+            i += 1; continue
+        j = _close_index(s, i)
+        if j is None:
+            unclosed.append(i)
+            k = i + 1
+            while k < len(s):          # closed spans inside the unclosed one (lowest priority)
+                if s[k] in "{[":
+                    jj = _close_index(s, k)
+                    if jj is None: k += 1; continue
+                    nested.append(s[k:jj + 1]); k = jj + 1
+                else: k += 1
+            break
+        closed.append(s[i:j + 1]); i = j + 1
+    for c in reversed(closed):
+        try: return json.loads(c)
+        except Exception: pass
+    for i in reversed(unclosed):
+        try: return _repair(s[i:])
+        except Exception: pass
+    for c in reversed(nested):
+        try: return json.loads(c)
+        except Exception: pass
     raise ValueError("no JSON found")
