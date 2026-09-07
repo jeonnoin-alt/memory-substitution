@@ -28,7 +28,7 @@ def emit(a):
         gaps_txt = "\n".join("- " + g for g in gap_ids.get(ax["name"], [])) or "(none)"
         user = P.AXIS_GENERATION_USER.format(brief=brief, axis_name=ax["name"], axis_definition=ax["definition"],
                                              gaps=gaps_txt, cards=cards_txt, n=a.n)
-        be.emit("axis_gen", ax["name"], P.AXIS_GENERATION_SYSTEM, user, tools=["WebSearch"], model=a.model)
+        be.emit("axis_gen", ax["name"], P.AXIS_GENERATION_SYSTEM, user, tools=["Bash", "WebSearch"], model=a.model)
     print(f"{len(axes)} generator jobs -> {be.jobs_dir}")
 
 

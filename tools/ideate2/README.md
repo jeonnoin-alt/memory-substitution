@@ -91,3 +91,9 @@ field caps novelty at 4; weights nov .3 / sig .25 / snd .25 / fea .1 / cla .1; w
 - `runs_ideate2/pool27/` — gate over the 27 archived AI-Scientist-v2 ideas: 2 clusters, 93 pairs,
   adjudications in `gate/adjudications.json`, decisions in `gate/gate_decisions.json`.
 - `runs_ideate2/v6_novelty/` — novelty card for proposal v6 (API candidates + 12 web adjacents, 7 S2-verified).
+
+## Search policy (PI, 2026-09-07)
+
+Subagents search Semantic Scholar first through `s2cli.py` (keyed, IP-pinned, cross-process throttled at ~1 req/s) and
+use WebSearch only when S2 returns nothing, for papers newer than S2's indexing lag, or for section text. WebFetch is
+blocked on this node and must not be used. `S2_FIRST` in `prompts.py` carries this rule into the generator and judge prompts.

@@ -29,7 +29,7 @@ def emit(args):
     card = open(args.card).read() if args.card else None
     be = Backend(args.backend, os.path.join(args.out, "jobs"), args.model)
     system, user = build(idea, brief, card)
-    jobs = [be.emit("review", f"{idea.get('Name','idea')}_r{k}", system, user, tools=["WebSearch"], model=args.model)
+    jobs = [be.emit("review", f"{idea.get('Name','idea')}_r{k}", system, user, tools=["Bash", "WebSearch"], model=args.model)
             for k in range(args.start, args.start + args.n)]
     for j in jobs:
         print(j["id"], "->", j["prompt_file"])

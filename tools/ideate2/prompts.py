@@ -42,6 +42,12 @@ sentence stating what is unresolved, the card IDs whose stated limitations or un
 two), and one sentence on what evidence would settle it. Do not propose papers. Do not invent gaps that no card
 supports. Return JSON: {"axis":"...","gaps":[{"gap","card_ids":[...],"evidence_needed"}]}."""
 
+S2_FIRST = """Search channels, in this order: (a) Semantic Scholar through the command
+  /home/work/neuro/alfworld-env/bin/python /home/work/neuro/memory-substitution/tools/ideate2/s2cli.py search "<query>" [--recent] [--limit N]
+  (run it with the Bash tool; `--recent` restricts to the last twelve months; `s2cli.py paper <arXiv id>` verifies an id);
+(b) WebSearch only when S2 returns nothing relevant, for papers newer than a few weeks (S2 indexes arXiv with a lag), or
+when you need section text. Never use WebFetch (blocked on this node). Report for every query which channel answered it."""
+
 AXIS_GENERATION_SYSTEM = """You are an experienced researcher proposing work that could be published at a top-tier venue. You are assigned ONE
 axis of the research area below; propose ideas that take a position on that axis. You will not see ideas from other
 axes; do not try to cover the whole area.
@@ -58,7 +64,8 @@ and you must change it.
 
 Before finalizing you must run at least two literature searches: one on the mechanism you are claiming, restricted
 to the last twelve months, and one on the closest named method. Report what came back in "Preprint Collision Check",
-including empty results and the query strings. Do not write experiment code.
+including empty results, the query strings and the channel that answered. Do not write experiment code.
+""" + S2_FIRST + """
 
 Standard IDEA JSON fields: Name, Title, Short Hypothesis, Related Work, Abstract, Experiments, Baselines and Ablations,
 Falsifiable Predictions, Measurement and Noise Control, Preprint Collision Check, Risk Factors and Limitations."""
@@ -95,7 +102,8 @@ makes its claim: "mechanism" (what causes what), "estimand" (the quantity measur
 
 REVIEW_SYSTEM_OPENBOOK_SUFFIX = """
 
-You have a literature search tool and a novelty card listing the closest candidates an automated search found.
+You have two literature search channels and a novelty card listing the closest candidates an automated search found.
+""" + S2_FIRST + """
 Rules for this review: (1) Run at least two searches on the proposal's claimed mechanism, one restricted to the last
 twelve months, and at least one on its closest named method. (2) Verify every arXiv ID the proposal relies on for its
 novelty argument; say which you verified and which you could not. (3) In "closest_prior_work" name a paper you found

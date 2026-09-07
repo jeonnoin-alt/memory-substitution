@@ -93,12 +93,34 @@ class S2Client:
                 continue
         return None
 
+    _LOCK = os.path.join(os.environ.get("S2_LOCK_DIR", "/tmp"), "s2_throttle.lock")
+
+    def _throttle_across_processes(self):
+        """One request per min_interval across every process on this node (subagents run s2cli.py concurrently)."""
+        import fcntl
+        try:
+            fd = os.open(self._LOCK, os.O_RDWR | os.O_CREAT, 0o666)
+        except OSError:
+            wait = self.min_interval - (time.time() - self._last)
+            if wait > 0: time.sleep(wait)
+            return
+        try:
+            fcntl.flock(fd, fcntl.LOCK_EX)
+            try:
+                last = float(os.read(fd, 64).decode() or "0")
+            except ValueError:
+                last = 0.0
+            wait = self.min_interval - (time.time() - last)
+            if wait > 0:
+                time.sleep(wait)
+            os.lseek(fd, 0, 0); os.ftruncate(fd, 0); os.write(fd, str(time.time()).encode())
+        finally:
+            fcntl.flock(fd, fcntl.LOCK_UN); os.close(fd)
+
     def _get(self, path: str, params: dict, timeout: float = 30) -> Optional[dict]:
         if not self.ok:
             return None
-        wait = self.min_interval - (time.time() - self._last)
-        if wait > 0:
-            time.sleep(wait)
+        self._throttle_across_processes()
         headers = {"x-api-key": self.key} if self.key else {}
         url = f"https://{S2_HOST}{path}"
         s = requests.Session()
@@ -119,7 +141,7 @@ class S2Client:
                 self._last = time.time()
                 r = s.get(url, params=params, headers=headers, timeout=timeout)
                 if r.status_code == 429:
-                    time.sleep(2.0 * (attempt + 1)); continue
+                    time.sleep(2.0 * (attempt + 1)); self._throttle_across_processes(); continue
                 if r.status_code == 200:
                     return r.json()
                 if r.status_code == 404:
