@@ -211,3 +211,33 @@ Re-running Stage 0 on the agent-memory brief would have put ExpeL's ablation num
 Cost of the run: 8 section reads + 4 card + 4 synth + 10 gate + 1 web-novelty = 27 subagent calls, all Sonnet except the 4 synth (Opus). No Anthropic key was used.
 
 Bugs found by running it: `parse_json` returned the innermost balanced span (a nested list) instead of the outer object → fixed to top-level spans only, last one wins; a fixed cosine threshold of 0.55 put 27/27 ideas in one cluster → mean + 1.5·SD; card `axes` sometimes came back as prose → mapped back to axis names by substring; two synth transcripts were stored with the final `}` missing although the agent returned it → `parse_json` now repairs a truncated tail by replaying the bracket stack.
+
+## 9. First end-to-end run under the model policy (2026-09-07, `runs_ideate2/agent_memory_v2` + `gen_v2`)
+
+Stage 0/1/2 by Fable 5.1 subagents, gate and judges by Opus, no Sonnet, no Anthropic key; WebSearch quota (200/session)
+ran out during Stage 2, after which every literature call went through `s2cli.py` (S2 + HF).
+
+| Stage | Calls | Result |
+|---|---|---|
+| 0 collect | network | 8 axes, 32 queries, 480 unique → 103 kept (coupling axis supplemented with 8 targeted queries) |
+| 0 sections | 14 Fable (2 papers each) | 28 records; 12 with verbatim limitations |
+| 0 cards / synth | 9 + 8 Fable | 103 cards (24 with stated limitations), 40 gaps |
+| 1 brief | Fable (this session) | `brief_v2.md`: pilot findings kept, 5 original questions re-assessed, 8 new questions, 27 archived ideas appended |
+| 2 generation | 8 Fable (WebSearch until quota, then s2cli) | 24 proposals, 13 fields each; several generators revised after the S2+HF instruction |
+| 2.5 gate | 11 Opus batches | 103 pairs: 88 distinct, 11 same-mechanism-new-measurement, 0 repackagings once brief open-questions are excluded |
+| 2.7 novelty | network | 24 cards (rule-based keys); noisy top hits, judges searched themselves |
+| 3 review r1 | 24 Opus | borderline 15 / reject 9; scores 4.65–6.30; 0 verified collisions |
+| 3 escalation | 4 Opus | top two → 3 judges: `abstraction_discards_bindings_and_repairs` 5.95 borderline, `failure_memory_framing_drag` 5.72 reject |
+
+What the judges did that closed-book rounds could not: every review names 5–8 s2cli queries with returned ids and marks which
+proposal citations resolved; they surfaced 2026-05 to 2026-08 preprints that the generators had missed (Honest Lying 2605.29463,
+Memory Transfer Learning 2604.14004, Fragility of Self-Improving Agents 2608.18066, SkillAligner 2608.06880, Plans Don't Persist
+2606.22953, Contextual Experience Replay 2506.06698) and caught two citations that do not resolve on either channel (2608.07429,
+2608.10509) plus one that a generator claimed to have verified and had not.
+
+Structural findings across the 24 reviews (for the next brief): (1) the pilot's "volume is the lever" result makes every
+injection-reducing intervention (gate, timing, summary, abstraction) confounded with "inject less" unless a rate-matched or
+token-matched placebo arm exists; (2) the 27B memory channel (+0.6) cannot support ratio-valued predictions, so confirmatory arms
+belong on the 120B or in a manufactured high-harm regime; (3) predictions entailed by policy definitions (decay deletes dormant
+items; replay is truth-sensitive; a bank forgets nothing) were called out as non-findings; (4) the field's mechanism claims are
+mostly published, so the surviving novelty is measurement design, which caps novelty at 5–6 under this rubric.
