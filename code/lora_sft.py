@@ -14,6 +14,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--model", required=True); ap.add_argument("--bank", required=True); ap.add_argument("--out", required=True)
 ap.add_argument("--steps", type=int, default=200); ap.add_argument("--qlora", action="store_true"); ap.add_argument("--rank", type=int, default=32)
 ap.add_argument("--lr", type=float, default=1e-4); ap.add_argument("--max-len", type=int, default=2048); ap.add_argument("--grad-accum", type=int, default=8)
+ap.add_argument("--batch", type=int, default=1, help="sequences per forward (right-padded); grad-accum counts forwards")
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True)
 tok = AutoTokenizer.from_pretrained(a.model)
 items = [json.loads(l) for p in sorted(glob.glob(a.bank)) for l in open(p)]
@@ -51,12 +52,19 @@ opt = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=a
 model.train(); t0 = time.time(); toks = 0; losses = []
 for step in range(a.steps):
     opt.zero_grad(set_to_none=True); acc = 0.0
+    pad = tok.pad_token_id if tok.pad_token_id is not None else tok.eos_token_id
     for _ in range(a.grad_accum):
-        prompt, target = examples[random.randrange(len(examples))]
-        p_ids = tok(prompt, add_special_tokens=False)["input_ids"][-(a.max_len - 64):]
-        t_ids = tok(target, add_special_tokens=False)["input_ids"][:64]
-        ids = torch.tensor([p_ids + t_ids], device="cuda"); labels = ids.clone(); labels[0, :len(p_ids)] = -100
-        out = model(input_ids=ids, labels=labels); (out.loss / a.grad_accum).backward(); acc += out.loss.item() / a.grad_accum; toks += ids.numel()
+        seqs, labs = [], []
+        for _b in range(a.batch):
+            prompt, target = examples[random.randrange(len(examples))]
+            p_ids = tok(prompt, add_special_tokens=False)["input_ids"][-(a.max_len - 64):]
+            t_ids = tok(target, add_special_tokens=False)["input_ids"][:64]
+            seqs.append(p_ids + t_ids); labs.append([-100] * len(p_ids) + t_ids)
+        L = max(len(x) for x in seqs)
+        ids = torch.tensor([x + [pad] * (L - len(x)) for x in seqs], device="cuda")
+        att = torch.tensor([[1] * len(x) + [0] * (L - len(x)) for x in seqs], device="cuda")
+        labels = torch.tensor([x + [-100] * (L - len(x)) for x in labs], device="cuda")
+        out = model(input_ids=ids, attention_mask=att, labels=labels); (out.loss / a.grad_accum).backward(); acc += out.loss.item() / a.grad_accum; toks += int(att.sum())
     torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0); opt.step(); losses.append(acc)
     if step % 10 == 0 or step == a.steps - 1:
         el = time.time() - t0
