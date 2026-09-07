@@ -1,0 +1,384 @@
+[
+ {
+  "axis": "internalization objectives",
+  "gaps": [
+   {
+    "gap": "Almost no internalization method is compared against simply keeping the same privileged material (skills, references, reflections, retrieved experience, memory files) in context at inference under matched training compute and inference token cost, so it is unresolved whether distilling into weights actually beats the context substrate rather than merely beating RL or SFT.",
+    "card_ids": [
+     "arxiv:2606.11559",
+     "arxiv:2608.05219",
+     "arxiv:2604.02268",
+     "arxiv:2608.13040",
+     "arxiv:2604.10674",
+     "arxiv:2602.12275",
+     "arxiv:2607.01480",
+     "arxiv:2606.04703",
+     "arxiv:2607.21051",
+     "arxiv:2607.01224",
+     "arxiv:2605.28424"
+    ],
+    "evidence_needed": "A three-arm comparison (distilled memory-free student vs. same base model with the identical privileged material in context vs. RL baseline) at matched training FLOPs and reported inference tokens per episode, with seeds and variance, on at least one agentic benchmark."
+   },
+   {
+    "gap": "Whether the trained student still depends on residual privileged context at deployment (the privilege illusion) is rarely checked, and it is unknown whether the illusion and its proposed fixes apply when the privileged information is retrieved agent memory or experience rather than reference solutions.",
+    "card_ids": [
+     "arxiv:2608.01735",
+     "arxiv:2606.30626",
+     "arxiv:2606.29340",
+     "arxiv:2605.11458",
+     "arxiv:2601.18734",
+     "arxiv:2606.29502",
+     "arxiv:2607.28272",
+     "arxiv:2608.09228"
+    ],
+    "evidence_needed": "Evaluate every distilled student with privileged context fully absent, ablated, or replaced with mismatched context at test time, on memory-conditioned agentic tasks, and report the gap between privileged and unprivileged accuracy alongside the OP2SD-style reference-vs-context decomposition."
+   },
+   {
+    "gap": "Whether internalized behaviour survives repeated distillation rounds, continued training on new tasks, and distribution shift is untested for nearly every objective, while the one multi-iteration study reports progressive collapse rather than compounding gains.",
+    "card_ids": [
+     "arxiv:2606.04703",
+     "arxiv:2606.11173",
+     "arxiv:2602.12275",
+     "arxiv:2607.21051",
+     "arxiv:2608.09826",
+     "arxiv:2606.02355",
+     "arxiv:2605.28424",
+     "arxiv:2608.13040",
+     "arxiv:2608.14144",
+     "arxiv:2606.03197"
+    ],
+    "evidence_needed": "Run the same internalization objective for multiple iterations over a shifting stream of experience or skills (including stale or changed skill cards) and report per-iteration task success, forgetting of earlier consolidated skills, and OOD accuracy relative to a context-only baseline."
+   },
+   {
+    "gap": "Subliminal transfer of hidden or unsafe teacher traits has been demonstrated only under SFT/trajectory distillation, and it is unknown whether on-policy, privileged, or latent-context self-distillation objectives transfer such traits and whether the trait-drift defence generalizes to those objectives.",
+    "card_ids": [
+     "arxiv:2604.15559",
+     "arxiv:2609.01091",
+     "arxiv:2608.26958",
+     "arxiv:2608.13040",
+     "arxiv:2602.04942"
+    ],
+    "evidence_needed": "Repeat the biased-teacher subliminal-transfer protocol with OPSD, privileged-context, and latent-context distillation (and with the same trajectories kept in context instead of distilled), measuring inherited trait rates versus baseline across multiple teacher-student pairs and seeds, with and without corridor regularization."
+   },
+   {
+    "gap": "Most objectives are validated only on mathematics benchmarks or on one small model family, and reported gains are often point estimates without seeds, noise floors, or matched-compute baselines, so whether the objective design findings transfer to agentic, long-horizon settings and larger models is unresolved.",
+    "card_ids": [
+     "arxiv:2608.09228",
+     "arxiv:2608.08726",
+     "arxiv:2605.22263",
+     "arxiv:2605.11458",
+     "arxiv:2605.13230",
+     "arxiv:2602.02244",
+     "arxiv:2608.05219",
+     "arxiv:2606.12634",
+     "arxiv:2607.29468",
+     "arxiv:2608.01735",
+     "arxiv:2601.17910"
+    ],
+    "evidence_needed": "Re-run the leading objective variants on a common agentic benchmark suite across at least two model families and sizes above 8B, with multi-seed variance and FLOP-matched RL and self-distillation baselines, to establish whether the ranking of objectives holds outside math and small Qwen models."
+   }
+  ]
+ },
+ {
+  "axis": "what survives internalization",
+  "gaps": [
+   {
+    "gap": "No card compares internalizing experience, skills, or context into weights against simply keeping the same material in the prompt at matched training compute and inference token cost, so it is unresolved whether internalization ever beats the in-context substrate on a cost-adjusted basis.",
+    "card_ids": [
+     "arxiv:2606.04703",
+     "arxiv:2602.12275",
+     "arxiv:2604.10674",
+     "arxiv:2607.21051",
+     "arxiv:2605.27762"
+    ],
+    "evidence_needed": "A head-to-head run on the same tasks where the distilled student (with training cost amortized) is scored against the same base model given the identical experience or skills in context, reporting accuracy alongside total training FLOPs and per-episode inference tokens for both arms."
+   },
+   {
+    "gap": "Whether internalized content, either beneficial skills or subliminally inherited traits, persists or decays under continued fine-tuning, repeated distillation rounds, and distribution shift is not measured, and the one multi-iteration study reports capability collapse without stating iterations, models, or seeds.",
+    "card_ids": [
+     "s2:55b0d65416a7f69b864f0e4ea1f5727751618c5d",
+     "arxiv:2507.14805",
+     "arxiv:2606.11173",
+     "arxiv:2602.12275",
+     "arxiv:2607.21051",
+     "arxiv:2606.02355",
+     "arxiv:2606.04703"
+    ],
+    "evidence_needed": "Longitudinal curves tracking a probed trait and a task-skill score across many successive distillation or fine-tuning rounds on a shifting task stream, with seeds and iteration counts reported, to show the half-life of what was internalized."
+   },
+   {
+    "gap": "The conditions under which subliminal trait transfer occurs are contradictory across cards: one reports it as a LoRA artifact that vanishes under full fine-tuning on Qwen number sequences, while others show transfer through natural-language paraphrases and code, and none test whether it survives on-policy or privileged distillation objectives rather than SFT, or other model families and scales.",
+    "card_ids": [
+     "arxiv:2606.00831",
+     "arxiv:2606.00995",
+     "arxiv:2608.26958",
+     "arxiv:2609.01091",
+     "arxiv:2603.09517",
+     "arxiv:2606.22019"
+    ],
+    "evidence_needed": "A factorial experiment crossing adapter type (LoRA rank versus full fine-tuning), objective (SFT versus reverse-KL on-policy or privileged distillation), data type (number sequences versus natural-language or agentic trajectories), and at least two model families and scales, measuring trait transfer in each cell."
+   },
+   {
+    "gap": "It is unknown whether unwanted content such as unsafe behavioural biases, injected adversarial biases, or task-conflicting memory produces the same effect when kept in context (few-shot or retrieved) as when distilled into weights, so the substrate-dependence of harm transfer is unresolved in both directions.",
+    "card_ids": [
+     "arxiv:2604.15559",
+     "arxiv:2607.10608",
+     "arxiv:2505.24842",
+     "arxiv:2606.22019"
+    ],
+    "evidence_needed": "Paired conditions in which the same sanitized biased trajectories or conflicting memories are either placed in the student's context or distilled into its weights, reporting inherited bias rate, entry-point compliance, and recovery for each substrate on identical held-out tasks."
+   },
+   {
+    "gap": "Gains from privileged-teacher self-distillation may reflect a privilege illusion or context-induced teacher behaviour rather than transferable capability, and cards do not quantify the reference-versus-context split, confirm evaluation with the privileged information fully absent, or test the case where the privileged information is retrieved agent memory in agentic or long-horizon settings.",
+    "card_ids": [
+     "arxiv:2608.09228",
+     "arxiv:2608.01735",
+     "arxiv:2606.30626",
+     "arxiv:2602.04942",
+     "arxiv:2608.08726",
+     "arxiv:2608.12218"
+    ],
+    "evidence_needed": "An ablation on agentic benchmarks that distills from teachers conditioned on matched reference memory, mismatched memory, and no memory, evaluates the student strictly without any privileged context at inference with seeds and noise floors reported, and decomposes the gain into reference-attributable and context-induced components."
+   }
+  ]
+ },
+ {
+  "axis": "hybrids and routing between weights and context",
+  "gaps": [
+   {
+    "gap": "Memory- and retrieval-based experience reuse is almost never compared against fine-tuning or distilling the same experience pool into the same backbone's weights at matched training compute and per-episode inference token cost, so the claim that context beats or substitutes for weights is asserted rather than measured.",
+    "card_ids": [
+     "arxiv:2604.27003",
+     "arxiv:2603.12056",
+     "arxiv:2608.07169",
+     "arxiv:2608.04530",
+     "arxiv:2512.02543",
+     "arxiv:2601.03192",
+     "arxiv:2512.10696",
+     "arxiv:2607.01224",
+     "s2:68c32642a3f48da49c4aebb65c9ab602ce2a4ac0",
+     "arxiv:2505.20096",
+     "arxiv:2605.27762"
+    ],
+    "evidence_needed": "A two-arm study on one experience pool and one backbone, retrieved-in-context versus LoRA/distilled-into-weights, reported on a shared cost axis (amortized training FLOPs plus per-episode inference tokens) with multi-seed accuracy on the same benchmarks."
+   },
+   {
+    "gap": "Internalization methods do not report whether the memory or skill context remains necessary or additive after training, i.e. whether a memory-free deployment matches keeping the same memory in context at matched token cost and how much of the gain lives in weights versus retrieval, and the few reported memory-free margins are small with no seed variance.",
+    "card_ids": [
+     "arxiv:2604.02268",
+     "arxiv:2608.09826",
+     "arxiv:2608.13040",
+     "arxiv:2607.01480",
+     "arxiv:2607.28272",
+     "arxiv:2606.29502",
+     "arxiv:2603.18272",
+     "arxiv:2606.08755",
+     "arxiv:2607.29468"
+    ],
+    "evidence_needed": "A 2x2 evaluation (trained with/without memory-conditioned supervision x deployed with/without the memory in context) on the same tasks, reporting per-step token counts and multi-seed confidence intervals so 0.5-3 point memory-free margins can be separated from noise."
+   },
+   {
+    "gap": "Whether knowledge consolidated into weights erodes, goes stale or conflicts when the environment, skill categories or a recurring task's strategy change again after the parameter update, versus the staleness of stored context items, is untested in every hybrid and internalization paper.",
+    "card_ids": [
+     "arxiv:2604.02268",
+     "arxiv:2608.09826",
+     "arxiv:2607.26017",
+     "arxiv:2608.01234",
+     "arxiv:2605.28424",
+     "arxiv:2606.02355",
+     "arxiv:2608.13040",
+     "arxiv:2512.02543",
+     "arxiv:2601.03192",
+     "arxiv:2512.10696",
+     "arxiv:2603.12056"
+    ],
+    "evidence_needed": "A long sequential stream with an induced strategy or interface change after consolidation, measuring retained performance on earlier tasks and adaptation speed on changed tasks for the weight arm, the context arm and the hybrid, with seeds."
+   },
+   {
+    "gap": "Substrate routing is motivated but the routing decision itself is not costed: no paper reports the hybrid's training compute, consolidation overhead, parameter growth over stream length and inference tokens against fixed all-context and all-weights arms at matched total cost.",
+    "card_ids": [
+     "arxiv:2608.15008",
+     "arxiv:2608.01234",
+     "arxiv:2605.28424",
+     "arxiv:2607.26017"
+    ],
+    "evidence_needed": "An ablation of the router against full-externalization and full-internalization baselines at matched total cost, plus parameter-growth and retrieval-overhead curves as the task stream lengthens."
+   },
+   {
+    "gap": "Whether training an agent with abundant retrieved trajectories or a memory-conditioned self-teacher reduces what is encoded parametrically (the information-abundance effect) has only been shown for documents and generic SFT, not for agent trajectory data or memory-conditioned distillation, leaving it unknown whether retrieval-augmented training makes agents more or less context-dependent.",
+    "card_ids": [
+     "arxiv:2608.12218",
+     "arxiv:2603.18272",
+     "arxiv:2607.28272",
+     "arxiv:2607.01480",
+     "arxiv:2608.13040"
+    ],
+    "evidence_needed": "Vary the amount of train-time retrieved context in agent SFT or self-distillation and measure test performance with the context present, absent and misleading, with a causal or gradient-pressure probe of whether task knowledge moved into the weights."
+   }
+  ]
+ },
+ {
+  "axis": "continual adaptation and shift",
+  "gaps": [
+   {
+    "gap": "No paper runs parametric (weight-update, replay or regularization) continual learning and external-memory experience reuse head-to-head on the same task stream, so whether memory substitutes for, complements, or underperforms weight updates remains unmeasured on either side of the divide.",
+    "card_ids": [
+     "arxiv:2604.27003",
+     "arxiv:2603.12056",
+     "arxiv:2601.03938",
+     "arxiv:2601.03641",
+     "arxiv:2509.06100",
+     "arxiv:2608.02508",
+     "arxiv:2606.02461",
+     "arxiv:2601.03192",
+     "arxiv:2603.07392",
+     "arxiv:2507.00014",
+     "arxiv:2507.00469",
+     "arxiv:2602.13530",
+     "arxiv:2602.03315",
+     "arxiv:2606.22844",
+     "arxiv:2512.10696",
+     "arxiv:2602.02369"
+    ],
+    "evidence_needed": "A single controlled stream (e.g. AgentCL compositional streams, SWE-Bench-CL, or OAKS) run with a fine-tuned/replay arm and a retrieval-memory arm on the same backbone, reporting average accuracy, forgetting and forward/backward transfer with seeds and noise floors."
+   },
+   {
+    "gap": "How external memories behave over very long streams with distribution shift is untested: whether stale or erroneous entries accumulate across many consolidation or pruning cycles, whether memory size and maintenance cost stay bounded, and whether reweighting or pruning errors compound.",
+    "card_ids": [
+     "arxiv:2603.12056",
+     "arxiv:2608.02508",
+     "arxiv:2606.25161",
+     "arxiv:2512.10696",
+     "arxiv:2601.03192",
+     "arxiv:2602.13530",
+     "arxiv:2602.03315",
+     "arxiv:2604.27003",
+     "arxiv:2602.02369"
+    ],
+    "evidence_needed": "Streams with annotated fact or strategy changes run over hundreds of consolidation cycles, tracking accuracy on changed items, memory size, stale-entry fraction and per-cycle error rate as a function of stream length."
+   },
+   {
+    "gap": "For hybrid and parametric routes, it is unknown whether consolidated or internalized knowledge erodes or goes stale when the environment changes again after a weight update, how long recovery takes after a bad update or erosion, and whether the memory channel and the weights channel differ in erosion size under matched conditions.",
+    "card_ids": [
+     "arxiv:2607.26017",
+     "arxiv:2608.01234",
+     "arxiv:2601.03641",
+     "arxiv:2605.09315",
+     "arxiv:2608.15008",
+     "arxiv:2605.27762"
+    ],
+    "evidence_needed": "A stream in which a recurring task's correct strategy is changed after consolidation, measuring retained accuracy, time-to-recover and parameter growth for the weights channel versus the memory channel on the same backbone and stream."
+   },
+   {
+    "gap": "The cost side is unaccounted: inference token and latency overhead of retrieval, guideline compilation, verification and multi-stage memory pipelines is not reported, nor is the compute of replay or self-generated replay, so no substrate comparison is at matched training compute plus inference cost.",
+    "card_ids": [
+     "arxiv:2601.03938",
+     "arxiv:2605.26097",
+     "arxiv:2606.22844",
+     "arxiv:2606.25161",
+     "arxiv:2602.02369",
+     "arxiv:2512.10696",
+     "arxiv:2606.02461",
+     "arxiv:2608.15008",
+     "arxiv:2607.26017",
+     "arxiv:2608.01234"
+    ],
+    "evidence_needed": "Per-task tokens, wall-clock latency and cumulative GPU-hours (training plus replay-sample generation plus inference) reported alongside accuracy for each substrate on the same stream, with accuracy plotted against total cost."
+   },
+   {
+    "gap": "Whether internalized or distilled experience actually survives at deployment without the skill memory or privileged context, and whether this holds stably across repeated internalization iterations rather than collapsing, has not been evaluated with memory-free inference or across stated numbers of iterations and seeds.",
+    "card_ids": [
+     "arxiv:2606.29502",
+     "arxiv:2606.08755",
+     "arxiv:2606.30626",
+     "arxiv:2606.04703",
+     "arxiv:2605.27762"
+    ],
+    "evidence_needed": "Evaluate the distilled policy with the skill bank or privileged information fully removed at inference, over multiple internalization iterations and seeds, against the same policy with memory present and against a memory-only baseline."
+   }
+  ]
+ },
+ {
+  "axis": "evaluation and cost of the two substrates",
+  "gaps": [
+   {
+    "gap": "Almost no paper on either side reports a matched-cost head-to-head between the weight route (fine-tuning/distillation) and the context route (retrieval/in-context memory): internalization papers omit the keep-it-in-context arm and memory papers omit the fine-tuning arm, so whether the two substrates substitute for or add to each other is unmeasured.",
+    "card_ids": [
+     "arxiv:2604.02268",
+     "arxiv:2608.13040",
+     "arxiv:2607.01480",
+     "arxiv:2512.02543",
+     "arxiv:2601.03192",
+     "arxiv:2512.10696",
+     "arxiv:2602.02369",
+     "arxiv:2608.02508",
+     "arxiv:2603.18272",
+     "arxiv:2607.28272"
+    ],
+    "evidence_needed": "A single benchmark run with three arms (weights only, context only, both) built from the same experience pool, with training FLOPs and per-episode inference tokens equalized or explicitly on a Pareto plot, and an ablation that removes memory at test time from the hybrid arm."
+   },
+   {
+    "gap": "Inference-time token and latency cost of retrieval, guideline compilation, reconstruction, or multi-step corpus search is systematically left out of accuracy comparisons, so reported wins for context-based memory (including smaller-model-with-memory beating larger-model-without) are not cost-adjusted.",
+    "card_ids": [
+     "arxiv:2512.10696",
+     "arxiv:2607.28272",
+     "arxiv:2602.02369",
+     "arxiv:2605.05242",
+     "arxiv:2607.29468",
+     "arxiv:2608.09826",
+     "s2:68c32642a3f48da49c4aebb65c9ab602ce2a4ac0",
+     "arxiv:2603.18272"
+    ],
+    "evidence_needed": "Report per-episode input/output tokens, wall-clock latency, and dollar cost alongside accuracy for each memory arm, and re-plot the comparisons at iso-cost (e.g. tokens per episode) rather than iso-model."
+   },
+   {
+    "gap": "Training compute for internalization (distillation rounds, self-teacher rollouts, consolidation) is not amortized against the inference savings of running memory-free, so the break-even point at which weights become cheaper than context is unknown.",
+    "card_ids": [
+     "arxiv:2607.21051",
+     "arxiv:2602.04942",
+     "arxiv:2608.09826",
+     "arxiv:2607.01480",
+     "arxiv:2607.26017",
+     "arxiv:2605.27762",
+     "arxiv:2608.15008"
+    ],
+    "evidence_needed": "A cumulative-cost curve (training FLOPs plus inference tokens versus number of deployed episodes) for the internalized model and the retrieval-augmented model, analogous to the amortization analysis in arxiv:2512.02543, on the same task and backbone."
+   },
+   {
+    "gap": "Continual-learning benchmarks for agents evaluate only non-parametric memory designs, and memory papers on knowledge streams exclude parametric update routes, so erosion, staleness, and forgetting are never compared between the two substrates on the same stream.",
+    "card_ids": [
+     "arxiv:2606.02461",
+     "arxiv:2603.07392",
+     "arxiv:2507.00014",
+     "arxiv:2605.09315",
+     "arxiv:2601.03192",
+     "arxiv:2608.02508",
+     "arxiv:2607.26017"
+    ],
+    "evidence_needed": "Run a parametric (LoRA/distillation-on-the-stream) arm and an in-context memory arm on AgentCL, OAKS, or SWE-Bench-CL and report forgetting, forward/backward transfer, and staleness metrics for both under identical task order and compute."
+   },
+   {
+    "gap": "Reported gains from substrate choice are often small (roughly 1-5 points) with no seed variance or noise floor, and several papers give no numbers or base models at all, so it is unclear whether observed differences between substrates exceed run-to-run noise.",
+    "card_ids": [
+     "arxiv:2607.29468",
+     "arxiv:2607.01480",
+     "arxiv:2602.02369",
+     "arxiv:2605.27762",
+     "arxiv:2607.28272",
+     "arxiv:2601.03192"
+    ],
+    "evidence_needed": "Multi-seed runs (at least 3-5 seeds) per arm with confidence intervals and a reported memoryless-baseline variance, on named backbones, so that substrate differences can be tested for significance."
+   },
+   {
+    "gap": "Whether failure modes of context-based memory (negative transfer from verbatim replay, compliance with conflicting memories) persist, shrink, or change form when the same experience is internalized into weights is untested.",
+    "card_ids": [
+     "arxiv:2607.10608",
+     "arxiv:2607.28272",
+     "arxiv:2602.04942",
+     "arxiv:2608.13040"
+    ],
+    "evidence_needed": "Apply the E-P-R diagnostic or a controlled negative-transfer probe to matched models where conflicting or misleading experience is either injected in context or distilled into weights, measuring entry-point compliance and recovery for each."
+   }
+  ]
+ }
+]
