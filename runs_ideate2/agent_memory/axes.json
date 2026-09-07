@@ -1,0 +1,14 @@
+{"axes":[
+ {"name":"memory structure and write policy","definition":"how episodes are distilled, stored and curated (insights, trajectories, skills; admission and pruning)",
+  "queries":["procedural memory distillation LLM agent experience bank curation","agent memory write policy admission pruning self-evolving","ExpeL ReasoningBank insight extraction trajectories ALFWorld"],
+  "foundational":"experiential learning LLM agents insights from past trajectories"},
+ {"name":"retrieval mechanism and injection budget","definition":"how items are selected per query and how many are injected",
+  "queries":["retrieval budget injected memory items harm LLM agent context competition","memory retrieval pollution dilution agent sequential decision making","top-k experience retrieval ALFWorld embedding procedures"],
+  "foundational":"retrieval augmented in-context demonstrations selection kNN"},
+ {"name":"coupling with prompt optimization","definition":"whether and how an optimized instruction and a memory bank share, substitute or interfere",
+  "queries":["prompt optimization memory bank same training episodes substitution absorbed instruction","GEPA reflective prompt evolution combined with agent memory","optimized instruction versus retrieved demonstrations decomposition MIPRO"],
+  "foundational":"instruction versus demonstration ablation prompt optimization"},
+ {"name":"evaluation methodology","definition":"how memory effects are measured: baselines, pairing, noise floors, confounds",
+  "queries":["memory augmented agent evaluation confound baseline artifact noise replicate","one-variable-at-a-time audit agent memory gains flip","paired evaluation fix break decomposition LLM agents"],
+  "foundational":"evaluation variance benchmark noise floor LLM agents"}
+]}
