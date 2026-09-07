@@ -9,7 +9,7 @@ otherwise a WebSearch job spec is emitted for the harness (Claude Code WebSearch
 Key handling: S2_API_KEY from the environment or /home/work/.s2_env (mode 600). Never printed.
 """
 from __future__ import annotations
-import os, re, json, time, socket, hashlib
+import os, sys, re, json, time, socket, hashlib
 from dataclasses import dataclass, asdict, field
 from typing import Any, Optional
 import requests
@@ -73,7 +73,7 @@ class S2Client:
     """Semantic Scholar Graph API with key, IP pinning and 1 req/s throttle."""
     FIELDS = "title,year,venue,citationCount,externalIds,abstract,tldr,openAccessPdf,publicationDate,url"
 
-    def __init__(self, pin_ip: Optional[str] = None, min_interval: float = 1.1):
+    def __init__(self, pin_ip: Optional[str] = None, min_interval: float = 2.0):
         self.key = _load_key()
         self.pin_ip = pin_ip or os.environ.get("S2_PIN_IP") or self._probe()
         self.min_interval = min_interval
@@ -93,14 +93,16 @@ class S2Client:
                 continue
         return None
 
-    _LOCK = os.path.join(os.environ.get("S2_LOCK_DIR", "/tmp"), "s2_throttle.lock")
+    _LOCK = os.path.join(os.environ.get("S2_LOCK_DIR", os.path.expanduser("~/.cache/ideate2")), "s2_throttle.lock")
 
     def _throttle_across_processes(self):
         """One request per min_interval across every process on this node (subagents run s2cli.py concurrently)."""
         import fcntl
         try:
+            os.makedirs(os.path.dirname(self._LOCK), exist_ok=True)
             fd = os.open(self._LOCK, os.O_RDWR | os.O_CREAT, 0o666)
         except OSError:
+            if os.environ.get("S2_DEBUG"): print("[s2] lock unavailable, in-process throttle only", file=sys.stderr)
             wait = self.min_interval - (time.time() - self._last)
             if wait > 0: time.sleep(wait)
             return
@@ -140,8 +142,9 @@ class S2Client:
             for attempt in range(6):
                 self._last = time.time()
                 r = s.get(url, params=params, headers=headers, timeout=timeout)
+                if os.environ.get("S2_DEBUG"): print(f"[s2] {r.status_code} {path} attempt {attempt}", file=sys.stderr)
                 if r.status_code == 429:
-                    time.sleep(1.5 * (attempt + 1)); self._throttle_across_processes(); continue
+                    time.sleep(4.0 * (attempt + 1)); self._throttle_across_processes(); continue
                 if r.status_code == 200:
                     return r.json()
                 if r.status_code == 404:

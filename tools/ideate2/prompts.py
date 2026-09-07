@@ -42,11 +42,13 @@ sentence stating what is unresolved, the card IDs whose stated limitations or un
 two), and one sentence on what evidence would settle it. Do not propose papers. Do not invent gaps that no card
 supports. Return JSON: {"axis":"...","gaps":[{"gap","card_ids":[...],"evidence_needed"}]}."""
 
-S2_FIRST = """Search channels, in this order: (a) Semantic Scholar through the command
+S2_FIRST = """Search channels, in this order: (a) the literature command, which queries Semantic Scholar and HuggingFace
+Papers together (HF indexes arXiv within a day, so recency is covered):
   /home/work/neuro/alfworld-env/bin/python /home/work/neuro/memory-substitution/tools/ideate2/s2cli.py search "<query>" [--recent] [--limit N]
-  (run it with the Bash tool; `--recent` restricts to the last twelve months; `s2cli.py paper <arXiv id>` verifies an id);
-(b) WebSearch only when S2 returns nothing relevant, for papers newer than a few weeks (S2 indexes arXiv with a lag), or
-when you need section text. Never use WebFetch (blocked on this node). Report for every query which channel answered it."""
+  (run it with the Bash tool; `--recent` restricts to the last twelve months; `s2cli.py paper <arXiv id>` verifies an id;
+  it may take a few seconds because requests are rate-limited across agents);
+(b) WebSearch only when the command returns nothing relevant or when you need section text (limitations, conclusion).
+Never use WebFetch (blocked on this node). Report for every query which channel answered it."""
 
 AXIS_GENERATION_SYSTEM = """You are an experienced researcher proposing work that could be published at a top-tier venue. You are assigned ONE
 axis of the research area below; propose ideas that take a position on that axis. You will not see ideas from other
