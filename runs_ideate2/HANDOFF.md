@@ -45,7 +45,7 @@ Pairs:
 15. pair ['2606.30626', '2605.09315']: `/home/work/neuro/memory-substitution/runs_ideate2/parametric/jobs_sections/section_2606.30626.json and /home/work/neuro/memory-substitution/runs_ideate2/parametric/jobs_sections/section_2605.09315.json`
 16. pair ['2601.03192', '2512.10696']: `/home/work/neuro/memory-substitution/runs_ideate2/parametric/jobs_sections/section_2601.03192.json and /home/work/neuro/memory-substitution/runs_ideate2/parametric/jobs_sections/section_2512.10696.json`
 17. pair ['2607.10608', '2608.12218']: `/home/work/neuro/memory-substitution/runs_ideate2/parametric/jobs_sections/section_2607.10608.json and /home/work/neuro/memory-substitution/runs_ideate2/parametric/jobs_sections/section_2608.12218.json`
-## Step B — cards, gaps, digest (Fable subagents; no web needed)
+## Step B — cards, gaps, digest (DONE 2026-09-07; Fable subagents; no web needed)
 ```
 P=/home/work/neuro/alfworld-env/bin/python; W=runs_ideate2/parametric
 $P tools/ideate2/prescan.py cards --slug parametric --out $W --axes $W/axes.json --batch 10 --model fable   # → jobs/prescan_card__batchNN
@@ -57,7 +57,7 @@ $P tools/ideate2/synth_collect.py $W <synth_map.json>                           
 $P tools/ideate2/prescan.py digest --slug parametric --out $W --brief runs_ideate2/parametric/brief_v3.md  # after Step C
 ```
 
-## Step C — brief (Fable, in-session, not a subagent)
+## Step C — brief (DONE 2026-09-07 → brief_v3.md)
 Write `runs_ideate2/parametric/brief_v3.md` in the shape of `runs_ideate2/agent_memory_v2/brief_v2.md`: starting facts
 from `runs/sweep` (k where retrieval helps/harms on Qwen3-32B, CIs) and `runs/lora/*/train_log.json` (LoRA cost, memory);
 node constraints from `runs/STEP0_PROTOCOL.md` (2 GPUs, no 7–8B model, Qwen3-32B as agent and LoRA target); brief-level
@@ -67,7 +67,7 @@ predictions entailed by definitions); 5–6 open questions along the axes; appen
 (`reviews/ideation/RANKING.json`, `runs_ideate2/gen_v2/review/RANKING.json`), plus the three parametric-axis ideas'
 strongest objections (`runs_ideate2/gen_v2/review/{harm_does_not_distill,memory_in_the_loop_training_decomposition,opposite_sided_failure_under_shift}/r1.json`).
 
-## Step D — generation → gate → novelty → review
+## Step D — generation → gate → novelty → review (DONE 2026-09-07: gen_v3, r1 14 judges, r2 3 revised; see review/RANKING_R2.md)
 ```
 $P tools/ideate2/axes.py emit --axes $W/axes.json --brief $W/brief_v3.md --cards $W/cards.jsonl --gaps $W/gaps.json --n 3 --out runs_ideate2/gen_v3 --model fable
 #   5 Fable generators (Bash for s2cli + WebSearch if quota remains); collect with tools/ideate2/gen_collect.py; axes.py merge

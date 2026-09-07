@@ -278,3 +278,15 @@ Structural findings across the 14 reviews (they repeat the previous round's, wit
    claim on this environment must run it first.
 6. Novelty is capped at 5 because the mechanisms are published (information abundance, compliance trap, subliminal transfer,
    spurious forgetting, privilege illusion); what is new is the paired-substrate design, which the rubric scores as measurement.
+
+Round 2 (revise-then-rejudge instead of re-judging unchanged ideas): the top three were revised by Fable against their own
+review (`tools/ideate2/revise_collect.py`, jobs built from REVISE_SYSTEM + proposal + review + brief rules) and re-judged by one
+fresh Opus judge each. Scores moved 5.55→6.10, 5.45→5.85, 5.45→5.55; all three stay borderline. What the revision bought:
+the definitional headlines were removed (residual-vs-arithmetic estimand, post-feedback window, off-span-divergence axis),
+budgets were re-costed honestly (26–46 arms, 5–6 days), and missing baselines were added. What it did not buy: each r2 judge
+found the next definitional layer (a null calibrated off-stream, a masked-objective test that cannot touch the measurand,
+an inert stale-weights arm) and the next cheap baseline (inoculation prompting 2510.04340; CK-PLUG 2503.15888; a paired
+no-shift control stream). Novelty stayed at 5–6 because the mechanisms are published; the ceiling for this rubric on this
+topic is ≈6, the same as the first topic. Recommendation recorded in the session report: stop generating on this topic; the
+two pipeline changes with the best expected lift are (a) a pre-review entailment pass ("which outcome of each prediction is
+impossible under the stated arms?") and (b) a mechanism-side collision search alongside the agent-memory one.
