@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
-from agent import SYSTEM
+from prompts import SYSTEM
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--model", required=True); ap.add_argument("--bank", required=True); ap.add_argument("--out", required=True)
