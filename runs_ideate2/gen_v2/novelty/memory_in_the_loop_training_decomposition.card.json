@@ -1,0 +1,146 @@
+{
+ "name": "memory_in_the_loop_training_decomposition",
+ "keys": {
+  "mechanism": [
+   "Train-by-Infer Bank Swap Decomposes Memory-in-the-Loop Training Actually Teaches",
+   "agent fine-tuned retrieved experience context retrieval-aware SFT memory-tool reported gain over untrained",
+   "claim interaction term within equivalence margin zero trained model bank-co-adapted loses untrained"
+  ],
+  "estimand": [
+   "agent fine-tuned retrieved experience context retrieval-aware SFT memory-tool reported gain"
+  ],
+  "controls": [
+   "Baselines",
+   "Base",
+   "Base"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Llama",
+   "Llama-3.1-8B-Instruct"
+  ],
+  "methods": [
+   "Experience",
+   "MemHarness",
+   "AgeMem",
+   "RL"
+  ]
+ },
+ "queries": [
+  "Train-by-Infer Bank Swap Decomposes Memory-in-the-Loop Training Actually Teaches",
+  "agent fine-tuned retrieved experience context retrieval-aware SFT memory-tool reported gain over untrained",
+  "agent fine-tuned retrieved experience context retrieval-aware SFT memory-tool reported gain",
+  "Train-by-Infer Bank Swap Decomposes Memory-in-the-Loop Training Actually Teaches ALFWorld Llama",
+  "Experience MemHarness AgeMem Train-by-Infer Bank Swap Decomposes Memory-in-the-Loop Train"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2605.20616",
+   "date": "2026-05-20",
+   "venue": "",
+   "sim": 0.611,
+   "channels": [
+    "hf"
+   ],
+   "title": "Auto-Dreamer: Learning Offline Memory Consolidation for Language Agents"
+  },
+  {
+   "id": "arxiv:2606.03197",
+   "date": "2026-06-02",
+   "venue": "",
+   "sim": 0.597,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemTrain: Self-Supervised Context Memory Training"
+  },
+  {
+   "id": "arxiv:2605.21768",
+   "date": "2026-05-20",
+   "venue": "",
+   "sim": 0.588,
+   "channels": [
+    "hf"
+   ],
+   "title": "Memory-R2: Fair Credit Assignment for Long-Horizon Memory-Augmented LLM Agents"
+  },
+  {
+   "id": "arxiv:2605.12493",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.569,
+   "channels": [
+    "hf"
+   ],
+   "title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues"
+  },
+  {
+   "id": "arxiv:2607.24882",
+   "date": "2026-07-27",
+   "venue": "",
+   "sim": 0.554,
+   "channels": [
+    "hf"
+   ],
+   "title": "Agent Retrieval Bench: Evaluating Repository Context Retrieval for Coding Agents"
+  },
+  {
+   "id": "arxiv:2404.09982",
+   "date": "2024-04-15",
+   "venue": "",
+   "sim": 0.552,
+   "channels": [
+    "hf"
+   ],
+   "title": "Memory Sharing for Large Language Model based Agents"
+  },
+  {
+   "id": "arxiv:2603.18272",
+   "date": "2026-03-18",
+   "venue": "",
+   "sim": 0.552,
+   "channels": [
+    "hf"
+   ],
+   "title": "Retrieval-Augmented LLM Agents: Learning to Learn from Experience"
+  },
+  {
+   "id": "arxiv:2606.05684",
+   "date": "2026-06-04",
+   "venue": "",
+   "sim": 0.544,
+   "channels": [
+    "hf"
+   ],
+   "title": "AdaMEM: Test-Time Adaptive Memory for Language Agents"
+  },
+  {
+   "id": "arxiv:2606.22844",
+   "date": "2026-06-22",
+   "venue": "",
+   "sim": 0.52,
+   "channels": [
+    "hf"
+   ],
+   "title": "RaMem: Contextual Reinstatement for Long-term Agentic Memory"
+  },
+  {
+   "id": "arxiv:2607.01224",
+   "date": "2026-07-01",
+   "venue": "",
+   "sim": 0.516,
+   "channels": [
+    "hf"
+   ],
+   "title": "AutoMem: Automated Learning of Memory as a Cognitive Skill"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Train-by-Infer Bank Swap Decomposes Memory-in-the-Loop Training Actually Teaches 2025 arXiv"
+  },
+  {
+   "query": "agent fine-tuned retrieved experience context retrieval-aware SFT memory-tool reported gain over untrained 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,145 @@
+{
+ "name": "harm_does_not_distill",
+ "keys": {
+  "mechanism": [
+   "Gain Distills Harm Does Context Distillation Asymmetric Filter",
+   "one fixed experience pool moving context window LoRA weights context distillation preserves",
+   "instead harm dispositional shortcutting majority-action prior student must inherit"
+  ],
+  "estimand": [
+   "one fixed experience pool moving context window LoRA weights context"
+  ],
+  "controls": [
+   "Baselines",
+   "P-SFT",
+   "ExpeL-style insight injection"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen2.5-7B-Instruct"
+  ],
+  "methods": [
+   "Distillation",
+   "PMD",
+   "SIRI",
+   "PEAM"
+  ]
+ },
+ "queries": [
+  "Gain Distills Harm Does Context Distillation Asymmetric Filter",
+  "one fixed experience pool moving context window LoRA weights context distillation preserves",
+  "one fixed experience pool moving context window LoRA weights context",
+  "Gain Distills Harm Does Context Distillation Asymmetric Filter ALFWorld Qwen2.5-7B-Instruct",
+  "Distillation PMD SIRI Gain Distills Harm Does Context Distillation Asymmetric Filt"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2605.22737",
+   "date": "2026-05-29",
+   "venue": "",
+   "sim": 0.65,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Distillation Game: Adaptive Attacks & Efficient Defenses"
+  },
+  {
+   "id": "arxiv:2608.05219",
+   "date": "2026-08-05",
+   "venue": "",
+   "sim": 0.614,
+   "channels": [
+    "hf"
+   ],
+   "title": "When Privileged Guidance Misaligns: State-Matched Routing and Contextualized Self-Distillation for Multi-Turn Agents"
+  },
+  {
+   "id": "arxiv:2407.04600",
+   "date": "2024-07-05",
+   "venue": "",
+   "sim": 0.612,
+   "channels": [
+    "hf"
+   ],
+   "title": "Understanding the Gains from Repeated Self-Distillation"
+  },
+  {
+   "id": "arxiv:2505.24842",
+   "date": "2025-05-30",
+   "venue": "",
+   "sim": 0.595,
+   "channels": [
+    "hf"
+   ],
+   "title": "Cascading Adversarial Bias from Injection to Distillation in Language\n  Models"
+  },
+  {
+   "id": "arxiv:2602.16093",
+   "date": "2026-02-17",
+   "venue": "",
+   "sim": 0.592,
+   "channels": [
+    "hf"
+   ],
+   "title": "Updating Parametric Knowledge with Context Distillation Retains Post-Training Capabilities"
+  },
+  {
+   "id": "arxiv:2606.23104",
+   "date": "2026-06-22",
+   "venue": "",
+   "sim": 0.591,
+   "channels": [
+    "hf"
+   ],
+   "title": "ReNIO: Reweighting Negative Trajectory Importance for LLM On-Policy Distillation"
+  },
+  {
+   "id": "arxiv:2509.01649",
+   "date": "2025-09-01",
+   "venue": "",
+   "sim": 0.587,
+   "channels": [
+    "hf"
+   ],
+   "title": "Distilled Pretraining: A modern lens of Data, In-Context Learning and\n  Test-Time Scaling"
+  },
+  {
+   "id": "arxiv:2605.06387",
+   "date": "2026-05-08",
+   "venue": "",
+   "sim": 0.576,
+   "channels": [
+    "hf"
+   ],
+   "title": "Asymmetric On-Policy Distillation: Bridging Exploitation and Imitation at the Token Level"
+  },
+  {
+   "id": "arxiv:2608.14144",
+   "date": "2026-08-14",
+   "venue": "",
+   "sim": 0.565,
+   "channels": [
+    "hf"
+   ],
+   "title": "Self-Supervised Visual On-Policy Distillation"
+  },
+  {
+   "id": "arxiv:2608.01735",
+   "date": "2026-08-03",
+   "venue": "",
+   "sim": 0.559,
+   "channels": [
+    "hf"
+   ],
+   "title": "DAPD: Dual-Anchored Policy Distillation"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Gain Distills Harm Does Context Distillation Asymmetric Filter 2025 arXiv"
+  },
+  {
+   "query": "one fixed experience pool moving context window LoRA weights context distillation preserves 2025 arXiv"
+  }
+ ]
+}

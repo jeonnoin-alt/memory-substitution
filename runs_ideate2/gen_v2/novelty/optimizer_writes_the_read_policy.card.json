@@ -1,0 +1,144 @@
+{
+ "name": "optimizer_writes_the_read_policy",
+ "keys": {
+  "mechanism": [
+   "Optimizer Writes Read Policy Joint Instruction-Memory Optimization Gains",
+   "reflective prompt optimizer GEPA run experience store loop reflections attribute failures misapplied",
+   "clauses task clauses carry joint system advantage over sum two channels they"
+  ],
+  "estimand": [
+   "reflective prompt optimizer GEPA run experience store loop reflections attribute"
+  ],
+  "controls": [
+   "Seed instruction with",
+   "I_solo with and",
+   "I_joint with and"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": [
+   "Usage",
+   "Trap",
+   "MemTrapBench",
+   "MemRL"
+  ]
+ },
+ "queries": [
+  "Optimizer Writes Read Policy Joint Instruction-Memory Optimization Gains",
+  "reflective prompt optimizer GEPA run experience store loop reflections attribute failures misapplied",
+  "reflective prompt optimizer GEPA run experience store loop reflections attribute",
+  "Optimizer Writes Read Policy Joint Instruction-Memory Optimization Gains ALFWorld",
+  "Usage Trap MemTrapBench Optimizer Writes Read Policy Joint Instruction-Memory Optimi"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2203.11860",
+   "date": "2022-03-22",
+   "venue": "",
+   "sim": 0.691,
+   "channels": [
+    "hf"
+   ],
+   "title": "Practical tradeoffs between memory, compute, and performance in learned\n  optimizers"
+  },
+  {
+   "id": "arxiv:2507.19457",
+   "date": "2025-07-25",
+   "venue": "",
+   "sim": 0.6,
+   "channels": [
+    "hf"
+   ],
+   "title": "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2608.20202",
+   "date": "2026-08-20",
+   "venue": "",
+   "sim": 0.599,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemTrapBench: Benchmarking Cognitive Traps in LLM Memory Use"
+  },
+  {
+   "id": "arxiv:2309.01507",
+   "date": "2023-09-04",
+   "venue": "",
+   "sim": 0.586,
+   "channels": [
+    "hf"
+   ],
+   "title": "Memory Efficient Optimizers with 4-bit States"
+  },
+  {
+   "id": "arxiv:2601.11969",
+   "date": "2026-01-17",
+   "venue": "",
+   "sim": 0.575,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemoryRewardBench: Benchmarking Reward Models for Long-Term Memory Management in Large Language Models"
+  },
+  {
+   "id": "arxiv:2603.15061",
+   "date": "2026-03-16",
+   "venue": "",
+   "sim": 0.569,
+   "channels": [
+    "hf"
+   ],
+   "title": "Writer-R1: Enhancing Generative Writing in LLMs via Memory-augmented Replay Policy Optimization"
+  },
+  {
+   "id": "arxiv:2605.28732",
+   "date": "2026-05-27",
+   "venue": "",
+   "sim": 0.546,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemTrace: Tracing and Attributing Errors in Large Language Model Memory Systems"
+  },
+  {
+   "id": "arxiv:2406.15708",
+   "date": "2024-06-22",
+   "venue": "",
+   "sim": 0.543,
+   "channels": [
+    "hf"
+   ],
+   "title": "Teach Better or Show Smarter? On Instructions and Exemplars in Automatic\n  Prompt Optimization"
+  },
+  {
+   "id": "arxiv:2507.07817",
+   "date": "2025-07-15",
+   "venue": "",
+   "sim": 0.536,
+   "channels": [
+    "hf"
+   ],
+   "title": "On the Effect of Instruction Tuning Loss on Generalization"
+  },
+  {
+   "id": "arxiv:2606.07711",
+   "date": "2026-06-05",
+   "venue": "arXiv.org",
+   "sim": 0.533,
+   "channels": [
+    "s2"
+   ],
+   "title": "Rosetta Memory: Adaptive Memory for Cross-LLM Agents"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Optimizer Writes Read Policy Joint Instruction-Memory Optimization Gains 2025 arXiv"
+  },
+  {
+   "query": "reflective prompt optimizer GEPA run experience store loop reflections attribute failures misapplied 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,144 @@
+{
+ "name": "coupling_variance_components",
+ "keys": {
+  "mechanism": [
+   "Seed-Crossed Decomposition Cost-Matched Audit Memory-Coupled Prompt Optimization Long-Horizon",
+   "long-horizon agent tasks variance amplification attributed coupling experience memory reflective prompt optimizer",
+   "total episode budget matched coupled system mean advantage over better single channel"
+  ],
+  "estimand": [
+   "long-horizon agent tasks variance amplification attributed coupling experience memory reflective"
+  ],
+  "controls": [
+   "GEPA-only",
+   "GEPA-only and store",
+   "MoE to check"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": [
+   "MAGE",
+   "MEMO",
+   "MemAPO"
+  ]
+ },
+ "queries": [
+  "Seed-Crossed Decomposition Cost-Matched Audit Memory-Coupled Prompt Optimization Long-Horizon",
+  "long-horizon agent tasks variance amplification attributed coupling experience memory reflective prompt optimizer",
+  "long-horizon agent tasks variance amplification attributed coupling experience memory reflective",
+  "Seed-Crossed Decomposition Cost-Matched Audit Memory-Coupled Prompt Optimization Long-Horizon ALFWorld",
+  "MAGE MEMO MemAPO Seed-Crossed Decomposition Cost-Matched Audit Memory-Coupled"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2606.16285",
+   "date": "2026-06-15",
+   "venue": "",
+   "sim": 0.569,
+   "channels": [
+    "hf"
+   ],
+   "title": "HiMPO: Hindsight-Informed Memory Policy Optimization for Less-Entangled Credit in Long-Horizon Agents"
+  },
+  {
+   "id": "arxiv:2602.16313",
+   "date": "2026-02-18",
+   "venue": "",
+   "sim": 0.568,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks"
+  },
+  {
+   "id": "arxiv:2605.27140",
+   "date": "2026-05-26",
+   "venue": "",
+   "sim": 0.56,
+   "channels": [
+    "hf"
+   ],
+   "title": "StepOPSD: Step-Aware Online Preference Distillation for Agent Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2603.09022",
+   "date": "2026-03-09",
+   "venue": "arXiv.org",
+   "sim": 0.558,
+   "channels": [
+    "hf",
+    "s2"
+   ],
+   "title": "MEMO: Memory-Augmented Model Context Optimization for Robust Multi-Turn Multi-Agent LLM Games"
+  },
+  {
+   "id": "arxiv:2607.13884",
+   "date": "2026-07-15",
+   "venue": "",
+   "sim": 0.557,
+   "channels": [
+    "hf"
+   ],
+   "title": "Experience Memory Graph: One-Shot Error Correction for Agents"
+  },
+  {
+   "id": "arxiv:2606.24595",
+   "date": "2026-06-23",
+   "venue": "",
+   "sim": 0.531,
+   "channels": [
+    "hf"
+   ],
+   "title": "MEMPROBE: Probing Long-Term Agent Memory via Hidden User-State Recovery"
+  },
+  {
+   "id": "arxiv:2601.08816",
+   "date": "2026-01-13",
+   "venue": "",
+   "sim": 0.529,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemRec: Collaborative Memory-Augmented Agentic Recommender System"
+  },
+  {
+   "id": "arxiv:2607.07702",
+   "date": "2026-07-08",
+   "venue": "",
+   "sim": 0.526,
+   "channels": [
+    "hf"
+   ],
+   "title": "From Noisy Traces to Root Causes: Structural Trajectory Analysis and Causal Extraction for Agent Optimization"
+  },
+  {
+   "id": "arxiv:2603.20667",
+   "date": "2026-03-21",
+   "venue": "",
+   "sim": 0.525,
+   "channels": [
+    "hf"
+   ],
+   "title": "REVERE: Reflective Evolving Research Engineer for Scientific Workflows"
+  },
+  {
+   "id": "arxiv:2605.12493",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.524,
+   "channels": [
+    "hf"
+   ],
+   "title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Seed-Crossed Decomposition Cost-Matched Audit Memory-Coupled Prompt Optimization Long-Horizon 2025 arXiv"
+  },
+  {
+   "query": "long-horizon agent tasks variance amplification attributed coupling experience memory reflective prompt optimizer 2025 arXiv"
+  }
+ ]
+}

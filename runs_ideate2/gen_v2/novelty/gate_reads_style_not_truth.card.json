@@ -1,0 +1,142 @@
+{
+ "name": "gate_reads_style_not_truth",
+ "keys": {
+  "mechanism": [
+   "Admission Gates Read Style Truth Planted-Record Audit Write-Time",
+   "published write-time admission gate decides candidate record text alone LLM-judge validation ReMe",
+   "execution-referenced gates replay environment batch-improvement gating truth-sensitive batch-improvement gate operates run-to-run noise"
+  ],
+  "estimand": [
+   "published write-time admission gate decides candidate record text alone LLM-judge"
+  ],
+  "controls": [
+   "ExpeL-style insights"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": [
+   "ReMe",
+   "MAC",
+   "CraniMem",
+   "Atlas"
+  ]
+ },
+ "queries": [
+  "Admission Gates Read Style Truth Planted-Record Audit Write-Time",
+  "published write-time admission gate decides candidate record text alone LLM-judge validation ReMe",
+  "published write-time admission gate decides candidate record text alone LLM-judge",
+  "Admission Gates Read Style Truth Planted-Record Audit Write-Time ALFWorld",
+  "ReMe MAC CraniMem Admission Gates Read Style Truth Planted-Record Audit Write-"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2504.21202",
+   "date": "2025-04-29",
+   "venue": "",
+   "sim": 0.541,
+   "channels": [
+    "hf"
+   ],
+   "title": "Automatic Legal Writing Evaluation of LLMs"
+  },
+  {
+   "id": "arxiv:2608.08975",
+   "date": "2026-08-10",
+   "venue": "",
+   "sim": 0.491,
+   "channels": [
+    "hf"
+   ],
+   "title": "How Can Rhetoric Reward-Hack AI Reviewers? Dissecting Rhetorical Sensitivity in AI-Based Peer Review"
+  },
+  {
+   "id": "arxiv:2607.22561",
+   "date": "2026-05-29",
+   "venue": "",
+   "sim": 0.485,
+   "channels": [
+    "hf"
+   ],
+   "title": "Codifying the Judge: Scalable Evaluation via Program Distillation"
+  },
+  {
+   "id": "arxiv:2602.17791",
+   "date": "2026-02-19",
+   "venue": "",
+   "sim": 0.483,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Digital Divide in Generative AI: Evidence from Large Language Model Use in College Admissions Essays"
+  },
+  {
+   "id": "arxiv:2509.18868",
+   "date": "2025-09-23",
+   "venue": "",
+   "sim": 0.468,
+   "channels": [
+    "hf"
+   ],
+   "title": "Memory in Large Language Models: Mechanisms, Evaluation and Evolution"
+  },
+  {
+   "id": "arxiv:2603.15994",
+   "date": "2026-03-16",
+   "venue": "",
+   "sim": 0.458,
+   "channels": [
+    "hf"
+   ],
+   "title": "Selective Memory for Artificial Intelligence: Write-Time Gating with Hierarchical Archiving"
+  },
+  {
+   "id": "arxiv:2401.08315",
+   "date": "2024-01-16",
+   "venue": "",
+   "sim": 0.419,
+   "channels": [
+    "hf"
+   ],
+   "title": "Application of LLM Agents in Recruitment: A Novel Framework for Resume\n  Screening"
+  },
+  {
+   "id": "arxiv:2609.00982",
+   "date": "2026-09-01",
+   "venue": "",
+   "sim": 0.402,
+   "channels": [
+    "hf"
+   ],
+   "title": "Disclosure-Gated User Simulation for Companion-Agent Evaluation"
+  },
+  {
+   "id": "arxiv:2606.18699",
+   "date": "2026-06-17",
+   "venue": "",
+   "sim": 0.369,
+   "channels": [
+    "hf"
+   ],
+   "title": "TW-LegalBench: Measuring Taiwanese Legal Understanding"
+  },
+  {
+   "id": "arxiv:2601.05255",
+   "date": "2025-10-19",
+   "venue": "",
+   "sim": 0.343,
+   "channels": [
+    "hf"
+   ],
+   "title": "CourtNav: Voice-Guided, Anchor-Accurate Navigation of Long Legal Documents in Courtrooms"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Admission Gates Read Style Truth Planted-Record Audit Write-Time 2025 arXiv"
+  },
+  {
+   "query": "published write-time admission gate decides candidate record text alone LLM-judge validation ReMe 2025 arXiv"
+  }
+ ]
+}

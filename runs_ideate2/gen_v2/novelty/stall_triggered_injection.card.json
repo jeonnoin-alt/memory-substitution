@@ -1,0 +1,72 @@
+{
+ "name": "stall_triggered_injection",
+ "keys": {
+  "mechanism": [
+   "Retrieve Stuck Starting Injection Timing Sets Sign Experience",
+   "fixed bank fixed query fixed retrieved items revealing items first detected stall",
+   "swept two-parameter static stall trigger stall length injection cap lands inside seed-noise"
+  ],
+  "estimand": [
+   "fixed bank fixed query fixed retrieved items revealing items first"
+  ],
+  "controls": [
+   "Baselines",
+   "ReMe",
+   "ExpeL"
+  ],
+  "environment": [
+   "ALFWorld",
+   "WebShop"
+  ],
+  "methods": [
+   "ReMe"
+  ]
+ },
+ "queries": [
+  "Retrieve Stuck Starting Injection Timing Sets Sign Experience",
+  "fixed bank fixed query fixed retrieved items revealing items first detected stall",
+  "fixed bank fixed query fixed retrieved items revealing items first",
+  "Retrieve Stuck Starting Injection Timing Sets Sign Experience ALFWorld WebShop",
+  "ReMe Retrieve Stuck Starting Injection Timing Sets Sign Experienc"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.04569",
+   "date": "2026-08-05",
+   "venue": "",
+   "sim": 0.467,
+   "channels": [
+    "hf"
+   ],
+   "title": "Relevant but Incomplete: Referential Dangling as a Paradigm-Level Failure Mode in Hard Prompt Compression"
+  },
+  {
+   "id": "arxiv:2608.03836",
+   "date": "2026-08-08",
+   "venue": "",
+   "sim": 0.444,
+   "channels": [
+    "hf"
+   ],
+   "title": "Resume Means Resume: A Machine-Checked Conformance Contract for Checkpoint, Interrupt, and Resume Semantics in Workflow Persistence Layers"
+  },
+  {
+   "id": "arxiv:2609.03481",
+   "date": "2026-09-03",
+   "venue": "",
+   "sim": 0.283,
+   "channels": [
+    "hf"
+   ],
+   "title": "Geometric Ceilings on Time-Frequency Masking for Single-Channel Separation"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Retrieve Stuck Starting Injection Timing Sets Sign Experience 2025 arXiv"
+  },
+  {
+   "query": "fixed bank fixed query fixed retrieved items revealing items first detected stall 2025 arXiv"
+  }
+ ]
+}

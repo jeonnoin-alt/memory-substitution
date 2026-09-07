@@ -1,0 +1,144 @@
+{
+ "name": "dormant_is_not_dead",
+ "keys": {
+  "mechanism": [
+   "Dormant Dead Usage-Decay Forgetting Agent Experience Memory Buys",
+   "Recency- usage-decay pruning FadeMem-style differential decay ReMe utility pruning CraniMem bounded buffers",
+   "maintenance LLM calls decay consolidation policies cost tokens they save read time"
+  ],
+  "estimand": [
+   "Recency- usage-decay pruning FadeMem-style differential decay ReMe utility pruning CraniMem"
+  ],
+  "controls": [
+   "A-prime after two",
+   "MDE on the"
+  ],
+  "environment": [
+   "ALFWorld",
+   "WebShop"
+  ],
+  "methods": [
+   "FadeMem",
+   "ReMe",
+   "CraniMem",
+   "MemCon"
+  ]
+ },
+ "queries": [
+  "Dormant Dead Usage-Decay Forgetting Agent Experience Memory Buys",
+  "Recency- usage-decay pruning FadeMem-style differential decay ReMe utility pruning CraniMem bounded buffers",
+  "Recency- usage-decay pruning FadeMem-style differential decay ReMe utility pruning CraniMem",
+  "Dormant Dead Usage-Decay Forgetting Agent Experience Memory Buys ALFWorld WebShop",
+  "FadeMem ReMe CraniMem Dormant Dead Usage-Decay Forgetting Agent Experience Memory"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2605.16045",
+   "date": "2026-05-15",
+   "venue": "",
+   "sim": 0.681,
+   "channels": [
+    "hf"
+   ],
+   "title": "RecMem: Recurrence-based Memory Consolidation for Efficient and Effective Long-Running LLM Agents"
+  },
+  {
+   "id": "arxiv:2604.02280",
+   "date": "2026-04-02",
+   "venue": "",
+   "sim": 0.664,
+   "channels": [
+    "hf"
+   ],
+   "title": "Novel Memory Forgetting Techniques for Autonomous AI Agents: Balancing Relevance and Efficiency"
+  },
+  {
+   "id": "arxiv:2601.18642",
+   "date": "2026-01-26",
+   "venue": "",
+   "sim": 0.646,
+   "channels": [
+    "hf"
+   ],
+   "title": "FadeMem: Biologically-Inspired Forgetting for Efficient Agent Memory"
+  },
+  {
+   "id": "arxiv:2605.26252",
+   "date": "2026-05-25",
+   "venue": "",
+   "sim": 0.626,
+   "channels": [
+    "hf"
+   ],
+   "title": "Is Agent Memory a Database? Rethinking Data Foundations for Long-Term AI Agent Memory"
+  },
+  {
+   "id": "arxiv:2607.08716",
+   "date": "2026-07-09",
+   "venue": "",
+   "sim": 0.587,
+   "channels": [
+    "hf"
+   ],
+   "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents"
+  },
+  {
+   "id": "arxiv:2512.10696",
+   "date": "2025-12-11",
+   "venue": "",
+   "sim": 0.584,
+   "channels": [
+    "hf"
+   ],
+   "title": "Remember Me, Refine Me: A Dynamic Procedural Memory Framework for Experience-Driven Agent Evolution"
+  },
+  {
+   "id": "arxiv:2603.15642",
+   "date": "2026-03-03",
+   "venue": "",
+   "sim": 0.568,
+   "channels": [
+    "hf"
+   ],
+   "title": "CraniMem: Cranial Inspired Gated and Bounded Memory for Agentic Systems"
+  },
+  {
+   "id": "arxiv:2606.25161",
+   "date": "2026-06-23",
+   "venue": "",
+   "sim": 0.565,
+   "channels": [
+    "hf"
+   ],
+   "title": "TRUSTMEM: Learning Trustworthy Memory Consolidation for LLM Agents with Long-Term Memory"
+  },
+  {
+   "id": "arxiv:2608.04574",
+   "date": "2026-08-05",
+   "venue": "",
+   "sim": 0.551,
+   "channels": [
+    "hf"
+   ],
+   "title": "When Memory Lies: An Empirical Study of Spatial Memory Staleness in VLM Agents"
+  },
+  {
+   "id": "arxiv:2604.21432",
+   "date": "2026-04-23",
+   "venue": "",
+   "sim": 0.547,
+   "channels": [
+    "hf"
+   ],
+   "title": "A single algorithm for both restless and rested rotting bandits"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Dormant Dead Usage-Decay Forgetting Agent Experience Memory Buys 2025 arXiv"
+  },
+  {
+   "query": "Recency- usage-decay pruning FadeMem-style differential decay ReMe utility pruning CraniMem bounded buffers 2025 arXiv"
+  }
+ ]
+}

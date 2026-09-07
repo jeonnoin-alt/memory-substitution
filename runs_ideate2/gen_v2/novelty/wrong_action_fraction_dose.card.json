@@ -1,0 +1,142 @@
+{
+ "name": "wrong_action_fraction_dose",
+ "keys": {
+  "mechanism": [
+   "But Wrong Dose-Response Injected Experience Agent Traces Follows",
+   "tool-use traces success function injected experience smooth decreasing function injected tokens item",
+   "step function number injected items recommended action off expert path current task"
+  ],
+  "estimand": [
+   "tool-use traces success function injected experience smooth decreasing function injected"
+  ],
+  "controls": [
+   "Baselines",
+   "ReMe",
+   "ExpeL read"
+  ],
+  "environment": [
+   "ALFWorld",
+   "WebShop"
+  ],
+  "methods": [
+   "Ink"
+  ]
+ },
+ "queries": [
+  "But Wrong Dose-Response Injected Experience Agent Traces Follows",
+  "tool-use traces success function injected experience smooth decreasing function injected tokens item",
+  "tool-use traces success function injected experience smooth decreasing function injected",
+  "But Wrong Dose-Response Injected Experience Agent Traces Follows ALFWorld WebShop",
+  "Ink But Wrong Dose-Response Injected Experience Agent Traces Fol"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2607.07474",
+   "date": "2026-07-08",
+   "venue": "",
+   "sim": 0.678,
+   "channels": [
+    "hf"
+   ],
+   "title": "Beyond Attack-Success Rate: Action-Graded Severity Scale for Tool-Using AI Agents"
+  },
+  {
+   "id": "arxiv:2607.13988",
+   "date": "2026-07-15",
+   "venue": "",
+   "sim": 0.561,
+   "channels": [
+    "hf"
+   ],
+   "title": "TRACE: Turn-level Reward Assignment via Credit Estimation for Long-Horizon Agents"
+  },
+  {
+   "id": "arxiv:2603.23806",
+   "date": "2026-05-08",
+   "venue": "",
+   "sim": 0.542,
+   "channels": [
+    "hf"
+   ],
+   "title": "Willful Disobedience: Automatically Detecting Failures in Agentic Traces"
+  },
+  {
+   "id": "arxiv:2608.02276",
+   "date": "2026-08-03",
+   "venue": "",
+   "sim": 0.511,
+   "channels": [
+    "hf"
+   ],
+   "title": "Harness-R1: Learning to Edit Executable Runtime Harnesses from Agent Failure Trajectories"
+  },
+  {
+   "id": "arxiv:2608.20627",
+   "date": "2026-08-20",
+   "venue": "",
+   "sim": 0.506,
+   "channels": [
+    "hf"
+   ],
+   "title": "When Failures Propagate: Causal Failure Attribution in Agentic Retrieval-Augmented Generation"
+  },
+  {
+   "id": "arxiv:2604.22708",
+   "date": "2026-04-24",
+   "venue": "",
+   "sim": 0.505,
+   "channels": [
+    "hf"
+   ],
+   "title": "Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems"
+  },
+  {
+   "id": "arxiv:2606.13174",
+   "date": "2026-06-11",
+   "venue": "",
+   "sim": 0.504,
+   "channels": [
+    "hf"
+   ],
+   "title": "Getting Better at Working With You: Compiling User Corrections into Runtime Enforcement for Coding Agents"
+  },
+  {
+   "id": "arxiv:2607.07702",
+   "date": "2026-07-08",
+   "venue": "",
+   "sim": 0.468,
+   "channels": [
+    "hf"
+   ],
+   "title": "From Noisy Traces to Root Causes: Structural Trajectory Analysis and Causal Extraction for Agent Optimization"
+  },
+  {
+   "id": "arxiv:2604.16706",
+   "date": "2026-04-17",
+   "venue": "",
+   "sim": 0.466,
+   "channels": [
+    "hf"
+   ],
+   "title": "Evaluating Tool-Using Language Agents: Judge Reliability, Propagation Cascades, and Runtime Mitigation in AgentProp-Bench"
+  },
+  {
+   "id": "arxiv:2606.25852",
+   "date": "2026-06-24",
+   "venue": "",
+   "sim": 0.461,
+   "channels": [
+    "hf"
+   ],
+   "title": "Semantic Consistency Policy Optimization for Reinforcement Learning of LLM Agents"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "But Wrong Dose-Response Injected Experience Agent Traces Follows 2025 arXiv"
+  },
+  {
+   "query": "tool-use traces success function injected experience smooth decreasing function injected tokens item 2025 arXiv"
+  }
+ ]
+}

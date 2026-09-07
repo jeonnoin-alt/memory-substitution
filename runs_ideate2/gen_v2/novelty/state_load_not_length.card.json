@@ -1,0 +1,144 @@
+{
+ "name": "state_load_not_length",
+ "keys": {
+  "mechanism": [
+   "State Count Token Count Dissociating Cumulative State Load",
+   "real environment traces long-horizon agent failure scales number state changes agent must",
+   "length-alone effect established static inputs below noise floor lengths agents actually reach"
+  ],
+  "estimand": [
+   "real environment traces long-horizon agent failure scales number state changes"
+  ],
+  "controls": [
+   "Baselines",
+   "LLM summary",
+   "LLM scratchpad"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": [
+   "Agent",
+   "Harness",
+   "ACON",
+   "Memex"
+  ]
+ },
+ "queries": [
+  "State Count Token Count Dissociating Cumulative State Load",
+  "real environment traces long-horizon agent failure scales number state changes agent must",
+  "real environment traces long-horizon agent failure scales number state changes",
+  "State Count Token Count Dissociating Cumulative State Load ALFWorld",
+  "Agent Harness ACON State Count Token Count Dissociating Cumulative State Load"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.15089",
+   "date": "2026-08-15",
+   "venue": "",
+   "sim": 0.624,
+   "channels": [
+    "hf"
+   ],
+   "title": "StateM: Reaching 95.3% Raw Accuracy, or a \\$15 Frontier Run, on Terminal-Bench 2.1 via Harness Scaling"
+  },
+  {
+   "id": "arxiv:2604.11978",
+   "date": "2026-04-13",
+   "venue": "",
+   "sim": 0.573,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Long-Horizon Task Mirage? Diagnosing Where and Why Agentic Systems Break"
+  },
+  {
+   "id": "arxiv:2608.01964",
+   "date": "2026-08-03",
+   "venue": "",
+   "sim": 0.534,
+   "channels": [
+    "hf"
+   ],
+   "title": "LongHorizon-Harness: Advancing Long-Horizon Agents for Real-World Tasks"
+  },
+  {
+   "id": "arxiv:2607.10582",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.526,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemDecay: Region-Aware KV Cache Eviction for Efficient LLM Agent Inference"
+  },
+  {
+   "id": "arxiv:2605.30434",
+   "date": "2026-05-28",
+   "venue": "",
+   "sim": 0.505,
+   "channels": [
+    "hf"
+   ],
+   "title": "LongDS-Bench: On the Failure of Long-Horizon Agentic Data Analysis"
+  },
+  {
+   "id": "arxiv:2502.02046",
+   "date": "2025-02-04",
+   "venue": "",
+   "sim": 0.502,
+   "channels": [
+    "hf"
+   ],
+   "title": "Contextual Memory Reweaving in Large Language Models Using Layered\n  Latent State Reconstruction"
+  },
+  {
+   "id": "arxiv:2608.05446",
+   "date": "2026-08-05",
+   "venue": "",
+   "sim": 0.497,
+   "channels": [
+    "hf"
+   ],
+   "title": "EvoHarness-RL: Learning Self-Evolving Runtime Harness for Long-Horizon LLM Agents"
+  },
+  {
+   "id": "arxiv:2608.06361",
+   "date": "2026-08-06",
+   "venue": "",
+   "sim": 0.493,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Low Frequency Trap: Video Language Models Fail at Simple Event Bookkeeping"
+  },
+  {
+   "id": "arxiv:2606.18847",
+   "date": "2026-06-17",
+   "venue": "arXiv.org",
+   "sim": 0.492,
+   "channels": [
+    "s2"
+   ],
+   "title": "WorldLines: Benchmarking and Modeling Long-Horizon Stateful Embodied Agents"
+  },
+  {
+   "id": "arxiv:2604.26091",
+   "date": "2026-04-28",
+   "venue": "",
+   "sim": 0.488,
+   "channels": [
+    "hf"
+   ],
+   "title": "Operating-Layer Controls for Onchain Language-Model Agents Under Real Capital"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "State Count Token Count Dissociating Cumulative State Load 2025 arXiv"
+  },
+  {
+   "query": "real environment traces long-horizon agent failure scales number state changes agent must 2025 arXiv"
+  }
+ ]
+}

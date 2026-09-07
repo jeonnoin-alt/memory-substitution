@@ -1,0 +1,138 @@
+{
+ "name": "contributor_conflict_not_size",
+ "keys": {
+  "mechanism": [
+   "Hands Spoil Library Cross-Contributor Conflict Library Size Degrades",
+   "matched library size matched task-type coverage matched injected tokens skill library written",
+   "harm realized conflicting pair co-retrieved usage frequency fails track utility because conflicting"
+  ],
+  "estimand": [
+   "matched library size matched task-type coverage matched injected tokens skill"
+  ],
+  "controls": [
+   "SkillEvolBench finding that"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Llama-3.1-8B",
+   "Qwen3-14B"
+  ],
+  "methods": []
+ },
+ "queries": [
+  "Hands Spoil Library Cross-Contributor Conflict Library Size Degrades",
+  "matched library size matched task-type coverage matched injected tokens skill library written",
+  "matched library size matched task-type coverage matched injected tokens skill",
+  "Hands Spoil Library Cross-Contributor Conflict Library Size Degrades ALFWorld Llama-3.1-8B"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2609.02217",
+   "date": "2026-09-02",
+   "venue": "",
+   "sim": 0.591,
+   "channels": [
+    "hf"
+   ],
+   "title": "SkillGLoW: Procedural-Family Skill Consolidation for Self-Improving Agents on Long-Horizon Task Streams"
+  },
+  {
+   "id": "arxiv:2604.03964",
+   "date": "2026-04-05",
+   "venue": "",
+   "sim": 0.573,
+   "channels": [
+    "hf"
+   ],
+   "title": "SKILLFOUNDRY: Building Self-Evolving Agent Skill Libraries from Heterogeneous Scientific Resources"
+  },
+  {
+   "id": "arxiv:2605.12039",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.571,
+   "channels": [
+    "hf"
+   ],
+   "title": "SkillGraph: Skill-Augmented Reinforcement Learning for Agents via Evolving Skill Graphs"
+  },
+  {
+   "id": "arxiv:2608.05604",
+   "date": "2026-08-06",
+   "venue": "",
+   "sim": 0.537,
+   "channels": [
+    "hf"
+   ],
+   "title": "SkillZip: Contract-Preserving Graph Compression for Scalable Agent Skill Libraries"
+  },
+  {
+   "id": "arxiv:2608.02356",
+   "date": "2026-08-04",
+   "venue": "",
+   "sim": 0.527,
+   "channels": [
+    "hf"
+   ],
+   "title": "SkillTrace: Traversing a Query-Skill Graph for Composable LLM Agents"
+  },
+  {
+   "id": "arxiv:2605.03353",
+   "date": "2026-05-05",
+   "venue": "",
+   "sim": 0.525,
+   "channels": [
+    "hf"
+   ],
+   "title": "SkCC: Portable and Secure Skill Compilation for Cross-Framework LLM Agents"
+  },
+  {
+   "id": "arxiv:2603.29919",
+   "date": "2026-03-31",
+   "venue": "",
+   "sim": 0.521,
+   "channels": [
+    "hf"
+   ],
+   "title": "SkillReducer: Optimizing LLM Agent Skills for Token Efficiency"
+  },
+  {
+   "id": "arxiv:2506.12320",
+   "date": "2025-06-14",
+   "venue": "",
+   "sim": 0.494,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Foundation Cracks: A Comprehensive Study on Bugs and Testing Practices in LLM Libraries"
+  },
+  {
+   "id": "arxiv:2608.14943",
+   "date": "2026-08-14",
+   "venue": "",
+   "sim": 0.485,
+   "channels": [
+    "hf"
+   ],
+   "title": "Skill Blocks: How Should an Agent Load Its Skill? A Caching-Correct Comparison of Pre-load, On-Demand Tool-Loading, Progressive Disclosure, and Hybrid"
+  },
+  {
+   "id": "arxiv:2607.07504",
+   "date": "2026-07-08",
+   "venue": "",
+   "sim": 0.484,
+   "channels": [
+    "hf"
+   ],
+   "title": "Do LLM-Generated Skills Make Better AI Data Scientists? A Component Ablation Across Data-Science Workflows"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Hands Spoil Library Cross-Contributor Conflict Library Size Degrades 2025 arXiv"
+  },
+  {
+   "query": "matched library size matched task-type coverage matched injected tokens skill library written 2025 arXiv"
+  }
+ ]
+}

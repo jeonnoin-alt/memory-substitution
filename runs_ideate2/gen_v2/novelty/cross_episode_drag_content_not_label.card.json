@@ -1,0 +1,144 @@
+{
+ "name": "cross_episode_drag_content_not_label",
+ "keys": {
+  "mechanism": [
+   "Drag Crosses Episode Boundary Failed Prior Episodes Agent",
+   "Contextual drag extends in-task retries cross-episode memory failed prior episode task type",
+   "drag carried prior trajectory action content flipping hiding outcome label leaves unchanged"
+  ],
+  "estimand": [
+   "Contextual drag extends in-task retries cross-episode memory failed prior episode"
+  ],
+  "controls": [
+   "Baselines",
+   "ExpeL-style insight injection",
+   "ReMe with k"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": [
+   "Drag",
+   "Trap",
+   "Faulty",
+   "AdaMEM"
+  ]
+ },
+ "queries": [
+  "Drag Crosses Episode Boundary Failed Prior Episodes Agent",
+  "Contextual drag extends in-task retries cross-episode memory failed prior episode task type",
+  "Contextual drag extends in-task retries cross-episode memory failed prior episode",
+  "Drag Crosses Episode Boundary Failed Prior Episodes Agent ALFWorld",
+  "Drag Trap Faulty Drag Crosses Episode Boundary Failed Prior Episodes Agent"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2602.04288",
+   "date": "2026-02-04",
+   "venue": "",
+   "sim": 0.558,
+   "channels": [
+    "hf"
+   ],
+   "title": "Contextual Drag: How Errors in the Context Affect LLM Reasoning"
+  },
+  {
+   "id": "arxiv:2607.17621",
+   "date": "2026-07-20",
+   "venue": "",
+   "sim": 0.427,
+   "channels": [
+    "hf"
+   ],
+   "title": "Mechanistic Attention Guidance for Agent Memory Refinement"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.411,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2502.02046",
+   "date": "2025-02-04",
+   "venue": "",
+   "sim": 0.399,
+   "channels": [
+    "hf"
+   ],
+   "title": "Contextual Memory Reweaving in Large Language Models Using Layered\n  Latent State Reconstruction"
+  },
+  {
+   "id": "arxiv:2606.22844",
+   "date": "2026-06-22",
+   "venue": "",
+   "sim": 0.393,
+   "channels": [
+    "hf"
+   ],
+   "title": "RaMem: Contextual Reinstatement for Long-term Agentic Memory"
+  },
+  {
+   "id": "arxiv:2601.12906",
+   "date": "2026-01-19",
+   "venue": "",
+   "sim": 0.379,
+   "channels": [
+    "hf"
+   ],
+   "title": "Gated Differentiable Working Memory for Long-Context Language Modeling"
+  },
+  {
+   "id": "arxiv:2607.12893",
+   "date": "2026-07-14",
+   "venue": "",
+   "sim": 0.369,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemOps: Benchmarking Lifecycle Memory Operations in Long-Horizon Conversations"
+  },
+  {
+   "id": "arxiv:2605.10268",
+   "date": "2026-05-11",
+   "venue": "",
+   "sim": 0.363,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemReread: Enhancing Agentic Long-Context Reasoning via Memory-Guided Rereading"
+  },
+  {
+   "id": "arxiv:2605.28009",
+   "date": "2026-05-27",
+   "venue": "",
+   "sim": 0.318,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemGuard: Preventing Memory Contamination in Long-Term Memory-Augmented Large Language Models"
+  },
+  {
+   "id": "arxiv:2410.07071",
+   "date": "2024-10-09",
+   "venue": "",
+   "sim": 0.287,
+   "channels": [
+    "hf"
+   ],
+   "title": "Retrieval-Augmented Decision Transformer: External Memory for In-context\n  RL"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Drag Crosses Episode Boundary Failed Prior Episodes Agent 2025 arXiv"
+  },
+  {
+   "query": "Contextual drag extends in-task retries cross-episode memory failed prior episode task type 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,146 @@
+{
+ "name": "amortization_horizon_ranking_flip",
+ "keys": {
+  "mechanism": [
+   "Cost Definition Amortization Horizon Decide Whether Agent Memory",
+   "Published memory-versus-scale claims ReMe Qwen3-8B memory reaches Pass against memoryless Qwen3-14B BFCL-V3",
+   "Under GPU-seconds per solved task horizon implicit source papers evaluation-set sizes memoryless"
+  ],
+  "estimand": [
+   "Published memory-versus-scale claims ReMe Qwen3-8B memory reaches Pass against memoryless"
+  ],
+  "controls": [
+   "Memoryless small backbone",
+   "GPU-seconds per task",
+   "GPU-seconds"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-14B",
+   "Qwen3-32B"
+  ],
+  "methods": [
+   "ReMe",
+   "Bench",
+   "MemDelta",
+   "BudgetMem"
+  ]
+ },
+ "queries": [
+  "Cost Definition Amortization Horizon Decide Whether Agent Memory",
+  "Published memory-versus-scale claims ReMe Qwen3-8B memory reaches Pass against memoryless Qwen3-14B BFCL-V3",
+  "Published memory-versus-scale claims ReMe Qwen3-8B memory reaches Pass against memoryless",
+  "Cost Definition Amortization Horizon Decide Whether Agent Memory ALFWorld Qwen3-14B",
+  "ReMe Bench MemDelta Cost Definition Amortization Horizon Decide Whether Agent Me"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2606.18144",
+   "date": "2026-06-16",
+   "venue": "",
+   "sim": 0.617,
+   "channels": [
+    "hf"
+   ],
+   "title": "Memory as a Wasting Asset: Pricing Flash Endurance for Embodied Agents, and the Limits of Doing So"
+  },
+  {
+   "id": "arxiv:2607.01071",
+   "date": "2026-07-01",
+   "venue": "",
+   "sim": 0.523,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemSyco-Bench: Benchmarking Sycophancy in Agent Memory"
+  },
+  {
+   "id": "arxiv:2607.27919",
+   "date": "2026-07-30",
+   "venue": "",
+   "sim": 0.506,
+   "channels": [
+    "hf"
+   ],
+   "title": "Memory Decoder at Scale: A Pretrained, Parametric Long-Term Memory"
+  },
+  {
+   "id": "arxiv:2607.13157",
+   "date": "2026-07-14",
+   "venue": "",
+   "sim": 0.502,
+   "channels": [
+    "hf"
+   ],
+   "title": "Oracle Agent Memory as an Enterprise Memory Substrate for Long-Horizon AI Agents"
+  },
+  {
+   "id": "arxiv:2606.24775",
+   "date": "2026-06-23",
+   "venue": "",
+   "sim": 0.469,
+   "channels": [
+    "hf"
+   ],
+   "title": "Are We Ready For An Agent-Native Memory System?"
+  },
+  {
+   "id": "arxiv:2607.02255",
+   "date": "2026-07-02",
+   "venue": "",
+   "sim": 0.462,
+   "channels": [
+    "hf"
+   ],
+   "title": "AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents"
+  },
+  {
+   "id": "arxiv:2606.06448",
+   "date": "2026-06-04",
+   "venue": "",
+   "sim": 0.461,
+   "channels": [
+    "hf"
+   ],
+   "title": "Agent Memory: Characterization and System Implications of Stateful Long-Horizon Workloads"
+  },
+  {
+   "id": "arxiv:2605.09104",
+   "date": "2026-05-09",
+   "venue": "",
+   "sim": 0.459,
+   "channels": [
+    "hf"
+   ],
+   "title": "Token Economics for LLM Agents: A Dual-View Study from Computing and Economics"
+  },
+  {
+   "id": "arxiv:2606.12329",
+   "date": "2026-06-10",
+   "venue": "",
+   "sim": 0.439,
+   "channels": [
+    "hf"
+   ],
+   "title": "PROJECTMEM: A Local-First, Event-Sourced Memory and Judgment Layer for AI Coding Agents"
+  },
+  {
+   "id": "arxiv:2607.15105",
+   "date": "2026-07-16",
+   "venue": "",
+   "sim": 0.437,
+   "channels": [
+    "hf"
+   ],
+   "title": "Long-Context Fine-Tuning with Limited VRAM"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Cost Definition Amortization Horizon Decide Whether Agent Memory 2025 arXiv"
+  },
+  {
+   "query": "Published memory-versus-scale claims ReMe Qwen3-8B memory reaches Pass against memoryless Qwen3-14B BFCL-V3 2025 arXiv"
+  }
+ ]
+}

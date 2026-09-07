@@ -1,0 +1,144 @@
+{
+ "name": "memory_surrogate_validity",
+ "keys": {
+  "mechanism": [
+   "Good Memory Wrong Endpoint Retrieval Recall LLM-Judge Quality",
+   "metrics used develop compare agent experience memories recall MRR labeled-relevant episodes LLM-judge",
+   "Across pre-registered family memory configurations spans surrogates ranges retriever item form admission"
+  ],
+  "estimand": [
+   "metrics used develop compare agent experience memories recall MRR labeled-relevant"
+  ],
+  "controls": [
+   "Memoryless control"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-8B",
+   "WebShop"
+  ],
+  "methods": [
+   "MAC",
+   "ReMe",
+   "MemRL",
+   "RoMeRL"
+  ]
+ },
+ "queries": [
+  "Good Memory Wrong Endpoint Retrieval Recall LLM-Judge Quality",
+  "metrics used develop compare agent experience memories recall MRR labeled-relevant episodes LLM-judge",
+  "metrics used develop compare agent experience memories recall MRR labeled-relevant",
+  "Good Memory Wrong Endpoint Retrieval Recall LLM-Judge Quality ALFWorld Qwen3-8B",
+  "MAC ReMe MemRL Good Memory Wrong Endpoint Retrieval Recall LLM-Judge Qualit"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2605.06132",
+   "date": "2026-05-07",
+   "venue": "",
+   "sim": 0.664,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemReranker: Reasoning-Aware Reranking for Agent Memory Retrieval"
+  },
+  {
+   "id": "arxiv:2608.00017",
+   "date": "2026-06-29",
+   "venue": "",
+   "sim": 0.653,
+   "channels": [
+    "hf"
+   ],
+   "title": "Memory Reward Inflation in Self-Improving LLM Agents"
+  },
+  {
+   "id": "arxiv:2603.02473",
+   "date": "2026-04-12",
+   "venue": "",
+   "sim": 0.65,
+   "channels": [
+    "hf"
+   ],
+   "title": "Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory"
+  },
+  {
+   "id": "arxiv:2607.17621",
+   "date": "2026-07-20",
+   "venue": "",
+   "sim": 0.633,
+   "channels": [
+    "hf"
+   ],
+   "title": "Mechanistic Attention Guidance for Agent Memory Refinement"
+  },
+  {
+   "id": "arxiv:2604.20006",
+   "date": "2026-04-21",
+   "venue": "",
+   "sim": 0.613,
+   "channels": [
+    "hf"
+   ],
+   "title": "From Recall to Forgetting: Benchmarking Long-Term Memory for Personalized Agents"
+  },
+  {
+   "id": "arxiv:2512.20237",
+   "date": "2025-12-23",
+   "venue": "",
+   "sim": 0.598,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemR^3: Memory Retrieval via Reflective Reasoning for LLM Agents"
+  },
+  {
+   "id": "arxiv:2607.12893",
+   "date": "2026-07-14",
+   "venue": "",
+   "sim": 0.595,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemOps: Benchmarking Lifecycle Memory Operations in Long-Horizon Conversations"
+  },
+  {
+   "id": "arxiv:2605.12493",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.594,
+   "channels": [
+    "hf"
+   ],
+   "title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues"
+  },
+  {
+   "id": "arxiv:2602.16313",
+   "date": "2026-02-18",
+   "venue": "",
+   "sim": 0.592,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks"
+  },
+  {
+   "id": "arxiv:2607.24097",
+   "date": "2026-07-27",
+   "venue": "",
+   "sim": 0.59,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemChain: Learning Interpretable Memory Traces for Memory-Augmented LLM Agents"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Good Memory Wrong Endpoint Retrieval Recall LLM-Judge Quality 2025 arXiv"
+  },
+  {
+   "query": "metrics used develop compare agent experience memories recall MRR labeled-relevant episodes LLM-judge 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,146 @@
+{
+ "name": "order_randomized_leakage_audit",
+ "keys": {
+  "mechanism": [
+   "Solved Before Stream-Order Randomization Shows Experience-Memory Gains Agent",
+   "task-execution benchmarks used evaluate agent experience memory ALFWorld WebShop streaming protocols ReMem",
+   "tasks without predecessor gain falls inside run-to-run noise floor"
+  ],
+  "estimand": [
+   "task-execution benchmarks used evaluate agent experience memory ALFWorld WebShop streaming"
+  ],
+  "controls": [
+   "Memoryless agent",
+   "ExpeL insights",
+   "ReMe-style distilled store"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-8B",
+   "WebShop"
+  ],
+  "methods": [
+   "ReMe",
+   "Cheatsheet",
+   "SkillEvolBench",
+   "MemDelta"
+  ]
+ },
+ "queries": [
+  "Solved Before Stream-Order Randomization Shows Experience-Memory Gains Agent",
+  "task-execution benchmarks used evaluate agent experience memory ALFWorld WebShop streaming protocols ReMem",
+  "task-execution benchmarks used evaluate agent experience memory ALFWorld WebShop streaming",
+  "Solved Before Stream-Order Randomization Shows Experience-Memory Gains Agent ALFWorld Qwen3-8B",
+  "ReMe Cheatsheet SkillEvolBench Solved Before Stream-Order Randomization Shows Experience-Me"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2605.27140",
+   "date": "2026-05-26",
+   "venue": "",
+   "sim": 0.617,
+   "channels": [
+    "hf"
+   ],
+   "title": "StepOPSD: Step-Aware Online Preference Distillation for Agent Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2606.14571",
+   "date": "2026-06-12",
+   "venue": "",
+   "sim": 0.603,
+   "channels": [
+    "hf"
+   ],
+   "title": "StreamMemBench: Streaming Evaluation of Agent Memory for Future-Oriented Assistance"
+  },
+  {
+   "id": "arxiv:2606.13174",
+   "date": "2026-06-11",
+   "venue": "",
+   "sim": 0.589,
+   "channels": [
+    "hf"
+   ],
+   "title": "Getting Better at Working With You: Compiling User Corrections into Runtime Enforcement for Coding Agents"
+  },
+  {
+   "id": "arxiv:2604.27003",
+   "date": "2026-04-29",
+   "venue": "",
+   "sim": 0.585,
+   "channels": [
+    "hf"
+   ],
+   "title": "When Continual Learning Moves to Memory: A Study of Experience Reuse in LLM Agents"
+  },
+  {
+   "id": "arxiv:2601.19935",
+   "date": "2026-01-13",
+   "venue": "",
+   "sim": 0.574,
+   "channels": [
+    "hf"
+   ],
+   "title": "Mem2ActBench: A Benchmark for Evaluating Long-Term Memory Utilization in Task-Oriented Autonomous Agents"
+  },
+  {
+   "id": "arxiv:2605.31075",
+   "date": "2026-05-29",
+   "venue": "",
+   "sim": 0.571,
+   "channels": [
+    "hf"
+   ],
+   "title": "Task-Focused Memorization for Multimodal Agents"
+  },
+  {
+   "id": "arxiv:2607.05202",
+   "date": "2026-07-06",
+   "venue": "",
+   "sim": 0.568,
+   "channels": [
+    "hf"
+   ],
+   "title": "EvoAgentBench: Benchmarking Agent Self-Evolution via Ability Transfer"
+  },
+  {
+   "id": "arxiv:2605.12493",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.568,
+   "channels": [
+    "hf"
+   ],
+   "title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues"
+  },
+  {
+   "id": "arxiv:2607.21273",
+   "date": "2026-07-23",
+   "venue": "",
+   "sim": 0.565,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Dark Room in the Reward Channel: Dense Prediction Rewards Collapse GRPO-Trained LLM Agents -- and What Actually Works"
+  },
+  {
+   "id": "arxiv:2509.25140",
+   "date": "2025-09-29",
+   "venue": "",
+   "sim": 0.563,
+   "channels": [
+    "hf"
+   ],
+   "title": "ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Solved Before Stream-Order Randomization Shows Experience-Memory Gains Agent 2025 arXiv"
+  },
+  {
+   "query": "task-execution benchmarks used evaluate agent experience memory ALFWorld WebShop streaming protocols ReMem 2025 arXiv"
+  }
+ ]
+}

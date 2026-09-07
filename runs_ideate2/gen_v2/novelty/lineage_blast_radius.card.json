@@ -1,0 +1,136 @@
+{
+ "name": "lineage_blast_radius",
+ "keys": {
+  "mechanism": [
+   "Lineage Blast Radius Consolidation Launders Low-Trust Experience Shared",
+   "shared experience memory consolidates raw episodes several contributors insights skills poisoned records",
+   "enforcing trust through lineage restores robustness but discards fraction library grows consolidation"
+  ],
+  "estimand": [
+   "shared experience memory consolidates raw episodes several contributors insights skills"
+  ],
+  "controls": [],
+  "environment": [
+   "ALFWorld",
+   "Llama-3.1-8B",
+   "Qwen3-14B"
+  ],
+  "methods": []
+ },
+ "queries": [
+  "Lineage Blast Radius Consolidation Launders Low-Trust Experience Shared",
+  "shared experience memory consolidates raw episodes several contributors insights skills poisoned records",
+  "shared experience memory consolidates raw episodes several contributors insights skills",
+  "Lineage Blast Radius Consolidation Launders Low-Trust Experience Shared ALFWorld Llama-3.1-8B"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2605.12978",
+   "date": "2026-05-13",
+   "venue": "",
+   "sim": 0.57,
+   "channels": [
+    "hf"
+   ],
+   "title": "Useful Memories Become Faulty When Continuously Updated by LLMs"
+  },
+  {
+   "id": "arxiv:2606.22844",
+   "date": "2026-06-22",
+   "venue": "",
+   "sim": 0.533,
+   "channels": [
+    "hf"
+   ],
+   "title": "RaMem: Contextual Reinstatement for Long-term Agentic Memory"
+  },
+  {
+   "id": "arxiv:2406.14971",
+   "date": "2024-06-21",
+   "venue": "",
+   "sim": 0.503,
+   "channels": [
+    "hf"
+   ],
+   "title": "Domain Adaptation of Llama3-70B-Instruct through Continual Pre-Training\n  and Model Merging: A Comprehensive Evaluation"
+  },
+  {
+   "id": "arxiv:2410.20682",
+   "date": "2024-10-28",
+   "venue": "",
+   "sim": 0.495,
+   "channels": [
+    "hf"
+   ],
+   "title": "SHARE: Shared Memory-Aware Open-Domain Long-Term Dialogue Dataset\n  Constructed from Movie Script"
+  },
+  {
+   "id": "arxiv:2605.20616",
+   "date": "2026-05-20",
+   "venue": "",
+   "sim": 0.471,
+   "channels": [
+    "hf"
+   ],
+   "title": "Auto-Dreamer: Learning Offline Memory Consolidation for Language Agents"
+  },
+  {
+   "id": "arxiv:2112.15402",
+   "date": "2021-12-31",
+   "venue": "",
+   "sim": 0.464,
+   "channels": [
+    "hf"
+   ],
+   "title": "Relational Experience Replay: Continual Learning by Adaptively Tuning\n  Task-wise Relationship"
+  },
+  {
+   "id": "arxiv:2606.09365",
+   "date": "2026-06-08",
+   "venue": "",
+   "sim": 0.407,
+   "channels": [
+    "hf"
+   ],
+   "title": "Experience Makes Skillful: Enabling Generalizable Medical Agent Reasoning via Self-Evolving Skill Memory"
+  },
+  {
+   "id": "arxiv:2605.14498",
+   "date": "2026-05-16",
+   "venue": "",
+   "sim": 0.401,
+   "channels": [
+    "hf"
+   ],
+   "title": "GroupMemBench: Benchmarking LLM Agent Memory in Multi-Party Conversations"
+  },
+  {
+   "id": "arxiv:2601.21051",
+   "date": "2026-01-28",
+   "venue": "",
+   "sim": 0.376,
+   "channels": [
+    "hf"
+   ],
+   "title": "Llama-3.1-FoundationAI-SecurityLLM-Reasoning-8B Technical Report"
+  },
+  {
+   "id": "arxiv:2606.22953",
+   "date": "2026-06-22",
+   "venue": "",
+   "sim": 0.369,
+   "channels": [
+    "hf"
+   ],
+   "title": "Plans Don't Persist: Why Context Management Is Load Bearing for LLM Agents"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Lineage Blast Radius Consolidation Launders Low-Trust Experience Shared 2025 arXiv"
+  },
+  {
+   "query": "shared experience memory consolidates raw episodes several contributors insights skills poisoned records 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,146 @@
+{
+ "name": "need_blind_compaction_audit",
+ "keys": {
+  "mechanism": [
+   "Need-Blind Construction Counterfactual Audit Agent Context Compaction Drops",
+   "task-success loss context compaction causes long-horizon tool-use agents concentrated small set load-bearing",
+   "pinning rule derived counterfactual need labels disjoint task types recovers loss matched"
+  ],
+  "estimand": [
+   "task-success loss context compaction causes long-horizon tool-use agents concentrated small"
+  ],
+  "controls": [
+   "Baselines",
+   "LLM self",
+   "ACON-guideline summary"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-8B",
+   "WebShop"
+  ],
+  "methods": [
+   "Decay",
+   "Triage",
+   "ACON",
+   "Memex"
+  ]
+ },
+ "queries": [
+  "Need-Blind Construction Counterfactual Audit Agent Context Compaction Drops",
+  "task-success loss context compaction causes long-horizon tool-use agents concentrated small set load-bearing",
+  "task-success loss context compaction causes long-horizon tool-use agents concentrated small",
+  "Need-Blind Construction Counterfactual Audit Agent Context Compaction Drops ALFWorld Qwen3-8B",
+  "Decay Triage ACON Need-Blind Construction Counterfactual Audit Agent Context C"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2607.05378",
+   "date": "2026-07-06",
+   "venue": "",
+   "sim": 0.704,
+   "channels": [
+    "hf"
+   ],
+   "title": "CompactionRL: Reinforcement Learning with Context Compaction for Long-Horizon Agents"
+  },
+  {
+   "id": "arxiv:2606.17016",
+   "date": "2026-06-15",
+   "venue": "",
+   "sim": 0.693,
+   "channels": [
+    "hf"
+   ],
+   "title": "TokenPilot: Cache-Efficient Context Management for LLM Agents"
+  },
+  {
+   "id": "arxiv:2605.05191",
+   "date": "2026-05-06",
+   "venue": "",
+   "sim": 0.66,
+   "channels": [
+    "hf"
+   ],
+   "title": "LongSeeker: Elastic Context Orchestration for Long-Horizon Search Agents"
+  },
+  {
+   "id": "arxiv:2608.09290",
+   "date": "2026-08-11",
+   "venue": "",
+   "sim": 0.641,
+   "channels": [
+    "hf"
+   ],
+   "title": "OpenCodeReview: Determinism over Non-Determinism for Cost-Effective Agent-Based Code Review"
+  },
+  {
+   "id": "arxiv:2606.11213",
+   "date": "2026-05-01",
+   "venue": "",
+   "sim": 0.641,
+   "channels": [
+    "hf"
+   ],
+   "title": "Beyond Compaction: Structured Context Eviction for Long-Horizon Agents"
+  },
+  {
+   "id": "arxiv:2606.30005",
+   "date": "2026-06-29",
+   "venue": "",
+   "sim": 0.636,
+   "channels": [
+    "hf"
+   ],
+   "title": "LLM Agents Are Latent Context Managers: Eliciting Self-Managed Context via a Proprioceptive Dashboard"
+  },
+  {
+   "id": "arxiv:2510.00615",
+   "date": "2025-10-01",
+   "venue": "",
+   "sim": 0.631,
+   "channels": [
+    "hf"
+   ],
+   "title": "ACON: Optimizing Context Compression for Long-horizon LLM Agents"
+  },
+  {
+   "id": "arxiv:2607.27250",
+   "date": "2026-07-28",
+   "venue": "",
+   "sim": 0.63,
+   "channels": [
+    "hf"
+   ],
+   "title": "Do Context Files Help Coding Agents? A Two-Agent Ablation Study on Real Repositories"
+  },
+  {
+   "id": "arxiv:2603.00822",
+   "date": "2026-05-04",
+   "venue": "",
+   "sim": 0.626,
+   "channels": [
+    "hf"
+   ],
+   "title": "ContextCov: Deriving and Enforcing Executable Constraints from Agent Instruction Files"
+  },
+  {
+   "id": "arxiv:2606.23525",
+   "date": "2026-06-22",
+   "venue": "",
+   "sim": 0.618,
+   "channels": [
+    "hf"
+   ],
+   "title": "Self-Compacting Language Model Agents"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Need-Blind Construction Counterfactual Audit Agent Context Compaction Drops 2025 arXiv"
+  },
+  {
+   "query": "task-success loss context compaction causes long-horizon tool-use agents concentrated small set load-bearing 2025 arXiv"
+  }
+ ]
+}

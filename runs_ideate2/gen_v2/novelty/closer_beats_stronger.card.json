@@ -1,0 +1,139 @@
+{
+ "name": "closer_beats_stronger",
+ "keys": {
+  "mechanism": [
+   "Closer Beats Stronger Consumer-Side Policy Proximity Builder Capability",
+   "fixed retrieved set experience items built one backbone paired gain consumer backbone",
+   "consequently there exist consumer cells weaker-but-closer builder bank beats stronger-but-distant one content-preserving"
+  ],
+  "estimand": [
+   "fixed retrieved set experience items built one backbone paired gain"
+  ],
+  "controls": [],
+  "environment": [
+   "ALFWorld",
+   "Llama-3.1-8B",
+   "Llama-3.3-70B"
+  ],
+  "methods": [
+   "Distillation"
+  ]
+ },
+ "queries": [
+  "Closer Beats Stronger Consumer-Side Policy Proximity Builder Capability",
+  "fixed retrieved set experience items built one backbone paired gain consumer backbone",
+  "fixed retrieved set experience items built one backbone paired gain",
+  "Closer Beats Stronger Consumer-Side Policy Proximity Builder Capability ALFWorld Llama-3.1-8B",
+  "Distillation Closer Beats Stronger Consumer-Side Policy Proximity Builder"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.04003",
+   "date": "2026-08-04",
+   "venue": "",
+   "sim": 0.559,
+   "channels": [
+    "hf"
+   ],
+   "title": "PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents"
+  },
+  {
+   "id": "arxiv:2511.10492",
+   "date": "2025-11-13",
+   "venue": "",
+   "sim": 0.547,
+   "channels": [
+    "hf"
+   ],
+   "title": "Don't Waste It: Guiding Generative Recommenders with Structured Human Priors via Multi-head Decoding"
+  },
+  {
+   "id": "arxiv:2602.12041",
+   "date": "2026-02-12",
+   "venue": "",
+   "sim": 0.544,
+   "channels": [
+    "hf"
+   ],
+   "title": "Compress, Cross and Scale: Multi-Level Compression Cross Networks for Efficient Scaling in Recommender Systems"
+  },
+  {
+   "id": "arxiv:2606.28356",
+   "date": "2026-06-08",
+   "venue": "",
+   "sim": 0.491,
+   "channels": [
+    "hf"
+   ],
+   "title": "SafeGEO: Understanding Generative Engine Optimization Risks in Recommendation Agents"
+  },
+  {
+   "id": "arxiv:2505.18878",
+   "date": "2025-05-24",
+   "venue": "",
+   "sim": 0.486,
+   "channels": [
+    "hf"
+   ],
+   "title": "CRMArena-Pro: Holistic Assessment of LLM Agents Across Diverse Business\n  Scenarios and Interactions"
+  },
+  {
+   "id": "arxiv:2412.03187",
+   "date": "2024-12-04",
+   "venue": "",
+   "sim": 0.473,
+   "channels": [
+    "hf"
+   ],
+   "title": "Weighted-Reward Preference Optimization for Implicit Model Fusion"
+  },
+  {
+   "id": "arxiv:2603.06397",
+   "date": "2026-03-06",
+   "venue": "",
+   "sim": 0.447,
+   "channels": [
+    "hf"
+   ],
+   "title": "Efficient, Property-Aligned Fan-Out Retrieval via RL-Compiled Diffusion"
+  },
+  {
+   "id": "arxiv:2608.26730",
+   "date": "2026-08-27",
+   "venue": "",
+   "sim": 0.428,
+   "channels": [
+    "hf"
+   ],
+   "title": "Knowing When Not to Reuse: Conditional Experience Transfer in Autonomous LLM Post-Training"
+  },
+  {
+   "id": "arxiv:2211.02222",
+   "date": "2022-11-04",
+   "venue": "",
+   "sim": 0.412,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Benefits of Model-Based Generalization in Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2607.19802",
+   "date": "2026-07-22",
+   "venue": "",
+   "sim": 0.409,
+   "channels": [
+    "hf"
+   ],
+   "title": "Zero-Observation User Reactivation with Gap-Driven Dimensional Gating"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Closer Beats Stronger Consumer-Side Policy Proximity Builder Capability 2025 arXiv"
+  },
+  {
+   "query": "fixed retrieved set experience items built one backbone paired gain consumer backbone 2025 arXiv"
+  }
+ ]
+}

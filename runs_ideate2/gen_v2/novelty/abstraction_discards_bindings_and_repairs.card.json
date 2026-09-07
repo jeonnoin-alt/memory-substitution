@@ -1,0 +1,145 @@
+{
+ "name": "abstraction_discards_bindings_and_repairs",
+ "keys": {
+  "mechanism": [
+   "Abstraction Variable Surviving Cues Scene Bindings Failure-to-Repair Pairs",
+   "published disagreement between SkillEvolBench raw trajectory reuse beats distilled skills SEC four-field",
+   "about two cue classes representation keeps discards scene bindings receptacle held object"
+  ],
+  "estimand": [
+   "published disagreement between SkillEvolBench raw trajectory reuse beats distilled skills"
+  ],
+  "controls": [
+   "No-memory agent",
+   "ExpeL joint",
+   "SEC as published"
+  ],
+  "environment": [
+   "ALFWorld",
+   "WebShop"
+  ],
+  "methods": [
+   "SkillEvolBench",
+   "Skills",
+   "Trace2Skill",
+   "HORM"
+  ]
+ },
+ "queries": [
+  "Abstraction Variable Surviving Cues Scene Bindings Failure-to-Repair Pairs",
+  "published disagreement between SkillEvolBench raw trajectory reuse beats distilled skills SEC four-field",
+  "published disagreement between SkillEvolBench raw trajectory reuse beats distilled skills",
+  "Abstraction Variable Surviving Cues Scene Bindings Failure-to-Repair Pairs ALFWorld WebShop",
+  "SkillEvolBench Skills Trace2Skill Abstraction Variable Surviving Cues Scene Bindings Failure-t"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2010.03768",
+   "date": "2020-10-08",
+   "venue": "",
+   "sim": 0.588,
+   "channels": [
+    "hf"
+   ],
+   "title": "ALFWorld: Aligning Text and Embodied Environments for Interactive\n  Learning"
+  },
+  {
+   "id": "arxiv:2608.08793",
+   "date": "2026-08-09",
+   "venue": "",
+   "sim": 0.555,
+   "channels": [
+    "hf"
+   ],
+   "title": "Evidence-Calibrated Runtime Reconstruction for Agent Skills Across Heterogeneous Coding Agents"
+  },
+  {
+   "id": "arxiv:2606.12886",
+   "date": "2026-07-09",
+   "venue": "",
+   "sim": 0.544,
+   "channels": [
+    "hf"
+   ],
+   "title": "Bridging Modal Isolation in Interleaved Thinking: Supervising Modality Transitions via Stepwise Reinforcement"
+  },
+  {
+   "id": "arxiv:2605.24117",
+   "date": "2026-05-22",
+   "venue": "",
+   "sim": 0.531,
+   "channels": [
+    "hf"
+   ],
+   "title": "SkillEvolBench: Benchmarking the Evolution from Episodic Experience to Procedural Skills"
+  },
+  {
+   "id": "arxiv:2605.29463",
+   "date": "2026-05-31",
+   "venue": "",
+   "sim": 0.521,
+   "channels": [
+    "hf"
+   ],
+   "title": "Honest Lying: Understanding Memory Confabulation in Reflexive Agents"
+  },
+  {
+   "id": "arxiv:2605.31503",
+   "date": "2026-05-29",
+   "venue": "",
+   "sim": 0.512,
+   "channels": [
+    "hf"
+   ],
+   "title": "How can embedding models bind concepts?"
+  },
+  {
+   "id": "arxiv:2603.25158",
+   "date": "2026-03-26",
+   "venue": "",
+   "sim": 0.474,
+   "channels": [
+    "hf"
+   ],
+   "title": "Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills"
+  },
+  {
+   "id": "arxiv:2605.09192",
+   "date": "2026-05-09",
+   "venue": "",
+   "sim": 0.467,
+   "channels": [
+    "hf"
+   ],
+   "title": "Evidence Over Plans: Online Trajectory Verification for Skill Distillation"
+  },
+  {
+   "id": "arxiv:2606.13317",
+   "date": "2026-07-29",
+   "venue": "",
+   "sim": 0.46,
+   "channels": [
+    "hf"
+   ],
+   "title": "SkillCAT: Contrastive, Assessment-Augmented and Topology-AwareSkill Self-Evolution for LLM Agents"
+  },
+  {
+   "id": "arxiv:2608.05139",
+   "date": "2026-08-05",
+   "venue": "",
+   "sim": 0.453,
+   "channels": [
+    "hf"
+   ],
+   "title": "Toward Skill-Native LLMs: Skill Entropy for Benchmarking and Training Long-Horizon Reasoning"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Abstraction Variable Surviving Cues Scene Bindings Failure-to-Repair Pairs 2025 arXiv"
+  },
+  {
+   "query": "published disagreement between SkillEvolBench raw trajectory reuse beats distilled skills SEC four-field 2025 arXiv"
+  }
+ ]
+}

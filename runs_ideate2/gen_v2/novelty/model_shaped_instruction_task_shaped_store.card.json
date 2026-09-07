@@ -1,0 +1,146 @@
+{
+ "name": "model_shaped_instruction_task_shaped_store",
+ "keys": {
+  "mechanism": [
+   "Model-Shaped Instructions Task-Shaped Stores Memory-Instruction Substitution Measured One",
+   "GEPA-optimized instruction retrievable experience store built training episodes equally portable instruction encodes",
+   "substitution ratio therefore property backbone optimizer pair episode set"
+  ],
+  "estimand": [
+   "GEPA-optimized instruction retrievable experience store built training episodes equally portable"
+  ],
+  "controls": [
+   "Seed",
+   "ReAct instruction and",
+   "ALFWorld"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "Qwen3-8B"
+  ],
+  "methods": [
+   "Atlas",
+   "PromptBridge",
+   "MulVul",
+   "MemCollab"
+  ]
+ },
+ "queries": [
+  "Model-Shaped Instructions Task-Shaped Stores Memory-Instruction Substitution Measured One",
+  "GEPA-optimized instruction retrievable experience store built training episodes equally portable instruction encodes",
+  "GEPA-optimized instruction retrievable experience store built training episodes equally portable",
+  "Model-Shaped Instructions Task-Shaped Stores Memory-Instruction Substitution Measured One ALFWorld Qwen3-32B",
+  "Atlas PromptBridge MulVul Model-Shaped Instructions Task-Shaped Stores Memory-Instruct"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2507.06968",
+   "date": "2025-07-09",
+   "venue": "",
+   "sim": 0.577,
+   "channels": [
+    "hf"
+   ],
+   "title": "Scaling Towards the Information Boundary of Instruction Set: InfinityInstruct-Subject Technical Report"
+  },
+  {
+   "id": "arxiv:2606.01143",
+   "date": "2026-06-03",
+   "venue": "",
+   "sim": 0.54,
+   "channels": [
+    "hf"
+   ],
+   "title": "Schedule-Level Shared-Prefix Reuse for LLM RL Training"
+  },
+  {
+   "id": "arxiv:2507.19457",
+   "date": "2025-07-25",
+   "venue": "",
+   "sim": 0.529,
+   "channels": [
+    "hf"
+   ],
+   "title": "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2603.07777",
+   "date": "2026-03-08",
+   "venue": "",
+   "sim": 0.501,
+   "channels": [
+    "hf"
+   ],
+   "title": "Breaking Training Bottlenecks: Effective and Stable Reinforcement Learning for Coding Models"
+  },
+  {
+   "id": "arxiv:2310.19651",
+   "date": "2023-10-30",
+   "venue": "",
+   "sim": 0.497,
+   "channels": [
+    "hf"
+   ],
+   "title": "Dynamics of Instruction Tuning: Each Ability of Large Language Models\n  Has Its Own Growth Pace"
+  },
+  {
+   "id": "arxiv:2412.11231",
+   "date": "2024-12-15",
+   "venue": "",
+   "sim": 0.493,
+   "channels": [
+    "hf"
+   ],
+   "title": "Smaller Language Models Are Better Instruction Evolvers"
+  },
+  {
+   "id": "arxiv:2405.14394",
+   "date": "2024-05-23",
+   "venue": "",
+   "sim": 0.492,
+   "channels": [
+    "hf"
+   ],
+   "title": "Instruction Tuning With Loss Over Instructions"
+  },
+  {
+   "id": "arxiv:2503.13222",
+   "date": "2025-03-17",
+   "venue": "",
+   "sim": 0.488,
+   "channels": [
+    "hf"
+   ],
+   "title": "Can Language Models Follow Multiple Turns of Entangled Instructions?"
+  },
+  {
+   "id": "arxiv:2505.22101",
+   "date": "2025-05-28",
+   "venue": "",
+   "sim": 0.483,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemOS: An Operating System for Memory-Augmented Generation (MAG) in\n  Large Language Models"
+  },
+  {
+   "id": "arxiv:2212.10773",
+   "date": "2022-12-21",
+   "venue": "",
+   "sim": 0.481,
+   "channels": [
+    "hf"
+   ],
+   "title": "MultiInstruct: Improving Multi-Modal Zero-Shot Learning via Instruction\n  Tuning"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Model-Shaped Instructions Task-Shaped Stores Memory-Instruction Substitution Measured One 2025 arXiv"
+  },
+  {
+   "query": "GEPA-optimized instruction retrievable experience store built training episodes equally portable instruction encodes 2025 arXiv"
+  }
+ ]
+}

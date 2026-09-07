@@ -1,0 +1,141 @@
+{
+ "name": "stale_true_state_facts_redaction",
+ "keys": {
+  "mechanism": [
+   "Stale-True Wrong Episode-Specific State Facts Carry Natural Harm",
+   "organically accumulated ALFWorld experience bank items hurt procedurally wrong items but procedurally",
+   "Per-task harm scales number stale-true facts injected injected tokens"
+  ],
+  "estimand": [
+   "organically accumulated ALFWorld experience bank items hurt procedurally wrong items"
+  ],
+  "controls": [
+   "CAMEL-style calibration"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": [
+   "AdaMEM",
+   "Trajectory",
+   "Memory"
+  ]
+ },
+ "queries": [
+  "Stale-True Wrong Episode-Specific State Facts Carry Natural Harm",
+  "organically accumulated ALFWorld experience bank items hurt procedurally wrong items but procedurally",
+  "organically accumulated ALFWorld experience bank items hurt procedurally wrong items",
+  "Stale-True Wrong Episode-Specific State Facts Carry Natural Harm ALFWorld",
+  "AdaMEM Trajectory Memory Stale-True Wrong Episode-Specific State Facts Carry Natural"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.00017",
+   "date": "2026-06-29",
+   "venue": "",
+   "sim": 0.58,
+   "channels": [
+    "hf"
+   ],
+   "title": "Memory Reward Inflation in Self-Improving LLM Agents"
+  },
+  {
+   "id": "arxiv:2608.25553",
+   "date": "2026-08-28",
+   "venue": "",
+   "sim": 0.533,
+   "channels": [
+    "hf"
+   ],
+   "title": "When Stale Constraints Go Unchecked: Budgeted Verification Failures in Inherited Agent Memory"
+  },
+  {
+   "id": "arxiv:2605.29463",
+   "date": "2026-05-31",
+   "venue": "",
+   "sim": 0.518,
+   "channels": [
+    "hf"
+   ],
+   "title": "Honest Lying: Understanding Memory Confabulation in Reflexive Agents"
+  },
+  {
+   "id": "arxiv:2602.14080",
+   "date": "2026-02-15",
+   "venue": "",
+   "sim": 0.512,
+   "channels": [
+    "hf"
+   ],
+   "title": "Empty Shelves or Lost Keys? Recall Is the Bottleneck for Parametric Factuality"
+  },
+  {
+   "id": "arxiv:2605.12978",
+   "date": "2026-05-13",
+   "venue": "",
+   "sim": 0.504,
+   "channels": [
+    "hf"
+   ],
+   "title": "Useful Memories Become Faulty When Continuously Updated by LLMs"
+  },
+  {
+   "id": "arxiv:2608.11772",
+   "date": "2026-08-12",
+   "venue": "",
+   "sim": 0.501,
+   "channels": [
+    "hf"
+   ],
+   "title": "Diagnosis Before Recovery: Turning Agent Failures into Selective Self-Correction"
+  },
+  {
+   "id": "arxiv:2606.26511",
+   "date": "2026-06-25",
+   "venue": "",
+   "sim": 0.462,
+   "channels": [
+    "hf"
+   ],
+   "title": "Temporal Validity in Retrieval Memory: Eliminating Stale-Fact Errors for AI Agents over Evolving Knowledge"
+  },
+  {
+   "id": "arxiv:2607.19749",
+   "date": "2026-07-22",
+   "venue": "",
+   "sim": 0.452,
+   "channels": [
+    "hf"
+   ],
+   "title": "The World Model Remembers, the Actor Forgets: Dream Rehearsal for Continual Model-Based RL"
+  },
+  {
+   "id": "arxiv:2608.04574",
+   "date": "2026-08-05",
+   "venue": "",
+   "sim": 0.447,
+   "channels": [
+    "hf"
+   ],
+   "title": "When Memory Lies: An Empirical Study of Spatial Memory Staleness in VLM Agents"
+  },
+  {
+   "id": "arxiv:2606.25852",
+   "date": "2026-06-24",
+   "venue": "",
+   "sim": 0.435,
+   "channels": [
+    "hf"
+   ],
+   "title": "Semantic Consistency Policy Optimization for Reinforcement Learning of LLM Agents"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Stale-True Wrong Episode-Specific State Facts Carry Natural Harm 2025 arXiv"
+  },
+  {
+   "query": "organically accumulated ALFWorld experience bank items hurt procedurally wrong items but procedurally 2025 arXiv"
+  }
+ ]
+}

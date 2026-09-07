@@ -1,0 +1,140 @@
+{
+ "name": "utility_pruning_is_frequency_pruning",
+ "keys": {
+  "mechanism": [
+   "Utility Pruning Frequency Pruning Outcome-Based Refinement Agent Experience",
+   "per-item utility estimates used prune experience banks success failure counters ReMe-style refinement",
+   "stationary evaluation invisible slightly positive"
+  ],
+  "estimand": [
+   "per-item utility estimates used prune experience banks success failure counters"
+  ],
+  "controls": [],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": [
+   "ReMe",
+   "MemRL",
+   "CraniMem",
+   "Evolution"
+  ]
+ },
+ "queries": [
+  "Utility Pruning Frequency Pruning Outcome-Based Refinement Agent Experience",
+  "per-item utility estimates used prune experience banks success failure counters ReMe-style refinement",
+  "per-item utility estimates used prune experience banks success failure counters",
+  "Utility Pruning Frequency Pruning Outcome-Based Refinement Agent Experience ALFWorld",
+  "ReMe MemRL CraniMem Utility Pruning Frequency Pruning Outcome-Based Refinement A"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2605.07804",
+   "date": "2026-06-01",
+   "venue": "",
+   "sim": 0.53,
+   "channels": [
+    "hf"
+   ],
+   "title": "Prune-OPD: Efficient and Reliable On-Policy Distillation for Long-Horizon Reasoning"
+  },
+  {
+   "id": "arxiv:2605.16045",
+   "date": "2026-05-15",
+   "venue": "",
+   "sim": 0.528,
+   "channels": [
+    "hf"
+   ],
+   "title": "RecMem: Recurrence-based Memory Consolidation for Efficient and Effective Long-Running LLM Agents"
+  },
+  {
+   "id": "arxiv:2604.04979",
+   "date": "2026-04-04",
+   "venue": "",
+   "sim": 0.521,
+   "channels": [
+    "hf"
+   ],
+   "title": "Squeez: Task-Conditioned Tool-Output Pruning for Coding Agents"
+  },
+  {
+   "id": "arxiv:2603.15642",
+   "date": "2026-03-03",
+   "venue": "",
+   "sim": 0.508,
+   "channels": [
+    "hf"
+   ],
+   "title": "CraniMem: Cranial Inspired Gated and Bounded Memory for Agentic Systems"
+  },
+  {
+   "id": "arxiv:2607.01444",
+   "date": "2026-07-01",
+   "venue": "",
+   "sim": 0.464,
+   "channels": [
+    "hf"
+   ],
+   "title": "On the Utility and Factual Reliability of Pruned Mixture-of-Experts Models in the Biomedical Domain"
+  },
+  {
+   "id": "arxiv:2601.16746",
+   "date": "2026-01-23",
+   "venue": "",
+   "sim": 0.447,
+   "channels": [
+    "hf"
+   ],
+   "title": "SWE-Pruner: Self-Adaptive Context Pruning for Coding Agents"
+  },
+  {
+   "id": "arxiv:2605.08137",
+   "date": "2026-05-02",
+   "venue": "",
+   "sim": 0.426,
+   "channels": [
+    "hf"
+   ],
+   "title": "Weight Pruning Amplifies Bias: A Multi-Method Study of Compressed LLMs for Edge AI"
+  },
+  {
+   "id": "arxiv:2010.03058",
+   "date": "2020-10-06",
+   "venue": "",
+   "sim": 0.425,
+   "channels": [
+    "hf"
+   ],
+   "title": "Characterising Bias in Compressed Models"
+  },
+  {
+   "id": "arxiv:2305.18424",
+   "date": "2023-05-28",
+   "venue": "",
+   "sim": 0.423,
+   "channels": [
+    "hf"
+   ],
+   "title": "Repeated Random Sampling for Minimizing the Time-to-Accuracy of Learning"
+  },
+  {
+   "id": "arxiv:2512.10696",
+   "date": "2025-12-11",
+   "venue": "",
+   "sim": 0.423,
+   "channels": [
+    "hf"
+   ],
+   "title": "Remember Me, Refine Me: A Dynamic Procedural Memory Framework for Experience-Driven Agent Evolution"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Utility Pruning Frequency Pruning Outcome-Based Refinement Agent Experience 2025 arXiv"
+  },
+  {
+   "query": "per-item utility estimates used prune experience banks success failure counters ReMe-style refinement 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,142 @@
+{
+ "name": "failure_memory_framing_drag",
+ "keys": {
+  "mechanism": [
+   "Note Dose Cross-Episode Failure Memory Induces Contextual Drag",
+   "failure-derived memory failed trajectories mistake notes avoid-style insights retrieved episodes agent reproduces",
+   "positive rewrite states corrected procedure without reproducing erroneous actions keeps corrective value"
+  ],
+  "estimand": [
+   "failure-derived memory failed trajectories mistake notes avoid-style insights retrieved episodes"
+  ],
+  "controls": [
+   "FAILED label removed",
+   "F3's benefit is"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": [
+   "Fails",
+   "Learning",
+   "Drift"
+  ]
+ },
+ "queries": [
+  "Note Dose Cross-Episode Failure Memory Induces Contextual Drag",
+  "failure-derived memory failed trajectories mistake notes avoid-style insights retrieved episodes agent reproduces",
+  "failure-derived memory failed trajectories mistake notes avoid-style insights retrieved episodes",
+  "Note Dose Cross-Episode Failure Memory Induces Contextual Drag ALFWorld",
+  "Fails Learning Drift Note Dose Cross-Episode Failure Memory Induces Contextual Dr"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2607.13884",
+   "date": "2026-07-15",
+   "venue": "",
+   "sim": 0.645,
+   "channels": [
+    "hf"
+   ],
+   "title": "Experience Memory Graph: One-Shot Error Correction for Agents"
+  },
+  {
+   "id": "arxiv:2512.11485",
+   "date": "2025-12-12",
+   "venue": "",
+   "sim": 0.608,
+   "channels": [
+    "hf"
+   ],
+   "title": "Mistake Notebook Learning: Batch-Clustered Failures for Training-Free Agent Adaptation"
+  },
+  {
+   "id": "arxiv:2607.17621",
+   "date": "2026-07-20",
+   "venue": "",
+   "sim": 0.59,
+   "channels": [
+    "hf"
+   ],
+   "title": "Mechanistic Attention Guidance for Agent Memory Refinement"
+  },
+  {
+   "id": "arxiv:2605.12978",
+   "date": "2026-05-13",
+   "venue": "",
+   "sim": 0.589,
+   "channels": [
+    "hf"
+   ],
+   "title": "Useful Memories Become Faulty When Continuously Updated by LLMs"
+  },
+  {
+   "id": "arxiv:2607.15589",
+   "date": "2026-07-17",
+   "venue": "",
+   "sim": 0.563,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemoGuard: An Adaptive Runtime for Guarding Against Memory Traps in Communication-Limited Robot Navigation"
+  },
+  {
+   "id": "arxiv:2606.22844",
+   "date": "2026-06-22",
+   "venue": "",
+   "sim": 0.562,
+   "channels": [
+    "hf"
+   ],
+   "title": "RaMem: Contextual Reinstatement for Long-term Agentic Memory"
+  },
+  {
+   "id": "arxiv:2607.12747",
+   "date": "2026-07-14",
+   "venue": "",
+   "sim": 0.549,
+   "channels": [
+    "hf"
+   ],
+   "title": "Tracing Agentic Failure from the Flow of Success"
+  },
+  {
+   "id": "arxiv:2604.11297",
+   "date": "2026-04-13",
+   "venue": "",
+   "sim": 0.549,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Past Is Not Past: Memory-Enhanced Dynamic Reward Shaping"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.545,
+   "channels": [
+    "hf"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2603.02473",
+   "date": "2026-04-12",
+   "venue": "",
+   "sim": 0.538,
+   "channels": [
+    "hf"
+   ],
+   "title": "Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Note Dose Cross-Episode Failure Memory Induces Contextual Drag 2025 arXiv"
+  },
+  {
+   "query": "failure-derived memory failed trajectories mistake notes avoid-style insights retrieved episodes agent reproduces 2025 arXiv"
+  }
+ ]
+}

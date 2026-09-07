@@ -1,0 +1,393 @@
+[
+ {
+  "name": "failure_memory_framing_drag",
+  "score": 6.3,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 6.0,
+   "significance": 6.0,
+   "soundness": 6.0,
+   "feasibility": 7.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Contextual Drag (arXiv:2602.04288, verified via s2cli/Semantic Scholar: 'the presence of failed attempts in the context biases subsequent generations toward str"
+ },
+ {
+  "name": "abstraction_discards_bindings_and_repairs",
+  "score": 6.1,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 6.0,
+   "significance": 6.0,
+   "soundness": 6.0,
+   "feasibility": 5.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "SkillEvolBench, arXiv:2605.24117 (verified via the literature command; its indexed abstract reads 'raw trajectory reuse often outperforming distilled skills due"
+ },
+ {
+  "name": "closer_beats_stronger",
+  "score": 5.75,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 6.0,
+   "significance": 6.0,
+   "soundness": 5.0,
+   "feasibility": 4.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Verified: arXiv:2605.30723, 'Skill is Not One-Size-Fits-All: Model-Aware Skill Alignment for LLM Agents' (2026-05-29, s2cli/S2+HF; full abstract truncated in S2"
+ },
+ {
+  "name": "model_shaped_instruction_task_shaped_store",
+  "score": 5.75,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 6.0,
+   "significance": 5.0,
+   "soundness": 6.0,
+   "feasibility": 4.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "MemoHarness (arXiv:2607.14159, verified via the literature command, hf channel) is the sharpest threat: it evolves an agent harness from execution experience an"
+ },
+ {
+  "name": "order_randomized_leakage_audit",
+  "score": 5.7,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 6.0,
+   "feasibility": 4.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "arXiv:2608.18066, 'On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification' (2026-08-18, verified via s2cli/S2, 1 citation) is t"
+ },
+ {
+  "name": "memory_in_the_loop_training_decomposition",
+  "score": 5.65,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 5.0,
+   "feasibility": 6.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "UCOB (arXiv:2606.29502, verified via Semantic Scholar, 2026-06-28) is the sharpest threat: it trains with credit-aware bidirectional self-distillation *between "
+ },
+ {
+  "name": "optimizer_writes_the_read_policy",
+  "score": 5.6,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 6.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 5.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Live-Evo (arXiv:2602.02369, verified on S2, 2026-02-02, 7 citations) is the nearest verified object: it runs an online experience bank alongside a meta-guidelin"
+ },
+ {
+  "name": "gate_reads_style_not_truth",
+  "score": 5.55,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 5.0,
+   "feasibility": 5.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "The audited object, A-MAC (arXiv:2603.04549), is VERIFIED via s2cli/Semantic Scholar (2026-03-04, arXiv.org, 15 citations); it is the target, not a scoop, and i"
+ },
+ {
+  "name": "dormant_is_not_dead",
+  "score": 5.45,
+  "verdict": "reject",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 6.0,
+   "feasibility": 4.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "Verified by s2cli: arXiv:2604.27003, 'When Continual Learning Moves to Memory: A Study of Experience Reuse in LLM Agents' (2026-04-29, 3 cits) — its stated find"
+ },
+ {
+  "name": "need_blind_compaction_audit",
+  "score": 5.45,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 5.0,
+   "feasibility": 4.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "arXiv:2606.22953, 'Plans Don't Persist: Why Context Management Is Load Bearing for LLM Agents' (2026-06-22, cit 3; verified with s2cli paper). It introduces 're"
+ },
+ {
+  "name": "stall_triggered_injection",
+  "score": 5.45,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 5.0,
+   "feasibility": 5.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "The Compliance Trap, arXiv:2607.10608 (verified via s2cli `paper`, and returned again by two of my searches). It is the strongest threat because it already owns"
+ },
+ {
+  "name": "amortization_horizon_ranking_flip",
+  "score": 5.35,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 5.0,
+   "feasibility": 4.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Three verified papers jointly cover most of the mechanism. (1) 'Token Reduction Is Not Cost Reduction' (arXiv:2607.12161, verified via s2cli paper; 2026-07-13, "
+ },
+ {
+  "name": "harm_does_not_distill",
+  "score": 5.35,
+  "verdict": "reject",
+  "means": {
+   "novelty": 6.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 5.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "Two distinct threats, both verified with the literature CLI. (1) For P1: arXiv:2607.21051 'Sample-Efficient Learning from Agent Experience' (verified, 2026-07-2"
+ },
+ {
+  "name": "stale_true_state_facts_redaction",
+  "score": 5.3,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 4.0,
+   "soundness": 6.0,
+   "feasibility": 5.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "The Trap of Trajectory (arXiv:2605.09330, VERIFIED via s2cli/Semantic Scholar: 2026-05-10, cit 1) is the sharpest threat and the proposal knows it. It frames ag"
+ },
+ {
+  "name": "state_load_not_length",
+  "score": 5.2,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 4.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "WMF-AM (arXiv:2603.27343, verified via s2cli: 'Probing LLM Working Memory via Depth-Parameterized Cumulative State Tracking', 2026-03-28, 4 citations) is the bi"
+ },
+ {
+  "name": "memory_surrogate_validity",
+  "score": 5.15,
+  "verdict": "reject",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 6.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "Two verified threats, splitting the proposal in half. (a) On the destructive half, arXiv:2510.21440 'Redefining Retrieval Evaluation in the Era of LLMs' (verifi"
+ },
+ {
+  "name": "opposite_sided_failure_under_shift",
+  "score": 5.05,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 6.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "UniMem: Complementary Episodic-to-Parametric Memory for Boundary-Agnostic Task Streams (arXiv:2607.26017, verified to exist via the literature command, S2 recor"
+ },
+ {
+  "name": "utility_pruning_is_frequency_pruning",
+  "score": 4.9,
+  "verdict": "reject",
+  "means": {
+   "novelty": 4.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 4.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "Two threats, both verified via the literature command (s2cli / Semantic Scholar + HF). (1) arXiv:1911.05248, 'What Do Compressed Deep Neural Networks Forget?' ("
+ },
+ {
+  "name": "wrong_action_fraction_dose",
+  "score": 4.85,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 4.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "VERIFIED: arXiv:2605.10828, 'The First Drop of Ink: Nonlinear Impact of Misleading Information in Long-Context Reasoning' (2026-05-11; confirmed by direct s2cli"
+ },
+ {
+  "name": "cross_episode_drag_content_not_label",
+  "score": 4.8,
+  "verdict": "reject",
+  "means": {
+   "novelty": 4.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 4.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "Two verified threats, plus one from the ICL literature. (1) arXiv:2605.29463, 'Honest Lying: Understanding Memory Confabulation in Reflexive Agents' (2026-05-31"
+ },
+ {
+  "name": "lineage_blast_radius",
+  "score": 4.75,
+  "verdict": "reject",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 3.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "MemLineage: Lineage-Guided Enforcement for LLM Agent Memory (arXiv:2605.14421, 2026-05-14, VERIFIED via the literature command; 12 citations) attaches cryptogra"
+ },
+ {
+  "name": "coupling_variance_components",
+  "score": 4.65,
+  "verdict": "reject",
+  "means": {
+   "novelty": 4.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 4.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "MAGE (arXiv:2607.11944, verified via s2cli: 'when multiple stochastic optimization signals operate within a closed reflective loop, they interact in ways that s"
+ },
+ {
+  "name": "retrieved_set_disagreement_gate",
+  "score": 4.65,
+  "verdict": "reject",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 3.0,
+   "clarity": 6.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "RSCB-MC, arXiv:2604.27283, 'Learning When to Remember: Risk-Sensitive Contextual Bandits for Abstention-Aware Memory Retrieval in LLM-Based Coding Agents' (VERI"
+ }
+]

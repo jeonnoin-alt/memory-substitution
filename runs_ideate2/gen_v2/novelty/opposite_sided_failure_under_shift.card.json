@@ -1,0 +1,145 @@
+{
+ "name": "opposite_sided_failure_under_shift",
+ "keys": {
+  "mechanism": [
+   "Stale Context Eroded Weights In-Context Parametric Experience Fail",
+   "Over task stream mid-stream conflicting shift makes stored procedures wrong in-context experience",
+   "parametric store built continual LoRA stream successes shows retrieval-fraction dependence recovers function"
+  ],
+  "estimand": [
+   "Over task stream mid-stream conflicting shift makes stored procedures wrong"
+  ],
+  "controls": [
+   "Baselines",
+   "NONE",
+   "IC-reset"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen2.5-7B-Instruct"
+  ],
+  "methods": [
+   "Memory",
+   "UniMem",
+   "Interference",
+   "Updated"
+  ]
+ },
+ "queries": [
+  "Stale Context Eroded Weights In-Context Parametric Experience Fail",
+  "Over task stream mid-stream conflicting shift makes stored procedures wrong in-context experience",
+  "Over task stream mid-stream conflicting shift makes stored procedures wrong",
+  "Stale Context Eroded Weights In-Context Parametric Experience Fail ALFWorld Qwen2.5-7B-Instruct",
+  "Memory UniMem Interference Stale Context Eroded Weights In-Context Parametric Experienc"
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2601.12906",
+   "date": "2026-01-19",
+   "venue": "",
+   "sim": 0.639,
+   "channels": [
+    "hf"
+   ],
+   "title": "Gated Differentiable Working Memory for Long-Context Language Modeling"
+  },
+  {
+   "id": "arxiv:2602.04288",
+   "date": "2026-02-04",
+   "venue": "",
+   "sim": 0.578,
+   "channels": [
+    "hf"
+   ],
+   "title": "Contextual Drag: How Errors in the Context Affect LLM Reasoning"
+  },
+  {
+   "id": "arxiv:2502.02046",
+   "date": "2025-02-04",
+   "venue": "",
+   "sim": 0.564,
+   "channels": [
+    "hf"
+   ],
+   "title": "Contextual Memory Reweaving in Large Language Models Using Layered\n  Latent State Reconstruction"
+  },
+  {
+   "id": "arxiv:2606.22844",
+   "date": "2026-06-22",
+   "venue": "",
+   "sim": 0.506,
+   "channels": [
+    "hf"
+   ],
+   "title": "RaMem: Contextual Reinstatement for Long-term Agentic Memory"
+  },
+  {
+   "id": "arxiv:2606.17034",
+   "date": "2026-06-15",
+   "venue": "",
+   "sim": 0.505,
+   "channels": [
+    "hf"
+   ],
+   "title": "KVEraser: Learning to Steer KV Cache for Efficient Localized Context Erasing"
+  },
+  {
+   "id": "arxiv:2606.18677",
+   "date": "2026-06-17",
+   "venue": "",
+   "sim": 0.497,
+   "channels": [
+    "hf"
+   ],
+   "title": "Bounded Context Management for Tabular Foundation Models on Stream Learning"
+  },
+  {
+   "id": "arxiv:2402.18154",
+   "date": "2024-02-28",
+   "venue": "",
+   "sim": 0.497,
+   "channels": [
+    "hf"
+   ],
+   "title": "Cutting Off the Head Ends the Conflict: A Mechanism for Interpreting and\n  Mitigating Knowledge Conflicts in Language Models"
+  },
+  {
+   "id": "arxiv:2605.28009",
+   "date": "2026-05-27",
+   "venue": "",
+   "sim": 0.493,
+   "channels": [
+    "hf"
+   ],
+   "title": "MemGuard: Preventing Memory Contamination in Long-Term Memory-Augmented Large Language Models"
+  },
+  {
+   "id": "arxiv:2608.26730",
+   "date": "2026-08-27",
+   "venue": "",
+   "sim": 0.481,
+   "channels": [
+    "hf"
+   ],
+   "title": "Knowing When Not to Reuse: Conditional Experience Transfer in Autonomous LLM Post-Training"
+  },
+  {
+   "id": "arxiv:2411.18424",
+   "date": "2024-11-27",
+   "venue": "",
+   "sim": 0.479,
+   "channels": [
+    "hf"
+   ],
+   "title": "FastSwitch: Optimizing Context Switching Efficiency in Fairness-aware\n  Large Language Model Serving"
+  }
+ ],
+ "web_jobs": [
+  {
+   "query": "Stale Context Eroded Weights In-Context Parametric Experience Fail 2025 arXiv"
+  },
+  {
+   "query": "Over task stream mid-stream conflicting shift makes stored procedures wrong in-context experience 2025 arXiv"
+  }
+ ]
+}
