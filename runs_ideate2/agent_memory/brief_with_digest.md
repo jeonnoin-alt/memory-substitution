@@ -64,72 +64,45 @@
 
 ---
 
-# Author brief — write proposal v5.3 (2026-09-04, the resolution text; one judged round, then freeze)
+# Title: Coupling Self-Editing Memory with Prompt Optimization in LLM Agents
 
-Same role, rules and constraints as `tools/author_brief_v5.md`, `_v5.1.md` and `_v5.2.md` — read all three first.
-You are amending **your own v5.2** (`reference/proposal_v5.2.md`) after its Opus round, which came back **5.12, reject**
-(`reviews/v5.2_opus/SUMMARY.md`, `r1.json`, `r2.json`, `r3.json`). v5.2 had been declared frozen without judging; that
-was wrong and the round was run. This is the resolution text: it is judged once and the design then freezes on that
-outcome. Direction A (ALFWorld primary, no API key, local models only) is unchanged. Keep every sentence v5.2 already
-has unless an item below requires the change, and keep Tier 0 inside the compute ceiling you state.
+## Keywords
+LLM agents, agentic memory, prompt optimization, GEPA, instruction-demonstration decomposition, experience reuse, negative transfer, measurement methodology, ICLR
 
-## Items
+## TL;DR
+Agent frameworks now bolt a self-editing memory onto a prompt optimizer and report gains, but nobody has established when the two interact constructively, when memory actively harms, or how large an effect has to be before it is distinguishable from run-to-run noise. This track looks for the sharp, falsifiable claim inside that space.
 
-1. **The endpoint must test the title, or the title must change (3/3, the decisive finding).** Inner is the bank's
-   task-type *discriminability*; A ≥ 0.5 is compatible with the bank still paying several points at I_own, in which
-   case the paper's own question is answered "no" while the bar reads pass. Do all of:
-   (a) Add the residual-value quantity to the **confirmatory family**, computed free from Tier-0 rows 1–3 at n = 1,200:
-   **g(I_own, B_own) = acc(I_own×B_own) − acc(I_own×M0)** and the **retention ratio R = g(I_own,B_own)/g(I0\*,B_own)**.
-   (b) Pre-register the **conjunction** that licenses the headline: absorbed share above threshold **and** the residual
-   gain equivalent to zero within a stated margin. State the margin the n supports; if ±3pt is the smallest the design
-   holds, say so and accept that only a near-zero residual can license the strong claim.
-   (c) Pre-register, in both directions, the outcome where A and A0 pass but the residual gain survives: that is
-   **"the type-specific content is absorbed, the generic content is not"**, it gets a different title, and it is
-   reported as the finding rather than as a pass. Say which title each branch takes.
-   (d) Revisit the **Title** field accordingly so the claim in the title is the claim the confirmatory family tests.
-2. **Remove the self-contradiction (R1, R3).** "Both must pass; nothing else gates the confirmatory claim" (Experiments)
-   versus "absorption is claimed only if the help term carries ≥ 2/3 of ΔInner" (Rule M, restated in prediction 7).
-   Replace both with a single **truth table** over the outcome space {A, A0, residual-gain equivalence, Rule M bucket,
-   Rule R verdict}, giving for every combination the claim that is made and the title that goes with it. No cell may be
-   left to interpretation.
-3. **G6 must not condition the endpoint's denominator on the endpoint's own sample (R1).** Move the Inner(I_oth) ≥ 5pt
-   and Inner(I0\*) ≥ 5pt floors to **S_dev2** (where G3 already lives) or to an independent reserve slice named here. If
-   any floor must be re-checked on S_test, it becomes a **reported diagnostic, not a gate**, and you state that the
-   published CI is conditional and quantify the conditioning bias by simulation. Say explicitly which coverage claim
-   survives.
-4. **Compute A_h for each denominator and null-replicate the gap that matters (R2).** A0's denominator sits at I0\*, so
-   its headroom floor spans the I0\*-to-I_own gap: by your own gates that is ≈8–11pt, i.e. A_h(A0) ≈ 0.16–0.22, at or
-   above the 0.2 bound A0 must clear. Report A_h separately for A, A0 and A_all; add a **matched-gap null replicate** —
-   A computed between two instructions separated by that level gap with **no** provenance difference (a Ladder T rung
-   pair chosen to span it, or best-of-w titrated to it) — and either raise A0's threshold to its own null's 95th
-   percentile plus a margin, or state that A0's bound is read against that null and not against 0.2. Also address the
-   intersection–union assumption directly: the two marginals are biased toward passing by different mechanisms and share
-   a numerator, so say what the joint rule does and does not control.
-5. **Arms.** Promote **I_type** to Tier 0 (≈25,500 calls; it is the rival explanation for the headline and it is already
-   written and hashed) and **R_raw / M_all read at I_own** to Tier 0 (the cheapest rival container; three reviewers now
-   name it). Pay for both by cutting row 12 (J) to one seed, the 25% arm of row 9, and row 11 to one seed — or state a
-   different funding order. Keep Tier 0 inside the ceiling and republish the totals in episodes, calls and hours.
-6. **Confront ExpeL numerically (R2, R3).** Its published ablation separates a distilled-insight container from the
-   retrieved-trajectory container built from the same training pool, in ALFWorld. Engage that table in Related Work:
-   state what it reports, what it does not manipulate (episode provenance, the crossover, token matching, paired
-   statistics), and revise "nobody has reported the number" to a claim that survives it. No other new citations except
-   as item 7 requires.
-7. **Scan obligations.** Record that the 2024 ALFWorld precedents were supplied by a reviewer rather than found by the
-   scan, that the scan was recency-weighted, and that a **pre-2026 re-sweep** is now a fourth obligation. Obligation (1),
-   the provenance-crossover search in the contamination and data-attribution literatures, stays freeze-blocking.
-8. **Correct the resource record (R3).** This node has **two** A100-80GB, not the four the track brief describes, and
-   there is no API key. State both plainly where the refusals are justified, so the 84-hour ceiling is read as a hardware
-   fact rather than a self-imposed limit; keep the reflector refusal with its bias direction; and note that the
-   throughput band is transferred from a 6-call multi-hop-QA setting and is measured by G5 before anything depends on it.
-9. **Novelty ceiling, stated once.** Judges have converged at novelty 4–5 because of collisions the proposal itself
-   concedes. Do not argue with it; state in Related Work and Risk Factors that the contribution is identification and a
-   number on top of an accepted qualitative result, that this caps the venue expectation, and that the design's value is
-   the pre-registration and the interval rather than the surprise.
+## Abstract
+Two lines of work have converged without meeting. Prompt optimizers (MIPRO, GEPA and successors) treat a prompt as *instructions + demonstrations* and search over it with reflective or evolutionary updates. Agentic memory systems (ExpeL, Reflexion, ReasoningBank and 2026 successors) accumulate distilled experience across episodes and inject it at inference time. The obvious composition — let the optimizer own the instructions while a self-editing memory owns the demonstration slot — is largely unexamined, and the papers that do combine them report end-to-end wins without isolating which component produced them.
 
-## Output
+The prior work this track builds on produced several measured results that sharpen the problem, and any proposal here should treat them as the starting position rather than rediscover them:
 
-Write `/home/work/neuro/memory-substitution/reference/proposal_v5.3.md` in exactly v5.2's structure: the cumulative
-decision-log table (rows 1–91 verbatim from v5.2, then rows 92+ for this round), a `---` separator, then the 11
-`## <field>` sections. Lineage line: append " → v5.2 5.12 (opus, reject) → **v5.3 (this file)**". Name stays
-`memory_or_instruction`. Do not write code. When the file is written, reply with a 10-line summary of what changed and
-what you refused — nothing else.
+- **Memory can be one-sidedly harmful.** In a controlled paired evaluation, injecting a full retrieved memory bank fixed **zero** items and broke six to seven (McNemar p=0.031 and p=0.016, replicated across independent runs). Noise scatters in both directions; this did not. The harm is a real phenomenon, not variance.
+- **Injection volume, not memory content, was the causal lever.** Cutting injection from seven retrieved items to three eliminated the harm from the *same* bank. Restricting injection to a single reasoning stage did not help, so the mechanism is not "the wrong stage sees it".
+- **Write-path repairs neutralized the harm but did not convert it to gain.** Contradiction-pruning and call-balance rebalancing of the bank moved the effect to indistinguishable-from-zero.
+- **The optimizer's apparent gain was redistribution, not accuracy.** Prompt evolution fixed as many items as it broke; only the class-balanced metric moved. Evolving one module of a three-stage cascade was end-to-end useless.
+- **Noise swallowed most claims.** Re-scoring the same candidate on the same held-out set moved the headline metric by 0.05–0.14. A null replicate with no treatment at all produced the same apparent "gain" as the best real treatment, which was enough to reject that treatment's own positive result.
+- **The two components failed on disjoint slices.** The optimizer was strong where memory was weak and vice versa, which is the empirical reason to expect a coupling to be worth something.
+
+Open questions this track should attack — a proposal should pick one and make it sharp, not survey them:
+
+1. **Division of labour.** Is there a principled assignment of what instructions should carry versus what demonstrations/memory should carry, and does violating it predict the observed harm? What alternates, in what order, and does alternating optimization converge or oscillate?
+2. **The injection budget as a first-class object.** If volume is the causal lever, the budget is a decision variable, not a hyperparameter. Can an agent decide *how much* retrieved experience to admit per step, and does a learned or calibrated budget dominate a fixed one?
+3. **Predicting and preventing negative transfer.** Given a memory item and a query, can harm be predicted before injection? Retrieval scores are not obviously the right signal, since the harmful bank retrieved items that were topically correct.
+4. **Co-adaptation and drift.** When the optimizer evolves instructions against a memory that is itself being rewritten, does the pair overfit to each other? What happens under distribution shift, and does a frozen-memory ablation expose it?
+5. **Measurement standards for agent claims.** Much of the 2026 literature reports single-run deltas smaller than the noise floor measured here. A contribution could be a protocol — paired designs, null replicates, minimum detectable effect — plus a re-examination of published claims under it. This is a methods contribution and must be judged as one: it needs to overturn or qualify specific existing results to be interesting.
+
+## In scope
+- Domain-general agent benchmarks with public data: multi-hop QA, web/tool agents, code agents, interactive deduction, text games.
+- Small open-weight models (7B–32B class), self-hosted, single node. The interesting result must not depend on frontier-scale models.
+- Reuse and reimplementation of published memory and prompt-optimization methods as baselines.
+- Negative or null results, provided the measurement is strong enough to make the null informative.
+
+## Out of scope
+- Any use of private, clinical, or patient data. The paper is domain-general; medical framing is explicitly excluded.
+- Claims that require training or fine-tuning frontier models.
+- "We combined method A and method B and the number went up" without isolating the mechanism — this is the specific failure mode to avoid.
+- Benchmarks where the reported effect size would fall below the run-to-run noise of the setup.
+
+## Resource constraints
+One node with 4×A100 80GB, self-hosted inference on open-weight models up to ~32B. A frontier API model is available for the reflection/optimizer role and for judging, at a budget of a few hundred dollars total. Experiments must fit in days, not weeks: assume a few thousand evaluation episodes per configuration, and design the statistics around that rather than assuming a large held-out set. Public datasets only.
