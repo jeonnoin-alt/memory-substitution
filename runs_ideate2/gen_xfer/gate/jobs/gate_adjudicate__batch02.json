@@ -1,0 +1,10 @@
+{
+ "id": "gate_adjudicate__batch02",
+ "kind": "gate_adjudicate",
+ "name": "batch02",
+ "prompt_file": "runs_ideate2/gen_xfer/gate/jobs/gate_adjudicate__batch02.prompt.md",
+ "tools": [],
+ "model": "opus",
+ "expects": "json",
+ "status": "pending"
+}

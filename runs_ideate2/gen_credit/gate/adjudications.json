@@ -1,0 +1,162 @@
+{
+ "responsible_item_attribution_benchmark__memory_failure_blame_item_vs_s": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both establish item-level blame for ALFWorld failures by seed-replicated removal/replacement re-runs with a planted-culprit calibration and both score cheap proxies against that ground truth, so the mechanism is identical; B additionally asks whether a culprit's harm survives re-embedding in a different background set and splits blame into a single/pair/diffuse taxonomy, which changes whether blame is read as an item property or a set property."
+ },
+ "stale_item_score_lag_after_rule_change__per_item_loo_reliability_and_w": {
+  "label": "distinct",
+  "reason": "A's estimand is the temporal lag with which outcome-reinforced scores respond to a manufactured rule change and how co-retrieval with fresh items delays that flip; B's estimand is the sampling noise of a per-item leave-one-out estimate (variance components, reliability curve, winner's curse, pruning threshold) in a stationary world, so the claims and the causes they invoke differ."
+ },
+ "responsible_item_attribution_benchmark__archive:archive:stale_true_sta": {
+  "label": "distinct",
+  "reason": "A claims that item responsibility is definable only by seed-replicated intervention and that cheap attribution estimators fail against it, a methodological claim about attribution accuracy; B claims a content-level cause (stale-but-once-true state facts inside procedurally correct items) and that read-time fact redaction removes the harm, which is a different mechanism and a different deliverable."
+ },
+ "guilt_by_coretrieval__digest:arxiv:2608.02508: Traje": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both rest on the same memory-reward trap, that a shared trajectory reward contaminates the learned utility of co-retrieved items; A adds intervention ground truth (forced-retrieval LOO/REPLACE), a controlled co-retrieval dose, and a head-to-head test of whether the reduced-order per-task coordinates actually remove the contamination, which could overturn the prior's remedy claim."
+ },
+ "stage_conditional_item_value__pairwise_removal_interaction_a": {
+  "label": "distinct",
+  "reason": "A varies when the same item is injected (entry, procedure-due, recovery) and attributes value variance to stage; B holds timing fixed and varies what is co-retrieved, estimating pairwise interaction terms and Shapley mis-ranking, so the two identify different violations of stage-free, additive per-item credit."
+ },
+ "stage_conditional_item_value__archive:archive:stall_triggere": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both claim that the moment of injection, entry versus after the agent is stuck, sets whether the same retrieved content helps or harms; A goes beyond the timing-policy comparison by measuring per-(item, stage) counterfactual value, decomposing it into stage, item-class and interaction components, and testing whether entry-trained utility scores mis-rank items for recovery-stage retrieval."
+ },
+ "guilt_by_coretrieval__archive:archive:memory_budget_": {
+  "label": "distinct",
+  "reason": "A is about credit assignment, that a shared outcome reward contaminates an innocent item's learned utility relative to intervention ground truth; B is about injected token volume rather than content driving both memory harm and the apparent gains of curation, a different causal claim tested with length-matched decoys and budget-matched baselines."
+ },
+ "masked_harm_pairwise_removal__stage_conditional_item_value": {
+  "label": "distinct",
+  "reason": "A attributes mis-scoring to co-retrieval structure (conflict masking, redundancy) and proposes the pairwise-removal correction as the cheap fix; B attributes value variation to the episode stage at which an item is consumed, so the two propose different reasons why per-item leave-one-out scores are wrong."
+ },
+ "memory_failure_blame_item_vs_set__digest:arxiv:2607.10608: Agent": {
+  "label": "distinct",
+  "reason": "The prior finding characterizes a behavioural failure mode, that agents comply with conflicting memory at the first exposed decision point and cannot recover; A's claim is about counterfactual attribution, whether a single retrieved item's removal restores success and whether blame is an item or a set property, which the compliance-trap result neither states nor measures."
+ },
+ "memory_failure_blame_item_vs_set__archive:archive:stale_true_sta": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both localize the harm of an organically accumulated ALFWorld bank to particular retrieved items using the same reader and retrieval setup; A supplies counterfactual removal and pairwise-removal ground truth plus a re-embedding arm that B's post hoc fact labelling and correlational harm model lack, which would change whether the stale-fact account is read as causal."
+ },
+ "hole_backfill_static_counterfactual__item_value_consumer_decomposit": {
+  "label": "distinct",
+  "reason": "Both use the static-procedure decomposition of item credit, but A's claim is about which counterfactual reference (hole vs backfill vs static-procedure replacement) defines credit and predicts realized pruning loss within one reader, while B's claim is that the item-specific residual fails to transfer across readers; neither claim nor its key manipulation is contained in the other."
+ },
+ "stage_conditional_item_value__digest:arxiv:2607.10608: Agent": {
+  "label": "distinct",
+  "reason": "A claims a retrieved item's counterfactual value depends on the episode stage at which it is injected and that stage-free scores mis-rank for recovery; B claims agents comply with task-wrong memory at the first exposed decision point and collapse to a low floor. Different estimands and mechanisms, with B at most a background phenomenon A cites."
+ },
+ "masked_harm_pairwise_removal__pairwise_removal_interaction_a": {
+  "label": "same_claim_reworded",
+  "reason": "Both propose the same experiment and claim: on manufactured k=3 ALFWorld sets (conflict, redundant paraphrase, complementary halves, cross-type control) with a Qwen3-32B reader, the pairwise interaction term shows removal is non-additive and single-removal scores mis-rank items relative to exact Shapley. Differences are framing and which secondary quantity is foregrounded (re-run cost vs seeds-to-stabilize)."
+ },
+ "admission_pruning_audit_random_holdout__digest:arxiv:2606.03329: Rewar": {
+  "label": "distinct",
+  "reason": "A audits write-time admission scores and outcome-based pruning against realized counterfactual item value in a shadow store; B proposes a log-likelihood-gain intermediate reward for RL training of a memory agent. Different objects, mechanisms and endpoints."
+ },
+ "stage_conditional_item_value__guilt_by_coretrieval": {
+  "label": "distinct",
+  "reason": "A attributes variance in item value to the moment of consumption (entry, procedure-due, recovery); B attributes error in learned utilities to shared outcome reward across co-retrieved neighbours. The confounding variable and the claim differ, even though both use leave-one-out ground truth on the same bank."
+ },
+ "item_value_consumer_decomposition__guilt_by_coretrieval": {
+  "label": "distinct",
+  "reason": "A asks whether counterfactual item value transfers across readers by decomposing it into a procedure part and a consumer-specific residual; B asks whether learned utilities are contaminated by co-retrieved neighbours relative to leave-one-out ground truth. Different sources of score invalidity (consumer identity vs reward pooling) and different manipulations (reader swap vs co-retrieval dose)."
+ },
+ "masked_harm_pairwise_removal__archive:archive:retrieved_set_": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both rest on the same mechanism, that harm and help are properties of the retrieved set rather than of individual items, so item-level scoring fails; but A measures it as an intervention-based pairwise interaction term with exact-Shapley checks and a re-run cost for correcting per-item credit, which B (a read-time disagreement gate benchmarked against item-level defences on organic banks) does not, and that changes what a reader concludes about whether per-item credit can be repaired."
+ },
+ "admission_pruning_audit_random_holdout__archive:archive:memory_surroga": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both claim the scores used to build and curate agent memory (including A-MAC-style admission gates and judge/utility scores) are invalid proxies for realized execution value; A moves the measurement to the item level with a randomized shadow-store holdout that evaluates bypassed items and reports the feedback count at which pruning beats random, quantities B's configuration-level surrogate-validity analysis cannot yield."
+ },
+ "surrogate_endpoints_for_item_credit__digest:s2:05c14833b7cee3408bf7": {
+  "label": "distinct",
+  "reason": "A studies whether process endpoints reduce the noise and bias of leave-one-out per-item memory value estimates in an LLM agent; B is an RL replay-buffer retention heuristic scoring transitions by reward and TD error. Different setting, estimand and claim."
+ },
+ "item_value_consumer_decomposition__archive:archive:instruction_co": {
+  "label": "distinct",
+  "reason": "Both deny that item value is intrinsic, but A's relational variable is the consuming reader (transfer of a residual across models) while B's is the instruction text already in the prompt (redundant/novel/conflicting guidance units); the manipulations and predicted consequences do not overlap."
+ },
+ "per_item_loo_reliability_and_winners_curse__archive:archive:memory_item_va": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both make the same central claim via the same mechanism — a variance-components/generalizability decomposition showing per-item value is dominated by noise so score-based pruning is near random — differing only in environment and reader; but A additionally measures the empirical-Bayes winner's-curse shrinkage of selected items and the retrieval count above which LOO pruning does beat random, which converts B's flat 'curation is futile' verdict into a budget-conditional one."
+ },
+ "stale_item_score_lag_after_rule_change__archive:archive:stall_triggere": {
+  "label": "distinct",
+  "reason": "A measures how long per-item utility scores lag a manufactured rule change and how co-retrieval contaminates the credit that keeps stale items alive; B holds the bank and items fixed and varies only the moment of injection, claiming a stall trigger flips the sign of memory's effect. Different estimands, manipulations and conclusions."
+ },
+ "admission_pruning_audit_random_holdout__brief:5. Measurement of per-it": {
+  "label": "distinct",
+  "reason": "B is a truncated brief section heading noting only that benchmarks score end-to-end outcomes; it asserts no claim or mechanism, let alone A's randomized-holdout audit of write-time admission scores against realized counterfactual value and its feedback-count threshold for pruning."
+ },
+ "item_value_consumer_decomposition__pairwise_removal_interaction_a": {
+  "label": "distinct",
+  "reason": "Both question whether item value is an item property, but along orthogonal axes and with different manipulations: A holds retrieved sets fixed and swaps the reader to split value into a transferable procedural part and a non-transferable consumer-specific residual, whereas B holds the reader fixed and varies co-retrieved composition to measure pairwise removal interactions against Shapley."
+ },
+ "per_item_loo_reliability_and_winners_curse__digest:arxiv:2606.22844: Retri": {
+  "label": "distinct",
+  "reason": "B is about restoring episodic context (time, session, participants) to validate retrieved fragments against query conditions in long-term memory QA; A is about the sampling noise, reliability and selection bias of per-item leave-one-out value estimates in an agent bank. No shared claim or mechanism."
+ },
+ "pairwise_removal_interaction_audit__archive:archive:retrieved_set_": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both rest on the same mechanism — an item's effect is set-dependent, so item-level credit and item-level filtering are ill-founded — but A measures quantities B never does: the counterfactual pairwise interaction term on manufactured redundant/conflicting/complementary classes, exact Shapley over the subset lattice, the resulting single-removal mis-ranking rate and the seeds needed for sign stability, whereas B only labels sets post hoc and evaluates a read-time abstention gate."
+ },
+ "hole_backfill_static_counterfactual__archive:archive:memory_item_va": {
+  "label": "distinct",
+  "reason": "A attacks the definition of the estimand — hole versus backfill versus static-procedure replacement give different item credit, and only backfill predicts realized pruning loss — while B holds one counterfactual fixed and attacks the estimator's reliability and transfer. A's claim survives even if item value were perfectly estimable, and B's even if the reference were settled."
+ },
+ "hole_backfill_static_counterfactual__stage_conditional_item_value": {
+  "label": "distinct",
+  "reason": "A varies what fills the retrieval slot (hole, backfilled rank-4 item, placebo, static procedure sentence) at fixed injection time; B fixes the counterfactual reference and varies when in the episode the item is consumed (entry, procedure-due, recovery). Different manipulated factor and different conclusion about where item value resides."
+ },
+ "masked_harm_pairwise_removal__guilt_by_coretrieval": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Same mechanism — co-retrieval makes per-item credit non-additive, so single-removal scores misjudge conflicting and redundant items — and B already runs the pairwise-versus-single removal test on manufactured helpful+conflicting/redundant sets with the same over-counting prediction; A adds class-wise masking ratios with signed predictions, the compliance-trap versus duplication-dose adjudication, and an exact-Shapley check showing pairwise removal recovers the ranking at three re-runs rather than seven."
+ },
+ "hole_backfill_static_counterfactual__guilt_by_coretrieval": {
+  "label": "distinct",
+  "reason": "B measures how a shared outcome reward contaminates learned per-item utilities under manipulated co-retrieval dose, using REMOVE/REPLACE-static as fixed ground truth; A questions that ground truth itself by comparing hole, backfill, placebo and static-procedure references and asking which predicts realized pruning loss. Different estimands and different targets of criticism."
+ },
+ "item_value_consumer_decomposition__stage_conditional_item_value": {
+  "label": "distinct",
+  "reason": "Both use the same ALFWorld leave-one-out machinery and the Measurement C procedure control, but A's claim is that item value splits into a reader-transferable procedural part and a reader-specific residual (moderator = consumer), while B's claim is that value is a property of the injection moment (moderator = episode stage); the mechanisms and the conclusions a reader would draw differ."
+ },
+ "surrogate_endpoints_for_item_credit__brief:5. Measurement of per-it": {
+  "label": "distinct",
+  "reason": "B is a truncated topic/gap heading noting that benchmarks score only end-to-end outcomes; it advances no claim about process endpoints as variance-reduced, class-biased surrogates for leave-one-out value, which is A's central claim."
+ },
+ "masked_harm_pairwise_removal__digest:arxiv:2607.10608: Agent": {
+  "label": "distinct",
+  "reason": "B claims agents comply with conflicting memory at the first exposed decision point and collapse to a low success floor; A claims that co-retrieval masks single-removal credit and that a pairwise interaction term repairs pruning decisions cheaply. A explicitly treats the compliance trap as a rival mechanism its experiment would adjudicate against, not as its own claim."
+ },
+ "surrogate_endpoints_for_item_credit__archive:archive:substitutes_no": {
+  "label": "distinct",
+  "reason": "A is about the estimator for per-item credit (process endpoints as cheaper, class-biased surrogates for success-based LOO); B is about instruction-memory informational substitution shrinking the optimal injection budget k*. Different claims, mechanisms and estimands."
+ },
+ "masked_harm_pairwise_removal__item_value_consumer_decomposit": {
+  "label": "distinct",
+  "reason": "A attributes mis-scoring to within-set co-retrieval interaction (conflict and redundancy masking, fixed by pairwise removal); B attributes it to the consumer, decomposing value into a reader-invariant procedural part and a non-transferring residual. Same measurement toolkit, different causal factor and different remedy."
+ },
+ "utility_half_life_consumer_swap__archive:archive:memory_budget_": {
+  "label": "distinct",
+  "reason": "A claims learned per-item utilities decay asymmetrically under reader swap, store growth and layout shift (harm transfers, help does not); B claims injected token volume rather than content explains both harm and apparent curation gains. Neither the mechanism nor the manipulated variable coincides."
+ },
+ "item_value_consumer_decomposition__brief:Measurement C (running):": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "B is the running Measurement C mechanism — a static per-type procedure prompt capturing a retrieved item's value — which A adopts as the type-level component of its decomposition; A adds the cross-reader measurement (residual transfer across Qwen3-32B/8B, LoRA and cross-family readers) that B never runs, and that arm would change what a reader concludes a per-item score means."
+ },
+ "guilt_by_coretrieval__pairwise_removal_interaction_a": {
+  "label": "distinct",
+  "reason": "A's mechanism is learning-time reward pooling — an innocent item's learned utility is contaminated by co-retrieved neighbours, measured as a dose-response against LOO ground truth with published remedies tested; B's mechanism is consumption-time non-additivity of removal effects measured by the pairwise interaction term against exact Shapley. A runs an additivity check as a secondary arm, but the central claims differ."
+ },
+ "hole_backfill_static_counterfactual__masked_harm_pairwise_removal": {
+  "label": "distinct",
+  "reason": "A claims the choice of counterfactual reference (hole vs retriever backfill vs static-procedure replacement) changes per-item credit and that only backfill predicts realized pruning loss; B holds the reference fixed and claims co-retrieved neighbours mask single-removal credit, correctable by a pairwise term. Different sources of error in per-item credit."
+ },
+ "hole_backfill_static_counterfactual__pairwise_removal_interaction_a": {
+  "label": "distinct",
+  "reason": "A varies what fills the removed slot (hole, next-ranked backfill, token-matched placebo, placebo plus static procedure) and validates against realized pruning loss; B keeps the hole reference and measures the pairwise interaction term I(a,b) against Shapley on manufactured interacting sets. Same estimand family, different mechanism and different corrective conclusion."
+ }
+}

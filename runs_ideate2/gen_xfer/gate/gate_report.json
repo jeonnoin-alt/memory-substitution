@@ -1,0 +1,733 @@
+{
+ "thresholds": {
+  "idea": 0.663,
+  "prior": 0.502,
+  "pair_mean": 0.509,
+  "pair_sd": 0.102
+ },
+ "clusters": [
+  [
+   "reconstruction_pays_only_across_the_writer_gap",
+   "self_pool_break_even",
+   "complementarity_not_proximity",
+   "search_disposition_contagion"
+  ],
+  [
+   "shared_blind_spot",
+   "own_errors_pass_the_gate"
+  ]
+ ],
+ "prior_flags": [
+  {
+   "idea": "reconstruction_pays_only_across_the_writer_gap",
+   "sim": 0.647,
+   "source": "brief",
+   "text": "4. Adapting foreign experience to the reader (19 cards). Reconstruction before acting (MemHarness 2607.28272), analogical"
+  },
+  {
+   "idea": "reconstruction_pays_only_across_the_writer_gap",
+   "sim": 0.628,
+   "source": "archive",
+   "text": "archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It. Memory-item utility is govern"
+  },
+  {
+   "idea": "reconstruction_pays_only_across_the_writer_gap",
+   "sim": 0.519,
+   "source": "digest",
+   "text": "arxiv:2607.28272: Verbatim replay of retrieved experience causes negative transfer, and agents that critique and reconstruct retrieved experience conditioned on the current state outperform pure RL an"
+  },
+  {
+   "idea": "reconstruction_launders_planted_procedure_errors",
+   "sim": 0.561,
+   "source": "archive",
+   "text": "archive:opposite_sided_failure_under_shift: Stale in Context, Eroded in Weights: In-Context and Parametric Experience Fail on Opposite Sides of a Distribution Shift, and Only One Failure Is Predictabl"
+  },
+  {
+   "idea": "rewriter_trained_against_one_reader_matched_cost",
+   "sim": 0.601,
+   "source": "brief",
+   "text": "Retained-gain ratio is the estimand, reported per writer × reader cell with seeds: reader's gain from the writer's pool"
+  },
+  {
+   "idea": "rewriter_trained_against_one_reader_matched_cost",
+   "sim": 0.56,
+   "source": "archive",
+   "text": "archive:memory_in_the_loop_training_decomposition: Crutch, Content, or Read Skill? A Train-by-Infer 2x2 with Bank Swap Decomposes What Memory-in-the-Loop Training Actually Teaches an Agent. When an ag"
+  },
+  {
+   "idea": "self_pool_break_even",
+   "sim": 0.693,
+   "source": "brief",
+   "text": "Self-pool control at matched collection cost. Any foreign-experience arm is compared with a pool the reader collected"
+  },
+  {
+   "idea": "self_pool_break_even",
+   "sim": 0.546,
+   "source": "archive",
+   "text": "archive:collection_policy_coupling_collapse: Rich Get Richer, Twice: The Collection Policy — Not Content Quality — Drives Diversity Collapse When Self-Editing Memory and Prompt Optimization Share the "
+  },
+  {
+   "idea": "reader_pays_writer_detours",
+   "sim": 0.594,
+   "source": "archive",
+   "text": "archive:memory_budget_confound: One Item Is the Budget: Token Volume, Not Memory Content, Explains Both the Harm and the Apparent Gains of Agentic Memory Curation. In experience-memory agents, the val"
+  },
+  {
+   "idea": "reader_pays_writer_detours",
+   "sim": 0.573,
+   "source": "brief",
+   "text": "Self-pool control at matched collection cost. Any foreign-experience arm is compared with a pool the reader collected"
+  },
+  {
+   "idea": "leave_one_type_out_split",
+   "sim": 0.52,
+   "source": "archive",
+   "text": "archive:collection_policy_coupling_collapse: Rich Get Richer, Twice: The Collection Policy — Not Content Quality — Drives Diversity Collapse When Self-Editing Memory and Prompt Optimization Share the "
+  },
+  {
+   "idea": "complementarity_not_proximity",
+   "sim": 0.654,
+   "source": "brief",
+   "text": "Retained-gain ratio is the estimand, reported per writer × reader cell with seeds: reader's gain from the writer's pool"
+  },
+  {
+   "idea": "complementarity_not_proximity",
+   "sim": 0.518,
+   "source": "archive",
+   "text": "archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It. Memory-item utility is govern"
+  },
+  {
+   "idea": "thoughts_do_not_travel",
+   "sim": 0.538,
+   "source": "brief",
+   "text": "Writer identity is manipulated, not observed. The same task set, the same bank construction and the same retriever,"
+  },
+  {
+   "idea": "shared_blind_spot",
+   "sim": 0.604,
+   "source": "archive",
+   "text": "archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It. Memory-item utility is govern"
+  },
+  {
+   "idea": "shared_blind_spot",
+   "sim": 0.546,
+   "source": "digest",
+   "text": "arxiv:2605.22842: Memory-layer attacks on shared vector stores produce agent misconduct that is indistinguishable from model failure (the Misattribution Gap), so defenders misdiagnose the cause; Seman"
+  },
+  {
+   "idea": "shared_blind_spot",
+   "sim": 0.542,
+   "source": "brief",
+   "text": "Writer identity is manipulated, not observed. The same task set, the same bank construction and the same retriever,"
+  },
+  {
+   "idea": "coverage_not_headcount",
+   "sim": 0.586,
+   "source": "brief",
+   "text": "Retained-gain ratio is the estimand, reported per writer × reader cell with seeds: reader's gain from the writer's pool"
+  },
+  {
+   "idea": "coverage_not_headcount",
+   "sim": 0.549,
+   "source": "archive",
+   "text": "archive:closer_beats_stronger: Closer Beats Stronger: Consumer-Side Policy Proximity, Not Builder Capability, Predicts Whether Shared Agent Experience Transfers Across Backbones. For a fixed retrieved"
+  },
+  {
+   "idea": "one_bad_apple_population_vote",
+   "sim": 0.556,
+   "source": "archive",
+   "text": "archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It. Memory-item utility is govern"
+  },
+  {
+   "idea": "one_bad_apple_population_vote",
+   "sim": 0.518,
+   "source": "brief",
+   "text": "Writer identity is manipulated, not observed. The same task set, the same bank construction and the same retriever,"
+  },
+  {
+   "idea": "who_gets_read",
+   "sim": 0.574,
+   "source": "archive",
+   "text": "archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It. Memory-item utility is govern"
+  },
+  {
+   "idea": "who_gets_read",
+   "sim": 0.525,
+   "source": "digest",
+   "text": "arxiv:2505.18279: A two-tier (private and shared) memory with immutable provenance attributes and policy-driven read/write transformations enables safe, efficient, and interpretable cross-user knowled"
+  },
+  {
+   "idea": "who_gets_read",
+   "sim": 0.523,
+   "source": "brief",
+   "text": "Writer identity is manipulated, not observed. The same task set, the same bank construction and the same retriever,"
+  },
+  {
+   "idea": "compression_erases_the_writer",
+   "sim": 0.659,
+   "source": "archive",
+   "text": "archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It. Memory-item utility is govern"
+  },
+  {
+   "idea": "compression_erases_the_writer",
+   "sim": 0.607,
+   "source": "digest",
+   "text": "arxiv:2604.14004: A unified memory pool drawn from heterogeneous coding domains improves coding-agent performance, chiefly by transferring meta-knowledge such as validation routines, and abstraction l"
+  },
+  {
+   "idea": "compression_erases_the_writer",
+   "sim": 0.562,
+   "source": "brief",
+   "text": "Retained-gain ratio is the estimand, reported per writer × reader cell with seeds: reader's gain from the writer's pool"
+  },
+  {
+   "idea": "own_errors_pass_the_gate",
+   "sim": 0.648,
+   "source": "archive",
+   "text": "archive:gate_reads_style_not_truth: Admission Gates Read Style, Not Truth: A Planted-Record Audit of Write-Time Validation in Agent Experience Memory. Every published write-time admission gate that de"
+  },
+  {
+   "idea": "own_errors_pass_the_gate",
+   "sim": 0.566,
+   "source": "digest",
+   "text": "arxiv:2605.27762: Moving embodied agent memory from inference-time retrieval into parameter-resident skills, consolidated from experience with failure-correction contrastive training and governed by a"
+  },
+  {
+   "idea": "search_disposition_contagion",
+   "sim": 0.592,
+   "source": "brief",
+   "text": "4. Adapting foreign experience to the reader (19 cards). Reconstruction before acting (MemHarness 2607.28272), analogical"
+  },
+  {
+   "idea": "search_disposition_contagion",
+   "sim": 0.575,
+   "source": "archive",
+   "text": "archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It. Memory-item utility is govern"
+  },
+  {
+   "idea": "search_disposition_contagion",
+   "sim": 0.522,
+   "source": "digest",
+   "text": "arxiv:2607.28272: Verbatim replay of retrieved experience causes negative transfer, and agents that critique and reconstruct retrieved experience conditioned on the current state outperform pure RL an"
+  }
+ ],
+ "pairs": [
+  {
+   "a": "reconstruction_pays_only_across_the_writer_gap",
+   "b": "self_pool_break_even",
+   "sim": 0.535,
+   "kind": "idea-idea",
+   "pair_id": "reconstruction_pays_only_across_the_writer_gap__self_pool_break_even"
+  },
+  {
+   "a": "reconstruction_pays_only_across_the_writer_gap",
+   "b": "complementarity_not_proximity",
+   "sim": 0.713,
+   "kind": "idea-idea",
+   "pair_id": "reconstruction_pays_only_across_the_writer_gap__complementarity_not_proximity"
+  },
+  {
+   "a": "reconstruction_pays_only_across_the_writer_gap",
+   "b": "search_disposition_contagion",
+   "sim": 0.715,
+   "kind": "idea-idea",
+   "pair_id": "reconstruction_pays_only_across_the_writer_gap__search_disposition_contagion"
+  },
+  {
+   "a": "self_pool_break_even",
+   "b": "complementarity_not_proximity",
+   "sim": 0.693,
+   "kind": "idea-idea",
+   "pair_id": "self_pool_break_even__complementarity_not_proximity"
+  },
+  {
+   "a": "self_pool_break_even",
+   "b": "search_disposition_contagion",
+   "sim": 0.56,
+   "kind": "idea-idea",
+   "pair_id": "self_pool_break_even__search_disposition_contagion"
+  },
+  {
+   "a": "complementarity_not_proximity",
+   "b": "search_disposition_contagion",
+   "sim": 0.742,
+   "kind": "idea-idea",
+   "pair_id": "complementarity_not_proximity__search_disposition_contagion"
+  },
+  {
+   "a": "shared_blind_spot",
+   "b": "own_errors_pass_the_gate",
+   "sim": 0.709,
+   "kind": "idea-idea",
+   "pair_id": "shared_blind_spot__own_errors_pass_the_gate"
+  },
+  {
+   "a": "reconstruction_pays_only_across_the_writer_gap",
+   "b": "brief:4. Adapting foreign experience to the reader (19 cards). Reconstruction before a",
+   "sim": 0.647,
+   "kind": "idea-brief",
+   "prior_text": "4. Adapting foreign experience to the reader (19 cards). Reconstruction before acting (MemHarness 2607.28272), analogical",
+   "pair_id": "reconstruction_pays_only_across_the_writer_gap__brief:4. Adapting foreign expe"
+  },
+  {
+   "a": "reconstruction_pays_only_across_the_writer_gap",
+   "b": "archive:archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The ",
+   "sim": 0.628,
+   "kind": "idea-archive",
+   "prior_text": "archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It. Memory-item utility is governed by the *signed* capability gap between the policy that wrote the item and the policy that reads it — downward transfer (strong writer → weak reader) is harmful, upward transfer is not — and the cure is reader-in-the-loop **selection**, not reader **authorship**. Two sharp consequences follow. (a) A quality/utility dissociation: frontier-written items win blind quality judging while losing downstream utility for a small reader, at matched source tasks, item count and injected tokens. (b) A masking result for the track's central object: a GEPA-style prompt optimizer, whose instruction candidates are scored on the *reader's own* rollouts, is itself a reader-in-the-loop selector; coupling it to memory absorbs the provenance harm at the net-accuracy level while the break-count asymmetry persists underneath. That is why combined memory+optimizer papers report end-to-end wins they cannot attribute — the optimizer is silently paying for the memory's provenance debt. Agentic memory pipelines almost universally have a frontier model distill experience that a small agent then consumes. The field treats this provenance asymmetry as an implementation detail; recent cross-model memory work (Rosetta Memory, MemCollab, AMD) has noticed that it matters but frames it as model-identity mismatch to be patched. We argue it is a signed, ordinal effect: memory is advice, advice is only useful to a policy that can execute it, so utility falls with the *directed* writer→reader capability gap and downward transfer is harmful in a way upward transfer is not. We further argue the cure is not reader authorship but reader-in-the-loop selection — and that this is exactly what a GEPA-style prompt optimizer already does to the instruction slot, which is why coupling an optimizer to a memory bank produces end-to-end gains that cannot be attributed to either part.\n\nWe test this in one environment (tool-augmented multi-hop QA) with a transplant matrix that holds source tasks constant: two self-hosted readers (8B, 14B) plus a frontier writer distill memory from the *intersection* of training instances all agents solved, so every bank covers the same tasks, all from successful trajectories, at matched item count and matched injected tokens; only the writing policy varies. Both transfer directions are run, which separates our signed-gap account from the symmetric identity-mismatch account of prior work. A blind pairwise quality judging pass tests the predicted rank inversion. Two selection arms — reader-probe admission on the frontier memory bank, and GEPA (frontier-authored instructions, reader-selected) versus frontier-authored-but-unselected instructions — isolate selection from authorship in both slots. A faithful, uncontrolled teacher→student replication confirms the literature's positive effect reproduces here before we attribute its disappearance to our controls. 33 evaluation runs, ~21k episodes total, fits one 4×A100 node in days.",
+   "pair_id": "reconstruction_pays_only_across_the_writer_gap__archive:archive:provenance_gap"
+  },
+  {
+   "a": "reconstruction_pays_only_across_the_writer_gap",
+   "b": "digest:arxiv:2607.28272: Verbatim replay of retrieved experience causes negative transf",
+   "sim": 0.519,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2607.28272: Verbatim replay of retrieved experience causes negative transfer, and agents that critique and reconstruct retrieved experience conditioned on the current state outperform pure RL and static memory-augmented baselines, especially out of distribution.",
+   "pair_id": "reconstruction_pays_only_across_the_writer_gap__digest:arxiv:2607.28272: Verba"
+  },
+  {
+   "a": "reconstruction_launders_planted_procedure_errors",
+   "b": "archive:archive:opposite_sided_failure_under_shift: Stale in Context, Eroded in Weights:",
+   "sim": 0.561,
+   "kind": "idea-archive",
+   "prior_text": "archive:opposite_sided_failure_under_shift: Stale in Context, Eroded in Weights: In-Context and Parametric Experience Fail on Opposite Sides of a Distribution Shift, and Only One Failure Is Predictable from the Bank. Over a task stream with a mid-stream conflicting shift that makes stored procedures wrong, an in-context experience store's post-shift dip is a read-path phenomenon whose size tracks the fraction of retrieved items that are pre-shift, that self-corrects once post-shift items dominate retrieval, and that costs pre-shift competence nothing; a parametric store built by continual LoRA on the same stream's successes shows no retrieval-fraction dependence, recovers as a function of update count, and erodes pre-shift competence monotonically with post-shift updates unless replay is paid. The two substrates fail on opposite sides of the shift, and the in-context failure is predictable from bank composition alone. The parametric and in-context substrates for agent experience are each said to have a stability-plasticity problem, but they have never been run on the same stream with the same shift, and their failures are described with the same word, forgetting, although they cannot be the same mechanism: a bank forgets nothing and a LoRA retrieves nothing. We build a 600-episode ALFWorld stream with three phases (original rules, a conflicting shift, revert) and two shift types: an action-grammar change that makes stored trajectories syntactically wrong, and a benign task-mix change where stale items are merely irrelevant. On one 7B backbone we run six substrates through the same stream: in-context banks with raw, utility-scored and recency-weighted retrieval; continual LoRA on the stream's successes with and without a costed replay budget; and a no-memory control. Every 50 episodes a frozen probe evaluates each substrate on held-out tasks under current-phase rules and under phase-1 rules, paired across substrates. For the in-context substrate we log, per probe, the fraction of retrieved items that are pre-shift and label each item right, stale-wrong or irrelevant; for the parametric substrate we log update count and replay tokens. The pre-registered predictions are that the in-context dip is explained by stale fraction and vanishes when it is zero, that its recovery time is predictable from bank composition, that parametric erosion of phase-1 competence grows with post-shift updates while the bank's does not, and that the benign shift produces neither. The preservation cost of each substrate at matched recovery is reported in tokens and GPU-seconds. The result is the first opposite-sided characterization of the two substrates on the same stream and a bank-composition predictor for in-context drag.",
+   "pair_id": "reconstruction_launders_planted_procedure_errors__archive:archive:opposite_sided"
+  },
+  {
+   "a": "rewriter_trained_against_one_reader_matched_cost",
+   "b": "brief:Retained-gain ratio is the estimand, reported per writer × reader cell with seed",
+   "sim": 0.601,
+   "kind": "idea-brief",
+   "prior_text": "Retained-gain ratio is the estimand, reported per writer × reader cell with seeds: reader's gain from the writer's pool",
+   "pair_id": "rewriter_trained_against_one_reader_matched_cost__brief:Retained-gain ratio is t"
+  },
+  {
+   "a": "rewriter_trained_against_one_reader_matched_cost",
+   "b": "archive:archive:memory_in_the_loop_training_decomposition: Crutch, Content, or Read Skil",
+   "sim": 0.56,
+   "kind": "idea-archive",
+   "prior_text": "archive:memory_in_the_loop_training_decomposition: Crutch, Content, or Read Skill? A Train-by-Infer 2x2 with Bank Swap Decomposes What Memory-in-the-Loop Training Actually Teaches an Agent. When an agent is fine-tuned with retrieved experience in its context (retrieval-aware SFT, memory-tool RL), the reported gain over an untrained memoryless base decomposes into content absorbed from the training trajectories (available with memory removed), the untrained read benefit an unmodified backbone gets from the same bank, and a learned read skill equal to the interaction term. We claim the interaction term is within an equivalence margin of zero, that the trained model is bank-co-adapted (it loses more than the untrained model when its bank is swapped for an equally good disjoint bank), and that stripped of memory it underperforms a model trained on identical trajectories with the memory removed from the training context: memory in the training loop is a crutch that displaces internalization, not a skill. A growing family of agents is trained with a memory bank in the loop and then credited with 'learning to use memory'. Every such report compares against training without the memory, which changes the training data, or against an untrained model without the memory, which changes both. We hold the training trajectories fixed and vary only whether the retrieved block is present during training and at inference, producing a train-by-infer 2x2 on the same backbone and the same LoRA budget, then extend the inference axis with a disjoint equally-good bank (swap), a relevance-matched decoy bank, and no bank. Four contrasts fall out: content absorbed (trained-without-memory, no bank, versus base); untrained read benefit (base with bank versus base without); learned read skill (the interaction term); and bank co-adaptation (own bank versus swapped bank, trained versus untrained). We pre-register that the read-skill interaction is equivalent to zero within 3 points, that the memory-trained model stripped of memory falls at least 3 points below the memory-stripped-trained model on the same trajectories (crutch), and that its own-bank-minus-swapped-bank drop exceeds the untrained model's. Action-copy logging separates selective from indiscriminate reading. A secondary arm repeats the design with a short GRPO stage with and without a memory tool at matched rollout budget, and a cross-backbone cell tests whether the untrained read benefit of a bank is backbone-agnostic. The outcome tells the field whether 'trained to use memory' is content, crutch, or skill, on 7B-8B open models in days on one node.",
+   "pair_id": "rewriter_trained_against_one_reader_matched_cost__archive:archive:memory_in_the_"
+  },
+  {
+   "a": "self_pool_break_even",
+   "b": "brief:Self-pool control at matched collection cost. Any foreign-experience arm is comp",
+   "sim": 0.693,
+   "kind": "idea-brief",
+   "prior_text": "Self-pool control at matched collection cost. Any foreign-experience arm is compared with a pool the reader collected",
+   "pair_id": "self_pool_break_even__brief:Self-pool control at mat"
+  },
+  {
+   "a": "self_pool_break_even",
+   "b": "archive:archive:collection_policy_coupling_collapse: Rich Get Richer, Twice: The Collect",
+   "sim": 0.546,
+   "kind": "idea-archive",
+   "prior_text": "archive:collection_policy_coupling_collapse: Rich Get Richer, Twice: The Collection Policy — Not Content Quality — Drives Diversity Collapse When Self-Editing Memory and Prompt Optimization Share the Same Episodes. Degradation in self-evolving agents is caused by the *collection policy*: the episodes that generate new memory items (and new instructions) are themselves executed while conditioned on the current memory, so retrieved items reproduce themselves and the bank's effective support contracts. Content quality is not the lever. Two sharp predictions follow. (1) At matched content volume, growth rate, task draws and write path, a bank grown from memory-OFF episodes preserves retrievable diversity and tail-task accuracy, while the standard coupled loop contracts and accrues a tail-concentrated, break-dominated harm — and content-side write gates (verification/self-consistency) do *not* fix it. (2) Coupling a second self-editing artifact to the same retrieval-conditioned episodes compounds the harm: a reflective prompt optimizer evolved against a contracting bank writes instructions that presuppose the contracted support, so the evolved instruction *transfers* the damage even when paired with a diverse bank. A 50% mixing rate of decoupled collection episodes is the one-line fix. Self-evolving agents write distillations of their own episodes into a memory bank and retrieve from it on later episodes; a 2026 wave of results shows this degrades performance and attributes the degradation to a property of the written content — hallucinated, spurious, self-confirming, non-transferable — so every proposed remedy is a write-time content filter. We argue the causal variable is the collection policy, not the content. Because episodes are executed while conditioned on retrieved items, the distillations written back are downstream of what was retrieved; retrieval frequency is self-reinforcing and the bank's effective support contracts. We test this with a decoupling design: banks grown over identical cycles from identical task draws with an identical write path and identical write counts, differing only in whether the collecting episodes ran with memory in context. We then make the track's coupling question first-class by crossing that factor with a reflective prompt optimizer, giving a 2×2 over which self-editing channel is coupled to the retrieval-conditioned episodes, and we add an instruction/bank transplant test: if the optimizer's instruction has co-adapted to a contracted support, it should carry the harm to a healthy bank. We measure bank contraction (embedding effective rank, retrieval-count Gini, cluster coverage) against a size-matched random-bank null, and split downstream accuracy into head and tail task clusters with fix/break decompositions. Competing baselines are a correctness-gated write path, a diversity-gated write path, and coupled-but-random retrieval, each of which would win if the mechanism is content quality, coverage-at-write-time, or memory presence per se. A null on coupled-versus-decoupled refutes us and vindicates the content-side account; a coupled arm that beats decoupled on head accuracy with no tail deficit vindicates the \"loop as efficiency mechanism\" account of CoEvo-Mem. The whole design is one environment, three growth cycles, ~35k episodes on a single 4×A100 node and under $150 of API spend.",
+   "pair_id": "self_pool_break_even__archive:archive:collection_pol"
+  },
+  {
+   "a": "reader_pays_writer_detours",
+   "b": "archive:archive:memory_budget_confound: One Item Is the Budget: Token Volume, Not Memory",
+   "sim": 0.594,
+   "kind": "idea-archive",
+   "prior_text": "archive:memory_budget_confound: One Item Is the Budget: Token Volume, Not Memory Content, Explains Both the Harm and the Apparent Gains of Agentic Memory Curation. In experience-memory agents, the value of injected retrieved experience saturates after roughly one item, while its cost grows with injected tokens regardless of relevance. Two consequences follow, both falsifiable: (i) length-matched decoy experience — same environment, wrong task — reproduces most of the harm of correctly retrieved experience at the same injection volume; (ii) published curation methods (reconstruction, self-organizing memory) lose most or all of their advantage over raw top-k retrieval once the raw baseline is given the same per-instance injected-token budget the curated output happens to consume. The practical corollary is that k=1 raw retrieval, tuned once, is competitive with curation at a fraction of the cost. Agentic memory systems retrieve distilled past experience and inject it into an LLM agent's context. A 2026 wave of papers documents that this often hurts, attributes the harm to memory content — staleness, conflict, the abstraction gap between stored experience and the current state — and proposes a content-side remedy: reconstruction, reorganization, pruning. Each remedy also changes how many tokens get injected, and none of the papers we could find matches its raw-retrieval baseline on that budget. We ask whether the harm, and the reported cure, are about content at all. A pilot observation motivates the doubt: for a fixed memory bank, cutting injection from seven retrieved items to three eliminated a significant harm (McNemar p<0.05, replicated) without changing a single item. We propose a decomposition that separates the *content* value of retrieved experience from the *load* cost of the tokens carrying it. Holding bank, retriever, scaffold, tools and decoding fixed, we vary relevance (correct retrieval vs. length-matched decoys drawn from the same environment but the wrong task, and from an unrelated environment), item count, and total injected tokens (equalized by padding and truncation), with a gold-trajectory oracle bounding content value from above and a cross-encoder reranker instantiating the content-selection alternative. We then apply the missing control to two reimplemented curation methods: give raw top-k the same per-instance injected-token budget the curated output consumes, and add a compression-only rewrite that strips situational grounding from reconstruction. The sharp prediction is that content value saturates after about one item while load cost is roughly linear in tokens and largely relevance-independent, so that tuned k=1 raw retrieval lands within 2 points of the best curation method. Analysis is fully paired, with null replicates that fix the noise floor and a pre-registered minimum detectable effect.",
+   "pair_id": "reader_pays_writer_detours__archive:archive:memory_budget_"
+  },
+  {
+   "a": "reader_pays_writer_detours",
+   "b": "brief:Self-pool control at matched collection cost. Any foreign-experience arm is comp",
+   "sim": 0.573,
+   "kind": "idea-brief",
+   "prior_text": "Self-pool control at matched collection cost. Any foreign-experience arm is compared with a pool the reader collected",
+   "pair_id": "reader_pays_writer_detours__brief:Self-pool control at mat"
+  },
+  {
+   "a": "leave_one_type_out_split",
+   "b": "archive:archive:collection_policy_coupling_collapse: Rich Get Richer, Twice: The Collect",
+   "sim": 0.52,
+   "kind": "idea-archive",
+   "prior_text": "archive:collection_policy_coupling_collapse: Rich Get Richer, Twice: The Collection Policy — Not Content Quality — Drives Diversity Collapse When Self-Editing Memory and Prompt Optimization Share the Same Episodes. Degradation in self-evolving agents is caused by the *collection policy*: the episodes that generate new memory items (and new instructions) are themselves executed while conditioned on the current memory, so retrieved items reproduce themselves and the bank's effective support contracts. Content quality is not the lever. Two sharp predictions follow. (1) At matched content volume, growth rate, task draws and write path, a bank grown from memory-OFF episodes preserves retrievable diversity and tail-task accuracy, while the standard coupled loop contracts and accrues a tail-concentrated, break-dominated harm — and content-side write gates (verification/self-consistency) do *not* fix it. (2) Coupling a second self-editing artifact to the same retrieval-conditioned episodes compounds the harm: a reflective prompt optimizer evolved against a contracting bank writes instructions that presuppose the contracted support, so the evolved instruction *transfers* the damage even when paired with a diverse bank. A 50% mixing rate of decoupled collection episodes is the one-line fix. Self-evolving agents write distillations of their own episodes into a memory bank and retrieve from it on later episodes; a 2026 wave of results shows this degrades performance and attributes the degradation to a property of the written content — hallucinated, spurious, self-confirming, non-transferable — so every proposed remedy is a write-time content filter. We argue the causal variable is the collection policy, not the content. Because episodes are executed while conditioned on retrieved items, the distillations written back are downstream of what was retrieved; retrieval frequency is self-reinforcing and the bank's effective support contracts. We test this with a decoupling design: banks grown over identical cycles from identical task draws with an identical write path and identical write counts, differing only in whether the collecting episodes ran with memory in context. We then make the track's coupling question first-class by crossing that factor with a reflective prompt optimizer, giving a 2×2 over which self-editing channel is coupled to the retrieval-conditioned episodes, and we add an instruction/bank transplant test: if the optimizer's instruction has co-adapted to a contracted support, it should carry the harm to a healthy bank. We measure bank contraction (embedding effective rank, retrieval-count Gini, cluster coverage) against a size-matched random-bank null, and split downstream accuracy into head and tail task clusters with fix/break decompositions. Competing baselines are a correctness-gated write path, a diversity-gated write path, and coupled-but-random retrieval, each of which would win if the mechanism is content quality, coverage-at-write-time, or memory presence per se. A null on coupled-versus-decoupled refutes us and vindicates the content-side account; a coupled arm that beats decoupled on head accuracy with no tail deficit vindicates the \"loop as efficiency mechanism\" account of CoEvo-Mem. The whole design is one environment, three growth cycles, ~35k episodes on a single 4×A100 node and under $150 of API spend.",
+   "pair_id": "leave_one_type_out_split__archive:archive:collection_pol"
+  },
+  {
+   "a": "complementarity_not_proximity",
+   "b": "brief:Retained-gain ratio is the estimand, reported per writer × reader cell with seed",
+   "sim": 0.654,
+   "kind": "idea-brief",
+   "prior_text": "Retained-gain ratio is the estimand, reported per writer × reader cell with seeds: reader's gain from the writer's pool",
+   "pair_id": "complementarity_not_proximity__brief:Retained-gain ratio is t"
+  },
+  {
+   "a": "complementarity_not_proximity",
+   "b": "archive:archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The ",
+   "sim": 0.518,
+   "kind": "idea-archive",
+   "prior_text": "archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It. Memory-item utility is governed by the *signed* capability gap between the policy that wrote the item and the policy that reads it — downward transfer (strong writer → weak reader) is harmful, upward transfer is not — and the cure is reader-in-the-loop **selection**, not reader **authorship**. Two sharp consequences follow. (a) A quality/utility dissociation: frontier-written items win blind quality judging while losing downstream utility for a small reader, at matched source tasks, item count and injected tokens. (b) A masking result for the track's central object: a GEPA-style prompt optimizer, whose instruction candidates are scored on the *reader's own* rollouts, is itself a reader-in-the-loop selector; coupling it to memory absorbs the provenance harm at the net-accuracy level while the break-count asymmetry persists underneath. That is why combined memory+optimizer papers report end-to-end wins they cannot attribute — the optimizer is silently paying for the memory's provenance debt. Agentic memory pipelines almost universally have a frontier model distill experience that a small agent then consumes. The field treats this provenance asymmetry as an implementation detail; recent cross-model memory work (Rosetta Memory, MemCollab, AMD) has noticed that it matters but frames it as model-identity mismatch to be patched. We argue it is a signed, ordinal effect: memory is advice, advice is only useful to a policy that can execute it, so utility falls with the *directed* writer→reader capability gap and downward transfer is harmful in a way upward transfer is not. We further argue the cure is not reader authorship but reader-in-the-loop selection — and that this is exactly what a GEPA-style prompt optimizer already does to the instruction slot, which is why coupling an optimizer to a memory bank produces end-to-end gains that cannot be attributed to either part.\n\nWe test this in one environment (tool-augmented multi-hop QA) with a transplant matrix that holds source tasks constant: two self-hosted readers (8B, 14B) plus a frontier writer distill memory from the *intersection* of training instances all agents solved, so every bank covers the same tasks, all from successful trajectories, at matched item count and matched injected tokens; only the writing policy varies. Both transfer directions are run, which separates our signed-gap account from the symmetric identity-mismatch account of prior work. A blind pairwise quality judging pass tests the predicted rank inversion. Two selection arms — reader-probe admission on the frontier memory bank, and GEPA (frontier-authored instructions, reader-selected) versus frontier-authored-but-unselected instructions — isolate selection from authorship in both slots. A faithful, uncontrolled teacher→student replication confirms the literature's positive effect reproduces here before we attribute its disappearance to our controls. 33 evaluation runs, ~21k episodes total, fits one 4×A100 node in days.",
+   "pair_id": "complementarity_not_proximity__archive:archive:provenance_gap"
+  },
+  {
+   "a": "thoughts_do_not_travel",
+   "b": "brief:Writer identity is manipulated, not observed. The same task set, the same bank c",
+   "sim": 0.538,
+   "kind": "idea-brief",
+   "prior_text": "Writer identity is manipulated, not observed. The same task set, the same bank construction and the same retriever,",
+   "pair_id": "thoughts_do_not_travel__brief:Writer identity is manip"
+  },
+  {
+   "a": "shared_blind_spot",
+   "b": "archive:archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The ",
+   "sim": 0.604,
+   "kind": "idea-archive",
+   "prior_text": "archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It. Memory-item utility is governed by the *signed* capability gap between the policy that wrote the item and the policy that reads it — downward transfer (strong writer → weak reader) is harmful, upward transfer is not — and the cure is reader-in-the-loop **selection**, not reader **authorship**. Two sharp consequences follow. (a) A quality/utility dissociation: frontier-written items win blind quality judging while losing downstream utility for a small reader, at matched source tasks, item count and injected tokens. (b) A masking result for the track's central object: a GEPA-style prompt optimizer, whose instruction candidates are scored on the *reader's own* rollouts, is itself a reader-in-the-loop selector; coupling it to memory absorbs the provenance harm at the net-accuracy level while the break-count asymmetry persists underneath. That is why combined memory+optimizer papers report end-to-end wins they cannot attribute — the optimizer is silently paying for the memory's provenance debt. Agentic memory pipelines almost universally have a frontier model distill experience that a small agent then consumes. The field treats this provenance asymmetry as an implementation detail; recent cross-model memory work (Rosetta Memory, MemCollab, AMD) has noticed that it matters but frames it as model-identity mismatch to be patched. We argue it is a signed, ordinal effect: memory is advice, advice is only useful to a policy that can execute it, so utility falls with the *directed* writer→reader capability gap and downward transfer is harmful in a way upward transfer is not. We further argue the cure is not reader authorship but reader-in-the-loop selection — and that this is exactly what a GEPA-style prompt optimizer already does to the instruction slot, which is why coupling an optimizer to a memory bank produces end-to-end gains that cannot be attributed to either part.\n\nWe test this in one environment (tool-augmented multi-hop QA) with a transplant matrix that holds source tasks constant: two self-hosted readers (8B, 14B) plus a frontier writer distill memory from the *intersection* of training instances all agents solved, so every bank covers the same tasks, all from successful trajectories, at matched item count and matched injected tokens; only the writing policy varies. Both transfer directions are run, which separates our signed-gap account from the symmetric identity-mismatch account of prior work. A blind pairwise quality judging pass tests the predicted rank inversion. Two selection arms — reader-probe admission on the frontier memory bank, and GEPA (frontier-authored instructions, reader-selected) versus frontier-authored-but-unselected instructions — isolate selection from authorship in both slots. A faithful, uncontrolled teacher→student replication confirms the literature's positive effect reproduces here before we attribute its disappearance to our controls. 33 evaluation runs, ~21k episodes total, fits one 4×A100 node in days.",
+   "pair_id": "shared_blind_spot__archive:archive:provenance_gap"
+  },
+  {
+   "a": "shared_blind_spot",
+   "b": "digest:arxiv:2605.22842: Memory-layer attacks on shared vector stores produce agent mis",
+   "sim": 0.546,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2605.22842: Memory-layer attacks on shared vector stores produce agent misconduct that is indistinguishable from model failure (the Misattribution Gap), so defenders misdiagnose the cause; Semantic Norm Drift via a Trust Laundering Chain is a third path to misconduct, and provenance-aware information-flow control at the cross-session boundary blocks most of it.",
+   "pair_id": "shared_blind_spot__digest:arxiv:2605.22842: Memor"
+  },
+  {
+   "a": "shared_blind_spot",
+   "b": "brief:Writer identity is manipulated, not observed. The same task set, the same bank c",
+   "sim": 0.542,
+   "kind": "idea-brief",
+   "prior_text": "Writer identity is manipulated, not observed. The same task set, the same bank construction and the same retriever,",
+   "pair_id": "shared_blind_spot__brief:Writer identity is manip"
+  },
+  {
+   "a": "coverage_not_headcount",
+   "b": "brief:Retained-gain ratio is the estimand, reported per writer × reader cell with seed",
+   "sim": 0.586,
+   "kind": "idea-brief",
+   "prior_text": "Retained-gain ratio is the estimand, reported per writer × reader cell with seeds: reader's gain from the writer's pool",
+   "pair_id": "coverage_not_headcount__brief:Retained-gain ratio is t"
+  },
+  {
+   "a": "coverage_not_headcount",
+   "b": "archive:archive:closer_beats_stronger: Closer Beats Stronger: Consumer-Side Policy Proxi",
+   "sim": 0.549,
+   "kind": "idea-archive",
+   "prior_text": "archive:closer_beats_stronger: Closer Beats Stronger: Consumer-Side Policy Proximity, Not Builder Capability, Predicts Whether Shared Agent Experience Transfers Across Backbones. For a fixed retrieved set of experience items built by one backbone, the paired gain a consumer backbone obtains is predicted by the consumer's teacher-forced per-action log-likelihood of the builder's stored action sequences (policy proximity), and this predictor dominates builder solo success, parameter ratio and family identity; consequently there exist consumer cells in which a weaker-but-closer builder's bank beats a stronger-but-distant one, and a content-preserving re-narration of the builder's items into the consumer's own wording (actions held fixed) recovers a measurable share of the gap, which a capability ordering cannot explain. Shared experience banks and skill libraries are increasingly built by one agent and consumed by another, yet every published transfer runs strong-to-weak on one axis and reports no rule for when it works. We propose that compatibility is a property of the consumer's policy, not of the builder's capability: an item helps when the consumer could plausibly have produced its action sequence, and hurts when it cannot execute the intermediate steps and diverges mid-plan. We build experience banks (raw successful trajectories and fixed-extractor insights) from eight local open-weight builders spanning two size axes and four families, fix the retrieved items per task so selection is identical for every consumer, and evaluate every builder-consumer cell on ALFWorld and a WebShop subgrid at a matched injection budget. For each cell we compute an offline predictor, policy proximity: the consumer's teacher-forced mean per-action log-likelihood of the retrieved builder trajectories under the consumer's own deployment prompt. We test three claims: proximity predicts paired cell gains out-of-builder better than builder solo success, size ratio or family; pre-registered reversal pairs exist where a weaker, closer builder beats a stronger, distant one; and consumer re-narration of the same items with actions held fixed, which raises proximity without changing content, recovers part of the distant-builder gap. Harm cells are localized with entry-propagation traces. All comparisons are paired on identical tasks with McNemar tests, null replicates set the noise band, and every cell is reported rather than the best. The result is a rule a practitioner can compute with one forward pass before deploying someone else's memory, and a mechanism that explains when strong-to-weak distillation is the wrong default.",
+   "pair_id": "coverage_not_headcount__archive:archive:closer_beats_s"
+  },
+  {
+   "a": "one_bad_apple_population_vote",
+   "b": "archive:archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The ",
+   "sim": 0.556,
+   "kind": "idea-archive",
+   "prior_text": "archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It. Memory-item utility is governed by the *signed* capability gap between the policy that wrote the item and the policy that reads it — downward transfer (strong writer → weak reader) is harmful, upward transfer is not — and the cure is reader-in-the-loop **selection**, not reader **authorship**. Two sharp consequences follow. (a) A quality/utility dissociation: frontier-written items win blind quality judging while losing downstream utility for a small reader, at matched source tasks, item count and injected tokens. (b) A masking result for the track's central object: a GEPA-style prompt optimizer, whose instruction candidates are scored on the *reader's own* rollouts, is itself a reader-in-the-loop selector; coupling it to memory absorbs the provenance harm at the net-accuracy level while the break-count asymmetry persists underneath. That is why combined memory+optimizer papers report end-to-end wins they cannot attribute — the optimizer is silently paying for the memory's provenance debt. Agentic memory pipelines almost universally have a frontier model distill experience that a small agent then consumes. The field treats this provenance asymmetry as an implementation detail; recent cross-model memory work (Rosetta Memory, MemCollab, AMD) has noticed that it matters but frames it as model-identity mismatch to be patched. We argue it is a signed, ordinal effect: memory is advice, advice is only useful to a policy that can execute it, so utility falls with the *directed* writer→reader capability gap and downward transfer is harmful in a way upward transfer is not. We further argue the cure is not reader authorship but reader-in-the-loop selection — and that this is exactly what a GEPA-style prompt optimizer already does to the instruction slot, which is why coupling an optimizer to a memory bank produces end-to-end gains that cannot be attributed to either part.\n\nWe test this in one environment (tool-augmented multi-hop QA) with a transplant matrix that holds source tasks constant: two self-hosted readers (8B, 14B) plus a frontier writer distill memory from the *intersection* of training instances all agents solved, so every bank covers the same tasks, all from successful trajectories, at matched item count and matched injected tokens; only the writing policy varies. Both transfer directions are run, which separates our signed-gap account from the symmetric identity-mismatch account of prior work. A blind pairwise quality judging pass tests the predicted rank inversion. Two selection arms — reader-probe admission on the frontier memory bank, and GEPA (frontier-authored instructions, reader-selected) versus frontier-authored-but-unselected instructions — isolate selection from authorship in both slots. A faithful, uncontrolled teacher→student replication confirms the literature's positive effect reproduces here before we attribute its disappearance to our controls. 33 evaluation runs, ~21k episodes total, fits one 4×A100 node in days.",
+   "pair_id": "one_bad_apple_population_vote__archive:archive:provenance_gap"
+  },
+  {
+   "a": "one_bad_apple_population_vote",
+   "b": "brief:Writer identity is manipulated, not observed. The same task set, the same bank c",
+   "sim": 0.518,
+   "kind": "idea-brief",
+   "prior_text": "Writer identity is manipulated, not observed. The same task set, the same bank construction and the same retriever,",
+   "pair_id": "one_bad_apple_population_vote__brief:Writer identity is manip"
+  },
+  {
+   "a": "who_gets_read",
+   "b": "archive:archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The ",
+   "sim": 0.574,
+   "kind": "idea-archive",
+   "prior_text": "archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It. Memory-item utility is governed by the *signed* capability gap between the policy that wrote the item and the policy that reads it — downward transfer (strong writer → weak reader) is harmful, upward transfer is not — and the cure is reader-in-the-loop **selection**, not reader **authorship**. Two sharp consequences follow. (a) A quality/utility dissociation: frontier-written items win blind quality judging while losing downstream utility for a small reader, at matched source tasks, item count and injected tokens. (b) A masking result for the track's central object: a GEPA-style prompt optimizer, whose instruction candidates are scored on the *reader's own* rollouts, is itself a reader-in-the-loop selector; coupling it to memory absorbs the provenance harm at the net-accuracy level while the break-count asymmetry persists underneath. That is why combined memory+optimizer papers report end-to-end wins they cannot attribute — the optimizer is silently paying for the memory's provenance debt. Agentic memory pipelines almost universally have a frontier model distill experience that a small agent then consumes. The field treats this provenance asymmetry as an implementation detail; recent cross-model memory work (Rosetta Memory, MemCollab, AMD) has noticed that it matters but frames it as model-identity mismatch to be patched. We argue it is a signed, ordinal effect: memory is advice, advice is only useful to a policy that can execute it, so utility falls with the *directed* writer→reader capability gap and downward transfer is harmful in a way upward transfer is not. We further argue the cure is not reader authorship but reader-in-the-loop selection — and that this is exactly what a GEPA-style prompt optimizer already does to the instruction slot, which is why coupling an optimizer to a memory bank produces end-to-end gains that cannot be attributed to either part.\n\nWe test this in one environment (tool-augmented multi-hop QA) with a transplant matrix that holds source tasks constant: two self-hosted readers (8B, 14B) plus a frontier writer distill memory from the *intersection* of training instances all agents solved, so every bank covers the same tasks, all from successful trajectories, at matched item count and matched injected tokens; only the writing policy varies. Both transfer directions are run, which separates our signed-gap account from the symmetric identity-mismatch account of prior work. A blind pairwise quality judging pass tests the predicted rank inversion. Two selection arms — reader-probe admission on the frontier memory bank, and GEPA (frontier-authored instructions, reader-selected) versus frontier-authored-but-unselected instructions — isolate selection from authorship in both slots. A faithful, uncontrolled teacher→student replication confirms the literature's positive effect reproduces here before we attribute its disappearance to our controls. 33 evaluation runs, ~21k episodes total, fits one 4×A100 node in days.",
+   "pair_id": "who_gets_read__archive:archive:provenance_gap"
+  },
+  {
+   "a": "who_gets_read",
+   "b": "digest:arxiv:2505.18279: A two-tier (private and shared) memory with immutable provenan",
+   "sim": 0.525,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2505.18279: A two-tier (private and shared) memory with immutable provenance attributes and policy-driven read/write transformations enables safe, efficient, and interpretable cross-user knowledge sharing among multiple agents under asymmetric, time-evolving access controls, with provable policy adherence and full auditability.",
+   "pair_id": "who_gets_read__digest:arxiv:2505.18279: A two"
+  },
+  {
+   "a": "who_gets_read",
+   "b": "brief:Writer identity is manipulated, not observed. The same task set, the same bank c",
+   "sim": 0.523,
+   "kind": "idea-brief",
+   "prior_text": "Writer identity is manipulated, not observed. The same task set, the same bank construction and the same retriever,",
+   "pair_id": "who_gets_read__brief:Writer identity is manip"
+  },
+  {
+   "a": "compression_erases_the_writer",
+   "b": "archive:archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The ",
+   "sim": 0.659,
+   "kind": "idea-archive",
+   "prior_text": "archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It. Memory-item utility is governed by the *signed* capability gap between the policy that wrote the item and the policy that reads it — downward transfer (strong writer → weak reader) is harmful, upward transfer is not — and the cure is reader-in-the-loop **selection**, not reader **authorship**. Two sharp consequences follow. (a) A quality/utility dissociation: frontier-written items win blind quality judging while losing downstream utility for a small reader, at matched source tasks, item count and injected tokens. (b) A masking result for the track's central object: a GEPA-style prompt optimizer, whose instruction candidates are scored on the *reader's own* rollouts, is itself a reader-in-the-loop selector; coupling it to memory absorbs the provenance harm at the net-accuracy level while the break-count asymmetry persists underneath. That is why combined memory+optimizer papers report end-to-end wins they cannot attribute — the optimizer is silently paying for the memory's provenance debt. Agentic memory pipelines almost universally have a frontier model distill experience that a small agent then consumes. The field treats this provenance asymmetry as an implementation detail; recent cross-model memory work (Rosetta Memory, MemCollab, AMD) has noticed that it matters but frames it as model-identity mismatch to be patched. We argue it is a signed, ordinal effect: memory is advice, advice is only useful to a policy that can execute it, so utility falls with the *directed* writer→reader capability gap and downward transfer is harmful in a way upward transfer is not. We further argue the cure is not reader authorship but reader-in-the-loop selection — and that this is exactly what a GEPA-style prompt optimizer already does to the instruction slot, which is why coupling an optimizer to a memory bank produces end-to-end gains that cannot be attributed to either part.\n\nWe test this in one environment (tool-augmented multi-hop QA) with a transplant matrix that holds source tasks constant: two self-hosted readers (8B, 14B) plus a frontier writer distill memory from the *intersection* of training instances all agents solved, so every bank covers the same tasks, all from successful trajectories, at matched item count and matched injected tokens; only the writing policy varies. Both transfer directions are run, which separates our signed-gap account from the symmetric identity-mismatch account of prior work. A blind pairwise quality judging pass tests the predicted rank inversion. Two selection arms — reader-probe admission on the frontier memory bank, and GEPA (frontier-authored instructions, reader-selected) versus frontier-authored-but-unselected instructions — isolate selection from authorship in both slots. A faithful, uncontrolled teacher→student replication confirms the literature's positive effect reproduces here before we attribute its disappearance to our controls. 33 evaluation runs, ~21k episodes total, fits one 4×A100 node in days.",
+   "pair_id": "compression_erases_the_writer__archive:archive:provenance_gap"
+  },
+  {
+   "a": "compression_erases_the_writer",
+   "b": "digest:arxiv:2604.14004: A unified memory pool drawn from heterogeneous coding domains ",
+   "sim": 0.607,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2604.14004: A unified memory pool drawn from heterogeneous coding domains improves coding-agent performance, chiefly by transferring meta-knowledge such as validation routines, and abstraction level dictates transferability: high-level insights transfer while low-level traces can cause negative transfer.",
+   "pair_id": "compression_erases_the_writer__digest:arxiv:2604.14004: A uni"
+  },
+  {
+   "a": "compression_erases_the_writer",
+   "b": "brief:Retained-gain ratio is the estimand, reported per writer × reader cell with seed",
+   "sim": 0.562,
+   "kind": "idea-brief",
+   "prior_text": "Retained-gain ratio is the estimand, reported per writer × reader cell with seeds: reader's gain from the writer's pool",
+   "pair_id": "compression_erases_the_writer__brief:Retained-gain ratio is t"
+  },
+  {
+   "a": "own_errors_pass_the_gate",
+   "b": "archive:archive:gate_reads_style_not_truth: Admission Gates Read Style, Not Truth: A Pla",
+   "sim": 0.648,
+   "kind": "idea-archive",
+   "prior_text": "archive:gate_reads_style_not_truth: Admission Gates Read Style, Not Truth: A Planted-Record Audit of Write-Time Validation in Agent Experience Memory. Every published write-time admission gate that decides from the candidate record's text alone (LLM-judge validation in ReMe, five-factor admission in A-MAC, goal-conditioned utility tagging in CraniMem, LLM-verified promotion in Atlas) is a classifier of surface form, not of correctness: a wrong record rewritten into the style of previously admitted records is admitted at the same rate as a correct one, so store-level gate precision carries no information about downstream task success; only execution-referenced gates (replay in the environment, batch-improvement gating) are truth-sensitive, and the batch-improvement gate operates at the run-to-run noise floor so its admissions flip under re-scoring. Agent experience memories are increasingly protected by write-time admission gates, yet no gate has been audited for what it admits. We plant records of known truth value into the write stream of an ALFWorld experience memory and audit six gates: four that decide from the record's text (ReMe LLM-judge, A-MAC five-factor, CraniMem utility tagging, Atlas-style LLM verification) and two that reference execution (environment replay, batch-improvement gating). Because ALFWorld is deterministic, the correctness of a record's action recommendation is labelled exactly by replay. Planted classes cross truth with style: correct-styled, correct-plain, wrong, stale (true in the source scene, re-bound to a location from another scene) and adversarial (wrong records rewritten into the lexical style of the gate's own admitted set). We measure per-gate admission by class, fit admission on style features versus the truth label, build one store per gate from the same stream, and evaluate 400 held-out tasks in a paired design on the 27B dense and 120B MoE backbones, with entry-propagation-recovery traces attributing failures to admitted planted records and a matched-rate random-admission control separating gate selectivity from mere volume reduction. The central claim is that text-only gates are style classifiers whose store-level precision does not predict downstream success, that replay is the only truth-sensitive gate, and that the batch gate's decisions are dominated by evaluation noise. Costs per gated record are reported so that harm prevented can be priced against gate tokens.",
+   "pair_id": "own_errors_pass_the_gate__archive:archive:gate_reads_sty"
+  },
+  {
+   "a": "own_errors_pass_the_gate",
+   "b": "digest:arxiv:2605.27762: Moving embodied agent memory from inference-time retrieval int",
+   "sim": 0.566,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2605.27762: Moving embodied agent memory from inference-time retrieval into parameter-resident skills, consolidated from experience with failure-correction contrastive training and governed by a worthiness score and self-triggered consolidation, improves long-horizon performance, reduces forgetting, and is more efficient than retrieval-based memory.",
+   "pair_id": "own_errors_pass_the_gate__digest:arxiv:2605.27762: Movin"
+  },
+  {
+   "a": "search_disposition_contagion",
+   "b": "brief:4. Adapting foreign experience to the reader (19 cards). Reconstruction before a",
+   "sim": 0.592,
+   "kind": "idea-brief",
+   "prior_text": "4. Adapting foreign experience to the reader (19 cards). Reconstruction before acting (MemHarness 2607.28272), analogical",
+   "pair_id": "search_disposition_contagion__brief:4. Adapting foreign expe"
+  },
+  {
+   "a": "search_disposition_contagion",
+   "b": "archive:archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The ",
+   "sim": 0.575,
+   "kind": "idea-archive",
+   "prior_text": "archive:provenance_gap_selection_not_authorship: Selection, Not Authorship: The Signed Writer–Reader Capability Gap in Agent Memory, and Why Prompt Optimization Hides It. Memory-item utility is governed by the *signed* capability gap between the policy that wrote the item and the policy that reads it — downward transfer (strong writer → weak reader) is harmful, upward transfer is not — and the cure is reader-in-the-loop **selection**, not reader **authorship**. Two sharp consequences follow. (a) A quality/utility dissociation: frontier-written items win blind quality judging while losing downstream utility for a small reader, at matched source tasks, item count and injected tokens. (b) A masking result for the track's central object: a GEPA-style prompt optimizer, whose instruction candidates are scored on the *reader's own* rollouts, is itself a reader-in-the-loop selector; coupling it to memory absorbs the provenance harm at the net-accuracy level while the break-count asymmetry persists underneath. That is why combined memory+optimizer papers report end-to-end wins they cannot attribute — the optimizer is silently paying for the memory's provenance debt. Agentic memory pipelines almost universally have a frontier model distill experience that a small agent then consumes. The field treats this provenance asymmetry as an implementation detail; recent cross-model memory work (Rosetta Memory, MemCollab, AMD) has noticed that it matters but frames it as model-identity mismatch to be patched. We argue it is a signed, ordinal effect: memory is advice, advice is only useful to a policy that can execute it, so utility falls with the *directed* writer→reader capability gap and downward transfer is harmful in a way upward transfer is not. We further argue the cure is not reader authorship but reader-in-the-loop selection — and that this is exactly what a GEPA-style prompt optimizer already does to the instruction slot, which is why coupling an optimizer to a memory bank produces end-to-end gains that cannot be attributed to either part.\n\nWe test this in one environment (tool-augmented multi-hop QA) with a transplant matrix that holds source tasks constant: two self-hosted readers (8B, 14B) plus a frontier writer distill memory from the *intersection* of training instances all agents solved, so every bank covers the same tasks, all from successful trajectories, at matched item count and matched injected tokens; only the writing policy varies. Both transfer directions are run, which separates our signed-gap account from the symmetric identity-mismatch account of prior work. A blind pairwise quality judging pass tests the predicted rank inversion. Two selection arms — reader-probe admission on the frontier memory bank, and GEPA (frontier-authored instructions, reader-selected) versus frontier-authored-but-unselected instructions — isolate selection from authorship in both slots. A faithful, uncontrolled teacher→student replication confirms the literature's positive effect reproduces here before we attribute its disappearance to our controls. 33 evaluation runs, ~21k episodes total, fits one 4×A100 node in days.",
+   "pair_id": "search_disposition_contagion__archive:archive:provenance_gap"
+  },
+  {
+   "a": "search_disposition_contagion",
+   "b": "digest:arxiv:2607.28272: Verbatim replay of retrieved experience causes negative transf",
+   "sim": 0.522,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2607.28272: Verbatim replay of retrieved experience causes negative transfer, and agents that critique and reconstruct retrieved experience conditioned on the current state outperform pure RL and static memory-augmented baselines, especially out of distribution.",
+   "pair_id": "search_disposition_contagion__digest:arxiv:2607.28272: Verba"
+  }
+ ],
+ "nearest": {
+  "reconstruction_pays_only_across_the_writer_gap": [
+   [
+    "search_disposition_contagion",
+    0.715
+   ],
+   [
+    "complementarity_not_proximity",
+    0.713
+   ],
+   [
+    "reconstruction_launders_planted_procedure_errors",
+    0.635
+   ]
+  ],
+  "reconstruction_launders_planted_procedure_errors": [
+   [
+    "reconstruction_pays_only_across_the_writer_gap",
+    0.635
+   ],
+   [
+    "own_errors_pass_the_gate",
+    0.595
+   ],
+   [
+    "shared_blind_spot",
+    0.56
+   ]
+  ],
+  "rewriter_trained_against_one_reader_matched_cost": [
+   [
+    "reconstruction_pays_only_across_the_writer_gap",
+    0.617
+   ],
+   [
+    "complementarity_not_proximity",
+    0.582
+   ],
+   [
+    "compression_erases_the_writer",
+    0.573
+   ]
+  ],
+  "self_pool_break_even": [
+   [
+    "complementarity_not_proximity",
+    0.693
+   ],
+   [
+    "reader_pays_writer_detours",
+    0.629
+   ],
+   [
+    "search_disposition_contagion",
+    0.56
+   ]
+  ],
+  "reader_pays_writer_detours": [
+   [
+    "reconstruction_pays_only_across_the_writer_gap",
+    0.634
+   ],
+   [
+    "complementarity_not_proximity",
+    0.633
+   ],
+   [
+    "self_pool_break_even",
+    0.629
+   ]
+  ],
+  "leave_one_type_out_split": [
+   [
+    "one_bad_apple_population_vote",
+    0.45
+   ],
+   [
+    "compression_erases_the_writer",
+    0.432
+   ],
+   [
+    "self_pool_break_even",
+    0.4
+   ]
+  ],
+  "complementarity_not_proximity": [
+   [
+    "search_disposition_contagion",
+    0.742
+   ],
+   [
+    "reconstruction_pays_only_across_the_writer_gap",
+    0.713
+   ],
+   [
+    "self_pool_break_even",
+    0.693
+   ]
+  ],
+  "thoughts_do_not_travel": [
+   [
+    "reconstruction_pays_only_across_the_writer_gap",
+    0.612
+   ],
+   [
+    "search_disposition_contagion",
+    0.599
+   ],
+   [
+    "compression_erases_the_writer",
+    0.587
+   ]
+  ],
+  "shared_blind_spot": [
+   [
+    "own_errors_pass_the_gate",
+    0.709
+   ],
+   [
+    "one_bad_apple_population_vote",
+    0.62
+   ],
+   [
+    "reconstruction_pays_only_across_the_writer_gap",
+    0.606
+   ]
+  ],
+  "coverage_not_headcount": [
+   [
+    "who_gets_read",
+    0.658
+   ],
+   [
+    "reader_pays_writer_detours",
+    0.61
+   ],
+   [
+    "compression_erases_the_writer",
+    0.565
+   ]
+  ],
+  "one_bad_apple_population_vote": [
+   [
+    "shared_blind_spot",
+    0.62
+   ],
+   [
+    "own_errors_pass_the_gate",
+    0.542
+   ],
+   [
+    "search_disposition_contagion",
+    0.485
+   ]
+  ],
+  "who_gets_read": [
+   [
+    "coverage_not_headcount",
+    0.658
+   ],
+   [
+    "reader_pays_writer_detours",
+    0.601
+   ],
+   [
+    "shared_blind_spot",
+    0.592
+   ]
+  ],
+  "compression_erases_the_writer": [
+   [
+    "reconstruction_pays_only_across_the_writer_gap",
+    0.621
+   ],
+   [
+    "search_disposition_contagion",
+    0.598
+   ],
+   [
+    "complementarity_not_proximity",
+    0.589
+   ]
+  ],
+  "own_errors_pass_the_gate": [
+   [
+    "shared_blind_spot",
+    0.709
+   ],
+   [
+    "reconstruction_launders_planted_procedure_errors",
+    0.595
+   ],
+   [
+    "search_disposition_contagion",
+    0.568
+   ]
+  ],
+  "search_disposition_contagion": [
+   [
+    "complementarity_not_proximity",
+    0.742
+   ],
+   [
+    "reconstruction_pays_only_across_the_writer_gap",
+    0.715
+   ],
+   [
+    "reader_pays_writer_detours",
+    0.628
+   ]
+  ]
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "id": "novelty_keys__batch00",
+ "kind": "novelty_keys",
+ "name": "batch00",
+ "prompt_file": "runs_ideate2/gen_static/novelty/jobs/novelty_keys__batch00.prompt.md",
+ "tools": [],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}
