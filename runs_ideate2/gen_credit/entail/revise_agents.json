@@ -1,0 +1,15 @@
+{
+ "guilt_by_coretrieval": "ab0552541d84d66ee",
+ "hole_backfill_static_counterfactual": "aa69be262ecb74fc6",
+ "item_credit_variance_decomposition": "a580df804442320fa",
+ "item_value_consumer_decomposition": "a70f82f85a20df9e0",
+ "masked_harm_pairwise_removal": "a248f73692f504c5d",
+ "pairwise_removal_interaction_audit": "a0ebf3374c09fdec9",
+ "per_item_loo_reliability_and_winners_curse": "ad7901147602d420d",
+ "responsible_item_attribution_benchmark": "aa5d3f4292965ae7a",
+ "slot_vs_item_credit_permutation": "a6d93bdf019ea829d",
+ "stage_conditional_item_value": "a7bdee5c2a4746ef4",
+ "stale_item_score_lag_after_rule_change": "a342d49eaf6601b0a",
+ "surrogate_endpoints_for_item_credit": "a1e1d0c350625a392",
+ "utility_half_life_consumer_swap": "a54d1cb67f4f3be6d"
+}
