@@ -1,0 +1,21 @@
+=== ENTAILMENT CHECK (automated pre-review; evidence, not a verdict) ===
+For each prediction: what would falsify it, and whether the stated arms can produce that outcome at the stated power.
+
+Proposal: search_disposition_contagion — headline P2 is **open**; open 3 / entailed 1 / near-entailed 2 / unresolvable 0; verdict pass
+
+- P1 [open] falsifier: Harm < 6 net at dose 8.
+  reason: A reader that ignores 8 inserted useless search actions simply shows no success loss and that null is measurable at the stated half-width; the padding does inflate injected tokens at fixed k=3, which confounds the interpretation of any harm but does not close off the falsifying outcome.
+- P2 [open] falsifier: The 95% CI of beta includes 0, i.e. the reader's search is invariant to the retrieved search.
+  reason: The six pools span a wide, independently manipulated x-range (including a padding dose ladder whose search length is set by construction) while the outcome is a separate environment-side measurement, so beta=0 is fully reachable and a 0.3 slope is well outside the 0.2-step cell noise.
+- P3 [open] falsifier: A matched foreign pool yields a reader search length differing from W2's by >= 2 steps with CI excluding 0.
+  reason: A 2-step identity effect is roughly six times the ~0.3-step SE of the difference and both foreign backbones are run matched against a same-backbone variant, so the falsifier is reachable and separable, although the 1-2 step band decides nothing and the matched subsample assumes untested overlap between the foreign and W2 search-length distributions.
+- P4 [near_entailed] falsifier: Manipulation-only loses >= half the gain (stated as produced by the W1 manipulation-only vs full cells) or search length stays >= 2 steps above k=0 (W3 manipulation-only cell).
+  reason: The gain falsifier is scored on the W1 cells while the claim is about W3 and P8 manipulation-only items, the 0.5-0.75 retention band is inside the ratio's CI (a +-5 to +-7 numerator over a ~+27 denominator), and the search clause is one-sided so a manipulation-only segment that pushes search BELOW k=0 - which it can, since the first take names the receptacle holding the target - contradicts 'within 1 step' without falsifying.
+  fix: State the retention falsifier on the W3 and P8 manipulation-only cells themselves, make the search-length claim a two-sided band around k=0, and report the retained-gain ratio CI so that 0.75 vs 0.5 lies outside it.
+- P5 [near_entailed] falsifier: The CI of the tau difference includes 0.
+  reason: The placebo is a lower-ranked item, so the injected item is by retrieval selection more similar to the current game than the placebo is; the reader's own layout-driven visit order therefore produces a positive tau difference with no copying at all, making the falsifier reachable only if that selection artifact happens to be absent - a mechanism the design neither names nor controls.
+  fix: Use the SAME top-ranked retrieved item as the placebo, scored on episodes where it was never injected (k=0 or search-stripped arms), or match the placebo to the injected item on retrieval score and receptacle overlap.
+- P6 [entailed] falsifier: Recall >= 0.7 at dose 4 with CI excluding 0.5.
+  reason: When every retrieved item is padded, at most one of the three padded items can occupy the last position, so recall is capped near 1/3 and the >=0.7 falsifier is arithmetically unreachable; the retriever cannot deliver the unpadded contrast items the prediction is about.
+  fix: Run the read-time check on a mixed bank (padded and unpadded items at a stated rate within the retrieved type), or as a forced choice between the padded and unpadded version of the same trajectory, with the chance level stated.
+- shared terms: P1-P2: both are produced by the same P8-vs-W1 full-item episodes (P1's success loss and the high-dose endpoint that dominates the slope).; P2-P3: P3 conditions on the very pool-mean-search-length regressor that defines P2's slope, so a beta near 0 makes P3's '<1 step' claim automatic.; P2-P4: P4's 'search length within 1 step of k=0' is the same reader-search-length outcome as P2, measured on the segment-stripped version of the same W3/P8 pools.; P1-P4: P4's retained-gain ratio uses W1's full-item gain as its denominator, the same cell that anchors P1's harm contrast.

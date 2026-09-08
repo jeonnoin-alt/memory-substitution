@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__coverage_not_headcount",
+ "kind": "entail_revise",
+ "name": "coverage_not_headcount",
+ "prompt_file": "runs_ideate2/gen_xfer/entail/jobs/entail_revise__coverage_not_headcount.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

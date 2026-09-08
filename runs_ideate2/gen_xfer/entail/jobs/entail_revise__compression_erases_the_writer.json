@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__compression_erases_the_writer",
+ "kind": "entail_revise",
+ "name": "compression_erases_the_writer",
+ "prompt_file": "runs_ideate2/gen_xfer/entail/jobs/entail_revise__compression_erases_the_writer.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

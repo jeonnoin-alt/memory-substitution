@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__one_bad_apple_population_vote",
+ "kind": "entail_revise",
+ "name": "one_bad_apple_population_vote",
+ "prompt_file": "runs_ideate2/gen_xfer/entail/jobs/entail_revise__one_bad_apple_population_vote.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

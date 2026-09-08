@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__rewriter_trained_against_one_reader_matched_cost",
+ "kind": "entail_revise",
+ "name": "rewriter_trained_against_one_reader_matched_cost",
+ "prompt_file": "runs_ideate2/gen_xfer/entail/jobs/entail_revise__rewriter_trained_against_one_reader_matched_cost.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

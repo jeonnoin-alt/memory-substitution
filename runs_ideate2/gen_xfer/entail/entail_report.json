@@ -1,0 +1,959 @@
+{
+ "reconstruction_pays_only_across_the_writer_gap": {
+  "name": "reconstruction_pays_only_across_the_writer_gap",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "(W_self,R1) and (W_other,R1) cells under C_v7 and C_r3 at 274x4 seeds, D* = D minus the C_pl_static placebo increment, margin = 1/3 of the measured Gate-0 verbatim gain (floor +10), cluster bootstrap over games",
+    "falsifier": "the CI of D*(W_other,R1) - D*(W_self,R1) includes 0 or is negative, i.e. reconstruction helps the reader's own bank as much as or more than the foreign bank",
+    "label": "unresolvable",
+    "reason": "The falsifier is reachable (the self-bank cell exists and the proposal names the compression route), but the pre-registered margin at the Gate-0 floor is only ~3.3 net while the stated headline MDE is +/-5.7 for a single paired difference and this contrast is a difference of two paired differences (~+/-8), so the predicted effect sits inside the stated noise; the design also tilts D*(W_self) toward zero by construction, since format conversion is a no-op on the reader's own on-policy bank and the 2x-median length cap removes much of the wandering that compression would exploit.",
+    "fix": "Pre-register the margin as the larger of 1/3 of the Gate-0 gain and the bootstrap half-width of the difference-of-differences (or require a Gate-0 gain >= 24 net), and raise the four headline cells to >= 8 seeds so the DiD half-width falls below the margin."
+   },
+   {
+    "id": "P2",
+    "depends_on": "(W_prox,R1) and (W_cap,R1) reconstruction and verbatim cells at 4 seeds, with W_prox verified within +/-5 net of W_self at k=0 and W_cap verified >= 8 net apart, same 1/3-of-Gate-0 margin",
+    "falsifier": "D*(W_cap) - D*(W_self) exceeds the margin (capability governs) or D*(W_prox) - D*(W_self) falls below it (format distance does not matter)",
+    "label": "unresolvable",
+    "reason": "Both arms exist so the falsifier is reachable, but the same ~3.3-net margin lies inside the +/-5.7 (and ~+/-8 for a DiD) noise, and the capability clause is stated as an unbounded null ('< that margin') that any noise-sized estimate satisfies, so the capability half is confirmed by default; W_prox also confounds scaffold with T=0.7, so a positive result does not isolate format distance.",
+    "fix": "Test the capability clause as an equivalence bound (TOST against a pre-registered net-point ceiling) and the prox-vs-cap contrast directly with its own CI, add a T=0.7 same-scaffold bank to separate temperature from phrasing, and power all four cells to the DiD half-width."
+   },
+   {
+    "id": "P3",
+    "depends_on": "(W_other,R1) at 4 seeds and (W_exp,R2) at 2 seeds, C_r3 versus token-matched C_v7, paired per-game differences",
+    "falsifier": "S(C_v7) >= S(C_r3) in either cell, i.e. more verbatim items at equal tokens do as well as rewriting",
+    "label": "unresolvable",
+    "reason": "The comparator arm is present and the falsifier is reachable, but the +4 net margin is below the stated +/-5.7 half-width for the headline cell and half the +/-8 half-width for the 2-seed (W_exp,R2) cell, so neither cell can separate the predicted outcome from the falsifier.",
+    "fix": "Run (W_exp,R2) at 4+ seeds and set the margin at or above the paired bootstrap half-width (or state the claim as a CI on S(C_r3)-S(C_v7) excluding 0 in both cells)."
+   },
+   {
+    "id": "P4",
+    "depends_on": "C_pl_static and C_static for R1 at 4 seeds, with D(W_other,R1) = S(C_r3) - S(C_v7) as the denominator",
+    "falsifier": "the memory-absent placebo captures >= 2/3 of D(W_other,R1), i.e. the gain is a generic planning step rather than adaptation of the foreign item",
+    "label": "unresolvable",
+    "reason": "The placebo cell can genuinely produce a large planning gain so the outcome is reachable, but the criterion is a ratio whose denominator D(W_other,R1) is a single paired difference with a +/-5.7 CI that will typically include 0, leaving the ratio unbounded and undefined in sign.",
+    "fix": "Restate the placebo bound in absolute net points with its own CI (e.g. upper CI bound <= 2 net) and condition the test on D(W_other,R1) having a CI that excludes 0."
+   },
+   {
+    "id": "P5",
+    "depends_on": "(W_self,R2) C_v3 and C_r3 cells at 274x2 seeds; rho_v and rho_r share the denominator S(W_self policy reading its own bank, C_v3) - S(C_static)",
+    "falsifier": "rho_r <= rho_v for R2, i.e. rewriting does not help EXAONE read Qwen3's experience",
+    "label": "unresolvable",
+    "reason": "Because both ratios share the same denominator and the same C_static term, the contrast reduces to the paired S(C_r3)-S(C_v3) difference at R2, where 0.15 of a denominator of order 10-20 net is ~1.5-3 net against a +/-8 half-width at 2 seeds; the comparison also gives reconstruction the k=3-vs-k=3 token advantage that P3 was designed to remove.",
+    "fix": "Run (W_self,R2) at 4+ seeds, state the claim as net points on S(C_r3)-S(C_v3) with a margin at or above the CI half-width, and compare against C_v7 rather than C_v3."
+   },
+   {
+    "id": "P6",
+    "depends_on": "per-type breakdown of (W_exp,R1,C_r3) for look-at-in-light, a cell of about 45 games, exploratory",
+    "falsifier": "look-at-in-light stays <= -4.8 net under C_r3",
+    "label": "unresolvable",
+    "reason": "A ~45-game type cell has a half-width roughly 2.5x the 274-game +/-8, so a 4.8-net move is far inside noise, and the stated falsifier leaves a dead zone (any value strictly between -4.8 and 0 neither confirms nor falsifies).",
+    "fix": "Define the falsifier as the CI on the paired per-type C_r3-minus-C_v3 difference covering 0 or below, and either pool the negative-verbatim types or raise games/seeds until the per-type half-width is under ~5 net."
+   }
+  ],
+  "shared_terms": [
+   "P1-P4: D* subtracts the very placebo increment P4 tests, but since both writers are read by R1 the placebo term cancels in P1's across-writer difference, so P4's outcome cannot move P1 either way.",
+   "P1-P3: both rest on the same (W_other,R1) C_r3 and C_v7 cells - P3's contrast is exactly the D(W_other,R1) component of P1's D*.",
+   "P1-P2: both use D*(W_self,R1) as the reference term, so a single noisy self-bank cell sets the sign of two 'independent' predictions.",
+   "P3-P4: D(W_other,R1) is P3's estimand and P4's denominator, so P3 failing makes P4's ratio undefined.",
+   "P5-P1: the denominator of both rho_v and rho_r for W_self is the (W_self,R1,C_v3) cell, which is also a P1 arm; note rho_v(W_self,R1) = 1 by construction since W_self's writer policy is R1."
+  ],
+  "headline": "P1",
+  "headline_status": "unresolvable",
+  "n_open": 0,
+  "n_entailed": 0,
+  "n_near": 0,
+  "n_unresolvable": 6,
+  "verdict": "revise"
+ },
+ "reconstruction_launders_planted_procedure_errors": {
+  "name": "reconstruction_launders_planted_procedure_errors",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "C_v3 x Op-A x 25/50% versus the 0% clean cells for R1, harm H as a paired per-game difference, 18 screening cells at 274x2 seeds (+/-8 net)",
+    "falsifier": "H < 6 net at every rate and operation, i.e. the reader ignores planted procedure errors",
+    "label": "unresolvable",
+    "reason": "The falsifier is genuinely reachable in mechanism, but the +6 threshold is below the stated +/-8 screening half-width and the gate is a maximum over 18 cells with no multiplicity control, so under a true null some cell will clear +6 by chance and the falsifying outcome is nearly excluded by the selection rule rather than by the data.",
+    "fix": "Pre-register Op-A at 50% for R1 as the single gate cell at 4 seeds and set the gate threshold at or above that cell's bootstrap half-width, reporting the other 17 cells as descriptive."
+   },
+   {
+    "id": "P2",
+    "depends_on": "C_r3 at the Gate-0 rate versus C_v3, persistence pi scored by string match on the appliance/receptacle token over ~820 retrieval events (+/-0.04) with a 100-rewrite manual audit, harm ratio at 4 seeds",
+    "falsifier": "H(C_r3) <= 0.5 x H(C_v3) or pi < 0.25, i.e. the rewrite repairs the planted step",
+    "label": "open",
+    "reason": "The falsifier is a disjunction and its pi branch is measured over retrieval events at +/-0.04, so pi < 0.25 versus pi >= 0.5 is cleanly separable and the reader can in principle re-derive the correct appliance from the task keyword (C_rule shows the mismatch is keyword-detectable), even though the harm-ratio branch alone would be inside noise at a barely-passing Gate 0 and there is a dead zone (e.g. pi ~0.35 with a 0.6 harm ratio confirms nothing).",
+    "fix": "Split into P2a (pi, as stated) and P2b (harm ratio in net points sized against the 4-seed half-width), and close the dead zone by defining the falsifier as the complement of the prediction."
+   },
+   {
+    "id": "P3",
+    "depends_on": "offline critic (the reader judging plan correctness) applied to the original planted items and to the persisted C_r3 rewrites of the same items, recall over labelled retrieval events",
+    "falsifier": "critic recall on rewrites >= recall on originals minus 0.05",
+    "label": "open",
+    "reason": "Nothing in the construction forces the sign - a short rewritten plan can expose the wrong appliance against the reader's task more starkly than a long labelled trajectory does - and the 0.15 margin is roughly 2-4x the bootstrap half-width even on the reduced persisted subset.",
+    "fix": "Confirm that the originals set is restricted to the same persisted items (as 'the same planted items' implies), otherwise the rewrite side is conditioned on persistence while the original side is not."
+   },
+   {
+    "id": "P4",
+    "depends_on": "the four C_g3 detection logs (W_self->R1, W_other->R2, W_other->R1, W_self->R2) at the Gate-0 rate, 4 seeds, banks type-balanced and length-matched so the diagonal is not a length contrast; recall CI ~+/-0.04",
+    "falsifier": "either reader shows recall(own) >= recall(foreign), or both readers show low recall on the same bank regardless of reader (a pool property, not proximity)",
+    "label": "open",
+    "reason": "The full 2x2 is run, so the pool-property alternative has its own arms and can win, and the 0.10 margin is set at twice the stated +/-0.04 detection CI; the only dependency is that the Gate-0 rate is chosen by the underpowered P1.",
+    "fix": ""
+   },
+   {
+    "id": "P5",
+    "depends_on": "C_gr3 at the Gate-0 rate and at 0%, recovery = 1 - H(C_gr3)/H(C_v3), gate precision from the detection logs, 4 seeds (+/-5.7)",
+    "falsifier": "recovery < 50% of H(C_v3), or the 0% bank loses more than 4 net relative to C_v3",
+    "label": "unresolvable",
+    "reason": "Recovery is a ratio of two harms each carrying a +/-5.7 half-width against a denominator that Gate 0 only guarantees to be +6, so the 50% threshold is ~3 net and undefined in sign, and the 0% clause is an unbounded null that any noise-sized loss satisfies.",
+    "fix": "Require H(C_v3) >= about 12 net before running P5, express recovery in net points with a CI, and test the 0% clause as a non-inferiority bound (TOST) at 4+ seeds."
+   },
+   {
+    "id": "P6",
+    "depends_on": "C_rule (appliance token versus task-type keyword) and C_g3 recall on the Op-A and Op-B banks",
+    "falsifier": "C_g3 does not exceed C_rule's Op-B recall by 0.2, i.e. the cheap rule suffices",
+    "label": "open",
+    "reason": "The stated falsifier turns entirely on C_g3's own Op-B recall, which is measured at +/-0.04 against a 0.2 margin and can plausibly be near zero (detecting a relabelled or truncated failure needs completion evidence), so the falsifier is reachable and separable - though the prediction's other two clauses are true by construction, since an appliance-versus-keyword rule cannot inspect completion (Op-B recall ~0) and Op-A is exactly the mismatch the rule tests.",
+    "fix": "Drop the two C_rule clauses to descriptive statements and pre-register P6 solely as a CI on C_g3's Op-B recall, or add a completion-aware rule variant so C_rule's Op-B recall is not zero by construction."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: H(C_v3) at the Gate-0 rate is P1's estimand and the denominator of P2's harm ratio, so a barely-passing Gate 0 sets P2's 0.75 threshold at ~4.5 net, inside the cell noise.",
+   "P1-P5: recovery = 1 - H(C_gr3)/H(C_v3) uses the same H(C_v3), so P1's realized value fixes P5's margin as well.",
+   "P1-P4: the Gate-0 rate selected by P1 is the contamination rate at which all four P4 detection logs are collected.",
+   "P2-P3: the persisted-rewrite set that defines pi in P2 is exactly the set the critic scores in P3, so a low pi both falsifies P2 and shrinks P3's sample.",
+   "P4-P5: gate precision/recall come from the same C_g3 detection logs, so P5's precision >= 0.7 clause and P4's recall contrast are computed from one set of events."
+  ],
+  "headline": "P4",
+  "headline_status": "open",
+  "n_open": 4,
+  "n_entailed": 0,
+  "n_near": 0,
+  "n_unresolvable": 2,
+  "verdict": "pass"
+ },
+ "rewriter_trained_against_one_reader_matched_cost": {
+  "name": "rewriter_trained_against_one_reader_matched_cost",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "(A,C_RA), (A,C_RB), (B,C_RA), (B,C_RB) and C_vtok cells at 274x4 seeds; both rewriters share the pooled W_exp+W_other input bank and the Qwen3-32B backbone, only the in-loop reader differs; margin = 1/3 of I(R_A,A) with Gate 0 at >= 6 net",
+    "falsifier": "the foreign-trained rewriter is within the margin of the reader-trained one on either reader, i.e. the rewrites are reader-agnostic cleaning",
+    "label": "unresolvable",
+    "reason": "The 2x2 does control for rewriter quality so equality is reachable, but the C_vtok term cancels algebraically in both differences (each reduces to a two-cell paired difference such as g(B,C_RB)-g(B,C_RA)) and the margin at the Gate-0 floor is only ~2 net against the stated +/-5.7 half-width, so the predicted effect lies inside the noise.",
+    "fix": "Set the margin as an absolute net-point threshold at or above the 4-seed paired half-width (or raise the Gate-0 bar to >= 18 net), and add seeds to the four rewriter x reader cells."
+   },
+   {
+    "id": "P2",
+    "depends_on": "TF = I(R_A,r)/I(R_A,A) for A' (T=0.7, verified within +/-5 net of A), A'' (thinking, verified >= 8 net above A) and B, against C_vtok in each reader; non-headline readers at 274x2 seeds",
+    "falsifier": "TF(R_A->B) >= TF(R_A->A'') (backbone change costs less transfer than the capability change) or TF(R_A->A') < 0.5",
+    "label": "unresolvable",
+    "reason": "Every TF is a ratio whose denominator I(R_A,A) is only guaranteed to be +6 with a +/-5.7 CI while the numerators carry +/-5.7 to +/-8, so the CI on each TF spans roughly a full ratio unit and the 0.5/0.75 cut points cannot be separated; A' is additionally sampled at T=0.7 (extra variance) and A'' is verified to sit >= 8 net higher at k=0, so its headroom, not its proximity, compresses TF(A'').",
+    "fix": "Gate P2 on a large I(R_A,A) (e.g. >= 15 net), report increments in net points with CIs instead of ratios, run A'/A''/B at 4+ seeds, and add a headroom-matched control (e.g. A at a harder split) so the A'' arm is not a ceiling effect."
+   },
+   {
+    "id": "P3",
+    "depends_on": "the C_RA_empty cell for A (rewriter given task and no item) at 274x2 seeds, compared through I against g(A,C_vtok); C_RA_mis as the mismatched control",
+    "falsifier": "the item-free rewriter keeps >= 2/3 of the increment, in which case the transfer measured is plan transfer",
+    "label": "unresolvable",
+    "reason": "This is the right control and its falsifier is reachable (a rejection-sampled rewriter can easily learn generic ALFWorld plans), but the 1/3 threshold at the Gate-0 floor is ~2 net while C_RA_empty sits in the 2-seed tier at +/-8, so neither the confirming nor the falsifying value can be distinguished from zero.",
+    "fix": "Run C_RA_empty and C_RA_mis at 4 seeds and pre-register an absolute ceiling in net points whose upper CI bound must fall below one third of the measured I(R_A,A)."
+   },
+   {
+    "id": "P4",
+    "depends_on": "(B,C_selfcost) versus (B,C_RA) at 4 seeds, with R_A's ~4 training GPU-h converted to EXAONE episodes at the measured 20 episodes/min and read verbatim",
+    "falsifier": "g(B,C_RA) - g(B,C_selfcost) >= +6 net, i.e. importing the foreign-trained rewriter beats the same GPU-hours of B's own experience",
+    "label": "unresolvable",
+    "reason": "The prediction's acceptance region is the unbounded null g(B,C_selfcost) >= g(B,C_RA) minus nothing, so it swallows the entire +/-5.7 noise band while the falsifier sits at +6, right at the stated MDE, meaning a true +6 advantage would be detected only about half the time and any null result confirms by default; the arm is also self-serving in that a few GPU-hours of extra bank is on the flat part of the bank-size curve.",
+    "fix": "State P4 as a non-inferiority test with a pre-registered bound (TOST) at enough seeds that the half-width is well under the falsifier, and fix the GPU-hour-to-episode conversion and the C_selfcost bank size before the cells are run."
+   },
+   {
+    "id": "P5",
+    "depends_on": "(A,C_R0) at 274x2 seeds versus (A,C_RA) at 4 seeds; C_vtok cancels so the contrast is S(A,C_RA)-S(A,C_R0); R_A is QLoRA-SFT on success-filtered best-of-3 samples from R_0 itself at T=0.8, evaluated greedy",
+    "falsifier": "the prompted rewriter is within 1/3 of I(R_A,A) of the trained one on the training reader",
+    "label": "unresolvable",
+    "reason": "Rejection-sampling distillation of R_0's own T=0.8 best-of-3 against greedy R_0 puts a construction-level thumb on the scale but does not exclude the falsifier (a one-epoch QLoRA on a small filtered set may not generalize to the 274 held-out games); the decisive problem is that the ~2-net margin sits inside the 2-seed +/-8 half-width of the C_R0 cell.",
+    "fix": "Run C_R0 at 4 seeds, evaluate R_0 at the same best-of-3 budget it was distilled from, and state the claim as a CI on S(A,C_RA)-S(A,C_R0) excluding 0 with a margin at or above the half-width."
+   },
+   {
+    "id": "P6",
+    "depends_on": "a W_other-only retrieval condition for reader A under verbatim and C_RA, with EXAONE reading its own W_other bank as the ratio denominator",
+    "falsifier": "the retained-gain ratio under C_RA does not rise, or falls, relative to the verbatim ratio",
+    "label": "near_entailed",
+    "reason": "The Experiments section pools W_exp and W_other 'as the input bank for all rewriter training and evaluation' and the Conditions list contains no W_other-only cell and no (B, W_other, C_v3) denominator cell, so the falsifying outcome is reachable only through arms the design names in Estimands but never enumerates; even granted them, a 0.15 shift in a ratio whose denominator is one gain measured at +/-5.7 to +/-8 would be inside noise.",
+    "fix": "Add explicit W_other-only retrieval cells for A under C_v3/C_vtok/C_RA plus the (B, W_other, C_v3) denominator cell at 4 seeds, and state the claim as a net-point difference with a CI rather than as a 0.15 shift in a ratio."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2-P3-P5: I(R_A,A) is the single Gate-0 quantity that sets the margin for P1, the denominator of every TF in P2, and the 1/3 thresholds in P3 and P5, so one barely-passing cell shrinks four thresholds at once.",
+   "P1: g(A,C_vtok) and g(B,C_vtok) cancel inside both of P1's differences, so the headline contrast is a plain C_RB-versus-C_RA cell difference and never tests either rewriter against token-matched verbatim.",
+   "P3-P5: both are differences of I's sharing the g(A,C_vtok) term, each collapsing to a two-cell paired difference at reader A.",
+   "P2-P4: g(B,C_RA) is the numerator of TF(R_A->B) and one side of P4's matched-cost comparison, so a null transfer to B simultaneously confirms P2's third clause and P4.",
+   "P2-P6: TF(R_A->A) and P6's ratio share the numerator g(A,C_RA) minus the verbatim gain on reader A, differing only in the denominator."
+  ],
+  "headline": "P1",
+  "headline_status": "unresolvable",
+  "n_open": 0,
+  "n_entailed": 0,
+  "n_near": 1,
+  "n_unresolvable": 5,
+  "verdict": "revise"
+ },
+ "self_pool_break_even": {
+  "name": "self_pool_break_even",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Qwen3-32B reader at k=3, paired 274 validation games x 2 seeds; self-pool budget sweep cells at b=10% (two independent draws) vs self-100%, both success-filtered on-policy pools, scored net of k=0 and the static-procedure prompt, with the b=0.5%/m=1 sensitivity control.",
+    "falsifier": "Either 10% draw is at least 8 net below the full self pool with the paired CI excluding 0.",
+    "label": "open",
+    "reason": "At b=10% the low-p_t low-f_t types can fall below three same-type items, so an 8-net aggregate deficit is reachable through the near-duplicate/coverage channel the proposal names, and the mandatory b=0.5%/m=1 control shows the sweep can resolve an 8-net drop; the equivalence margin does equal the stated +/-8 cell noise floor, so a true 7-net deficit still scores as confirmation.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "Coverage cells (arm D): bank capped at m in {1,3,10} same-type items per type at full budget for the self and expert banks, k=3 retrieval, compared with m=all.",
+    "falsifier": "m=3 is at least 8 net below m=all in either bank.",
+    "label": "near_entailed",
+    "reason": "With k=3 the retriever can inject at most three same-type items, so a cap at m=3 removes no item the reader would otherwise have seen and the count channel the prediction calls saturation is fixed by construction; only within-type match quality can produce the falsifier, and no arm separates that channel.",
+    "fix": "Cross the coverage cap with retrieval depth (m=3 at k=7, or m=3 vs m=all at k=1), or add an m=3 cell whose three retained items are the worst-matched same-type items, so the item-count axis is testable apart from which three items the retriever returns."
+   },
+   {
+    "id": "P3",
+    "depends_on": "Expert-full (Measurement A) vs self-100% cells for the Qwen3 reader at k=3, paired on the same games, net of k=0 and the static prompt; retained-gain ratio reported only when the denominator CI excludes 0.",
+    "falsifier": "Expert minus self at least 8 net with CI excluding 0 (the reverse, self beating expert by 8, is also reported).",
+    "label": "open",
+    "reason": "Nothing in the construction ties the 1,465 replayed walkthroughs to the 1,892 on-policy successes and both directions are reported, so an 8-net separation at the stated floor is reachable; note the two stated criteria can disagree, since self +10 vs expert +17 satisfies the 8-net clause while breaking the 1.3 ratio bound.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "Per-type deficits of the b=2.5% self cells relative to self-100%, pooled over two draws and (as stated) both readers and both k, rank-correlated with 1/(p_t f_t) over the six ALFWorld task types.",
+    "falsifier": "Spearman rho at most 0.2, or heat not among the two largest per-type deficits.",
+    "label": "unresolvable",
+    "reason": "rho is computed over six points from per-type deficits whose cells are roughly 45 games (per-type noise far exceeds the deficits being ranked), so 0.6 and 0.2 are not separable and 0.2-0.6 is a dead zone; the stated pooling is also unavailable because b=2.5% cells exist only for the Qwen3 reader at k=3 (arm E has only 100%/10% at k=1, arm F only 100%/10% for EXAONE).",
+    "fix": "Add b=2.5% cells for the EXAONE reader and for k=1, and attach a paired-bootstrap CI to rho (or replace the rank test with a per-type regression of deficit on 1/(p_t f_t) with a stated MDE)."
+   },
+   {
+    "id": "P5",
+    "depends_on": "Writer-swap cells: EXAONE reader on own-100% vs Qwen3-100%, and Qwen3 reader on self-100% vs EXAONE-100%, k=3, paired on the same games and seeds.",
+    "falsifier": "Own minus other at least 8 net with CI excluding 0 in either reader.",
+    "label": "open",
+    "reason": "Both pools and both swap directions are actually run, so an own-pool proximity advantage above the stated floor is reachable; the falsifier is one-sided, so the other backbone's pool beating the reader's own by 10 net would break the literal within-8 claim without triggering the stated falsifier.",
+    "fix": ""
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: both deficits are scored against the same self-100% (m=all) full-bank cell, so a mis-estimate of that single cell moves both.",
+   "P1-P4: P4's per-type deficits are the per-type decomposition of the same self-b vs self-100% difference P1 aggregates, so a confirmed P1 bounds the deficits P4 then has to rank.",
+   "P3-P5: both are differences taken against the same Qwen3 self-100% cell (expert minus self; other minus own), so that shared term determines both."
+  ],
+  "headline": "P1",
+  "headline_status": "open",
+  "n_open": 3,
+  "n_entailed": 0,
+  "n_near": 1,
+  "n_unresolvable": 1,
+  "verdict": "pass"
+ },
+ "reader_pays_writer_detours": {
+  "name": "reader_pays_writer_detours",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Qwen3 reader at k=3, the two manipulation pairs (expert vs expert-padded; self-raw vs self-pruned), within-game paired regression of the change in reader steps on the change in top-1 item steps, restricted to successful episodes; power claimed from about 500 paired successful episodes per pair at SD about 6 steps.",
+    "falsifier": "The slope's 95% CI upper bound is at most 0.1 in both pairs.",
+    "label": "unresolvable",
+    "reason": "A cell is 274 games x 2 seeds = 548 episodes, so about 500 paired successful episodes would require over 90% joint success in both arms, which no stated number supports; at the attainable count the slope SE is far too large for a CI upper bound of 0.1, so even a true zero slope cannot reach the falsifier, and conditioning on success drops exactly the cap-hitting detour-copying episodes that carry the effect.",
+    "fix": "Run the manipulation pairs at enough seeds or games to actually deliver about 500 paired successful episodes, or estimate the slope over all episodes with step-cap censoring modeled, and state the achieved SE rather than a pilot assumption."
+   },
+   {
+    "id": "P2",
+    "depends_on": "self-pruned vs self-raw success cells for both readers at k=3, paired on 274 games x 2 seeds, with rule-based vs random-deletion pruning ablation.",
+    "falsifier": "Pruned at least 6 net below raw with CI excluding 0.",
+    "label": "unresolvable",
+    "reason": "The 6-net neutrality margin is set below the proposal's own stated +/-8 cell noise floor, so the falsifier lies inside the stated noise and within-6-net is confirmed by insensitivity rather than by evidence.",
+    "fix": "State the paired (not cell) success MDE and add seeds or games until it is below 6 net, or raise the neutrality margin to the resolvable floor."
+   },
+   {
+    "id": "P3",
+    "depends_on": "expert vs expert-padded success cells at k=3, with detours replay-verified benign and token-matched by observation truncation.",
+    "falsifier": "Padded at least 6 net below expert.",
+    "label": "unresolvable",
+    "reason": "Same 6-net threshold under the stated +/-8 floor, and the padding is replay-verified benign and token-matched, so item content is preserved by construction and only a distraction effect smaller than the cell noise could produce the falsifier.",
+    "fix": "Set the neutrality margin at or above the resolvable paired MDE (more seeds), and add a deliberately non-benign padding arm (replay-failing detours) as the sensitivity control showing the cell can detect content damage at all."
+   },
+   {
+    "id": "P4",
+    "depends_on": "Qwen3 expert vs self-raw cells at k=3 with per-episode consumer-token accounting from vLLM usage fields; gain per 1k consumer tokens plus the paired net-success gap.",
+    "falsifier": "self-raw's gain per consumer token is at least the expert's, or the success gap is at least 8 net.",
+    "label": "open",
+    "reason": "The second falsifier disjunct is a plain 8-net success comparison at the stated cell floor and is genuinely reachable, although the 25% confirm threshold carries no CI for a ratio whose numerator inherits the +/-8 net noise (about 30% of the +27 reference effect).",
+    "fix": ""
+   },
+   {
+    "id": "P5",
+    "depends_on": "EXAONE reader on Qwen3-raw vs Qwen3-pruned, same within-game paired slope estimand, judged against the Qwen3 self-reader slope from P1.",
+    "falsifier": "Slope CI upper bound at most 0.1 for the foreign reader while at least 0.3 for the self reader.",
+    "label": "unresolvable",
+    "reason": "It inherits P1's paired-successful-episode shortfall on a cell with no more episodes and adds a conjunction on the self-reader slope, so if P1 is itself unresolved, or both slopes are null, the falsifier can never be triggered.",
+    "fix": "Power the EXAONE manipulation pair to the same paired-success count as the self reader and restate the falsifier as a stated difference between the two slopes with its own CI, instead of a conjunction of two one-sided bounds."
+   }
+  ],
+  "shared_terms": [
+   "P1-P5: P5 is the same length-inheritance slope on a second reader and its falsifier is defined relative to P1's slope, so P1's estimate decides whether P5 can resolve at all.",
+   "P1-P4: reader steps in P1's slope and consumer tokens in P4's denominator are the same measured episode length (tokens are generated per step), so a positive P1 mechanically produces P4's token gap.",
+   "P2-P4: P4's 'success gaps within 8 net' clause and the neutrality tests share the same self-raw and expert net-gain terms, so the pruning and padding cells fix the numerator of the cost ratio."
+  ],
+  "headline": "P1",
+  "headline_status": "unresolvable",
+  "n_open": 1,
+  "n_entailed": 0,
+  "n_near": 0,
+  "n_unresolvable": 4,
+  "verdict": "revise"
+ },
+ "leave_one_type_out_split": {
+  "name": "leave_one_type_out_split",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Six LOTO banks per writer, k=3 retrieval cells for three writers x two readers, gains vs k=0 measured on valid_unseen, paired against the same writers' standard-bank cells, with game-level stratified bootstrap CIs.",
+    "falsifier": "Any LOTO cell shows at least +12 net with CI excluding +8.",
+    "label": "unresolvable",
+    "reason": "The headline comparison is scored on valid_unseen only (about 134 of the 274 games), so the asserted +/-8 floor, justified by the claim that the LOTO composite keeps the full 274 x 2 cell, does not apply; at the unseen-half noise (roughly +/-11) confirmation needs a point estimate near or below zero and the falsifier needs about +20, leaving almost the whole plausible range unresolved.",
+    "fix": "Define the headline on the full 274 x 2 LOTO composite (or run 4 seeds on valid_unseen) and set the +8/+12 bands from the actual unseen-cell CI so the confirm and falsify regions are separated by more than the noise."
+   },
+   {
+    "id": "P2",
+    "depends_on": "Standard and LOTO cells for three writers x two readers; LOTO harm vs k=0 and Kendall tau between the within-type gain ranking and the LOTO harm ranking over three writers in both readers, gated on the wrong-procedure graft producing at least 6 net harm.",
+    "falsifier": "Expert LOTO at or above -2 net (no harm), or the two rankings disagree.",
+    "label": "unresolvable",
+    "reason": "Both parts sit under the proposal's own +/-8 floor (a 6-net harm claim and a -2 net cut are inside cell noise), and exact tau=1 over three writers whose gains almost certainly differ by less than the floor is decided by noise, so rank disagreement fires near-certainly regardless of the mechanism.",
+    "fix": "Replace exact tau=1 with a pre-registered adjacent-writer gap at or above the resolvable margin, and add seeds so a 6-net LOTO harm lies outside the paired CI."
+   },
+   {
+    "id": "P3",
+    "depends_on": "Multi-LoRA adapter cells on the full 274 x 2 composite: LOTO adapter composite memory-absent vs base k=0, vs LOTO retrieval of the same expert pool, and all-type adapter vs within-type k=3 expert retrieval, at matched cost.",
+    "falsifier": "LOTO adapter at most +4, or LOTO retrieval at or above the LOTO adapter, or the all-type adapter at or above within-type retrieval.",
+    "label": "open",
+    "reason": "The falsifier is a disjunction of three comparisons, two of them plain sign comparisons that any outcome resolves, and adapter overfitting to the trained types is a live outcome that full-size composite cells can show.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "LOTO adapter composite vs the token-matched five-procedure static prompt (target type omitted) on the same 274 games x 2 seeds.",
+    "falsifier": "static-5 at or above adapter minus 4 net.",
+    "label": "unresolvable",
+    "reason": "The confirm threshold (6 net) and the falsify threshold (4 net) both lie below the stated +/-8 cell noise floor and are only 2 net apart, so the comparison cannot come out either way at the stated power.",
+    "fix": "Add seeds to the adapter and static-5 cells until the paired MDE is under 4 net, and state one decision boundary instead of a 4-to-6 dead zone."
+   },
+   {
+    "id": "P5",
+    "depends_on": "The 4-seed LOTO self-pool cell for the Qwen3 reader, split into valid_seen and valid_unseen halves, with a stated 10-net margin for the halved-cell decomposition.",
+    "falsifier": "Seen minus unseen at most 2 net under LOTO for the self writer.",
+    "label": "unresolvable",
+    "reason": "The estimand is a contrast between two non-overlapping half-cells (about 140 and 134 games at 4 seeds) whose difference carries roughly sqrt(2) times the half-cell noise, so a 2-net falsifier is deep inside that noise and 2-to-10 is a dead zone.",
+    "fix": "State the MDE for the seen-minus-unseen contrast itself and add seeds until 2 net lies outside its CI, or replace the split with a per-game room-overlap covariate regressed on the LOTO gain."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: P2's within-type gain ranking is read off the same standard-bank cells P1 requires to reach +16, and its harm term is the same LOTO gain P1 bounds at +8, so one set of cells determines both.",
+   "P1-P3: P3's clause that the LOTO adapter exceeds LOTO retrieval by 8 uses the same LOTO expert retrieval cell P1 bounds, so a confirmed P1 supplies that conjunct as soon as the adapter clears +8.",
+   "P3-P4: both are differences against the same LOTO adapter composite cell, so an error in that single cell moves both.",
+   "P1-P5: P5's unseen term is the valid_unseen LOTO self cell that P1 already caps at +8, so P1 bounds the quantity P5 must exceed by 10."
+  ],
+  "headline": "P1",
+  "headline_status": "unresolvable",
+  "n_open": 1,
+  "n_entailed": 0,
+  "n_near": 0,
+  "n_unresolvable": 4,
+  "verdict": "revise"
+ },
+ "complementarity_not_proximity": {
+  "name": "complementarity_not_proximity",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Cells Q-prox->Q, Q-cap->Q, Q-prox->E, Q-cap->E at 4 seeds; the screened Q-prox writer (k=0 within +/-3 of Q-self, pi lower by >= 0.15) and the Q-cap writer (k=0 >= Q-self + 8, thoughts stripped); rho against each reader's own matched-cost pool, net of the static-procedure prompt.",
+    "falsifier": "The proximity contrast |rho(Q-prox)-rho(Q-self)| exceeds the capability contrast, or the capability contrast rho(Q-cap)-rho(Q-self) is <= 0.10.",
+    "label": "unresolvable",
+    "reason": "Both arms exist and either outcome is mechanically reachable, but the stated noise swallows the margins: the proposal itself maps rho 0.15-0.20 to 5-7 net points on reader Q's ~35-point self-pool gain against a +/-8 net floor at 2 seeds (~+/-5.7 at 4 seeds, i.e. rho +/-0.16), so the 0.20-wide gap between the predicted >0.30 and the falsifying <=0.10 is about one CI half-width for Q, the equivalence half (|delta| < 0.20) is an untested TOST inside that same band, and for reader E, whose self-pool gain may be under 20 net points (the proposal concedes this), rho noise is >= 0.28 and both thresholds vanish.",
+    "fix": "Pre-register a paired MDE on rho itself (not on net points), require each reader's own-pool gain >= 25 net or raise seeds until the rho CI half-width is <= 0.08, and state the equivalence half as a TOST with its own margin instead of a bare |delta| < 0.20."
+   },
+   {
+    "id": "P2",
+    "depends_on": "The 12 cross cells at k=3, the offline kappa table (writer per-type success from the collection run vs reader k=0 per-type success), the offline pi table (300 stratified states), and rho against the reader's own success-filtered pool at matched episode budget.",
+    "falsifier": "A cell with kappa > 0.05 and rho < 0.85, a cell with kappa < 0.02 and rho > 1.15, or partial Spearman(rho, pi | kappa) > 0.5.",
+    "label": "near_entailed",
+    "reason": "The estimand re-describes how the pools were built: every pool is success-filtered from the writer's own collection run, so the writer's per-type success (the very quantity kappa is computed from) is proportional to how many items of each type the pool contains, while the reader's own pool is by construction thinnest on exactly the types where the reader fails; kappa > 0.05 therefore means the foreign pool carries items on types the denominator pool cannot cover, and rho < 0.85 there is reachable only through a mechanism the proposal names but never manipulates (a format or serialization threshold that makes covering items unusable); separately the correlational half is underpowered, since with n=12 cells a Spearman SE is about 0.30, so the null band [-0.3, 0.3] for the partial correlation and the >0.6 threshold are both inside one SE.",
+    "fix": "Add a de-confounding arm that breaks the coverage/kappa identity - e.g. a foreign pool subsampled to the reader-failure types at the same item count as the reader's own pool on those types, or a high-kappa pool deliberately serialized in a foreign format - and either raise the cell count or drop the Spearman thresholds in favour of the pre-registered 2x2 Fisher test, which is the only powered part."
+   },
+   {
+    "id": "P3",
+    "depends_on": "The per-type breakdown of the top three foreign cells at 4 seeds, the p_R < 0.5 split of the six task types into reader-failure vs reader-success groups, and net gain measured over the reader's own success-filtered pool.",
+    "falsifier": "The gain over the reader's own pool is spread evenly across the two type groups or concentrated on reader-success types.",
+    "label": "entailed",
+    "reason": "Two constructions force the sign: the groups are defined by the reader's own k=0 success (p_R < 0.5 vs >= 0.5), so the success group is near ceiling and can absorb only (1 - p_R) of any gain, and the comparison pool is the reader's own success-filtered bank, which by definition holds few items on the types where the reader fails - so any net gain over that denominator must land in the failure group, and >= 70 percent is close to arithmetically guaranteed rather than a test of where complementarity acts.",
+    "fix": "Score the share against a headroom-proportional null (expected share given each group's 1 - p_R and episode counts) rather than an even split, and include reader-success types with real residual headroom (p_R in 0.5-0.8) as a separate group so the falsifying concentration is attainable."
+   },
+   {
+    "id": "P4",
+    "depends_on": "The self-opt vs self-rand cells for reader Q at 4 seeds, where self-opt is length-filtered own successes on the reader-failure types and self-rand is a random subset of equal size at the same collection cost.",
+    "falsifier": "rho(self-opt) - rho(self-rand) <= 0.05, i.e. the capability term does not act through trajectory optimality.",
+    "label": "near_entailed",
+    "reason": "The two arms differ in two ways at once - length filtering and restriction to the reader-failure types - so the arm that would isolate optimality is absent: self-opt is targeted at exactly the high-headroom group that P3 shows carries the gain, which pushes the contrast positive for coverage reasons the proposal never separates, and the 0.20 margin is itself only about 7 net points against a ~5.7-net 4-seed CI.",
+    "fix": "Add a third arm - own successes restricted to the reader-failure types with lengths sampled at random (no length filter) - so that self-opt vs that arm varies only optimality, and report all three at seeds sufficient for a rho CI half-width below 0.08."
+   },
+   {
+    "id": "P5",
+    "depends_on": "The three token-matched placebo cells (unrelated-type trajectories at the k=3 token count), one per reader, at 2 seeds.",
+    "falsifier": "The placebo gains >= 8 net points for some reader, showing context length alone helps.",
+    "label": "unresolvable",
+    "reason": "Reachable in principle - unrelated-type ALFWorld trajectories still carry format, valid action syntax and generic navigation procedure - but the placebo cells sit at 2 seeds where the proposal states a +/-8 net floor, so the predicted band (|net| < 4) lies entirely inside the noise and the falsifying value (8) is the noise floor itself; a null here cannot be distinguished from an unmeasured +8 contamination of every rho.",
+    "fix": "Raise the placebo cells to the same 4 seeds as P1/P3/P4 (or more) and state the equivalence claim as a paired MDE - the placebo must be shown to be below, say, 3 net with an upper CI bound under 4, not merely to fall short of 8."
+   }
+  ],
+  "shared_terms": [
+   "P2-P3: kappa is defined on the reader's per-type k=0 success, the same p_R < 0.5 grouping P3 scores the gain on, and both use the same success-filtered own pool as denominator, so any cell satisfying P2 has its gain located in P3's group by construction.",
+   "P1-P2: rho(Q-prox->Q), rho(Q-cap->Q) and the two E cells are members of P2's 12-cell correlation, and Q-cap is screened on the same k=0 per-type success that enters kappa, so P1's capability contrast is one point on P2's kappa-rho slope.",
+   "P3-P4: self-opt is defined as own successes on the reader-failure types, the exact group whose gain share P3 measures, so a positive P4 mechanically reinforces P3's concentration and vice versa.",
+   "P1-P2-P3-P4: every rho subtracts the same per-reader static-procedure baseline (Measurement C) and divides by the same own-pool gain cell, so a mis-estimated own-pool or static cell shifts all four estimands together.",
+   "P5-P2: the placebo bounds the context-length component that is inside every rho numerator, so an unbounded placebo directly biases P2's cell classification."
+  ],
+  "headline": "P2",
+  "headline_status": "near_entailed",
+  "n_open": 0,
+  "n_entailed": 1,
+  "n_near": 2,
+  "n_unresolvable": 2,
+  "verdict": "revise"
+ },
+ "thoughts_do_not_travel": {
+  "name": "thoughts_do_not_travel",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "F1 (verbatim writer items) vs F2 (deterministic action+observation re-serialization) in 6 cross cells at matched tokens (k raised until F1's token count is reached) and in 3 same-backbone cells; 2 seeds, 4 seeds only for the cross cells whose F1-F2 difference falls inside +/-8 on the first two seeds; Gate 0 requires one cross cell with a >= 6 net verbatim deficit.",
+    "falsifier": "Delta_strip <= 0 in the majority of cross cells, or Delta_strip >= +5 in the same-backbone cells.",
+    "label": "unresolvable",
+    "reason": "The only noise figure the proposal states is the +/-8 net floor per cell (about +/-5.7 at 4 seeds) and no paired-Delta CI or MDE is given, so the entire discriminating region between the predicted >= +5 and the falsifying <= 0 lies inside the stated noise; the same-backbone half is a bare equivalence claim (<= 0 within +/-4) at half the floor with no seed upgrade attached to it, and the aggregate escape route is also weak - a perfect 5-of-6 sign test is p = 0.11, so even the ideal result does not exclude the majority-negative falsifier. A second, uncontrolled route to the predicted sign is that the matched-token F2 arm carries strictly more retrieved trajectories than F1, and no stated arm separates extra demonstrations from thought removal.",
+    "fix": "State the paired game-level Delta MDE (not the per-cell floor), raise every F1-vs-F2 cell including the three same-backbone cells to the seed count that puts that MDE below 3 net, and pre-register the sign test with a criterion that can reach significance (6 of 6, or per-cell CIs excluding 0 in a stated number of cells)."
+   },
+   {
+    "id": "P2",
+    "depends_on": "F4 (model-conditioned rewriter prompt on the reader model, plus the SkillAligner-style execution-time rewrite, no training) vs F2 in the 6 cross cells at 2 seeds, with token cost logged and a memory-absent control on the rewriter prompt.",
+    "falsifier": "Delta_rewrite >= +6 net in 2 or more of the 6 cross cells for either rewriter variant.",
+    "label": "unresolvable",
+    "reason": "The falsifier is genuinely reachable (a rewriter can add procedure text or restructure, and the memory-absent control does not bound that), but the +3 equivalence margin and the +6 falsifier sit at or under the stated +/-8 per-cell floor at 2 seeds with no seed upgrade allocated to the F4 cells, so neither the claim nor its falsifier can be resolved; the F4 arm is also not token-matched to F2 in the cell list, so any difference confounds rewriter content with a longer injected context.",
+    "fix": "Give the F4 cells the same seed count and paired-Delta MDE as the P1 cells, and add a token-matched F2 comparator for F4 so the >= +6 falsifier is attributable to content rather than to tokens."
+   },
+   {
+    "id": "P3",
+    "depends_on": "[S(F3) - S(F2)] in each cross cell against [S(F1) - S(F2)] measured in the reader's own-pool cells; F3 is one reader pass per item writing its own thought over the foreign action-observation sequence.",
+    "falsifier": "The reader's own thoughts on foreign actions add >= 6 net less (or >= 6 more) than its own thoughts add on its own actions.",
+    "label": "unresolvable",
+    "reason": "The estimand is a difference of two Deltas, so its variance is roughly twice a single cell contrast (about +/-11 net at the stated 2-seed +/-8 floor), while the equivalence band is +/-4 and the falsifier is 6 - both far inside the noise; worse, the reference term [S(F1) - S(F2)] in the own-pool cells is the same quantity P1's second clause pins to approximately 0, so under P1 the prediction degenerates into asserting that F3 equals F2 within +/-4, an equivalence at half the noise floor.",
+    "fix": "Power the difference-of-differences explicitly (state its paired CI and seed count) and re-anchor it on a term P1 does not already fix - e.g. compare F3 against F1 in the same cross cell with a margin set from the measured own-pool thought contribution rather than from an assumed near-zero one."
+   },
+   {
+    "id": "P4",
+    "depends_on": "The F5 cells for reader Q (E's and G's thoughts attached to Q-self actions, restricted to training games where both the thought source and Q succeeded) against the F2-own cell; 2 seeds, no seed upgrade listed for F5.",
+    "falsifier": "S(F5) is within +/-4 of S(F2 own) or better.",
+    "label": "unresolvable",
+    "reason": "The -5 predicted harm and the +/-4 falsifying band are both inside the stated +/-8 2-seed floor, so neither branch is decidable; in addition the F5 pool is restricted to the both-succeeded intersection of training games while its F2-own comparator is not, so item count and type coverage differ between the arms and any measured harm is partly a retrieval-coverage effect the proposal does not control.",
+    "fix": "Run F5 at 4+ seeds with a stated paired MDE below 3 net, and build the F2-own comparator from the same both-succeeded game subset at the same item count so thought provenance is the only difference."
+   },
+   {
+    "id": "P5",
+    "depends_on": "The F6 cells (thoughts with actions removed) against the per-reader static-procedure prompt (Measurement C), 2 seeds.",
+    "falsifier": "Thoughts alone give >= 8 net over the static prompt, i.e. the thoughts carry the procedure.",
+    "label": "unresolvable",
+    "reason": "Reachable - stripped thoughts plausibly restate the ALFWorld procedure - but the falsifying value (8) is exactly the stated 2-seed noise floor and the predicted band (+/-4) is half of it, so a true +8 effect would sit at about one SE and a null result cannot bound the procedure content that P1's interpretation depends on.",
+    "fix": "Raise the F6 cells to 4+ seeds and state the placebo criterion as an upper CI bound (e.g. upper bound below 4 net over the static prompt) rather than as a point comparison against the floor."
+   }
+  ],
+  "shared_terms": [
+   "P1-P3: P3's reference quantity [S(F1) - S(F2)] in the own-pool cells is exactly the same-backbone Delta_strip that P1's second clause fixes near 0, so P1 determines what P3 is comparing against.",
+   "P1-P2: Delta_strip and Delta_rewrite are both differences from the same S(F2) cross-cell term, so a single mis-measured F2 cell moves the two in opposite directions.",
+   "P3-P4: F3 (own thoughts on foreign actions) and F5 (foreign thoughts on own actions) are scored against the same S(F2 own) reference cell, so an error in that one cell shifts both.",
+   "P1-P5: the same per-reader static-procedure and k=0 baselines enter the net points of every Delta, so P5's placebo bounds the procedure component inside P1's Delta_strip.",
+   "P2-P3: F4 and F3 are both reader-model passes over the same frozen foreign items and both are scored against S(F2), so a rewriter that mainly re-rationalizes makes Delta_rewrite and [S(F3) - S(F2)] the same measurement."
+  ],
+  "headline": "P1",
+  "headline_status": "unresolvable",
+  "n_open": 0,
+  "n_entailed": 0,
+  "n_near": 0,
+  "n_unresolvable": 5,
+  "verdict": "revise"
+ },
+ "shared_blind_spot": {
+  "name": "shared_blind_spot",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "The 50 percent contamination cells for reader Q with writers Q-self, E-self and G-self at 4 seeds, harm defined as S(clean) - S(contaminated) against the shared clean base cell, contaminant lengths matched across writers by selection.",
+    "falsifier": "Foreign-writer failures harm as much or more than the reader's own, or all writers fall below Gate 0.",
+    "label": "unresolvable",
+    "reason": "Harm is already a cell difference, so harm(Q-self) - harm(foreign) is a difference of differences whose paired CI is roughly sqrt(2) times the stated +/-8 net floor (about +/-8 even at 4 seeds), while the margin is 4 net - inside the noise; the criterion is also disjunctive (Q-self must beat E-self or G-self by 4), which lets the prediction pass on the smaller of two comparisons and makes the stated falsifier strictly harder to reach than a pre-registered single contrast would be.",
+    "fix": "Pre-register one named foreign comparator (or require Q-self to exceed the maximum of E-self and G-self), state the paired MDE for the double difference, and set the margin above it - or raise seeds/rates until the double-difference CI half-width is below 3 net."
+   },
+   {
+    "id": "P2",
+    "depends_on": "The 50 percent cells for Q-self, Q-prox and E-self as writers for reader Q; Q-prox's construction and its pi manipulation check are inherited from the matrix design and are not specified in this proposal.",
+    "falsifier": "Q-prox equals Q-self within 1 net while E-self differs, or the harm order is non-monotone.",
+    "label": "unresolvable",
+    "reason": "The ordering is asserted with 2-net gaps on each side of Q-prox and a 1-net equivalence in the falsifier, on double differences whose stated noise floor is +/-8 net (about +/-8 even after the 4-seed upgrade), so both the predicted monotone gradient and its falsifier are pure noise draws; a non-monotone order will in fact occur by chance a large fraction of the time regardless of the hypothesis, and the proximity manipulation itself (pi lower by >= 0.15 at matched k=0) is not defined or checked inside this proposal.",
+    "fix": "Restate the gradient as a slope over a measured pi axis with more than three writers and a pre-registered CI, restate Q-prox's construction and manipulation check here, and set the margins from a stated double-difference MDE rather than at 1-2 net."
+   },
+   {
+    "id": "P3",
+    "depends_on": "The offline judge x writer recall table on 400 masked items per writer (4 writers x 2-3 judges) at matched precision, with memory-absent abstention checks and the judges' overall recall as a covariate; the test is the judge x writer interaction, not a main effect.",
+    "falsifier": "Recall is uniform across writers for each judge, or one judge is uniformly better with no diagonal deficit.",
+    "label": "open",
+    "reason": "Both outcomes are mechanically reachable - detectability could be a property of the item text alone, which the design allows to show up as a writer main effect - and the power is adequate for once: Wilson SE is about 0.025 at n = 400, so a recall difference of two cells has SE about 0.035 and the 0.15 threshold sits at roughly 4 SE, with the interaction framing and the memory-absent abstention check blocking the uniformly-better-judge and always-no artifacts.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "The unmasked detection cells, where items keep the terminal failure line, scored on the same judge x writer table.",
+    "falsifier": "The diagonal deficit persists at >= 0.05 with the failure line visible, or some cell's recall falls below 0.85.",
+    "label": "near_entailed",
+    "reason": "The unmasked arm restores the explicit terminal failure line - the exact token the detection judgment is scored on - so recall is at ceiling for any judge that reads the item, and a ceiling compresses every cell difference toward zero; the falsifier is reachable only through a mechanism the proposal never names or controls (a judge that reads an explicit failure line and still calls the item a success), and the 0.05 band is itself only about 1.5 SE of a paired recall difference at n = 400.",
+    "fix": "Add a graded-evidence arm between masked and unmasked (failure line removed but the failed terminal state or the unrecovered subgoal left intact) so the deficit has room to persist off ceiling, and state the deficit-shrinkage test as an interaction CI rather than a sub-0.05 point band."
+   },
+   {
+    "id": "P5",
+    "depends_on": "The two filter cells at 25 percent Q-self contamination (own-judgment filter, cross-judge filter) at 2 seeds, with recovery expressed as a fraction of the harm at that rate.",
+    "falsifier": "The own filter recovers within 15 percentage points of the cross filter, or neither recovers 30 percent of the harm.",
+    "label": "unresolvable",
+    "reason": "The denominator is the harm at 25 percent, roughly half the Gate-0 effect defined at 50 percent (6 net), so 60 percent recovery is about 1.8 net points and the 30 percent boundary about 0.9 net, all measured in cells at 2 seeds against a stated +/-8 net floor - the entire predicted-versus-falsifying interval is an order of magnitude inside the noise; the ordering is also largely inherited from P3, since filter recovery at matched precision is a monotone function of the same recall gap.",
+    "fix": "Run the filter arms at the 50 percent rate where the harm is >= 6 net, at 4+ seeds, and state the criterion in net points recovered with a paired CI - or evaluate the filters offline on removed-contaminant counts, where n = 400 per writer gives real power."
+   },
+   {
+    "id": "P6",
+    "depends_on": "The graft cells at 25 and 50 percent (expert items with procedure-specific steps swapped) and the length-matched clean placebo at 50 percent, 2 seeds.",
+    "falsifier": "The graft costs < 6 net at 50 percent, or the length-matched clean placebo costs >= 6 net.",
+    "label": "entailed",
+    "reason": "The proposal itself removes the first falsifier from play - a graft below 6 net is declared a design failure to be redone with a harsher graft, so the protocol iterates the positive control until it passes and the outcome can never stand against the hypothesis - while the placebo half is an equivalence claim (<= 3 net) whose falsifying value (6) is inside the stated +/-8 2-seed floor, so it cannot resolve either.",
+    "fix": "Pre-register a fixed graft recipe with at most one named re-specification, report the failed version, and treat a persistent sub-6 graft as the reported negative it is; give the placebo 4+ seeds and an upper-CI-bound criterion instead of a point margin under the noise floor."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: harm(Q-self) and harm(E-self) at 50 percent are literally the same two cell differences in both predictions, so P2's >= 4 net Q-self-minus-E-self requirement is P1's comparison re-used and one determines the other.",
+   "P3-P4: the same judge x writer table and the same 400-item sets, with P4 scoring the paired unmasked version of the identical items, so the two deficits share the per-writer item sample and the matched-precision thresholds.",
+   "P3-P5: filter recovery at matched precision is a monotone function of the P3 recall gap on the same masked items, so a confirmed P3 largely fixes P5's ordering before any episode is run.",
+   "P1-P6: harm and graft cost both subtract the same clean base cell (rate 0), so an error in that single cell moves every harm estimate, the graft's Gate-0 check and the placebo bound together.",
+   "P1-P5: the 25 percent recovery denominator is the harm slope fitted through the same 50 percent Q-self cell that P1 tests, so P1's estimate scales P5's percentages."
+  ],
+  "headline": "P1",
+  "headline_status": "unresolvable",
+  "n_open": 1,
+  "n_entailed": 1,
+  "n_near": 1,
+  "n_unresolvable": 3,
+  "verdict": "revise"
+ },
+ "coverage_not_headcount": {
+  "name": "coverage_not_headcount",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "HET-cap N=4 store {Qwen3-32B ReAct, EXAONE, gpt-oss-120b, expert item-matched} at B/4 each vs self(B) at k=3 and vs the Measurement-C static-procedure prompt, Qwen3-32B reader, paired on 274 games x 4 seeds (paired CI ~+/-4.5), with per-type s_w(t) profiles from collection logs.",
+    "falsifier": "Gain over self(B) <= +4 net, or <= 50% of that gain falling in types where some writer's s_w(t) >= s_R(t)+0.2, or HET-cap <= static-procedure + 4.",
+    "label": "open",
+    "reason": "The static-procedure branch is genuinely reachable (nothing in the design forces retrieval to beat a per-type static prompt by more than 4 net), even though the vs-self(B) branch is pre-loaded by HET-cap containing the expert quarter whose Measurement-A gain on heat/clean/cool is +39..+55 while self(B) has no expert items, and the localization branch is close to forced by headroom (gain can only appear where the reader fails, which is where max_w s_w(t) - s_R(t) is large).",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "Spearman rho between gain-over-own-matched-pool and the frozen coverage complement C across >= 12 store x reader cells, plus partial correlations of N and diversity class with C controlled; cell gains carry +/-4.5 (4 seeds) to +/-8 (2 seeds).",
+    "falsifier": "rho < 0.4, or N or diversity class showing partial |rho| >= 0.5, or a >= 6 net difference between the equal-coverage N=4 control and the N=2 store of identical C.",
+    "label": "unresolvable",
+    "reason": "With n = 12 cells and each cell's gain carrying +/-4.5 to +/-8 net, the sampling CI on a Spearman rho spans roughly 0.2-0.9 and no CI or MDE for rho or for the partial correlations is stated anywhere in Measurement and Noise Control, so the 0.4 / 0.7 boundary and the 0.3 / 0.5 partial boundary are decided by noise rather than by data.",
+    "fix": "Pre-register a bootstrap CI for rho and the partials (resampling games jointly with cells) and either expand to ~30+ store x reader cells or promote the equal-coverage N=4 vs N=2 paired contrast to the primary, powered test of the headline claim."
+   },
+   {
+    "id": "P3",
+    "depends_on": "self(B/2) + dominated-writer(B/2) vs self(B) at k=3, dominated writer selected from measured profiles (else Qwen3-32B at T=1.2 collected), 4 seeds, paired differences about +/-4.5.",
+    "falsifier": "Gain change <= -6 net (item count governs) or >= +6 net (phrasing diversity governs).",
+    "label": "unresolvable",
+    "reason": "This is an equivalence claim whose asserted band [-4, +4] is narrower than the stated +/-4.5 paired CI, so no run at the planned power can affirm it and the [4, 6] and [-6, -4] decision gaps sit entirely inside the noise; no TOST or equivalence-power calculation is given.",
+    "fix": "Run the dominated-displacement cell at enough seeds for a paired CI of about +/-2 (or widen the equivalence band past the noise to +/-6 with falsification at +/-9) and pre-register a two-one-sided-test rule."
+   },
+   {
+    "id": "P4",
+    "depends_on": "Ratio of HET-cap's gain over self(B) on heat/clean/cool to the expert-only bank's gain over self(B) on those types at matched item count, per type, Qwen3-32B reader.",
+    "falsifier": "The ratio is <= 40% with CI excluding 60%.",
+    "label": "near_entailed",
+    "reason": "The expert walkthrough writer is itself one of HET-cap's four writers, so the numerator contains the denominator's items and the claimed reading ('model writers recover most of what the expert writer gives') is not tested by any arm; the falsifier is reachable only through crowding-out of expert items in the top-3, a mechanism the proposal neither names nor controls, and the arm that would show the opposite (a model-writers-only store) is absent.",
+    "fix": "Add a model-writers-only store (Qwen3-32B ReAct + EXAONE + gpt-oss-120b at B/3 each, item-matched to the expert bank) as P4's numerator, keeping HET-cap as a secondary cell."
+   },
+   {
+    "id": "P5",
+    "depends_on": "Conflict rate (fraction of top-3 sets with >= 2 distinct parsed skeletons for the type) logged over the N in {1,2,4,8} grid, plus its partial correlation with gain once C is controlled, on the same >= 12 cells as P2.",
+    "falsifier": "Conflict rate showing partial rho <= -0.5 with gain once C is controlled.",
+    "label": "unresolvable",
+    "reason": "The falsifier is a partial correlation over the same tiny cell grid with no stated CI or MDE, and conflict rate is nearly collinear with N and with store composition, so -0.5 cannot be separated from -0.3 or 0; the first clause (conflict rises 0.15 from N=2 to N=8) carries no falsifier at all and is essentially a counting consequence of splitting a fixed budget across more writers of different scaffolds and backbones.",
+    "fix": "State a bootstrap CI for the partial rho, and decorrelate conflict from N with a skeleton-matched N=8 store (same-skeleton writers) versus a skeleton-varied N=8 store at equal C so conflict is manipulated rather than merely observed."
+   }
+  ],
+  "shared_terms": [
+   "P1-P4: HET-cap's gain over self(B) on heat/clean/cool is P1's headline magnitude and P4's ratio numerator, so a large P1 result mechanically satisfies P4.",
+   "P1-P2: the HET-cap and self(B) cells are both grid points feeding the P2 correlation, so P1's outcome moves rho directly.",
+   "P2-P5: both are partial correlations with C controlled over the identical >= 12-cell set, and N, diversity class and conflict rate are functions of the same store composition, so one partial determines the others.",
+   "P3-P2: the dominated-displacement cell is the near-zero-C anchor of P2's correlation, so a P3 null is also what makes rho large."
+  ],
+  "headline": "P2",
+  "headline_status": "unresolvable",
+  "n_open": 1,
+  "n_entailed": 0,
+  "n_near": 1,
+  "n_unresolvable": 3,
+  "verdict": "revise"
+ },
+ "one_bad_apple_population_vote": {
+  "name": "one_bad_apple_population_vote",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Procedure grafts (procedure step swapped or deleted) at controlled retrieved share 1, all top-3 items poisoned, on heat/clean/cool, Qwen3-32B reader at k=3, clean store P as the paired reference, 4 seeds, paired differences about +/-6.",
+    "falsifier": "Harm < 6 net with CI excluding 6 (the reader takes procedures from its prior rather than from the retrieved item).",
+    "label": "near_entailed",
+    "reason": "The proposal's own Measurement-A figure of +39..+55 net memory gain on exactly these types means the reader is already known to take procedures from retrieved items, so replacing all three retrieved items with wrong procedures can miss 6 net only if the reader is near-insensitive to top-3 content (a mechanism that would contradict the cited gain and is not modelled); the falsification rule compounds this by demanding a CI excluding 6 when the stated half-width is itself 6, so only a measured harm of about zero could ever falsify.",
+    "fix": "State the Gate-0 prediction as a fraction of the clean-store gain on the same types (e.g. grafts destroy >= 50% of the +39..+55 gain) with a symmetric CI rule, so the outcome is not forced by the size of the already-measured memory effect."
+   },
+   {
+    "id": "P2",
+    "depends_on": "Ratio of paired harm at controlled share 1/3 to paired harm at share 1 for grafts, k=3, positions randomized, 4 seeds, each harm carrying about +/-6.",
+    "falsifier": "Harm at share 1/3 is <= 40% of harm at share 1 (harm proportional to share).",
+    "label": "unresolvable",
+    "reason": "The 40%/60% boundary is 20% of a share-1 harm that Gate 0 only guarantees to be >= 6 net, so the decision band can be as small as about 1.2 net against two paired estimates each at +/-6, and no minimum share-1 harm or ratio CI half-width is pre-registered.",
+    "fix": "Pre-register a minimum share-1 harm (e.g. >= 20 net) before the ratio test is run, plus a seed count giving a joint-bootstrap ratio CI of about +/-0.15."
+   },
+   {
+    "id": "P3",
+    "depends_on": "Natural planting at fixed n_p (expected share about 0.1 per target type), k in {1,3,7} on the poisoned store against the clean store at the same k, paired.",
+    "falsifier": "Harm at k=7 <= harm at k=3 + 3 net (harm follows expected share, which is constant in k).",
+    "label": "unresolvable",
+    "reason": "At an expected share of about 0.1 the harm at k=3 will itself be a small fraction of the Gate-0 harm (plausibly 1-4 net), so the '2x' and '+3 net' boundaries and the k=1 'half' clause all lie well inside the stated +/-6 paired noise, and the k arms are additionally confounded because the clean-store reference changes with k.",
+    "fix": "Raise n_p (or restrict to types) until harm at k=3 is at least the +/-6 noise, and pre-register the CI on the k=7 minus k=3 harm difference rather than on each harm separately."
+   },
+   {
+    "id": "P4",
+    "depends_on": "Dilution cells with fixed n_p and benign writers covering the target type increased 1 -> 2 -> 4 under natural retrieval (expected share falling about 0.5 -> 0.2), with recovery expressed as a fraction of the Gate-0 (share-1) harm at k=3.",
+    "falsifier": ">= 50% of the Gate-0 harm is recovered by going from 1 to 4 benign writers.",
+    "label": "near_entailed",
+    "reason": "Recovery is scored against a denominator (share-1 harm, all top-3 poisoned) strictly larger than the harm actually present in the 1-writer dilution cell at share ~0.5, so the recoverable quantity is capped below the 50% threshold whenever that cell's harm is under half the Gate-0 harm, and nothing in the design guarantees it is not.",
+    "fix": "Express recovery as a fraction of the harm measured in the 1-writer dilution cell (the quantity that can actually be recovered), and report the 1-writer cell's harm against Gate-0 harm separately."
+   },
+   {
+    "id": "P5",
+    "depends_on": "Relabelled failures (own failed train trajectories labelled success) vs procedure grafts, both at share 1 on target types, Qwen3 reader, with an escape clause routing the arm out if relabelled failures fail Gate 0.",
+    "falsifier": "Relabelled harm >= graft harm - 2 net.",
+    "label": "unresolvable",
+    "reason": "The gap between the predicted region (relabelled <= half of graft harm) and the falsifier (relabelled >= graft harm - 2) is only about half the graft harm minus 2, i.e. roughly 4 net if graft harm is at the Gate-0 floor of 6-12, while the difference of two paired harms each at +/-6 carries about +/-8.",
+    "fix": "Condition the comparison on a graft harm large enough (e.g. >= 20 net) that the half-versus-minus-2 gap exceeds the difference CI, and report the relabelled-minus-graft difference with its own bootstrap CI."
+   },
+   {
+    "id": "P6",
+    "depends_on": "D1 cross-writer skeleton vote at m=8 with >= 3 independent benign writers in the vote pool versus D1-self (same m, own-writer pool only), scored on planted graft labels over thousands of retrieved items with Wilson CIs, parser validated on 100 hand-labelled items.",
+    "falsifier": "D1-self within 0.1 of D1 (one writer's redundancy suffices), or D1 recall < 0.5.",
+    "label": "open",
+    "reason": "Both falsifying outcomes are genuinely reachable - grafts are made by editing one of a writer's own successful trajectories, so that writer's remaining same-type items form a competent self-vote pool, and parser or natural-skeleton-variation failure can hold D1 recall under 0.5 - and Wilson CIs over thousands of retrieved items resolve 0.1-0.2 recall differences comfortably.",
+    "fix": ""
+   },
+   {
+    "id": "P7",
+    "depends_on": "D1 versus D3 versus no detector at share 2/3, with recovery scored as a fraction of the Gate-0 harm and cost as per-episode token overhead (D1 uses the programmatic ALFWorld parser, D3 spends ~500 LLM tokens per retrieved item).",
+    "falsifier": "D1 recovers < 50% of the harm, or D3 recovers more than D1 at equal token overhead.",
+    "label": "unresolvable",
+    "reason": "The token clause is true by construction (a programmatic parser cannot exceed 10% of a 500-token-per-item LLM critique) and the 'at equal token overhead' branch names a condition the two detectors can never occupy, leaving only the recovery threshold, whose 50%/70% band is about 20% of a share-2/3 harm plausibly in the 10-20 net range and therefore inside the stated +/-6 paired noise.",
+    "fix": "Drop the token clause from the falsifier (report cost descriptively), state whether the denominator is the share-2/3 harm or the share-1 Gate-0 harm, and pre-register the seeds needed for a recovery-ratio CI of about +/-0.15."
+   },
+   {
+    "id": "P8",
+    "depends_on": "Carrier writer (Qwen3-written vs EXAONE-written grafts with identical wrong procedure content) crossed with reader (Qwen3-32B, EXAONE-4.0-32B) at share 2/3; the EXAONE cells are not in the listed 4-seed set (Gate-0, share-1/3, k-sweep), so they run at 2 seeds.",
+    "falsifier": "The foreign carrier harms as much or more for either reader (harm depends on content only).",
+    "label": "unresolvable",
+    "reason": "The falsifier is stated with no margin at all ('as much or more'), so with paired harm differences at about +/-6 (wider still for the 2-seed EXAONE arm) a true null falsifies or confirms roughly at chance and the interaction cannot be read off the data.",
+    "fix": "State a margin for the carrier effect (e.g. own-carrier harm exceeds foreign-carrier harm by >= 6 net for each reader) and run all four carrier x reader cells at 4 seeds."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: the share-1 graft harm is P1's estimand and P2's denominator, so a Gate 0 that barely passes shrinks P2's 40/60 band below the stated noise.",
+   "P1-P4: the same share-1 Gate-0 harm is P4's recovery denominator, which is what caps P4's falsifier.",
+   "P1-P7: the Gate-0 harm is again the denominator of D1's recovery fraction, so P1's magnitude sets whether P7 is resolvable.",
+   "P1-P5: graft harm at share 1 is both P1's estimand and P5's comparison term.",
+   "P2-P3: both are ratios of harms measured against the same clean-store reference at k=3, so the k=3 harm term appears in both.",
+   "P6-P7: D1's recall and precision on grafts determine the filtering recovery scored in P7, so P7 cannot come out well if P6 comes out badly."
+  ],
+  "headline": "P2",
+  "headline_status": "unresolvable",
+  "n_open": 1,
+  "n_entailed": 0,
+  "n_near": 2,
+  "n_unresolvable": 5,
+  "verdict": "revise"
+ },
+ "who_gets_read": {
+  "name": "who_gets_read",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Offline retrieval-share audit on store M (equal per-type item counts from four writers, so a 0.25 store share) with Q-task vs Q-traj queries built from existing k=0 logs, raw vs canonical item formats, dense full-text and BM25 indexes, Qwen3 and EXAONE readers, over 274 games x 2 seeds with per-type bootstrap.",
+    "falsifier": "Q-traj excess on canonical items < 0.03 (homophily is formatting only), or Q-traj raw excess < 0.05 (no homophily), or Q-task excess >= 0.15 (a document-style prior drives it).",
+    "label": "open",
+    "reason": "The canonical clause is the load-bearing one and is genuinely reachable, since canonical items are actions and observations from ALFWorld's fixed programmatic action vocabulary and environment-generated text, giving all four writers near-identical surface form; the audit is deterministic over thousands of retrievals, so its standard errors (about 0.01-0.03) separate the 0.03 and 0.08 thresholds.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "M-uniform under Q-traj@3 vs Q-task@3 with injection held at step 3 so only the query differs, Qwen3-32B reader at k=3, on types where a foreign writer's s_w(t) exceeds self's by >= 0.2, paired, 4 seeds (paired differences about +/-4.5), with Q-task@0 as the timing control.",
+    "falsifier": "The difference is within +/-4 net, or Q-traj is better.",
+    "label": "open",
+    "reason": "The falsifying region contains the null and the a priori likely outcome (a richer query can just as easily improve retrieval relevance), the injection-timing confound is controlled by holding both arms at step 3, and type selection uses collection-log s_w(t) rather than any term shared with the outcome; only the 4-to-6 net decision gap sits inside the +/-4.5 CI.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "Uniform / proximity / global / per-type writer-side re-rankers over the same retriever scores on M under Q-task@0, alpha frozen on a 60-game train slice, same reader, 4 seeds, complementary types defined by collection-log s_w(t).",
+    "falsifier": "Proximity weighting >= quality weighting - 2 net (proximity governs), or quality weighting <= uniform + 4 net (the retriever's implicit weighting already matches the writer's record).",
+    "label": "open",
+    "reason": "Nothing in the design forces a re-ranker that only reorders which of k=3 items come from which writer within a fixed store to beat uniform by more than 4 net, the random re-ranking placebo at matched alpha controls the act of re-ranking itself, and both falsifying branches are ordinary outcomes rather than excluded ones.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "Reader-side calibrated weights fitted on c=20 train games per writer x type (480 episodes per reader) vs writer-side s_w(t) weights, plus the ratio of Qwen3-calibrated weights used by EXAONE to EXAONE's own calibrated gain over uniform.",
+    "falsifier": "Calibration adds >= 6 net over writer-side weights, or the mismatched weights retain < 40% of the matched gain.",
+    "label": "near_entailed",
+    "reason": "A per-cell success rate estimated from 20 episodes carries a standard error of about 0.11, so the calibrated weights are dominated by sampling noise and will add little regardless of whether reader-specific compatibility exists - the falsifier is reachable only through an estimator-quality mechanism the proposal never models - and the transfer clause compounds this because its denominator (EXAONE's own calibration gain over uniform) is the very quantity the first clause predicts to be near zero, making the >= 70% ratio undefined exactly when the prediction holds.",
+    "fix": "Raise c (e.g. 100 games per writer x type), report the calibration weights' sampling error, add an oracle reader-side weighting fitted on validation outcomes as the ceiling arm, and pre-register a minimum matched-calibration gain below which the retention ratio is not computed."
+   },
+   {
+    "id": "P5",
+    "depends_on": "Retained-gain ratio of M-uniform and M-per-type to the best of four single-writer stores (self, prox, cap, expert) at equal per-type item count, joint bootstrap over games, cells at about +/-5.7 net.",
+    "falsifier": "Uniform M >= best single-writer store (mixing is free), or the re-ranked ratio < 0.9.",
+    "label": "near_entailed",
+    "reason": "The denominator is the maximum of four noisy single-writer gains, each cell carrying about +/-5.7 net, so the winner's curse inflates it by several net points and biases the <= 0.9 clause toward true independently of any real mixing cost; separately, a 0.1 change in the ratio is only about 2 net on plausible gain sizes and sits inside the stated paired noise.",
+    "fix": "Pre-specify the comparator single-writer store (or select the best writer on a held-out train slice and score it on validation) so the denominator is not a post hoc maximum, and state the ratio CI half-width the seed plan delivers."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: the Q-traj self-share excess audited in P1 is the mechanism whose downstream cost P2 scores, and both are computed from the same Q-traj retrievals, so a null in P1 leaves P2 with nothing to attribute the contrast to.",
+   "P3-P5: the M-per-type quality re-ranking gain over uniform is P3's headline quantity and P5's ratio numerator, so given the fixed single-writer denominators one determines the other.",
+   "P3-P4: writer-side per-type weighting's gain is the treatment in P3 and the baseline that P4's calibrated weights must beat by < 4 net.",
+   "P4 internal: EXAONE's own calibrated gain over uniform is both the quantity predicted to be small and the denominator of the >= 70% transfer ratio.",
+   "P5-P3: the best-single-writer gain is P5's denominator and the implicit ceiling on P3's re-ranking gain over uniform."
+  ],
+  "headline": "P3",
+  "headline_status": "open",
+  "n_open": 3,
+  "n_entailed": 0,
+  "n_near": 2,
+  "n_unresolvable": 0,
+  "verdict": "pass"
+ },
+ "compression_erases_the_writer": {
+  "name": "compression_erases_the_writer",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Self cells Q->Qwen3 and X->EXAONE, L0 vs L2 at matched injected tokens, paired by game and seed over 674 games x 2 seeds; stated per-cell half-width ~+-5 net, so a two-cell contrast is ~+-6.",
+    "falsifier": "The 95% CI of D(self) lies entirely below +4 in either self cell (the writer's own procedures are at least as good as its raw trajectories).",
+    "label": "unresolvable",
+    "reason": "The +4 margin sits inside the design's own noise (two-cell contrast half-width ~+-6, and the pre-registered seed escalation only triggers above +-6), so the natural anti-hypothesis outcome D(self)~0 gives a CI straddling +4 and falsifies nothing.",
+    "fix": "Restate the falsifier as 'CI excludes +4 from below' so a null falsifies, and pre-register 4+ seeds on both self L0/L2 cells until the contrast half-width is <= 2."
+   },
+   {
+    "id": "P2",
+    "depends_on": "Foreign cells X->Qwen3 and Q->EXAONE, L0 vs L1 and L0 vs L2, token-matched, same fixed retriever and same paired games; L1 cells are outside the four headline cells the escalation amendment covers.",
+    "falsifier": "CI of D(foreign) entirely above -4 in BOTH foreign cells (raw foreign at least as good as compressed foreign).",
+    "label": "unresolvable",
+    "reason": "-4 is inside the ~+-6 contrast noise and the falsifier is conjunctive over both foreign cells, so a flat D(foreign)~0, or one cell in which raw foreign wins, refutes nothing.",
+    "fix": "Make falsification per-cell with a CI that must exclude 0 in the predicted direction, and extend the seed escalation to the L1 cells so every contrast has half-width <= 2."
+   },
+   {
+    "id": "P3",
+    "depends_on": "The four cells self-L0, self-L2, foreign-L0, foreign-L2 for each reader; interaction half-width ~+-8, ~+-6 after the pre-registered 4-seed escalation.",
+    "falsifier": "The 95% CI of I(r) includes 0, or I(r) is negative, for either reader.",
+    "label": "open",
+    "reason": "Nothing in the design fixes the sign of D(self)-D(foreign): both readers, both self pools and both foreign pools are actually run, so a null or reversed interaction is a directly measurable outcome and the 'CI includes 0' falsifier is easy to reach at the stated power.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "Compressor-identity ablation cells: the foreign pool (and E) re-compressed by the reader vs by the writer at L1 and L2, same reader, same retrieval.",
+    "falsifier": "Reader-compressed exceeds writer-compressed by >= 4 net with CI excluding 0.",
+    "label": "unresolvable",
+    "reason": "This is an equivalence claim with a 4-point bound tested against a ~+-6 contrast half-width, so any failure to detect confirms it, and the falsifier is one-sided: a reader-compressed version 4+ points WORSE also contradicts 'changes by less than 4' without falsifying.",
+    "fix": "Two-sided TOST at +-4 with seeds giving a contrast half-width <= 2, and count a large negative difference as falsifying too."
+   },
+   {
+    "id": "P5",
+    "depends_on": "L2 cells for each writer versus the Measurement C static six-procedure prompt per reader; all gains are already reported net of that prompt, so this contrast is the L2 net gain itself.",
+    "falsifier": "X-written or Q-written procedures beat the static prompt by >= 4 net with CI excluding 0.",
+    "label": "unresolvable",
+    "reason": "Another 4-point bound against ~+-6 noise, stated as a universal null over several L2 cells, so non-detection confirms it and only an implausibly large single-cell effect could falsify.",
+    "fix": "Recast as an equivalence test with a pre-registered bound and power (half-width <= 2), or pre-register that any single L2 cell whose CI lies above 0 falsifies."
+   },
+   {
+    "id": "P6",
+    "depends_on": "Foreign L0 and L2 gains divided by the same reader's self-pool gains at the same level - i.e. exactly the four cell means that already produce P1, P2 and P3; no CI or noise figure is stated for the ratio.",
+    "falsifier": "ratio(L2) <= ratio(L0) for some foreign writer x reader pair.",
+    "label": "entailed",
+    "reason": "If P1 holds (g_self(L0) > g_self(L2)) and P2 holds (g_for(L2) > g_for(L0)), then ratio(L2)=g_for(L2)/g_self(L2) exceeds ratio(L0) by arithmetic on shared measured terms, so the falsifier is just the negation of P1/P2 and P6 tests nothing new.",
+    "fix": "Replace with an estimand not built from the same four means (e.g. absolute foreign gain against an independent expert or third-writer denominator) reported with its own bootstrap CI and a margin larger than that CI."
+   }
+  ],
+  "shared_terms": [
+   "P1-P3: D(self) is one term of I(r)=D(self)-D(foreign); the same self-L0 and self-L2 means determine both.",
+   "P2-P3: D(foreign) is the other term of I(r), so P3 is fixed once P1 and P2 are measured on the same four cells.",
+   "P1-P2-P6: ratio(L)=g_foreign(L)/g_self(L) is a ratio of those same four cell means, so P6 is an arithmetic consequence of P1 and P2.",
+   "P4-P5: both are scored on the foreign L2 gain net of the static prompt, so a single cell mean moves both."
+  ],
+  "headline": "P3",
+  "headline_status": "open",
+  "n_open": 1,
+  "n_entailed": 1,
+  "n_near": 0,
+  "n_unresolvable": 4,
+  "verdict": "revise"
+ },
+ "own_errors_pass_the_gate": {
+  "name": "own_errors_pass_the_gate",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "C1 (procedure graft) at 50% bank rate vs the clean bank in the Q->Qwen3 downstream cell, 674 games x 2 seeds, half-width ~+-5 net, with a 100% cell as an existence check.",
+    "falsifier": "Harm < 6 net at 50% and also at 100%.",
+    "label": "open",
+    "reason": "A reader that ignores or repairs grafted wrong procedures (1.5 expected contaminated items among k=3) simply shows no success loss, and the 100% backstop roughly doubles the effect, so the no-harm world is separable from the >=6 world at the stated half-width.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "2x2 D0 verification cells {Qwen3, EXAONE} x {Q hosts, X hosts} on C1 items, >=600 planted and >=600 clean per cell, recall SE ~2 and interaction SE ~4, with the headline family pre-selected so foreign-host recall lies in 30-80%.",
+    "falsifier": "recall(self host) >= recall(foreign host) for either reader, or both readers showing the same host ordering (pool-difficulty main effect, no interaction).",
+    "label": "open",
+    "reason": "Both readers are crossed with both host pools on identically edited, game-paired items and the ceiling/floor rule keeps recall off the rails, so a null, a reversal, or a pure pool main effect are all measurable against the 10-point margin at a 4-point interaction SE.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "Paraphrase arm: foreign contaminated items rewritten by the reader with the planted error script-verified to survive, re-verified by D0, with per-item reader NLL logged.",
+    "falsifier": "Recall within +-4 of the unparaphrased original ALTHOUGH NLL falls by the amount seen for self hosts.",
+    "label": "near_entailed",
+    "reason": "The falsifier is gated on the paraphrase actually driving NLL down to self-host levels - an outcome the design neither guarantees, measures against a tolerance, nor controls - and the +-4 equivalence band is inside the ~+-5.6 half-width of a recall difference at SE ~2 per arm.",
+    "fix": "Pre-register an NLL-matching criterion (retain only paraphrases within a stated NLL distance of self-host items and report the qualifying fraction) plus a two-sided equivalence bound with item counts giving half-width <= 3."
+   },
+   {
+    "id": "P4",
+    "depends_on": "D1 (static six-procedure prompt inside the verification context) vs D0 recall on self hosts and on foreign hosts, per reader, on the same planted item sets.",
+    "falsifier": "D1 self-host recall within +-4 of D0.",
+    "label": "near_entailed",
+    "reason": "Only the first clause carries a falsifier: the gap-halving clause the hypothesis rests on can fail (D1 lifting foreign-host recall equally, leaving the gap intact) with no stated falsifying outcome, and the +-4 band is inside the recall-difference noise.",
+    "fix": "Add an explicit falsifier on the gap estimand (gap_D1 > 0.5 x gap_D0 with CI excluding), score D0 and D1 on identical paired items, and size the cells for a half-width <= 3."
+   },
+   {
+    "id": "P5",
+    "depends_on": "30% C1 cells for Q hosts and X hosts with the Qwen3 reader and their clean-bank denominators; each gain carries half-width ~+-5 net, and clean foreign gain is expected to be smaller than clean self gain.",
+    "falsifier": "leverage(foreign) >= leverage(self) with CI excluding the 0.15 margin.",
+    "label": "unresolvable",
+    "reason": "Leverage is a ratio whose denominator is itself a +-5 gain that differs between self and foreign pools, so the CI on the 0.15 difference is far wider than the margin (and the normalisation actually pushes against the prediction whenever the foreign clean gain is the smaller denominator).",
+    "fix": "Score absolute harm (clean minus contaminated net points) per host with a paired cluster bootstrap and a margin at least twice the reported half-width, or add seeds until the leverage CI is under 0.15."
+   },
+   {
+    "id": "P6",
+    "depends_on": "Rate-0 three-writer clean store per reader with no gate, D0 gate, D1 gate and writer-identity gate; FPR measured on >=600 clean foreign items (SE ~1.6 points), cost measured in net points at +-5 per cell.",
+    "falsifier": "D0 gate false-positive rate on clean foreign items >= 20%, or its cost >= 6 net.",
+    "label": "near_entailed",
+    "reason": "The second clause is true by construction - the writer-identity gate deletes every foreign item, so its cost IS the mixed-store minus self-store gain, the same quantity it is compared with - and the <3 vs >=6 cost band lies inside the +-5 per-cell noise, leaving only the FPR clause genuinely able to fail.",
+    "fix": "Drop or restate the identity-gate clause as a measured quantity with its own CI, and set the cost falsifier at a margin at least twice the +-5 half-width (or add seeds on the gated cells)."
+   }
+  ],
+  "shared_terms": [
+   "P2-P3: the unparaphrased foreign-host D0 recall is the same measurement in both, so P3's baseline is P2's foreign-host cell.",
+   "P2-P4: P4's self-foreign recall gap IS P2's estimand, so a null in P2 leaves P4's halving clause undefined.",
+   "P1-P5: P5's leverage numerator and denominator are built from the same clean-bank and C1-contaminated Q->Qwen3 cells that produce P1's Gate-0 harm.",
+   "P5-P6: both rest on the clean self vs clean foreign gains (P6's 'foreign excess over the self pool', P5's clean denominators)."
+  ],
+  "headline": "P2",
+  "headline_status": "open",
+  "n_open": 2,
+  "n_entailed": 0,
+  "n_near": 3,
+  "n_unresolvable": 1,
+  "verdict": "revise"
+ },
+ "search_disposition_contagion": {
+  "name": "search_disposition_contagion",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "P8 padded pool vs W1 at k=3 for the Qwen3 reader, 674 games x 2 seeds, half-width ~+-5 net; padded sequences replayed in the environment to confirm they still succeed.",
+    "falsifier": "Harm < 6 net at dose 8.",
+    "label": "open",
+    "reason": "A reader that ignores 8 inserted useless search actions simply shows no success loss and that null is measurable at the stated half-width; the padding does inflate injected tokens at fixed k=3, which confounds the interpretation of any harm but does not close off the falsifying outcome.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "Reader mean search length (measured from environment observations, receptacle visits before the target is first observed) regressed on pool mean search length across W1, W2, W3, P2, P4, P8, with game-level pairing and cluster bootstrap; SE ~0.2 steps per cell.",
+    "falsifier": "The 95% CI of beta includes 0, i.e. the reader's search is invariant to the retrieved search.",
+    "label": "open",
+    "reason": "The six pools span a wide, independently manipulated x-range (including a padding dose ladder whose search length is set by construction) while the outcome is a separate environment-side measurement, so beta=0 is fully reachable and a 0.3 slope is well outside the 0.2-step cell noise.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "Disposition-matched subsample cells (W4 and W5 subsampled to W2's search-length distribution) compared with the W2 cell, reader search length at SE ~0.2 per cell.",
+    "falsifier": "A matched foreign pool yields a reader search length differing from W2's by >= 2 steps with CI excluding 0.",
+    "label": "open",
+    "reason": "A 2-step identity effect is roughly six times the ~0.3-step SE of the difference and both foreign backbones are run matched against a same-backbone variant, so the falsifier is reachable and separable, although the 1-2 step band decides nothing and the matched subsample assumes untested overlap between the foreign and W2 search-length distributions.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "Manipulation-only segment cells (task line + trajectory from the first take onward) for W3 and P8, retained-gain ratio against W1's full-item gain, plus reader search length against the k=0 level.",
+    "falsifier": "Manipulation-only loses >= half the gain (stated as produced by the W1 manipulation-only vs full cells) or search length stays >= 2 steps above k=0 (W3 manipulation-only cell).",
+    "label": "near_entailed",
+    "reason": "The gain falsifier is scored on the W1 cells while the claim is about W3 and P8 manipulation-only items, the 0.5-0.75 retention band is inside the ratio's CI (a +-5 to +-7 numerator over a ~+27 denominator), and the search clause is one-sided so a manipulation-only segment that pushes search BELOW k=0 - which it can, since the first take names the receptacle holding the target - contradicts 'within 1 step' without falsifying.",
+    "fix": "State the retention falsifier on the W3 and P8 manipulation-only cells themselves, make the search-length claim a two-sided band around k=0, and report the retained-gain ratio CI so that 0.75 vs 0.5 lies outside it."
+   },
+   {
+    "id": "P5",
+    "depends_on": "Full-item cells, Kendall tau between the reader's visit order and the retrieved item's order over shared receptacles, against a rank-10 same-type same-room-class item the reader never saw.",
+    "falsifier": "The CI of the tau difference includes 0.",
+    "label": "near_entailed",
+    "reason": "The placebo is a lower-ranked item, so the injected item is by retrieval selection more similar to the current game than the placebo is; the reader's own layout-driven visit order therefore produces a positive tau difference with no copying at all, making the falsifier reachable only if that selection artifact happens to be absent - a mechanism the design neither names nor controls.",
+    "fix": "Use the SAME top-ranked retrieved item as the placebo, scored on episodes where it was never injected (k=0 or search-stripped arms), or match the placebo to the injected item on retrieval score and receptacle overlap."
+   },
+   {
+    "id": "P6",
+    "depends_on": "Read-time ranking check (G8) at dose 4: the reader ranks its k=3 retrieved items by expected usefulness and recall of placing padded items last is scored per dose - but a Pd cell's bank is entirely padded W1 items, and no mixed bank is specified.",
+    "falsifier": "Recall >= 0.7 at dose 4 with CI excluding 0.5.",
+    "label": "entailed",
+    "reason": "When every retrieved item is padded, at most one of the three padded items can occupy the last position, so recall is capped near 1/3 and the >=0.7 falsifier is arithmetically unreachable; the retriever cannot deliver the unpadded contrast items the prediction is about.",
+    "fix": "Run the read-time check on a mixed bank (padded and unpadded items at a stated rate within the retrieved type), or as a forced choice between the padded and unpadded version of the same trajectory, with the chance level stated."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: both are produced by the same P8-vs-W1 full-item episodes (P1's success loss and the high-dose endpoint that dominates the slope).",
+   "P2-P3: P3 conditions on the very pool-mean-search-length regressor that defines P2's slope, so a beta near 0 makes P3's '<1 step' claim automatic.",
+   "P2-P4: P4's 'search length within 1 step of k=0' is the same reader-search-length outcome as P2, measured on the segment-stripped version of the same W3/P8 pools.",
+   "P1-P4: P4's retained-gain ratio uses W1's full-item gain as its denominator, the same cell that anchors P1's harm contrast."
+  ],
+  "headline": "P2",
+  "headline_status": "open",
+  "n_open": 3,
+  "n_entailed": 1,
+  "n_near": 2,
+  "n_unresolvable": 0,
+  "verdict": "pass"
+ }
+}

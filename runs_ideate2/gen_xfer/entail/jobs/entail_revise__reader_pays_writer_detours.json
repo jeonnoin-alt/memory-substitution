@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__reader_pays_writer_detours",
+ "kind": "entail_revise",
+ "name": "reader_pays_writer_detours",
+ "prompt_file": "runs_ideate2/gen_xfer/entail/jobs/entail_revise__reader_pays_writer_detours.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__shared_blind_spot",
+ "kind": "entail_revise",
+ "name": "shared_blind_spot",
+ "prompt_file": "runs_ideate2/gen_xfer/entail/jobs/entail_revise__shared_blind_spot.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

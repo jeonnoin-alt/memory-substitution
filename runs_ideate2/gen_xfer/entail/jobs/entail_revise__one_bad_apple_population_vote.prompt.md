@@ -1,0 +1,144 @@
+=== SYSTEM ===
+You are revising your own research proposal after review.
+
+The reviewers' objections are the specification. Answer each one concretely — not by adding reassuring prose, but by changing the design: cut experiments that do not carry a claim, drop target tasks, shrink the grid, narrow the claim to what the sample size can actually detect, add the baseline they named.
+
+Two rules:
+
+- **Do not abandon the core hypothesis.** A proposal that answers every objection by becoming   generic is worse than one that keeps a sharp claim and scopes it honestly. If an objection   can only be answered by giving up the contribution, keep the contribution and say in   changes_made why you refused.
+- **Novelty is the thing you are most likely to lose.** Measured across revision rounds,   answering reviewers reliably raises soundness and feasibility and *lowers* novelty: the   claim gets hedged, the scope narrows, and what was surprising becomes safe. Guard against   that. Do not soften the central claim into something a reviewer could not disagree with, do   not replace a sharp mechanism with a measurement study, and do not add qualifiers that make   the prediction unfalsifiable. If a reviewer's objection is really "this is risky", the right   answer is a better test of the risky claim, not a smaller claim. State in changes_made what   you did to keep the claim as sharp as it was.
+- **The resource envelope is hard.** Every experiment must fit the stated compute and budget.   If the full matrix does not fit, cut it to a primary experiment that decides the main claim   plus the minimum ablations that isolate the mechanism, and state the arithmetic: number of   runs x rollouts per run, and why that fits. A smaller study that can be run beats a large   one that cannot.
+
+=== USER ===
+=== PROPOSAL ===
+{
+ "Name": "one_bad_apple_population_vote",
+ "Title": "One Bad Apple in the Top-k: Contamination Geometry of a Population Store and the Cross-Writer Vote That Detects It",
+ "Short Hypothesis": "A benign-looking wrong record (a success-formatted trajectory with a wrong procedure, or a failed trajectory relabelled as a success) planted in a multi-writer experience store harms a reader by whether it appears among the retrieved items at all rather than by its share of them, so harm grows with k at fixed store composition and dilution by benign writers recovers little; the only reader-side signal that scales with the population is disagreement of the item's procedure skeleton with same-type items written by other, independent writers, whose recall rises with the number of independent benign writers, while provenance exclusion is blind to poison carrying a trusted label and is costed on legitimate reuse.",
+ "Related Work": "MemoryGraft (2512.16962) shows implanted 'successful experiences' drive persistent drift on one backbone and one framework, without harm-vs-rate curves or defenses. The Compliance Trap (2607.10608) diagnoses where a conflicting retrieved memory first changes an action and that early adoption compounds, but with single-writer memory and no manufactured, gated contamination or detector. In the RAG-poisoning home literature, PoisonedRAG-style attacks and defenses (TrustRAG 2501.00879 clusters retrieved passages to isolate poison; TriShieldRAG 2607.23838 adds provenance-weighted scoring and cross-LLM consensus) operate on factual QA passages with consensus across models at generation time, not across independent writers of agent trajectories, and never score recall as a function of how many writers cover a topic. Souly et al. (2510.07192) find pretraining poisoning depends on the absolute number of poison documents rather than their fraction; this proposal tests the retrieval-time analogue, presence-in-top-k versus share. MAP-Graph (2608.10509) and the archived lineage_blast_radius rely on provenance labels, which by construction cannot see poison carrying a trusted label; here provenance exclusion is only costed on legitimate reuse.",
+ "Abstract": "A store written by several agents can carry a wrong record that looks like a success: a fluent trajectory with the wrong procedure, or a failed trajectory relabelled as won. We manufacture both on ALFWorld's procedure-bound task types (heat, clean, cool), plant them under three writer identities (the reader's own policy, a foreign backbone, the expert) in a population store written by Qwen3-32B, EXAONE-4.0-32B, gpt-oss-120b and expert walkthroughs, and measure harm to two readers with the retrieved share controlled directly (1/3, 2/3, 1 of the top-3), with k varied at fixed planting, and with benign writers covering the type added at fixed poison count. The central claim is that harm follows presence in the retrieved set rather than share: a single wrong item among three costs most of the full harm, harm grows with k while the poison fraction is constant, and dilution by benign writers recovers little. What the population uniquely provides is a vote: an item whose procedure skeleton disagrees with same-type items written by other, independent writers is flagged, and we predict this detector's recall rises with the number of independent writers. The detector is scored by precision and recall against the planted labels before any downstream number, and costed in tokens against a reader-critique detector and against provenance exclusion, which is blind to poison carrying a trusted label.",
+ "Experiments": "- Clean population store P: Qwen3-32B self pool, EXAONE-4.0-32B pool, gpt-oss-120b pool (B/2 episodes each; shared with coverage_not_headcount if run, else collected here at ~1.5-4 GPU-h per writer), expert walkthroughs; provenance tags on every item; same retriever and injection as Measurement A.\n- Poison manufacture on heat/clean/cool (Measurement A gains +39..+55 there): (a) procedure grafts: successful trajectories of a given writer with the procedure step swapped or deleted (microwave<->fridge, sink step removed), rest untouched; (b) relabelled failures: the writer's own failed train trajectories of the type with the outcome label set to success (Qwen3 has 1,661 failed train games); (c) positive control: the same count of items carrying an explicit wrong instruction line. Poison writer identity in {self (Qwen3-written), foreign (EXAONE-written), expert}; graft content (the wrong procedure) held fixed across identities so only the carrier's style varies. Poison items length-matched to the items they replace.\n- Gate 0: each poison kind at controlled retrieved share 1 (all top-3 items poisoned) on target types; a kind proceeds only if harm >= 6 net on target-type games vs the clean store.\n- Geometry, controlled: retrieved share in {1/3, 2/3, 1} at k=3 by deterministic mixing into the top-3 (poison positions randomized per game); and k in {1,3,7} at a fixed natural planting of n_p items per target type (expected share about 0.1 per type), with the clean store at the same k as the paired reference.\n- Dilution by writers: fixed n_p, benign writers covering the target types increased 1 -> 2 -> 4 (Qwen3 alone; +EXAONE; +gpt-oss and expert), natural retrieval, so expected share falls from about 0.5 to about 0.2.\n- Detectors, scored by precision and recall against planted labels over every retrieved item in the evaluation, then downstream: D1 cross-writer skeleton vote (retrieve m=8, parse each item to a procedure skeleton with the programmatic ALFWorld action parser, flag an item whose skeleton disagrees with the majority of same-type items from writers other than its own; requires >= 2 other writers); D1-self (same m, vote pool restricted to the item's own writer); D3 reader LLM critique of each retrieved item ('is this a correct way to do the task?', ~500 tokens per item), also run memory-absent (without episode context); D4 provenance exclusion of the lowest-collection-success writer (cannot see poison under a trusted label; costed on the clean store only). Flagged items are replaced by the next unflagged item.\n- Readers: Qwen3-32B (all cells); EXAONE-4.0-32B (clean, grafts at share 2/3 with EXAONE-written and Qwen3-written carriers, D1) to obtain both directions of the carrier-proximity manipulation.\n- Budget: about 19 cells; Gate-0, share-1/3 and k-sweep cells at 4 seeds; about 14,000 episodes, roughly 2 days on two replicas, with one GPU serving the reader and the other collecting any missing pool or serving the second reader.",
+ "Baselines and Ablations": "- Clean store P at k=1/3/7; k=0; static-procedure prompt (Measurement C) as the floor, so harm is reported relative to the clean store and to the static prompt.\n- Positive control (explicit wrong instruction) run before any benign-looking kind.\n- Token-matched placebo: the same number of benign items from the same writer replacing the poison at the same positions (rules out item-count and position effects).\n- Specificity control: poison planted on look-at-in-light, where memory gain is about zero, expected harmless.\n- D1 with m in {5,8,12}; skeleton parser accuracy on 100 hand-labelled items; D3 in-context vs memory-absent.\n- Provenance exclusion D4 on the clean store: net points lost on legitimate reuse, reported next to detector token costs.",
+ "Falsifiable Predictions": "- P1 (Gate 0). Procedure grafts at share 1 cost >= 6 net on heat/clean/cool relative to the clean store (Qwen3 reader, k=3). Falsified if harm < 6 with CI excluding 6 (the reader takes procedures from its prior rather than from the retrieved item). Arm: grafts share 1 vs clean, 4 seeds.\n- P2 (one bad apple). Harm at controlled share 1/3 is >= 60% of harm at share 1 for grafts. Falsified if it is <= 40% (harm proportional to share). Arm: share 1/3 vs 2/3 vs 1 at k=3, positions randomized, 4 seeds.\n- P3 (harm grows with k at constant fraction). At natural planting with n_p fixed, harm at k=7 >= 2x harm at k=3, and harm at k=1 <= half of harm at k=3. Falsified if harm at k=7 <= harm at k=3 + 3 net (harm follows expected share, which is constant in k). Arm: k in {1,3,7} on the same poisoned store vs the clean store at the same k.\n- P4 (dilution). Increasing benign writers covering the type from 1 to 4 at fixed n_p recovers < 50% of the Gate-0 harm at k=3. Falsified if >= 50% is recovered. Arm: the 1/2/4-writer dilution cells.\n- P5 (relabelled failures). Relabelled failures harm <= half as much as grafts at share 1 (their skeletons are mostly right; the reader copies procedure, not outcome). Falsified if relabelled harm >= graft harm - 2 net. Arm: relabelled vs graft at share 1. If relabelled failures fail Gate 0 this is reported as the answer to G13's benign-record question and detector cells run on grafts only.\n- P6 (detector needs the population). D1 with >= 3 independent benign writers in the vote pool reaches recall >= 0.7 at precision >= 0.7 on grafts, and its recall exceeds D1-self (same m, own-writer pool) by >= 0.2. Falsified if D1-self is within 0.1 of D1 (one writer's redundancy suffices) or if D1 recall < 0.5. Arm: vote-pool composition at fixed m=8, planted labels as ground truth.\n- P7 (downstream and cost). D1 filtering recovers >= 70% of the Gate-0 harm at share 2/3 with <= 10% of D3's per-episode token overhead. Falsified if D1 recovers < 50%, or if D3 recovers more than D1 at equal token overhead. Arm: D1 vs D3 vs no detector at share 2/3.\n- P8 (carrier proximity at fixed content). Qwen3-written grafts harm the Qwen3 reader more than EXAONE-written grafts with the identical wrong procedure at the same share, and the ordering reverses for the EXAONE reader. Falsified if the foreign carrier harms as much or more for either reader (harm depends on content only). Arm: carrier writer x reader, share 2/3.",
+ "Measurement and Noise Control": "Harm is the paired per-game net success on target-type games (about 40% of the 274) with the clean store as the paired reference, so target-type cells run at 4 seeds (about 110 games x 4 seeds; paired differences about +/-6) and the add-2-seeds rule applies when a CI straddles a margin (cap 6). Non-target games are the specificity control. Bootstrap over games with seeds as blocks. The 60%/50% thresholds are fractions of the share-1 harm measured in the same run, never of the 6-net floor. Detector precision and recall carry Wilson CIs over the retrieved-item population (thousands of items) and are reported per poison kind and per carrier identity. Poison positions in the top-k are randomized per game; planted-item lists are frozen and pre-registered; retriever, injection format and token counts are identical across arms.",
+ "Preprint Collision Check": "- mechanism (--recent): 'poisoning agent experience memory benign-looking successful trajectory dilution number of contributors' via s2cli (S2 ok, HF ok; 7 hits): 2608.03509 SkillJack (poisoned histories become persistent skills), 2602.15654 Zombie Agents, 2512.16962 MemoryGraft, 2510.21144 NeuroGenPoisoning (RAG), 2607.04146 and 2604.22117 (training-time poisoning), 2603.29608 irrelevant. None reports harm vs retrieved share or k, dilution by benign writers, or a cross-writer detector scored by precision/recall.\n- closest named method: 'PoisonedRAG knowledge corruption attacks retrieval-augmented generation injected texts' via s2cli (S2 ok, HF ok; 14 hits): 2607.23838 TriShieldRAG (ingest guard + trust-aware re-ranking + cross-LLM consensus, ASR 91% -> 13% on QA; verified with `paper`), 2501.00879 TrustRAG (clusters retrieved passages to isolate poison; nearest to D1 but within one corpus and factual QA, not across independent writers of trajectories), 2511.01268 RAGDefender, 2508.02835 FilterRAG, 2508.18652 UniC-RAG, 2504.07717 PR-Attack, 2506.06151 Joint-GCG, 2505.06579 PoisonCraft. All QA-passage settings; no presence-vs-share geometry, no writer-count recall curve.\n- home: 'poisoning attacks require near-constant number of poison samples regardless of dataset size' via s2cli (S2 ok, HF ok; 8 hits): 2510.07192 Souly et al. (near-constant number of poison documents suffices regardless of corpus size, the count-vs-fraction result whose retrieval-time analogue P3 tests), 2410.13722 persistent pretraining poisoning at 0.1%, 2302.10149 web-scale poisoning, 2312.00157 universal backdoors, 2405.19376 PureEBM, 2404.08631 FCert. None concerns retrieval-time stores or read-time detection.\n- also seen: 2607.10608 The Compliance Trap (verified with `paper`: Enter-Propagation-Recovery diagnosis of conflicting memory; single writer, no gate or detector); 2606.24428 EDV self-confirmation trap (write-side experience construction, not read-time detection). Verdict: no pre-emption; TrustRAG's clustering is the nearest defense and is reimplemented as a comparison if time permits. WebSearch not available in this run.",
+ "Risk Factors and Limitations": "Harm may saturate already at share 1/3 so the share curve is flat at the top (reported with the raw curve and the k sweep, which separates presence from share independently). Procedure grafts in ALFWorld are a narrow class of wrong records and relabelled failures may not pass Gate 0. The skeleton parser is ALFWorld-specific, so D1's transfer to open-ended domains is unshown. The vote needs >= 3 writers covering a type, which real populations may lack. EXAONE and gpt-oss serving unverified (fallback: Qwen3 scaffold and temperature variants as writers, which weakens the 'independent writer' premise and is stated as such). k=7 on a poisoned store multiplies tokens. No security framing: poison is manufactured, not attacked, and no external system is touched.",
+ "Addresses gap": "G13 (benign-looking successful-experience records as the poisoned entry; cost of provenance gates on legitimate reuse), with G12's contamination-vs-number-of-writers curve as the dilution arm and G15's disagreement signal used as a detector rather than merely surfaced.",
+ "Not a restatement of": "Nearest brief bullet: Measurement A ('gain carried by clean/heat/cool procedures'); this idea claims that harm is carried by the same procedure-bound types and follows presence in the top-k rather than share, which a clean bank cannot show. Nearest digest card: 2512.16962 (MemoryGraft) implants experiences on one backbone with no harm-vs-share curve and no detector; this idea manufactures harm at controlled share under three writer identities and scores a population-only detector by precision and recall against a single-writer vote. Nearest archived idea: lineage_blast_radius relied on provenance labels and was judged entailed; here labels are shown blind to labelled poison and the detector is content-based across writers; 2607.10608 (Compliance Trap) is single-writer with no dilution or vote."
+}
+
+=== ENTAILMENT CHECK (pre-review) ===
+{
+ "name": "one_bad_apple_population_vote",
+ "predictions": [
+  {
+   "id": "P1",
+   "depends_on": "Procedure grafts (procedure step swapped or deleted) at controlled retrieved share 1, all top-3 items poisoned, on heat/clean/cool, Qwen3-32B reader at k=3, clean store P as the paired reference, 4 seeds, paired differences about +/-6.",
+   "falsifier": "Harm < 6 net with CI excluding 6 (the reader takes procedures from its prior rather than from the retrieved item).",
+   "label": "near_entailed",
+   "reason": "The proposal's own Measurement-A figure of +39..+55 net memory gain on exactly these types means the reader is already known to take procedures from retrieved items, so replacing all three retrieved items with wrong procedures can miss 6 net only if the reader is near-insensitive to top-3 content (a mechanism that would contradict the cited gain and is not modelled); the falsification rule compounds this by demanding a CI excluding 6 when the stated half-width is itself 6, so only a measured harm of about zero could ever falsify.",
+   "fix": "State the Gate-0 prediction as a fraction of the clean-store gain on the same types (e.g. grafts destroy >= 50% of the +39..+55 gain) with a symmetric CI rule, so the outcome is not forced by the size of the already-measured memory effect."
+  },
+  {
+   "id": "P2",
+   "depends_on": "Ratio of paired harm at controlled share 1/3 to paired harm at share 1 for grafts, k=3, positions randomized, 4 seeds, each harm carrying about +/-6.",
+   "falsifier": "Harm at share 1/3 is <= 40% of harm at share 1 (harm proportional to share).",
+   "label": "unresolvable",
+   "reason": "The 40%/60% boundary is 20% of a share-1 harm that Gate 0 only guarantees to be >= 6 net, so the decision band can be as small as about 1.2 net against two paired estimates each at +/-6, and no minimum share-1 harm or ratio CI half-width is pre-registered.",
+   "fix": "Pre-register a minimum share-1 harm (e.g. >= 20 net) before the ratio test is run, plus a seed count giving a joint-bootstrap ratio CI of about +/-0.15."
+  },
+  {
+   "id": "P3",
+   "depends_on": "Natural planting at fixed n_p (expected share about 0.1 per target type), k in {1,3,7} on the poisoned store against the clean store at the same k, paired.",
+   "falsifier": "Harm at k=7 <= harm at k=3 + 3 net (harm follows expected share, which is constant in k).",
+   "label": "unresolvable",
+   "reason": "At an expected share of about 0.1 the harm at k=3 will itself be a small fraction of the Gate-0 harm (plausibly 1-4 net), so the '2x' and '+3 net' boundaries and the k=1 'half' clause all lie well inside the stated +/-6 paired noise, and the k arms are additionally confounded because the clean-store reference changes with k.",
+   "fix": "Raise n_p (or restrict to types) until harm at k=3 is at least the +/-6 noise, and pre-register the CI on the k=7 minus k=3 harm difference rather than on each harm separately."
+  },
+  {
+   "id": "P4",
+   "depends_on": "Dilution cells with fixed n_p and benign writers covering the target type increased 1 -> 2 -> 4 under natural retrieval (expected share falling about 0.5 -> 0.2), with recovery expressed as a fraction of the Gate-0 (share-1) harm at k=3.",
+   "falsifier": ">= 50% of the Gate-0 harm is recovered by going from 1 to 4 benign writers.",
+   "label": "near_entailed",
+   "reason": "Recovery is scored against a denominator (share-1 harm, all top-3 poisoned) strictly larger than the harm actually present in the 1-writer dilution cell at share ~0.5, so the recoverable quantity is capped below the 50% threshold whenever that cell's harm is under half the Gate-0 harm, and nothing in the design guarantees it is not.",
+   "fix": "Express recovery as a fraction of the harm measured in the 1-writer dilution cell (the quantity that can actually be recovered), and report the 1-writer cell's harm against Gate-0 harm separately."
+  },
+  {
+   "id": "P5",
+   "depends_on": "Relabelled failures (own failed train trajectories labelled success) vs procedure grafts, both at share 1 on target types, Qwen3 reader, with an escape clause routing the arm out if relabelled failures fail Gate 0.",
+   "falsifier": "Relabelled harm >= graft harm - 2 net.",
+   "label": "unresolvable",
+   "reason": "The gap between the predicted region (relabelled <= half of graft harm) and the falsifier (relabelled >= graft harm - 2) is only about half the graft harm minus 2, i.e. roughly 4 net if graft harm is at the Gate-0 floor of 6-12, while the difference of two paired harms each at +/-6 carries about +/-8.",
+   "fix": "Condition the comparison on a graft harm large enough (e.g. >= 20 net) that the half-versus-minus-2 gap exceeds the difference CI, and report the relabelled-minus-graft difference with its own bootstrap CI."
+  },
+  {
+   "id": "P6",
+   "depends_on": "D1 cross-writer skeleton vote at m=8 with >= 3 independent benign writers in the vote pool versus D1-self (same m, own-writer pool only), scored on planted graft labels over thousands of retrieved items with Wilson CIs, parser validated on 100 hand-labelled items.",
+   "falsifier": "D1-self within 0.1 of D1 (one writer's redundancy suffices), or D1 recall < 0.5.",
+   "label": "open",
+   "reason": "Both falsifying outcomes are genuinely reachable - grafts are made by editing one of a writer's own successful trajectories, so that writer's remaining same-type items form a competent self-vote pool, and parser or natural-skeleton-variation failure can hold D1 recall under 0.5 - and Wilson CIs over thousands of retrieved items resolve 0.1-0.2 recall differences comfortably.",
+   "fix": ""
+  },
+  {
+   "id": "P7",
+   "depends_on": "D1 versus D3 versus no detector at share 2/3, with recovery scored as a fraction of the Gate-0 harm and cost as per-episode token overhead (D1 uses the programmatic ALFWorld parser, D3 spends ~500 LLM tokens per retrieved item).",
+   "falsifier": "D1 recovers < 50% of the harm, or D3 recovers more than D1 at equal token overhead.",
+   "label": "unresolvable",
+   "reason": "The token clause is true by construction (a programmatic parser cannot exceed 10% of a 500-token-per-item LLM critique) and the 'at equal token overhead' branch names a condition the two detectors can never occupy, leaving only the recovery threshold, whose 50%/70% band is about 20% of a share-2/3 harm plausibly in the 10-20 net range and therefore inside the stated +/-6 paired noise.",
+   "fix": "Drop the token clause from the falsifier (report cost descriptively), state whether the denominator is the share-2/3 harm or the share-1 Gate-0 harm, and pre-register the seeds needed for a recovery-ratio CI of about +/-0.15."
+  },
+  {
+   "id": "P8",
+   "depends_on": "Carrier writer (Qwen3-written vs EXAONE-written grafts with identical wrong procedure content) crossed with reader (Qwen3-32B, EXAONE-4.0-32B) at share 2/3; the EXAONE cells are not in the listed 4-seed set (Gate-0, share-1/3, k-sweep), so they run at 2 seeds.",
+   "falsifier": "The foreign carrier harms as much or more for either reader (harm depends on content only).",
+   "label": "unresolvable",
+   "reason": "The falsifier is stated with no margin at all ('as much or more'), so with paired harm differences at about +/-6 (wider still for the 2-seed EXAONE arm) a true null falsifies or confirms roughly at chance and the interaction cannot be read off the data.",
+   "fix": "State a margin for the carrier effect (e.g. own-carrier harm exceeds foreign-carrier harm by >= 6 net for each reader) and run all four carrier x reader cells at 4 seeds."
+  }
+ ],
+ "shared_terms": [
+  "P1-P2: the share-1 graft harm is P1's estimand and P2's denominator, so a Gate 0 that barely passes shrinks P2's 40/60 band below the stated noise.",
+  "P1-P4: the same share-1 Gate-0 harm is P4's recovery denominator, which is what caps P4's falsifier.",
+  "P1-P7: the Gate-0 harm is again the denominator of D1's recovery fraction, so P1's magnitude sets whether P7 is resolvable.",
+  "P1-P5: graft harm at share 1 is both P1's estimand and P5's comparison term.",
+  "P2-P3: both are ratios of harms measured against the same clean-store reference at k=3, so the k=3 harm term appears in both.",
+  "P6-P7: D1's recall and precision on grafts determine the filtering recovery scored in P7, so P7 cannot come out well if P6 comes out badly."
+ ],
+ "headline": "P2",
+ "headline_status": "unresolvable",
+ "n_open": 1,
+ "n_entailed": 0,
+ "n_near": 2,
+ "n_unresolvable": 5,
+ "verdict": "revise"
+}
+
+=== BINDING RULES FROM THE BRIEF ===
+## Rules for every proposal in this round (binding; the entailment check and the judges enforce them)
+- **Writer identity is manipulated, not observed.** The same task set, the same bank construction and the same retriever,
+  with only the writer swapped (expert / self / other backbone / mixed); and the same store read by several readers.
+- **Self-pool control at matched collection cost.** Any foreign-experience arm is compared with a pool the reader collected
+  itself at the same episode or token budget; "foreign memory helps" without this arm is the gain of having any memory.
+- **Retained-gain ratio is the estimand,** reported per writer × reader cell with seeds: reader's gain from the writer's pool
+  divided by the writer's own gain from the same pool (or divided by the reader's self-pool gain), with CIs.
+- **Static-procedure baseline (Measurement C) in every design.** A reader that gains nothing from any writer beyond a fixed
+  procedure prompt has nothing to transfer; report every transfer gain net of it.
+- **Contamination arms are manufactured, gated and positively controlled.** Planted wrong items at controlled rates, by
+  writer identity; Gate 0 requires the harm to be ≥ 6 net points at some rate; a read-time detector is scored by precision
+  and recall, not by the downstream success change alone.
+- **Capability and proximity are separated.** The archived idea closer_beats_stronger (5.75) claimed policy proximity, not
+  capability, predicts transfer; a new proposal must vary proximity at fixed capability (same backbone, different scaffold,
+  temperature or training) and capability at fixed proximity, or it is a restatement.
+- **Every trained or adapted component is evaluated memory-absent, matched and mismatched**; an adaptation step is compared
+  with direct injection of the unmodified item at matched tokens.
+- **Per prediction: the falsifying outcome and the arm that can produce it.** A prediction whose falsifier no arm can
+  produce (a split that never gives the reader the information; an append-only store; a warm start; an identity between
+  estimands; a falsifier inside the stated CI) is sent back before review.
+- **One literature search in the home vocabulary** of the mechanism (knowledge distillation, transfer learning negative
+  transfer, data poisoning, imitation from suboptimal demonstrations, ensemble diversity), no agent/memory/benchmark words.
+- **Power and budget:** paired cells, ±8 net at 274 × 2 seeds; margins as fractions of the Gate-0 effect; cell-by-cell episode
+  counts; both A100s busy (one serves a reader while the other serves a writer or trains); days, not weeks.
+
+
+
+Every prediction labelled entailed, near_entailed or unresolvable must be either made open (change the arms, split, estimand or seeds as the 'fix' suggests, or add the arm that can produce the falsifying outcome) or removed. The headline prediction must be open. Keep the same Name and keep the core claim. Return ONLY the revised IDEA JSON with all standard fields plus 'Addresses gap', 'Not a restatement of' and 'Changes made' (a short list: which prediction, what changed).

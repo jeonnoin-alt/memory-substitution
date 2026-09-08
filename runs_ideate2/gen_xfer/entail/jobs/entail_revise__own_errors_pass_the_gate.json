@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__own_errors_pass_the_gate",
+ "kind": "entail_revise",
+ "name": "own_errors_pass_the_gate",
+ "prompt_file": "runs_ideate2/gen_xfer/entail/jobs/entail_revise__own_errors_pass_the_gate.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

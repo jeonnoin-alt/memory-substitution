@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__leave_one_type_out_split",
+ "kind": "entail_revise",
+ "name": "leave_one_type_out_split",
+ "prompt_file": "runs_ideate2/gen_xfer/entail/jobs/entail_revise__leave_one_type_out_split.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

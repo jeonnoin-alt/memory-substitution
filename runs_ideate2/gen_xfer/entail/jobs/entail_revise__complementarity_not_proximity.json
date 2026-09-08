@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__complementarity_not_proximity",
+ "kind": "entail_revise",
+ "name": "complementarity_not_proximity",
+ "prompt_file": "runs_ideate2/gen_xfer/entail/jobs/entail_revise__complementarity_not_proximity.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

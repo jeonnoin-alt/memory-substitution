@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__reconstruction_pays_only_across_the_writer_gap",
+ "kind": "entail_revise",
+ "name": "reconstruction_pays_only_across_the_writer_gap",
+ "prompt_file": "runs_ideate2/gen_xfer/entail/jobs/entail_revise__reconstruction_pays_only_across_the_writer_gap.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

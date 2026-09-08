@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__thoughts_do_not_travel",
+ "kind": "entail_revise",
+ "name": "thoughts_do_not_travel",
+ "prompt_file": "runs_ideate2/gen_xfer/entail/jobs/entail_revise__thoughts_do_not_travel.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}
