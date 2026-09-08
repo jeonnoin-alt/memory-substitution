@@ -1,0 +1,10 @@
+{
+ "id": "entail__batch04",
+ "kind": "entail",
+ "name": "batch04",
+ "prompt_file": "runs_ideate2/gen_credit/entail/jobs/entail__batch04.prompt.md",
+ "tools": [],
+ "model": "opus",
+ "expects": "json",
+ "status": "pending"
+}

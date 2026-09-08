@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__per_item_loo_reliability_and_winners_curse",
+ "kind": "entail_revise",
+ "name": "per_item_loo_reliability_and_winners_curse",
+ "prompt_file": "runs_ideate2/gen_credit/entail/jobs/entail_revise__per_item_loo_reliability_and_winners_curse.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

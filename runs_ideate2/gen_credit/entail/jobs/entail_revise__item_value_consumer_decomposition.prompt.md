@@ -1,0 +1,115 @@
+=== SYSTEM ===
+You are revising your own research proposal after review.
+
+The reviewers' objections are the specification. Answer each one concretely — not by adding reassuring prose, but by changing the design: cut experiments that do not carry a claim, drop target tasks, shrink the grid, narrow the claim to what the sample size can actually detect, add the baseline they named.
+
+Two rules:
+
+- **Do not abandon the core hypothesis.** A proposal that answers every objection by becoming   generic is worse than one that keeps a sharp claim and scopes it honestly. If an objection   can only be answered by giving up the contribution, keep the contribution and say in   changes_made why you refused.
+- **Novelty is the thing you are most likely to lose.** Measured across revision rounds,   answering reviewers reliably raises soundness and feasibility and *lowers* novelty: the   claim gets hedged, the scope narrows, and what was surprising becomes safe. Guard against   that. Do not soften the central claim into something a reviewer could not disagree with, do   not replace a sharp mechanism with a measurement study, and do not add qualifiers that make   the prediction unfalsifiable. If a reviewer's objection is really "this is risky", the right   answer is a better test of the risky claim, not a smaller claim. State in changes_made what   you did to keep the claim as sharp as it was.
+- **The resource envelope is hard.** Every experiment must fit the stated compute and budget.   If the full matrix does not fit, cut it to a primary experiment that decides the main claim   plus the minimum ablations that isolate the mechanism, and state the arithmetic: number of   runs x rollouts per run, and why that fits. A smaller study that can be run beats a large   one that cannot.
+
+=== USER ===
+=== PROPOSAL ===
+{
+ "Name": "item_value_consumer_decomposition",
+ "Title": "Whose Value Is It? Decomposing Retrieved-Item Counterfactual Value into a Consumer-Invariant Procedure Part and a Consumer-Specific Residual",
+ "Short Hypothesis": "The leave-one-out value of a retrieved experience item is the sum of a type-level procedural part, which a static procedure sentence carries and which transfers across readers, and an item-specific residual that is reliable within a reader but does not transfer: on identical retrieved sets, the cross-reader rank agreement of item residuals is below half their within-reader split-half reliability, the residual concentrates in item classes that invite verbatim copying (long self-written trajectories), and value-guided item selection estimated under one reader is worthless under another.",
+ "Related Work": "Per-item value is measured by intervention only under one generator: CUE-R REMOVE/REPLACE (2604.05467), document Shapley (2507.04480), DIG confidence gain (2509.12765, which explicitly does not examine transfer across generators). Agent memory systems claim model-agnosticism at the system level: ExpGraph/ExpSuite (2605.30712) swaps frozen executors and ablates modules, ReMe (2512.10696) reports that a smaller model with memory beats a larger one without, and CHIME (2609.02074) evolves separate planning and execution banks with attribute-before-memorize; none asks whether the utility of an individual experience learned under executor A is its utility under executor B. In the home literature, training-data value is known to be model-dependent (Data Shapley 1904.02868; DataInf 2310.00902) and proxy-model transfer of data-curation decisions is unreliable (2512.24503; DataDecide 2504.11393 finds it works only for likelihood-type proxies); this idea imports that question to in-context retrieved items with an intervention ground truth and a decomposition. The program's own memory_item_value_reliability (6.12) asserted that item value is not an item property but had no intervention arm.",
+ "Abstract": "Every self-evolving memory system scores its items, and several claim the scores are model-agnostic, yet no per-item score has been re-measured under a second consumer. We ask whether the counterfactual value of a retrieved ALFWorld experience item belongs to the item or to the reader that consumes it. Holding the retrieved sets fixed (the logged rank-ordered ids from the k-sweep), we measure leave-one-out (REMOVE) and token-matched REPLACE effects of the same items under Qwen3-32B (reader A), Qwen3-8B (reader B, same family, weaker) and, as separate arms, a self-distilled LoRA variant of Qwen3-32B (reader C, the policy-improvement drift of G16) and a cross-family 8B model (reader D). We decompose each item's value into the gain of the type's static procedure sentence (Measurement C) and the residual measured with that sentence present. We manufacture item classes with enough retrievals for +/-5-net cells: same-type expert, planted wrong-procedure, cross-type token-matched placebo, short self-written and long-detour self-written. We test transfer at matched noise by comparing the cross-reader Spearman of item residuals with the within-reader split-half reliability of the same estimates, and we test the operational consequence by cross-fitted value-guided top-3 selection estimated under one reader and deployed under another. The contribution is a statement of what a per-item score means when the reader changes: which component transfers, which does not, in which classes the non-transferable part lives, and at what re-run cost the residual can be estimated to a stable rank.",
+ "Experiments": "Setting: ALFWorld, expert bank, bank-target partition as in the starting position; 274 valid games (seen+unseen) x 4 seeds = 1,096 paired episodes per cell (~+/-5.7 net); class cells use 5 seeds (1,370, +/-5). Retrieved sets are frozen to the logged ids so the consumer is the only manipulated variable (retrieval is by task-text similarity and does not depend on the reader). Serving: reader A on GPU0, reader B on GPU1, both running concurrently, workers tuned so each replica's running queue stays >= 8. E0 (cheapest first, positive control): reader B nested-k sweep k in {0,1,3,7} on the logged sets (4 x 1,096); proceed only if B's k=3 net >= +10, otherwise report B as a non-consumer and switch reader B to Qwen3-14B. E1 ground truth per reader: k=3, REMOVE position 1/2/3, REPLACE position 1 with a token-matched cross-type item, k=1 (second set composition); pairwise removal of all three pairs on 1 seed (822) for the additivity test. E2 decomposition per reader: static-only, static + k=3, static + REMOVE 1/2/3; residual value of an item = REMOVE effect with static present; procedural component = static-only minus k=0 for the item's type. E3 manufactured classes at position 1 of the natural k=3 set, with/without: C2 planted wrong-procedure (expert same-type trajectory with the procedure receptacle swapped, e.g. clean with microwave), C3 cross-type placebo, C4 self-written same-type short (<= median length), C5 self-written same-type long-detour (>= 2x median navigation steps), 4 classes x 2 x 1,370. E4 cross-fitted deployment: item values (residual + procedural) averaged over an item's retrievals in fold 1 games are used to pick the top 3 of the top-10 similarity candidates in fold 2 games; cells: A-values under B, B-values under B, A-values under A, B-values under A, similarity top-3, random-3 from the candidates; ~1,100 per cell. E5 (secondary): readers C and D repeat E1+E2 only. Per-item analysis restricted to items with >= 8 REMOVE contrasts (expected 150-250 items). Budget: ~25,500 episodes per reader for E0-E4; at ~10 episodes/min for the single 32B replica and ~25/min for 8B this is ~2 days wall with both GPUs busy; readers C and D add ~12,000 each. Pre-registration of thresholds before E1.",
+ "Baselines and Ablations": "k=0 and static-procedure arms per reader; token-matched REPLACE vs REMOVE (content vs length); k=1 vs k=3 REMOVE (set composition) and pairwise vs single removal (additivity); item-order shuffle control on 1 seed; same-family (Qwen3-8B) vs cross-family (Llama-3.1-8B-Instruct) reader to separate family distance from capability; self-distilled reader C to separate a policy shift from a backbone swap; in-reader cross-fitted selection as the upper bound and random-3 as the floor for E4; subsampling curves (rank correlation between estimates from n and from all contrasts) to report the re-runs needed for a stable per-item rank, compared with the LOO baseline cost of one re-run per item per episode.",
+ "Falsifiable Predictions": "P1 (class-level transfer, positive control): under both A and B, C2 planted wrong-procedure < C3 placebo < C1 same-type expert, with C1 minus C2 >= 10 net in each reader. Falsified if under reader B all classes lie within +/-5 of each other or the ordering inverts; produced by the E3 class cells under reader B (a weaker reader can ignore item content, so this is not entailed). P2 (residual non-transfer): the disattenuated cross-reader Spearman of item residuals, rho_AB / sqrt(rho_AA rho_BB), is < 0.5 while the within-reader split-half rho_AA (seeds 1-2 vs 3-4) is >= 0.5. Falsified if the disattenuated rho_AB is >= 0.8 (residuals transfer) or if rho_AA < 0.3 (residuals are noise, so there is no item-specific value to transfer); produced by the E2 static+REMOVE cells under A and B on the same items. P3 (where the residual lives): C5 long-detour minus C4 short self-written is <= -8 net under B and >= -3 under A. Falsified if the C5-C4 difference is within +/-5 under both readers, or if it is more negative under A than under B; produced by the E3 C4/C5 cells. P4 (deployment): A-values deployed under B are within +/-5 of similarity top-3 while B-values deployed under B gain >= +5 over similarity top-3. Falsified if A-values under B gain as much as B-values under B (values transfer operationally), or if B-values under B gain nothing (the estimates are too noisy to use in-reader, a winner's-curse outcome); produced by the E4 cross-fitted cells. P5 (policy shift vs backbone swap, secondary): disattenuated rho_AC (self-distilled 32B) exceeds rho_AB by >= 0.2. Falsified if rho_AC <= rho_AB + 0.1; produced by the reader C cells. P1 is the positive control required before any null in P2-P4 is reported.",
+ "Measurement and Noise Control": "Every value is a paired contrast on the same (game, seed, retrieved set): net = 100 x (success with minus success without), CIs by game-level bootstrap (2,000 resamples) with seed as a blocking factor, cells sized from the measured floor (+/-8 at 548 paired episodes, so +/-5.7 at 1,096 and +/-5 at 1,370). Item-level quantities are reported as distributions, never as individual effects; transfer is tested as a comparison of two correlations computed from the same number of contrasts per item, with split-half reliability estimated on the same items so that cross-reader disagreement is separated from estimator noise; Spearman SE ~ 1/sqrt(n_items) ~ 0.06 at 250 items, so a 0.2 difference is detectable. Additivity is tested by pairwise vs single removal; static-procedure credit is subtracted before any item claim. Estimator cost is an estimand: subsampling curves give the number of re-runs per item for a rank correlation of 0.8 with the full estimate, and LLM-call cost is reported per reader. Seeds and vLLM versions pinned; every arm logged as resumable JSONL under nohup with pid files; throughput reported per replica.",
+ "Preprint Collision Check": "Channel for all queries: the literature command s2cli (Semantic Scholar + HuggingFace Papers; every run reported s2=ok hf=ok); WebSearch was not available in this session, so no section text was read. home: 'data valuation transfer across models proxy model data Shapley rank correlation' -> Data Shapley 1904.02868, OddSHAP 2602.01399, do-Shapley 2602.07203, shapiq 2410.01649, joint Shapley 2107.11357: Shapley estimators only, nothing on cross-model transfer of item values. home: 'data valuation model dependence proxy model transfer selection via proxy influence scores small model to large model' -> 2512.24503 (small proxy runs transfer unreliably to full-scale data-recipe decisions), DataDecide 2504.11393, NN-CIFT 2502.09969, BIDS 2501.12147, DataInf 2310.00902: model-dependence of training-data value is documented for pretraining and instruction data; nothing on in-context retrieved items, no decomposition into invariant and consumer-specific parts, no intervention ground truth on fixed retrieved sets. recent (mechanism, last 12 months): 'memory item utility transfer across backbone models experience reuse LLM agent replaced executor' --recent -> CHIME 2609.02074 (2026-09-02, id verified with s2cli paper: credit-aware hierarchical memory evolution with planning/execution banks; aggregate comparisons, no per-item transfer test), ExpGraph 2605.30712 (closest named method: model-agnostic experience reuse across executors, ablated at module level), Harness the Memory 2608.15008, ElasticMem 2605.30690, Anatomy of Agentic Memory 2602.19320: none measures the same items' counterfactual value under two readers. No pre-emption found; CHIME and ExpGraph are the nearest and are positioned in Related Work.",
+ "Risk Factors and Limitations": "Reader B may not consume items at all (E0 guards this; fallback to Qwen3-14B). Items are retrieved for few games, so item-level ranks are noisy; the design compares correlations at matched noise and restricts to items with >= 8 contrasts, but if within-reader reliability is below 0.3 the study degrades to a class-level result. Manufactured classes (planted wrong-procedure, long-detour self-written) are constructed, so class effects may not reflect natural bank composition. Serving of a cross-family 8B model must be verified; the LoRA reader C depends on the program's self-distillation job. ALFWorld only; the procedural/residual decomposition may look different in tasks without a type-level procedure. Cross-fitted deployment tests selection among 10 similarity candidates, not bank pruning, so pruning conclusions are indirect.",
+ "Addresses gap": "G17 (transfer of item utility across consumers, isolated per item against LOO ground truth); the reader C arm also attacks the policy-improvement case of G16.",
+ "Not a restatement of": "Nearest brief bullet: 'Expert bank, Qwen3-32B reader: k=3 +27.1/+32.1, marginal value of items 2-3 ~ +7, unseen ~ seen' - all measured under one reader, so it says nothing about whether the per-item part of that gain belongs to the item or to Qwen3-32B; this idea measures the same items' LOO under a second, third and fourth reader on identical sets and decomposes the gain. Nearest digest card: arxiv:2605.30712 (ExpGraph) shows model-agnosticism by swapping executors and reporting aggregate success with utility-aware ranking on; it never asks whether an individual experience's utility under executor A is its utility under executor B, which this idea isolates and predicts does not transfer beyond the procedure component. Nearest archived idea: memory_item_value_reliability proposed an audit without an intervention arm and with effects below the noise floor; here every value is a paired REMOVE/REPLACE contrast, claims are class-level in +/-5 cells, and transfer is a correlation comparison at matched noise with split-half disattenuation."
+}
+
+=== ENTAILMENT CHECK (pre-review) ===
+{
+ "name": "item_value_consumer_decomposition",
+ "predictions": [
+  {
+   "id": "P1",
+   "depends_on": "E3 class cells at position 1 of the natural k=3 set (C2 planted wrong-procedure, C3 cross-type placebo, C4/C5 self-written) under readers A and B at 1,370 paired episodes (+/-5), with C1 taken from the E1 REMOVE-position-1 arm, run only after the E0 gate on reader B.",
+   "falsifier": "Under reader B all classes lie within +/-5 of each other, or the ordering C2 < C3 < C1 inverts.",
+   "label": "near_entailed",
+   "reason": "E0 screens reader B for a k=3 net of at least +10 and swaps in Qwen3-14B otherwise, so the exact mechanism the prediction names as its escape (a weaker reader that ignores item content) is filtered out before E3 ever runs, and the residual equivalence bound of +/-5 is tighter than the roughly +/-7 CI on a difference of two +/-5 class cells.",
+   "fix": "Keep the screened-out reader as a reported arm and run E3 on it rather than replacing it, and size the class cells so the equivalence bound (+/-5) exceeds the difference CI."
+  },
+  {
+   "id": "P2",
+   "depends_on": "E2 static+REMOVE per-item residuals under readers A and B on the identical frozen retrieved sets, items with at least 8 REMOVE contrasts (150-250 items), split-half rho_AA computed on seeds 1-2 vs 3-4.",
+   "falsifier": "Disattenuated rho_AB at or above 0.8 (residuals transfer), or rho_AA below 0.3 (residuals are estimator noise).",
+   "label": "open",
+   "reason": "Both branches are reachable on the same items and same frozen sets: a shared procedural component surviving the static subtraction would push the disattenuated ratio above 0.8, and per-item residuals built from as few as 8 binary paired contrasts can plausibly fail the rho_AA >= 0.3 floor, which the proposal names as a falsifier rather than as an excuse.",
+   "fix": ""
+  },
+  {
+   "id": "P3",
+   "depends_on": "E3 C4 short self-written vs C5 long-detour self-written cells under readers A and B, 1,370 paired episodes each (+/-5 net).",
+   "falsifier": "The C5-C4 difference is within +/-5 under both readers, or is more negative under A than under B.",
+   "label": "unresolvable",
+   "reason": "C5-C4 is a difference of two +/-5 class cells (CI about +/-7) and the reader contrast is a difference of differences (CI about +/-10), so the predicted -8 under B versus -3 under A split and the +/-5 equivalence bound both lie inside the stated noise.",
+   "fix": "Size the C4/C5 cells for a +/-3 net margin (roughly four times the episodes) or recast the estimand as a per-item paired A-minus-B difference with a stated MDE."
+  },
+  {
+   "id": "P4",
+   "depends_on": "E4 cross-fitted deployment cells of about 1,100 each (A-values under B, B-values under B, similarity top-3, random-3), with per-item values averaged over fold-1 retrievals from at least 8 contrasts.",
+   "falsifier": "A-values under B gain as much as B-values under B, or B-values under B gain nothing over similarity top-3.",
+   "label": "unresolvable",
+   "reason": "Every threshold in the claim (a +/-5 equivalence band and a >= +5 gain) is at or below the stated +/-5.7 per-cell precision, so neither the predicted split nor either falsifying branch can be separated from noise.",
+   "fix": "Enlarge the E4 cells or pair the selections game-by-game and report the paired difference CI so the MDE is 3 net or better, and pre-register a winner's-curse correction for values estimated from 8 contrasts."
+  },
+  {
+   "id": "P5",
+   "depends_on": "E5 reader C (self-distilled from the 32B reader A) and reader B (cross-family Llama-3.1-8B), E1+E2 cells only, compared through disattenuated Spearman correlations with A.",
+   "falsifier": "rho_AC no greater than rho_AB + 0.1.",
+   "label": "near_entailed",
+   "reason": "Reader C shares A's backbone, tokenizer and capability while B differs in both family and scale, so rho_AC exceeding rho_AB follows from a confound this contrast leaves uncontrolled (the same-family 8B ablation is not used here), and the 0.1-to-0.2 dead band is narrower than the propagated error of a disattenuated ratio at 150-250 items.",
+   "fix": "Add a capability-matched cross-family 32B reader, or anchor rho_AC against an A-versus-A-with-different-seed ceiling, and state the SE of the disattenuated ratio instead of that of a raw Spearman."
+  }
+ ],
+ "shared_terms": [
+  "P2-P4: the A-values-under-B arm of E4 is the operational image of the same cross-reader agreement rho_AB that P2 estimates, so a low rho_AB determines P4's within-+/-5-of-similarity half.",
+  "P2-P5: P5's statistic is rho_AC minus rho_AB using the same rho_AB and the same rho_AA disattenuation denominator, so P2's estimate moves P5's test.",
+  "P1-P3: every E3 class is scored against the same natural k=3 without-baseline on the same reader-B episodes, so one baseline error shifts C1-C2 and C5-C4 together."
+ ],
+ "headline": "P2",
+ "headline_status": "open",
+ "n_open": 1,
+ "n_entailed": 0,
+ "n_near": 2,
+ "n_unresolvable": 2,
+ "verdict": "revise"
+}
+
+=== BINDING RULES FROM THE BRIEF ===
+## Rules for every proposal in this round (binding; the entailment check and the judges enforce them)
+- **Ground truth is an intervention, not a score.** Any per-item value claim is anchored to re-runs with the item removed,
+  replaced (token-matched) or added, on the same (game, seed); learned or proxy scores are evaluated by their rank
+  correlation with that ground truth, not by downstream success alone.
+- **Items are manufactured in classes when individual power is impossible.** Item-level CIs are wide; claims are about item
+  classes (planted wrong-procedure items, stale-true items, same-type vs cross-type items, expert vs self-written items)
+  with enough retrievals per class, or about the distribution of item values, with the sample size stated.
+- **Set composition is a manipulated variable.** Any per-item estimate is reported under at least two co-retrieved-set
+  compositions; additivity is tested, not assumed (pairwise removal vs single removal).
+- **Noise and cost of the estimator are estimands.** Report variance across seeds and repeated runs, the number of episodes
+  or re-runs needed for a stable per-item rank, and the LLM-call cost at that reliability; a method whose estimate needs
+  more re-runs than a leave-one-out baseline must say so.
+- **Static-procedure baseline (Measurement C).** Credit that a type-level procedure sentence already captures is not item
+  credit; report item value net of the static-prompt arm.
+- **Drift and consumer swap are separate arms**, not extrapolations: an item's value is re-measured after the query
+  distribution, the store size or the reader changes.
+- **No prediction entailed by a definition** (an append-only score cannot decrease; a leave-one-out on a k=1 set equals the
+  k=0 contrast; a score defined from the outcome correlates with the outcome); per prediction, state the falsifying outcome
+  and the arm that can produce it.
+- **Home-vocabulary search**: data valuation, influence functions, Shapley attribution, credit assignment in RL, replay
+  prioritization, off-policy evaluation; one query with no agent/memory/benchmark words.
+- **Power and budget**: paired cells; per-class cells sized to ±5 net; re-run budgets stated cell by cell; both GPUs busy.
+
+
+
+Every prediction labelled entailed, near_entailed or unresolvable must be either made open (change the arms, split, estimand or seeds as the 'fix' suggests, or add the arm that can produce the falsifying outcome) or removed. The headline prediction must be open. Keep the same Name and keep the core claim. Return ONLY the revised IDEA JSON with all standard fields plus 'Addresses gap', 'Not a restatement of' and 'Changes made' (a short list: which prediction, what changed).

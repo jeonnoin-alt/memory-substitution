@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__pairwise_removal_interaction_audit",
+ "kind": "entail_revise",
+ "name": "pairwise_removal_interaction_audit",
+ "prompt_file": "runs_ideate2/gen_credit/entail/jobs/entail_revise__pairwise_removal_interaction_audit.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

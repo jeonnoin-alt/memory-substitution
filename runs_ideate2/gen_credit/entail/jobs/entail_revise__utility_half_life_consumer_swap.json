@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__utility_half_life_consumer_swap",
+ "kind": "entail_revise",
+ "name": "utility_half_life_consumer_swap",
+ "prompt_file": "runs_ideate2/gen_credit/entail/jobs/entail_revise__utility_half_life_consumer_swap.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

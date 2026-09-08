@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__surrogate_endpoints_for_item_credit",
+ "kind": "entail_revise",
+ "name": "surrogate_endpoints_for_item_credit",
+ "prompt_file": "runs_ideate2/gen_credit/entail/jobs/entail_revise__surrogate_endpoints_for_item_credit.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

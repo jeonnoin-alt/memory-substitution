@@ -1,0 +1,20 @@
+=== ENTAILMENT CHECK (automated pre-review; evidence, not a verdict) ===
+For each prediction: what would falsify it, and whether the stated arms can produce that outcome at the stated power.
+
+Proposal: hole_backfill_static_counterfactual — headline P3 is **unresolvable**; open 1 / entailed 0 / near-entailed 0 / unresolvable 4; verdict revise
+
+- P1 [open] falsifier: c_B >= 0.8 x c_H with the 95% CI of the ratio excluding 0.4, i.e. the rank-4 item is not a near-substitute for the removed item.
+  reason: Both outcomes are reachable (rank-4 can be a near-twin or near-useless) and, at the stated expected c_H of about +20, the 0.4-vs-0.8 band is 8 net against a paired s(B)-s(H) floor of +/-5, so it resolves - though only barely, since at the design's own gate value c_H = +10 the band shrinks to 4 net and falls inside that floor.
+- P2 [unresolvable] falsifier: The gap c_H - c_B for wrong-procedure items is >= the expert gap minus 5, or reversed.
+  reason: Because the planted class reuses the natural class's H and B episodes, c_H - c_B = s(FULL_plant) - s(H) - s(FULL_plant) + s(B) = s(B) - s(H) for both classes - the same measured number - so the class x reference interaction is identically zero and always lands inside the +/-5 falsification band regardless of the data.
+  fix: Run class-specific H and B arms (remove and rank-4-backfill the planted item within the planted set) so the two gaps are estimated from different episodes rather than sharing arms that cancel the FULL term.
+- P3 [unresolvable] falsifier: Realized loss within +/-5 of the hole prediction, or exceeding it.
+  reason: Both the +/-5 confirmation window and the +/-5 falsification window are narrower than the combined error of the comparison - +/-5.7 on the realized loss plus roughly +/-6 on the three-position summed credit prediction - so noise alone can put the point estimate in either window.
+  fix: State an equivalence margin larger than the combined CI (or add seeds until the realized-loss-minus-prediction CI is under 5 net), and pre-register that the additivity test only covers items whose measured positions survive re-retrieval after pruning.
+- P4 [unresolvable] falsifier: c_S >= 2/3 x c_H within those types, i.e. the trajectory carries object- or scene-specific value the static sentence lacks.
+  reason: Splitting the natural cells to three of six types leaves roughly 800 paired episodes per arm (+/-7 or worse), while the 1/3-vs-2/3 decision band is only about 1/3 of c_H (3-7 net), and the proposal itself declares per-type cells non-confirmatory.
+  fix: Pool clean/heat/cool into one pre-registered confirmatory cell powered to a CI under 3 net on c_S - c_H/3, and gate it on a c_H of at least +20 rather than +10.
+- P5 [unresolvable] falsifier: The c_B/c_H ratio on the second backbone differs from the Qwen3-32B ratio by >= 0.3.
+  reason: A ratio of two contrasts each carrying +/-8 on a base of 10-20 net has a bootstrap CI spanning well over 1.0, so a 0.2/0.3 discrimination is far inside the stated noise, and the two ratios are additionally non-comparable (position 1 vs pooled positions).
+  fix: Match the swap cell to the primary cell's 1,644 paired episodes per arm at the same positions and restate the prediction as a difference of credits in net points with a stated MDE instead of a ratio-of-ratios.
+- shared terms: P1-P2: both reduce to s(B) - s(H) measured on the identical natural-class H and B arms; because the planted classes reuse those arms, P2's interaction is P1's numerator differenced against itself and is identically zero.; P1-P3: f x (sum_p c_H - sum_p c_B) is the position-summed s(B) - s(H) of P1, so P1's ratio mechanically fixes how far apart P3's two competing predictions can be.; P1-P5: P5's estimand is P1's ratio recomputed on a second backbone, sharing the estimand definition and the same FULL-arm subtraction.; P4-P1: c_S and c_H share the FULL arm and the identical H cell, so P4's ratio moves with P1's denominator.; P2-P4: the planted-class and per-type claims are both scored against the one shared H/B/P/S arm block at each position, so their errors are the same episodes.

@@ -1,0 +1,116 @@
+=== SYSTEM ===
+You are revising your own research proposal after review.
+
+The reviewers' objections are the specification. Answer each one concretely — not by adding reassuring prose, but by changing the design: cut experiments that do not carry a claim, drop target tasks, shrink the grid, narrow the claim to what the sample size can actually detect, add the baseline they named.
+
+Two rules:
+
+- **Do not abandon the core hypothesis.** A proposal that answers every objection by becoming   generic is worse than one that keeps a sharp claim and scopes it honestly. If an objection   can only be answered by giving up the contribution, keep the contribution and say in   changes_made why you refused.
+- **Novelty is the thing you are most likely to lose.** Measured across revision rounds,   answering reviewers reliably raises soundness and feasibility and *lowers* novelty: the   claim gets hedged, the scope narrows, and what was surprising becomes safe. Guard against   that. Do not soften the central claim into something a reviewer could not disagree with, do   not replace a sharp mechanism with a measurement study, and do not add qualifiers that make   the prediction unfalsifiable. If a reviewer's objection is really "this is risky", the right   answer is a better test of the risky claim, not a smaller claim. State in changes_made what   you did to keep the claim as sharp as it was.
+- **The resource envelope is hard.** Every experiment must fit the stated compute and budget.   If the full matrix does not fit, cut it to a primary experiment that decides the main claim   plus the minimum ablations that isolate the mechanism, and state the arithmetic: number of   runs x rollouts per run, and why that fits. A smaller study that can be run beats a large   one that cannot.
+
+=== USER ===
+=== PROPOSAL ===
+{
+ "Name": "stage_conditional_item_value",
+ "Title": "The Same Item, Three Moments: Stage-Conditional Counterfactual Value of Retrieved Experience in Multi-Step Agents",
+ "Short Hypothesis": "A retrieved item's counterfactual value depends on when in the episode it is consumed: injected at the step where the procedure is due, a procedure-bound item delivers most of its entry-stage value; injected at a recovery point after the reader is stuck, an item whose trajectory is location-mismatched with the current game turns harmful while a location-matched one still helps; stage and stage-by-item interaction account for more of the variance of per-(item, game) value than item identity, so stage-free scores learned at entry mis-rank items for recovery-stage retrieval.",
+ "Related Work": "Retrieval timing is a design choice in agent memory systems: SLEA-RL retrieves at each decision step conditioned on observation clusters and assigns step-level credit to actions, not items (2603.18079); MERIT argues memory usefulness changes across interaction stages and learns episode- and turn-level retrieval policies with PRM proxy rewards (2606.00547); U-EHR combines step-level credit with UCB-guided retrieval (KDD 2026). MemHarness shows verbatim replay of retrieved experience causes negative transfer and trains a reconstruction policy, without attributing the harm to items or stages (2607.28272); UCOB finds skills mislead in some states and credits the skill-conditioned prompt as a whole (2606.29502); memory anchoring is measured as an aggregate dependence dimension (2601.05107); the compliance trap locates harm at the first exposed decision point (2607.10608). Home literature on action advising values advice by the state in which it is given - when-to-advise budgets (2211.07882), intervention timing (2502.04576), state importance (2404.08828), teacher bridges at high-disagreement states (2608.01953) - but for policy training, never for the same retrieved item injected at controlled points of a common prefix with a paired counterfactual. Archived action_prior_imprinting and dormant_is_not_dead are adjacent on priors and pruning, not on within-episode timing.",
+ "Abstract": "Per-item utility scores are stage-free numbers, yet the value an item adds plausibly depends on what the agent has already done. We measure the counterfactual value of the same ALFWorld item injected at three moments of the same (game, seed) episode: entry (step 0), procedure-due (the first step after the target object is in hand, taken from a no-memory prefix) and recovery (the first step after a pre-registered stuck signal in the no-memory run). ALFWorld is deterministic given the game file, so a no-memory prefix can be replayed without LLM calls and continued with or without an injected item; the paired contrast at each stage is a stage-conditional leave-one-out. Item classes are manufactured for power: same-type expert top-1, same-type location-mismatched, same-type location-matched, the static procedure sentence (Measurement C) as the type-level control, and a cross-type token-matched placebo; recovery-stage sets of three items give single and pairwise removals for additivity. We decompose per-(class, stage) value into stage, class and interaction components, test whether entry-trained scores (outcome-reinforced, usage-decay, confidence gain) rank items as well for recovery-stage value as for entry-stage value, and report the re-run cost of a stage-indexed value table relative to a stage-free one. The contribution is a measurement of how much of an item's value is a property of the moment rather than of the item, and where a stage-free score fails.",
+ "Experiments": "Setting: ALFWorld, expert bank and self pool, 274 valid games x 4 seeds = 1,096 (game, seed) prefixes; cells of 1,096 paired contrasts (+/-5.7 net); readers Qwen3-32B on two replicas. T0: no-memory (k=0) runs with full action traces (reuse sweep logs where traces exist, else regenerate; 1,096). Stage definitions, pre-registered: S0 = step 0; S1 = first step after 'You pick up the {obj}' in the k=0 run (games without a pickup excluded and counted); S2 = first step at which the last 3 actions all returned 'Nothing happens.' or revisited a receptacle without state change (games without a stuck point excluded and counted; expected ~55-65%). Cross-stage comparisons use the intersection subset with all three stages defined; full-subset values are reported alongside. Injection at S1/S2: replay the k=0 action prefix in the env (no LLM calls), then continue with the item appended to the prompt as a retrieved experience; 'without' continuations are fresh samples from the same prefix with a different seed so both arms carry sampling noise. Item classes: I1 same-type expert top-1 by similarity; I2 same-type expert location-mismatched (target object's pick location differs from the current game's, selectable from game metadata); I3 same-type expert location-matched (same layout family, as valid_seen shares layouts with train); I4 static procedure sentence; I5 cross-type token-matched placebo. T1: S0 x I1-I5 (5 x 1,096 full episodes). T2: S1 x I1-I5 plus 2 no-item continuations (7 x 1,096 partial episodes). T3: S2 x same (7 x ~650 partial). T4: S2 with a k=3 set {I2, I3, I1} and single removals x3 plus pairwise removals x3 on 2 seeds (7 x ~325 partial). T5: scorers learned on a 1,500-game entry-stage train stream (outcome-reinforced, usage-decay), confidence gain offline; their per-item scores are correlated with S0 and S2 per-item values on items with >= 8 contrasts. Budget ~16,800 episode-equivalents (partials at ~0.6 of an episode), ~14 h at 20 episodes/min with both replicas busy, plus prefix-replay engineering; pre-registration before T1.",
+ "Baselines and Ablations": "Static procedure sentence at each stage (type-level control; item value net of it is the item-specific stage value); cross-type placebo at each stage (length/format control); no-item continuations sampled fresh at each stage (paired noise); item alone (k=1) vs within a k=3 set at S2 and pairwise vs single removal (composition and additivity); stuck-signal definition ablated (3 vs 5 non-progress actions) on 1 seed; a 'mid-navigation' stage (first step after entering the room where the object is) on 1 seed as a fourth point; reconstruction control at S2 (item rewritten by the reader to the current state, MemHarness-style) on 1 seed to check whether mismatch harm is removable; stage-indexed vs stage-free value tables compared by the re-runs needed for a stable rank.",
+ "Falsifiable Predictions": "P1 (procedure-due localization): for I1 and I4, value at S1 is >= 0.6 of value at S0 on the intersection subset. Falsified if the 95% CI of the ratio v_S1/v_S0 lies entirely below 0.6 (value is consumed in early planning or navigation rather than at the procedure step); produced by the T2 S1 cells vs T1 S0 cells. Not entailed: the procedure-bound gain in the starting position is type-level and says nothing about when within the episode it is consumed. P2 (recovery-stage anchoring): at S2, I2 location-mismatched nets <= -5 vs no-item while I3 location-matched nets >= +5, and the I3-I2 gap at S2 is >= 2x the gap at S0. Falsified if I2 and I3 are within +/-5 of each other at S2, or if the gap at S0 is at least as large as at S2 (mismatch is an item property, not a stage property); produced by the T3 and T1 cells for I2/I3. P3 (variance decomposition): in the class x stage decomposition on I1-I3 net of I4, the stage main effect plus interaction exceeds the class main effect. Falsified if the bootstrap CI of (stage + interaction) minus class includes zero or is negative; produced by the full T1-T3 grid. P4 (stage-free scores mis-rank at recovery): for each entry-trained scorer, Spearman with S2 per-item value is lower than with S0 per-item value by >= 0.2 with a CI excluding zero. Falsified if the difference's CI includes zero for the outcome-reinforced scorer; produced by T5 against the T1/T3 per-item values on items with >= 8 contrasts. P5 (non-additivity at recovery): at S2, single removal of I2 from the {I2, I3, I1} set and its pairwise removal with I3 disagree by >= 8 net (the matched item buffers the mismatched one). Falsified if they agree within +/-5; produced by the T4 cell. P1 and the I3 >= +5 half of P2 serve as positive controls before any null in P3-P5 is reported.",
+ "Measurement and Noise Control": "Paired contrasts on the same (game, seed, prefix) with fresh with/without continuations, game-level bootstrap CIs, seed blocking; cells of 1,096 contrasts (+/-5.7 net) at S0/S1 and ~650 at S2 (+/-7.4), with the intersection subset used for all cross-stage ratios and its size reported. Selection effects from stage definitions are handled by within-stage pairing and by reporting excluded-game counts per stage. Item-level analyses restricted to items with >= 8 contrasts and reported as distributions with split-half reliability; scorer correlations compared as paired differences on the same items. Variance decomposition by a two-way model with bootstrap CIs on components. Prefix replay determinism verified on 50 games (identical observations on replay) before T2. Estimator cost: re-runs per item for a stable stage-indexed rank vs stage-free rank, and LLM-call cost including partial-episode savings; throughput per replica reported.",
+ "Preprint Collision Check": "Channel for all queries: s2cli (Semantic Scholar + HuggingFace Papers; s2=ok hf=ok on every non-empty run); WebSearch unavailable this session. home: 'action advising teacher student reinforcement learning when to advise state importance budget' -> Explainable Action Advising 2211.07882, Hindsight PRIORs 2404.08828 (state importance for credit), Self-Regulation and Requesting Interventions 2502.04576 (intervention timing via PRM plus tabular RL), FutureBridge-OPD 2608.01953 (teacher bridges at high-disagreement states), Learning Agentic Policy from Action Guidance 2605.12004: the home literature values advice by when it is given, for policy training, never for retrieved items consumed in context and never by the same item injected at controlled points of a common prefix. recent (mechanism): first attempt 'step-level experience retrieval conditioned on current observation negative transfer verbatim replay reconstruct retrieved experience' --recent -> no results (empty); shortened 'retrieved experience negative transfer state-conditioned agent' --recent -> MemHarness 2607.28272 (verbatim replay causes negative transfer; reconstruction policy; gains not attributed to items or stages), remaining hits off-topic (negative-sample RL for math reasoning). closest named method: 'per-step experience retrieval decision step multi-turn agent self-evolving library' --recent -> SLEA-RL 2603.18079 (per-step retrieval conditioned on observation clusters, step-level credit to actions), U-EHR (KDD 2026, step-level credit + UCB-guided retrieval), SkillFlow 2605.14089, EvolveMem 2605.13941: retrieval timing is a design choice in these systems, never a manipulated variable with a per-item counterfactual at fixed prefixes. Seen under another query: 2608.30177 uses 'stage' for memory operations (write/read poisoning risk), a different sense. No pre-emption found.",
+ "Risk Factors and Limitations": "Stuck points exist only in a subset of games, so S2 cells are smaller and cross-stage comparisons rest on the intersection subset; if fewer than 40% of games have a stuck point, S2 power drops to ~+/-9 and the P2 threshold must be widened before unblinding. Stage definitions are pre-registered heuristics; a different stuck criterion could move values, hence the ablation. Injection at S1/S2 changes the prompt mid-episode, which is not how one-shot retrieval systems operate; the result characterizes item value under step-conditioned retrieval as in SLEA-RL, not under entry-only retrieval. Prefix replay assumes environment determinism, verified before use. Location-matched/mismatched classes depend on ALFWorld layout metadata and may not generalize to environments without such structure. Single environment and reader.",
+ "Addresses gap": "G20 (a single item's value varies across states and stages; negative transfer attributed to specific items and to the moment of consumption).",
+ "Not a restatement of": "Nearest brief bullet: 'the gain is procedure-bound (clean/heat/cool +39 to +55)' and 'look-at-in-light nets -4.8' - type-level facts about which items carry value or harm at entry; this idea claims the same item's value and sign depend on the injection stage and on state match, which those bullets cannot address because every item is injected at step 0. Nearest digest card: arxiv:2606.00547 (MERIT) asserts that memory usefulness shifts across interaction stages and learns retrieval policies with PRM proxies; it never measures a single item's value at two stages by intervention on a common prefix, which is the ground truth here. Nearest archived ideas: action_prior_imprinting and dormant_is_not_dead concern priors and pruning across episodes, not within-episode timing; retrieved_set_disagreement_gate was set-level without item ground truth, whereas here every stage value is a paired per-item contrast."
+}
+
+=== ENTAILMENT CHECK (pre-review) ===
+{
+ "name": "stage_conditional_item_value",
+ "predictions": [
+  {
+   "id": "P1",
+   "depends_on": "T1 S0 cells versus T2 S1 cells for I1 (same-type expert top-1) and I4 (static procedure sentence) on the intersection subset, S1 defined as the first step after the pickup observed in the k=0 run, 1,096 contrasts (+/-5.7).",
+   "falsifier": "The 95% CI of the ratio v_S1/v_S0 lies entirely below 0.6.",
+   "label": "unresolvable",
+   "reason": "v_S0 for a single item class is a single-digit net carrying a +/-5.7 CI, so a ratio built on that denominator cannot have a CI bounded entirely below 0.6, and the intersection subset additionally conditions on games where the k=0 policy already reached pickup unaided, selecting out the pre-procedure value whose absence the falsifier requires.",
+   "fix": "Test a pre-registered absolute margin (v_S0 minus v_S1) with a stated MDE instead of a ratio, and stratify by whether the k=0 run reached pickup so games that need navigation help stay in the comparison."
+  },
+  {
+   "id": "P2",
+   "depends_on": "T3 S2 cells for I2 (location-mismatched) and I3 (location-matched) against fresh no-item continuations at about 650 contrasts (+/-7.4), compared with the same classes in the T1 S0 cells.",
+   "falsifier": "I2 and I3 lie within +/-5 of each other at S2, or the S0 gap is at least as large as the S2 gap.",
+   "label": "unresolvable",
+   "reason": "At about 650 contrasts the I3-I2 gap carries a CI near +/-10 and the cross-stage 2x comparison is a ratio of two such gaps, so the <= -5 and >= +5 thresholds and the +/-5 equivalence bound all sit inside the stated noise.",
+   "fix": "Raise the S2 cells to at least the 1,096-contrast size (more seeds or a broader stuck-point definition) and pre-register the cross-stage comparison as an absolute difference of differences with its MDE."
+  },
+  {
+   "id": "P3",
+   "depends_on": "the two-way class x stage decomposition of per-(item, game) values over I1-I3 net of I4 across S0/S1/S2 on the intersection subset, with bootstrap CIs on the variance components.",
+   "falsifier": "The bootstrap CI of (stage + interaction) minus class includes zero or is negative.",
+   "label": "near_entailed",
+   "reason": "The comparison is asymmetric by construction, putting two components (stage main plus interaction) against one whose levels are three same-type expert items further deflated by subtracting I4, while the stage levels are made maximally different (full episode versus stuck-prefix continuation), so a class-dominant result is close to excluded before any data are collected.",
+   "fix": "Compare stage main against class main symmetrically with the interaction reported separately, and widen the class factor to span I1-I5 including the static and cross-type placebo arms."
+  },
+  {
+   "id": "P4",
+   "depends_on": "T5 entry-stage-trained scorers (outcome-reinforced, usage-decay, offline confidence gain) correlated with the T1 S0 and T3 S2 per-item value tables on items with at least 8 contrasts.",
+   "falsifier": "The Spearman difference's CI includes zero for the outcome-reinforced scorer.",
+   "label": "near_entailed",
+   "reason": "S2 per-item values come from about 650 partial episodes with fewer contrasts per item than the 1,096-contrast S0 values, so the S2 correlation is attenuated by measurement noise alone and the predicted sign is forced by differential reliability rather than by stage-conditionality, a channel P4 never disattenuates.",
+   "fix": "Disattenuate both correlations by their split-half reliabilities, or subsample the S0 contrasts per item to match S2, before taking the paired difference."
+  },
+  {
+   "id": "P5",
+   "depends_on": "T4 at S2: single removal of I2 from the {I2, I3, I1} set versus pairwise removal of I2 plus I3, 7 x about 325 partial episodes on 2 seeds.",
+   "falsifier": "The single and pairwise removal effects agree within +/-5 net.",
+   "label": "unresolvable",
+   "reason": "At about 325 contrasts each cell is roughly +/-10.5 and the contrast of two removal effects is near +/-15, so a +/-5 agreement bound is far inside the noise, and the quantity also absorbs I3's own removal effect instead of isolating the buffering interaction it claims.",
+   "fix": "Define the estimand as the interaction (pairwise minus both single removals), run T4 at the full 1,096-contrast size, and state its MDE."
+  }
+ ],
+ "shared_terms": [
+  "P1-P3: the v_S0 and v_S1 cells for I1/I4 are the same quantities that form the stage main effect in P3's decomposition, so P1's ratio and P3's stage component move together.",
+  "P2-P3: the S2 I3-I2 gap is the class x stage interaction cell that P3 counts on the stage-plus-interaction side, so P2 holding largely determines P3's sign.",
+  "P3-P4: both are functions of the same S0 and S2 per-item value tables, so noise in the S2 table simultaneously lowers P4's S2 correlation and inflates P3's interaction component.",
+  "P2-P5: the I2 harm term at S2 appears both in P2's I2-versus-no-item contrast and in P5's single removal of I2 from the k=3 set."
+ ],
+ "headline": "P3",
+ "headline_status": "near_entailed",
+ "n_open": 0,
+ "n_entailed": 0,
+ "n_near": 2,
+ "n_unresolvable": 3,
+ "verdict": "revise"
+}
+
+=== BINDING RULES FROM THE BRIEF ===
+## Rules for every proposal in this round (binding; the entailment check and the judges enforce them)
+- **Ground truth is an intervention, not a score.** Any per-item value claim is anchored to re-runs with the item removed,
+  replaced (token-matched) or added, on the same (game, seed); learned or proxy scores are evaluated by their rank
+  correlation with that ground truth, not by downstream success alone.
+- **Items are manufactured in classes when individual power is impossible.** Item-level CIs are wide; claims are about item
+  classes (planted wrong-procedure items, stale-true items, same-type vs cross-type items, expert vs self-written items)
+  with enough retrievals per class, or about the distribution of item values, with the sample size stated.
+- **Set composition is a manipulated variable.** Any per-item estimate is reported under at least two co-retrieved-set
+  compositions; additivity is tested, not assumed (pairwise removal vs single removal).
+- **Noise and cost of the estimator are estimands.** Report variance across seeds and repeated runs, the number of episodes
+  or re-runs needed for a stable per-item rank, and the LLM-call cost at that reliability; a method whose estimate needs
+  more re-runs than a leave-one-out baseline must say so.
+- **Static-procedure baseline (Measurement C).** Credit that a type-level procedure sentence already captures is not item
+  credit; report item value net of the static-prompt arm.
+- **Drift and consumer swap are separate arms**, not extrapolations: an item's value is re-measured after the query
+  distribution, the store size or the reader changes.
+- **No prediction entailed by a definition** (an append-only score cannot decrease; a leave-one-out on a k=1 set equals the
+  k=0 contrast; a score defined from the outcome correlates with the outcome); per prediction, state the falsifying outcome
+  and the arm that can produce it.
+- **Home-vocabulary search**: data valuation, influence functions, Shapley attribution, credit assignment in RL, replay
+  prioritization, off-policy evaluation; one query with no agent/memory/benchmark words.
+- **Power and budget**: paired cells; per-class cells sized to ±5 net; re-run budgets stated cell by cell; both GPUs busy.
+
+
+
+Every prediction labelled entailed, near_entailed or unresolvable must be either made open (change the arms, split, estimand or seeds as the 'fix' suggests, or add the arm that can produce the falsifying outcome) or removed. The headline prediction must be open. Keep the same Name and keep the core claim. Return ONLY the revised IDEA JSON with all standard fields plus 'Addresses gap', 'Not a restatement of' and 'Changes made' (a short list: which prediction, what changed).

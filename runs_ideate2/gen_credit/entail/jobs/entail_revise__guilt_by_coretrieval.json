@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__guilt_by_coretrieval",
+ "kind": "entail_revise",
+ "name": "guilt_by_coretrieval",
+ "prompt_file": "runs_ideate2/gen_credit/entail/jobs/entail_revise__guilt_by_coretrieval.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

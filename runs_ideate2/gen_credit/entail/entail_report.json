@@ -1,0 +1,1015 @@
+{
+ "hole_backfill_static_counterfactual": {
+  "name": "hole_backfill_static_counterfactual",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Natural-expert H (item p removed, k=2) and B (rank-4 backfill at same position) arms, 1,644 paired episodes each, c_X = s(FULL) - s(X) paired by (game, seed); positive control c_H(pos 1) >= +10.",
+    "falsifier": "c_B >= 0.8 x c_H with the 95% CI of the ratio excluding 0.4, i.e. the rank-4 item is not a near-substitute for the removed item.",
+    "label": "open",
+    "reason": "Both outcomes are reachable (rank-4 can be a near-twin or near-useless) and, at the stated expected c_H of about +20, the 0.4-vs-0.8 band is 8 net against a paired s(B)-s(H) floor of +/-5, so it resolves - though only barely, since at the design's own gate value c_H = +10 the band shrinks to 4 net and falls inside that floor.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "The 2x2 class x reference cells at positions 1 and 3, where the Experiments section states the planted classes' H, B, P, S arms are identical to the natural class's arms at that position and only the FULL-with-plant arm is new.",
+    "falsifier": "The gap c_H - c_B for wrong-procedure items is >= the expert gap minus 5, or reversed.",
+    "label": "unresolvable",
+    "reason": "Because the planted class reuses the natural class's H and B episodes, c_H - c_B = s(FULL_plant) - s(H) - s(FULL_plant) + s(B) = s(B) - s(H) for both classes - the same measured number - so the class x reference interaction is identically zero and always lands inside the +/-5 falsification band regardless of the data.",
+    "fix": "Run class-specific H and B arms (remove and rank-4-backfill the planted item within the planted set) so the two gaps are estimated from different episodes rather than sharing arms that cancel the FULL term."
+   },
+   {
+    "id": "P3",
+    "depends_on": "75%-pruned-bank cell (274 games x 4 seeds, +/-5.7) against the unpruned baseline, compared with f x sum_p c_B(p) and f x sum_p c_H(p) built from the position-level natural-class credits.",
+    "falsifier": "Realized loss within +/-5 of the hole prediction, or exceeding it.",
+    "label": "unresolvable",
+    "reason": "Both the +/-5 confirmation window and the +/-5 falsification window are narrower than the combined error of the comparison - +/-5.7 on the realized loss plus roughly +/-6 on the three-position summed credit prediction - so noise alone can put the point estimate in either window.",
+    "fix": "State an equivalence margin larger than the combined CI (or add seeds until the realized-loss-minus-prediction CI is under 5 net), and pre-register that the additivity test only covers items whose measured positions survive re-retrieval after pruning."
+   },
+   {
+    "id": "P4",
+    "depends_on": "Per-type S (placebo + static procedure sentence) and H cells for clean/heat/cool only, carved out of the natural-class 1,644-episode arms; Measurement says per-type results are reported but only pooled claims are confirmatory.",
+    "falsifier": "c_S >= 2/3 x c_H within those types, i.e. the trajectory carries object- or scene-specific value the static sentence lacks.",
+    "label": "unresolvable",
+    "reason": "Splitting the natural cells to three of six types leaves roughly 800 paired episodes per arm (+/-7 or worse), while the 1/3-vs-2/3 decision band is only about 1/3 of c_H (3-7 net), and the proposal itself declares per-type cells non-confirmatory.",
+    "fix": "Pool clean/heat/cool into one pre-registered confirmatory cell powered to a CI under 3 net on c_S - c_H/3, and gate it on a c_H of at least +20 rather than +10."
+   },
+   {
+    "id": "P5",
+    "depends_on": "Second-backbone swap cell of 1,644 episodes split across FULL/H/B (about 548 per arm, +/-8), position 1 only, compared with the primary-backbone ratio which P1 computes pooled over positions.",
+    "falsifier": "The c_B/c_H ratio on the second backbone differs from the Qwen3-32B ratio by >= 0.3.",
+    "label": "unresolvable",
+    "reason": "A ratio of two contrasts each carrying +/-8 on a base of 10-20 net has a bootstrap CI spanning well over 1.0, so a 0.2/0.3 discrimination is far inside the stated noise, and the two ratios are additionally non-comparable (position 1 vs pooled positions).",
+    "fix": "Match the swap cell to the primary cell's 1,644 paired episodes per arm at the same positions and restate the prediction as a difference of credits in net points with a stated MDE instead of a ratio-of-ratios."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: both reduce to s(B) - s(H) measured on the identical natural-class H and B arms; because the planted classes reuse those arms, P2's interaction is P1's numerator differenced against itself and is identically zero.",
+   "P1-P3: f x (sum_p c_H - sum_p c_B) is the position-summed s(B) - s(H) of P1, so P1's ratio mechanically fixes how far apart P3's two competing predictions can be.",
+   "P1-P5: P5's estimand is P1's ratio recomputed on a second backbone, sharing the estimand definition and the same FULL-arm subtraction.",
+   "P4-P1: c_S and c_H share the FULL arm and the identical H cell, so P4's ratio moves with P1's denominator.",
+   "P2-P4: the planted-class and per-type claims are both scored against the one shared H/B/P/S arm block at each position, so their errors are the same episodes."
+  ],
+  "headline": "P3",
+  "headline_status": "unresolvable",
+  "n_open": 1,
+  "n_entailed": 0,
+  "n_near": 0,
+  "n_unresolvable": 4,
+  "verdict": "revise"
+ },
+ "masked_harm_pairwise_removal": {
+  "name": "masked_harm_pairwise_removal",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Composition A conflict cells v(EWF), v(WF) and shared cells v(EF), v(F) at 4 seeds (1,096 paired, +/-5.7 each; differences about +/-8), with a W-alone positive control required only to reach 15 net.",
+    "falsifier": "|v(EWF) - v(EF)| / |v(WF) - v(F)| >= 0.8 with a 95% CI excluding 0.5 (compliance trap: W is adopted regardless of E).",
+    "label": "unresolvable",
+    "reason": "On the control's guaranteed base of 15 net the 0.5-vs-0.8 gap is 4.5 net against a stated +/-8 on each difference, so the ratio CI (numerator 12 +/- 8 over denominator 15 +/- 8) spans roughly 0.2 to 2.5 and cannot exclude 0.5 in either direction.",
+    "fix": "Require the W-alone control to reach about 30 net (stronger W) or raise the conflict and shared cells to enough seeds that each difference CI is under 3 net, and restate the claim as a net-point difference (harm_alone - harm_with_E >= 10 net)."
+   },
+   {
+    "id": "P2",
+    "depends_on": "Composition A redundancy cells v(EE'F), v(E'F) and shared v(EF), v(F) at 4 seeds, with E' a paraphrase of E token-matched within 10%.",
+    "falsifier": "Help of E with the twin present is >= 0.75 x help of E alone (a duplication dose effect).",
+    "label": "near_entailed",
+    "reason": "E' is by construction informationally identical to E, so the only route to the falsifier is a pure repetition/dose effect that the design has no arm to produce or isolate (no literal-duplicate or 3-copy cell, no partial-content twin), and the ratio's 0.25-vs-0.75 band (10 net on a 20-net base) sits at the stated +/-8 difference noise.",
+    "fix": "Add a dose arm (v(EEF) literal duplicate, and a 3-copy set) and a partial-overlap twin so repetition strength is manipulated rather than assumed, and power the redundancy cells so the 10-net band exceeds the difference CI."
+   },
+   {
+    "id": "P3",
+    "depends_on": "Composition A complementarity cells v(E_nav E_proc F), v(E_nav F), v(E_proc F), v(F) at 2 seeds (548 paired, +/-8 per cell) with E split at its first procedure action.",
+    "falsifier": "The four-term interaction is <= +3 net, i.e. the procedure half alone carries the item's value.",
+    "label": "unresolvable",
+    "reason": "A four-term interaction built from 548-episode cells carries roughly +/-11 to +/-16, far wider than the 7-net band between the predicted +10 and the falsifying +3.",
+    "fix": "Run the complementarity cells at the 4-seed (or higher) budget used for the headline cells so the interaction CI is under 3.5 net, and state that interaction MDE explicitly rather than reusing the single-cell +/-8 floor."
+   },
+   {
+    "id": "P4",
+    "depends_on": "Per-set argmin of single-removal credits over the three items of composition A conflict, credits seed-averaged over 4 binary paired contrasts per set, rate across 274 sets (+/-6 points).",
+    "falsifier": "Single removal deletes W in >= 75% of conflict sets (its masking is too small to change the decision).",
+    "label": "entailed",
+    "reason": "A per-set credit from 4 paired binary re-runs is quantized in 25-point steps with an SD near 25 net, so a true W-vs-E separation of 15-30 net gives an argmin that picks W only around half the time even with zero masking - the >= 75% falsifier is unreachable at this per-set estimator, and the paired >= 80% claim for the pairwise pruner has no falsification clause at all.",
+    "fix": "Raise seeds per set to >= 16 (or use hierarchical shrinkage of per-set credits) so per-set SE is well below the true harm, state the correct three-item argmin null (33%, not 50%), and give the pairwise-pruner >= 80% clause its own falsifier."
+   },
+   {
+    "id": "P5",
+    "depends_on": "Composition B conflict cells, which the budget runs at 2 seeds (548, +/-8), compared with the composition A masking ratio from P1's 4-seed cells.",
+    "falsifier": "The B-minus-A masking-ratio difference is <= 0.1 in either direction.",
+    "label": "unresolvable",
+    "reason": "Each masking ratio is a ratio of 548- or 1,096-episode differences on a 15-net base, giving per-ratio CIs of order 0.5-1.0, so a 0.3 difference between two such ratios - and a 0.1 falsification band - lies entirely inside the stated noise.",
+    "fix": "Run composition B conflict at the same 4-seed budget and restate the position effect as a difference of harms in net points (harm_B - harm_A >= 10 net) with a bootstrap CI, not as a difference of ratios."
+   },
+   {
+    "id": "P6",
+    "depends_on": "Shapley-completion cells v(EW), v(EE'), v(E), v(W), v(E') at 2 seeds plus k=0 from logs, correlated across conflict and redundancy sets against the two-player phi computed from v(FULL), v(-i), v(-j), v(-ij).",
+    "falsifier": "Spearman between two-player phi and exact Shapley is <= 0.5 (the third item's interactions matter).",
+    "label": "entailed",
+    "reason": "The pairwise phi's two terms, v(FULL) - v(-i) and v(-j) - v(-ij), are literally two of the exact three-player Shapley's four terms and carry half of its weight, measured on the very same episodes, so shared measurement noise forces a high across-set Spearman and puts <= 0.5 out of reach.",
+    "fix": "Estimate the exact Shapley from disjoint seeds (independent re-runs) so the shared-term correlation is broken, and additionally correlate only the residual the pairwise estimator omits (the v(i) - v(empty) and v(ij) - v(j) terms)."
+   }
+  ],
+  "shared_terms": [
+   "P1-P5: composition A's masking ratio in P5 is exactly P1's estimand computed on the same cells, so P1 determines half of P5's contrast.",
+   "P1-P4: P4's per-set decision is built from the same v(EWF) - v(EF) and v(EWF) - v(WF) contrasts as P1, only seed-averaged per set instead of pooled.",
+   "P2-P6: the redundancy phi entering P6's Spearman is assembled from v(EE'F), v(E'F), v(EF) and v(F) - the same four cells as P2's two help terms.",
+   "P6-P1/P2: the two-player phi shares two measured terms (weight 1/2) with the exact Shapley it is correlated against, and those terms are P1's and P2's numerators.",
+   "P1-P2-P3: all three rest on the single shared v(F) arm as the common subtracted baseline, so an error in that one cell moves all three estimands together."
+  ],
+  "headline": "P1",
+  "headline_status": "unresolvable",
+  "n_open": 0,
+  "n_entailed": 2,
+  "n_near": 1,
+  "n_unresolvable": 3,
+  "verdict": "revise"
+ },
+ "item_credit_variance_decomposition": {
+  "name": "item_credit_variance_decomposition",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Mixed model credit_{i,g,s} = mu_class + a_i + b_g + e over 40 expert items x 16 games x 2 seeds, FULL vs HOLE paired binary contrasts, ICC = var(a)/(var(a)+var(e)) with parametric-bootstrap CIs.",
+    "falsifier": "ICC >= 0.3 with CI lower bound > 0.1 (expert items differ in value by more than re-run noise).",
+    "label": "entailed",
+    "reason": "The ICC denominator uses the per-observation residual of a paired binary contrast (values in {-1,0,+1}, SD roughly 45-70 net points, consistent with the proposal's own +/-17 net at 32 re-runs), so ICC >= 0.3 would require a true between-item SD of 30-45 net points inside a class whose mean credit is only 10-20 net - arithmetically unreachable whatever the items are.",
+    "fix": "Define the estimand at item-mean level (reliability at the design's n, or between-item SD in net points with a pre-registered MDE) and add a class with known real spread - e.g. expert plus planted-wrong pooled into one nominal class - as the positive control that the variance-component estimator can detect signal at all."
+   },
+   {
+    "id": "P2",
+    "depends_on": "Between-item SD from the same mixed model for 40 self-pool items divided by the expert between-item SD of P1, same 16 games x 2 seeds design.",
+    "falsifier": "The SD ratio is <= 1.2 with its CI excluding 2.",
+    "label": "unresolvable",
+    "reason": "The denominator is the expert between-item SD that P1 asserts (and the estimator forces) to be indistinguishable from zero, so the ratio is unstable by construction and its bootstrap CI spans orders of magnitude, making both the >= 2 confirmation and the <= 1.2-with-CI-excluding-2 falsification undecidable.",
+    "fix": "State the self-pool prediction as an absolute between-item SD in net points (e.g. SD >= 12 net with CI excluding 5) rather than a ratio to a component predicted to be zero."
+   },
+   {
+    "id": "P3",
+    "depends_on": "Class means of credit for 20 planted-wrong vs 40 expert items at 32 paired re-runs each (640 and 1,280 paired; +/-3.9 and +/-2.7), run first as the positive control.",
+    "falsifier": "Class separation < 8 net, triggering a pre-registered strengthening of W.",
+    "label": "open",
+    "reason": "The outcome genuinely depends on whether the agent uses retrieved procedures - an agent that ignores the bank gives a near-zero separation - and the 15-vs-8 net band exceeds the roughly +/-5 CI on the class-mean difference.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "Split-half Spearman of per-item credit across all 100 items (three classes pooled) at n in {2,4,8,16} games per half, averaged over 200 random halvings of the position-1 cell.",
+    "falsifier": "Split-half Spearman >= 0.8 already at n = 4 games per half.",
+    "label": "entailed",
+    "reason": "At n = 4 (8 paired binary re-runs) the per-item SE is about 18 points (+/-35 net) against a between-item spread that is essentially only the 15-net class separation, so the attainable Spearman is well under 0.5 - and by the same arithmetic (+/-17 net at 32 re-runs, the proposal's own figure) the 0.8 target is unreachable even at n = 16, so the prediction cannot come out either way as stated.",
+    "fix": "Derive the reliability curve from the stated per-item SE and pre-register an attainable target (e.g. >= 0.5 at n = 16, < 0.3 at n = 4), and report the curve within class as well as across classes so class membership does not carry the correlation."
+   },
+   {
+    "id": "P5",
+    "depends_on": "Top-decile selection on half A at n = 4 games, retention measured as credit_B/credit_A on the position-1 cell, over 200 halvings.",
+    "falsifier": "Top-decile items retain >= 75% of their half-A credit on half B (selection is mostly real).",
+    "label": "entailed",
+    "reason": "Retention >= 75% requires true between-item variance comparable to the selection noise, but at n = 4 the per-item SE is about +/-35 net while P1's design forces within-class true spread to about zero, so near-total regression to the mean is arithmetically guaranteed and the falsifier cannot occur.",
+    "fix": "Predict retention against the value implied by the measured variance components (a quantitative shrinkage prediction, not a fixed 50/75% split) and include a selection pool with a planted, known between-item spread so the retention estimator has a case where high retention is possible."
+   },
+   {
+    "id": "P6",
+    "depends_on": "Bottom-20%-by-half-A-credit pruning of a 100-item pool that contains exactly 20 planted-wrong items, half-B credit of the pruned set vs pool mean at n in {2,8,16}, plus the expert-only sub-case.",
+    "falsifier": "The rule beats the pool mean by >= 5 net at n = 2, or fails at n = 16, or beats the expert mean by >= 5 net within expert items.",
+    "label": "unresolvable",
+    "reason": "Two of the three falsifying clauses restate the design - the bottom 20% is the same 20% of the pool that was planted wrong, and the expert-only clause is P1's zero within-class variance re-asked - while the surviving clause turns on 5-net and 2-net margins that sit at or inside the +/-5.5 CI of a 20-item x 16-game half-B mean.",
+    "fix": "Power the pruning cell so the pruned-set mean CI is under 2 net, and pre-register the enrichment expected purely from the 20% planted-wrong pool composition as the null against which the rule must improve."
+   },
+   {
+    "id": "P7",
+    "depends_on": "Second-backbone swap cell: 40 expert + 20 wrong items at 8 games x 2 seeds x 2 arms (16 paired per item), giving class means at +/-3.9/+/-5.5 and per-item credit at about +/-25 net.",
+    "falsifier": "Class separation vanishes (< 5 net) on the second backbone, or the expert cross-backbone Spearman is >= 0.6.",
+    "label": "near_entailed",
+    "reason": "The Spearman clause is dead on arrival - 16 paired re-runs per item give +/-25 net per item against a within-class true spread P1 forces to about zero, so >= 0.6 is unreachable - leaving only the vanishing-separation clause, which is reachable solely if the second backbone ignores retrieval entirely, a mechanism the design cannot distinguish from a serving or prompt-format failure and for which it runs no per-backbone control.",
+    "fix": "Add a per-backbone positive control (k=1 vs k=0 on the second backbone) so a vanished separation is attributable, and either drop the cross-backbone Spearman clause or disattenuate it using the measured per-item reliability."
+   }
+  ],
+  "shared_terms": [
+   "P1-P4: the split-half Spearman is a monotone function of the same variance components var(a)/var(e) that P1's ICC reports, computed on the identical position-1 cell, so P1's value fixes P4's curve.",
+   "P1-P5: winner's-curse retention equals the reliability var(a)/(var(a)+var(e)/n) implied by P1, so a near-zero ICC determines P5's shrinkage before any selection is run.",
+   "P2-P1: the SD ratio's denominator is P1's expert between-item SD, so P1's estimand determines whether P2's is even defined.",
+   "P3-P7: P7's first clause is P3's class separation re-measured on the second backbone - the same estimand with a different consumer.",
+   "P4-P5-P6: all three are computed from the same 200 random half-splits of the same position-1 cell, so their sampling errors are the same draws, not independent tests.",
+   "P1-P6: the expert-only clause of P6 (pruned set within +/-3 net of the expert mean) is P1's zero within-class item variance restated as a decision outcome."
+  ],
+  "headline": "P1",
+  "headline_status": "entailed",
+  "n_open": 1,
+  "n_entailed": 3,
+  "n_near": 1,
+  "n_unresolvable": 2,
+  "verdict": "revise"
+ },
+ "item_value_consumer_decomposition": {
+  "name": "item_value_consumer_decomposition",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "E3 class cells at position 1 of the natural k=3 set (C2 planted wrong-procedure, C3 cross-type placebo, C4/C5 self-written) under readers A and B at 1,370 paired episodes (+/-5), with C1 taken from the E1 REMOVE-position-1 arm, run only after the E0 gate on reader B.",
+    "falsifier": "Under reader B all classes lie within +/-5 of each other, or the ordering C2 < C3 < C1 inverts.",
+    "label": "near_entailed",
+    "reason": "E0 screens reader B for a k=3 net of at least +10 and swaps in Qwen3-14B otherwise, so the exact mechanism the prediction names as its escape (a weaker reader that ignores item content) is filtered out before E3 ever runs, and the residual equivalence bound of +/-5 is tighter than the roughly +/-7 CI on a difference of two +/-5 class cells.",
+    "fix": "Keep the screened-out reader as a reported arm and run E3 on it rather than replacing it, and size the class cells so the equivalence bound (+/-5) exceeds the difference CI."
+   },
+   {
+    "id": "P2",
+    "depends_on": "E2 static+REMOVE per-item residuals under readers A and B on the identical frozen retrieved sets, items with at least 8 REMOVE contrasts (150-250 items), split-half rho_AA computed on seeds 1-2 vs 3-4.",
+    "falsifier": "Disattenuated rho_AB at or above 0.8 (residuals transfer), or rho_AA below 0.3 (residuals are estimator noise).",
+    "label": "open",
+    "reason": "Both branches are reachable on the same items and same frozen sets: a shared procedural component surviving the static subtraction would push the disattenuated ratio above 0.8, and per-item residuals built from as few as 8 binary paired contrasts can plausibly fail the rho_AA >= 0.3 floor, which the proposal names as a falsifier rather than as an excuse.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "E3 C4 short self-written vs C5 long-detour self-written cells under readers A and B, 1,370 paired episodes each (+/-5 net).",
+    "falsifier": "The C5-C4 difference is within +/-5 under both readers, or is more negative under A than under B.",
+    "label": "unresolvable",
+    "reason": "C5-C4 is a difference of two +/-5 class cells (CI about +/-7) and the reader contrast is a difference of differences (CI about +/-10), so the predicted -8 under B versus -3 under A split and the +/-5 equivalence bound both lie inside the stated noise.",
+    "fix": "Size the C4/C5 cells for a +/-3 net margin (roughly four times the episodes) or recast the estimand as a per-item paired A-minus-B difference with a stated MDE."
+   },
+   {
+    "id": "P4",
+    "depends_on": "E4 cross-fitted deployment cells of about 1,100 each (A-values under B, B-values under B, similarity top-3, random-3), with per-item values averaged over fold-1 retrievals from at least 8 contrasts.",
+    "falsifier": "A-values under B gain as much as B-values under B, or B-values under B gain nothing over similarity top-3.",
+    "label": "unresolvable",
+    "reason": "Every threshold in the claim (a +/-5 equivalence band and a >= +5 gain) is at or below the stated +/-5.7 per-cell precision, so neither the predicted split nor either falsifying branch can be separated from noise.",
+    "fix": "Enlarge the E4 cells or pair the selections game-by-game and report the paired difference CI so the MDE is 3 net or better, and pre-register a winner's-curse correction for values estimated from 8 contrasts."
+   },
+   {
+    "id": "P5",
+    "depends_on": "E5 reader C (self-distilled from the 32B reader A) and reader B (cross-family Llama-3.1-8B), E1+E2 cells only, compared through disattenuated Spearman correlations with A.",
+    "falsifier": "rho_AC no greater than rho_AB + 0.1.",
+    "label": "near_entailed",
+    "reason": "Reader C shares A's backbone, tokenizer and capability while B differs in both family and scale, so rho_AC exceeding rho_AB follows from a confound this contrast leaves uncontrolled (the same-family 8B ablation is not used here), and the 0.1-to-0.2 dead band is narrower than the propagated error of a disattenuated ratio at 150-250 items.",
+    "fix": "Add a capability-matched cross-family 32B reader, or anchor rho_AC against an A-versus-A-with-different-seed ceiling, and state the SE of the disattenuated ratio instead of that of a raw Spearman."
+   }
+  ],
+  "shared_terms": [
+   "P2-P4: the A-values-under-B arm of E4 is the operational image of the same cross-reader agreement rho_AB that P2 estimates, so a low rho_AB determines P4's within-+/-5-of-similarity half.",
+   "P2-P5: P5's statistic is rho_AC minus rho_AB using the same rho_AB and the same rho_AA disattenuation denominator, so P2's estimate moves P5's test.",
+   "P1-P3: every E3 class is scored against the same natural k=3 without-baseline on the same reader-B episodes, so one baseline error shifts C1-C2 and C5-C4 together."
+  ],
+  "headline": "P2",
+  "headline_status": "open",
+  "n_open": 1,
+  "n_entailed": 0,
+  "n_near": 2,
+  "n_unresolvable": 2,
+  "verdict": "revise"
+ },
+ "stale_item_score_lag_after_rule_change": {
+  "name": "stale_item_score_lag_after_rule_change",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "D0 stale-only k=3 versus k=0 in the drifted env on clean targets (1,400 paired, +/-5) plus D1 pre-drift ground truth on the same items, with the D1-to-D2 severity ladder and pre-registration deferred until after D0.",
+    "falsifier": "The post-drift stale-only cell is within +/-5 of k=0 at both D1 and D2, i.e. the reader recovers from the rewritten admissible-command list.",
+    "label": "near_entailed",
+    "reason": "The wrapper rejects exactly the action string the stale items encode and D0 explicitly escalates to D2 whenever stale harm is under 10 net, so severity is tuned until the predicted sign appears, and the +/-5 equivalence bound is inside the roughly +/-7 CI on a stale-only-minus-k=0 difference.",
+    "fix": "Fix the severity (D1) and pre-register thresholds before D0 runs, reporting D2 as a separate severity result rather than as a second chance at the same test."
+   },
+   {
+    "id": "P2",
+    "depends_on": "D3 post-drift similarity-only stream of 1,500 games with clean-type games randomly assigned stale-only or mixed sets, outcome-reinforced scorer trajectories recomputed post hoc from the shared logs, median lag over the 60 most-retrieved stale items with a paired bootstrap ratio CI.",
+    "falsifier": "The lag ratio's 95% CI lies below 1.5, which happens if one stale item sinks mixed sets as hard as three do.",
+    "label": "open",
+    "reason": "Composition is randomly assigned and the compliance-trap outcome that would equalise the two lags is a real, uncontrolled property of the reader, so the stream can return a ratio near 1 even though the scorer's shared set-level credit pushes the other way.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "D4 closed loop with score-weighted retrieval and admission of post-drift successes, false-retain rate measured at the +1,000 checkpoint on the probe of 45 valid clean games x 2 seeds, per scorer, with Wilson intervals over about 60 stale items.",
+    "falsifier": "The outcome-reinforced false-retain rate is 10% or lower at +1,000 games.",
+    "label": "near_entailed",
+    "reason": "Above the scorer's pruning threshold is never defined, so the 30%/5%/10% split is not a pinned estimand, and score-weighted retrieval freezes a demoted item's score by starving it of further updates, a retention channel the proposal never names or separates from credit contamination.",
+    "fix": "Pre-register the pruning threshold (for example the bottom score quartile at each checkpoint) and log per-item retrieval counts so frozen-by-non-retrieval retention is reported separately from contamination-driven retention."
+   },
+   {
+    "id": "P4",
+    "depends_on": "D5 offline forward passes computing trajectory-averaged confidence gain for stale items on pre- and post-drift executed trajectories drawn from the D2 episodes.",
+    "falsifier": "Post-drift confidence gain drops by 50% or more, i.e. the reader stops following the item after Nothing happens.",
+    "label": "near_entailed",
+    "reason": "The post-drift D2 trajectories were generated with the stale item in context, so the item is scored on the very actions it induced and its likelihood advantage is largely self-fulfilling; falsification requires a mid-episode recovery large enough to dominate the trajectory average, a magnitude the design neither isolates nor powers.",
+    "fix": "Compute confidence gain on trajectories generated without the item in context (post-drift k=0 or stale-removed successful trajectories) and report the pre/post comparison on that held-out trajectory set."
+   },
+   {
+    "id": "P5",
+    "depends_on": "D2 mixed-composition cells: single REMOVE of the stale item (1,400 paired) versus pairwise removal of the stale item plus one fresh item on 1 seed (1,050).",
+    "falsifier": "The single and pairwise removal effects agree within +/-5 net.",
+    "label": "unresolvable",
+    "reason": "The pairwise cell is a single seed (about +/-6) and the contrast of the two removal effects carries a CI near +/-8 to +/-9, so the +/-5 agreement bound sits inside the noise, and the quantity itself equals the fresh item's own removal effect plus the interaction, so an ordinary main effect can clear the >= 8 threshold without any non-additivity.",
+    "fix": "Define the estimand as the interaction (pairwise minus both single removals), run it on all 4 seeds, and state its MDE."
+   }
+  ],
+  "shared_terms": [
+   "P2-P3: the D3 lag and the D4 false-retain rate are the same outcome-reinforced score path crossing a threshold, so a long mixed lag mechanically produces a high false-retain rate.",
+   "P1-P2: the stale-harm term P1 gates on is the same mixed-versus-stale-only success gap that sets the score separation speed and therefore the lag ratio in P2.",
+   "P1-P5: both are read off the single-REMOVE stale-item contrast in the D2 cells, so the harm magnitude established for P1 also sets the size of P5's single-versus-pairwise disagreement."
+  ],
+  "headline": "P2",
+  "headline_status": "open",
+  "n_open": 1,
+  "n_entailed": 0,
+  "n_near": 3,
+  "n_unresolvable": 1,
+  "verdict": "revise"
+ },
+ "stage_conditional_item_value": {
+  "name": "stage_conditional_item_value",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "T1 S0 cells versus T2 S1 cells for I1 (same-type expert top-1) and I4 (static procedure sentence) on the intersection subset, S1 defined as the first step after the pickup observed in the k=0 run, 1,096 contrasts (+/-5.7).",
+    "falsifier": "The 95% CI of the ratio v_S1/v_S0 lies entirely below 0.6.",
+    "label": "unresolvable",
+    "reason": "v_S0 for a single item class is a single-digit net carrying a +/-5.7 CI, so a ratio built on that denominator cannot have a CI bounded entirely below 0.6, and the intersection subset additionally conditions on games where the k=0 policy already reached pickup unaided, selecting out the pre-procedure value whose absence the falsifier requires.",
+    "fix": "Test a pre-registered absolute margin (v_S0 minus v_S1) with a stated MDE instead of a ratio, and stratify by whether the k=0 run reached pickup so games that need navigation help stay in the comparison."
+   },
+   {
+    "id": "P2",
+    "depends_on": "T3 S2 cells for I2 (location-mismatched) and I3 (location-matched) against fresh no-item continuations at about 650 contrasts (+/-7.4), compared with the same classes in the T1 S0 cells.",
+    "falsifier": "I2 and I3 lie within +/-5 of each other at S2, or the S0 gap is at least as large as the S2 gap.",
+    "label": "unresolvable",
+    "reason": "At about 650 contrasts the I3-I2 gap carries a CI near +/-10 and the cross-stage 2x comparison is a ratio of two such gaps, so the <= -5 and >= +5 thresholds and the +/-5 equivalence bound all sit inside the stated noise.",
+    "fix": "Raise the S2 cells to at least the 1,096-contrast size (more seeds or a broader stuck-point definition) and pre-register the cross-stage comparison as an absolute difference of differences with its MDE."
+   },
+   {
+    "id": "P3",
+    "depends_on": "the two-way class x stage decomposition of per-(item, game) values over I1-I3 net of I4 across S0/S1/S2 on the intersection subset, with bootstrap CIs on the variance components.",
+    "falsifier": "The bootstrap CI of (stage + interaction) minus class includes zero or is negative.",
+    "label": "near_entailed",
+    "reason": "The comparison is asymmetric by construction, putting two components (stage main plus interaction) against one whose levels are three same-type expert items further deflated by subtracting I4, while the stage levels are made maximally different (full episode versus stuck-prefix continuation), so a class-dominant result is close to excluded before any data are collected.",
+    "fix": "Compare stage main against class main symmetrically with the interaction reported separately, and widen the class factor to span I1-I5 including the static and cross-type placebo arms."
+   },
+   {
+    "id": "P4",
+    "depends_on": "T5 entry-stage-trained scorers (outcome-reinforced, usage-decay, offline confidence gain) correlated with the T1 S0 and T3 S2 per-item value tables on items with at least 8 contrasts.",
+    "falsifier": "The Spearman difference's CI includes zero for the outcome-reinforced scorer.",
+    "label": "near_entailed",
+    "reason": "S2 per-item values come from about 650 partial episodes with fewer contrasts per item than the 1,096-contrast S0 values, so the S2 correlation is attenuated by measurement noise alone and the predicted sign is forced by differential reliability rather than by stage-conditionality, a channel P4 never disattenuates.",
+    "fix": "Disattenuate both correlations by their split-half reliabilities, or subsample the S0 contrasts per item to match S2, before taking the paired difference."
+   },
+   {
+    "id": "P5",
+    "depends_on": "T4 at S2: single removal of I2 from the {I2, I3, I1} set versus pairwise removal of I2 plus I3, 7 x about 325 partial episodes on 2 seeds.",
+    "falsifier": "The single and pairwise removal effects agree within +/-5 net.",
+    "label": "unresolvable",
+    "reason": "At about 325 contrasts each cell is roughly +/-10.5 and the contrast of two removal effects is near +/-15, so a +/-5 agreement bound is far inside the noise, and the quantity also absorbs I3's own removal effect instead of isolating the buffering interaction it claims.",
+    "fix": "Define the estimand as the interaction (pairwise minus both single removals), run T4 at the full 1,096-contrast size, and state its MDE."
+   }
+  ],
+  "shared_terms": [
+   "P1-P3: the v_S0 and v_S1 cells for I1/I4 are the same quantities that form the stage main effect in P3's decomposition, so P1's ratio and P3's stage component move together.",
+   "P2-P3: the S2 I3-I2 gap is the class x stage interaction cell that P3 counts on the stage-plus-interaction side, so P2 holding largely determines P3's sign.",
+   "P3-P4: both are functions of the same S0 and S2 per-item value tables, so noise in the S2 table simultaneously lowers P4's S2 correlation and inflates P3's interaction component.",
+   "P2-P5: the I2 harm term at S2 appears both in P2's I2-versus-no-item contrast and in P5's single removal of I2 from the k=3 set."
+  ],
+  "headline": "P3",
+  "headline_status": "near_entailed",
+  "n_open": 0,
+  "n_entailed": 0,
+  "n_near": 2,
+  "n_unresolvable": 3,
+  "verdict": "revise"
+ },
+ "guilt_by_coretrieval": {
+  "name": "guilt_by_coretrieval",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "E1 dose-0 vs dose-0.5 per-item Q (count-average / alpha=0.1) fit on the same 40 B items and scored against the E2(i) clean-composition LOO vector; 40 items x 48 pairs (per-item SE ~0.10), 1,000 item-level bootstraps, split-half LOO reliability target 0.5.",
+    "falsifier": "Spearman(per-item Q, clean LOO) drop from dose 0 to dose 0.5 is < 0.05 with a bootstrap CI including 0, even though E0(a) confirmed W items cause failures.",
+    "label": "unresolvable",
+    "reason": "A Spearman over only 40 items has SE ~0.13 and the paired difference of two such correlations a CI half-width near 0.2, so the falsifying condition (CI includes 0) is met by noise even when the true drop equals the pre-registered 0.15, and the reliability-0.5 disattenuation widens it further; the second conjunct (class REMOVE changes < 5 net between two clean-composition measurements of the same items) cannot fail, since the items are unchanged and 5 net is inside the stated +/-4.5 class CI.",
+    "fix": "Raise the B class to >=120 items (or add pairs per item until split-half LOO reliability >=0.8) and pre-register a powered MDE for the dose-0 vs dose-0.5 Spearman difference instead of a bare 0.15/0.05 band."
+   },
+   {
+    "id": "P2",
+    "depends_on": "E1 dose-0.5 log with per-item Q, MemQ TD(lambda in {0.5,0.9}) over the provenance DAG and RoMeRL 16-dim coordinates all fit offline on that same shared-outcome log, scored against E2(i) LOO on 40 B items.",
+    "falsifier": "MemQ or RoMeRL beats per-item Q by >=0.15 in Spearman with LOO with a bootstrap CI excluding 0.10.",
+    "label": "near_entailed",
+    "reason": "All three scorers are fit on one log in which the reward is shared by every co-retrieved item, so a remedy could only win through a de-pooling mechanism the proposal names in neither remedy (it argues the opposite), and the falsifier additionally needs a 40-item bootstrap CI whose lower bound clears 0.10, i.e. a point difference near 0.3 that the reliability-0.5 attenuation ceiling makes unattainable.",
+    "fix": "Add a scorer arm that receives per-item counterfactual information (full-LOO oracle Q, or a credit rule given the planted flag) as the reachable-upper-bound comparison, and power the 0.15 difference with >=120 items."
+   },
+   {
+    "id": "P3",
+    "depends_on": "corrected-Q cells at 10/20/40% subsample in E1 at dose 0.5 with k=3 retrieval and one REMOVE re-run per retrieved item, compared against the dose-0 per-item Q correlation on the same 40 B items; 'recovery' is defined as a fraction of P1's drop.",
+    "falsifier": "Recovery is < 0.05, or the 40% subsample (1.2 extra episodes per episode) is needed to reach the same point.",
+    "label": "unresolvable",
+    "reason": "The cost clause cannot come out against the claim because 20% of episodes x 3 retrieved items is exactly the asserted 0.6 extra episodes per stream episode (and 40% exactly 1.2) by arithmetic of the stated design, while the surviving empirical clause is the same 40-item Spearman contrast whose 0.10/0.05 bands sit inside the bootstrap noise, and the whole estimand is undefined if P1's drop is null.",
+    "fix": "Drop the arithmetically fixed cost clause, restate recovery as an absolute correlation against LOO with a powered MDE, and add a 100%-LOO corrected arm as the recovery ceiling."
+   },
+   {
+    "id": "P4",
+    "depends_on": "E3's 100 manufactured four-arm sets (full, -B, -W or -B', -both), each on 16 paired games x 2 seeds = 32 paired episodes per arm, with per-set interaction judged against 10-net and 5-net thresholds.",
+    "falsifier": "|interaction| < 5 net in more than 80% of sets of either kind.",
+    "label": "entailed",
+    "reason": "With 32 pairs per arm each arm mean carries roughly 9-10 net of paired noise, so a four-arm interaction carries roughly 15-20 net; |interaction| < 5 net in more than 80% of sets is arithmetically unreachable and the confirming '>=30% of sets exceed 10 net' is guaranteed by measurement noise alone, independent of any real non-additivity.",
+    "fix": "Judge the interaction at class level with a CI (or require per-set interaction CIs that exclude 5 net) and raise per-set episodes about 4x so a 10-net per-set interaction sits above the per-set MDE."
+   },
+   {
+    "id": "P5",
+    "depends_on": "E4 on the E1 dose cells: bottom quartile of the 40-item per-item Q vector (10 items per cell) crossed with E2(i) LOO >= +5 net, dose-0 vs dose-0.5 rate ratio with a paired bootstrap.",
+    "falsifier": "The false-prune rate ratio is < 1.3 with the paired-bootstrap CI excluding 2.",
+    "label": "unresolvable",
+    "reason": "Each rate is a proportion over 10 quartile items (granularity 0.1, SE ~0.15), so a ratio CI tight enough to exclude 2 is unattainable, and there is a ceiling in the confirming direction as well: if B items are mostly helpful the dose-0 rate exceeds 0.5 and a 2x ratio is impossible by construction.",
+    "fix": "Define the false-prune rate over a >=120-item B class (30-item quartiles) and pre-register the dose-0 rate window within which a 2x ratio is arithmetically attainable."
+   },
+   {
+    "id": "P6",
+    "depends_on": "E0(a) forced-retrieval REMOVE on the 40 planted W items (class CI ~+/-4.5 net) and E0(b) dose-0 per-item Q vs LOO Spearman on the pooled 80 B+W items.",
+    "falsifier": "W-class REMOVE effect > -10 net, or pooled dose-0 Spearman < 0.3 so the scorer implementation is rejected.",
+    "label": "near_entailed",
+    "reason": "E0(b) pools two classes that were built to differ - planted wrong-procedure items already gated at <= -10 net by E0(a) against bystanders - so any scorer that registers gross failure clears 0.3 from the class contrast alone and the implementation gate can reject a scorer only through a failure mode the proposal does not name; only the E0(a) half is genuinely at risk.",
+    "fix": "Run E0(b) within the B class alone (or on an unplanted natural item pool) so the scorer-validity gate is not carried by the planted between-class separation."
+   }
+  ],
+  "shared_terms": [
+   "P1-P3: P3's recovery is defined as a fraction of P1's dose-0 to dose-0.5 Spearman drop and uses the same dose-0 Q correlation as its target, so a null P1 leaves P3 undefined.",
+   "P1-P2: P2 is a difference measured against the same dose-0.5 Spearman(per-item Q, E2(i) LOO) term that forms one end of P1's drop.",
+   "P1-P5: P5's bottom-quartile membership is a monotone function of the same dose-0 and dose-0.5 per-item Q vectors, and its LOO >= +5 flags come from the same E2(i) values used in P1's correlation.",
+   "P2-P3: both are scored as differences against one dose-0.5 per-item Q baseline fit on a single E1 log, so an outlier in that single fit moves both."
+  ],
+  "headline": "P1",
+  "headline_status": "unresolvable",
+  "n_open": 0,
+  "n_entailed": 1,
+  "n_near": 2,
+  "n_unresolvable": 3,
+  "verdict": "revise"
+ },
+ "admission_pruning_audit_random_holdout": {
+  "name": "admission_pruning_audit_random_holdout",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "E1's 160 candidates stratified by each scorer's quartiles, ADD vs REPLACE-static on 24 games x 2 seeds (per-item SE ~0.10), Spearman raw and disattenuated by split-seed reliability; admitted vs bypassed strata defined by each rule's 60th-percentile threshold.",
+    "falsifier": "Any scorer reaches Spearman >= 0.4 with a bootstrap CI excluding 0.2, or admitted minus bypassed realized ADD is >= 5 net with a CI excluding 0.",
+    "label": "open",
+    "reason": "At n=160 a Spearman of 0.4 carries a CI half-width near 0.13 so the first falsifier is resolvable, quartile-stratified sampling widens score variance in the falsifying direction, and DIG-style confidence gain is a named mechanism that could reach it - though the falsifier does not say whether 0.4 is raw or disattenuated (raw would need a true correlation near 0.57 against the reliability-0.5 ceiling) and the second conjunct's 5-net margin sits at the stated +/-4.5-net class CI.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "E3's 24 pruned items per rule x stratum {1-3, 4-7, >=8} on 16 games x 2 seeds, harmful-item capture scored against the E1 sample's LOO <= -10 net reference population, outcome-Q bottom 20% versus random.",
+    "falsifier": "Outcome-Q beats random by >= 0.15 in harmful-item capture already in the 1-3 feedback-event stratum.",
+    "label": "unresolvable",
+    "reason": "Capture rates come from 24-item cells (proportion SE ~0.10, difference SE ~0.14) measured against a harmful reference set that is only the handful of E1 candidates with LOO <= -10 net, so the 0.15 and 0.10 decision thresholds lie inside the sampling noise of both the rule cells and the reference population.",
+    "fix": "Enlarge the per-stratum sample to >=60 items, pre-register a reference population with a stated minimum count of LOO <= -10 items, and state an MDE for a 0.15 capture difference."
+   },
+   {
+    "id": "P3",
+    "depends_on": "E2 pass-A retrieval log over the shadow store (expert bank + 1,892 self-pool + 40 W, about 1,932 items) across 3,553 games at k=3 under similarity x utility retrieval.",
+    "falsifier": ">= 35% of store items reach >= 8 feedback events.",
+    "label": "near_entailed",
+    "reason": "3,553 games x k=3 gives about 10,659 retrieval events over about 1,932 items, a mean near 5.5, so >=35% of items reaching >=8 requires a flatter-than-Poisson allocation that similarity x utility ranking cannot produce because it concentrates retrievals on type-matching high-utility items - the result mostly restates the chosen store size and stream length rather than a property of self-evolving stores.",
+    "fix": "Vary store size (e.g. a 500-item versus 1,900-item pool) or report the events-per-item coverage curve, so the claim is not fixed by the pool-size-to-stream-length ratio the authors chose."
+   },
+   {
+    "id": "P4",
+    "depends_on": "E3 SF-AMS bottom-20% cells (usage, redundancy, recency - no outcome term) versus random, harmful-item capture and harmless-prune rate per feedback stratum.",
+    "falsifier": "SF-AMS capture >= random + 0.20 in any stratum.",
+    "label": "near_entailed",
+    "reason": "SF-AMS features never see episode outcomes, so above-random harm capture can arrive only through an uncontrolled harm-redundancy correlation - the planted W items are same-type near-duplicates of expert items and therefore score high on the redundancy term - a route the proposal neither names nor blocks, while the second conjunct (harmless-prune rate above random) is definitionally true of a redundancy-based rule.",
+    "fix": "Add a planted-harm variant that is not redundant with any existing same-type item (and report the measured redundancy-harm correlation) so the capture test is not decided by how the W items were constructed."
+   },
+   {
+    "id": "P5",
+    "depends_on": "E2 pass A (outcome-Q x similarity) and pass B (SF-AMS utility x similarity) retrieval logs; retrieval share of the 40 planted W items in the last stream third relative to the first, with a second pass-A stream seed for test-retest.",
+    "falsifier": "Q part: the ratio under outcome-Q is >= 0.9; SF-AMS part: the ratio is <= 1.1.",
+    "label": "open",
+    "reason": "The Q-part falsifier has a named and reachable mechanism (shared reward rescued by co-retrieved helpful items keeps a count-average Q too high to demote W items) and W retrieval counts per stream third are large enough to separate 0.7 from 0.9, although the SF-AMS half is a positive-feedback loop the proposal itself concedes is true by construction and correctly demotes to secondary.",
+    "fix": ""
+   },
+   {
+    "id": "P6",
+    "depends_on": "E0 forced-retrieval ADD on 40 expert items versus 40 planted W items, each a 40-item class cell with CI about +/-4.5 net.",
+    "falsifier": "The expert-versus-W separation is < 15 net, so the audit is reported as underpowered rather than as a null.",
+    "label": "open",
+    "reason": "The falsifier is genuinely reachable because a reader that does not comply with retrieved procedures collapses the separation regardless of how the W items were written, and the two 40-item class means give a difference CI near +/-6.4 net against the 15-net threshold.",
+    "fix": ""
+   }
+  ],
+  "shared_terms": [
+   "P2-P4: both report the same E3 harmful-item-capture estimand against the same random-pruning arm and the same E1-derived LOO <= -10 reference set, so the random arm's capture rate determines both comparisons.",
+   "P1-P2 and P1-P4: the E1 realized ADD values that P1 correlates are also the reference population that defines 'harmful item' in P2 and P4, so P1's measurement error propagates into both capture rates.",
+   "P3-P5: feedback events are retrieval events, so P3's coverage fraction and P5's W retrieval-share ratio are two readouts of the same pass-A count matrix.",
+   "P2-P3: P3's coverage claim fixes how thin the >=8 stratum is from which P2's 24-item comparison must be drawn, so confirming P3 degrades P2's power."
+  ],
+  "headline": "P1",
+  "headline_status": "open",
+  "n_open": 3,
+  "n_entailed": 0,
+  "n_near": 2,
+  "n_unresolvable": 1,
+  "verdict": "pass"
+ },
+ "utility_half_life_consumer_swap": {
+  "name": "utility_half_life_consumer_swap",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "E2 condition B (second backbone) versus R on the same games and seeds, classes EP and W, items selected by |REPLACE-static value| >= 10 net measured in R, per-item SE ~0.10 (10 net), flip fractions bootstrapped over 40-item classes.",
+    "falsifier": "The EP and W flip fractions are within +/-0.10 of each other, or W flips more often.",
+    "label": "entailed",
+    "reason": "Items are selected on an R measurement whose per-item noise (10 net) equals the selection cutoff, and the two classes have asymmetric true magnitudes by construction (W is planted and gated at <= -10 net while EP values are small position-level gains), so regression to the mean alone gives EP a several-fold higher re-measurement sign-flip rate with no reader swap involved, and both mechanisms the proposal names (weaker reader, compliance trap) push in the same direction.",
+    "fix": "Add a same-reader replication arm (R versus R' on independent seeds) as the per-class flip-rate baseline, select the |value| >= 10 items on a held-out seed half, and test the B flip rate against that baseline rather than against the other class."
+   },
+   {
+    "id": "P2",
+    "depends_on": "E2 condition G (expert + self pool, forced item sitting among the grown store's natural top-2) versus R on the same 40 EP items and games, class CI +/-4.5 net, median REMOVE ratio plus a REPLACE-static null band.",
+    "falsifier": "The median REMOVE effect in G is >= 80% of R, or REPLACE-static in G stays >= +5 net.",
+    "label": "unresolvable",
+    "reason": "The 50%/80% bands are percentages of an unstated R median that the nested-k position value suggests is small - at an R median near 8 net the two bands are 4 and 6.4 net, inside the stated +/-4.5-net class CI - and the +/-5-net REPLACE-static null band is itself the width of the stated noise, while G simultaneously changes the co-retrieved composition, a confound whose control the proposal makes budget-contingent.",
+    "fix": "Pre-register a minimum R-condition EP median (e.g. >= 15 net) as a gate for the ratio test, state absolute net-difference thresholds instead of percentages, and make the second-composition arm mandatory so store growth is separated from composition change."
+   },
+   {
+    "id": "P3",
+    "depends_on": "E2 conditions R and U on the 40 LS items (REPLACE-static, class CI +/-4.5 net) plus the E1 reference-Q rank of the LS class median in the store.",
+    "falsifier": "The U-condition LS effect is within +/-5 net of zero, or the LS class median Q rank is in the bottom half.",
+    "label": "unresolvable",
+    "reason": "The +/-5-net decision band is the stated +/-4.5-net class CI, so a true -5-net U effect and a true zero cannot be told apart at 1,920 pairs, and the Q-rank conjunct is fixed by construction because E1 trains on seen layouts where the LS location claims hold, so the items selected for naming a seen-layout location must rank well.",
+    "fix": "Add pairs (or class size) until the LS class CI is <= +/-2 net, or raise the effect thresholds to +/-10 net, and replace the Q-rank conjunct with a rank measured on a stream that mixes seen and unseen layouts."
+   },
+   {
+    "id": "P4",
+    "depends_on": "E1 reference Q scored against E2 ground truth pooled over EP, W, LS and SW (160 items) in R versus each of B, G and U, disattenuated by per-condition split-seed reliability, with a second stream seed bounding learning-pass test-retest noise.",
+    "falsifier": "The drop is < 0.10 in all three conditions (or the R correlation is itself < 0.30, in which case the prediction is declared void).",
+    "label": "open",
+    "reason": "Pooling 160 items makes a 0.20-versus-0.10 Spearman-drop contrast resolvable and the falsifier has a concrete route, since the pooled correlation is carried largely by the W-versus-rest class contrast that P1 asserts is stable across conditions, which floors how far the pooled correlation can fall - although the 'void if R < 0.30' clause is an escape hatch that should be pre-registered as a separate gate rather than folded into the falsifier.",
+    "fix": ""
+   },
+   {
+    "id": "P5",
+    "depends_on": "E3(i) subsampled intervention pairs (4/8/16/24/48 per item) correlated with the other seed half's full intervention estimate, versus E3(ii) Q_B fit on 500/1,000/2,000/3,553-game prefixes correlated with the same held-out-seed B ground truth.",
+    "falsifier": "Q_B reaches Spearman 0.5 within 1,000 stream games, or intervention needs more than 16 pairs per item.",
+    "label": "near_entailed",
+    "reason": "Route (i) is correlated against a split half of the very same intervention measurement, so its curve is a Spearman-Brown self-reliability function of shared measured terms and reaches 0.5 by arithmetic once per-item reliability allows, while route (ii) is a different quantity that must additionally clear that ground truth's attenuation ceiling; the accounting rule that charges the stream route zero marginal episodes tilts the same way, so the >=3x ratio can be beaten only through an unnamed route to a common independent criterion.",
+    "fix": "Score both routes against a third estimand measured independently of route (i) - decision quality (prune/keep) on a held-out item set, or ground truth from a different composition or seed family - and report the ground-truth reliability ceiling on both curves."
+   },
+   {
+    "id": "P6",
+    "depends_on": "E0 pilot of the second backbone on 274 valid_seen games (k=0 success in [0.30,0.70] and k=3 gain >= +10 net, 'else the next candidate is tried'), plus W-class REMOVE <= -10 net under the reference reader.",
+    "falsifier": "No candidate backbone satisfies the window (unusable second reader), or W-class REMOVE > -10 net under the reference reader.",
+    "label": "near_entailed",
+    "reason": "The backbone gate is a search that continues until some candidate passes, so it cannot come out against the study as stated, and selecting the second reader for a k=3 gain >= +10 net pre-selects a reader that already uses memory well - the very property P1's EP-versus-W flip comparison turns on - through a selection effect the proposal does not control or report.",
+    "fix": "Pre-register the full candidate list and report every candidate's k=0/k=3 numbers, or fix the second reader before the predictions are stated, treating the selection window as an explicit moderator of P1."
+   }
+  ],
+  "shared_terms": [
+   "P1-P4: both read the same B-condition ground truth, and P1's claim that W value transfers is precisely what floors P4's pooled R-to-B correlation drop, so confirming P1 pushes P4 toward its own falsifier.",
+   "P2-P4: the G-condition EP effects are terms both in P2's median ratio and in P4's pooled G correlation.",
+   "P3-P4: the LS U-condition REPLACE-static values enter both P3's sign test and P4's U-condition pooled correlation.",
+   "P4-P5: P5's held-out-seed B ground truth is the same measurement P4 scores the reference Q against, so B-condition ground-truth reliability sets the ceiling for both.",
+   "P1-P2: the same R-condition EP values define P1's |value| >= 10 selection and P2's ratio denominator, so a small R median makes P1's selection noise-dominated and P2's bands sub-noise at the same time."
+  ],
+  "headline": "P1",
+  "headline_status": "entailed",
+  "n_open": 1,
+  "n_entailed": 1,
+  "n_near": 2,
+  "n_unresolvable": 2,
+  "verdict": "revise"
+ },
+ "per_item_loo_reliability_and_winners_curse": {
+  "name": "per_item_loo_reliability_and_winners_curse",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "E1 retrieval-subsampling split-half Spearman and the crossed mixed model's var_item/var_within on natural expert items only (planted items excluded), with R(n)=var_item/(var_item+var_within/n).",
+    "falsifier": "Split-half Spearman at n=10 is >= 0.7 with a bootstrap CI excluding 0.5.",
+    "label": "near_entailed",
+    "reason": "The stated population is a uniformly correct ALFWorld expert bank, so small between-item variance largely restates how that bank was built and filtered, and no arm supplies a heterogeneous natural pool that could lift a 5-vs-5 split-half Spearman over deltas in {-1,0,1} (tie-dominated, attenuated) to 0.7; the second clause (0.8 only at n>=40) is an algebraic restatement of R(10)<0.5 under the stated R(n) formula, not an independent test.",
+    "fix": "Add a mixed-provenance natural bank arm (agent-generated items of varying quality), or include the planted items in the reliability population as a positive control for the R(n) curve."
+   },
+   {
+    "id": "P2",
+    "depends_on": "E1 select-on-half-A / measure-on-half-B for top-decile items at n=10, with the empirical-Bayes retention prediction taken as approximately R(10) from the same E1 variance components.",
+    "falsifier": "Observed half-B retention differs from the EB prediction by more than 0.15, or retention is >= 0.8.",
+    "label": "near_entailed",
+    "reason": "Observed split-half retention and the EB prediction are two functions of the same var_item and var_within estimated from the same deltas, so under the fitted model they agree by construction; falsification requires a heavy POSITIVE tail among top-decile items, and the only planted class is harmful (bottom-decile), so no arm creates the tail the proposal names as the escape route.",
+    "fix": "Plant a high-value item class (e.g. exact-solution items) to create a positive tail, or estimate the variance components on an independent cell (E6/E7) and test the E1 retention against that out-of-sample prediction."
+   },
+   {
+    "id": "P3",
+    "depends_on": "E5 pruning cells at n in {3,6,12,24}, 1,096 paired episodes per cell, primary contrast on the affected-game subset, against 3 random-pruning draws and the oracle (planted-item) control.",
+    "falsifier": "The n=6 cell beats random by more than 5 net with CI excluding 0, or the n=24 cell is within 5 net of random.",
+    "label": "unresolvable",
+    "reason": "The stated +/-5.6 net CI applies to all games while the primary contrast is the affected subset (a fraction of the 1,096 paired episodes, so roughly +/-8 net or worse, and its CI is never sized), so both 5-net margins sit inside the noise, and the pre-registered fallback that sets the margin to half a possibly small oracle effect shrinks the margin further rather than the CI.",
+    "fix": "Size the affected-game subset itself to about +/-3 net per cell (roughly 3-4k paired episodes per cell), or set the margin above the measured affected-subset CI before pre-registration."
+   },
+   {
+    "id": "P4",
+    "depends_on": "E1's 40 planted wrong-procedure items forced into position 2/3 in 25% of episodes (about 15 retrievals each), scored by LOO and by success-conditioned usage count, AUC against the natural-item set.",
+    "falsifier": "Usage-count AUC at n=12 is >= LOO AUC - 0.05.",
+    "label": "unresolvable",
+    "reason": "Forcing planted items into a random 25% of episodes randomizes exposure, so the success-conditioned usage count estimates the same causal contrast as LOO (only unpaired), making the falsifier genuinely reachable; but an AUC built on 40 planted items carries SE around 0.05-0.06 and the Measurement section states no AUC precision, so a 0.05 delta-AUC margin is decided by sampling noise.",
+    "fix": "Raise the planted set to roughly 150 items and pre-register a paired DeLong or bootstrap CI on delta-AUC with the margin placed outside that CI."
+   },
+   {
+    "id": "P5",
+    "depends_on": "E3's second composition (natural top-2 plus a planted CONFLICTING item at position 3) against E1 for the item x composition variance component, plus three position-pair removals on 300 games x 2 seeds (600 paired episodes per pair).",
+    "falsifier": "Item x composition component < 10% of var_item with CI, or pair-minus-sum-of-singles exceeds 10 net in fewer than 5% of pairs.",
+    "label": "near_entailed",
+    "reason": "The composition contrast is manufactured by inserting an item chosen to conflict with the natural set, so a large item x composition interaction restates the manipulation and the <10% falsifier is reachable only if the reader ignores position 3 (a mechanism the design neither names nor controls); the pair clause is additionally ill-posed because only three position-pairs are run, so '20% of pairs' cannot be measured at the stated resolution.",
+    "fix": "Add a neutral token-matched third-item composition as the composition contrast, and define the pair clause over >= 30 named item pairs each with >= 20 paired episodes."
+   },
+   {
+    "id": "P6",
+    "depends_on": "E6 (400 games x 2 seeds x 4, second backbone) and E7 (300 games x 2 seeds x 4, 50% bank) item means correlated with E1 item means, disattenuated by each arm's own measured reliability.",
+    "falsifier": "Cross-reader disattenuated Spearman >= 0.7, or full-bank vs half-bank Spearman >= 0.8.",
+    "label": "unresolvable",
+    "reason": "E6 and E7 give each item far fewer than the >= 20 retrievals the power section requires for natural-item statements, so each arm's reliability sits near the R around 0.2-0.3 the proposal itself predicts, and dividing the raw correlation by the square root of two such reliabilities yields an estimate whose CI spans 0 to above 1 - the <0.5 claim and the >=0.7 falsifier both lie inside it.",
+    "fix": "Size E6 and E7 so that >= 100 shared items receive >= 20 retrievals under each arm, and pre-register the raw correlation with a bootstrap CI alongside the disattenuated one."
+   },
+   {
+    "id": "P7",
+    "depends_on": "E4 (300 games x 2 seeds x 4) with the Measurement C type procedure sentence present, against the aggregate gross positive LOO value of natural items measured in E1.",
+    "falsifier": ">= 80% of natural items' gross positive LOO value survives with the procedure sentence present.",
+    "label": "unresolvable",
+    "reason": "The estimand is a ratio whose denominator is precisely the aggregate natural-item positive value the proposal argues is small and unreliable, and E4's 2,400 episodes give each natural item only a couple of retrievals, so the surviving-fraction CI spans the entire 50-80% decision band (and is undefined if the denominator is near zero).",
+    "fix": "Restate the estimand as a paired net-point difference on the same games with the procedure sentence on/off, and size E4 so that difference carries a CI of about +/-3 net."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: P2's empirical-Bayes retention target IS R(10) from P1, computed from the same E1 delta values, so P1's variance-component estimate mechanically determines what P2 is compared against.",
+   "P1-P3: E5's n-subsampled pruning scores are the same subsampled item means whose reliability P1 reports, so the pruning threshold in P3 is an R(n) restatement rather than an independent measurement.",
+   "P1-P5: P5's ratio uses P1's var_item from the same crossed mixed model as its denominator, so a small measured var_item inflates the composition share.",
+   "P1-P6: P6's disattenuated Spearman divides by the square root of the same reliabilities P1 estimates, so P1's low R directly inflates P6's estimand.",
+   "P3-P4: P3's oracle-pruning positive control prunes exactly the planted items whose detectability is P4's AUC estimand, so a failed P4 makes P3's control uninterpretable by the proposal's own rule."
+  ],
+  "headline": "P1",
+  "headline_status": "near_entailed",
+  "n_open": 0,
+  "n_entailed": 0,
+  "n_near": 3,
+  "n_unresolvable": 4,
+  "verdict": "revise"
+ },
+ "responsible_item_attribution_benchmark": {
+  "name": "responsible_item_attribution_benchmark",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "E3 self-report (forced choice over the k items plus 'none', two prompt variants) scored against E1's argmax-r_i label on about 100 attributable natural failures, compared with the E0 position prior under paired McNemar.",
+    "falsifier": "Self-report top-1 accuracy >= prior + 20 points with a bootstrap CI excluding prior + 10.",
+    "label": "near_entailed",
+    "reason": "The ground-truth label is the argmax of three r_i, each a difference of two 6-seed proportions with SE 0.2-0.29 and selected at max r_i >= 0.5, so a substantial share of labels is selection noise that caps any method's attainable accuracy; the label's own test-retest is never measured, and the falsifier additionally needs about a 20-point margin against a +/-9-point accuracy CI.",
+    "fix": "Add an independent second 6-seed replication of the same interventions to measure label test-retest, and state P1's margin relative to that measured ceiling."
+   },
+   {
+    "id": "P2",
+    "depends_on": "E3 teacher-forced confidence gain of the failed action sequence with vs without each item, ranked against the same E1 argmax label on attributable natural failures.",
+    "falsifier": "Confidence gain ranks the responsible item first in >= 65% of attributable natural failures.",
+    "label": "near_entailed",
+    "reason": "The mechanism actually favours the method (a culprit item by definition raises the probability of the failed actions it induced), so the falsifier is mechanically plausible, but 65% is scored against an unreplicated argmax label whose instability the proposal never measures and whose magnitude P3 implies is large, so the threshold may sit above the label's ceiling rather than above the method's ability.",
+    "fix": "Measure the 6-seed label's test-retest agreement on a disjoint seed block and express P2's threshold as a fraction of that ceiling."
+   },
+   {
+    "id": "P3",
+    "depends_on": "E3 subsampling of m in {1,2,3,4,6} seeds from the SAME six E1 seeds that define the 6-seed ground-truth label, with agreement measured as argmax match over 3 items.",
+    "falsifier": "Single-seed LOO agrees with the 6-seed label in >= 85% of attributable episodes.",
+    "label": "entailed",
+    "reason": "A single binary re-run per item yields deltas in {-1,0,1} with pervasive three-way ties, so an argmax over 3 items cannot match a 6-seed label at 85%, and the accuracy-versus-m curve is nested inside the very seeds that define the label (agreement is 1.0 at m=6 by construction and inflated at m=4 by four shared seeds), so both clauses are artifacts of subsampling rather than evidence about replication.",
+    "fix": "Build the m-seed curve from a disjoint block of fresh seeds against a label defined by the original six, and pre-register the tie-breaking rule for the single-seed argmax."
+   },
+   {
+    "id": "P4",
+    "depends_on": "E1's attributability rule (max_i r_i >= 0.5 with a one-sided 90% CI excluding 0), where r_i is a difference of two 6-seed proportions with SE 0.2-0.29, over about 250 natural failures.",
+    "falsifier": ">= 60% of natural failures are attributable to a single item.",
+    "label": "entailed",
+    "reason": "At SE 0.2-0.29 the CI condition is nearly implied by the 0.5 threshold and a true effect of exactly 0.5 is detected only about half the time, so the observed attributable fraction is roughly half the true decisive-item rate plus about 7% per-episode false positives - reaching 60% would require essentially every natural failure to contain a decisive item, and no arm varies m or the threshold to distinguish a low rate from low power.",
+    "fix": "Raise m to >= 12 seeds for the labelling pass, or calibrate the attributability threshold to 80% detection power on the E2 known-culprit episodes and state P4 at that calibrated threshold."
+   },
+   {
+    "id": "P5",
+    "depends_on": "E2-duplicate (150 episodes, about 90 failures x 42 re-runs) with a planted wrong-procedure item plus a paraphrased duplicate of the top helpful item, versus the planted-only composition; multi-responsible defined as two items each with r_i >= 0.4; plus the E3 Shapley cell.",
+    "falsifier": "Multi-responsible fraction < 10%, or single-output methods lose < 5 points, or Shapley-LOO top-1 disagreement < 5%.",
+    "label": "open",
+    "reason": "The falsifier is disjunctive and its first branch is what the construction should actually produce - r_i >= 0.4 requires a HARMFUL item, but the duplicated pair is helpful and mutually redundant, so removing either copy leaves the other in place and drives each copy's r_i toward zero - making the falsifying outcome not merely reachable but the expected one.",
+    "fix": ""
+   },
+   {
+    "id": "P6",
+    "depends_on": "E5 re-measurement of 100 attributable episodes under a second local backbone (4,200 episodes, same 6-seed LOO design), compared item-by-item with reader 1's argmax label.",
+    "falsifier": "The same responsible item is identified under reader 2 in >= 70% of attributable episodes.",
+    "label": "near_entailed",
+    "reason": "Two independently noisy argmax labels can agree at most at about the product of their own reliabilities, and no same-reader replication arm ever establishes that ceiling, so agreement below 70% follows from label noise alone and needs no reader difference at all.",
+    "fix": "Add a reader-1 replication arm (fresh six seeds, same backbone, same episodes) as the agreement ceiling and report cross-reader agreement normalized by it."
+   },
+   {
+    "id": "P7",
+    "depends_on": "E4 re-measurement of 150 natural failures previously SELECTED as attributable, now with the type procedure sentence present (6,300 episodes), compared with their original E1 selecting measurement.",
+    "falsifier": "< 25% of attributable natural failures become non-attributable or succeed at base.",
+    "label": "entailed",
+    "reason": "The 150 episodes were selected on max r_i >= 0.5 from estimates with SE 0.2-0.29, so regression to the mean alone drops a large fraction below the threshold on any re-measurement, and the design contains no procedure-sentence-absent re-measurement arm to net that out - the >= 50% loss can be produced with the intervention doing nothing.",
+    "fix": "Re-run the same 150 selected failures with fresh seeds and NO procedure sentence as a control arm, and define P7 as the difference between the two re-measurements."
+   }
+  ],
+  "shared_terms": [
+   "P3-P4: the m-seed agreement curve and the attributable-set definition are computed from the same six E1 seeds, and the m-seed estimates are nested subsets of the seeds defining the label, so agreement is 1.0 at m=6 by construction.",
+   "P1-P2: both accuracies are scored against the same argmax label on the same ~100 attributable episodes, so the label's unmeasured error rate caps and co-moves both.",
+   "P1-P6 and P2-P6: reader-2 method accuracies and the cross-reader item agreement rest on the same reader-1 label, so a noisy label depresses all three simultaneously.",
+   "P4-P5: the multi-responsible criterion (r_i >= 0.4) is the same statistic as P4's attributability rule (0.5) at a nested threshold on the same r_i estimates.",
+   "P4-P7: P7's 'become non-attributable' is P4's threshold statistic re-applied to the very sample P4's threshold selected."
+  ],
+  "headline": "P3",
+  "headline_status": "entailed",
+  "n_open": 1,
+  "n_entailed": 3,
+  "n_near": 3,
+  "n_unresolvable": 0,
+  "verdict": "revise"
+ },
+ "surrogate_endpoints_for_item_credit": {
+  "name": "surrogate_endpoints_for_item_credit",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "E1's 8,000 re-runs scored under both the binary success flag and goal-condition progress, with R_Z(n) from retrieval subsampling and savings = n_success(0.7) / n_progress(0.7).",
+    "falsifier": "Savings < 1.5x.",
+    "label": "open",
+    "reason": "Nothing in the design forces the variance ratio - progress may be as bimodal as success (its validation that progress = 1 iff success even pins its top mass to the binary) - and the 3x versus 1.5x gap is wide relative to a paired bootstrap over 1,000 games and items; the residual weakness is that n(0.7) is extrapolated well beyond the 13-20 retrievals per item actually observed.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "E1's 30 forced location-stale items (about 400 forced retrievals for the class), class means under steps-to-success and first-divergence in SD of natural-item values versus the class's success-LOO in net points, with class cells sized to +/-5 net on success.",
+    "falsifier": "The stale class's success-LOO is <= -5 net, or the step endpoint puts the stale class within +/-0.1 SD of zero.",
+    "label": "unresolvable",
+    "reason": "The prediction asserts the stale class's success-LOO lies within +/-3 net of zero while its own falsifier sits at -5 net, yet the class cell is explicitly sized to a +/-5 net CI, so 'no success effect' and 'the surrogate was right, not biased' cannot be told apart; the step-endpoint branch meanwhile restates how the stale class was manufactured (a wrong location lengthens the path by construction).",
+    "fix": "Size the stale class to +/-2 net on the success endpoint (roughly 2.5x the forced retrievals) and pre-register the null as an equivalence test with bounds outside the resulting CI."
+   },
+   {
+    "id": "P3",
+    "depends_on": "E7's cross-fitted logistic regression of success on the process endpoints (fit on intact runs of one game half, applied to the other half's LOO re-runs), disattenuated Spearman against success-LOO on natural items with >= 20 retrievals, plus class means and savings.",
+    "falsifier": "Disattenuated Spearman < 0.6, any class bias > 5 net, or savings < 1.5x.",
+    "label": "near_entailed",
+    "reason": "Disattenuation divides by the square root of each arm's own measured reliability, and success-LOO's reliability at 20 retrievals is the low value this whole program predicts, so the divisor inflates the estimate two- to threefold and a raw correlation near 0.3 already clears 0.8; the index is moreover fitted to predict success, so 'class means within +/-3 net of success-LOO' largely restates that the regression is calibrated rather than testing it.",
+    "fix": "Pre-register the raw un-disattenuated Spearman with a bootstrap CI and a floor on each arm's reliability, and hold the three manufactured classes entirely out of the index fit."
+   },
+   {
+    "id": "P4",
+    "depends_on": "E0's teacher-forced expert log-probability change on 2,000 k=3 episodes against E1 success-LOO item means (disattenuated Spearman on natural items), and its separation of the 30 planted-wrong from the 30 location-stale items.",
+    "falsifier": "Disattenuated Spearman >= 0.6, or planted-versus-stale AUC >= 0.85.",
+    "label": "open",
+    "reason": "Here the same disattenuation inflation pushes against the prediction rather than for it, and the mechanism makes the falsifier plausible - a wrong-procedure item contradicts the expert action tokens while a stale-location item need not - with the 0.7-to-0.85 AUC gap running about two SE at 30 versus 30 items.",
+    "fix": ""
+   },
+   {
+    "id": "P5",
+    "depends_on": "E2's pairwise removals of position pairs 1+3 and 2+3 on 300 games x 2 seeds (about 600 paired episodes per pair), with pair-minus-sum-of-singles scored under progress and under success.",
+    "falsifier": "The ratio of pairs detected under progress to pairs detected under success is <= 1.2.",
+    "label": "unresolvable",
+    "reason": "Only two position-pairs are run, so 'at least twice as many pairs' is a ratio over a denominator of at most 2 and undefined at 0 versus 0; read instead at the item-pair level each pair carries only a handful of episodes so neither endpoint's CI excludes zero, and the ratio is in any case a monotone restatement of the P1 variance ratio rather than an independent test.",
+    "fix": "Define the estimand over >= 30 named item pairs with >= 20 paired episodes each and report the detection RATE with a paired bootstrap CI under both endpoints."
+   },
+   {
+    "id": "P6",
+    "depends_on": "E5 (300 games x 2 seeds x 4 under a second local backbone) for the P2 sign pattern, and E6 (50% random bank, same size) for the progress-endpoint savings factor.",
+    "falsifier": "Reader 2's step endpoint gives the stale class >= -0.1 SD or its success-LOO <= -5 net; or the savings factor changes by >= 2x between full and half bank.",
+    "label": "unresolvable",
+    "reason": "E5 and E6 are 2,400-episode cells, so each forced class receives roughly a quarter of E1's ~400 forced retrievals (CI nearer +/-9-10 net than the +/-5 net E1 was sized for), putting the -5 net branch inside the noise, while the savings factor is a ratio of extrapolated n(0.7) values whose CI on a cell that small easily spans a 2x change in either direction.",
+    "fix": "Size E5 and E6 to E1's ~400 forced retrievals per class and pre-register a bootstrap CI on the savings ratio so that the 2x boundary lies outside it."
+   },
+   {
+    "id": "P7",
+    "depends_on": "E4 (300 games x 2 seeds x 4) with the Measurement C type procedure sentence present: the stale class's step-endpoint value in SD, and the planted-wrong class's success-LOO harm relative to its E1 value.",
+    "falsifier": "The stale class's step value moves within +/-0.1 SD, or the planted-wrong harm shrinks by < 20%.",
+    "label": "unresolvable",
+    "reason": "The stale branch is excluded by construction - a type-level procedure sentence cannot carry instance-level location information, which is exactly the reason the proposal gives for the penalty persisting - and the surviving branch is a ratio of two class means (E4 at roughly +/-9-10 net against E1 at +/-5 net, on largely different games), so a 50% shrink cannot be separated from a 20% one.",
+    "fix": "Add an instance-location control sentence so the stale branch can actually fail, and run the procedure-sentence arm paired on the same forced-class episodes at E1's class size."
+   }
+  ],
+  "shared_terms": [
+   "P1-P3: P3's savings >= 2x is the same n_Z(0.7) ratio as P1's savings >= 3x computed from the same reliability curves on the same re-runs, so P1 largely implies P3's savings clause.",
+   "P1-P5: P5's detection-count ratio between endpoints is a monotone function of the very variance ratio P1 asserts, so the two cannot fail independently.",
+   "P2-P6: P6's first clause is P2's estimand (stale class negative under step endpoints, near zero under success) re-measured under reader 2 with the same class definition and thresholds.",
+   "P2-P7: P7's stale-class step value and planted-harm shrinkage are ratios taken against the same E1 class means that P2 reports, so a mis-estimated E1 class mean moves both.",
+   "P3-P4: both are disattenuated Spearmans against the same success-LOO item means, so the shared reliability divisor inflates P3 toward its >= 0.8 threshold and P4 toward its >= 0.6 falsifier at the same time."
+  ],
+  "headline": "P1",
+  "headline_status": "open",
+  "n_open": 2,
+  "n_entailed": 0,
+  "n_near": 1,
+  "n_unresolvable": 4,
+  "verdict": "revise"
+ },
+ "pairwise_removal_interaction_audit": {
+  "name": "pairwise_removal_interaction_audit",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "REDUNDANT class cells f(S), f(S-a), f(S-b), f(S-ab) where b is a token-matched paraphrase of a with exact action-string match and x is held fixed; Phase 0 gate requiring the same rank-1 item a to give >= +15 net in (a,x) vs (x); class CI +/-5 net.",
+    "falsifier": "mean I inside [-4,+4] (additive) or I >= +4 (repetition amplification, each copy adds).",
+    "label": "near_entailed",
+    "reason": "Removing either copy deletes no information the set still carries, so I collapses to f(S-ab) - f(S) = minus the joint gain, which the Phase 0 gate pins at <= -15; the falsifier needs the reader to respond to copy count rather than content, a mechanism the design plants no arm for, and the 4-net gap between the confirm and falsify bands is inside the stated +/-5 net class CI.",
+    "fix": "Add a dose arm that varies the number of copies of an item whose solo gain is verified small (and a partially degraded paraphrase), decoupled from the >= +15 net Phase 0 gate, and widen the falsifier to I >= 0."
+   },
+   {
+    "id": "P2",
+    "depends_on": "CONFLICT cells plus the Phase 2 Shapley subsets (a,x) and (x); Phase 0 gate that the planted wrong item alone harms >= 10 net; threshold expressed as a fraction of f(a,x) - f(x).",
+    "falsifier": "I >= -0.25 x [f(a,x) - f(x)], i.e. a keeps more than three quarters of its solo value while the conflicting item is present.",
+    "label": "unresolvable",
+    "reason": "The falsifier is structurally reachable (a sits in slot 1 and can simply be followed, and the Phase 0 floor on f(b,x) leaves room for a to rescue a depressed baseline), but at the gated gain of about 15 net the confirm boundary (-7.5) and the falsify boundary (-3.75) differ by under 4 net, inside the stated +/-5 net class CI, and both are ratios of two separately noisy measured terms.",
+    "fix": "Restate the falsifier as an absolute net threshold (e.g. I >= 0) and size the CONFLICT class so the class-mean I carries a CI under 2 net."
+   },
+   {
+    "id": "P3",
+    "depends_on": "COMPLEMENTARY cells with a and b cut so neither fragment alone contains the whole procedure, natural rank-3 item x held fixed, k=0 success 0.54, 800 cells at +/-5 net.",
+    "falsifier": "I <= +3 net (no super-additivity).",
+    "label": "open",
+    "reason": "The prior at 0.54 k=0 success or the fixed natural rank-3 item can complete the missing half, so single-fragment cells can retain most of the gain and drive I toward zero, and unlike the other classes no positive control forces the joint gain, although the 5-net gap between +8 and +3 only just matches the stated +/-5 net CI.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "CONTROL cells (natural rank-1 same-type a plus token-matched cross-type b, x fixed), class CI +/-5 net, no-op repeat as noise floor.",
+    "falsifier": "|I| >= 8 net (cross-type items interact by distraction).",
+    "label": "unresolvable",
+    "reason": "Distraction by a cross-type item is a real route to the falsifier, but the 4-net equivalence bound is below the stated +/-5 net class CI, so an observed |I| of 8 has a CI that still contains 4 and neither side of the decision can be separated.",
+    "fix": "Raise cells or seeds until the CONTROL class CI is about +/-2 net, or pre-register the class as a formal equivalence test with the bound set above the measured CI."
+   },
+   {
+    "id": "P5",
+    "depends_on": "Phase 2 completion of all eight subsets of (a,b,x) for CONFLICT, REDUNDANT and CONTROL under the same seeds; per-set top-item agreement between phi_LOO and exact Shapley, minus the no-op-repeat disagreement rate.",
+    "falsifier": "excess top-item disagreement over CONTROL below 5 points.",
+    "label": "near_entailed",
+    "reason": "With all eight subsets measured, phi_SH(i) - phi_LOO(i) is a fixed linear function of the same interaction terms P1 to P4 report, and the REDUNDANT construction forces phi_LOO(a) = phi_LOO(b) about 0 while Shapley splits the Phase 0-gated >= 15 net gain between the two copies, so the disagreement excess restates the manufactured redundancy rather than testing the estimator, and the falsifier would require CONTROL disagreement to rise to match it.",
+    "fix": "Report the excess separately per class and make the confirmatory claim on natural unmanufactured k=3 sets, keeping REDUNDANT as a construction check only."
+   },
+   {
+    "id": "P6",
+    "depends_on": "4 seeds per (game, seed) cell; split-half sign agreement of per-set phi_LOO as a function of seed count; no-op repeat flip rate.",
+    "falsifier": "2 seeds already give split-half sign agreement >= 0.9.",
+    "label": "unresolvable",
+    "reason": "With only 4 seeds per cell a split-half at 4 seeds per half is never measured, so the >= 4 seeds side cannot be evaluated at all, and at 2 seeds per half the statistic is dominated by tied zero-valued LOO cells whose treatment in the sign-agreement rule is left unspecified, so the falsifier can be manufactured or destroyed by that convention.",
+    "fix": "Run 8 seeds on a subsample so genuine 4-vs-4 halves exist, and pre-register how zero or tied per-set LOO values count in the sign-agreement statistic."
+   },
+   {
+    "id": "P7",
+    "depends_on": "Phase 4 CONFLICT cells with x replaced by a natural cross-type item (and by the natural rank-2 same-type item), compared against the Phase 1 CONFLICT masking term; each class mean at +/-5 net.",
+    "falsifier": "the CONFLICT masking term changes by >= 10 net under the background swap.",
+    "label": "unresolvable",
+    "reason": "A three-body masking effect is reachable, but the estimand is a difference of two class-mean interaction terms each at +/-5 net, giving roughly +/-7 net on the difference, wider than the 6-net gap between the <= 4 net prediction and the 10-net falsifier.",
+    "fix": "Size the background-swap arm so the difference-of-differences CI is under 3 net, or set the falsifier above the propagated CI."
+   }
+  ],
+  "shared_terms": [
+   "P1-P5: with all eight subsets measured, phi_SH(i) minus phi_LOO(i) is a fixed linear function of the same interaction terms I that P1 reports, so the REDUNDANT interaction value determines the REDUNDANT rank-disagreement rate.",
+   "P2-P5: the CONFLICT interaction uses f(a,x) = f(S-b) and f(x) = f(S-ab), the same measured cells that set P2's own threshold and that enter the Shapley values scored in P5.",
+   "P2-P7: P7's estimand is the same CONFLICT masking term as P2 recomputed with a different x, so P2's measurement noise propagates into P7 unchanged.",
+   "P1-P6 (and P2-P4-P6): split-half sign agreement of per-set LOO is computed from the same per-cell f(S), f(S-a), f(S-b) values that produce every class interaction, so the seed-count estimand inherits the same flip rate it is meant to characterise."
+  ],
+  "headline": "P1",
+  "headline_status": "near_entailed",
+  "n_open": 1,
+  "n_entailed": 0,
+  "n_near": 2,
+  "n_unresolvable": 4,
+  "verdict": "revise"
+ },
+ "memory_failure_blame_item_vs_set": {
+  "name": "memory_failure_blame_item_vs_set",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Harmed-game set (p0 >= 0.75 and p3 <= 0.25 over 4 seeds, split-half stable); single/pair/diffuse taxonomy from the S-i and S-ij cells under the restoration rule p(S-i) >= p0 - 0.25; expected 45 to 105 harmed games.",
+    "falsifier": "single-culprit fraction <= 0.4 (pair-culprit or diffuse majority).",
+    "label": "open",
+    "reason": "Diffuse harm across three items plausibly leaves every single-removal cell below p0 - 0.25 (the rule demands recovery of at least half the harm gap), so the falsifier is reachable and the 0.6-vs-0.4 gap is roughly two CI half-widths at 80 games, although taking the maximum over three 4-seed estimates without multiplicity or no-op correction biases the count toward the prediction.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "Culprit labels from the single-removal cells on the harmed games, cross-type share among all k=3 retrieved items from the retrieval logs, cluster-bootstrap odds ratios.",
+    "falsifier": "odds ratio <= 1.2 for cross-type items among culprits.",
+    "label": "unresolvable",
+    "reason": "Same-type near-miss items are an equally available culprit class so OR <= 1.2 is reachable, but with roughly 30 to 60 single-culprit items the log-odds SE is about 0.3, so an OR of 2.0 carries a CI of about [1.1, 3.5] that already contains the 1.2 falsifier, and no MDE for the OR is stated anywhere in the design.",
+    "fix": "Pre-register the culprit count needed for the stated OR contrast (roughly 150 single-culprit games, or a coarser two-class collapse) and state the OR MDE alongside the harmed-game sizing rule."
+   },
+   {
+    "id": "P3",
+    "depends_on": "Single-culprit cells; action-copy score over actions up to the first deviation from a successful k=0 trajectory after object-id normalisation; position-rank and retrieval-score baselines; paired top-1 accuracy per cell.",
+    "falsifier": "action-copy top-1 accuracy <= position-rank + 0.10.",
+    "label": "open",
+    "reason": "The proxy is read off behaviour traces while the culprit label comes from removal cells, so a copied-but-harmless item breaks the correspondence and slot-1 blame can match the proxy (chance is 0.33 for three items), and the paired within-cell comparison keeps a 0.25-point gap detectable at the expected 30 to 60 cells, though only just.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "Static-procedure (Measurement C) prompt arm on single-culprit harmed games at 4 seeds, scored against the absolute threshold p >= 0.75; harmed games are defined by k=0 success p0 >= 0.75.",
+    "falsifier": "the static arm succeeds on <= 40% of single-culprit harmed games (the task type itself is the difficulty).",
+    "label": "entailed",
+    "reason": "Harmed games are selected for succeeding without memory at p0 >= 0.75, so an arm that is k=0 plus the type's own correct procedure sentence re-describes the selection filter; reaching <= 40% would require that added sentence to destroy success on games already solved without it, and no paired k=0 re-run is run in the same cells that could expose or price that effect.",
+    "fix": "Score the static arm as a paired difference against a fresh k=0 re-run on the same new seeds (estimand: static minus k=0 per game) instead of against an absolute p >= 0.75 threshold, so a null or negative type effect can falsify."
+   },
+   {
+    "id": "P5",
+    "depends_on": "Re-embedding arm on single-culprit games with the two non-culprit items replaced by the next two same-type items from the logs; joint criterion p(S'') <= 0.25 and p(S''-culprit) >= p0 - 0.25 at 4 seeds on about 50 games.",
+    "falsifier": "transfer holds in <= 30% of re-embedded single-culprit games (harm is a set property).",
+    "label": "open",
+    "reason": "Replacing non-culprits with helpful same-type items and regression away from the extreme p3 <= 0.25 selection both push p(S'') above the 0.25 gate, so the falsifier is easily reachable (if anything the design is biased against the prediction), and the 0.6-vs-0.3 gap is about two CI half-widths at 50 games.",
+    "fix": ""
+   },
+   {
+    "id": "P6",
+    "depends_on": "Self-pool replicate of discovery on the 274 validation games versus the expert-bank harmed rate, plus diffuse shares from the same taxonomy.",
+    "falsifier": "harmed rates within +/-2 points AND diffuse shares within 10 points (a conjunction).",
+    "label": "unresolvable",
+    "reason": "A harmed rate near 10% on 274 games carries a CI of roughly +/-3.5 points, so the +/-2 point equivalence band lies inside the noise, and because the falsifier is a conjunction any intermediate result (rates 3 points apart, or diffuse shares 12 points apart) resolves the prediction neither way.",
+    "fix": "State the falsifier as an upper CI bound on the rate ratio (CI excluding 1.5) on a self-pool sample sized to that MDE, and split the diffuse-share claim into its own separately powered prediction."
+   },
+   {
+    "id": "P7",
+    "depends_on": "The four added seeds (8 total) on harmed games for S and the three S-i cells; split-half culprit agreement as a function of seed count; the p0 - 0.25 restoration rule.",
+    "falsifier": "2 seeds already give split-half culprit agreement >= 0.8.",
+    "label": "open",
+    "reason": "Unlike the seed-count claim in the companion proposal, 8 seeds make a genuine 4-vs-4 split available, and near-deterministic harmed cells (p0 >= 0.75, p3 <= 0.25) could plausibly push 2-seed agreement to 0.8, so both sides are measurable, though how games with no culprit label enter the agreement statistic is unstated.",
+    "fix": ""
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: the culprit set counted by P1 is the numerator of P2's odds ratio, so the p(S-i) >= p0 - 0.25 rule that fixes the single-culprit fraction also fixes which items are eligible for class enrichment.",
+   "P1-P3: P3's top-1 accuracy is scored against the culprit labels P1's taxonomy produces on the same removal cells, so a lenient taxonomy moves both estimands together.",
+   "P1-P4: the static-arm success rate is computed on exactly the single-culprit games P1 defines and inherits the p0 >= 0.75 selection that defines a harmed game.",
+   "P1-P5: P5 reuses the p0 - 0.25 restoration threshold and is evaluated only on the single-culprit games P1 counts, so P1's threshold choice sets P5's base rate.",
+   "P1-P7: split-half culprit agreement uses the same per-(game, seed) S and S-i cells and the same restoration rule as the taxonomy, so the reliability estimand is not independent of the fraction it qualifies."
+  ],
+  "headline": "P1",
+  "headline_status": "open",
+  "n_open": 4,
+  "n_entailed": 1,
+  "n_near": 0,
+  "n_unresolvable": 2,
+  "verdict": "pass"
+ },
+ "slot_vs_item_credit_permutation": {
+  "name": "slot_vs_item_credit_permutation",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "ALL-SAME subgroup of the 274 validation games; order cells O, R, ROT plus no-op repeat at 4 seeds; permutation test over run labels; the +/-5 net CI quoted for the full 1,096-cell O/R/ROT set.",
+    "falsifier": "|f(R) - f(O)| >= 8 net on ALL-SAME sets (order matters among consistent items).",
+    "label": "unresolvable",
+    "reason": "Primacy or recency acting on consistent content is reachable, but the +/-5 net CI applies to all 274 games while this prediction is scored on the ALL-SAME subgroup alone (size never stated), so the 4-net equivalence bound sits below the noise and an observed 8 net cannot be separated from the predicted <= 4 net.",
+    "fix": "Report the ALL-SAME subgroup size and power it (more seeds, or added bank-disjoint train games) to about +/-2 net, and state the null as a formal equivalence test with the bound above the measured CI."
+   },
+   {
+    "id": "P2",
+    "depends_on": "Forced-slot MIXED cells (the single same-type item in slot 1 versus slot 3 with the two cross-type items in fixed relative order), MIXED subgroup at least 120 games x 4 seeds, paired within (game, seed); positive control requiring a MIXED k=3-vs-k=0 gain >= +10 net.",
+    "falsifier": "f(slot 1) - f(slot 3) <= +3 net (slot-invariant reader).",
+    "label": "unresolvable",
+    "reason": "A slot-invariant reader is a live outcome, but 120 games x 4 seeds gives roughly +/-7 net by the proposal's own scaling from 1,096 cells at +/-5 net, wider than the 5-net gap between the +8 prediction and the +3 falsifier, so the pre-registered decision is noise-limited even though a gross null could still be separated from +8.",
+    "fix": "Fix the MIXED cell count from the required MDE (about +/-2 net) rather than from whatever the logs happen to yield, or restate the falsifier as a CI whose upper bound excludes +8."
+   },
+   {
+    "id": "P3",
+    "depends_on": "Planted-conflict slot arm on about 140 procedure-type games x 4 seeds with the token-matched wrong-procedure item placed at slot 1, 2 or 3 plus the unplanted natural set; stated +/-6 net on slot contrasts; positive control requiring slot-1 harm >= 10 net.",
+    "falsifier": "harm(slot 1) - harm(slot 3) <= 3 net, or harm larger in slot 3 (recency dominance).",
+    "label": "unresolvable",
+    "reason": "Recency dominance is genuinely reachable and its sign would be visible, but the proposal itself states +/-6 net on these slot contrasts, wider than the 5-net gap between its 8-net prediction and its 3-net falsifier, so the pre-registered thresholds are tied to a CI that cannot separate them.",
+    "fix": "Add games or seeds until the slot contrast CI is about +/-2 net, or move the falsifier to a difference <= 0 net so only a sign flip counts."
+   },
+   {
+    "id": "P4",
+    "depends_on": "The three planted-slot harm means from the same ~140-game x 4-seed cells against the same unplanted reference.",
+    "falsifier": "harm(slot 2) is the minimum (lost-in-the-middle) or the maximum.",
+    "label": "unresolvable",
+    "reason": "The prediction is an ordering of three means with no magnitude attached, and at the stated +/-6 net per contrast the rank of slot 2 is decided by noise (under a true tie it lands at an extreme two times in three), so the falsifier is not distinguishable from the monotone prediction.",
+    "fix": "Pre-register magnitudes (for example harm(2) at least 3 net below harm(1) and at least 3 net above harm(3)) and power those two contrasts explicitly."
+   },
+   {
+    "id": "P5",
+    "depends_on": "k=7 rotation cells moving the rank-1 item to slot 7 versus the original order, MIXED and ALL-SAME, 274 games x 2 seeds x 2 runs plus a repeat.",
+    "falsifier": "the MIXED rotation cost is <= 3 net (the primacy premium vanishes with longer context).",
+    "label": "unresolvable",
+    "reason": "Loss of the premium at longer context is reachable, but this arm runs only 2 seeds and then splits the games into MIXED and ALL-SAME, putting the MIXED contrast CI well above +/-7 net, so both the 8-vs-3 net decision and the paired <= 4 net ALL-SAME bound lie inside the noise.",
+    "fix": "Run the k=7 rotation at 4 seeds on MIXED games sized to about +/-3 net before making the MIXED-versus-ALL-SAME comparison."
+   },
+   {
+    "id": "P6",
+    "depends_on": "Nested-k rank-1 credit from the k-sweep logs; content credit f(ROT) - f(ROT minus rank-1); slot component defined as [f(O) - f(O minus rank-1)] minus that content credit; slot-conditional LOO cells (which remove the item from O and from R only); static-procedure arm.",
+    "falsifier": "the MIXED slot share is <= 10% of the nested-k rank-1 credit (nested-k credit is content).",
+    "label": "unresolvable",
+    "reason": "The share is a ratio whose numerator is a difference of two LOO estimates each at +/-5 to +/-7 net over a denominator of the same magnitude, so 30% versus 10% is not separable and no CI for the ratio is stated; the cell f(ROT minus rank-1) is also absent from the experiment list (step 3 removes the item from O and from R), so the two halves of the decomposition would come from differently ordered residual pairs.",
+    "fix": "Add the ROT-minus-rank-1 cell so content and slot credit are measured in matched orders, and report the slot component as an absolute net difference with a CI rather than a share of a noisy denominator."
+   }
+  ],
+  "shared_terms": [
+   "P2-P6: the MIXED slot component is [f(O) - f(O minus rank-1)] minus [f(ROT) - f(ROT minus rank-1)], built from the same forced-slot and rotation cells as P2, so a confirmed P2 mechanically produces a large P6 slot share and a null P2 forces a small one.",
+   "P1-P6: the ALL-SAME order null and P6's <= 10% ALL-SAME slot share are computed from the same f(O) and f(R)/f(ROT) cells, so one determines the other up to the LOO denominator.",
+   "P3-P4: harm(slot 1), harm(slot 2) and harm(slot 3) are the same three planted-slot means against the same unplanted reference, so P4's ordering claim is fixed by the two quantities P3 contrasts.",
+   "P2-P5: the k=7 rotation re-tests the same MIXED classification and the same rank-1 item content as P2 at a longer context, so it shares the MIXED subgroup and its selection rather than being an independent estimand."
+  ],
+  "headline": "P2",
+  "headline_status": "unresolvable",
+  "n_open": 0,
+  "n_entailed": 0,
+  "n_near": 0,
+  "n_unresolvable": 6,
+  "verdict": "revise"
+ }
+}

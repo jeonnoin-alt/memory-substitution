@@ -1,0 +1,24 @@
+=== ENTAILMENT CHECK (automated pre-review; evidence, not a verdict) ===
+For each prediction: what would falsify it, and whether the stated arms can produce that outcome at the stated power.
+
+Proposal: slot_vs_item_credit_permutation — headline P2 is **unresolvable**; open 0 / entailed 0 / near-entailed 0 / unresolvable 6; verdict revise
+
+- P1 [unresolvable] falsifier: |f(R) - f(O)| >= 8 net on ALL-SAME sets (order matters among consistent items).
+  reason: Primacy or recency acting on consistent content is reachable, but the +/-5 net CI applies to all 274 games while this prediction is scored on the ALL-SAME subgroup alone (size never stated), so the 4-net equivalence bound sits below the noise and an observed 8 net cannot be separated from the predicted <= 4 net.
+  fix: Report the ALL-SAME subgroup size and power it (more seeds, or added bank-disjoint train games) to about +/-2 net, and state the null as a formal equivalence test with the bound above the measured CI.
+- P2 [unresolvable] falsifier: f(slot 1) - f(slot 3) <= +3 net (slot-invariant reader).
+  reason: A slot-invariant reader is a live outcome, but 120 games x 4 seeds gives roughly +/-7 net by the proposal's own scaling from 1,096 cells at +/-5 net, wider than the 5-net gap between the +8 prediction and the +3 falsifier, so the pre-registered decision is noise-limited even though a gross null could still be separated from +8.
+  fix: Fix the MIXED cell count from the required MDE (about +/-2 net) rather than from whatever the logs happen to yield, or restate the falsifier as a CI whose upper bound excludes +8.
+- P3 [unresolvable] falsifier: harm(slot 1) - harm(slot 3) <= 3 net, or harm larger in slot 3 (recency dominance).
+  reason: Recency dominance is genuinely reachable and its sign would be visible, but the proposal itself states +/-6 net on these slot contrasts, wider than the 5-net gap between its 8-net prediction and its 3-net falsifier, so the pre-registered thresholds are tied to a CI that cannot separate them.
+  fix: Add games or seeds until the slot contrast CI is about +/-2 net, or move the falsifier to a difference <= 0 net so only a sign flip counts.
+- P4 [unresolvable] falsifier: harm(slot 2) is the minimum (lost-in-the-middle) or the maximum.
+  reason: The prediction is an ordering of three means with no magnitude attached, and at the stated +/-6 net per contrast the rank of slot 2 is decided by noise (under a true tie it lands at an extreme two times in three), so the falsifier is not distinguishable from the monotone prediction.
+  fix: Pre-register magnitudes (for example harm(2) at least 3 net below harm(1) and at least 3 net above harm(3)) and power those two contrasts explicitly.
+- P5 [unresolvable] falsifier: the MIXED rotation cost is <= 3 net (the primacy premium vanishes with longer context).
+  reason: Loss of the premium at longer context is reachable, but this arm runs only 2 seeds and then splits the games into MIXED and ALL-SAME, putting the MIXED contrast CI well above +/-7 net, so both the 8-vs-3 net decision and the paired <= 4 net ALL-SAME bound lie inside the noise.
+  fix: Run the k=7 rotation at 4 seeds on MIXED games sized to about +/-3 net before making the MIXED-versus-ALL-SAME comparison.
+- P6 [unresolvable] falsifier: the MIXED slot share is <= 10% of the nested-k rank-1 credit (nested-k credit is content).
+  reason: The share is a ratio whose numerator is a difference of two LOO estimates each at +/-5 to +/-7 net over a denominator of the same magnitude, so 30% versus 10% is not separable and no CI for the ratio is stated; the cell f(ROT minus rank-1) is also absent from the experiment list (step 3 removes the item from O and from R), so the two halves of the decomposition would come from differently ordered residual pairs.
+  fix: Add the ROT-minus-rank-1 cell so content and slot credit are measured in matched orders, and report the slot component as an absolute net difference with a CI rather than a share of a noisy denominator.
+- shared terms: P2-P6: the MIXED slot component is [f(O) - f(O minus rank-1)] minus [f(ROT) - f(ROT minus rank-1)], built from the same forced-slot and rotation cells as P2, so a confirmed P2 mechanically produces a large P6 slot share and a null P2 forces a small one.; P1-P6: the ALL-SAME order null and P6's <= 10% ALL-SAME slot share are computed from the same f(O) and f(R)/f(ROT) cells, so one determines the other up to the LOO denominator.; P3-P4: harm(slot 1), harm(slot 2) and harm(slot 3) are the same three planted-slot means against the same unplanted reference, so P4's ordering claim is fixed by the two quantities P3 contrasts.; P2-P5: the k=7 rotation re-tests the same MIXED classification and the same rank-1 item content as P2 at a longer context, so it shares the MIXED subgroup and its selection rather than being an independent estimand.

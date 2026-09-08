@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__slot_vs_item_credit_permutation",
+ "kind": "entail_revise",
+ "name": "slot_vs_item_credit_permutation",
+ "prompt_file": "runs_ideate2/gen_credit/entail/jobs/entail_revise__slot_vs_item_credit_permutation.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

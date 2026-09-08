@@ -1,0 +1,26 @@
+=== ENTAILMENT CHECK (automated pre-review; evidence, not a verdict) ===
+For each prediction: what would falsify it, and whether the stated arms can produce that outcome at the stated power.
+
+Proposal: pairwise_removal_interaction_audit — headline P1 is **near_entailed**; open 1 / entailed 0 / near-entailed 2 / unresolvable 4; verdict revise
+
+- P1 [near_entailed] falsifier: mean I inside [-4,+4] (additive) or I >= +4 (repetition amplification, each copy adds).
+  reason: Removing either copy deletes no information the set still carries, so I collapses to f(S-ab) - f(S) = minus the joint gain, which the Phase 0 gate pins at <= -15; the falsifier needs the reader to respond to copy count rather than content, a mechanism the design plants no arm for, and the 4-net gap between the confirm and falsify bands is inside the stated +/-5 net class CI.
+  fix: Add a dose arm that varies the number of copies of an item whose solo gain is verified small (and a partially degraded paraphrase), decoupled from the >= +15 net Phase 0 gate, and widen the falsifier to I >= 0.
+- P2 [unresolvable] falsifier: I >= -0.25 x [f(a,x) - f(x)], i.e. a keeps more than three quarters of its solo value while the conflicting item is present.
+  reason: The falsifier is structurally reachable (a sits in slot 1 and can simply be followed, and the Phase 0 floor on f(b,x) leaves room for a to rescue a depressed baseline), but at the gated gain of about 15 net the confirm boundary (-7.5) and the falsify boundary (-3.75) differ by under 4 net, inside the stated +/-5 net class CI, and both are ratios of two separately noisy measured terms.
+  fix: Restate the falsifier as an absolute net threshold (e.g. I >= 0) and size the CONFLICT class so the class-mean I carries a CI under 2 net.
+- P3 [open] falsifier: I <= +3 net (no super-additivity).
+  reason: The prior at 0.54 k=0 success or the fixed natural rank-3 item can complete the missing half, so single-fragment cells can retain most of the gain and drive I toward zero, and unlike the other classes no positive control forces the joint gain, although the 5-net gap between +8 and +3 only just matches the stated +/-5 net CI.
+- P4 [unresolvable] falsifier: |I| >= 8 net (cross-type items interact by distraction).
+  reason: Distraction by a cross-type item is a real route to the falsifier, but the 4-net equivalence bound is below the stated +/-5 net class CI, so an observed |I| of 8 has a CI that still contains 4 and neither side of the decision can be separated.
+  fix: Raise cells or seeds until the CONTROL class CI is about +/-2 net, or pre-register the class as a formal equivalence test with the bound set above the measured CI.
+- P5 [near_entailed] falsifier: excess top-item disagreement over CONTROL below 5 points.
+  reason: With all eight subsets measured, phi_SH(i) - phi_LOO(i) is a fixed linear function of the same interaction terms P1 to P4 report, and the REDUNDANT construction forces phi_LOO(a) = phi_LOO(b) about 0 while Shapley splits the Phase 0-gated >= 15 net gain between the two copies, so the disagreement excess restates the manufactured redundancy rather than testing the estimator, and the falsifier would require CONTROL disagreement to rise to match it.
+  fix: Report the excess separately per class and make the confirmatory claim on natural unmanufactured k=3 sets, keeping REDUNDANT as a construction check only.
+- P6 [unresolvable] falsifier: 2 seeds already give split-half sign agreement >= 0.9.
+  reason: With only 4 seeds per cell a split-half at 4 seeds per half is never measured, so the >= 4 seeds side cannot be evaluated at all, and at 2 seeds per half the statistic is dominated by tied zero-valued LOO cells whose treatment in the sign-agreement rule is left unspecified, so the falsifier can be manufactured or destroyed by that convention.
+  fix: Run 8 seeds on a subsample so genuine 4-vs-4 halves exist, and pre-register how zero or tied per-set LOO values count in the sign-agreement statistic.
+- P7 [unresolvable] falsifier: the CONFLICT masking term changes by >= 10 net under the background swap.
+  reason: A three-body masking effect is reachable, but the estimand is a difference of two class-mean interaction terms each at +/-5 net, giving roughly +/-7 net on the difference, wider than the 6-net gap between the <= 4 net prediction and the 10-net falsifier.
+  fix: Size the background-swap arm so the difference-of-differences CI is under 3 net, or set the falsifier above the propagated CI.
+- shared terms: P1-P5: with all eight subsets measured, phi_SH(i) minus phi_LOO(i) is a fixed linear function of the same interaction terms I that P1 reports, so the REDUNDANT interaction value determines the REDUNDANT rank-disagreement rate.; P2-P5: the CONFLICT interaction uses f(a,x) = f(S-b) and f(x) = f(S-ab), the same measured cells that set P2's own threshold and that enter the Shapley values scored in P5.; P2-P7: P7's estimand is the same CONFLICT masking term as P2 recomputed with a different x, so P2's measurement noise propagates into P7 unchanged.; P1-P6 (and P2-P4-P6): split-half sign agreement of per-set LOO is computed from the same per-cell f(S), f(S-a), f(S-b) values that produce every class interaction, so the seed-count estimand inherits the same flip rate it is meant to characterise.

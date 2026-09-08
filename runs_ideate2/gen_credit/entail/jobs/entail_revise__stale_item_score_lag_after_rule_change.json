@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__stale_item_score_lag_after_rule_change",
+ "kind": "entail_revise",
+ "name": "stale_item_score_lag_after_rule_change",
+ "prompt_file": "runs_ideate2/gen_credit/entail/jobs/entail_revise__stale_item_score_lag_after_rule_change.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

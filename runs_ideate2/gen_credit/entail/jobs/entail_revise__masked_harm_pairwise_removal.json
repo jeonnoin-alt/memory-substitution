@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__masked_harm_pairwise_removal",
+ "kind": "entail_revise",
+ "name": "masked_harm_pairwise_removal",
+ "prompt_file": "runs_ideate2/gen_credit/entail/jobs/entail_revise__masked_harm_pairwise_removal.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

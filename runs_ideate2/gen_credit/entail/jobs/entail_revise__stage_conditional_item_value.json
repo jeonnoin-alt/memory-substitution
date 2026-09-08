@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__stage_conditional_item_value",
+ "kind": "entail_revise",
+ "name": "stage_conditional_item_value",
+ "prompt_file": "runs_ideate2/gen_credit/entail/jobs/entail_revise__stage_conditional_item_value.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

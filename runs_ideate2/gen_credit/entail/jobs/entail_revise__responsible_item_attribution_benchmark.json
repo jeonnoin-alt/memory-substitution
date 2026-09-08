@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__responsible_item_attribution_benchmark",
+ "kind": "entail_revise",
+ "name": "responsible_item_attribution_benchmark",
+ "prompt_file": "runs_ideate2/gen_credit/entail/jobs/entail_revise__responsible_item_attribution_benchmark.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}
