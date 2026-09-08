@@ -1,0 +1,207 @@
+{
+ "name": "context_pays_for_its_own_tokens_breakeven",
+ "keys": {
+  "agent": [
+   "Memory Pays Tokens Total-Episode Cost Accounting Flips Weights-versus-Context",
+   "multi-step agent tasks retrieved experience shortens episodes tokens injects because memory-free agent"
+  ],
+  "mechanism_home": [
+   "multi-step tasks shortens tokens injects because memory-free failures step timeouts memory-conditioned finishes",
+   "inference cost accounting retrieval augmented generation versus fine-tuning total cost",
+   "knowledge distillation transfers teacher behavior traits student"
+  ],
+  "adjacent": [
+   "fine-tuning versus RAG cost trade-off knowledge injection",
+   "subliminal learning trait transfer through unrelated data"
+  ],
+  "baseline": [
+   "static few-shot prompt token cost",
+   "inoculation prompting fine-tuning defense"
+  ],
+  "estimand": [
+   "multi-step agent tasks retrieved experience shortens episodes tokens injects because"
+  ],
+  "environment": [
+   "Qwen3-8B"
+  ],
+  "methods": []
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "multi-step tasks shortens tokens injects because memory-free failures step timeouts memory-conditioned finishes"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "inference cost accounting retrieval augmented generation versus fine-tuning total cost"
+  },
+  {
+   "class": "agent",
+   "query": "Memory Pays Tokens Total-Episode Cost Accounting Flips Weights-versus-Context"
+  },
+  {
+   "class": "agent",
+   "query": "multi-step agent tasks retrieved experience shortens episodes tokens injects because memory-free agent"
+  },
+  {
+   "class": "adjacent",
+   "query": "fine-tuning versus RAG cost trade-off knowledge injection"
+  },
+  {
+   "class": "baseline",
+   "query": "static few-shot prompt token cost"
+  },
+  {
+   "class": "agent",
+   "query": "Memory Pays Tokens Total-Episode Cost Accounting Flips Weights-versus-Context Qwen3-8B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.598,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2607.21503",
+   "date": "2026-07-23",
+   "venue": "",
+   "sim": 0.565,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Agentic Context Management: Solving Agent Memory and Cost by Treating Them as Lifecycle and Architecture Problems"
+  },
+  {
+   "id": "arxiv:2602.16313",
+   "date": "2026-02-18",
+   "venue": "",
+   "sim": 0.537,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks"
+  },
+  {
+   "id": "arxiv:2601.11969",
+   "date": "2026-01-17",
+   "venue": "",
+   "sim": 0.522,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MemoryRewardBench: Benchmarking Reward Models for Long-Term Memory Management in Large Language Models"
+  },
+  {
+   "id": "arxiv:2606.03329",
+   "date": "2026-06-02",
+   "venue": "",
+   "sim": 0.507,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "InfoMem: Training Long-Context Memory Agents with Answer-Conditioned Information Gain"
+  },
+  {
+   "id": "arxiv:2105.14039",
+   "date": "2021-05-28",
+   "venue": "",
+   "sim": 0.479,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Towards mental time travel: a hierarchical memory for reinforcement\n  learning agents"
+  },
+  {
+   "id": "arxiv:2607.00725",
+   "date": "2026-07-01",
+   "venue": "",
+   "sim": 0.45,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "What Survives Into Context: A Diagnostic for Budget-Constrained Multi-Hop RAG and When Submodular Evidence Packing Improves It"
+  },
+  {
+   "id": "arxiv:2608.26175",
+   "date": "2026-07-27",
+   "venue": "",
+   "sim": 0.444,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Lost in Compression: A Controlled Cross-Lingual Audit of Extractive Prompt Compressors"
+  },
+  {
+   "id": "arxiv:2605.29341",
+   "date": "2026-05-28",
+   "venue": "",
+   "sim": 0.435,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "WorldMemArena: Evaluating Multimodal Agent Memory Through Action-World Interaction"
+  },
+  {
+   "id": "arxiv:2603.23971",
+   "date": "2026-03-25",
+   "venue": "",
+   "sim": 0.434,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "mechanism_home"
+   ],
+   "title": "The Price Reversal Phenomenon: When Cheaper Reasoning Models End Up Costing More"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 24,
+  "agent": 19,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 0
+ },
+ "web_jobs": [
+  {
+   "query": "multi-step tasks shortens tokens injects because memory-free failures step timeouts memory-conditioned finishes 2025 arXiv"
+  },
+  {
+   "query": "inference cost accounting retrieval augmented generation versus fine-tuning total cost 2025 arXiv"
+  }
+ ]
+}

@@ -64,15 +64,39 @@ gate_collect.py G/gate mapping.json           # flatten batches → adjudication
 Labels: `distinct` / `same_mechanism_new_measurement` (keep, note) / `same_claim_reworded`
 (idea–idea: send the later one back to differentiate; idea–prior: withdraw unless a new claim).
 
-## Stage 2.7 — novelty card (`novelty_check.py`)
+## Stage 2.7 — novelty card (`novelty_check.py`, `novelty_keys_collect.py`)
 
 ```
-novelty_check.py --ideas G/ideas.json --out G/novelty [--backend harness]   # LLM keys (NOVELTY_KEYS) or rule-based
-   → <name>.card.md/.json + candidates.jsonl; web_jobs listed in the JSON for a WebSearch subagent
+novelty_check.py --ideas G/ideas.json --out G/novelty --backend harness --model fable --batch 5   # key-extraction jobs (Fable)
+#   one Fable subagent per novelty_keys__batchNN job → novelty_keys_collect.py G/novelty <map.json> → keys.json
+novelty_check.py --ideas G/ideas.json --out G/novelty --keys G/novelty/keys.json --s2-queries 3
+   → <name>.card.md/.json + candidates.jsonl; each candidate says which query CLASS found it
 ```
+Queries come in classes, and the order matters because S2 (rate-limited) only sees the first `--s2-queries`:
+`mechanism_home` (the phenomenon in the vocabulary of the field it came from, no agent/memory/benchmark words),
+`agent` (the proposal's own phrasing), `adjacent` (the published result direction in a neighbouring field),
+`baseline` (the cheapest intervention the proposal must beat), `methods`. Without LLM keys, `rule_keys` builds the
+home queries by stripping the agent vocabulary and by keyword templates (`HOME_TEMPLATES`). Rationale (2026-09-08):
+in two review rounds every paper that pre-empted a claim was found under the home vocabulary, never under the
+agent-memory phrasing; the old cards recalled 6 of 57 judge-found papers.
 Every arXiv id returned by a WebSearch subagent is re-resolved through S2 and HF before it may be
 cited (`s2_resolves` / `hf_resolves`); unverified ids stay on the card but are marked.
 The card is evidence for the reviewers; it carries no verdict.
+
+## Stage 2.8 — entailment check (`entail.py`)
+
+```
+entail.py emit    --ideas G/ideas.json --out G/entail --batch 3 --model opus     # one Opus subagent per entail__batchNN job
+entail.py collect --out G/entail --mapping <map.json>                            # entail_report.json, ENTAIL_REPORT.md, <name>.entail.md
+entail.py revise  --ideas G/ideas.json --out G/entail --brief brief.md            # Fable revision jobs for verdict == revise
+review_batch.py emit ... --entail G/entail                                        # attaches <name>.entail.md after the novelty card
+```
+For every prediction: the arms it rests on, the outcome that would falsify it, whether that outcome is reachable
+under the stated design (split, retriever, update rule, estimand identity, ceiling, deleted tokens, absent arm) and
+whether it is distinguishable at the stated noise. Labels `open / entailed / near_entailed / unresolvable`; an idea
+whose headline prediction is not open goes back to the generator before any judge sees it. Rationale (2026-09-08):
+in 28 reviews across two topics the most frequent fatal objection was a prediction entailed by the design, and the
+gate cannot catch it because it is not a restatement.
 
 ## Stage 3 — open-book review (`review.py`)
 

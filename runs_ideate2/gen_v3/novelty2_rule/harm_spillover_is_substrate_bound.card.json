@@ -1,0 +1,174 @@
+{
+ "name": "harm_spillover_is_substrate_bound",
+ "keys": {
+  "agent": [
+   "Retrieved Harm Stays Retrieved Internalized Harm Spreads Substrate-Dependent",
+   "wrong-procedure items harm agent through different channels two substrates"
+  ],
+  "mechanism_home": [
+   "wrong-procedure items harm through different channels two",
+   "data poisoning number of poison samples threshold fine-tuning",
+   "privileged information distillation student cannot close information gap"
+  ],
+  "adjacent": [
+   "misleading demonstrations in-context learning position sensitivity",
+   "in-context demonstrations override explicit instructions"
+  ],
+  "baseline": [
+   "static instruction stating the correct procedure",
+   "same-task oracle demonstration upper bound"
+  ],
+  "estimand": [
+   "wrong-procedure items harm agent through different channels two substrates context"
+  ],
+  "environment": [],
+  "methods": []
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "wrong-procedure items harm through different channels two"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "data poisoning number of poison samples threshold fine-tuning"
+  },
+  {
+   "class": "agent",
+   "query": "Retrieved Harm Stays Retrieved Internalized Harm Spreads Substrate-Dependent"
+  },
+  {
+   "class": "agent",
+   "query": "wrong-procedure items harm agent through different channels two substrates"
+  },
+  {
+   "class": "adjacent",
+   "query": "misleading demonstrations in-context learning position sensitivity"
+  },
+  {
+   "class": "baseline",
+   "query": "static instruction stating the correct procedure"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2605.27809",
+   "date": "2026-05-27",
+   "venue": "arXiv.org",
+   "sim": 0.51,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Density-aware Sample-specific Attack"
+  },
+  {
+   "id": "arxiv:2510.07192",
+   "date": "2025-10-08",
+   "venue": "arXiv.org",
+   "sim": 0.48,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Poisoning Attacks on LLMs Require a Near-constant Number of Poison Samples"
+  },
+  {
+   "id": "arxiv:2603.02262",
+   "date": "2026-02-28",
+   "venue": "arXiv.org",
+   "sim": 0.452,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Silent Sabotage During Fine-Tuning: Few-Shot Rationale Poisoning of Compact Medical LLMs"
+  },
+  {
+   "id": "s2:2979339e9873913cdb13345e9c629b792ccc04b4",
+   "date": "2026-08-11",
+   "venue": "Physica Scripta",
+   "sim": 0.44,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Self-revealing poisons: loss-guided forensic detection and quantum unlearning of corrupted training data"
+  },
+  {
+   "id": "arxiv:2605.19147",
+   "date": "2026-05-18",
+   "venue": "arXiv.org",
+   "sim": 0.434,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Be Kind, Rewrite: Benign Projections via Rewriting Defend Against LLM Data Poisoning Attacks"
+  },
+  {
+   "id": "arxiv:2604.08766",
+   "date": "2026-04-09",
+   "venue": "",
+   "sim": 0.433,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Follow My Eyes: Backdoor Attacks on Goal-Directed Scanpath Prediction"
+  },
+  {
+   "id": "arxiv:2511.16709",
+   "date": "2025-11-20",
+   "venue": "arXiv.org",
+   "sim": 0.403,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "AutoBackdoor: Automating Backdoor Attacks via LLM Agents"
+  },
+  {
+   "id": "s2:e7e03d281280b9ae9696f2b8cdcd63b28759e583",
+   "date": "2025-10-27",
+   "venue": "Latin American Computing Conference / Conferencia Latinoamericana En Informatica",
+   "sim": 0.371,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "A Zero-Trust, AI-RMF–Governed Architecture for LLM-Enabled Telemedicine-as-a-Service: Mitigating Poisoning, Leakage and Unsafe-Output Threats"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 8,
+  "agent": 0,
+  "adjacent": 0,
+  "baseline": 0,
+  "methods": 0
+ },
+ "web_jobs": [
+  {
+   "query": "wrong-procedure items harm through different channels two 2025 arXiv"
+  },
+  {
+   "query": "data poisoning number of poison samples threshold fine-tuning 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+=== ENTAILMENT CHECK (automated pre-review; evidence, not a verdict) ===
+For each prediction: what would falsify it, and whether the stated arms can produce that outcome at the stated power.
+
+Proposal: memory_carried_traits_need_tokens — headline P3 is **near_entailed**; open 2 / entailed 1 / near-entailed 1 / unresolvable 2; verdict revise
+
+- P1 [open] falsifier: PC/SFT-clean lifting the T1 trait rate by less than 10 pp over PC-0/SFT-clean.
+  reason: The parameter-carried subliminal channel can genuinely fail on this backbone and SFT-clean deletes the very first-action tokens the trait rate is scored on, so the sanitised data actively models a non-inventory first action; 10 pp is well above the stated ~2.5 pp half-width, although a failure is routed into declaring the memory-carried null uninterpretable rather than counting against the programme.
+- P2 [unresolvable] falsifier: PC/OPD-masked within 5 pp of PC-0/OPD-masked while P1 holds.
+  reason: The falsifier is a 5 pp equivalence at the design's own stated ~5 pp MDE for exactly that test, with the four-arm training-seed variance then added on top, so the falsifying band lies inside the noise; the prediction's own clause (OPD-masked >= SFT-clean) carries no margin at all and is confirmed by any tie.
+  fix: Add decision points (3 seeds, or a trait with several rule-identified decision points per episode) until the seed-inclusive half-width is <= 2 pp, and give the >= comparison an explicit non-inferiority margin.
+- P3 [near_entailed] falsifier: either sanitised or masked MC arm exceeding MC-0 by >= 10 pp.
+  reason: For T1 the trait is expressed at exactly one action, scored at exactly that action, and deleted or loss-masked at exactly that action, while the MC teacher differs from the student's base weights only through a context the student's data never contains and inventory-first leaves the world state unchanged, so no channel the proposal names can carry the trait into the memory-free student.
+  fix: Score the trait at a second, unmasked decision point, or make the dynamics-bearing T2 trait the central test with full MC-0 and unmasked controls, so a context-carried trait has a route the mask does not delete.
+- P4 [open] falsifier: the distilled student's memory-free trait rate at or below the in-context rate.
+  reason: B_T is entirely rewritten so every retrieved item carries the trait and the retrieval gating the prediction relies on is largely absent, making a student-at-or-below-teacher outcome very reachable - P3's own '>= 0.7 x teacher rate' clause explicitly anticipates undershoot - though the strict inequality is stated without a margin, so near-ties will be indeterminate at the ~2.5 pp half-width.
+- P5 [unresolvable] falsifier: the projection cutting PC transfer by less than 50 %, or changing the MC arms at all.
+  reason: The MC clause is scored on a transfer P3 predicts to be zero, so the floor fixes its sign and there is nothing for the projection to reduce, while the PC clause's 50 % cut of a >= 10 pp effect is ~5 pp, exactly the stated equivalence MDE before the added seed variance.
+  fix: Make the MC clause conditional on an observed non-zero MC transfer, and power the projection arms (3 seeds, more decision points) until a 5 pp change is resolvable.
+- P6 [entailed] falsifier: T2 failing to reproduce the P1-P3 sign pattern, or its magnitude not being smaller.
+  reason: The neutral-teacher controls (MC-0, PC-0) and the unmasked ceilings are absent from the T2 arms, so the contrasts that define the P1-P3 sign pattern cannot be formed for T2 at all, and 'smaller magnitude' is asserted without any stated margin.
+  fix: Add the four T2 controls (MC-0 and PC-0 x SFT-clean, OPD-masked) and the two T2 full-objective ceilings, and pre-register the magnitude comparison as a ratio with a margin above the T2 CI.
+- shared terms: P3-P4: the MC teacher's trait rate (base agent with B_T at k=3) is both the denominator of P3's 0.7 x ceiling clause and P4's comparator, so the two predictions score the same ratio from opposite sides.; P1-P2: PC/SFT-clean is P1's target and P2's comparator, so P2's outcome is largely fixed by P1's margin once PC/OPD-masked lands near PC-0.; P3-P5: P5's MC clause is scored on exactly the MC transfer P3 predicts to be null, so P3 determines it.; P1-P6 and P3-P6: P6 is defined as the sign pattern of P1-P3 but is measured on an arm set that omits their comparators.

@@ -1,0 +1,559 @@
+{
+ "stale_dose_law_context_vs_weights": {
+  "agent": [
+   "outdated experience retrieval harm dose agent memory rule change ALFWorld",
+   "stale retrieved experiences versus fine-tuning on stale trajectories continual LoRA recovery",
+   "top-k retrieved memory conflict position effect agent recovery after distribution shift"
+  ],
+  "mechanism_home": [
+   "knowledge conflict in-context single conflicting document position sensitivity counterfactual context override",
+   "data poisoning fraction of corrupted samples threshold fine-tuning mixture proportion behaviour",
+   "mixture of contradictory demonstrations greedy decoding majority mode versus temperature sampling proportional mixing"
+  ],
+  "adjacent": [
+   "counterfactual context overrides parametric knowledge single misleading passage lost in the middle position bias",
+   "fine-tuning on small fraction of poisoned samples flips behaviour data poisoning constant sample count",
+   "sampling temperature reveals mixture policy modes greedy decoding collapses to majority behaviour"
+  ],
+  "baseline": [
+   "temporal validity filter recency filter for retrieval",
+   "static instruction stating the changed rule",
+   "FIFO bounded memory eviction"
+  ],
+  "methods": [
+   "The Compliance Trap",
+   "When Continual Learning Moves to Memory",
+   "Controlled Memory Interference",
+   "STALE stale memory detection",
+   "When Memory Lies",
+   "Information abundance paradox",
+   "Live-Evo"
+  ],
+  "environment": [
+   "ALFWorld",
+   "QLoRA nf4",
+   "Qwen3-32B"
+  ]
+ },
+ "reversal_savings_latent_retention": {
+  "agent": [
+   "rule reversal relearning savings continual LoRA versus retrieval memory agent ALFWorld",
+   "self-evolving agent forgetting memory channel versus model channel reacquisition",
+   "bounded FIFO memory bank no retention stale tax unbounded bank rule reversal"
+  ],
+  "mechanism_home": [
+   "spurious forgetting relearning savings continual fine-tuning latent knowledge retained",
+   "unlearning is not deletion suppressed knowledge recoverable by relearning fine-tuning",
+   "reversal learning savings rapid reacquisition after interference catastrophic forgetting"
+  ],
+  "adjacent": [
+   "fine-tuning performance loss reflects alignment shift not knowledge loss shallow forgetting",
+   "unlearned knowledge recovers with few relearning samples relearning attack",
+   "catastrophic forgetting is shallow linear probe recovers old task representations"
+  ],
+  "baseline": [
+   "reset adapter retrain from scratch each phase",
+   "replay buffer experience replay 1:1 with new chunk",
+   "unbounded retrieval memory keep all items"
+  ],
+  "methods": [
+   "Do Self-Evolving Agents Forget",
+   "When Continual Learning Moves to Memory",
+   "FOREVER replay scheduling",
+   "Forgetting in Language Models self-generated replay",
+   "Spurious Forgetting",
+   "Unlearning Isn't Deletion",
+   "UniMem",
+   "COVE"
+  ],
+  "environment": [
+   "ALFWorld",
+   "QLoRA",
+   "Qwen3-32B"
+  ]
+ },
+ "success_filter_lockin_under_shift": {
+  "agent": [
+   "success-only experience memory self-collected agent hidden rule change lock-in recovery",
+   "self-reinforcing stale memory retrieval bank versus continual LoRA distribution shift",
+   "exogenous expert refresh dose breaks agent memory loop failure-decayed memory"
+  ],
+  "mechanism_home": [
+   "self-training confirmation bias selection feedback loop model collapse recursive training own outputs",
+   "positive feedback loop in recommender systems filter bubble winner-take-all popularity bias",
+   "exploration-exploitation lock-in self-generated data selection bias online learning"
+  ],
+  "adjacent": [
+   "model collapse training on own generated outputs loses tail distribution",
+   "recommender feedback loop degenerate popularity concentration echo chamber",
+   "small fraction of fresh human data prevents model collapse accumulate not replace"
+  ],
+  "baseline": [
+   "failure-based utility decay of memory items",
+   "FIFO eviction bounded memory",
+   "expert reference trajectories injected periodically"
+  ],
+  "methods": [
+   "Live-Evo",
+   "RoMeRL memory-reward trap",
+   "Escaping the Self-Confirmation Trap",
+   "Zombie Agents",
+   "When Continual Learning Moves to Memory",
+   "HarnessEvolve"
+  ],
+  "environment": [
+   "ALFWorld",
+   "QLoRA",
+   "Qwen3-32B"
+  ]
+ },
+ "context_pays_for_its_own_tokens_breakeven": {
+  "agent": [
+   "retrieved experience shortens agent episodes total token cost break-even fine-tuning versus in-context memory",
+   "context distillation amortization break-even deployment episodes agent memory",
+   "memory-free student versus retrieval-augmented agent cost accounting GPU-seconds"
+  ],
+  "mechanism_home": [
+   "few-shot demonstrations reduce generation length inference cost total tokens accounting",
+   "fine-tuning versus in-context learning amortized inference cost break-even number of queries",
+   "retrieval-augmented generation end-to-end compute cost including downstream inference"
+  ],
+  "adjacent": [
+   "fine-tuning versus in-context learning cost crossover with query volume prompt amortization",
+   "prompt compression reduces cost but longer outputs offset savings",
+   "in-context examples change response length verbosity"
+  ],
+  "baseline": [
+   "direct SFT on trajectories",
+   "count injected prompt tokens only",
+   "prompt caching of shared demonstrations"
+  ],
+  "methods": [
+   "Inference-Time Distillation self-consistency cascades",
+   "Experience Distillation",
+   "ReMe",
+   "MemHarness",
+   "PMD",
+   "SKILL0",
+   "pi-Distill",
+   "SESA",
+   "Agentic Context Management"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "Qwen3-8B",
+   "QLoRA nf4"
+  ]
+ },
+ "first_item_additive_rest_substitutive": {
+  "agent": [
+   "retrieved experience dose-response after memory-free internalization context distillation agent",
+   "student fine-tuned on experience pool still benefits from one retrieved item retrieval as cue",
+   "internalized skills plus inference-time memory hybrid token-optimal agent"
+  ],
+  "mechanism_home": [
+   "diminishing returns of in-context demonstrations after fine-tuning number of shots saturation",
+   "retrieval-augmented fine-tuning reduces reliance on retrieved context complementarity of parametric and contextual knowledge",
+   "one-shot cue task recognition versus task learning in-context demonstrations after instruction tuning"
+  ],
+  "adjacent": [
+   "instruction-tuned models gain little from additional few-shot examples zero-shot to few-shot gap shrinks",
+   "in-context learning as task identification demonstrations act as cue rather than learning signal",
+   "information abundance paradox training with context increases context reliance"
+  ],
+  "baseline": [
+   "fine-tuned student at k=0 memory-free",
+   "base model with full retrieval k=7",
+   "retrieval-augmented SFT with items in prompt"
+  ],
+  "methods": [
+   "SESA",
+   "Retrieval-augmented SFT",
+   "Experience Distillation",
+   "PMD",
+   "SKILL0",
+   "Skill0.5",
+   "New News contextual shadowing",
+   "UCOB",
+   "substrate benchmark"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "Qwen3-8B",
+   "QLoRA nf4"
+  ]
+ },
+ "coverage_limited_context_count_limited_weights": {
+  "agent": [
+   "experience bank size ladder in-context gain saturation per task type ALFWorld",
+   "parametric route retained fraction scales with pool size matched optimizer steps agent memory",
+   "cross-type retrieval transfer held-out procedure in-context vs weights agent memory"
+  ],
+  "mechanism_home": [
+   "few-shot demonstration count saturation in-context learning performance plateau",
+   "fine-tuning data scaling law sample count versus coverage of task categories",
+   "compositional generalization to held-out task category after fine-tuning versus in-context analogy"
+  ],
+  "adjacent": [
+   "in-context learning performance saturates with few exemplars beyond which more demonstrations do not help",
+   "fine-tuning outperforms in-context learning as training examples grow crossover point",
+   "diversity beats quantity in SFT data scaling"
+  ],
+  "baseline": [
+   "fixed small hand-picked exemplar set per task type in prompt",
+   "static instruction stating the procedure per task type",
+   "uniform random subsample of bank for retrieval"
+  ],
+  "methods": [
+   "Experience Distillation",
+   "UniMem",
+   "COVE",
+   "SKILL0",
+   "SIRI",
+   "Echo In-Context Analogy Learning Minecraft",
+   "in-context distillation amortization",
+   "continual memory streams non-parametric"
+  ],
+  "environment": [
+   "ALFWorld",
+   "QLoRA nf4 LoRA SFT",
+   "MiniLM retrieval",
+   "context distillation"
+  ]
+ },
+ "context_ceiling_substitution": {
+  "agent": [
+   "distilled student with experience put back in context no better than untrained agent ceiling",
+   "marginal value of weights given context substitution not additivity agent memory internalization",
+   "retention-routed memory injection per task type hybrid weights plus retrieval fraction of tokens"
+  ],
+  "mechanism_home": [
+   "fine-tuning gains vanish when the same information is provided in the prompt redundancy of parametric and in-context knowledge",
+   "knowledge injection fine-tuning versus retrieval augmentation complementarity ceiling",
+   "selective retrieval only when parametric knowledge is insufficient adaptive retrieval routing"
+  ],
+  "adjacent": [
+   "retrieval augmentation and fine-tuning are complementary additive gains knowledge injection",
+   "adaptive retrieval when to retrieve based on parametric confidence outperforms always retrieve",
+   "fine-tuning on retrieved context creates dependence on retrieval crutch"
+  ],
+  "baseline": [
+   "always inject k=3 retrieved items full hybrid",
+   "retrieve only when similarity threshold exceeded",
+   "confidence-based adaptive retrieval self-knowledge"
+  ],
+  "methods": [
+   "Experience Distillation",
+   "SESA",
+   "Skill0.5 difficulty-aware router",
+   "SKILL0",
+   "UniMem",
+   "COVE",
+   "retrieval-augmented SFT",
+   "in-context distillation",
+   "DiSC",
+   "Doc-to-LoRA"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "QLoRA SFT",
+   "context distillation",
+   "vLLM ReAct",
+   "MiniLM retrieval"
+  ]
+ },
+ "train_dose_sets_substrate": {
+  "agent": [
+   "retrieved episodes in training prompt dose k_train reduces memory-free retention agent distillation",
+   "training-time memory dose fragility to mismatched memory at deployment",
+   "relevance-destroyed decoy context at training time agent SFT"
+  ],
+  "mechanism_home": [
+   "information abundance paradox relevant training context reduces parametric encoding context reliance",
+   "retrieval-augmented fine-tuning with relevant documents in the prompt reduces knowledge internalization",
+   "loss already explained by context gradient signal absorbed by conditioning shortcut learning"
+  ],
+  "adjacent": [
+   "retrieval-augmented fine-tuning with irrelevant distractor documents improves robustness",
+   "training with abundant relevant context increases context reliance intermediate optimum",
+   "shortcut learning easy features suppress learning of harder features"
+  ],
+  "baseline": [
+   "fine-tune without retrieved context in prompt then deploy with retrieval",
+   "context dropout during fine-tuning intermittent conditioning",
+   "irrelevant distractor documents mixed into training prompts"
+  ],
+  "methods": [
+   "information-abundance paradox",
+   "retrieval-augmented SFT",
+   "MemHarness",
+   "PMD procedural memory distillation",
+   "UCOB",
+   "OPSD",
+   "OPCD",
+   "Skill-SD",
+   "learned privileged context",
+   "DAPD",
+   "DOPD",
+   "OP2SD",
+   "latent learning episodic memory"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "QLoRA SFT",
+   "context distillation",
+   "MiniLM retrieval",
+   "vLLM ReAct"
+  ]
+ },
+ "context_wins_substrate_conflict": {
+  "agent": [
+   "conflict between weights-trained procedure and retrieved stale memory context dominates agent",
+   "stale retrieved items compliance after rule change hybrid agent memory eviction",
+   "fresh retrieved items repair stale fine-tuned weights post-shift stream recovery"
+  ],
+  "mechanism_home": [
+   "knowledge conflict parametric versus contextual knowledge preference",
+   "counterfactual context overrides fine-tuned parametric facts knowledge editing conflict",
+   "in-context instruction following versus fine-tuned behavior which prevails prompt override"
+  ],
+  "adjacent": [
+   "language models prefer contextual knowledge over parametric when context is coherent",
+   "in-context demonstrations override explicit instructions",
+   "fine-tuning on correct facts does not prevent following misleading context sycophancy"
+  ],
+  "baseline": [
+   "temporal validity filter for retrieval evict stale items",
+   "critique prompt instructing agent to verify memory against observations",
+   "retrain weights on new procedure only"
+  ],
+  "methods": [
+   "compliance trap",
+   "STALE benchmark",
+   "CK-PLUG",
+   "UniMem",
+   "COVE",
+   "continual learning as retrieval",
+   "AgentCL",
+   "OAKS",
+   "FOREVER",
+   "Agent-Dice",
+   "self-generated replay",
+   "Do Self-Evolving Agents Forget",
+   "faulty consolidation",
+   "insight governance"
+  ],
+  "environment": [
+   "ALFWorld",
+   "QLoRA SFT",
+   "continual LoRA",
+   "FIFO bounded bank",
+   "MiniLM retrieval"
+  ]
+ },
+ "instance_share_is_the_illusion": {
+  "agent": [
+   "privilege illusion retrieved agent memory instance-bound versus type-level share distillation",
+   "memory-conditioned self-teacher on-policy self-distillation memory-free student ALFWorld",
+   "oracle own walkthrough versus same-type walkthroughs in-context gain decomposition"
+  ],
+  "mechanism_home": [
+   "privileged information distillation what the student can and cannot replicate information asymmetry",
+   "on-policy self-distillation privileged context teacher student gap",
+   "instance-specific versus task-general information in demonstrations transfer learning"
+  ],
+  "adjacent": [
+   "self-distillation gains come from context-induced teacher behaviour not privileged information",
+   "learning using privileged information generalization bound student cannot exploit teacher-only features",
+   "oracle demonstrations of the same instance inflate few-shot accuracy leakage"
+  ],
+  "baseline": [
+   "context distillation with empty block self-training P-CD0",
+   "direct SFT on raw walkthroughs",
+   "same-type exemplars from other scenes in prompt"
+  ],
+  "methods": [
+   "OP2SD",
+   "DAPD",
+   "DOPD",
+   "Experience Distillation",
+   "CardDistill SkillLens",
+   "LOPSD",
+   "SMRC-SD",
+   "OPSD critical review",
+   "reverse-KL on-policy distillation",
+   "context distillation"
+  ],
+  "environment": [
+   "ALFWorld",
+   "QLoRA rank-32",
+   "ReAct",
+   "traj_data walkthrough",
+   "valid_seen valid_unseen"
+  ]
+ },
+ "student_side_abundance": {
+  "agent": [
+   "training-time retrieved memory dose suppresses parametric encoding of agent experience step-level SFT",
+   "memory-in-prompt fine-tuning versus memory-conditioned teacher distillation memory-free agent accuracy",
+   "retrieved episodes in student prompt during SFT lower action-token loss reduce internalization ALFWorld"
+  ],
+  "mechanism_home": [
+   "information abundance paradox longer training context reduces parametric encoding intermediate optimum",
+   "retrieval-augmented fine-tuning context reliance versus parametric knowledge internalization irrelevant context",
+   "easier training signal lowers loss to close shortcut learning gradient starvation less weight learning"
+  ],
+  "adjacent": [
+   "privileged-context teacher distillation into context-free student beats training with the context in the student prompt",
+   "context dropout during retrieval-augmented fine-tuning improves closed-book robustness",
+   "training prompt choice changes learning dynamics prompt adaptation for fine-tuning"
+  ],
+  "baseline": [
+   "fine-tune without retrieved context (k=0) then deploy with retrieval",
+   "context dropout randomly removing the retrieved block on a fraction of training examples",
+   "single fixed-dose context distillation from a conditioned teacher"
+  ],
+  "methods": [
+   "Information Abundance Paradox",
+   "Training Prompt Matters",
+   "Experience Distillation; On-Policy Context Distillation (OPCD); retrieval-augmented agent training with LoRA; QLoRA; ReAct"
+  ],
+  "environment": [
+   "ALFWorld valid_seen valid_unseen heat-then-place",
+   "QLoRA nf4 rank 32 one epoch",
+   "two A100 GPUs"
+  ]
+ },
+ "memory_carried_traits_need_tokens": {
+  "agent": [
+   "subliminal transfer of agent traits through distillation memory-carried versus parameter-carried teacher",
+   "on-policy reverse-KL distillation masking trait-expressing tokens abolishes trait transfer memory-free student",
+   "memory-conditioned self-distillation transfers behavioural trait planted in retrieved memory ALFWorld"
+  ],
+  "mechanism_home": [
+   "subliminal learning trait transfer through semantically unrelated data shared initialization teacher parameters",
+   "in-context induced behaviour versus weight-carried behaviour distillation channel token loss masking",
+   "on-policy distillation reverse KL transfers teacher preferences beyond the sanitized sampled tokens"
+  ],
+  "adjacent": [
+   "subliminal learning requires shared initialization and a teacher whose parameters differ in the trait direction",
+   "corridor regularization trait-direction drift from preference gaps in clean SFT data",
+   "on-policy distillation transfers teacher behaviour more efficiently than SFT on sanitized data"
+  ],
+  "baseline": [
+   "keyword sanitation removing trait-expressing steps from distillation data",
+   "loss masking of trait spans during distillation",
+   "projecting the trait direction out of the LoRA update"
+  ],
+  "methods": [
+   "Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation; Subliminal Learning (Cloud et al.); Subliminal Learning is a LoRA Artifact",
+   "corridor regularization; Channel Location Constrains the Auditability of Subliminal Learning; Decoupling KL and Trajectories",
+   "OPSD; OPCD; Skill-SD; LOPSD"
+  ],
+  "environment": [
+   "ALFWorld valid_seen valid_unseen",
+   "QLoRA rank 32 self-teacher same base weights",
+   "trait-LoRA teacher"
+  ]
+ },
+ "retrieved_memory_privilege_is_scene_bound": {
+  "agent": [
+   "privileged information self-distillation retrieved agent memory memory-free student ALFWorld",
+   "decomposing retained in-context gain into type-level procedure prior versus item-specific scene bindings",
+   "privilege illusion on-policy self-distillation memory-conditioned teacher seen versus unseen scenes"
+  ],
+  "mechanism_home": [
+   "privileged information distillation which part of the privilege gap is closable by the student",
+   "reference-induced rote shortcut component versus question-conditioned transferable component of self-distillation",
+   "unrelated reference substitution preserves self-distillation gain context-induced effect"
+  ],
+  "adjacent": [
+   "substituting an unrelated problem-solution pair keeps most of the privileged self-distillation gain",
+   "purified OPSD reference-induced rote shortcut versus transferable component",
+   "alignment to the reference does not predict benefit from privileged information"
+  ],
+  "baseline": [
+   "self-distillation with an empty privileged context (P-CD0)",
+   "plain SFT on bank trajectories with a memory-free prompt",
+   "anchored privileged distillation fix (DAPD)"
+  ],
+  "methods": [
+   "OPSD; pi-Distill; OP2SD; Purified OPSD",
+   "Rethinking Privileged Information in OPSD; DAPD; DOPD",
+   "Experience Distillation; Latent OPSD; MiniLM retrieval"
+  ],
+  "environment": [
+   "ALFWorld valid_seen valid_unseen pick_two_obj_and_place",
+   "Qwen3-32B frozen teacher",
+   "QLoRA nf4 r=32 vLLM"
+  ]
+ },
+ "harm_spillover_is_substrate_bound": {
+  "agent": [
+   "wrong-procedure agent memory harm in context versus internalized by SFT and on-policy distillation",
+   "poisoned retrieved memory dose-response spillover to sibling task types ALFWorld",
+   "compliance trap task-conflicting retrieved memory internalization clean memory override"
+  ],
+  "mechanism_home": [
+   "data poisoning fraction threshold versus linear dose response fine-tuning",
+   "fine-tuning on corrupted demonstrations spreads errors to related tasks cross-task generalization of learned mistakes",
+   "knowledge conflict clean context overriding parametric errors on-policy distillation error attenuation"
+  ],
+  "adjacent": [
+   "near-constant number of poison samples suffices regardless of dataset size",
+   "narrow fine-tuning generalizes broadly emergent misalignment",
+   "on-policy distillation reduces compounding of teacher errors compared to SFT imitation"
+  ],
+  "baseline": [
+   "filter poisoned items from the store before training or retrieval",
+   "place clean matched memory back in context at inference",
+   "corridor regularization or trait-direction projection during SFT"
+  ],
+  "methods": [
+   "The Compliance Trap; Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation; Bias amplification through distillation",
+   "MemTrapBench; MemSyco-Bench; corridor regularization",
+   "OPSD; Experience Distillation; P-CD0"
+  ],
+  "environment": [
+   "ALFWorld heat_then_place cool_then_place valid_seen valid_unseen",
+   "QLoRA LoRA rank 8",
+   "274 validation games 3 seeds"
+  ]
+ },
+ "style_outruns_content": {
+  "agent": [
+   "planted dispositions in agent memory generalize across task types beyond internalized procedures",
+   "marker adoption transfer under SFT and memory-conditioned on-policy self-distillation sanitization ALFWorld",
+   "durability of planted traits versus content gain under continued training on clean data"
+  ],
+  "mechanism_home": [
+   "style versus facts what fine-tuning injects stylistic features generalize faster than knowledge",
+   "superficial alignment hypothesis format learned from few examples generalizes broadly",
+   "recently learned stylistic behaviour forgotten faster than task knowledge under continued fine-tuning"
+  ],
+  "adjacent": [
+   "style transfers from few examples while facts need many (From Style to Facts)",
+   "narrow fine-tuning generalizes broadly emergent misalignment",
+   "SFT memorizes RL generalizes; subliminal learning as a fragile LoRA artefact with inverted-U in rank"
+  ],
+  "baseline": [
+   "sanitize explicit markers from the training data",
+   "one epoch of continued fine-tuning on clean marker-free data",
+   "in-context instruction or contradicting context to suppress the marker"
+  ],
+  "methods": [
+   "Subliminal learning; steering-vector account; Subliminal Learning is a LoRA Artifact; corridor regularization",
+   "Channel Location Constrains Auditability; Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation",
+   "From Style to Facts; SFT Memorizes RL Generalizes; OPSD"
+  ],
+  "environment": [
+   "ALFWorld clean_then_place heat_then_place cool_then_place pick_two_obj_and_place valid_seen valid_unseen",
+   "QLoRA nf4 r=32 rank ladder 8 128",
+   "274 games 3 seeds"
+  ]
+ }
+}

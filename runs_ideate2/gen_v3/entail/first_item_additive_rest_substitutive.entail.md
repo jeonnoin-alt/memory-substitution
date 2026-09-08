@@ -1,0 +1,24 @@
+=== ENTAILMENT CHECK (automated pre-review; evidence, not a verdict) ===
+For each prediction: what would falsify it, and whether the stated arms can produce that outcome at the stated power.
+
+Proposal: first_item_additive_rest_substitutive — headline P2 is **unresolvable**; open 3 / entailed 0 / near-entailed 0 / unresolvable 4; verdict revise
+
+- P1 [open] falsifier: (student k=1 - student k=0) <= 0.25 x (base k=1 - base k=0) for BOTH SFT-E and CD-E
+  reason: A student whose internalization raises k=0 has less headroom, so a collapsed first-item gain is a real and paired-measurable outcome, and with a base first-item gain of ~20 points the falsifying 0.25x level (~5 points) sits far enough from the predicted >=10 points to be resolved at the stated +/-5 floor; note the 0.25x-0.5x band and the conjunction over two objectives leave outcomes that neither confirm nor falsify.
+- P2 [unresolvable] falsifier: (student k=7 - student k=1) >= 2/3 x (base k=7 - base k=1)
+  reason: At the gated base slope the confirm threshold (1/3, i.e. 2 net points) and the falsify threshold (2/3, i.e. 4 net points) are both inside the stated ~5-point MDE, and even at the measured ~10-point base slope the two thresholds are only ~3.4 points apart, so the decision band lies entirely within the noise.
+  fix: Raise the Gate-0 slope requirement to >=15 net points, or add tasks/seeds until the MDE on the paired slope difference is <2 points, and pre-register a bootstrap CI on the slope ratio itself.
+- P3 [open] falsifier: base+k=7 exceeds student+k=1 by more than the pre-registered margin
+  reason: A student that fails to internalize can be clearly worse than base+k=7 by well over the margin and the 4-seed cell resolves that, though the margin is tied to a gated quantity whose floor (3 points) would fall inside the +/-4 CI, and the token half of the claim (~15% of base+k=7's injected tokens) is arithmetic from 1 item versus 7, not an empirical result.
+- P4 [unresolvable] falsifier: the probe student's k=3 gain on heat is below the base's by more than one third of the base's gain
+  reason: The falsifying margin is ~13-18 net points against a per-type CI of ~+/-12, which the proposal concedes ('powered only for a crutch >= 15 net points'), so an observed crutch of the falsifying size cannot be separated from the margin and the null is confirmed by low power.
+  fix: Pool the two withheld types (or all six rotations) and raise seeds until the per-type contrast reaches ~+/-5, and test the crutch as an equivalence test with a margin above the MDE.
+- P5 [unresolvable] falsifier: either substrate carries a gain on the withheld type (a non-flat dose-response, or student k=0 outside the CI of base k=0)
+  reason: Both clauses are confirmed by failing to reject on the widest cell in the study, so a real cross-type or type-general effect of up to ~12 net points registers as 'flat within the per-type CI'; the CI-inclusion rule makes low power the prediction's evidence.
+  fix: Replace CI-inclusion with a pre-registered TOST whose equivalence margin exceeds the per-type MDE, and power the cell (pool rotations across types) to ~+/-5.
+- P6 [open] falsifier: decoy items raise the student's accuracy beyond the margin, making P1's first-item effect a length effect
+  reason: Decoys retain ALFWorld action syntax and prompt length, so a format-priming gain is a live mechanism, and the arm is paired at the pooled +/-5 floor where a real placebo effect would show.
+- P7 [unresolvable] falsifier: the memory-in-the-loop student does not have lower memory-free accuracy than SFT-E, or its k=1->k=7 slope is < 2/3 of the base's, or the decoy-trained twin shows the same drop
+  reason: Both arms have a single LoRA seed, so the drop and the twin's non-drop cannot be separated from LoRA-seed variance the proposal itself budgets at ~3 points, and the slope clause inherits P2's problem that 2/3 of a 6-10-point base slope is inside the ~5-point slope MDE.
+  fix: Run at least two LoRA seeds for the memory-in-the-loop arm and its decoy twin and report the drop as a seed-level contrast, with the slope clause restated at a separation above the slope MDE.
+- shared terms: P1-P2: both are paired differences off the same student success ladder and share the student k=1 term, so a low student k=1 simultaneously threatens P1 and helps satisfy P2's slope collapse.; P2-P3: the base k=1->k=7 slope is P2's denominator and also defines P3's equivalence margin (half the Gate-0 slope), so a small measured slope loosens P3 exactly when P2 becomes untestable.; P2-P7: P7's slope criterion is the same base k=1->k=7 slope gated at Gate 0 and compared at the same 2/3 threshold as P2's falsifier.; P1-P6: student k=0 is the common reference term for the first-item gain and for the decoy placebo, so a mis-estimated student k=0 moves both.

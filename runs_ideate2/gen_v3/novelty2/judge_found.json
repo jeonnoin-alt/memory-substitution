@@ -1,0 +1,16 @@
+{
+ "stale_dose_law_context_vs_weights": ["2510.07192", "2608.20202", "2507.22887", "2605.26350", "2406.15981"],
+ "coverage_limited_context_count_limited_weights": ["2603.11076", "2603.18272"],
+ "memory_carried_traits_need_tokens": ["2603.09517", "2510.04340", "2605.12798"],
+ "context_ceiling_substitution": ["2606.29502", "2608.01234", "2606.03657", "2602.06025", "2607.13591"],
+ "train_dose_sets_substrate": ["2410.05983", "2310.01558", "2606.01967", "2510.05024", "2605.05413"],
+ "context_wins_substrate_conflict": ["2407.13048", "2503.15888", "2405.05904", "2608.15008", "2604.27251", "2305.13300"],
+ "context_pays_for_its_own_tokens_breakeven": ["2605.24785", "2607.13591", "2511.15392", "2401.08406"],
+ "reversal_savings_latent_retention": ["2505.22310", "2605.11685", "2602.03379", "2510.08564", "2501.13453", "2505.16831"],
+ "success_filter_lockin_under_shift": ["2606.17591", "2605.29463", "2608.02636", "2608.00017", "2605.05583"],
+ "first_item_additive_rest_substitutive": ["2608.14036", "2605.28424", "2603.18272"],
+ "instance_share_is_the_illusion": ["2606.29502", "2605.20643", "2606.06087"],
+ "student_side_abundance": ["2605.11458", "2608.09228", "2603.18272"],
+ "harm_spillover_is_substrate_bound": ["2608.29118", "2602.07852", "2510.07192", "2605.12798"],
+ "style_outruns_content": ["2608.05734", "2604.25783", "2608.16647"]
+}

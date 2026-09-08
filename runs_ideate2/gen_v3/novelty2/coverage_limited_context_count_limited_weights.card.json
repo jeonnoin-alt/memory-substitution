@@ -1,0 +1,223 @@
+{
+ "name": "coverage_limited_context_count_limited_weights",
+ "keys": {
+  "agent": [
+   "experience bank size ladder in-context gain saturation per task type ALFWorld",
+   "parametric route retained fraction scales with pool size matched optimizer steps agent memory",
+   "cross-type retrieval transfer held-out procedure in-context vs weights agent memory"
+  ],
+  "mechanism_home": [
+   "few-shot demonstration count saturation in-context learning performance plateau",
+   "fine-tuning data scaling law sample count versus coverage of task categories",
+   "compositional generalization to held-out task category after fine-tuning versus in-context analogy"
+  ],
+  "adjacent": [
+   "in-context learning performance saturates with few exemplars beyond which more demonstrations do not help",
+   "fine-tuning outperforms in-context learning as training examples grow crossover point",
+   "diversity beats quantity in SFT data scaling"
+  ],
+  "baseline": [
+   "fixed small hand-picked exemplar set per task type in prompt",
+   "static instruction stating the procedure per task type",
+   "uniform random subsample of bank for retrieval"
+  ],
+  "methods": [
+   "Experience Distillation",
+   "UniMem",
+   "COVE",
+   "SKILL0",
+   "SIRI",
+   "Echo In-Context Analogy Learning Minecraft",
+   "in-context distillation amortization",
+   "continual memory streams non-parametric"
+  ],
+  "environment": [
+   "ALFWorld",
+   "QLoRA nf4 LoRA SFT",
+   "MiniLM retrieval",
+   "context distillation"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "few-shot demonstration count saturation in-context learning performance plateau"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "fine-tuning data scaling law sample count versus coverage of task categories"
+  },
+  {
+   "class": "agent",
+   "query": "experience bank size ladder in-context gain saturation per task type ALFWorld"
+  },
+  {
+   "class": "agent",
+   "query": "parametric route retained fraction scales with pool size matched optimizer steps agent memory"
+  },
+  {
+   "class": "adjacent",
+   "query": "in-context learning performance saturates with few exemplars beyond which more demonstrations do not help"
+  },
+  {
+   "class": "baseline",
+   "query": "fixed small hand-picked exemplar set per task type in prompt"
+  },
+  {
+   "class": "methods",
+   "query": "Experience Distillation UniMem COVE experience bank size ladder in-context gain saturation per t"
+  },
+  {
+   "class": "agent",
+   "query": "experience bank size ladder in-context gain saturation per task type ALFWorld ALFWorld QLoRA nf4 LoRA SFT"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2405.00200",
+   "date": "2024-04-30",
+   "venue": "",
+   "sim": 0.542,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "In-Context Learning with Long-Context Models: An In-Depth Exploration"
+  },
+  {
+   "id": "arxiv:2607.21273",
+   "date": "2026-07-23",
+   "venue": "",
+   "sim": 0.5,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Dark Room in the Reward Channel: Dense Prediction Rewards Collapse GRPO-Trained LLM Agents -- and What Actually Works"
+  },
+  {
+   "id": "arxiv:2602.21854",
+   "date": "2026-02-25",
+   "venue": "",
+   "sim": 0.475,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "FewMMBench: A Benchmark for Multimodal Few-Shot Learning"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.475,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2606.02304",
+   "date": "2026-06-01",
+   "venue": "",
+   "sim": 0.472,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Unified Context Evolution for LLM Agents"
+  },
+  {
+   "id": "arxiv:2506.04579",
+   "date": "2025-06-05",
+   "venue": "",
+   "sim": 0.468,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Selecting Demonstrations for Many-Shot In-Context Learning via Gradient Matching"
+  },
+  {
+   "id": "arxiv:2603.24690",
+   "date": "2026-03-25",
+   "venue": "",
+   "sim": 0.446,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "mechanism_home"
+   ],
+   "title": "UniICL: Systematizing Unified Multimodal In-context Learning through a Capability-Oriented Taxonomy"
+  },
+  {
+   "id": "arxiv:2607.23124",
+   "date": "2026-07-25",
+   "venue": "",
+   "sim": 0.438,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "AgentOmnia: Scaling Agentic Models for Full-Scenario Applications"
+  },
+  {
+   "id": "arxiv:2606.06448",
+   "date": "2026-06-04",
+   "venue": "",
+   "sim": 0.431,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Agent Memory: Characterization and System Implications of Stateful Long-Horizon Workloads"
+  },
+  {
+   "id": "arxiv:2407.21787",
+   "date": "2024-07-31",
+   "venue": "",
+   "sim": 0.43,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Large Language Monkeys: Scaling Inference Compute with Repeated Sampling"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 18,
+  "agent": 20,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "few-shot demonstration count saturation in-context learning performance plateau 2025 arXiv"
+  },
+  {
+   "query": "fine-tuning data scaling law sample count versus coverage of task categories 2025 arXiv"
+  }
+ ]
+}

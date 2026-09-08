@@ -1,0 +1,206 @@
+{
+ "name": "stale_dose_law_context_vs_weights",
+ "keys": {
+  "agent": [
+   "Entry-Gated Majority-Gated Dose Law Outdated Experience Read Context",
+   "After hidden rule change ALFWorld outdated experience items harm agent under two"
+  ],
+  "mechanism_home": [
+   "After hidden rule change outdated items harm under two different dose laws",
+   "knowledge conflict parametric versus contextual knowledge update",
+   "data poisoning number of poison samples threshold fine-tuning"
+  ],
+  "adjacent": [
+   "temporal validity outdated retrieved documents RAG",
+   "misleading demonstrations in-context learning position sensitivity"
+  ],
+  "baseline": [
+   "recency weighted retrieval time decay",
+   "static instruction stating the correct procedure"
+  ],
+  "estimand": [
+   "After hidden rule change ALFWorld outdated experience items harm agent"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": []
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "After hidden rule change outdated items harm under two different dose laws"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "knowledge conflict parametric versus contextual knowledge update"
+  },
+  {
+   "class": "agent",
+   "query": "Entry-Gated Majority-Gated Dose Law Outdated Experience Read Context"
+  },
+  {
+   "class": "agent",
+   "query": "After hidden rule change ALFWorld outdated experience items harm agent under two"
+  },
+  {
+   "class": "adjacent",
+   "query": "temporal validity outdated retrieved documents RAG"
+  },
+  {
+   "class": "baseline",
+   "query": "recency weighted retrieval time decay"
+  },
+  {
+   "class": "agent",
+   "query": "Entry-Gated Majority-Gated Dose Law Outdated Experience Read Context ALFWorld"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2606.02540",
+   "date": "2026-06-01",
+   "venue": "",
+   "sim": 0.457,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "SkillHarm: Lifecycle-Aware Skill-Based Attacks via Automated Construction"
+  },
+  {
+   "id": "arxiv:2606.26511",
+   "date": "2026-06-25",
+   "venue": "",
+   "sim": 0.449,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Temporal Validity in Retrieval Memory: Eliminating Stale-Fact Errors for AI Agents over Evolving Knowledge"
+  },
+  {
+   "id": "arxiv:2605.06132",
+   "date": "2026-05-07",
+   "venue": "",
+   "sim": 0.436,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "MemReranker: Reasoning-Aware Reranking for Agent Memory Retrieval"
+  },
+  {
+   "id": "arxiv:2605.14473",
+   "date": "2026-05-14",
+   "venue": "arXiv.org",
+   "sim": 0.435,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Does RAG Know When Retrieval Is Wrong? Diagnosing Context Compliance under Knowledge Conflict"
+  },
+  {
+   "id": "arxiv:2503.15888",
+   "date": "2025-03-20",
+   "venue": "",
+   "sim": 0.411,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Parameters vs. Context: Fine-Grained Control of Knowledge Reliance in\n  Language Models"
+  },
+  {
+   "id": "arxiv:2506.05154",
+   "date": "2025-06-05",
+   "venue": "",
+   "sim": 0.402,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Resisting Contextual Interference in RAG via Parametric-Knowledge Reinforcement"
+  },
+  {
+   "id": "arxiv:2410.13886",
+   "date": "2024-10-11",
+   "venue": "",
+   "sim": 0.395,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Refusal-Trained LLMs Are Easily Jailbroken As Browser Agents"
+  },
+  {
+   "id": "arxiv:2603.15994",
+   "date": "2026-03-16",
+   "venue": "",
+   "sim": 0.39,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Selective Memory for Artificial Intelligence: Write-Time Gating with Hierarchical Archiving"
+  },
+  {
+   "id": "arxiv:2606.15474",
+   "date": "2026-06-13",
+   "venue": "",
+   "sim": 0.382,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Who Drifted: the System or the Judge? Anytime-Valid Attribution in LLM Evaluation Pipelines"
+  },
+  {
+   "id": "arxiv:2605.17639",
+   "date": "2026-05-17",
+   "venue": "",
+   "sim": 0.381,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Temporal Decay of Co-Citation Predictability: A 20-Year Statute Retrieval Benchmark from 396M Ukrainian Court Citations"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 19,
+  "agent": 13,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 0
+ },
+ "web_jobs": [
+  {
+   "query": "After hidden rule change outdated items harm under two different dose laws 2025 arXiv"
+  },
+  {
+   "query": "knowledge conflict parametric versus contextual knowledge update 2025 arXiv"
+  }
+ ]
+}

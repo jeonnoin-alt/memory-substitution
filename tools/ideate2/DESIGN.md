@@ -290,3 +290,29 @@ no-shift control stream). Novelty stayed at 5–6 because the mechanisms are pub
 topic is ≈6, the same as the first topic. Recommendation recorded in the session report: stop generating on this topic; the
 two pipeline changes with the best expected lift are (a) a pre-review entailment pass ("which outcome of each prediction is
 impossible under the stated arms?") and (b) a mechanism-side collision search alongside the agent-memory one.
+
+## 11. Two pipeline fixes after the second topic (PI decision 2026-09-08): entailment check and home-literature search
+
+**Stage 2.8 entailment check (`entail.py`, Opus, 3 ideas per job).** For every prediction: the arms it rests on, the outcome
+that would falsify it, whether that outcome is reachable under the stated design, and whether it is distinguishable at the
+stated noise; labels open / entailed / near_entailed / unresolvable; the headline prediction must be open or the idea goes back
+to the generator (`entail.py revise` → Fable) before any judge runs. The per-idea report is attached to the review prompt
+(`review_batch.py emit --entail`). Validation on the 15 gen_v3 ideas against the 14 round-1 Opus reviews (whose strongest
+objections named specific predictions): 92 predictions labelled, 14 open / 24 entailed / 19 near-entailed / 35 unresolvable;
+of the 35 predictions the judges had called entailed or underpowered, the stage flagged 31; it flagged 40 more that the
+judges did not name (they report one objection each). Headline open for 4 of 15 ideas; all 15 get verdict "revise", which
+matches the judges (12 borderline, 2 reject, 0 accept). Cost: ~60k Opus tokens per 3 ideas, versus ~65k per full review, so
+the stage pays for itself if it removes one judge round per idea. `runs_ideate2/gen_v3/entail/VALIDATION.md`.
+
+Generator-side: `AXIS_GENERATION_SYSTEM` now requires, per prediction, the falsifying outcome and the arm that can produce it,
+and one literature search in the mechanism's home vocabulary (`home:`).
+
+**Stage 2.7 query classes (`novelty_check.py`, keys by Fable).** Queries are classed `mechanism_home` (the phenomenon in the
+vocabulary of the field it came from, no agent/memory/benchmark words), `agent`, `adjacent` (published result direction in a
+neighbouring field), `baseline` (cheapest intervention), `methods`; the card says which class found each candidate and lists
+papers that only the home/adjacent/baseline queries returned. Ground truth: the 57 papers the 14+3 Opus judges cited that the
+generators had missed (`novelty2/judge_found.json`). Recall: old agent-only rule keys 6/57; new rule keys with vocabulary
+shift and templates 7/57; Fable keys in five classes 13/57. Inspection of the misses showed the remaining cause: the home
+literature is older (RAG robustness 2023–24, knowledge-conflict 2023, knowledge-preference 2024, poisoning 2025) and the S2
+call carried a 12-month window while HF Papers indexes recent arXiv only; home/adjacent/baseline queries now go to S2 without
+a date window (`novelty3` rerun below).

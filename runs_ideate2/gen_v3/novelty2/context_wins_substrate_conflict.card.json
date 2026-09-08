@@ -1,0 +1,216 @@
+{
+ "name": "context_wins_substrate_conflict",
+ "keys": {
+  "agent": [
+   "conflict between weights-trained procedure and retrieved stale memory context dominates agent",
+   "stale retrieved items compliance after rule change hybrid agent memory eviction",
+   "fresh retrieved items repair stale fine-tuned weights post-shift stream recovery"
+  ],
+  "mechanism_home": [
+   "knowledge conflict parametric versus contextual knowledge preference",
+   "counterfactual context overrides fine-tuned parametric facts knowledge editing conflict",
+   "in-context instruction following versus fine-tuned behavior which prevails prompt override"
+  ],
+  "adjacent": [
+   "language models prefer contextual knowledge over parametric when context is coherent",
+   "in-context demonstrations override explicit instructions",
+   "fine-tuning on correct facts does not prevent following misleading context sycophancy"
+  ],
+  "baseline": [
+   "temporal validity filter for retrieval evict stale items",
+   "critique prompt instructing agent to verify memory against observations",
+   "retrain weights on new procedure only"
+  ],
+  "methods": [
+   "compliance trap",
+   "STALE benchmark",
+   "CK-PLUG",
+   "UniMem",
+   "COVE",
+   "continual learning as retrieval",
+   "AgentCL",
+   "OAKS",
+   "FOREVER",
+   "Agent-Dice",
+   "self-generated replay",
+   "Do Self-Evolving Agents Forget",
+   "faulty consolidation",
+   "insight governance"
+  ],
+  "environment": [
+   "ALFWorld",
+   "QLoRA SFT",
+   "continual LoRA",
+   "FIFO bounded bank",
+   "MiniLM retrieval"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "knowledge conflict parametric versus contextual knowledge preference"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "counterfactual context overrides fine-tuned parametric facts knowledge editing conflict"
+  },
+  {
+   "class": "agent",
+   "query": "conflict between weights-trained procedure and retrieved stale memory context dominates agent"
+  },
+  {
+   "class": "agent",
+   "query": "stale retrieved items compliance after rule change hybrid agent memory eviction"
+  },
+  {
+   "class": "adjacent",
+   "query": "language models prefer contextual knowledge over parametric when context is coherent"
+  },
+  {
+   "class": "baseline",
+   "query": "temporal validity filter for retrieval evict stale items"
+  },
+  {
+   "class": "methods",
+   "query": "compliance trap STALE benchmark CK-PLUG conflict between weights-trained procedure and retrieved sta"
+  },
+  {
+   "class": "agent",
+   "query": "conflict between weights-trained procedure and retrieved stale memory context dominates agent ALFWorld QLoRA SFT"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2606.26511",
+   "date": "2026-06-25",
+   "venue": "",
+   "sim": 0.507,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Temporal Validity in Retrieval Memory: Eliminating Stale-Fact Errors for AI Agents over Evolving Knowledge"
+  },
+  {
+   "id": "arxiv:2402.06262",
+   "date": "2024-02-09",
+   "venue": "",
+   "sim": 0.45,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "On the Efficacy of Eviction Policy for Key-Value Constrained Generative\n  Language Model Inference"
+  },
+  {
+   "id": "arxiv:2605.25475",
+   "date": "2026-05-25",
+   "venue": "",
+   "sim": 0.426,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "IndexMem: Learned KV-Cache Eviction with Latent Memory for Long-Context LLM Inference"
+  },
+  {
+   "id": "arxiv:2601.09445",
+   "date": "2026-01-14",
+   "venue": "arXiv.org",
+   "sim": 0.423,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Where Knowledge Collides: A Mechanistic Study of Intra-Memory Knowledge Conflict in Language Models"
+  },
+  {
+   "id": "arxiv:2507.06782",
+   "date": "2025-07-09",
+   "venue": "",
+   "sim": 0.331,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Temporal Information Retrieval via Time-Specifier Model Merging"
+  },
+  {
+   "id": "arxiv:2405.01117",
+   "date": "2024-05-02",
+   "venue": "",
+   "sim": 0.306,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Faster Learned Sparse Retrieval with Block-Max Pruning"
+  },
+  {
+   "id": "arxiv:2508.12485",
+   "date": "2025-08-17",
+   "venue": "",
+   "sim": 0.27,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Cold-RL: Learning Cache Eviction with Offline Reinforcement Learning for\n  NGINX"
+  },
+  {
+   "id": "arxiv:2601.09523",
+   "date": "2026-01-14",
+   "venue": "",
+   "sim": 0.239,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "TEMPO: A Realistic Multi-Domain Benchmark for Temporal Reasoning-Intensive Retrieval"
+  },
+  {
+   "id": "arxiv:2404.00596",
+   "date": "2024-03-31",
+   "venue": "",
+   "sim": 0.211,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "ECtHR-PCR: A Dataset for Precedent Understanding and Prior Case\n  Retrieval in the European Court of Human Rights"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 1,
+  "agent": 0,
+  "adjacent": 0,
+  "baseline": 8,
+  "methods": 0
+ },
+ "web_jobs": [
+  {
+   "query": "knowledge conflict parametric versus contextual knowledge preference 2025 arXiv"
+  },
+  {
+   "query": "counterfactual context overrides fine-tuned parametric facts knowledge editing conflict 2025 arXiv"
+  }
+ ]
+}

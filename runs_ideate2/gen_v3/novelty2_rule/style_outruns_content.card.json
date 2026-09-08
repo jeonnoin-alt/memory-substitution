@@ -1,0 +1,206 @@
+{
+ "name": "style_outruns_content",
+ "keys": {
+  "agent": [
+   "Style Outruns Content Planted Dispositions Agent Memory Generalize",
+   "agent experience internalized task-irrelevant dispositions carried items task content they carry part"
+  ],
+  "mechanism_home": [
+   "internalized task-irrelevant dispositions carried items task content they carry part ways planted",
+   "subliminal learning hidden trait transmission fine-tuning",
+   "privileged information distillation student cannot close information gap"
+  ],
+  "adjacent": [
+   "narrow fine-tuning generalizes broadly emergent misalignment",
+   "in-context demonstrations override explicit instructions"
+  ],
+  "baseline": [
+   "data filtering sanitization insufficient defense distillation",
+   "same-task oracle demonstration upper bound"
+  ],
+  "estimand": [
+   "agent experience internalized task-irrelevant dispositions carried items task content they"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": []
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "internalized task-irrelevant dispositions carried items task content they carry part ways planted"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "subliminal learning hidden trait transmission fine-tuning"
+  },
+  {
+   "class": "agent",
+   "query": "Style Outruns Content Planted Dispositions Agent Memory Generalize"
+  },
+  {
+   "class": "agent",
+   "query": "agent experience internalized task-irrelevant dispositions carried items task content they carry part"
+  },
+  {
+   "class": "adjacent",
+   "query": "narrow fine-tuning generalizes broadly emergent misalignment"
+  },
+  {
+   "class": "baseline",
+   "query": "data filtering sanitization insufficient defense distillation"
+  },
+  {
+   "class": "agent",
+   "query": "Style Outruns Content Planted Dispositions Agent Memory Generalize ALFWorld"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2512.12818",
+   "date": "2025-12-14",
+   "venue": "",
+   "sim": 0.633,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Hindsight is 20/20: Building Agent Memory that Retains, Recalls, and Reflects"
+  },
+  {
+   "id": "arxiv:2607.26637",
+   "date": "2026-07-29",
+   "venue": "",
+   "sim": 0.572,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Filesystem-Based Memory for LLM Agents: Organization, Evolution, and Sustainability"
+  },
+  {
+   "id": "arxiv:2501.01702",
+   "date": "2025-01-03",
+   "venue": "",
+   "sim": 0.553,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "AgentRefine: Enhancing Agent Generalization through Refinement Tuning"
+  },
+  {
+   "id": "arxiv:2604.17091",
+   "date": "2026-04-18",
+   "venue": "",
+   "sim": 0.548,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "GenericAgent: A Token-Efficient Self-Evolving LLM Agent via Contextual Information Density Maximization (V1.0)"
+  },
+  {
+   "id": "arxiv:2605.12493",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.542,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues"
+  },
+  {
+   "id": "arxiv:2505.16348",
+   "date": "2025-05-22",
+   "venue": "",
+   "sim": 0.538,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Embodied Agents Meet Personalization: Exploring Memory Utilization for\n  Personalized Assistance"
+  },
+  {
+   "id": "arxiv:2607.20972",
+   "date": "2026-07-23",
+   "venue": "",
+   "sim": 0.537,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Delivery, Not Storage: Cue-Anchored Working Memory as a Harness Property for Coding Agents"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.537,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2605.31075",
+   "date": "2026-05-29",
+   "venue": "",
+   "sim": 0.521,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Task-Focused Memorization for Multimodal Agents"
+  },
+  {
+   "id": "arxiv:2601.07470",
+   "date": "2026-01-12",
+   "venue": "",
+   "sim": 0.52,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Learning How to Remember: A Meta-Cognitive Management Method for Structured and Transferable Agent Memory"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 13,
+  "agent": 23,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 0
+ },
+ "web_jobs": [
+  {
+   "query": "internalized task-irrelevant dispositions carried items task content they carry part ways planted 2025 arXiv"
+  },
+  {
+   "query": "subliminal learning hidden trait transmission fine-tuning 2025 arXiv"
+  }
+ ]
+}

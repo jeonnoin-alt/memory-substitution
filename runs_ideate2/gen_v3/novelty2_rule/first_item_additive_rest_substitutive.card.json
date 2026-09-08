@@ -1,0 +1,206 @@
+{
+ "name": "first_item_additive_rest_substitutive",
+ "keys": {
+  "agent": [
+   "Additive One Item Substitutive Seven Dose-Response Retrieved Experience",
+   "After memory-free internalization experience pool QLoRA SFT context distillation Qwen3-32B retrieved experience"
+  ],
+  "mechanism_home": [
+   "After memory-free internalization pool QLoRA SFT distillation Qwen3-32B keeps first-item value but",
+   "knowledge distillation transfers teacher behavior traits student",
+   "fine-tuning plus retrieval augmentation complementary or redundant knowledge injection"
+  ],
+  "adjacent": [
+   "subliminal learning trait transfer through unrelated data",
+   "retrieval still needed after fine-tuning on the same corpus"
+  ],
+  "baseline": [
+   "inoculation prompting fine-tuning defense",
+   "retrieval-augmented fine-tuning baseline"
+  ],
+  "estimand": [
+   "After memory-free internalization experience pool QLoRA SFT context distillation Qwen3-32B"
+  ],
+  "environment": [
+   "Qwen3-32B"
+  ],
+  "methods": []
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "After memory-free internalization pool QLoRA SFT distillation Qwen3-32B keeps first-item value but"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "knowledge distillation transfers teacher behavior traits student"
+  },
+  {
+   "class": "agent",
+   "query": "Additive One Item Substitutive Seven Dose-Response Retrieved Experience"
+  },
+  {
+   "class": "agent",
+   "query": "After memory-free internalization experience pool QLoRA SFT context distillation Qwen3-32B retrieved experience"
+  },
+  {
+   "class": "adjacent",
+   "query": "subliminal learning trait transfer through unrelated data"
+  },
+  {
+   "class": "baseline",
+   "query": "inoculation prompting fine-tuning defense"
+  },
+  {
+   "class": "agent",
+   "query": "Additive One Item Substitutive Seven Dose-Response Retrieved Experience Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2606.05633",
+   "date": "2026-06-04",
+   "venue": "",
+   "sim": 0.576,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Answer Presence Drives RAG Rewriting Gains"
+  },
+  {
+   "id": "arxiv:2505.04560",
+   "date": "2025-05-07",
+   "venue": "International Conference on Machine Learning",
+   "sim": 0.506,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "ABKD: Pursuing a Proper Allocation of the Probability Mass in Knowledge Distillation via α-β-Divergence"
+  },
+  {
+   "id": "arxiv:2606.22019",
+   "date": "2026-06-20",
+   "venue": "",
+   "sim": 0.457,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Channel Location Constrains the Auditability of Subliminal Learning"
+  },
+  {
+   "id": "arxiv:2502.18510",
+   "date": "2025-02-22",
+   "venue": "AAAI Conference on Artificial Intelligence",
+   "sim": 0.449,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Multi-Teacher Knowledge Distillation with Reinforcement Learning for Visual Recognition"
+  },
+  {
+   "id": "arxiv:2511.18787",
+   "date": "2026-04-09",
+   "venue": "",
+   "sim": 0.422,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Understanding Task Transfer in Vision-Language Models"
+  },
+  {
+   "id": "arxiv:2404.00228",
+   "date": "2024-04-03",
+   "venue": "",
+   "sim": 0.41,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "InfLoRA: Interference-Free Low-Rank Adaptation for Continual Learning"
+  },
+  {
+   "id": "arxiv:2507.04119",
+   "date": "2025-07-05",
+   "venue": "International Conference on Machine Learning",
+   "sim": 0.399,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "When Data-Free Knowledge Distillation Meets Non-Transferable Teacher: Escaping Out-of-Distribution Trap is All You Need"
+  },
+  {
+   "id": "arxiv:2511.09286",
+   "date": "2025-11-12",
+   "venue": "arXiv.org",
+   "sim": 0.398,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Enriching Knowledge Distillation with Cross-Modal Teacher Fusion"
+  },
+  {
+   "id": "arxiv:2605.12798",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.392,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Emergent and Subliminal Misalignment Through the Lens of Data-Mediated Transfer"
+  },
+  {
+   "id": "s2:34dfdaf402c38f41af9248850b823b3962dbd5a4",
+   "date": "2025-09-01",
+   "venue": "Medical Image Anal.",
+   "sim": 0.383,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Knowledge distillation and teacher-student learning in medical imaging: Comprehensive overview, pivotal role, and future directions"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 8,
+  "agent": 1,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 0
+ },
+ "web_jobs": [
+  {
+   "query": "After memory-free internalization pool QLoRA SFT distillation Qwen3-32B keeps first-item value but 2025 arXiv"
+  },
+  {
+   "query": "knowledge distillation transfers teacher behavior traits student 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "name": "train_dose_sets_substrate",
+ "keys": {
+  "agent": [
+   "retrieved episodes in training prompt dose k_train reduces memory-free retention agent distillation",
+   "training-time memory dose fragility to mismatched memory at deployment",
+   "relevance-destroyed decoy context at training time agent SFT"
+  ],
+  "mechanism_home": [
+   "information abundance paradox relevant training context reduces parametric encoding context reliance",
+   "retrieval-augmented fine-tuning with relevant documents in the prompt reduces knowledge internalization",
+   "loss already explained by context gradient signal absorbed by conditioning shortcut learning"
+  ],
+  "adjacent": [
+   "retrieval-augmented fine-tuning with irrelevant distractor documents improves robustness",
+   "training with abundant relevant context increases context reliance intermediate optimum",
+   "shortcut learning easy features suppress learning of harder features"
+  ],
+  "baseline": [
+   "fine-tune without retrieved context in prompt then deploy with retrieval",
+   "context dropout during fine-tuning intermittent conditioning",
+   "irrelevant distractor documents mixed into training prompts"
+  ],
+  "methods": [
+   "information-abundance paradox",
+   "retrieval-augmented SFT",
+   "MemHarness",
+   "PMD procedural memory distillation",
+   "UCOB",
+   "OPSD",
+   "OPCD",
+   "Skill-SD",
+   "learned privileged context",
+   "DAPD",
+   "DOPD",
+   "OP2SD",
+   "latent learning episodic memory"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "QLoRA SFT",
+   "context distillation",
+   "MiniLM retrieval",
+   "vLLM ReAct"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "information abundance paradox relevant training context reduces parametric encoding context reliance"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "retrieval-augmented fine-tuning with relevant documents in the prompt reduces knowledge internalization"
+  },
+  {
+   "class": "agent",
+   "query": "retrieved episodes in training prompt dose k_train reduces memory-free retention agent distillation"
+  },
+  {
+   "class": "agent",
+   "query": "training-time memory dose fragility to mismatched memory at deployment"
+  },
+  {
+   "class": "adjacent",
+   "query": "retrieval-augmented fine-tuning with irrelevant distractor documents improves robustness"
+  },
+  {
+   "class": "baseline",
+   "query": "fine-tune without retrieved context in prompt then deploy with retrieval"
+  },
+  {
+   "class": "methods",
+   "query": "information-abundance paradox retrieval-augmented SFT MemHarness retrieved episodes in training prompt dose k_train reduces m"
+  },
+  {
+   "class": "agent",
+   "query": "retrieved episodes in training prompt dose k_train reduces memory-free retention agent distillation ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [],
+ "candidates_by_class": {
+  "mechanism_home": 0,
+  "agent": 0,
+  "adjacent": 0,
+  "baseline": 0,
+  "methods": 0
+ },
+ "web_jobs": [
+  {
+   "query": "information abundance paradox relevant training context reduces parametric encoding context reliance 2025 arXiv"
+  },
+  {
+   "query": "retrieval-augmented fine-tuning with relevant documents in the prompt reduces knowledge internalization 2025 arXiv"
+  }
+ ]
+}

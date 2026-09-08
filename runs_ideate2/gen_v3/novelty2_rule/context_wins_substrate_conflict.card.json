@@ -1,0 +1,189 @@
+{
+ "name": "context_wins_substrate_conflict",
+ "keys": {
+  "agent": [
+   "Weights Memory Disagree Substrate Agent Follows After Rule",
+   "hybrid conflicts between procedure trained weights procedure retrieved context resolved favour context"
+  ],
+  "mechanism_home": [
+   "hybrid conflicts between procedure trained procedure resolved favour item regardless stale after",
+   "knowledge conflict parametric versus contextual knowledge update",
+   "privileged information distillation student cannot close information gap"
+  ],
+  "adjacent": [
+   "temporal validity outdated retrieved documents RAG",
+   "in-context demonstrations override explicit instructions"
+  ],
+  "baseline": [
+   "recency weighted retrieval time decay",
+   "same-task oracle demonstration upper bound"
+  ],
+  "estimand": [
+   "hybrid conflicts between procedure trained weights procedure retrieved context resolved"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": [
+   "STALE",
+   "PLUG",
+   "UniMem",
+   "COVE"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "hybrid conflicts between procedure trained procedure resolved favour item regardless stale after"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "knowledge conflict parametric versus contextual knowledge update"
+  },
+  {
+   "class": "agent",
+   "query": "Weights Memory Disagree Substrate Agent Follows After Rule"
+  },
+  {
+   "class": "agent",
+   "query": "hybrid conflicts between procedure trained weights procedure retrieved context resolved favour context"
+  },
+  {
+   "class": "adjacent",
+   "query": "temporal validity outdated retrieved documents RAG"
+  },
+  {
+   "class": "baseline",
+   "query": "recency weighted retrieval time decay"
+  },
+  {
+   "class": "methods",
+   "query": "STALE PLUG UniMem Weights Memory Disagree Substrate Agent Follows After Rule"
+  },
+  {
+   "class": "agent",
+   "query": "Weights Memory Disagree Substrate Agent Follows After Rule ALFWorld"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2605.14473",
+   "date": "2026-05-14",
+   "venue": "arXiv.org",
+   "sim": 0.471,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Does RAG Know When Retrieval Is Wrong? Diagnosing Context Compliance under Knowledge Conflict"
+  },
+  {
+   "id": "arxiv:2506.05154",
+   "date": "2025-06-05",
+   "venue": "",
+   "sim": 0.405,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Resisting Contextual Interference in RAG via Parametric-Knowledge Reinforcement"
+  },
+  {
+   "id": "arxiv:2603.09654",
+   "date": "2025-12-01",
+   "venue": "SIGIR Forum",
+   "sim": 0.355,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Understanding the Interplay between LLMs' Utilisation of Parametric and Contextual Knowledge: A Keynote at ECIR 2025"
+  },
+  {
+   "id": "s2:4539139bb1a09aefa3979f2adc496e715c86f2c4",
+   "date": 2025,
+   "venue": "Neural Information Processing Systems",
+   "sim": 0.329,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Understanding Parametric and Contextual Knowledge Reconciliation within Large Language Models"
+  },
+  {
+   "id": "arxiv:2505.19509",
+   "date": "2025-05-26",
+   "venue": "arXiv.org",
+   "sim": 0.328,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Benchmarking Multimodal Knowledge Conflict for Large Multimodal Models"
+  },
+  {
+   "id": "arxiv:2606.20245",
+   "date": "2026-06-18",
+   "venue": "arXiv.org",
+   "sim": 0.295,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Navigating Unreliable Parametric and Contextual Knowledge: Explicit Knowledge Conflict Resolution for LLM Inference"
+  },
+  {
+   "id": "arxiv:2509.10208",
+   "date": "2025-09-12",
+   "venue": "arXiv.org",
+   "sim": 0.279,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "SI-FACT: Mitigating Knowledge Conflict via Self-Improving Faithfulness-Aware Contrastive Tuning"
+  },
+  {
+   "id": "s2:054742be66fe289fefea43f7116a087ba50a00bc",
+   "date": "2026-07-01",
+   "venue": "Expert systems with applications",
+   "sim": 0.276,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Probing conflict resolution between contextual and parametric knowledge in medical language models"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 8,
+  "agent": 0,
+  "adjacent": 0,
+  "baseline": 0,
+  "methods": 0
+ },
+ "web_jobs": [
+  {
+   "query": "hybrid conflicts between procedure trained procedure resolved favour item regardless stale after 2025 arXiv"
+  },
+  {
+   "query": "knowledge conflict parametric versus contextual knowledge update 2025 arXiv"
+  }
+ ]
+}

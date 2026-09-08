@@ -1,0 +1,213 @@
+{
+ "name": "memory_carried_traits_need_tokens",
+ "keys": {
+  "agent": [
+   "Subliminal Transfer Needs Parameter Inherit Memory-Carried Agent Traits",
+   "behavioural trait planted retrieved memory self-teacher teacher weights identical student transfers memory-free"
+  ],
+  "mechanism_home": [
+   "behavioural trait planted self-teacher teacher identical student transfers memory-free student through tokens",
+   "knowledge distillation transfers teacher behavior traits student",
+   "subliminal learning hidden trait transmission fine-tuning"
+  ],
+  "adjacent": [
+   "subliminal learning trait transfer through unrelated data",
+   "narrow fine-tuning generalizes broadly emergent misalignment"
+  ],
+  "baseline": [
+   "inoculation prompting fine-tuning defense",
+   "data filtering sanitization insufficient defense distillation"
+  ],
+  "estimand": [
+   "behavioural trait planted retrieved memory self-teacher teacher weights identical student"
+  ],
+  "environment": [],
+  "methods": [
+   "Distillation"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "behavioural trait planted self-teacher teacher identical student transfers memory-free student through tokens"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "knowledge distillation transfers teacher behavior traits student"
+  },
+  {
+   "class": "agent",
+   "query": "Subliminal Transfer Needs Parameter Inherit Memory-Carried Agent Traits"
+  },
+  {
+   "class": "agent",
+   "query": "behavioural trait planted retrieved memory self-teacher teacher weights identical student transfers memory-free"
+  },
+  {
+   "class": "adjacent",
+   "query": "subliminal learning trait transfer through unrelated data"
+  },
+  {
+   "class": "baseline",
+   "query": "inoculation prompting fine-tuning defense"
+  },
+  {
+   "class": "methods",
+   "query": "Distillation Subliminal Transfer Needs Parameter Inherit Memory-Carried A"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2604.14004",
+   "date": "2026-04-15",
+   "venue": "",
+   "sim": 0.692,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Memory Transfer Learning: How Memories are Transferred Across Domains in Coding Agents"
+  },
+  {
+   "id": "arxiv:2601.07470",
+   "date": "2026-01-12",
+   "venue": "",
+   "sim": 0.622,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Learning How to Remember: A Meta-Cognitive Management Method for Structured and Transferable Agent Memory"
+  },
+  {
+   "id": "arxiv:2606.22019",
+   "date": "2026-06-20",
+   "venue": "",
+   "sim": 0.617,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "agent",
+    "mechanism_home"
+   ],
+   "title": "Channel Location Constrains the Auditability of Subliminal Learning"
+  },
+  {
+   "id": "arxiv:2608.07169",
+   "date": "2026-08-07",
+   "venue": "",
+   "sim": 0.582,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "mechanism_home"
+   ],
+   "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory"
+  },
+  {
+   "id": "arxiv:2604.25783",
+   "date": "2026-04-28",
+   "venue": "",
+   "sim": 0.57,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "agent"
+   ],
+   "title": "Subliminal Steering: Stronger Encoding of Hidden Signals"
+  },
+  {
+   "id": "arxiv:2606.00995",
+   "date": "2026-06-03",
+   "venue": "",
+   "sim": 0.549,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "agent"
+   ],
+   "title": "Subliminal Learning Is Steering Vector Distillation"
+  },
+  {
+   "id": "arxiv:2507.14805",
+   "date": "2025-07-20",
+   "venue": "",
+   "sim": 0.549,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "agent"
+   ],
+   "title": "Subliminal Learning: Language models transmit behavioral traits via\n  hidden signals in data"
+  },
+  {
+   "id": "arxiv:2606.29502",
+   "date": "2026-07-17",
+   "venue": "",
+   "sim": 0.53,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "mechanism_home"
+   ],
+   "title": "UCOB: Learning to Utilize and Evolve Agentic Skills via Credit-Aware On-Policy Bidirectional Self-Distillation"
+  },
+  {
+   "id": "arxiv:2608.00017",
+   "date": "2026-06-29",
+   "venue": "",
+   "sim": 0.516,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Memory Reward Inflation in Self-Improving LLM Agents"
+  },
+  {
+   "id": "arxiv:2412.15303",
+   "date": "2024-12-19",
+   "venue": "",
+   "sim": 0.498,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Self-Evolution Knowledge Distillation for LLM-based Machine Translation"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 23,
+  "agent": 15,
+  "adjacent": 8,
+  "baseline": 0,
+  "methods": 0
+ },
+ "web_jobs": [
+  {
+   "query": "behavioural trait planted self-teacher teacher identical student transfers memory-free student through tokens 2025 arXiv"
+  },
+  {
+   "query": "knowledge distillation transfers teacher behavior traits student 2025 arXiv"
+  }
+ ]
+}

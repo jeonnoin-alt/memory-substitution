@@ -1,0 +1,1011 @@
+{
+ "stale_dose_law_context_vs_weights": {
+  "name": "stale_dose_law_context_vs_weights",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "E1 in-context ladder at k=3 with d in {0,1,2,3} drawn from the odd-index bank partition, the d=1 stale-first vs stale-last position arms, the d=0 anchor that defines H, 3 seeds on d in {0,1,3}, paired net fixed-minus-broken on heat/clean.",
+    "falsifier": "f1 = H(d=1)/H(d=3) at or below 0.4, or stale-first minus stale-last below the 8-point position margin (the agent averages over items).",
+    "label": "unresolvable",
+    "reason": "Gate 0 only guarantees H(d=3) >= 15 net points, so the 0.6-vs-0.4 boundary is a 3-net-point gap on a ratio of two noisy paired differences whose stated MDE between dose levels is about 8 points, and the position margin is set exactly at that MDE, so the falsifying region lies inside the stated noise.",
+    "fix": "Raise the Gate 0 harm requirement to about 40 net points (or add games/seeds until the dose-difference MDE is under 3 points) and pre-register the position contrast as its own powered test with an equivalence bound for 'no position effect'."
+   },
+   {
+    "id": "P2",
+    "depends_on": "E2 five QLoRA students at p in {0,0.25,0.5,0.75,1} of identical data size, greedy decoding, memory-absent evaluation, with the p=1 positive control gating the arm.",
+    "falsifier": "a linear dose curve, or a jump concentrated at p <= 0.25.",
+    "label": "entailed",
+    "reason": "A perfectly linear curve gives exactly H(0.25)/H(1)=0.25, exactly H(0.75)/H(1)=0.75 and exactly 50 percent of the harm inside the 0.25-0.75 interval, so it satisfies all three acceptance thresholds while being the named falsifier; the only remaining falsifier needs a ratio excursion worth a few net points against an 8-point MDE.",
+    "fix": "Move the thresholds strictly inside the linear values (e.g. <= 0.10 and >= 0.90 with more than 70 percent of harm in the middle interval), add seeds per student, and pre-register a step-vs-line model comparison so linearity lands in the falsifying region."
+   },
+   {
+    "id": "P3",
+    "depends_on": "E3 temperature-0.7 ablation, run only on the p in {0.25,0.5,0.75} students (memory absent) and on the in-context d in {1,2} cells.",
+    "falsifier": "the in-context curve linearizes at temperature as well.",
+    "label": "entailed",
+    "reason": "The temperature arm omits the d=0 and d=3 in-context cells, so neither H(d) nor the shape statistic f1 is defined at temperature 0.7 and the in-context curve cannot be shown to linearize; the arm that would show the opposite is absent.",
+    "fix": "Run d in {0,1,2,3} plus the k=0 reference at temperature 0.7 so f1 and the step statistic are computable on both sides, and pre-register the 'step statistic halves' criterion with a bootstrap CI."
+   },
+   {
+    "id": "P4",
+    "depends_on": "E2 evaluation of the p=1 student with matched fresh k=3 memory from the bank partition against the p=0 fresh student, on the paired cell whose CI is about +/-8 net points.",
+    "falsifier": "none stated - a rescue below 50 percent of the gap is pre-labelled 'a crutch-like prior dominating context' and reported as a result.",
+    "label": "entailed",
+    "reason": "Both branches are declared findings, so no outcome comes out against the hypothesis, and the 10-net-point equivalence bound is itself inside the stated +/-8 paired CI.",
+    "fix": "Pre-register one directional criterion with a falsifying region (e.g. rescue >= 70 percent of the gap, otherwise the context-dominance claim fails) and power the cell so a 10-point bound sits outside the CI."
+   },
+   {
+    "id": "P5",
+    "depends_on": "E1 decoy arm at d=1 (relevance-destroyed item of matched length) against the stale d=1 cell on the same paired games and seeds, with volume held constant by construction.",
+    "falsifier": "decoy harm at or above one third of the stale-item harm at d=1 (harm is volume or irrelevance, not conflict).",
+    "label": "unresolvable",
+    "reason": "With H(d=3) only guaranteed at 15 net points, H(d=1) is about 9 and the one-third threshold is about 3 net points, several times smaller than the stated ~8-point MDE for a difference between two cells.",
+    "fix": "Power the decoy contrast separately (more games/seeds, or a strengthened shift) so that one third of the measured H(d=1) exceeds the paired MDE, and report the decoy CI rather than a point ratio."
+   },
+   {
+    "id": "P6",
+    "depends_on": "E4 stream of 300 rule-A then 400 rule-B expert episodes; unbounded append-only bank at k=3 vs continual LoRA with a 100-item chunk update and no replay; 2 stream seeds; isotonic crossing; band predicted from the E1/E2 fits and the stale-share arithmetic.",
+    "falsifier": "the bank recovers as fast as the LoRA, or the observed recovery curves fall outside the predicted band.",
+    "label": "near_entailed",
+    "reason": "The 2x ordering is forced by the update rules - an append-only bank cannot forget the 300 rule-A items and can only dilute them, while a no-replay chunk LoRA trains on an all-fresh chunk from its first post-shift update - so falsification is reachable only through the uncontrolled route of the fitted laws mispredicting, on a band bootstrapped from 2 stream seeds.",
+    "fix": "Add arms that break the forced ordering (a bounded/FIFO or failure-decayed bank, and a replay LoRA matched on retained items) and pre-register the band width plus the number of stream seeds required to declare a miss."
+   }
+  ],
+  "shared_terms": [
+   "P1-P5: both are computed from the same measured H(d=1) and the same d=0 anchor, so the decoy ratio moves with f1's numerator.",
+   "P2-P3: the step statistic in P3 is computed from the same H(p) points whose ratios define P2, so the greedy fit fixes the baseline of the temperature contrast.",
+   "P2-P4: both rest on the p=0 and p=1 student accuracies - P4's 'gap' is H(p=1), the denominator of P2's ratios.",
+   "P1-P6 and P2-P6: P6's predicted band is a deterministic function of the laws fitted in P1 and P2 plus the stale-share arithmetic, so it contributes no independent measured term."
+  ],
+  "headline": "P1",
+  "headline_status": "unresolvable",
+  "n_open": 0,
+  "n_entailed": 3,
+  "n_near": 1,
+  "n_unresolvable": 2,
+  "verdict": "revise"
+ },
+ "reversal_savings_latent_retention": {
+  "name": "reversal_savings_latent_retention",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "E1 continual QLoRA (100-item chunks, no replay, never re-initialized) vs reset QLoRA (re-initialized at every phase boundary and trained on the current phase only); E2 recovery = items until 90 percent of the arm's own A1-end level; E3 Gate 1 erosion check.",
+    "falsifier": "savings ratio >= 0.8, or no erosion of the continual LoRA at B end.",
+    "label": "entailed",
+    "reason": "The continual adapter enters A2 warm-started from the weights that already learned A1 while the control is cold-initialized by definition, so a warm adapter relearning faster is an update-rule identity, and the second disjunct is removed by Gate 1, which lengthens B and re-runs rather than letting no-erosion falsify the claim.",
+    "fix": "Match the control on warm start and optimizer budget (a reset adapter warm-started from a rule-A-free adapter, or equal A2 step counts from a matched init) and cap the B-lengthening loop with a pre-registered failure outcome if erosion never occurs."
+   },
+   {
+    "id": "P2",
+    "depends_on": "FIFO N=200, unbounded and failure-decayed banks, continual vs reset LoRA; stale tax = shifted-type drop relative to FIFO (for the LoRA, relative to the reset LoRA) at matched stream position; shifted probe of about 195 games x 2 seeds, roughly +/-9 net points.",
+    "falsifier": "the decayed bank obtains savings with a stale tax inside noise (retrieval-side retention for free).",
+    "label": "unresolvable",
+    "reason": "The 10-point tax threshold and the 5-point 'within noise' bound for the LoRA both sit at or inside the stated +/-9 paired CI, so 'exceeds 10' and 'within noise' cannot be separated at the stated power.",
+    "fix": "Increase probe games and seeds until the paired CI is about +/-3, or restate the thresholds as multiples of the measured MDE (tax >= 3x MDE versus <= 1x MDE) with pre-registered equivalence tests."
+   },
+   {
+    "id": "P3",
+    "depends_on": "replay-buffer QLoRA (all past target items replayed 1:1 with each chunk) compared with the unbounded bank on the same stale-tax and savings estimands.",
+    "falsifier": "none stated - 'behaves like the unbounded bank' carries no threshold, and both larger and smaller tax or savings are reportable.",
+    "label": "entailed",
+    "reason": "1:1 replay of all past items keeps rule-A items in every B-phase gradient step, so both the stale tax and the savings follow from the update rule, and with no equivalence margin no measured outcome can contradict 'explicit retention costs the same in both substrates'.",
+    "fix": "State a two-sided equivalence margin on the tax and savings differences with CIs, and add a partial-replay ladder (0, 0.25, 1:1) so the retention-cost trade-off is measured rather than imposed by the arm definition."
+   },
+   {
+    "id": "P4",
+    "depends_on": "E4 phase-end probes on unshifted in-stream types and the held-out type for the LoRA arms, and the FIFO N=200 vs N=600 capacity ablation on the bank side.",
+    "falsifier": "LoRA arms erode unshifted types by more than the bank does.",
+    "label": "unresolvable",
+    "reason": "The 5-point loss bound and the undefined 'measurable margin' for N=200 vs N=600 both lie inside the stated +/-9 paired CI, and the two erosions are measured on different scales - retrieval gain over k=0 for the bank, which is floored at the base model, versus an absolute drop for the adapter, which is not - so the sign comparison has no common estimand.",
+    "fix": "Define erosion identically for both substrates as the drop from each arm's own A1-end level on the same paired probe, pre-register the capacity margin, and power the unshifted probe so a 5-point equivalence bound falls outside the CI."
+   },
+   {
+    "id": "P5",
+    "depends_on": "arm definitions (LoRA arms evaluated memory-absent at k=0, bank arms at k=3 with about 430 injected tokens per episode) and the E5 cumulative cost axes with the Pareto plot at the A2 recovery point.",
+    "falsifier": "a bank arm dominating the continual LoRA on the two-axis plot at the A2 recovery point.",
+    "label": "entailed",
+    "reason": "The token axis is fixed by the arm definitions - a memory-absent adapter injects zero tokens and a k=3 bank injects about 430 per episode by construction - so no bank arm can dominate on that axis whatever is measured, and the 0.3 GPU-hour figure is a budget assertion rather than an outcome.",
+    "fix": "Score both substrates on one common cost scalar (total FLOPs or wall-clock and dollars including training and serving) at matched accuracy, and include a LoRA arm that also retrieves at inference so the token axis is not decided by the arm labels."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: both use the continual-minus-reset LoRA difference on the shifted probe (P1's 5-point erosion check and P2's 5-point LoRA stale tax), so one largely determines the other.",
+   "P1-P5: P5's 0.3 GPU-hours is the A2 recovery item count from P1's savings numerator multiplied by the fixed per-chunk cost - an algebraic re-expression, not a new measurement.",
+   "P2-P3: the unbounded bank's stale tax and savings are the reference terms in both, so P3 is scored against the same two measured numbers.",
+   "P2-P4: both read the FIFO bank's shifted and unshifted probe levels at matched stream positions."
+  ],
+  "headline": "P1",
+  "headline_status": "entailed",
+  "n_open": 0,
+  "n_entailed": 3,
+  "n_near": 0,
+  "n_unresolvable": 2,
+  "verdict": "revise"
+ },
+ "success_filter_lockin_under_shift": {
+  "name": "success_filter_lockin_under_shift",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "E1 unbounded self-write bank at k=3 seeded with one shared 150-episode pre-shift collection, 400 post-shift episodes at 50 percent shifted sampling, 3 stream seeds; E2 recovery = first window at or above s_0 plus half the all-fresh gain, plus the top-3 stale share; E0 gate s_0 - s_stale >= 15.",
+    "falsifier": "the unbounded bank recovers in >= 2 of 3 seeds (self-collected successes refresh the store).",
+    "label": "open",
+    "reason": "Nothing in the write rule forces the stale share to stay above 0.66 - s_stale is expected near 0.1-0.2, so 200 post-shift shifted episodes can add enough own successes to reach parity with the pre-shift store - and the lock-in versus recovery gap is far larger than the per-window +/-14 once pooled over the last 200 episodes across 3 seeds.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "continual QLoRA fed by the same success filter, chunk update after every 50 new successes, no replay, 3 stream seeds, with the FIFO N=150 recovery time as the 2x reference.",
+    "falsifier": "the continual QLoRA also locks in - an outcome the proposal pre-declares 'itself reportable'.",
+    "label": "near_entailed",
+    "reason": "With no replay every post-shift chunk consists only of rule-B successes, so the graded prior flips by construction; lock-in is reachable only through a mechanism the proposal never names or controls - chunks filled by the 50 percent unshifted episodes containing almost no shifted-type rule-B trajectories - and the falsifying branch is in any case pre-converted into a finding.",
+    "fix": "Match the substrates on what they consume by adding a LoRA arm whose chunks carry the bank's measured stale share (or a fixed pre-shift replay fraction), report the shifted-type composition of every chunk, and drop the 'itself reportable' escape so the falsifier has consequences."
+   },
+   {
+    "id": "P3",
+    "depends_on": "E4 expert-writer control (the expert supplies every post-shift item, no success filter) for the unbounded bank and the continual QLoRA, 2 seeds, recovery scored against the displacement count computed at E0.",
+    "falsifier": "the unbounded bank still locks in under an exogenous writer (cause is retrieval competition alone).",
+    "label": "entailed",
+    "reason": "One fresh item per episode into an append-only store drives the stale share to the pre-registered E0 threshold by counting alone, and Gate 0 has already established that fresh top-3 items restore accuracy, so the store arithmetic plus the gate leave the falsifier no route.",
+    "fix": "Add an exogenous-writer arm whose store composition is held at the locked-in stale share (fresh items written but not preferentially retrievable) so accuracy recovery is separable from the displacement identity, and report predicted versus observed recovery time inside a pre-registered band."
+   },
+   {
+    "id": "P4",
+    "depends_on": "E3 two-rung exogenous ladder at 1 and 10 percent of stream episodes with a relevance-destroyed placebo, on the unbounded bank, decayed bank and continual QLoRA, 3 seeds, escape dose = smallest rung recovering in >= 2 of 3 seeds.",
+    "falsifier": "the unbounded bank escapes at the 1 percent rung.",
+    "label": "entailed",
+    "reason": "1 percent of 400 episodes is about four items against a pre-shift store of over a hundred, far below the displacement count the proposal itself computes at E0, so the bank cannot change its top-3 composition at that rung; and because the ladder has only two rungs, failing at both still satisfies 'needs >= 10 percent'.",
+    "fix": "Set the rungs to bracket the computed displacement count for each substrate (about 0.5x, 1x and 2x of it) and pre-register a failing dose for the LoRA as well, so the substrate comparison is decided by measurement rather than by the counting argument."
+   },
+   {
+    "id": "P5",
+    "depends_on": "failure-decayed bank (weight x0.5 on retrieval into a failure, x1.2 into a success, retrieval score = similarity x weight) with two pre-registered decay constants, 3 stream seeds, the same recovery criterion.",
+    "falsifier": "none - non-escape is pre-attributed to the decay constants being 'insufficient for this shift'.",
+    "label": "entailed",
+    "reason": "Both outcomes are pre-registered as reportable results, so no observation comes out against the claim, and a 2-of-3 binary over three seeds carries no CI in either direction.",
+    "fix": "Pre-register a bounded sweep of decay constants together with the falsifying statement that no constant in that range escapes, and report escape as a continuous stale-share trajectory over more seeds rather than a per-seed binary."
+   },
+   {
+    "id": "P6",
+    "depends_on": "E5 end probes on 274 validation games x 2 seeds (about +/-8): memory-free LoRA success on shifted types against the all-fresh k=3 reference, unshifted and held-out types against the pre-shift level, plus the FIFO N=150 vs N=450 eviction contrast.",
+    "falsifier": "the recovered LoRA falls more than 10 net points short of the all-fresh reference, or an arm other than the FIFO bank drops more than 5 points off-stream.",
+    "label": "unresolvable",
+    "reason": "Both clauses are equivalence claims with margins (10 and 5 net points) at or inside the stated +/-8 paired CI, the FIFO clause restates the capacity ablation (a smaller store holds fewer unshifted items, so its retrieval gain must be lower), and the whole prediction conditions on the recovery decided in P2.",
+    "fix": "Pre-register TOST equivalence tests with margins above the measured MDE and add games or seeds until the CI is well below 5 points; score the FIFO contrast at matched retrievable-item counts with the eviction margin stated in advance."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: P2's bound is 2x the FIFO bank's recovery time and both are read off the same paired window-success series, so the FIFO curve determines both verdicts.",
+   "P1-P4: the top-3 stale share and the E0 displacement count define both the lock-in indicator and the escape dose, so the arithmetic that makes P1 true also fixes P4's 10 percent rung.",
+   "P3-P4: the expert-writer recovery in P3 and the 10 percent exogenous rung in P4 are the same displacement count applied at different rates.",
+   "P2-P6: P6 conditions on 'the recovered LoRA' and scores its memory-free shifted-type success, the same quantity whose threshold crossing defines P2's recovery."
+  ],
+  "headline": "P1",
+  "headline_status": "open",
+  "n_open": 1,
+  "n_entailed": 3,
+  "n_near": 1,
+  "n_unresolvable": 1,
+  "verdict": "revise"
+ },
+ "context_pays_for_its_own_tokens_breakeven": {
+  "name": "context_pays_for_its_own_tokens_breakeven",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "E1 paired k=3 vs k=0 arms with bank B on valid+H, 3 seeds, per-episode total prompt+completion token logging, step cap 30, and Gate 0 (k=3 net gain >= 15 points, else the study stops)",
+    "falsifier": "pooled paired total-token difference (k=3 - k=0) > 0 with a 95% CI excluding 0, i.e. injecting memory costs more tokens than it saves",
+    "label": "near_entailed",
+    "reason": "Gate 0 deletes the only regime that produces the falsifier (a small conversion rate where every episode pays ~430 tokens/step and few 30-step timeouts are shortened), and because prompt tokens grow super-linearly with steps, any gate-passing gain of >=15 points converts 30-step episodes into ~12-step ones and forces the negative sign; the confirming clauses (CI excluding +430 x mean steps, >=25% fall on three types) are also wider than the stated falsifier, leaving an unscored middle band.",
+    "fix": "Add an arm where the gain is known to be small (a low-gain or held-out type, or a bank deliberately below the gate) and report its token sign, and pre-register a symmetric decision band so that 'difference > 0 with CI including 0' is an outcome rather than a gap."
+   },
+   {
+    "id": "P2",
+    "depends_on": "E2 SFT student on expert step targets from T, evaluated at k=0, versus base k=0 on the same (task, seed) pairs; total-token logging with ~5%-of-mean resolution",
+    "falsifier": "the memory-free SFT student's episodes are not shorter in total tokens than base k=0",
+    "label": "open",
+    "reason": "The proposal itself calls direct SFT the weak baseline, so a student that fails to convert timeouts keeps hitting the 30-step cap and can plausibly spend the same or more tokens; the contrast is paired and token differences resolve at ~5% of the mean.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "E3 N*(A) = training cost / (c_context(A) - c_student(A)) evaluated at the base+k=3 accuracy level under injected-only, total-token and prefix-cached GPU-second conventions, from the same E1/E2 episode logs; conditional on Gate 1 and on the SFT student reaching that accuracy",
+    "falsifier": "all three N* lie within 1.5x of each other",
+    "label": "entailed",
+    "reason": "The three N* share one numerator and are three linear functionals of the same logged episodes, so their ratios reduce to (injected token delta) / (injected delta minus step saving) and to the measured prefix-cache hit rate; they can coincide within 1.5x only if the step saving is ~0 (the outcome Gate 0 stops the study for, and which P1 asserts is large) and the cache does nothing while the k=3 block sits in the prefix by construction.",
+    "fix": "Compute the three N* on a cell where the step saving is near zero by design (single-step task type, or an arm below Gate 0) so the conventions can converge, and pre-register the ratio test as a CI on (injected delta)/(total delta) rather than on three separately reported N*."
+   },
+   {
+    "id": "P4",
+    "depends_on": "E2/E3 CD and SFT students trained on the same targets T; CD's training cost = QLoRA GPU-seconds + measured teacher-pass GPU-seconds over ~800 episodes, SFT's = QLoRA GPU-seconds only; N* compared at accuracy levels reachable by both, horizon 5,000 episodes",
+    "falsifier": "as stated, the CD student reaches base+k=3 accuracy at k'=0 or k'=1 while the SFT student needs k'>=3, making CD's per-episode saving large enough to repay the teacher pass",
+    "label": "entailed",
+    "reason": "At a matched accuracy level the two N* share the denominator terms (same c_context(A), near-identical student episode cost) while CD's numerator strictly adds the teacher pass, so N*_CD > N*_SFT is arithmetic; the one stated escape is self-defeating under this proposal's own headline convention, since if total tokens fall with k (P1) then the SFT student needing k'>=3 makes it cheaper, not more expensive, than a CD student at k'=0.",
+    "fix": "Add an estimand where the teacher pass is amortized (charged once across multiple students, or excluded as a sunk pool-construction cost) and restate the falsifier as N*_CD <= N*_SFT at any shared accuracy level with a bootstrap CI excluding equality."
+   },
+   {
+    "id": "P5",
+    "depends_on": "E0 withholding pick_cool_then_place from both T and B; base k=3 with cross-type items only on that type in valid+H (~80 tasks per seed), compared against a 'same-type rate'",
+    "falsifier": "cross-type retrieval converts timeouts on the withheld type at half or more of the same-type rate",
+    "label": "entailed",
+    "reason": "The same-type conversion rate on that type is the comparator the falsifier needs, and the design removes cool items from the bank so no same-type arm on that type exists; additionally the confirming clause is 'the gain is within the noise floor' on a ~80-task per-type cell whose CI is roughly +/-12 points against a pooled floor of +/-5, so low power confirms the prediction by default.",
+    "fix": "Keep a held-aside same-type reference bank scored only for this contrast (as the rotation design in the sibling proposal does) and replace 'within the noise floor' with an absolute gain threshold above the per-type MDE, or pool several withheld types to reach a +/-5 cell."
+   }
+  ],
+  "shared_terms": [
+   "P1-P3: P3's convention ratio is (injected token delta)/(total token delta) over the same k=3 vs k=0 episodes, so P1's measured saving determines whether P3 can be falsified.",
+   "P2-P3: the SFT student's total tokens measured in P2 are the c_student(A) term of every N* in P3, so P2's saving sets P3's total-token denominator.",
+   "P3-P4: N*_CD and N*_SFT share c_context(A) and the same student cost logs; only the training-cost numerator differs, so the comparison is fixed once the teacher-pass cost is added.",
+   "P1-P4: under the total-token convention the sign of P1 also decides whether a larger k' raises or lowers c_student(A), which is the quantity P4's stated escape route depends on."
+  ],
+  "headline": "P1",
+  "headline_status": "near_entailed",
+  "n_open": 1,
+  "n_entailed": 3,
+  "n_near": 1,
+  "n_unresolvable": 0,
+  "verdict": "revise"
+ },
+ "first_item_additive_rest_substitutive": {
+  "name": "first_item_additive_rest_substitutive",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "E1 base ladder at k=0/1 with bank B and E2 SFT-E / CD-E students at k=0/1 on identical (task, seed) pairs, valid+H, 3 seeds; Gate 0 requires the base k=0->k=1 gain >= 10 net points",
+    "falsifier": "(student k=1 - student k=0) <= 0.25 x (base k=1 - base k=0) for BOTH SFT-E and CD-E",
+    "label": "open",
+    "reason": "A student whose internalization raises k=0 has less headroom, so a collapsed first-item gain is a real and paired-measurable outcome, and with a base first-item gain of ~20 points the falsifying 0.25x level (~5 points) sits far enough from the predicted >=10 points to be resolved at the stated +/-5 floor; note the 0.25x-0.5x band and the conjunction over two objectives leave outcomes that neither confirm nor falsify.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "E1/E2 k=1 and k=7 cells for base and students with bank B; Gate 0 only requires a base k=1->k=7 slope >= 6 net points, and the stated minimum detectable slope difference is ~5 net points",
+    "falsifier": "(student k=7 - student k=1) >= 2/3 x (base k=7 - base k=1)",
+    "label": "unresolvable",
+    "reason": "At the gated base slope the confirm threshold (1/3, i.e. 2 net points) and the falsify threshold (2/3, i.e. 4 net points) are both inside the stated ~5-point MDE, and even at the measured ~10-point base slope the two thresholds are only ~3.4 points apart, so the decision band lies entirely within the noise.",
+    "fix": "Raise the Gate-0 slope requirement to >=15 net points, or add tasks/seeds until the MDE on the paired slope difference is <2 points, and pre-register a bootstrap CI on the slope ratio itself."
+   },
+   {
+    "id": "P3",
+    "depends_on": "E5 iso-token cell, student+k=1 vs base+k=7 with a fourth seed (~+/-4 net points), margin defined as half the Gate-0 slope (~5 points, but as low as 3 if the gate only just passes)",
+    "falsifier": "base+k=7 exceeds student+k=1 by more than the pre-registered margin",
+    "label": "open",
+    "reason": "A student that fails to internalize can be clearly worse than base+k=7 by well over the margin and the 4-seed cell resolves that, though the margin is tied to a gated quantity whose floor (3 points) would fall inside the +/-4 CI, and the token half of the claim (~15% of base+k=7's injected tokens) is arithmetic from 1 item versus 7, not an empirical result.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "E4 probe student (SFT-E trained on T minus heat and cool) versus base on the heat type kept in B, ~80 tasks x 3 seeds, per-type CI ~+/-12 net points, margin = one third of the base's ~40-55-point per-type gain",
+    "falsifier": "the probe student's k=3 gain on heat is below the base's by more than one third of the base's gain",
+    "label": "unresolvable",
+    "reason": "The falsifying margin is ~13-18 net points against a per-type CI of ~+/-12, which the proposal concedes ('powered only for a crutch >= 15 net points'), so an observed crutch of the falsifying size cannot be separated from the margin and the null is confirmed by low power.",
+    "fix": "Pool the two withheld types (or all six rotations) and raise seeds until the per-type contrast reaches ~+/-5, and test the crutch as an equivalence test with a margin above the MDE."
+   },
+   {
+    "id": "P5",
+    "depends_on": "E4 procedure-held-out probe on the cool type withheld from both T and B, base and probe student at k=0 and k=3 with B minus cool, ~80 tasks x 3 seeds, ~+/-12 net points",
+    "falsifier": "either substrate carries a gain on the withheld type (a non-flat dose-response, or student k=0 outside the CI of base k=0)",
+    "label": "unresolvable",
+    "reason": "Both clauses are confirmed by failing to reject on the widest cell in the study, so a real cross-type or type-general effect of up to ~12 net points registers as 'flat within the per-type CI'; the CI-inclusion rule makes low power the prediction's evidence.",
+    "fix": "Replace CI-inclusion with a pre-registered TOST whose equivalence margin exceeds the per-type MDE, and power the cell (pool rotations across types) to ~+/-5."
+   },
+   {
+    "id": "P6",
+    "depends_on": "decoy-3 arm for students (cross-type items, object names swapped, token-matched within 5%, fixed seed) versus student k=0 on valid+H, 3 seeds, ~+/-5",
+    "falsifier": "decoy items raise the student's accuracy beyond the margin, making P1's first-item effect a length effect",
+    "label": "open",
+    "reason": "Decoys retain ALFWorld action syntax and prompt length, so a format-priming gain is a live mechanism, and the arm is paired at the pooled +/-5 floor where a real placebo effect would show.",
+    "fix": ""
+   },
+   {
+    "id": "P7",
+    "depends_on": "E6 memory-in-the-loop student and its decoy-trained twin, 1 LoRA seed each, ladder at test; LoRA-seed SD is elsewhere admitted to be potentially >3 net points",
+    "falsifier": "the memory-in-the-loop student does not have lower memory-free accuracy than SFT-E, or its k=1->k=7 slope is < 2/3 of the base's, or the decoy-trained twin shows the same drop",
+    "label": "unresolvable",
+    "reason": "Both arms have a single LoRA seed, so the drop and the twin's non-drop cannot be separated from LoRA-seed variance the proposal itself budgets at ~3 points, and the slope clause inherits P2's problem that 2/3 of a 6-10-point base slope is inside the ~5-point slope MDE.",
+    "fix": "Run at least two LoRA seeds for the memory-in-the-loop arm and its decoy twin and report the drop as a seed-level contrast, with the slope clause restated at a separation above the slope MDE."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: both are paired differences off the same student success ladder and share the student k=1 term, so a low student k=1 simultaneously threatens P1 and helps satisfy P2's slope collapse.",
+   "P2-P3: the base k=1->k=7 slope is P2's denominator and also defines P3's equivalence margin (half the Gate-0 slope), so a small measured slope loosens P3 exactly when P2 becomes untestable.",
+   "P2-P7: P7's slope criterion is the same base k=1->k=7 slope gated at Gate 0 and compared at the same 2/3 threshold as P2's falsifier.",
+   "P1-P6: student k=0 is the common reference term for the first-item gain and for the decoy placebo, so a mis-estimated student k=0 moves both."
+  ],
+  "headline": "P2",
+  "headline_status": "unresolvable",
+  "n_open": 3,
+  "n_entailed": 0,
+  "n_near": 0,
+  "n_unresolvable": 4,
+  "verdict": "revise"
+ },
+ "coverage_limited_context_count_limited_weights": {
+  "name": "coverage_limited_context_count_limited_weights",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "E1 bank-size ladder {1,3,10,30 per type, full B} with base at k=3, type-stratified subsamples, 3 subsample seeds x 2 evaluation seeds on valid+H (~+/-4 on the size-averaged contrast); Gate 0 full-bank gain >= 15 net points",
+    "falsifier": "the gain keeps rising from 18 items to ~440 items by more than a third of the full-bank gain",
+    "label": "open",
+    "reason": "Better nearest neighbours from a 440-item bank could plausibly add ~9+ net points over an 18-item bank on a ~27-point full-bank gain, and the ladder is paired with subsample variance in the CI at +/-4, so the falsifier is both reachable and resolvable; the two confirming clauses (>=0.8x and deficit <=1/3) are not complements, leaving a 0.67x-0.8x band that neither confirms nor falsifies.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "E1 type-blind uniform subsamples versus type-stratified subsamples at matched totals of 6 and 60 items, with per-type Gate-0 gains of >=25 net points on clean/heat/cool already required",
+    "falsifier": "type-blind and stratified banks are indistinguishable at 6 items",
+    "label": "entailed",
+    "reason": "A uniform 6-item draw over six types misses several types by coupon-collector arithmetic and the prediction's magnitude is stated as exactly 'the gain share of the types they miss', so the effect re-describes how the subsample was drawn; the falsifier would require a missing type to cost nothing, which Gate 0's own >=25-point per-type gains rule out, and the 60-item convergence clause is likewise forced once uniform draws cover every type.",
+    "fix": "Hold coverage constant and vary only count (type-blind draws constrained to include every type at each size) and predict a residual gap beyond the arithmetic missing-type share, so the falsifier is a coverage effect rather than the sampling design."
+   },
+   {
+    "id": "P3",
+    "depends_on": "E2 pool-size ladder {5,10,30,100%} of T at matched optimizer steps, 2 LoRA seeds per size, rho(n) = student k=0 gain / base k=3 Gate-0 gain; pool-ladder MDE stated as 5 net points; Gate 1 requires rho(100%) >= 0.4",
+    "falsifier": "rho(10%) >= 0.85 x rho(100%)",
+    "label": "unresolvable",
+    "reason": "The shared denominator cancels, so the test is a difference between two independently trained students' memory-free gains whose confirm (0.6x) and falsify (0.85x) thresholds are only ~3.4-4.7 net points apart at the expected rho(100%) of 0.5-0.7 x 27, i.e. at or below the stated 5-point pool-ladder MDE before LoRA-seed variance (budgeted at up to 3 points) is added.",
+    "fix": "Widen the separation (e.g. confirm at rho(10%) <= 0.5, falsify at >= 0.9) or add LoRA seeds and evaluation tasks until the MDE on the between-pool-size difference is ~2 points, and report the ratio with a seed-level bootstrap CI."
+   },
+   {
+    "id": "P4",
+    "depends_on": "E3 rotation over clean/heat/cool with the type removed from T and B; base k=3 same-type oracle reference, MiniLM cross-type, student trained without the type; ~720 paired episodes pooled with a type random effect, ~+/-8 net points",
+    "falsifier": "cross-type retrieval retains >= 0.5x of the same-type gain, or the student's residual gain CI includes 0",
+    "label": "unresolvable",
+    "reason": "The two legs sit on opposite sides of the same underpowered cell: the residual threshold (0.25 x an in-pool gain of ~15 points, i.e. ~4 net points) is half the stated +/-8 held-out floor, so its CI will include 0 almost regardless of the truth and that leg falsifies by low power, while the cross-type leg compares against half of a 25-55-point same-type gain at the same +/-8 resolution.",
+    "fix": "Power the held-out cell to ~+/-3 (rotate all six types, add seeds, or pool valid+H per type) and set the residual-gain threshold above the MDE, testing it as a one-sided bound rather than 'CI excluding 0'."
+   },
+   {
+    "id": "P5",
+    "depends_on": "E4 frontier, n_c = smallest pool fraction at which the memory-free student's gain reaches the 3-per-type context gain, read off the same {5,10,30,100%} ladder as P3 and the same 3-per-type cell as P1",
+    "falsifier": "n_c <= 10% of the pool",
+    "label": "entailed",
+    "reason": "n_c is an algebraic readout of quantities the other predictions fix: P1 puts the 3-per-type bar at >=0.8 of a ~27-point full-bank gain while P3 puts the 10% student at <=0.6 x rho(100%) (~8-11 points), so confirming P3 arithmetically forbids P5's falsifier, and the 'or does not exist' clause converts the remaining outcome into a confirmation, leaving no falsifying region that is not already excluded.",
+    "fix": "Sample the pool ladder between 10% and 30% and pre-register n_c against an externally fixed accuracy bar rather than against the P1 cell, and score 'no crossover' as a distinct outcome instead of as confirmation."
+   },
+   {
+    "id": "P6",
+    "depends_on": "decoy-3 arms at every bank size in E1 versus k=0, paired at ~+/-4 to +/-8; the margin for this cell is not stated",
+    "falsifier": "no falsifier is stated; implicitly, decoy-3 gains exceed the (unstated) margin over k=0 at some bank size",
+    "label": "open",
+    "reason": "The falsifier is reachable and named elsewhere in this same proposal, since P4 expects cross-type items to retain a real fraction of the same-type gain and decoy-3 is built from cross-type items, so a decoy gain is an expected rather than exotic outcome; it is only the missing margin that blurs the decision.",
+    "fix": ""
+   }
+  ],
+  "shared_terms": [
+   "P1-P5: the 3-per-type context gain that P1 estimates is the bar n_c must reach, so P1's confirmation directly raises P5's threshold.",
+   "P3-P5: n_c is read off the same rho(n) ladder P3 tests, so rho(10%) <= 0.6 x rho(100%) arithmetically excludes P5's falsifier n_c <= 10%.",
+   "P1-P2: both are computed from the same bank-ladder cells; the stratified 6- and 18-item gains are shared measured terms.",
+   "P4-P6: cross-type items supply both the cross-type retrieval arm of P4 and the decoy-3 arm of P6, so a nonzero cross-type transfer moves them in opposite directions.",
+   "P1-P3: the Gate-0 full-bank k=3 gain is the common denominator of rho(n) and the reference for the bank-ladder fractions."
+  ],
+  "headline": "P1",
+  "headline_status": "open",
+  "n_open": 2,
+  "n_entailed": 2,
+  "n_near": 0,
+  "n_unresolvable": 2,
+  "verdict": "revise"
+ },
+ "context_ceiling_substitution": {
+  "name": "context_ceiling_substitution",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Step 4 estimands over ~40 (type, arm) cells: g_t from the untrained k=0/k=3 cells, r_ta from student k=0, RV_ta from student matched minus student k=0, slope refit in each cluster bootstrap replicate.",
+    "falsifier": "Slope < 0.3 with intercept > 5 (additivity), or RV > g on retained types (complementarity).",
+    "label": "entailed",
+    "reason": "RV = (1-r)g + WV is an exact identity in the measured terms ((1-r)g = untrained k=3 minus student k=0; RV = student matched minus student k=0), so the same student k=0 measurement sits on both axes with the same sign and forces the slope toward 1 whenever WV is small, which is precisely what P2 asserts separately.",
+    "fix": "Estimate student k=0 for the x-axis and the y-axis from disjoint seed halves or disjoint game sets, and pre-register the regression of WV (not RV) on (1-r)g so the reported slope is not an identity plus shared noise."
+   },
+   {
+    "id": "P2",
+    "depends_on": "SFT-k0 100% and CD-k3 students in the matched (k=3 from B) condition versus the untrained agent at k=3 from B, 548 games x 3 seeds, paired by (game, seed).",
+    "falsifier": "Pooled WV >= 8 net points for either student.",
+    "label": "open",
+    "reason": "Training can raise accuracy above the untrained-with-context cell, the proposal documents 15-19 points of headroom on valid_seen so no ceiling forces the null, and the 8-point falsifier lies above both the stated 5-point MDE and the +/-4.6 pooled CI.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "Arm (e) (cool-then-place removed from T, kept in B) versus SFT-k0 100% on the fully trained multi-step types, per-type RV/g_t at 3 seeds, with arm (f) as the generalization control.",
+    "falsifier": "RV < 0.8 g_t on the manufactured type, RV > 0.5 g_t on the trained types, or a difference below 15 net points.",
+    "label": "unresolvable",
+    "reason": "The estimand is a difference of two per-type RVs whose single-type CI the proposal itself puts at +/-13-15 net points, so the 15-point threshold is at or inside the noise before the two cells' errors even combine, and r near 0 on a type never in T is already close to forced by the split so only cross-type transfer could move it.",
+    "fix": "Make the memory-free H-set NLL gap the pre-registered primary estimand for P3, or add seeds/games until the per-type difference CI is well under 15 points, and report arm (f) transfer as an explicit manipulation check."
+   },
+   {
+    "id": "P4",
+    "depends_on": "Retention router (types with r < 0.5 selected on H) versus random-type router at the same injection fraction f and decoy router, on the SFT-k0 100% and CD-k3 students, against the full k=3 hybrid; margins set as fractions of the Gate-0 hybrid gain.",
+    "falsifier": "The random-type router matching the retention router (residual value not type-localized), or the retention router falling outside 25% of the hybrid gain.",
+    "label": "near_entailed",
+    "reason": "Per-type in-context gain is already known to be extremely heterogeneous (+39 to +55 on multi-step types, near 0 on pick-and-place), so a random-type router at the same f must waste roughly half its injections on near-zero-gain types irrespective of retention, and no gain-only router exists to show that r rather than g does the routing; the 25% equivalence margin (~3.75 points off a >=15-point Gate-0 gain) is also below the +/-4.6 pooled CI.",
+    "fix": "Add a gain-only router (top-g types at the same f) as the control the retention router must beat, and set the equivalence margin above the pooled CI or raise seeds until it clears +/-4.6."
+   },
+   {
+    "id": "P5",
+    "depends_on": "Measured injected and generated tokens per episode and measured training GPU-hours converted at the replica's prefill/decode throughput; break-even N* against all-context k=3.",
+    "falsifier": "The retention router's break-even not earlier than the hybrid's by the factor 1/f, or all-weights beating all-context before N*.",
+    "label": "entailed",
+    "reason": "A router that injects for a fraction f of episodes has f times the hybrid's injected tokens by its own definition, and N* = training GPU-h divided by per-episode GPU-s saved is the definition of break-even rather than an outcome, so neither clause has a losing branch.",
+    "fix": "Predict an absolute break-even episode count with its CI on total (injected plus generated) GPU-seconds and require accuracy-matched Pareto dominance, so a router that saves prefill but lengthens episodes can fail."
+   },
+   {
+    "id": "P6",
+    "depends_on": "Step 7 self-rollout replicate (own_rollouts_train.jsonl, same partition ratios): SFT-k0 100%, arm (e) and the retention router at 2 seeds in the same three prompt conditions.",
+    "falsifier": "A sign reversal of P1-P3 on the on-policy pool, specifically WV >= 8.",
+    "label": "unresolvable",
+    "reason": "At 2 seeds the pooled contrast CI widens past the 8-point threshold and the replicate supplies only about a dozen per-type cells for a slope that is an algebraic identity anyway, so a same-sign result is unresolvable rather than confirmatory, and the proposal already reports that P-CD0 and SFT-k0 nearly coincide on this pool.",
+    "fix": "Run the replicate at 3 seeds and restrict P6 to the pooled WV estimand with a margin above the replicate's own measured CI."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: RV minus (1-r)g equals WV exactly (student matched minus untrained k=3), so P1's slope-1/intercept-0 claim and P2's WV = 0 claim are the same measurement.",
+   "P1-P3: P3 is P1's regression read at two cells, since RV/g_t = (1-r) + WV/g_t reuses the same student k=0 and untrained k=3 terms.",
+   "P2-P6: P6 restates P2's WV >= 8 threshold on the replicate pool with an identical estimand.",
+   "P4-P5: the injection fraction f and the Gate-0 hybrid gain set both P4's equivalence margin and P5's 1/f break-even factor.",
+   "P1-P4: the retention estimate r_t is both the regressor in P1 and the routing key in P4, so a mis-estimated r moves both."
+  ],
+  "headline": "P2",
+  "headline_status": "open",
+  "n_open": 1,
+  "n_entailed": 2,
+  "n_near": 1,
+  "n_unresolvable": 2,
+  "verdict": "revise"
+ },
+ "train_dose_sets_substrate": {
+  "name": "train_dose_sets_substrate",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "SFT arms with k_train in {0,1,3,7} on T of the expert pool, evaluated memory-free; r = (A0_student - A0_base)/g with g from Gate 0a; checkpoint selection by memory-free NLL on H.",
+    "falsifier": "A monotone increasing r ladder (co-training) or a flat ladder.",
+    "label": "unresolvable",
+    "reason": "The predicted down-leg is 0.15 g (about 4-5 net points) against a stated 5-point pooled MDE and a +/-4.6 CI, and the up-leg clause (r(1) or r(3) > r(0)) carries no margin at all, so a flat ladder plus noise satisfies the disjunction and cannot be told apart from the prediction.",
+    "fix": "Attach a pre-registered margin above the pooled CI to the up-leg, make the deterministic H NLL ladder the primary estimand with its own MDE, and raise seeds so 0.15 g clears the CI."
+   },
+   {
+    "id": "P2",
+    "depends_on": "SFT-decoy3 (three length-matched relevance-destroyed items at training) versus SFT-k0 and SFT-k3, memory-free r plus the H NLL proxy.",
+    "falsifier": "r(decoy3) close to r(3) rather than to r(0), i.e. a long-prefix SFT artefact.",
+    "label": "unresolvable",
+    "reason": "Both halves are equivalence claims at 0.1 g (about 3 net points) against a +/-4.6 pooled episode CI, and the fallback proxy is declared at exactly that same 0.1 g resolution and in NLL units with no stated mapping onto r, so neither the confirming nor the falsifying pattern can be resolved.",
+    "fix": "Pre-register the memory-free NLL gap in NLL units as P2's primary estimand with an equivalence margin strictly above its measured noise, and add seeds so the accuracy version clears +/-4.6."
+   },
+   {
+    "id": "P3",
+    "depends_on": "F = A0 - A- per arm (mismatched token-matched k=3 at test) across k_train in {0,1,3,7} and SFT-decoy3, paired over (game, seed).",
+    "falsifier": "F flat or falling in k_train, F(7) - F(0) < 6 net, or F(decoy3) - F(0) > 2.",
+    "label": "unresolvable",
+    "reason": "Monotonicity across four doses requires adjacent gaps of roughly 2 net points against a +/-4.6 pooled CI, the 6-point span is a difference of differences whose CI exceeds the stated 5-point MDE, and the 2-point decoy clause is far inside the noise.",
+    "fix": "State the CI for the F difference-of-differences, drop the monotonicity clause in favour of the single pre-registered F(7) - F(0) contrast with a margin above that CI, and raise the decoy equivalence margin above it too."
+   },
+   {
+    "id": "P4",
+    "depends_on": "Step 1 base-model dl_t(k) = NLL(k=0) - NLL(k) on both pools, D_t(k) = r(0) - r(k) over (type, dose) cells, and the self-rollout replicate at 2 seeds.",
+    "falsifier": "rho(D, dl) < 0.5, mean dl on the self-rollout pool above half the expert pool's, or r rising monotonically on the self-rollout pool while dl > 0.",
+    "label": "near_entailed",
+    "reason": "The self-rollout pool consists of the model's own successful trajectories, so its base action-token loss and hence dl are low by construction and the halving clause cannot come out false; what remains is a correlation over per-type cells whose +/-13-15 point accuracy noise attenuates rho toward zero through a measurement mechanism the design neither names nor controls.",
+    "fix": "Demote dl-halving to a manipulation check, compute D from the deterministic H NLL proxy so cell noise is bounded, and pre-register the rho threshold against a null simulated from the actual cell CIs."
+   },
+   {
+    "id": "P5",
+    "depends_on": "CD arms with the teacher at k=3 over T and the student prompt at k_s=0 versus k_s=3, both scored memory-free.",
+    "falsifier": "r(CD, k_s=3) equal to r(CD, k_s=0), making the effect SFT-specific.",
+    "label": "near_entailed",
+    "reason": "A student trained with a filled k=3 block and then scored with an empty one is off its own training prompt distribution, so the predicted drop is delivered by format mismatch rather than by information abundance, and unlike the SFT side there is no CD-decoy student to separate the two.",
+    "fix": "Add a CD student trained on token-matched decoy items (k_s=decoy3) and evaluate the k_s=3 student at its training dose, so the prompt-mismatch component is measured rather than attributed."
+   },
+   {
+    "id": "P6",
+    "depends_on": "Argmax over k_train in {0,1,3,7} of memory-free accuracy and of matched-k=3 accuracy, with bootstrap argmax sets over games.",
+    "falsifier": "k=1 or k=3 dominating both deployment conditions, or overlapping bootstrap argmax sets.",
+    "label": "unresolvable",
+    "reason": "Adjacent doses are predicted to differ by the same 4-5 net points as the pooled CI, so a bootstrap argmax over four noisy cells is close to uniform and neither a 2-rung separation nor non-overlapping argmax sets can be established either way.",
+    "fix": "Replace the argmax with a pre-registered pair of contrasts (for example r(1) - r(7) memory-free and A+(7) - A+(1) matched), each with a margin above the pooled CI."
+   }
+  ],
+  "shared_terms": [
+   "P1-P4: D_t(k) = r(0) - r(k) is built from the same r ladder P1 predicts, so P4's correlation is P1's ladder re-plotted against a fixed dl.",
+   "P1-P6: P6's memory-free argmax is simply the maximum of P1's r(k_train) ladder.",
+   "P2-P4: r(decoy3) is both the placebo comparison in P2 and the decoy-3 cell of P4's correlation.",
+   "P3-P6: F = A0 - A- and the matched-memory optimum share the measured A0(k) of each arm, so any shift in A0 moves both."
+  ],
+  "headline": "P1",
+  "headline_status": "unresolvable",
+  "n_open": 0,
+  "n_entailed": 0,
+  "n_near": 2,
+  "n_unresolvable": 4,
+  "verdict": "revise"
+ },
+ "context_wins_substrate_conflict": {
+  "name": "context_wins_substrate_conflict",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Conflict factorial cells (W_post, C_pre), (W_none, C_pre) and (W_post, C_none) on the three shifted types, ~270 games x 3 seeds, with the deterministic entry-point compliance detector.",
+    "falsifier": "Prior imprinting: CDI falling by >= 25 points under fresh weights together with success(W_post, C_pre) within 5 net of success(W_post, C_none).",
+    "label": "open",
+    "reason": "W_post is SFT-trained on post-rule walkthroughs that always emit activate, so imprinting is a live outcome that the design can observe, and the 25-point compliance falsifier sits well above the stated 10-point compliance MDE; only the secondary 6-point success clause sits at the stated +/-6.5 paired CI.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "(W_pre, C_post) versus (W_none, C_post) and versus (W_pre, C_none) under post-rule evaluation on shifted types, with Gate 0(b) fixing the fresh-context gain at >= 15 net.",
+    "falsifier": "success(W_pre, C_post) more than 5 net below success(W_none, C_post), or less than 15 net above success(W_pre, C_none).",
+    "label": "near_entailed",
+    "reason": "The +15 clause repeats Gate 0(b), which the design keeps re-tuning the rule strength until it passes on a model lacking the new procedure and W_pre is exactly such a model, leaving as the only reachable falsifier a W_pre-versus-W_none equivalence at 5 net points inside the stated +/-6.5 paired CI.",
+    "fix": "Freeze the rule strength before any confirmatory cell and pre-register the (W_pre minus W_none) by C_post interaction as the estimand with a margin above 6.5 net points."
+   },
+   {
+    "id": "P3",
+    "depends_on": "Stale-dose ladder s in {0,1,2,3} at k=3 for W in {none, post}, ~270 games x 3 seeds per rung; slope of success in s by weights arm.",
+    "falsifier": "W_post flattening the success slope by more than 60% of the W_none slope (weights as a defence).",
+    "label": "unresolvable",
+    "reason": "No slope SE or MDE is stated for the ratio (unlike the compliance and success contrasts), and with +/-6.5 net per rung the slope-ratio CI will straddle the narrow 40%-to-60% window; W_post also starts higher after Gate 0(c), so ceiling compression can deliver the falsifier with no defensive mechanism at all.",
+    "fix": "State a slope SE and MDE for the ratio, add rungs or seeds, and fit on log-odds or on entry-point compliance so a higher-baseline arm is not flattened by the measurement scale."
+   },
+   {
+    "id": "P4",
+    "depends_on": "W_cont (W_pre continued on T of E_post) versus W_post, both crossed with C_pre, entry-point compliance on shifted types.",
+    "falsifier": "As written, W_cont exceeding W_post by >= 10 compliance points (reported as partial falsification).",
+    "label": "entailed",
+    "reason": "The stated falsifier lies on the same side as the prediction (W_cont at least as high as W_post), so both the predicted outcome and the nominally falsifying one confirm the residue reading, while the single contrary outcome, W_cont below W_post, is assigned no consequence.",
+    "fix": "Restate the falsifier as W_cont compliance falling below W_post by more than the 10-point compliance MDE, and pre-register which direction supports context dominance."
+   },
+   {
+    "id": "P5",
+    "depends_on": "Symmetric stream of three 200-task blocks, bank arms (unbounded append-only versus FIFO capacity 200) crossed with LoRA arms (W_pre, continual retrained at block ends, reset), 2 seeds; recovery block to 80% of the (W_post, C_post) ceiling.",
+    "falsifier": "The LoRA arm rather than the bank arm deciding the recovery block.",
+    "label": "near_entailed",
+    "reason": "An unbounded append-only bank cannot evict the stale pre-rule items, so its lag is a property of the store rather than a finding, and continual LoRA updates only at block boundaries, so within a three-block stream at 2 seeds the LoRA arm has at most one chance to move a three-valued recovery index.",
+    "fix": "Score recovery on a finer window (for example per 50 tasks) at >= 3 seeds, add mid-block LoRA updates, and include a bounded-bank arm with the LoRA frozen so a LoRA-decided recovery is mechanically possible."
+   },
+   {
+    "id": "P6",
+    "depends_on": "Off-stream probe types (pick_and_place_simple, pick_two_obj) measured in every stream block at 2 seeds, comparing continual LoRA without replay, continual with self-generated replay, reset LoRA and bank-only arms.",
+    "falsifier": "No arm losing >= 5 net on the off-stream probe by block 3.",
+    "label": "near_entailed",
+    "reason": "The continual arm trains only on its own shifted-type successes while the reset arm is W_post, trained on all types of E_post, so the predicted erosion contrast follows from each arm's training mix rather than from any stream property, and the 5-point probe threshold is read at 2 seeds with no stated probe MDE.",
+    "fix": "Match the continual and reset arms on training-set type composition (or add a continual arm updated on shifted-type data at the replay arm's volume), state the probe MDE, and run probes at >= 3 seeds."
+   },
+   {
+    "id": "P7",
+    "depends_on": "Measured GPU-hours and per-episode tokens for the eviction (bounded bank) arms versus the retraining arms in the stream, plotted as a Pareto curve.",
+    "falsifier": "None stated: the clauses are that eviction costs zero GPU-hours and the same tokens as the unbounded bank, that retraining costs >= 0.3 GPU-h per block, and that the plot will show whether retraining ever wins.",
+    "label": "entailed",
+    "reason": "FIFO eviction consuming no GPU time while retrieving the same k=3 item budget is true by definition, the 0.3 GPU-h figure is the design's own stated training cost, and the third clause promises an analysis rather than an outcome that could come out either way.",
+    "fix": "Turn it into a directional claim with a threshold and CI, for example that no retraining arm reaches the bounded-bank arm's block-2 shifted-type success within a pre-registered GPU-hour budget, scored on total (injected plus generated) GPU-seconds."
+   }
+  ],
+  "shared_terms": [
+   "P1-P3: the s=3 rung of the stale-dose ladder is exactly P1's (W_none, C_pre) and (W_post, C_pre) cells, so the ladder endpoints determine P1's contrasts.",
+   "P1-P4: CDI(W_post, C_pre) is the reference value in both, so P4 can only move if P1's measured cell moves.",
+   "P2-Gate0(b): success(W_none, C_post) is simultaneously the gate's pass criterion and P2's comparator, so passing the gate largely settles P2's second clause.",
+   "P5-P6: both read the same three stream blocks and the same continual/reset LoRA arms, sharing the block-3 measurement.",
+   "P5-P7: the recovery block in P5 and the cumulative GPU-hours in P7 come from the same stream runs and the same per-block retraining cost."
+  ],
+  "headline": "P1",
+  "headline_status": "open",
+  "n_open": 1,
+  "n_entailed": 2,
+  "n_near": 3,
+  "n_unresolvable": 1,
+  "verdict": "revise"
+ },
+ "instance_share_is_the_illusion": {
+  "name": "instance_share_is_the_illusion",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Stage-1 Gate-0 in-context cells ORC/TYP/DEC/EMP at k=3, token-matched to ~430 tokens, base agent on valid_seen+valid_unseen+H at 3 seeds paired on (game,seed); Measurement A k=3 gain as the external reference for the 0.7 criterion.",
+    "falsifier": "TYP >= ORC, or DEC exceeding EMP by more than 4 net, or type share below 0.7 x the Measurement A k=3 gain.",
+    "label": "near_entailed",
+    "reason": "ORC is the evaluated game's own walkthrough, an information superset of any same-type walkthrough, so ORC > TYP can fail only if the agent cannot execute its own plan, a mechanism the proposal never names, and Gate 0 converts that outcome into 'instance half untestable' rather than a falsification; the DEC~EMP clause's +/-4 margin equals the stated +/-4 single-contrast half-width.",
+    "fix": "Promote the scene-matched-but-other-task walkthrough cell from ablation to the confirmatory Stage-1 set as the ORC comparator, set the format-share equivalence margin above the measured CI, and pre-register Gate-0 failure as a falsification of P1 rather than as untestability."
+   },
+   {
+    "id": "P2",
+    "depends_on": "memory-free OPD-ORC vs memory-free OPD-TYP on the pooled 698 games at 3 seeds, with both the acceptance band and the falsifier scaled to the Stage-1 instance share whose gate floor is 8 net, and training-seed variance from the two-seed arms added to the CI.",
+    "falsifier": "difference >= 0.5 x instance share (>= 4 net at the gate floor), i.e. instance-bound scene priors do distil.",
+    "label": "unresolvable",
+    "reason": "At the Gate-0 floor the falsifier is 4 net and the acceptance band 2 net while the proposal's own pooled half-width for a single contrast is +/-4 before the training-seed variance it says it will add, so both the pass and the fail region lie inside the stated noise (the proposal concedes 0.5 x instance share is only 'at' the MDE).",
+    "fix": "Raise the Gate-0 instance-share threshold (e.g. >= 16 net) or add seeds/games until the seed-inclusive half-width is below 0.25 x the measured instance share, so the acceptance band and the falsifier are separated by more than the CI."
+   },
+   {
+    "id": "P3",
+    "depends_on": "memory-free OPD-TYP, CD-TYP, OPD-DEC and OPD-EMP students on the three evaluation sets at 2 seeds; the Gate-0 type share (>= 15 net) sets both the 50 % retention bar and the 0.25 x equivalence margin.",
+    "falsifier": "OPD-DEC ~ OPD-TYP (retained gain is context-induced format, not procedure), or the TYP students retaining less than 50 % of the type share.",
+    "label": "open",
+    "reason": "The token-matched DEC teacher is a real arm that could plausibly transfer as much as TYP, and the stated falsifier is a >= 7.5-net move at the gate floor, above the pooled 2-seed noise; only the secondary DEC~EMP equivalence margin (3.75 net) sits under the ladder's own CI.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "every trained student evaluated with the ORC block versus memory-free, compared to the base agent's Stage-1 instance share, and compared across OPD/CD/SFT as a difference of differences with a stated +/-6 net half-width.",
+    "falsifier": "an ORC-gap outside [0.7, 1.3] x the base instance share for any student, or an objective-to-objective difference beyond the margin.",
+    "label": "unresolvable",
+    "reason": "At the Gate-0 floor the required window is 5.6-10.4 net, a +/-2.4-net band, and the between-objective clause is a difference of differences whose own stated half-width is +/-6 net, so no observed value can be placed outside the window with confidence; note also that the student gap is ORC minus empty while the base instance share is ORC minus TYP, so the two estimands are not the same contrast.",
+    "fix": "Power the ORC-gap contrasts to a half-width below 0.3 x the measured instance share (more seeds/games, or a higher instance-share gate), pre-register one objective pair rather than all three, and define the student gap against the same TYP reference used for the base instance share."
+   },
+   {
+    "id": "P5",
+    "depends_on": "per-type analysis over six types at n = 40-90 games per type per split, plus the second partition with cool-then-place removed from both B and T and the re-insertion check that puts the type back into B.",
+    "falsifier": "memory-free gain above 3 net on the procedure-held-out type, or retained gain and deployment gap not concentrating on the named types.",
+    "label": "unresolvable",
+    "reason": "Per-type cells are explicitly exploratory below the proposal's own 150-game rule, so a 3-net threshold sits far inside the per-type CI; in addition the held-out-type null asks the student to lack a procedure the partition removed from both B and T, and the 'once that type is put back in B' clause merely re-runs the Stage-1 TYP cell on the standard partition.",
+    "fix": "Raise per-type paired counts above the stated 150-game rule or restrict the claim to two pre-registered types, and turn the held-out-type null into an equivalence with a margin above the measured per-type CI plus a P-CD0 general-capability control scored on that same type."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: the Stage-1 instance share (ORC - TYP) is both an estimand of P1 and the scale of P2's acceptance band and falsifier, so a barely-passing gate automatically shrinks P2's falsifier toward the noise.",
+   "P2-P4: both are expressed as fractions of the same base instance share, and P4's target window is the very quantity P2's 0.25/0.5 bounds are fractions of.",
+   "P1-P3: the type share (TYP - EMP) fixes P1's 0.7 x Measurement-A criterion, P3's 50 % retention bar and P3's 0.25 x equivalence margin simultaneously.",
+   "P1-P4: the EMP cell is the shared baseline term inside the Stage-1 shares and inside every student's memory-free accuracy, so a shift in EMP moves both predictions together."
+  ],
+  "headline": "P2",
+  "headline_status": "unresolvable",
+  "n_open": 1,
+  "n_entailed": 0,
+  "n_near": 1,
+  "n_unresolvable": 3,
+  "verdict": "revise"
+ },
+ "student_side_abundance": {
+  "name": "student_side_abundance",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "student-side QLoRA ladder k_train in {0,1,3,7} on T, memory-free evaluation pooled over valid_seen+valid_unseen+H, 3 seeds for the confirmatory k=1 vs k=7 pair, threshold scaled to the Gate-0 k_train=0 gain (>= 12 net).",
+    "falsifier": "k=7 memory-free accuracy at or above k=1 memory-free accuracy.",
+    "label": "open",
+    "reason": "The sign flip is a directional outcome the design can genuinely produce, the length confound is separately controlled by the DEC arms, and 0.4 x 12 = ~5 net sits just above the stated ~4-net pooled MDE, though the four-dose monotonicity clause is only a 2-seed trend by the proposal's own admission.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "DEC-7 arm (other-type items token-matched to ~1,010 block tokens) versus the k_train=0 student, memory-free, on the exploratory ladder at 2 seeds; equivalence margin 0.25 x Gate-0 gain (~3 net).",
+    "falsifier": "DEC-7 dropping as much as k=7, i.e. a long-prefix effect rather than information abundance.",
+    "label": "unresolvable",
+    "reason": "DEC-7 sits in the exploratory ladder that the proposal itself says resolves only trends (+/-8 net at 274 x 2 per split), so a ~3-net equivalence margin and the distinction between a 0-net and a ~5-net drop both fall inside its CI.",
+    "fix": "Promote DEC-7 (and DEC-3) into the confirmatory set at 3 seeds pooled over all three evaluation sets, so the half-width is below the 0.25 x Gate-0-gain margin."
+   },
+   {
+    "id": "P3",
+    "depends_on": "reliance index = matched k=3 minus absent, and harm index = absent minus mismatched, computed per student across the k_train ladder.",
+    "falsifier": "reliance and/or mismatched-memory harm flat or decreasing in k_train.",
+    "label": "near_entailed",
+    "reason": "Both indices contain the memory-free (absent) accuracy with a negative sign, so P1's predicted decline in that same measured term mechanically raises both unless the matched and mismatched accuracies fall in lockstep with it, a case the proposal neither predicts nor controls.",
+    "fix": "Pre-register the matched-block and mismatched-block accuracies as separate estimands (or use a ratio-form reliance index) so P3 can fail while P1 holds."
+   },
+   {
+    "id": "P4",
+    "depends_on": "teacher-side on-policy reverse-KL ladder k_t in {1,3,7} plus P-CD0, with the student prompt carrying no memory block at train or test, evaluated at 2 seeds, acceptance stated as non-decreasing 'within CI'.",
+    "falsifier": "a decline in memory-free accuracy across the teacher-side ladder.",
+    "label": "near_entailed",
+    "reason": "No teacher-side arm puts a block in the student's prompt, so the train/test prompt mismatch that drives the student-side decline is removed by construction and a decline could only arise from a teacher-student distribution gap the proposal never names or measures; the 'within CI' acceptance rule additionally lets any 2-seed null confirm non-decrease, so the crossing of the two curves is largely built in.",
+    "fix": "Add a teacher-side arm whose student prompt also carries a token-matched block (or a length-matched empty-content prefix) to separate prompt mismatch from information, and pre-register a decline magnitude above the ladder CI as the falsifier instead of 'within CI'."
+   },
+   {
+    "id": "P5",
+    "depends_on": "per-type memory-free deficit relative to the k_train=0 student versus base-model delta-NLL(k) per type, Spearman over 6 types x 3 doses, decoy delta-NLL, and the self-rollout repeat.",
+    "falsifier": "Spearman below 0.6, non-zero decoy delta-NLL, or an undiminished self-rollout effect.",
+    "label": "near_entailed",
+    "reason": "Both variables rise with the dose k by construction (more context lowers action-token NLL; P1 predicts the deficit grows with k), so pooling 18 type-dose points makes a positive rank correlation follow from the shared dose factor rather than from any type-level correspondence, and decoy delta-NLL ~ 0 restates how the decoy pool was built (other-type items chosen to be irrelevant).",
+    "fix": "Compute the correlation within each dose across the six types (or partial out the dose main effect) and pre-register that within-dose statistic, with per-type counts above the stated 150-game rule."
+   },
+   {
+    "id": "P6",
+    "depends_on": "RATE-3 (k=3 applied to a random 50 % of training examples) versus the k=0 and k=3 students on memory-free accuracy and on reliance, 2-seed exploratory ladder.",
+    "falsifier": "RATE-3 landing outside the k=0 to k=3 interval on either measure.",
+    "label": "unresolvable",
+    "reason": "RATE-3 is a 50/50 mixture of the two endpoint training distributions so an interior value is expected by construction, and the whole k=0-to-k=3 interval is only a few net points, well inside the +/-8-net 2-seed ladder CI.",
+    "fix": "Run RATE-3 and both endpoints at 3 seeds pooled over the three sets and pre-register a non-inferiority margin smaller than the measured k=0 minus k=3 gap."
+   }
+  ],
+  "shared_terms": [
+   "P1-P3: memory-free (absent) accuracy is P1's estimand and a negative term in both of P3's indices, so P1's decline determines P3 unless matched accuracy moves with it.",
+   "P1-P5: P5's per-type deficit is the per-type decomposition of P1's pooled ladder difference, and both are indexed by the same dose k, which also drives delta-NLL.",
+   "P1-P6: RATE-3 is scored against the same k=0 and k=3 memory-free cells that anchor the P1 ladder.",
+   "P1-P2: P1's required deficit and P2's equivalence margin are both fractions of the same Gate-0 k_train=0 gain, so a barely-passing gate shrinks them together."
+  ],
+  "headline": "P4",
+  "headline_status": "near_entailed",
+  "n_open": 1,
+  "n_entailed": 0,
+  "n_near": 3,
+  "n_unresolvable": 2,
+  "verdict": "revise"
+ },
+ "memory_carried_traits_need_tokens": {
+  "name": "memory_carried_traits_need_tokens",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "PC teacher (QLoRA rank 32 on the rewritten bank, rate-matched to MC) versus PC-0 (QLoRA on the unrewritten bank), both under SFT-clean with the T1 inventory action and its observation removed; trait rate at the first action, ~1,400 decision points per arm.",
+    "falsifier": "PC/SFT-clean lifting the T1 trait rate by less than 10 pp over PC-0/SFT-clean.",
+    "label": "open",
+    "reason": "The parameter-carried subliminal channel can genuinely fail on this backbone and SFT-clean deletes the very first-action tokens the trait rate is scored on, so the sanitised data actively models a non-inventory first action; 10 pp is well above the stated ~2.5 pp half-width, although a failure is routed into declaring the memory-carried null uninterpretable rather than counting against the programme.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "PC/OPD-masked versus PC/SFT-clean, with the stated falsifier resting instead on PC/OPD-masked versus PC-0/OPD-masked, two training seeds each and seed variance added to the CI; conditional on P1 holding.",
+    "falsifier": "PC/OPD-masked within 5 pp of PC-0/OPD-masked while P1 holds.",
+    "label": "unresolvable",
+    "reason": "The falsifier is a 5 pp equivalence at the design's own stated ~5 pp MDE for exactly that test, with the four-arm training-seed variance then added on top, so the falsifying band lies inside the noise; the prediction's own clause (OPD-masked >= SFT-clean) carries no margin at all and is confirmed by any tie.",
+    "fix": "Add decision points (3 seeds, or a trait with several rule-identified decision points per episode) until the seed-inclusive half-width is <= 2 pp, and give the >= comparison an explicit non-inferiority margin."
+   },
+   {
+    "id": "P3",
+    "depends_on": "MC teacher (base weights conditioned on k=3 items from the fully rewritten bank B_T) versus MC-0, under SFT-clean (trait step removed) and OPD-masked (KL zeroed on the trait span), students memory-free with an empty block; ceiling clause scored against the MC teacher's own trait rate.",
+    "falsifier": "either sanitised or masked MC arm exceeding MC-0 by >= 10 pp.",
+    "label": "near_entailed",
+    "reason": "For T1 the trait is expressed at exactly one action, scored at exactly that action, and deleted or loss-masked at exactly that action, while the MC teacher differs from the student's base weights only through a context the student's data never contains and inventory-first leaves the world state unchanged, so no channel the proposal names can carry the trait into the memory-free student.",
+    "fix": "Score the trait at a second, unmasked decision point, or make the dynamics-bearing T2 trait the central test with full MC-0 and unmasked controls, so a context-carried trait has a route the mask does not delete."
+   },
+   {
+    "id": "P4",
+    "depends_on": "memory-free trait rate of the MC/OPD-full student versus the base agent with B_T at k in {3} - which is exactly the MC teacher's own condition - on identical (game, seed) sets.",
+    "falsifier": "the distilled student's memory-free trait rate at or below the in-context rate.",
+    "label": "open",
+    "reason": "B_T is entirely rewritten so every retrieved item carries the trait and the retrieval gating the prediction relies on is largely absent, making a student-at-or-below-teacher outcome very reachable - P3's own '>= 0.7 x teacher rate' clause explicitly anticipates undershoot - though the strict inequality is stated without a margin, so near-ties will be indeterminate at the ~2.5 pp half-width.",
+    "fix": ""
+   },
+   {
+    "id": "P5",
+    "depends_on": "projecting the PC minus PC-0 LoRA delta (or the mean activation difference at the decision token) out of the student update during OPD-masked and SFT-clean, for both PC and MC teachers.",
+    "falsifier": "the projection cutting PC transfer by less than 50 %, or changing the MC arms at all.",
+    "label": "unresolvable",
+    "reason": "The MC clause is scored on a transfer P3 predicts to be zero, so the floor fixes its sign and there is nothing for the projection to reduce, while the PC clause's 50 % cut of a >= 10 pp effect is ~5 pp, exactly the stated equivalence MDE before the added seed variance.",
+    "fix": "Make the MC clause conditional on an observed non-zero MC transfer, and power the projection arms (3 seeds, more decision points) until a 5 pp change is resolvable."
+   },
+   {
+    "id": "P6",
+    "depends_on": "the T2 arm list, which contains only MC and PC x {SFT-clean, OPD-masked}; the P1 and P3 contrasts require PC-0, MC-0 and the unmasked full objectives, none of which are run for T2, at ~0.8 usable decision points per episode.",
+    "falsifier": "T2 failing to reproduce the P1-P3 sign pattern, or its magnitude not being smaller.",
+    "label": "entailed",
+    "reason": "The neutral-teacher controls (MC-0, PC-0) and the unmasked ceilings are absent from the T2 arms, so the contrasts that define the P1-P3 sign pattern cannot be formed for T2 at all, and 'smaller magnitude' is asserted without any stated margin.",
+    "fix": "Add the four T2 controls (MC-0 and PC-0 x SFT-clean, OPD-masked) and the two T2 full-objective ceilings, and pre-register the magnitude comparison as a ratio with a margin above the T2 CI."
+   }
+  ],
+  "shared_terms": [
+   "P3-P4: the MC teacher's trait rate (base agent with B_T at k=3) is both the denominator of P3's 0.7 x ceiling clause and P4's comparator, so the two predictions score the same ratio from opposite sides.",
+   "P1-P2: PC/SFT-clean is P1's target and P2's comparator, so P2's outcome is largely fixed by P1's margin once PC/OPD-masked lands near PC-0.",
+   "P3-P5: P5's MC clause is scored on exactly the MC transfer P3 predicts to be null, so P3 determines it.",
+   "P1-P6 and P3-P6: P6 is defined as the sign pattern of P1-P3 but is measured on an arm set that omits their comparators."
+  ],
+  "headline": "P3",
+  "headline_status": "near_entailed",
+  "n_open": 2,
+  "n_entailed": 1,
+  "n_near": 1,
+  "n_unresolvable": 2,
+  "verdict": "revise"
+ },
+ "retrieved_memory_privilege_is_scene_bound": {
+  "name": "retrieved_memory_privilege_is_scene_bound",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "S_match vs S_proc trained on T under MATCH and PROC contexts, evaluated memory-free on valid_unseen; the Experiment-1 audit that no T or H task shares (scene, object, receptacle) with the B item retrieved as its exemplar; G0 = MATCH-EMPTY at Gate 0.",
+    "falsifier": "R = S_match - S_proc > 0.25 G0 (about +8 net) on valid_unseen.",
+    "label": "entailed",
+    "reason": "The audit strips scene/object/receptacle overlap between every training target and its retrieved MATCH exemplar, and valid_unseen shares no scenes with B either, so the item-specific binding channel that is the only route to a large R is deleted before any student is trained.",
+    "fix": "Add a MATCH+ arm whose retrieved exemplars deliberately share (scene, object, receptacle) with the target task, so binding transfer has a route to appear in R."
+   },
+   {
+    "id": "P2",
+    "depends_on": "The same R contrast computed separately on valid_seen and valid_unseen from S_match and S_proc; splits are unpaired with each other; +-6.5 net per split at 274 games x 3 seeds.",
+    "falsifier": "R_seen - R_unseen < 0.15 G0 (about 4.8 net), i.e. equal within margin.",
+    "label": "unresolvable",
+    "reason": "A difference of two arm differences across two unpaired splits carries roughly +-13 net at the stated cell sizes, so the 4.8-net threshold sits deep inside the noise, and R is already pushed toward zero by the P1 audit.",
+    "fix": "Make the seen-vs-unseen difference-in-differences the primary contrast and power it to an MDE below 0.15 G0 (far more games/seeds, or a within-split matched-scene manipulation that is paired)."
+   },
+   {
+    "id": "P3",
+    "depends_on": "Per-type U = teacher_MATCH - S_match and Gate-0 s_type = (PROC-EMPTY)/(MATCH-EMPTY); rank correlation permuted over the ~5 remaining task types and seeds.",
+    "falsifier": "U flat across types, or largest on the procedure-bound (high s_type) types.",
+    "label": "unresolvable",
+    "reason": "With about five ranked types and per-type cells of 40-60 games the per-type CI on U swamps the between-type spread, a permutation over five items floors at p~0.008 only for a perfect ordering, and U and 1-s_type share the per-type teacher MATCH term so any correlation is partly mechanical.",
+    "fix": "Increase the number of ranked units (sub-type strata or a second environment), pre-register an MDE for the rank statistic, and define U so it does not share MATCH with s_type."
+   },
+   {
+    "id": "P4",
+    "depends_on": "Per-type retained fraction = (S_match - base)/(MATCH - EMPTY) against per-type s_type = (PROC-EMPTY)/(MATCH-EMPTY), with types binned at s_type >= 0.7 and <= 0.3 from Gate 0.",
+    "falsifier": "Retained fraction uniform across types.",
+    "label": "unresolvable",
+    "reason": "Retained fraction and s_type share the denominator MATCH-EMPTY, so a type with a small in-context gain inflates both, and the per-type ratio of two small noisy quantities has CIs far wider than the gap between the 0.6 threshold and uniformity, with no guarantee that any type populates the >=0.7 or <=0.3 bins.",
+    "fix": "Require both bins to be populated with Gate-0 CIs excluding 0.7/0.3, report the retained fraction only for types whose MATCH-EMPTY CI excludes zero, and state the MDE for a between-type difference in retained fraction."
+   },
+   {
+    "id": "P5",
+    "depends_on": "F = S_decoy - S_empty and O = S_empty - base, both memory-free, with equivalence margins pre-registered as fractions of G0.",
+    "falsifier": "None stated: a significantly negative F is absorbed by recomputing every later margin after subtracting it, and no outcome for O is named as refuting.",
+    "label": "entailed",
+    "reason": "Both branches of the F clause are accommodated by design (F near zero confirms it, F negative becomes a nuisance correction), so no result of the long-prefix test can come out against the hypothesis.",
+    "fix": "State a refuting magnitude for F (e.g. |F| >= 0.25 G0 breaks the decomposition), fix the subtraction rule before unblinding, and name O <= 0 as a falsifier of the self-training term."
+   },
+   {
+    "id": "P6",
+    "depends_on": "pick_two_obj_and_place removed from B and T entirely; all students plus base on the held-out type under absent and matched-memory prompts; about 36 held-out validation games plus held-out train tasks.",
+    "falsifier": "Some student beats base on the held-out type, or gains more from matched memory there than base does.",
+    "label": "entailed",
+    "reason": "Removing the type from both B and T means no arm was trained on it and the retriever has no same-type item to deliver, so the prediction re-describes the pool filter rather than testing type-boundness, and the near-floor 36-game cell could not support the equivalence claim in any case.",
+    "fix": "Keep a held-out-type slice in B as retrievable-only (never trained) so matched memory is deliverable, add one arm trained on that type as a positive control, and power the held-out cell."
+   },
+   {
+    "id": "P7",
+    "depends_on": "The full design replicated on own_rollouts_train with a smaller G0; margins pre-registered as fractions of that pool's G0; the same +-6.5 net per-split measurement floor.",
+    "falsifier": "The reference-attributable part R becomes the majority on the self-rollout pool.",
+    "label": "unresolvable",
+    "reason": "Majority has no defined denominator, and a smaller G0 shrinks every fraction-of-G0 margin below the fixed +-6.5 net measurement floor, so neither the pattern nor its falsifier can be resolved on that pool.",
+    "fix": "Define majority explicitly (e.g. R > 0.5(R+C+F)) with a stated MDE, and impose a Gate-0 floor on the self-rollout G0 (e.g. >= 20 net) below which the replication is declared untestable."
+   }
+  ],
+  "shared_terms": [
+   "P1-P5: R + C + F = S_match - S_empty identically, so fixing C >= 0.5 G0 and F within margin of zero determines R once the retained gain is measured.",
+   "P1-P2: P2 is the same R contrast re-split by scene familiarity, so the audit that drives R toward zero in P1 also bounds P2's difference.",
+   "P3-P4: U = teacher_MATCH - S_match and s_type = (PROC-EMPTY)/(MATCH-EMPTY) share the per-type teacher MATCH score, and P4's retained fraction shares the denominator MATCH-EMPTY with s_type.",
+   "P1-P4: retained fraction = (S_match - base)/(MATCH - EMPTY) and R both contain S_match, so a low-retention student simultaneously shrinks R and the retained fraction."
+  ],
+  "headline": "P1",
+  "headline_status": "entailed",
+  "n_open": 0,
+  "n_entailed": 3,
+  "n_near": 0,
+  "n_unresolvable": 4,
+  "verdict": "revise"
+ },
+ "harm_spillover_is_substrate_bound": {
+  "name": "harm_spillover_is_substrate_bound",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "D and Sp on poisoned versus sibling types for the in-context k=3 arm and S_sft(p), rho = Sp/D, evaluated at the p where the two substrates' direct harm match; sibling cell about 480 paired episodes (+-7 net), poisoned about 870 (+-5).",
+    "falsifier": "rho_sft <= rho_context + margin.",
+    "label": "unresolvable",
+    "reason": "With D gated at only about 10 net points, rho values of 0.1 versus 0.3 are sibling harms of 1 versus 3 net points against a +-7 sibling CI, so the claimed doubling is roughly an order of magnitude inside the stated noise, and no p on the {0,0.1,0.3,0.5} grid is guaranteed to match D across substrates.",
+    "fix": "Power the sibling cell to an MDE of 1-2 net points (or raise D with a stronger poison or higher p until 2x rho is several CI widths) and pre-register the interpolation used to match D across substrates."
+   },
+   {
+    "id": "P2",
+    "depends_on": "Cross-type retrieval rate r_x from the logs and per-retrieved-item harm estimated on the poisoned types, versus measured sibling harm in the frozen in-context arm.",
+    "falsifier": "Sp_context exceeds r_x x (direct harm per retrieved poisoned item).",
+    "label": "near_entailed",
+    "reason": "For a frozen model the prompt is the only channel from bank to behaviour, so sibling harm without a cross-retrieved poisoned item is excluded by construction, and the falsifier survives only through per-item harm being larger on sibling types than on the poisoned types where it is estimated, a mechanism the design neither names nor measures.",
+    "fix": "Estimate per-retrieved-item harm separately on sibling-type episodes (an arm that forces a poisoned item into sibling prompts) so the inequality compares two independently measured terms rather than one term against itself."
+   },
+   {
+    "id": "P3",
+    "depends_on": "D_context(p) over the p grid and D_sft(p) at p in {0,0.1,0.3,0.5}, seeds as replicates, poisoned-type CI about +-5 net, Gate-0 floor D_context(0.5) >= 10.",
+    "falsifier": "Both substrates linear, or SFT harm super-linear at low p.",
+    "label": "unresolvable",
+    "reason": "Under a 10-net-point harm ceiling every quantity in the prediction is a 1-4 net point contrast against +-5 (D_context(0.1) of 1-3.5, a 1.5x ratio between D_sft(0.5) and D_sft(0.3)), and the clause that D_sft(0.1) is within noise of zero is satisfied by low power alone.",
+    "fix": "Score dose shape on a continuous per-episode measure (entry-step rate or wrong-action rate) instead of net success points, and power the p grid to an MDE of about 2 net at p=0.1."
+   },
+   {
+    "id": "P4",
+    "depends_on": "omega = 1 - D(clean memory)/D(absent) for trained students, a ratio of two poisoned-type contrasts each about +-5 net on a base near 10, bootstrapped over games.",
+    "falsifier": "omega >= 0.9.",
+    "label": "unresolvable",
+    "reason": "A ratio whose numerator and denominator each carry +-5 on a 10-point base has a bootstrap CI wide enough to cover both 0.7 and 0.9, so the compliance-trap alternative cannot be separated from the prediction.",
+    "fix": "State the MDE for omega and reach it (direct harm of about 25 net, or several times the episode count), and report D(clean) and D(absent) with their own CIs rather than only the ratio."
+   },
+   {
+    "id": "P5",
+    "depends_on": "Teacher compliance rate c(p) logged on the OPSD teacher pass, D_sft(p) and D_opsd(p) at p in {0.1, 0.5}.",
+    "falsifier": "D_opsd >= D_sft, or the discount not tracking the measured c(p).",
+    "label": "unresolvable",
+    "reason": "At p=0.1 the test is vacuous because P3 already predicts D_sft(0.1) is zero within noise, and at p=0.5 a predicted D_opsd of about c x 10 cannot be separated from D_sft of about 10 when both carry +-5.",
+    "fix": "Drop p=0.1, state the margin for the product test in net points, and power D_sft(0.5) to at least about 25 net so a compliance discount of 0.5 sits several CIs from unity."
+   },
+   {
+    "id": "P6",
+    "depends_on": "Entry step and recovery fraction per substrate on harmed episodes only, with the manufactured V1 (appliance step replaced) and V2 (place reordered) poisons whose divergence sits at a fixed position in each type's procedure.",
+    "falsifier": "Internalized harm recovers at least as often as in-context harm.",
+    "label": "near_entailed",
+    "reason": "V1 and V2 put the divergence at a single fixed step of each type's procedure, so the KS coincidence of in-context entry steps with the retrieved item's divergence step is fixed by how the poison was built and has essentially one degree of freedom; only the recovery clause is contingent, and it rests on the few dozen harmed episodes per substrate that a 10-net-point harm yields.",
+    "fix": "Add a poison variant whose divergence step varies across items so the KS test can fail, and pre-register a powered MDE for the recovery-fraction halving on the harmed subsample."
+   },
+   {
+    "id": "P7",
+    "depends_on": "pick_and_place and look_in_light control types (about 58 clean games per split plus H) across every arm, with no stated equivalence margin.",
+    "falsifier": "Any arm moves a control type beyond margin.",
+    "label": "unresolvable",
+    "reason": "The margin is never stated and the control cells are the smallest in the design, so no arm can be shown equivalent on the controls at the achievable precision and the reassignment-to-forgetting rule can never be triggered reliably.",
+    "fix": "Pre-register an equivalence margin in net points for the control types, power those cells to it, and state in advance how a control-type change is subtracted from D and Sp."
+   }
+  ],
+  "shared_terms": [
+   "P1-P4: rho and omega both take the trained student's direct harm D(absent) as their base, so a mis-estimated D moves the spillover ratio and the override fraction together.",
+   "P3-P5: D_opsd(p) = c(p) x D_sft(p) contains D_sft(p), so P3's prediction that D_sft(0.1) is zero within noise turns P5's p=0.1 comparison into an identity between two zeros.",
+   "P1-P2: Sp_context is the numerator of rho_context in P1 and the estimand of P2, so P2's retrieval accounting bounds rho_context near zero and mechanically favours P1's ordering.",
+   "P3-P6: entry step and recovery are scored only on harmed episodes, whose count is set by D(p), so the P3 dose curve determines the sample available to P6."
+  ],
+  "headline": "P1",
+  "headline_status": "unresolvable",
+  "n_open": 0,
+  "n_entailed": 0,
+  "n_near": 2,
+  "n_unresolvable": 5,
+  "verdict": "revise"
+ },
+ "style_outruns_content": {
+  "name": "style_outruns_content",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "S_sft on marked T; M1 (fixed five-token phrase on every thought) and M2 (leading look) planted on every marked-type item of B and T; gamma_marker on unmarked and held-out types with the k=0 baseline subtracted; gamma_content = G(held-out)/G(marked) with pick_two removed from B and T.",
+    "falsifier": "Either marker type-confined (gamma_marker <= 0.4), or content reaching the held-out type (gamma_content >= 0.5).",
+    "label": "near_entailed",
+    "reason": "The content half re-describes the pool filter (pick_two is removed from B and T, so its content gain can only be nonzero through compositional transfer no arm supplies), and a fixed phrase prefixed to every thought of every marked item is the low-complexity unconditional habit for a LoRA to learn, so type-confinement requires a type-conditioning pressure the design never applies.",
+    "fix": "Plant the marker on only part of the marked-type items, or use a different phrase per type so type-conditioning is learnable, and keep a held-out-type slice in T as a positive control that lets gamma_content exceed 0.5."
+   },
+   {
+    "id": "P2",
+    "depends_on": "S_opsd reverse-KL on the student's own memory-free rollouts scored by the marked-memory teacher; teacher memory-conditioned adoption from Gate 0 (>= 0.5); per-episode marker rates at about +-3 pp.",
+    "falsifier": "S_opsd marker adoption within margin of the k=0 baseline while it still shows a content gain.",
+    "label": "open",
+    "reason": "Both outcomes are mechanically reachable (on-policy reverse-KL can transmit or filter a surface habit) and the 20-plus point gap between 0.5 x teacher adoption and the k=0 baseline is far outside the +-3 pp marker CI.",
+    "fix": "Pre-register the content-gain threshold that makes the conjunctive falsifier binding, so an S_opsd arm that simply fails to learn cannot dodge it."
+   },
+   {
+    "id": "P3",
+    "depends_on": "S_sanit = SFT on the marked-memory teacher's trajectories over T with the phrase and the leading look removed; A_M1 scored as the fraction of thoughts starting with that exact phrase, A_M2 as P(first action = look) minus the k=0 baseline.",
+    "falsifier": "S_sanit adoption >= 0.3 x S_sft adoption.",
+    "label": "entailed",
+    "reason": "The sanitizer deletes exactly the tokens the outcome is scored on, and an arbitrary fixed five-token string has a near-zero natural rate, so the trajectory-dynamics channel has no way to express itself in this metric whatever its true strength.",
+    "fix": "Score a channel the sanitizer does not delete (paraphrase-level or semantic adoption, thought-length or entropy signature, or a marker with a measurable natural base rate) so the 2604.15559 account has a reachable positive outcome."
+   },
+   {
+    "id": "P4",
+    "depends_on": "One continuation epoch on clean marker-free own-rollout items of the unmarked types only, checkpoints at 0.25/0.5/0.75/1.0 epoch, A_M1, A_M2 and G re-measured on marked types.",
+    "falsifier": "Either marker outlives the content, or both decay together.",
+    "label": "near_entailed",
+    "reason": "The continuation set is direct negative evidence against both markers (clean thoughts, no leading look) but carries no evidence at all about marked-type procedures, so faster marker decay follows from the update rule rather than from any style/content distinction, and 0.25 epoch is also the shortest half-life the checkpoint schedule can resolve.",
+    "fix": "Add a continuation arm containing clean marked-type items so both channels face the same contradiction (or a neutral continuation that contradicts neither), and add checkpoints below 0.25 epoch."
+   },
+   {
+    "id": "P5",
+    "depends_on": "S_sft at r in {8, 32, 128} with adoption margins pre-registered as a fraction of the Gate-0 adoption rate; no seed replication stated for the rank arms (two seeds are specified only for the durability students).",
+    "falsifier": "r=32 exceeds both r=8 and r=128 by more than the margin (an inverted-U).",
+    "label": "unresolvable",
+    "reason": "The quoted +-3 pp is evaluation noise only and each rank arm has a single LoRA seed, so an apparent inverted-U cannot be separated from training-seed variation, which the design bounds nowhere for these arms.",
+    "fix": "Run at least three LoRA seeds per rank and pre-register the inverted-U margin in adoption points relative to the measured seed spread."
+   },
+   {
+    "id": "P6",
+    "depends_on": "The frozen model with in-context k=3 from the marked bank; marker adoption on unmarked types versus the k=0 baseline, conditioned on cross-retrieval flags from the logs.",
+    "falsifier": "In-context marker adoption on unmarked types departs from the k=0 baseline with no marked item retrieved.",
+    "label": "entailed",
+    "reason": "For an untrained model the prompt is the only route by which a planted phrase or leading look can appear, so conditioning on no cross-retrieval leaves nothing but sampling noise, and the proposal itself declines to count the result as a confirmation.",
+    "fix": "Test induction rather than presence, e.g. in-context items marked on a different task type, so cross-type marker generalization has a route into the metric."
+   },
+   {
+    "id": "P7",
+    "depends_on": "Trained students evaluated under the mismatched prompt condition (token-matched other-type items) against their memory-free adoption; adoption CI about +-3 pp.",
+    "falsifier": "Mismatched context suppresses adoption to the k=0 baseline.",
+    "label": "near_entailed",
+    "reason": "The mismatched condition is only token-matched other-type items and is never required to be marker-free or marker-contradicting, so items drawn from the marked bank carry M1/M2 and reinforce the habit, leaving suppression reachable only through an interference mechanism the design does not construct.",
+    "fix": "Draw the mismatched items from an explicitly marker-free or counter-marked bank (different fixed phrase, no leading look) and report the injected items' marker rate in every prompt condition."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: gamma_marker for S_sft and for S_opsd share A_M on marked types as the denominator, so low marked-type adoption inflates both generalization ratios.",
+   "P1-P3: S_sanit adoption is normalized by S_sft adoption, the same quantity that is P1's denominator, so confirming P1 raises the bar P3 must clear.",
+   "P3-P4: both are scored on emission of the same fixed phrase, so the sanitizer's deletion and the clean continuation's suppression act on the same measured term.",
+   "P1-P6: gamma_marker's numerator is marker adoption on unmarked types, the same quantity P6 predicts equals the k=0 baseline in context, and both subtract the same baseline rate."
+  ],
+  "headline": "P1",
+  "headline_status": "near_entailed",
+  "n_open": 1,
+  "n_entailed": 2,
+  "n_near": 3,
+  "n_unresolvable": 1,
+  "verdict": "revise"
+ }
+}

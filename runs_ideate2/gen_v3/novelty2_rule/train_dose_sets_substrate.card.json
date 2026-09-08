@@ -1,0 +1,217 @@
+{
+ "name": "train_dose_sets_substrate",
+ "keys": {
+  "agent": [
+   "Training-Time Memory Dose Chooses Substrate Information-Abundance Effect Agent",
+   "agent fine-tuned distilled experience retrieved episodes training prompt amount memory present training"
+  ],
+  "mechanism_home": [
+   "fine-tuned distilled training amount present training time train decides ends relevant reduces",
+   "retrieval-augmented fine-tuning irrelevant context robustness distractor documents",
+   "inference cost accounting retrieval augmented generation versus fine-tuning total cost"
+  ],
+  "adjacent": [
+   "long-context training reduces parametric knowledge",
+   "fine-tuning versus RAG cost trade-off knowledge injection"
+  ],
+  "baseline": [
+   "context dropout during fine-tuning",
+   "static few-shot prompt token cost"
+  ],
+  "estimand": [
+   "agent fine-tuned distilled experience retrieved episodes training prompt amount memory"
+  ],
+  "environment": [
+   "Qwen3-32B"
+  ],
+  "methods": [
+   "MemHarness",
+   "PMD",
+   "UCOB",
+   "OPSD"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "fine-tuned distilled training amount present training time train decides ends relevant reduces"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "retrieval-augmented fine-tuning irrelevant context robustness distractor documents"
+  },
+  {
+   "class": "agent",
+   "query": "Training-Time Memory Dose Chooses Substrate Information-Abundance Effect Agent"
+  },
+  {
+   "class": "agent",
+   "query": "agent fine-tuned distilled experience retrieved episodes training prompt amount memory present training"
+  },
+  {
+   "class": "adjacent",
+   "query": "long-context training reduces parametric knowledge"
+  },
+  {
+   "class": "baseline",
+   "query": "context dropout during fine-tuning"
+  },
+  {
+   "class": "methods",
+   "query": "MemHarness PMD UCOB Training-Time Memory Dose Chooses Substrate Information-Abun"
+  },
+  {
+   "class": "agent",
+   "query": "Training-Time Memory Dose Chooses Substrate Information-Abundance Effect Agent Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2607.21051",
+   "date": "2026-07-23",
+   "venue": "",
+   "sim": 0.672,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Sample-Efficient Learning from Agent Experience"
+  },
+  {
+   "id": "arxiv:2608.00017",
+   "date": "2026-06-29",
+   "venue": "",
+   "sim": 0.636,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Memory Reward Inflation in Self-Improving LLM Agents"
+  },
+  {
+   "id": "arxiv:2603.18272",
+   "date": "2026-03-18",
+   "venue": "",
+   "sim": 0.61,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Retrieval-Augmented LLM Agents: Learning to Learn from Experience"
+  },
+  {
+   "id": "arxiv:2607.08716",
+   "date": "2026-07-09",
+   "venue": "",
+   "sim": 0.601,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents"
+  },
+  {
+   "id": "arxiv:2403.02757",
+   "date": "2024-03-05",
+   "venue": "",
+   "sim": 0.596,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "In-Memory Learning: A Declarative Learning Framework for Large Language\n  Models"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.593,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2608.12218",
+   "date": "2026-08-12",
+   "venue": "",
+   "sim": 0.588,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "baseline"
+   ],
+   "title": "Information Abundance Paradox: Long-Context Training Undermines Parametric Knowledge"
+  },
+  {
+   "id": "arxiv:2605.31075",
+   "date": "2026-05-29",
+   "venue": "",
+   "sim": 0.585,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "Task-Focused Memorization for Multimodal Agents"
+  },
+  {
+   "id": "arxiv:2605.10828",
+   "date": "2026-05-11",
+   "venue": "",
+   "sim": 0.583,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "The First Drop of Ink: Nonlinear Impact of Misleading Information in Long-Context Reasoning"
+  },
+  {
+   "id": "arxiv:2608.15008",
+   "date": "2026-08-15",
+   "venue": "",
+   "sim": 0.575,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Harness the Memory: A Holistic Evaluation of Memory Substrates in Memory Agents"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 24,
+  "agent": 22,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "fine-tuned distilled training amount present training time train decides ends relevant reduces 2025 arXiv"
+  },
+  {
+   "query": "retrieval-augmented fine-tuning irrelevant context robustness distractor documents 2025 arXiv"
+  }
+ ]
+}

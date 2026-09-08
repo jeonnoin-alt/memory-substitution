@@ -73,8 +73,14 @@ $P tools/ideate2/axes.py emit --axes $W/axes.json --brief $W/brief_v3.md --cards
 #   5 Fable generators (Bash for s2cli + WebSearch if quota remains); collect with tools/ideate2/gen_collect.py; axes.py merge
 $P tools/ideate2/gate.py --ideas runs_ideate2/gen_v3/ideas.json --brief $W/brief_v3.md --cards $W/cards.jsonl --archive <51 archived ideas json> --out runs_ideate2/gen_v3/gate --backend harness --model opus
 #   Opus adjudication subagents per batch; gate_collect.py
-$P tools/ideate2/novelty_check.py --ideas runs_ideate2/gen_v3/ideas.json --out runs_ideate2/gen_v3/novelty --s2-queries 2
-$P tools/ideate2/review_batch.py emit --ideas runs_ideate2/gen_v3/ideas.json --brief $W/brief_v3.md --novelty runs_ideate2/gen_v3/novelty --out runs_ideate2/gen_v3/review --model opus
+$P tools/ideate2/novelty_check.py --ideas G/ideas.json --out G/novelty --backend harness --model fable --batch 5   # Fable key jobs (classed queries)
+#   novelty_keys_collect.py G/novelty <map.json>; then
+$P tools/ideate2/novelty_check.py --ideas G/ideas.json --out G/novelty --keys G/novelty/keys.json --s2-queries 3
+$P tools/ideate2/entail.py emit --ideas G/ideas.json --out G/entail --batch 3 --model opus        # Stage 2.8 (added 2026-09-08)
+#   one Opus subagent per entail__batchNN; entail.py collect --out G/entail --mapping <map.json>
+#   entail.py revise --ideas G/ideas.json --out G/entail --brief $W/brief_v3.md → Fable revision jobs for verdict == revise;
+#   revise_collect.py G <map.json> → ideas_r2.json; re-run entail on the revised ones until the headline is open
+$P tools/ideate2/review_batch.py emit --ideas G/ideas.json --brief $W/brief_v3.md --novelty G/novelty --entail G/entail --out G/review --model opus
 #   one Opus judge per idea (Bash for s2cli); review_batch.py collect / rank; escalate the top 2–3 with --round 2 --n 2
 ```
 Then proposal v7 (Fable) → 1 Opus judge → +2 if promising; freeze on "no design-blocking finding".

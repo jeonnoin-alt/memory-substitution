@@ -1,0 +1,206 @@
+{
+ "name": "coverage_limited_context_count_limited_weights",
+ "keys": {
+  "agent": [
+   "Coverage-Limited Context Count-Limited Weights Substrate Crossover Lives Experience-Collection",
+   "in-context route gain ALFWorld same-type procedure copy saturates bank holds items per"
+  ],
+  "mechanism_home": [
+   "route gain same-type procedure copy saturates holds items per task type three",
+   "data diversity versus quantity scaling supervised fine-tuning",
+   "privileged information distillation student cannot close information gap"
+  ],
+  "adjacent": [
+   "many-shot in-context learning number of examples saturation",
+   "in-context demonstrations override explicit instructions"
+  ],
+  "baseline": [
+   "static few-shot exemplars per task type",
+   "same-task oracle demonstration upper bound"
+  ],
+  "estimand": [
+   "in-context route gain ALFWorld same-type procedure copy saturates bank holds"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": []
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "route gain same-type procedure copy saturates holds items per task type three"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "data diversity versus quantity scaling supervised fine-tuning"
+  },
+  {
+   "class": "agent",
+   "query": "Coverage-Limited Context Count-Limited Weights Substrate Crossover Lives Experience-Collection"
+  },
+  {
+   "class": "agent",
+   "query": "in-context route gain ALFWorld same-type procedure copy saturates bank holds items per"
+  },
+  {
+   "class": "adjacent",
+   "query": "many-shot in-context learning number of examples saturation"
+  },
+  {
+   "class": "baseline",
+   "query": "static few-shot exemplars per task type"
+  },
+  {
+   "class": "agent",
+   "query": "Coverage-Limited Context Count-Limited Weights Substrate Crossover Lives Experience-Collection ALFWorld"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2606.17016",
+   "date": "2026-06-15",
+   "venue": "",
+   "sim": 0.546,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "TokenPilot: Cache-Efficient Context Management for LLM Agents"
+  },
+  {
+   "id": "arxiv:2406.15334",
+   "date": "2024-06-21",
+   "venue": "",
+   "sim": 0.493,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Multimodal Task Vectors Enable Many-Shot Multimodal In-Context Learning"
+  },
+  {
+   "id": "arxiv:2503.08640",
+   "date": "2025-03-11",
+   "venue": "",
+   "sim": 0.489,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Efficient Many-Shot In-Context Learning with Dynamic Block-Sparse\n  Attention"
+  },
+  {
+   "id": "arxiv:2608.22695",
+   "date": "2026-08-24",
+   "venue": "",
+   "sim": 0.487,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Enrich-Retrieve-Rank: Scaling Capability Discovery Beyond In-Context Routing"
+  },
+  {
+   "id": "arxiv:2404.11018",
+   "date": "2024-04-17",
+   "venue": "",
+   "sim": 0.479,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Many-Shot In-Context Learning"
+  },
+  {
+   "id": "arxiv:2506.04579",
+   "date": "2025-06-05",
+   "venue": "",
+   "sim": 0.468,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Selecting Demonstrations for Many-Shot In-Context Learning via Gradient Matching"
+  },
+  {
+   "id": "arxiv:2405.09798",
+   "date": "2024-05-16",
+   "venue": "",
+   "sim": 0.457,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Many-Shot In-Context Learning in Multimodal Foundation Models"
+  },
+  {
+   "id": "arxiv:2602.11748",
+   "date": "2026-02-12",
+   "venue": "",
+   "sim": 0.452,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Think Longer to Explore Deeper: Learn to Explore In-Context via Length-Incentivized Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2506.11103",
+   "date": "2025-06-06",
+   "venue": "",
+   "sim": 0.435,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "You Only Fine-tune Once: Many-Shot In-Context Fine-Tuning for Large\n  Language Model"
+  },
+  {
+   "id": "arxiv:2407.21787",
+   "date": "2024-07-31",
+   "venue": "",
+   "sim": 0.43,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Large Language Monkeys: Scaling Inference Compute with Repeated Sampling"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 24,
+  "agent": 18,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 0
+ },
+ "web_jobs": [
+  {
+   "query": "route gain same-type procedure copy saturates holds items per task type three 2025 arXiv"
+  },
+  {
+   "query": "data diversity versus quantity scaling supervised fine-tuning 2025 arXiv"
+  }
+ ]
+}

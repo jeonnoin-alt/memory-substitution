@@ -1,0 +1,190 @@
+{
+ "name": "style_outruns_content",
+ "keys": {
+  "agent": [
+   "planted dispositions in agent memory generalize across task types beyond internalized procedures",
+   "marker adoption transfer under SFT and memory-conditioned on-policy self-distillation sanitization ALFWorld",
+   "durability of planted traits versus content gain under continued training on clean data"
+  ],
+  "mechanism_home": [
+   "style versus facts what fine-tuning injects stylistic features generalize faster than knowledge",
+   "superficial alignment hypothesis format learned from few examples generalizes broadly",
+   "recently learned stylistic behaviour forgotten faster than task knowledge under continued fine-tuning"
+  ],
+  "adjacent": [
+   "style transfers from few examples while facts need many (From Style to Facts)",
+   "narrow fine-tuning generalizes broadly emergent misalignment",
+   "SFT memorizes RL generalizes; subliminal learning as a fragile LoRA artefact with inverted-U in rank"
+  ],
+  "baseline": [
+   "sanitize explicit markers from the training data",
+   "one epoch of continued fine-tuning on clean marker-free data",
+   "in-context instruction or contradicting context to suppress the marker"
+  ],
+  "methods": [
+   "Subliminal learning; steering-vector account; Subliminal Learning is a LoRA Artifact; corridor regularization",
+   "Channel Location Constrains Auditability; Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation",
+   "From Style to Facts; SFT Memorizes RL Generalizes; OPSD"
+  ],
+  "environment": [
+   "ALFWorld clean_then_place heat_then_place cool_then_place pick_two_obj_and_place valid_seen valid_unseen",
+   "QLoRA nf4 r=32 rank ladder 8 128",
+   "274 games 3 seeds"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "style versus facts what fine-tuning injects stylistic features generalize faster than knowledge"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "superficial alignment hypothesis format learned from few examples generalizes broadly"
+  },
+  {
+   "class": "agent",
+   "query": "planted dispositions in agent memory generalize across task types beyond internalized procedures"
+  },
+  {
+   "class": "agent",
+   "query": "marker adoption transfer under SFT and memory-conditioned on-policy self-distillation sanitization ALFWorld"
+  },
+  {
+   "class": "adjacent",
+   "query": "style transfers from few examples while facts need many (From Style to Facts)"
+  },
+  {
+   "class": "baseline",
+   "query": "sanitize explicit markers from the training data"
+  },
+  {
+   "class": "methods",
+   "query": "Subliminal learning; steering-vector account; Subliminal Learning is a LoRA Artifact; corridor regularization Channel Location Constrains Auditability; Subliminal Transfer of Unsafe Behaviors in AI Ag"
+  },
+  {
+   "class": "agent",
+   "query": "planted dispositions in agent memory generalize across task types beyond internalized procedures ALFWorld clean_then_place heat_then_place cool_then_place pick_two_obj_and_place valid_seen valid_unsee"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2605.01078",
+   "date": "2026-05-01",
+   "venue": "",
+   "sim": 0.547,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "A Sentence Relation-Based Approach to Sanitizing Malicious Instructions"
+  },
+  {
+   "id": "arxiv:2309.08628",
+   "date": "2023-09-12",
+   "venue": "",
+   "sim": 0.405,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Recovering from Privacy-Preserving Masking with Large Language Models"
+  },
+  {
+   "id": "arxiv:2509.19091",
+   "date": "2025-09-23",
+   "venue": "",
+   "sim": 0.403,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Training Flow Matching Models with Reliable Labels via Self-Purification"
+  },
+  {
+   "id": "arxiv:2510.21322",
+   "date": "2025-10-24",
+   "venue": "",
+   "sim": 0.401,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Leverage Unlearning to Sanitize LLMs"
+  },
+  {
+   "id": "arxiv:2311.04850",
+   "date": "2023-11-08",
+   "venue": "",
+   "sim": 0.355,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Rethinking Benchmark and Contamination for Language Models with\n  Rephrased Samples"
+  },
+  {
+   "id": "arxiv:2406.19271",
+   "date": "2024-06-27",
+   "venue": "",
+   "sim": 0.307,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "AutoPureData: Automated Filtering of Web Data for LLM Fine-tuning"
+  },
+  {
+   "id": "arxiv:2602.03183",
+   "date": "2026-02-03",
+   "venue": "",
+   "sim": 0.3,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Privasis: Synthesizing the Largest \"Public\" Private Dataset from Scratch"
+  },
+  {
+   "id": "arxiv:2308.08493",
+   "date": "2023-08-16",
+   "venue": "",
+   "sim": 0.296,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Time Travel in LLMs: Tracing Data Contamination in Large Language Models"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 0,
+  "agent": 0,
+  "adjacent": 0,
+  "baseline": 8,
+  "methods": 0
+ },
+ "web_jobs": [
+  {
+   "query": "style versus facts what fine-tuning injects stylistic features generalize faster than knowledge 2025 arXiv"
+  },
+  {
+   "query": "superficial alignment hypothesis format learned from few examples generalizes broadly 2025 arXiv"
+  }
+ ]
+}

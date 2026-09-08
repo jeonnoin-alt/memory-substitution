@@ -1,0 +1,21 @@
+=== ENTAILMENT CHECK (automated pre-review; evidence, not a verdict) ===
+For each prediction: what would falsify it, and whether the stated arms can produce that outcome at the stated power.
+
+Proposal: reversal_savings_latent_retention — headline P1 is **entailed**; open 0 / entailed 3 / near-entailed 0 / unresolvable 2; verdict revise
+
+- P1 [entailed] falsifier: savings ratio >= 0.8, or no erosion of the continual LoRA at B end.
+  reason: The continual adapter enters A2 warm-started from the weights that already learned A1 while the control is cold-initialized by definition, so a warm adapter relearning faster is an update-rule identity, and the second disjunct is removed by Gate 1, which lengthens B and re-runs rather than letting no-erosion falsify the claim.
+  fix: Match the control on warm start and optimizer budget (a reset adapter warm-started from a rule-A-free adapter, or equal A2 step counts from a matched init) and cap the B-lengthening loop with a pre-registered failure outcome if erosion never occurs.
+- P2 [unresolvable] falsifier: the decayed bank obtains savings with a stale tax inside noise (retrieval-side retention for free).
+  reason: The 10-point tax threshold and the 5-point 'within noise' bound for the LoRA both sit at or inside the stated +/-9 paired CI, so 'exceeds 10' and 'within noise' cannot be separated at the stated power.
+  fix: Increase probe games and seeds until the paired CI is about +/-3, or restate the thresholds as multiples of the measured MDE (tax >= 3x MDE versus <= 1x MDE) with pre-registered equivalence tests.
+- P3 [entailed] falsifier: none stated - 'behaves like the unbounded bank' carries no threshold, and both larger and smaller tax or savings are reportable.
+  reason: 1:1 replay of all past items keeps rule-A items in every B-phase gradient step, so both the stale tax and the savings follow from the update rule, and with no equivalence margin no measured outcome can contradict 'explicit retention costs the same in both substrates'.
+  fix: State a two-sided equivalence margin on the tax and savings differences with CIs, and add a partial-replay ladder (0, 0.25, 1:1) so the retention-cost trade-off is measured rather than imposed by the arm definition.
+- P4 [unresolvable] falsifier: LoRA arms erode unshifted types by more than the bank does.
+  reason: The 5-point loss bound and the undefined 'measurable margin' for N=200 vs N=600 both lie inside the stated +/-9 paired CI, and the two erosions are measured on different scales - retrieval gain over k=0 for the bank, which is floored at the base model, versus an absolute drop for the adapter, which is not - so the sign comparison has no common estimand.
+  fix: Define erosion identically for both substrates as the drop from each arm's own A1-end level on the same paired probe, pre-register the capacity margin, and power the unshifted probe so a 5-point equivalence bound falls outside the CI.
+- P5 [entailed] falsifier: a bank arm dominating the continual LoRA on the two-axis plot at the A2 recovery point.
+  reason: The token axis is fixed by the arm definitions - a memory-absent adapter injects zero tokens and a k=3 bank injects about 430 per episode by construction - so no bank arm can dominate on that axis whatever is measured, and the 0.3 GPU-hour figure is a budget assertion rather than an outcome.
+  fix: Score both substrates on one common cost scalar (total FLOPs or wall-clock and dollars including training and serving) at matched accuracy, and include a LoRA arm that also retrieves at inference so the token axis is not decided by the arm labels.
+- shared terms: P1-P2: both use the continual-minus-reset LoRA difference on the shifted probe (P1's 5-point erosion check and P2's 5-point LoRA stale tax), so one largely determines the other.; P1-P5: P5's 0.3 GPU-hours is the A2 recovery item count from P1's savings numerator multiplied by the fixed per-chunk cost - an algebraic re-expression, not a new measurement.; P2-P3: the unbounded bank's stale tax and savings are the reference terms in both, so P3 is scored against the same two measured numbers.; P2-P4: both read the FIFO bank's shifted and unshifted probe levels at matched stream positions.

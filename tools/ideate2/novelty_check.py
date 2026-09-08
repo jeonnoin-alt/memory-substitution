@@ -125,7 +125,7 @@ def main():
     ap.add_argument("--model", default="fable", help="key extraction is a scan task: Fable (PI policy)")
     ap.add_argument("--batch", type=int, default=5, help="ideas per key-extraction job")
     ap.add_argument("--per-query", type=int, default=8); ap.add_argument("--top", type=int, default=10)
-    ap.add_argument("--s2-queries", type=int, default=3, help="how many of the ordered queries also go to S2 (HF gets all)")
+    ap.add_argument("--s2-queries", type=int, default=2, help="how many AGENT-class queries also go to S2 with a 12-month window (home/adjacent/baseline queries always go to S2, unrestricted)")
     a = ap.parse_args()
     ideas = json.load(open(a.ideas))
     os.makedirs(a.out, exist_ok=True)
@@ -151,10 +151,15 @@ def main():
                 if not k.get(c): k[c] = rk.get(c, [])
         qs = queries_from_keys(k); qclass = {q: c for c, q in qs}
         papers: list[Paper] = []
+        n_agent_s2 = 0
         for n_, (cls, q) in enumerate(qs):
-            papers += hf.search(q, a.per_query)
-            if n_ < a.s2_queries:                      # S2 is rate-limited to ~1 req/s across all agents; keep it for the top queries
-                papers += s2.search(q, a.per_query, year_from=year_from)
+            papers += hf.search(q, a.per_query)          # HF Papers: recent arXiv, good for the agent-memory phrasing
+            if cls in ("mechanism_home", "adjacent", "baseline"):
+                # the home literature is older by nature (RAG robustness 2023-24, knowledge conflict 2023, poisoning 2025):
+                # HF misses it and a 12-month S2 window excluded it in the 2026-09-07 run, so S2 runs unrestricted here
+                papers += s2.search(q, a.per_query + 2)
+            elif n_agent_s2 < a.s2_queries:              # S2 is rate-limited (~1 req/s across agents): agent phrasing gets --s2-queries recent lookups
+                papers += s2.search(q, a.per_query, year_from=year_from); n_agent_s2 += 1
         papers = dedupe(papers)
         card, rows = build_card(i, papers, embed, qclass, a.top) if papers else ("(no candidates returned)\n", [])
         open(os.path.join(a.out, f"{name}.card.md"), "w").write(card)

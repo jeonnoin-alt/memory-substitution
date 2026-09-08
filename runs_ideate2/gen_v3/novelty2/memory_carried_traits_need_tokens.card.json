@@ -1,0 +1,231 @@
+{
+ "name": "memory_carried_traits_need_tokens",
+ "keys": {
+  "agent": [
+   "subliminal transfer of agent traits through distillation memory-carried versus parameter-carried teacher",
+   "on-policy reverse-KL distillation masking trait-expressing tokens abolishes trait transfer memory-free student",
+   "memory-conditioned self-distillation transfers behavioural trait planted in retrieved memory ALFWorld"
+  ],
+  "mechanism_home": [
+   "subliminal learning trait transfer through semantically unrelated data shared initialization teacher parameters",
+   "in-context induced behaviour versus weight-carried behaviour distillation channel token loss masking",
+   "on-policy distillation reverse KL transfers teacher preferences beyond the sanitized sampled tokens"
+  ],
+  "adjacent": [
+   "subliminal learning requires shared initialization and a teacher whose parameters differ in the trait direction",
+   "corridor regularization trait-direction drift from preference gaps in clean SFT data",
+   "on-policy distillation transfers teacher behaviour more efficiently than SFT on sanitized data"
+  ],
+  "baseline": [
+   "keyword sanitation removing trait-expressing steps from distillation data",
+   "loss masking of trait spans during distillation",
+   "projecting the trait direction out of the LoRA update"
+  ],
+  "methods": [
+   "Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation; Subliminal Learning (Cloud et al.); Subliminal Learning is a LoRA Artifact",
+   "corridor regularization; Channel Location Constrains the Auditability of Subliminal Learning; Decoupling KL and Trajectories",
+   "OPSD; OPCD; Skill-SD; LOPSD"
+  ],
+  "environment": [
+   "ALFWorld valid_seen valid_unseen",
+   "QLoRA rank 32 self-teacher same base weights",
+   "trait-LoRA teacher"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "subliminal learning trait transfer through semantically unrelated data shared initialization teacher parameters"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "in-context induced behaviour versus weight-carried behaviour distillation channel token loss masking"
+  },
+  {
+   "class": "agent",
+   "query": "subliminal transfer of agent traits through distillation memory-carried versus parameter-carried teacher"
+  },
+  {
+   "class": "agent",
+   "query": "on-policy reverse-KL distillation masking trait-expressing tokens abolishes trait transfer memory-free student"
+  },
+  {
+   "class": "adjacent",
+   "query": "subliminal learning requires shared initialization and a teacher whose parameters differ in the trait direction"
+  },
+  {
+   "class": "baseline",
+   "query": "keyword sanitation removing trait-expressing steps from distillation data"
+  },
+  {
+   "class": "methods",
+   "query": "Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation; Subliminal Learning (Cloud et al.); Subliminal Learning is a LoRA Artifact corridor regularization; Channel Location Constrains the Au"
+  },
+  {
+   "class": "agent",
+   "query": "subliminal transfer of agent traits through distillation memory-carried versus parameter-carried teacher ALFWorld valid_seen valid_unseen QLoRA rank 32 self-teacher same base weights"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2606.22019",
+   "date": "2026-06-20",
+   "venue": "arXiv.org",
+   "sim": 0.617,
+   "channels": [
+    "hf",
+    "s2"
+   ],
+   "via": [
+    "adjacent",
+    "agent",
+    "mechanism_home",
+    "methods"
+   ],
+   "title": "Channel Location Constrains the Auditability of Subliminal Learning"
+  },
+  {
+   "id": "arxiv:2608.07169",
+   "date": "2026-08-07",
+   "venue": "",
+   "sim": 0.582,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory"
+  },
+  {
+   "id": "arxiv:2604.15559",
+   "date": "2026-04-16",
+   "venue": "arXiv.org",
+   "sim": 0.573,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation"
+  },
+  {
+   "id": "arxiv:2604.25783",
+   "date": "2026-04-28",
+   "venue": "",
+   "sim": 0.57,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "agent",
+    "mechanism_home",
+    "methods"
+   ],
+   "title": "Subliminal Steering: Stronger Encoding of Hidden Signals"
+  },
+  {
+   "id": "arxiv:2606.00995",
+   "date": "2026-06-03",
+   "venue": "",
+   "sim": 0.549,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "agent",
+    "mechanism_home",
+    "methods"
+   ],
+   "title": "Subliminal Learning Is Steering Vector Distillation"
+  },
+  {
+   "id": "arxiv:2507.14805",
+   "date": "2025-07-20",
+   "venue": "",
+   "sim": 0.549,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "agent",
+    "mechanism_home",
+    "methods"
+   ],
+   "title": "Subliminal Learning: Language models transmit behavioral traits via\n  hidden signals in data"
+  },
+  {
+   "id": "arxiv:1904.05835",
+   "date": "2019-04-11",
+   "venue": "",
+   "sim": 0.514,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Variational Information Distillation for Knowledge Transfer"
+  },
+  {
+   "id": "arxiv:2412.15303",
+   "date": "2024-12-19",
+   "venue": "",
+   "sim": 0.498,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Self-Evolution Knowledge Distillation for LLM-based Machine Translation"
+  },
+  {
+   "id": "arxiv:2605.30833",
+   "date": "2026-05-29",
+   "venue": "",
+   "sim": 0.494,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Your Teacher Can't Help You Here: Combating Supervision Fidelity Decay in On-Policy Distillation"
+  },
+  {
+   "id": "arxiv:2605.12798",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.474,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "mechanism_home",
+    "methods"
+   ],
+   "title": "Emergent and Subliminal Misalignment Through the Lens of Data-Mediated Transfer"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 17,
+  "agent": 17,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "subliminal learning trait transfer through semantically unrelated data shared initialization teacher parameters 2025 arXiv"
+  },
+  {
+   "query": "in-context induced behaviour versus weight-carried behaviour distillation channel token loss masking 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,181 @@
+{
+ "name": "retrieved_memory_privilege_is_scene_bound",
+ "keys": {
+  "agent": [
+   "Decomposing Privilege Illusion Privileged Information Retrieved Agent Memory",
+   "retrieved agent episodes privileged information on-policy self-distillation part teacher advantage memory-free student"
+  ],
+  "mechanism_home": [
+   "privileged information on-policy self-distillation part teacher advantage memory-free student can close type-level",
+   "privileged information distillation student cannot close information gap",
+   "knowledge distillation transfers teacher behavior traits student"
+  ],
+  "adjacent": [
+   "in-context demonstrations override explicit instructions",
+   "subliminal learning trait transfer through unrelated data"
+  ],
+  "baseline": [
+   "same-task oracle demonstration upper bound",
+   "inoculation prompting fine-tuning defense"
+  ],
+  "estimand": [
+   "retrieved agent episodes privileged information on-policy self-distillation part teacher advantage"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B"
+  ],
+  "methods": []
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "privileged information on-policy self-distillation part teacher advantage memory-free student can close type-level"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "privileged information distillation student cannot close information gap"
+  },
+  {
+   "class": "agent",
+   "query": "Decomposing Privilege Illusion Privileged Information Retrieved Agent Memory"
+  },
+  {
+   "class": "agent",
+   "query": "retrieved agent episodes privileged information on-policy self-distillation part teacher advantage memory-free student"
+  },
+  {
+   "class": "adjacent",
+   "query": "in-context demonstrations override explicit instructions"
+  },
+  {
+   "class": "baseline",
+   "query": "same-task oracle demonstration upper bound"
+  },
+  {
+   "class": "agent",
+   "query": "Decomposing Privilege Illusion Privileged Information Retrieved Agent Memory ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.18271",
+   "date": "2026-08-18",
+   "venue": "",
+   "sim": 0.505,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Rethinking Privileged Information in On-Policy Self-Distillation"
+  },
+  {
+   "id": "arxiv:2606.30626",
+   "date": "2026-06-29",
+   "venue": "arXiv.org",
+   "sim": 0.474,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "DOPD: Dual On-policy Distillation"
+  },
+  {
+   "id": "arxiv:2607.24447",
+   "date": "2026-07-27",
+   "venue": "arXiv.org",
+   "sim": 0.424,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "RP-OPSD: Resolution-Privileged On-Policy Self-Distillation for Multimodal Large Language Models"
+  },
+  {
+   "id": "arxiv:2606.06076",
+   "date": "2026-06-04",
+   "venue": "arXiv.org",
+   "sim": 0.413,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Learning Visual Spatial Planning from Symbolic State via Modality-Gap-Aware Self-Distillation"
+  },
+  {
+   "id": "arxiv:2606.23124",
+   "date": "2026-06-22",
+   "venue": "arXiv.org",
+   "sim": 0.38,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "PRIDE: Privileged Information-enhanced Distillation for Empathetic Dialogue Generation"
+  },
+  {
+   "id": "arxiv:2603.23871",
+   "date": "2026-03-25",
+   "venue": "arXiv.org",
+   "sim": 0.321,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "HDPO: Hybrid Distillation Policy Optimization via Privileged Self-Distillation"
+  },
+  {
+   "id": "arxiv:2607.17070",
+   "date": "2026-07-19",
+   "venue": "arXiv.org",
+   "sim": 0.274,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Bridging the Information Gap: Semantic Densification and Hindsight Distillation for Cold-Start Prediction"
+  },
+  {
+   "id": "arxiv:2608.09789",
+   "date": "2026-08-10",
+   "venue": "",
+   "sim": 0.254,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "ADOPD: Reference-Privileged On-Policy Distillation for MLLM-Based Industrial Anomaly Detection"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 8,
+  "agent": 0,
+  "adjacent": 0,
+  "baseline": 0,
+  "methods": 0
+ },
+ "web_jobs": [
+  {
+   "query": "privileged information on-policy self-distillation part teacher advantage memory-free student can close type-level 2025 arXiv"
+  },
+  {
+   "query": "privileged information distillation student cannot close information gap 2025 arXiv"
+  }
+ ]
+}

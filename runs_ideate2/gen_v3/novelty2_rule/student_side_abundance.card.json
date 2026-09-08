@@ -1,0 +1,209 @@
+{
+ "name": "student_side_abundance",
+ "keys": {
+  "agent": [
+   "Information Abundance Student-Side Effect Training-Time Memory Dose Suppresses",
+   "Putting retrieved episodes student prompt during step-level SFT lowers action-token loss student"
+  ],
+  "mechanism_home": [
+   "Putting student during step-level SFT lowers action-token loss student has close memory-free",
+   "knowledge distillation transfers teacher behavior traits student",
+   "retrieval-augmented fine-tuning irrelevant context robustness distractor documents"
+  ],
+  "adjacent": [
+   "subliminal learning trait transfer through unrelated data",
+   "long-context training reduces parametric knowledge"
+  ],
+  "baseline": [
+   "inoculation prompting fine-tuning defense",
+   "context dropout during fine-tuning"
+  ],
+  "estimand": [
+   "Putting retrieved episodes student prompt during step-level SFT lowers action-token"
+  ],
+  "environment": [],
+  "methods": [
+   "Paradox"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "Putting student during step-level SFT lowers action-token loss student has close memory-free"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "knowledge distillation transfers teacher behavior traits student"
+  },
+  {
+   "class": "agent",
+   "query": "Information Abundance Student-Side Effect Training-Time Memory Dose Suppresses"
+  },
+  {
+   "class": "agent",
+   "query": "Putting retrieved episodes student prompt during step-level SFT lowers action-token loss student"
+  },
+  {
+   "class": "adjacent",
+   "query": "subliminal learning trait transfer through unrelated data"
+  },
+  {
+   "class": "baseline",
+   "query": "inoculation prompting fine-tuning defense"
+  },
+  {
+   "class": "methods",
+   "query": "Paradox Information Abundance Student-Side Effect Training-Time Memo"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.12218",
+   "date": "2026-08-12",
+   "venue": "",
+   "sim": 0.598,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Information Abundance Paradox: Long-Context Training Undermines Parametric Knowledge"
+  },
+  {
+   "id": "arxiv:2603.15994",
+   "date": "2026-03-16",
+   "venue": "",
+   "sim": 0.586,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Selective Memory for Artificial Intelligence: Write-Time Gating with Hierarchical Archiving"
+  },
+  {
+   "id": "arxiv:2505.04560",
+   "date": "2025-05-07",
+   "venue": "International Conference on Machine Learning",
+   "sim": 0.584,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "ABKD: Pursuing a Proper Allocation of the Probability Mass in Knowledge Distillation via α-β-Divergence"
+  },
+  {
+   "id": "arxiv:2510.04454",
+   "date": "2025-10-06",
+   "venue": "",
+   "sim": 0.574,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "mechanism_home"
+   ],
+   "title": "Mitigating Forgetting Between Supervised and Reinforcement Learning Yields Stronger Reasoners"
+  },
+  {
+   "id": "arxiv:2410.21750",
+   "date": "2024-10-29",
+   "venue": "",
+   "sim": 0.567,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "Learning and Unlearning of Fabricated Knowledge in Language Models"
+  },
+  {
+   "id": "arxiv:2608.07169",
+   "date": "2026-08-07",
+   "venue": "",
+   "sim": 0.566,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory"
+  },
+  {
+   "id": "arxiv:2510.03805",
+   "date": "2025-10-04",
+   "venue": "",
+   "sim": 0.559,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Beyond Token Length: Step Pruner for Efficient and Accurate Reasoning in\n  Large Language Models"
+  },
+  {
+   "id": "arxiv:2510.05024",
+   "date": "2025-10-27",
+   "venue": "",
+   "sim": 0.557,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Inoculation Prompting: Instructing LLMs to misbehave at train-time improves test-time alignment"
+  },
+  {
+   "id": "arxiv:2310.05492",
+   "date": "2023-10-09",
+   "venue": "",
+   "sim": 0.552,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "How Abilities in Large Language Models are Affected by Supervised\n  Fine-tuning Data Composition"
+  },
+  {
+   "id": "arxiv:2410.01380",
+   "date": "2024-10-02",
+   "venue": "",
+   "sim": 0.547,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "Knowledge Entropy Decay during Language Model Pretraining Hinders New Knowledge Acquisition"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 24,
+  "agent": 16,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "Putting student during step-level SFT lowers action-token loss student has close memory-free 2025 arXiv"
+  },
+  {
+   "query": "knowledge distillation transfers teacher behavior traits student 2025 arXiv"
+  }
+ ]
+}

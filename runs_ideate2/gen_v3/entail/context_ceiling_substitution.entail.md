@@ -1,0 +1,23 @@
+=== ENTAILMENT CHECK (automated pre-review; evidence, not a verdict) ===
+For each prediction: what would falsify it, and whether the stated arms can produce that outcome at the stated power.
+
+Proposal: context_ceiling_substitution — headline P2 is **open**; open 1 / entailed 2 / near-entailed 1 / unresolvable 2; verdict revise
+
+- P1 [entailed] falsifier: Slope < 0.3 with intercept > 5 (additivity), or RV > g on retained types (complementarity).
+  reason: RV = (1-r)g + WV is an exact identity in the measured terms ((1-r)g = untrained k=3 minus student k=0; RV = student matched minus student k=0), so the same student k=0 measurement sits on both axes with the same sign and forces the slope toward 1 whenever WV is small, which is precisely what P2 asserts separately.
+  fix: Estimate student k=0 for the x-axis and the y-axis from disjoint seed halves or disjoint game sets, and pre-register the regression of WV (not RV) on (1-r)g so the reported slope is not an identity plus shared noise.
+- P2 [open] falsifier: Pooled WV >= 8 net points for either student.
+  reason: Training can raise accuracy above the untrained-with-context cell, the proposal documents 15-19 points of headroom on valid_seen so no ceiling forces the null, and the 8-point falsifier lies above both the stated 5-point MDE and the +/-4.6 pooled CI.
+- P3 [unresolvable] falsifier: RV < 0.8 g_t on the manufactured type, RV > 0.5 g_t on the trained types, or a difference below 15 net points.
+  reason: The estimand is a difference of two per-type RVs whose single-type CI the proposal itself puts at +/-13-15 net points, so the 15-point threshold is at or inside the noise before the two cells' errors even combine, and r near 0 on a type never in T is already close to forced by the split so only cross-type transfer could move it.
+  fix: Make the memory-free H-set NLL gap the pre-registered primary estimand for P3, or add seeds/games until the per-type difference CI is well under 15 points, and report arm (f) transfer as an explicit manipulation check.
+- P4 [near_entailed] falsifier: The random-type router matching the retention router (residual value not type-localized), or the retention router falling outside 25% of the hybrid gain.
+  reason: Per-type in-context gain is already known to be extremely heterogeneous (+39 to +55 on multi-step types, near 0 on pick-and-place), so a random-type router at the same f must waste roughly half its injections on near-zero-gain types irrespective of retention, and no gain-only router exists to show that r rather than g does the routing; the 25% equivalence margin (~3.75 points off a >=15-point Gate-0 gain) is also below the +/-4.6 pooled CI.
+  fix: Add a gain-only router (top-g types at the same f) as the control the retention router must beat, and set the equivalence margin above the pooled CI or raise seeds until it clears +/-4.6.
+- P5 [entailed] falsifier: The retention router's break-even not earlier than the hybrid's by the factor 1/f, or all-weights beating all-context before N*.
+  reason: A router that injects for a fraction f of episodes has f times the hybrid's injected tokens by its own definition, and N* = training GPU-h divided by per-episode GPU-s saved is the definition of break-even rather than an outcome, so neither clause has a losing branch.
+  fix: Predict an absolute break-even episode count with its CI on total (injected plus generated) GPU-seconds and require accuracy-matched Pareto dominance, so a router that saves prefill but lengthens episodes can fail.
+- P6 [unresolvable] falsifier: A sign reversal of P1-P3 on the on-policy pool, specifically WV >= 8.
+  reason: At 2 seeds the pooled contrast CI widens past the 8-point threshold and the replicate supplies only about a dozen per-type cells for a slope that is an algebraic identity anyway, so a same-sign result is unresolvable rather than confirmatory, and the proposal already reports that P-CD0 and SFT-k0 nearly coincide on this pool.
+  fix: Run the replicate at 3 seeds and restrict P6 to the pooled WV estimand with a margin above the replicate's own measured CI.
+- shared terms: P1-P2: RV minus (1-r)g equals WV exactly (student matched minus untrained k=3), so P1's slope-1/intercept-0 claim and P2's WV = 0 claim are the same measurement.; P1-P3: P3 is P1's regression read at two cells, since RV/g_t = (1-r) + WV/g_t reuses the same student k=0 and untrained k=3 terms.; P2-P6: P6 restates P2's WV >= 8 threshold on the replicate pool with an identical estimand.; P4-P5: the injection fraction f and the Gate-0 hybrid gain set both P4's equivalence margin and P5's 1/f break-even factor.; P1-P4: the retention estimate r_t is both the regressor in P1 and the routing key in P4, so a mis-estimated r moves both.

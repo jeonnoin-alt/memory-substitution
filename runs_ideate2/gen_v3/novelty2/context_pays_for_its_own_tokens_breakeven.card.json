@@ -1,0 +1,223 @@
+{
+ "name": "context_pays_for_its_own_tokens_breakeven",
+ "keys": {
+  "agent": [
+   "retrieved experience shortens agent episodes total token cost break-even fine-tuning versus in-context memory",
+   "context distillation amortization break-even deployment episodes agent memory",
+   "memory-free student versus retrieval-augmented agent cost accounting GPU-seconds"
+  ],
+  "mechanism_home": [
+   "few-shot demonstrations reduce generation length inference cost total tokens accounting",
+   "fine-tuning versus in-context learning amortized inference cost break-even number of queries",
+   "retrieval-augmented generation end-to-end compute cost including downstream inference"
+  ],
+  "adjacent": [
+   "fine-tuning versus in-context learning cost crossover with query volume prompt amortization",
+   "prompt compression reduces cost but longer outputs offset savings",
+   "in-context examples change response length verbosity"
+  ],
+  "baseline": [
+   "direct SFT on trajectories",
+   "count injected prompt tokens only",
+   "prompt caching of shared demonstrations"
+  ],
+  "methods": [
+   "Inference-Time Distillation self-consistency cascades",
+   "Experience Distillation",
+   "ReMe",
+   "MemHarness",
+   "PMD",
+   "SKILL0",
+   "pi-Distill",
+   "SESA",
+   "Agentic Context Management"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "Qwen3-8B",
+   "QLoRA nf4"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "few-shot demonstrations reduce generation length inference cost total tokens accounting"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "fine-tuning versus in-context learning amortized inference cost break-even number of queries"
+  },
+  {
+   "class": "agent",
+   "query": "retrieved experience shortens agent episodes total token cost break-even fine-tuning versus in-context memory"
+  },
+  {
+   "class": "agent",
+   "query": "context distillation amortization break-even deployment episodes agent memory"
+  },
+  {
+   "class": "adjacent",
+   "query": "fine-tuning versus in-context learning cost crossover with query volume prompt amortization"
+  },
+  {
+   "class": "baseline",
+   "query": "direct SFT on trajectories"
+  },
+  {
+   "class": "methods",
+   "query": "Inference-Time Distillation self-consistency cascades Experience Distillation ReMe retrieved experience shortens agent episodes total token cos"
+  },
+  {
+   "class": "agent",
+   "query": "retrieved experience shortens agent episodes total token cost break-even fine-tuning versus in-context memory ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.598,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2608.28044",
+   "date": "2026-08-28",
+   "venue": "",
+   "sim": 0.531,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Characterization of Request and Token Energy Costs for LLM Inference Workloads on GPU Platforms"
+  },
+  {
+   "id": "arxiv:2605.12493",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.505,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues"
+  },
+  {
+   "id": "arxiv:2609.02737",
+   "date": "2026-09-02",
+   "venue": "",
+   "sim": 0.479,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Language Models Can Control Their Own Attention"
+  },
+  {
+   "id": "arxiv:2607.21051",
+   "date": "2026-07-23",
+   "venue": "",
+   "sim": 0.455,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Sample-Efficient Learning from Agent Experience"
+  },
+  {
+   "id": "arxiv:2511.23271",
+   "date": "2025-11-28",
+   "venue": "",
+   "sim": 0.421,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Behavior-Equivalent Token: Single-Token Replacement for Long Prompts in LLMs"
+  },
+  {
+   "id": "arxiv:2603.18272",
+   "date": "2026-03-18",
+   "venue": "",
+   "sim": 0.412,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Retrieval-Augmented LLM Agents: Learning to Learn from Experience"
+  },
+  {
+   "id": "arxiv:2503.08640",
+   "date": "2025-03-11",
+   "venue": "",
+   "sim": 0.41,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Efficient Many-Shot In-Context Learning with Dynamic Block-Sparse\n  Attention"
+  },
+  {
+   "id": "arxiv:2606.05684",
+   "date": "2026-06-04",
+   "venue": "",
+   "sim": 0.407,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "AdaMEM: Test-Time Adaptive Memory for Language Agents"
+  },
+  {
+   "id": "arxiv:2603.04257",
+   "date": "2026-03-04",
+   "venue": "",
+   "sim": 0.393,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Memex(RL): Scaling Long-Horizon LLM Agents via Indexed Experience Memory"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 20,
+  "agent": 8,
+  "adjacent": 0,
+  "baseline": 0,
+  "methods": 0
+ },
+ "web_jobs": [
+  {
+   "query": "few-shot demonstrations reduce generation length inference cost total tokens accounting 2025 arXiv"
+  },
+  {
+   "query": "fine-tuning versus in-context learning amortized inference cost break-even number of queries 2025 arXiv"
+  }
+ ]
+}

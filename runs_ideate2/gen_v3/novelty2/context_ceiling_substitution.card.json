@@ -1,0 +1,227 @@
+{
+ "name": "context_ceiling_substitution",
+ "keys": {
+  "agent": [
+   "distilled student with experience put back in context no better than untrained agent ceiling",
+   "marginal value of weights given context substitution not additivity agent memory internalization",
+   "retention-routed memory injection per task type hybrid weights plus retrieval fraction of tokens"
+  ],
+  "mechanism_home": [
+   "fine-tuning gains vanish when the same information is provided in the prompt redundancy of parametric and in-context knowledge",
+   "knowledge injection fine-tuning versus retrieval augmentation complementarity ceiling",
+   "selective retrieval only when parametric knowledge is insufficient adaptive retrieval routing"
+  ],
+  "adjacent": [
+   "retrieval augmentation and fine-tuning are complementary additive gains knowledge injection",
+   "adaptive retrieval when to retrieve based on parametric confidence outperforms always retrieve",
+   "fine-tuning on retrieved context creates dependence on retrieval crutch"
+  ],
+  "baseline": [
+   "always inject k=3 retrieved items full hybrid",
+   "retrieve only when similarity threshold exceeded",
+   "confidence-based adaptive retrieval self-knowledge"
+  ],
+  "methods": [
+   "Experience Distillation",
+   "SESA",
+   "Skill0.5 difficulty-aware router",
+   "SKILL0",
+   "UniMem",
+   "COVE",
+   "retrieval-augmented SFT",
+   "in-context distillation",
+   "DiSC",
+   "Doc-to-LoRA"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "QLoRA SFT",
+   "context distillation",
+   "vLLM ReAct",
+   "MiniLM retrieval"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "fine-tuning gains vanish when the same information is provided in the prompt redundancy of parametric and in-context knowledge"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "knowledge injection fine-tuning versus retrieval augmentation complementarity ceiling"
+  },
+  {
+   "class": "agent",
+   "query": "distilled student with experience put back in context no better than untrained agent ceiling"
+  },
+  {
+   "class": "agent",
+   "query": "marginal value of weights given context substitution not additivity agent memory internalization"
+  },
+  {
+   "class": "adjacent",
+   "query": "retrieval augmentation and fine-tuning are complementary additive gains knowledge injection"
+  },
+  {
+   "class": "baseline",
+   "query": "always inject k=3 retrieved items full hybrid"
+  },
+  {
+   "class": "methods",
+   "query": "Experience Distillation SESA Skill0.5 difficulty-aware router distilled student with experience put back in context no bet"
+  },
+  {
+   "class": "agent",
+   "query": "distilled student with experience put back in context no better than untrained agent ceiling ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2602.16093",
+   "date": "2026-02-17",
+   "venue": "",
+   "sim": 0.662,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Updating Parametric Knowledge with Context Distillation Retains Post-Training Capabilities"
+  },
+  {
+   "id": "arxiv:2608.12218",
+   "date": "2026-08-12",
+   "venue": "",
+   "sim": 0.572,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Information Abundance Paradox: Long-Context Training Undermines Parametric Knowledge"
+  },
+  {
+   "id": "arxiv:2605.08374",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.564,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MemQ: Integrating Q-Learning into Self-Evolving Memory Agents over Provenance DAGs"
+  },
+  {
+   "id": "arxiv:2607.17247",
+   "date": "2026-07-19",
+   "venue": "",
+   "sim": 0.562,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Distilled Reinforcement Learning for LLM Post-training"
+  },
+  {
+   "id": "arxiv:2402.02868",
+   "date": "2024-02-05",
+   "venue": "",
+   "sim": 0.558,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Fine-tuning Reinforcement Learning Models is Secretly a Forgetting\n  Mitigation Problem"
+  },
+  {
+   "id": "arxiv:2306.10480",
+   "date": "2023-06-18",
+   "venue": "",
+   "sim": 0.542,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "IF2Net: Innately Forgetting-Free Networks for Continual Learning"
+  },
+  {
+   "id": "arxiv:2504.05571",
+   "date": "2025-04-08",
+   "venue": "",
+   "sim": 0.519,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Knowledge-Instruct: Effective Continual Pre-training from Limited Data\n  using Instructions"
+  },
+  {
+   "id": "arxiv:2607.13591",
+   "date": "2026-07-15",
+   "venue": "",
+   "sim": 0.506,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Memory as a Controlled Process: Learned Adaptive Memory Management for LLM Agents"
+  },
+  {
+   "id": "arxiv:2608.00017",
+   "date": "2026-06-29",
+   "venue": "",
+   "sim": 0.504,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Memory Reward Inflation in Self-Improving LLM Agents"
+  },
+  {
+   "id": "arxiv:2510.19316",
+   "date": "2025-10-22",
+   "venue": "",
+   "sim": 0.5,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "mechanism_home"
+   ],
+   "title": "KORE: Enhancing Knowledge Injection for Large Multimodal Models via\n  Knowledge-Oriented Augmentations and Constraints"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 19,
+  "adjacent": 8,
+  "baseline": 0,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "fine-tuning gains vanish when the same information is provided in the prompt redundancy of parametric and in-context knowledge 2025 arXiv"
+  },
+  {
+   "query": "knowledge injection fine-tuning versus retrieval augmentation complementarity ceiling 2025 arXiv"
+  }
+ ]
+}

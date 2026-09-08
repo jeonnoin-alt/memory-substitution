@@ -1,0 +1,217 @@
+{
+ "name": "context_ceiling_substitution",
+ "keys": {
+  "agent": [
+   "Substitution In-Context Ceiling Retention-Routed Memory After Internalization",
+   "After experience pool trained Qwen3-32B step-level QLoRA SFT context distillation putting pool"
+  ],
+  "mechanism_home": [
+   "After pool trained Qwen3-32B step-level QLoRA SFT distillation putting pool back leaves",
+   "fine-tuning plus retrieval augmentation complementary or redundant knowledge injection",
+   "knowledge distillation transfers teacher behavior traits student"
+  ],
+  "adjacent": [
+   "retrieval still needed after fine-tuning on the same corpus",
+   "subliminal learning trait transfer through unrelated data"
+  ],
+  "baseline": [
+   "retrieval-augmented fine-tuning baseline",
+   "inoculation prompting fine-tuning defense"
+  ],
+  "estimand": [
+   "After experience pool trained Qwen3-32B step-level QLoRA SFT context distillation"
+  ],
+  "environment": [
+   "Qwen3-32B"
+  ],
+  "methods": [
+   "Distillation",
+   "SESA",
+   "SKILL0",
+   "UniMem"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "After pool trained Qwen3-32B step-level QLoRA SFT distillation putting pool back leaves"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "fine-tuning plus retrieval augmentation complementary or redundant knowledge injection"
+  },
+  {
+   "class": "agent",
+   "query": "Substitution In-Context Ceiling Retention-Routed Memory After Internalization"
+  },
+  {
+   "class": "agent",
+   "query": "After experience pool trained Qwen3-32B step-level QLoRA SFT context distillation putting pool"
+  },
+  {
+   "class": "adjacent",
+   "query": "retrieval still needed after fine-tuning on the same corpus"
+  },
+  {
+   "class": "baseline",
+   "query": "retrieval-augmented fine-tuning baseline"
+  },
+  {
+   "class": "methods",
+   "query": "Distillation SESA SKILL0 Substitution In-Context Ceiling Retention-Routed Memory Afte"
+  },
+  {
+   "class": "agent",
+   "query": "Substitution In-Context Ceiling Retention-Routed Memory After Internalization Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2602.16093",
+   "date": "2026-02-17",
+   "venue": "",
+   "sim": 0.662,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "Updating Parametric Knowledge with Context Distillation Retains Post-Training Capabilities"
+  },
+  {
+   "id": "arxiv:2502.02046",
+   "date": "2025-02-04",
+   "venue": "",
+   "sim": 0.615,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Contextual Memory Reweaving in Large Language Models Using Layered\n  Latent State Reconstruction"
+  },
+  {
+   "id": "arxiv:2604.27003",
+   "date": "2026-04-29",
+   "venue": "",
+   "sim": 0.597,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "When Continual Learning Moves to Memory: A Study of Experience Reuse in LLM Agents"
+  },
+  {
+   "id": "arxiv:2601.19897",
+   "date": "2026-01-27",
+   "venue": "",
+   "sim": 0.586,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Self-Distillation Enables Continual Learning"
+  },
+  {
+   "id": "arxiv:2606.22844",
+   "date": "2026-06-22",
+   "venue": "",
+   "sim": 0.571,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "RaMem: Contextual Reinstatement for Long-term Agentic Memory"
+  },
+  {
+   "id": "arxiv:2609.01532",
+   "date": "2026-09-01",
+   "venue": "",
+   "sim": 0.57,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Knowledge Distillation During Mid-Training Favors Reasoning over Factual Recall"
+  },
+  {
+   "id": "arxiv:2606.03746",
+   "date": "2026-06-02",
+   "venue": "",
+   "sim": 0.569,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "mechanism_home"
+   ],
+   "title": "Qwen-Image-Flash: Beyond Objective Design"
+  },
+  {
+   "id": "arxiv:2605.08374",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.564,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MemQ: Integrating Q-Learning into Self-Evolving Memory Agents over Provenance DAGs"
+  },
+  {
+   "id": "arxiv:2607.17247",
+   "date": "2026-07-19",
+   "venue": "",
+   "sim": 0.562,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Distilled Reinforcement Learning for LLM Post-training"
+  },
+  {
+   "id": "arxiv:2606.11173",
+   "date": "2026-06-09",
+   "venue": "",
+   "sim": 0.548,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "The Role of Feedback Alignment in Self-Distillation"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 21,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "After pool trained Qwen3-32B step-level QLoRA SFT distillation putting pool back leaves 2025 arXiv"
+  },
+  {
+   "query": "fine-tuning plus retrieval augmentation complementary or redundant knowledge injection 2025 arXiv"
+  }
+ ]
+}

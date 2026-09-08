@@ -1,0 +1,207 @@
+{
+ "name": "reversal_savings_latent_retention",
+ "keys": {
+  "agent": [
+   "Silenced Erased Savings Rule Reversal Separate Latent Retention",
+   "rule stream ALFWorld continual QLoRA rule-A accuracy has eroded reset-LoRA floor during"
+  ],
+  "mechanism_home": [
+   "rule stream continual QLoRA rule-A accuracy has eroded reset-LoRA floor during phase",
+   "spurious forgetting relearning savings continual fine-tuning",
+   "knowledge conflict parametric versus contextual knowledge update"
+  ],
+  "adjacent": [
+   "unlearning is reversible relearning attacks",
+   "temporal validity outdated retrieved documents RAG"
+  ],
+  "baseline": [
+   "experience replay continual learning baseline",
+   "recency weighted retrieval time decay"
+  ],
+  "estimand": [
+   "rule stream ALFWorld continual QLoRA rule-A accuracy has eroded reset-LoRA"
+  ],
+  "environment": [
+   "ALFWorld"
+  ],
+  "methods": []
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "rule stream continual QLoRA rule-A accuracy has eroded reset-LoRA floor during phase"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "spurious forgetting relearning savings continual fine-tuning"
+  },
+  {
+   "class": "agent",
+   "query": "Silenced Erased Savings Rule Reversal Separate Latent Retention"
+  },
+  {
+   "class": "agent",
+   "query": "rule stream ALFWorld continual QLoRA rule-A accuracy has eroded reset-LoRA floor during"
+  },
+  {
+   "class": "adjacent",
+   "query": "unlearning is reversible relearning attacks"
+  },
+  {
+   "class": "baseline",
+   "query": "experience replay continual learning baseline"
+  },
+  {
+   "class": "agent",
+   "query": "Silenced Erased Savings Rule Reversal Separate Latent Retention ALFWorld"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2511.04228",
+   "date": "2025-11-06",
+   "venue": "",
+   "sim": 0.551,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "REMIND: Input Loss Landscapes Reveal Residual Memorization in Post-Unlearning LLMs"
+  },
+  {
+   "id": "arxiv:2606.26560",
+   "date": "2026-06-25",
+   "venue": "",
+   "sim": 0.546,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Erase-then-Delta Attention: Decoupling Erase and Write Addresses in Delta-Rule Linear Attention"
+  },
+  {
+   "id": "arxiv:2511.17100",
+   "date": "2025-11-21",
+   "venue": "",
+   "sim": 0.533,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Geometric-Disentangelment Unlearning"
+  },
+  {
+   "id": "arxiv:2509.05316",
+   "date": "2025-08-29",
+   "venue": "",
+   "sim": 0.527,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Standard vs. Modular Sampling: Best Practices for Reliable LLM Unlearning"
+  },
+  {
+   "id": "arxiv:2410.14713",
+   "date": "2024-10-09",
+   "venue": "",
+   "sim": 0.519,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "mechanism_home"
+   ],
+   "title": "QuAILoRA: Quantization-Aware Initialization for LoRA"
+  },
+  {
+   "id": "arxiv:2402.08096",
+   "date": "2024-02-12",
+   "venue": "",
+   "sim": 0.512,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "An Efficient Rehearsal Scheme for Catastrophic Forgetting Mitigation\n  during Multi-stage Fine-tuning"
+  },
+  {
+   "id": "arxiv:2601.18699",
+   "date": "2026-01-26",
+   "venue": "",
+   "sim": 0.51,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Mechanistic Analysis of Catastrophic Forgetting in Large Language Models During Continual Fine-tuning"
+  },
+  {
+   "id": "arxiv:2603.00624",
+   "date": "2026-02-28",
+   "venue": "",
+   "sim": 0.508,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "IDER: IDempotent Experience Replay for Reliable Continual Learning"
+  },
+  {
+   "id": "arxiv:2512.20634",
+   "date": "2025-12-02",
+   "venue": "arXiv.org",
+   "sim": 0.507,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Real Time Detection and Quantitative Analysis of Spurious Forgetting in Continual Learning"
+  },
+  {
+   "id": "arxiv:2401.05605",
+   "date": "2024-01-11",
+   "venue": "",
+   "sim": 0.506,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Scaling Laws for Forgetting When Fine-Tuning Large Language Models"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 21,
+  "agent": 21,
+  "adjacent": 0,
+  "baseline": 8,
+  "methods": 0
+ },
+ "web_jobs": [
+  {
+   "query": "rule stream continual QLoRA rule-A accuracy has eroded reset-LoRA floor during phase 2025 arXiv"
+  },
+  {
+   "query": "spurious forgetting relearning savings continual fine-tuning 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,224 @@
+{
+ "name": "first_item_additive_rest_substitutive",
+ "keys": {
+  "agent": [
+   "retrieved experience dose-response after memory-free internalization context distillation agent",
+   "student fine-tuned on experience pool still benefits from one retrieved item retrieval as cue",
+   "internalized skills plus inference-time memory hybrid token-optimal agent"
+  ],
+  "mechanism_home": [
+   "diminishing returns of in-context demonstrations after fine-tuning number of shots saturation",
+   "retrieval-augmented fine-tuning reduces reliance on retrieved context complementarity of parametric and contextual knowledge",
+   "one-shot cue task recognition versus task learning in-context demonstrations after instruction tuning"
+  ],
+  "adjacent": [
+   "instruction-tuned models gain little from additional few-shot examples zero-shot to few-shot gap shrinks",
+   "in-context learning as task identification demonstrations act as cue rather than learning signal",
+   "information abundance paradox training with context increases context reliance"
+  ],
+  "baseline": [
+   "fine-tuned student at k=0 memory-free",
+   "base model with full retrieval k=7",
+   "retrieval-augmented SFT with items in prompt"
+  ],
+  "methods": [
+   "SESA",
+   "Retrieval-augmented SFT",
+   "Experience Distillation",
+   "PMD",
+   "SKILL0",
+   "Skill0.5",
+   "New News contextual shadowing",
+   "UCOB",
+   "substrate benchmark"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "Qwen3-8B",
+   "QLoRA nf4"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "diminishing returns of in-context demonstrations after fine-tuning number of shots saturation"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "retrieval-augmented fine-tuning reduces reliance on retrieved context complementarity of parametric and contextual knowledge"
+  },
+  {
+   "class": "agent",
+   "query": "retrieved experience dose-response after memory-free internalization context distillation agent"
+  },
+  {
+   "class": "agent",
+   "query": "student fine-tuned on experience pool still benefits from one retrieved item retrieval as cue"
+  },
+  {
+   "class": "adjacent",
+   "query": "instruction-tuned models gain little from additional few-shot examples zero-shot to few-shot gap shrinks"
+  },
+  {
+   "class": "baseline",
+   "query": "fine-tuned student at k=0 memory-free"
+  },
+  {
+   "class": "methods",
+   "query": "SESA Retrieval-augmented SFT Experience Distillation retrieved experience dose-response after memory-free interna"
+  },
+  {
+   "class": "agent",
+   "query": "retrieved experience dose-response after memory-free internalization context distillation agent ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2607.28272",
+   "date": "2026-07-30",
+   "venue": "",
+   "sim": 0.609,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MemHarness: Memory Is Reconstructed, Not Replayed"
+  },
+  {
+   "id": "arxiv:2603.13017",
+   "date": "2026-03-13",
+   "venue": "",
+   "sim": 0.546,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "Structured Distillation for Personalized Agent Memory: 11x Token Reduction with Retrieval Preservation"
+  },
+  {
+   "id": "arxiv:2605.20616",
+   "date": "2026-05-20",
+   "venue": "",
+   "sim": 0.504,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Auto-Dreamer: Learning Offline Memory Consolidation for Language Agents"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.496,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2503.15888",
+   "date": "2025-03-20",
+   "venue": "",
+   "sim": 0.481,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Parameters vs. Context: Fine-Grained Control of Knowledge Reliance in\n  Language Models"
+  },
+  {
+   "id": "arxiv:2603.18272",
+   "date": "2026-03-18",
+   "venue": "",
+   "sim": 0.471,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Retrieval-Augmented LLM Agents: Learning to Learn from Experience"
+  },
+  {
+   "id": "arxiv:2409.11219",
+   "date": "2024-09-17",
+   "venue": "",
+   "sim": 0.471,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Score Forgetting Distillation: A Swift, Data-Free Method for Machine\n  Unlearning in Diffusion Models"
+  },
+  {
+   "id": "arxiv:2503.08640",
+   "date": "2025-03-11",
+   "venue": "",
+   "sim": 0.471,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Efficient Many-Shot In-Context Learning with Dynamic Block-Sparse\n  Attention"
+  },
+  {
+   "id": "arxiv:2406.10996",
+   "date": "2024-06-16",
+   "venue": "",
+   "sim": 0.459,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "THEANINE: Revisiting Memory Management in Long-term Conversations with\n  Timeline-augmented Response Generation"
+  },
+  {
+   "id": "arxiv:2602.02244",
+   "date": "2026-02-02",
+   "venue": "",
+   "sim": 0.459,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Learning While Staying Curious: Entropy-Preserving Supervised Fine-Tuning via Adaptive Self-Distillation for Large Reasoning Models"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 22,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "diminishing returns of in-context demonstrations after fine-tuning number of shots saturation 2025 arXiv"
+  },
+  {
+   "query": "retrieval-augmented fine-tuning reduces reliance on retrieved context complementarity of parametric and contextual knowledge 2025 arXiv"
+  }
+ ]
+}

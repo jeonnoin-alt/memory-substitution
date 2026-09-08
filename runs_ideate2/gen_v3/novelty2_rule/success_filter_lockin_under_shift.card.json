@@ -1,0 +1,201 @@
+{
+ "name": "success_filter_lockin_under_shift",
+ "keys": {
+  "agent": [
+   "Locked Successes Success-Filtered Self-Collected Experience after Hidden Rule",
+   "agent stores successes hidden rule change couples read write sides memory stale"
+  ],
+  "mechanism_home": [
+   "stores successes hidden rule change couples read write sides stale items suppress",
+   "knowledge conflict parametric versus contextual knowledge update",
+   "self-training confirmation bias filtered self-generated data collapse"
+  ],
+  "adjacent": [
+   "temporal validity outdated retrieved documents RAG",
+   "model collapse recursive training on own outputs"
+  ],
+  "baseline": [
+   "recency weighted retrieval time decay",
+   "write failures as well as successes to memory"
+  ],
+  "estimand": [
+   "agent stores successes hidden rule change couples read write sides"
+  ],
+  "environment": [],
+  "methods": []
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "stores successes hidden rule change couples read write sides stale items suppress"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "knowledge conflict parametric versus contextual knowledge update"
+  },
+  {
+   "class": "agent",
+   "query": "Locked Successes Success-Filtered Self-Collected Experience after Hidden Rule"
+  },
+  {
+   "class": "agent",
+   "query": "agent stores successes hidden rule change couples read write sides memory stale"
+  },
+  {
+   "class": "adjacent",
+   "query": "temporal validity outdated retrieved documents RAG"
+  },
+  {
+   "class": "baseline",
+   "query": "recency weighted retrieval time decay"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.04003",
+   "date": "2026-08-04",
+   "venue": "",
+   "sim": 0.649,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents"
+  },
+  {
+   "id": "arxiv:2608.25553",
+   "date": "2026-08-28",
+   "venue": "",
+   "sim": 0.617,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "When Stale Constraints Go Unchecked: Budgeted Verification Failures in Inherited Agent Memory"
+  },
+  {
+   "id": "arxiv:2605.06132",
+   "date": "2026-05-07",
+   "venue": "",
+   "sim": 0.605,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "MemReranker: Reasoning-Aware Reranking for Agent Memory Retrieval"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.585,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2606.10241",
+   "date": "2026-06-08",
+   "venue": "",
+   "sim": 0.575,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Regimes: An Auditable, Held-Out-Gated Improvement Loop Demonstrated on LongMemEval with ActiveGraph"
+  },
+  {
+   "id": "arxiv:2606.06448",
+   "date": "2026-06-04",
+   "venue": "",
+   "sim": 0.563,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Agent Memory: Characterization and System Implications of Stateful Long-Horizon Workloads"
+  },
+  {
+   "id": "arxiv:2606.17591",
+   "date": "2026-06-16",
+   "venue": "",
+   "sim": 0.547,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "mechanism_home"
+   ],
+   "title": "Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2606.26511",
+   "date": "2026-06-25",
+   "venue": "",
+   "sim": 0.538,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Temporal Validity in Retrieval Memory: Eliminating Stale-Fact Errors for AI Agents over Evolving Knowledge"
+  },
+  {
+   "id": "arxiv:2606.00408",
+   "date": "2026-05-29",
+   "venue": "",
+   "sim": 0.537,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Masking Stale Observations Helps Search Agents -- Until It Doesn't: A Regime Map and Its Mechanism"
+  },
+  {
+   "id": "arxiv:2605.26252",
+   "date": "2026-05-25",
+   "venue": "",
+   "sim": 0.525,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Is Agent Memory a Database? Rethinking Data Foundations for Long-Term AI Agent Memory"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 23,
+  "agent": 16,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 0
+ },
+ "web_jobs": [
+  {
+   "query": "stores successes hidden rule change couples read write sides stale items suppress 2025 arXiv"
+  },
+  {
+   "query": "knowledge conflict parametric versus contextual knowledge update 2025 arXiv"
+  }
+ ]
+}

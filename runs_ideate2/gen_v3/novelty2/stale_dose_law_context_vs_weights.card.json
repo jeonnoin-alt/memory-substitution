@@ -1,0 +1,221 @@
+{
+ "name": "stale_dose_law_context_vs_weights",
+ "keys": {
+  "agent": [
+   "outdated experience retrieval harm dose agent memory rule change ALFWorld",
+   "stale retrieved experiences versus fine-tuning on stale trajectories continual LoRA recovery",
+   "top-k retrieved memory conflict position effect agent recovery after distribution shift"
+  ],
+  "mechanism_home": [
+   "knowledge conflict in-context single conflicting document position sensitivity counterfactual context override",
+   "data poisoning fraction of corrupted samples threshold fine-tuning mixture proportion behaviour",
+   "mixture of contradictory demonstrations greedy decoding majority mode versus temperature sampling proportional mixing"
+  ],
+  "adjacent": [
+   "counterfactual context overrides parametric knowledge single misleading passage lost in the middle position bias",
+   "fine-tuning on small fraction of poisoned samples flips behaviour data poisoning constant sample count",
+   "sampling temperature reveals mixture policy modes greedy decoding collapses to majority behaviour"
+  ],
+  "baseline": [
+   "temporal validity filter recency filter for retrieval",
+   "static instruction stating the changed rule",
+   "FIFO bounded memory eviction"
+  ],
+  "methods": [
+   "The Compliance Trap",
+   "When Continual Learning Moves to Memory",
+   "Controlled Memory Interference",
+   "STALE stale memory detection",
+   "When Memory Lies",
+   "Information abundance paradox",
+   "Live-Evo"
+  ],
+  "environment": [
+   "ALFWorld",
+   "QLoRA nf4",
+   "Qwen3-32B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "knowledge conflict in-context single conflicting document position sensitivity counterfactual context override"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "data poisoning fraction of corrupted samples threshold fine-tuning mixture proportion behaviour"
+  },
+  {
+   "class": "agent",
+   "query": "outdated experience retrieval harm dose agent memory rule change ALFWorld"
+  },
+  {
+   "class": "agent",
+   "query": "stale retrieved experiences versus fine-tuning on stale trajectories continual LoRA recovery"
+  },
+  {
+   "class": "adjacent",
+   "query": "counterfactual context overrides parametric knowledge single misleading passage lost in the middle position bias"
+  },
+  {
+   "class": "baseline",
+   "query": "temporal validity filter recency filter for retrieval"
+  },
+  {
+   "class": "methods",
+   "query": "The Compliance Trap When Continual Learning Moves to Memory Controlled Memory Interference outdated experience retrieval harm dose agent memory rule ch"
+  },
+  {
+   "class": "agent",
+   "query": "outdated experience retrieval harm dose agent memory rule change ALFWorld ALFWorld QLoRA nf4"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2512.16962",
+   "date": "2025-12-18",
+   "venue": "",
+   "sim": 0.517,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MemoryGraft: Persistent Compromise of LLM Agents via Poisoned Experience Retrieval"
+  },
+  {
+   "id": "arxiv:2608.02508",
+   "date": "2026-08-10",
+   "venue": "",
+   "sim": 0.486,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States"
+  },
+  {
+   "id": "arxiv:2510.02373",
+   "date": "2025-09-29",
+   "venue": "",
+   "sim": 0.479,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory"
+  },
+  {
+   "id": "arxiv:2603.18272",
+   "date": "2026-03-18",
+   "venue": "",
+   "sim": 0.47,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Retrieval-Augmented LLM Agents: Learning to Learn from Experience"
+  },
+  {
+   "id": "arxiv:2606.17591",
+   "date": "2026-06-16",
+   "venue": "",
+   "sim": 0.46,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2303.03592",
+   "date": "2023-03-07",
+   "venue": "",
+   "sim": 0.455,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Exploring the Limits of Model-Targeted Indiscriminate Data Poisoning\n  Attacks"
+  },
+  {
+   "id": "arxiv:2605.06527",
+   "date": "2026-05-07",
+   "venue": "",
+   "sim": 0.454,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "STALE: Can LLM Agents Know When Their Memories Are No Longer Valid?"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.45,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2501.09705",
+   "date": "2025-01-16",
+   "venue": "",
+   "sim": 0.434,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Practical Continual Forgetting for Pre-trained Vision Models"
+  },
+  {
+   "id": "arxiv:2607.28272",
+   "date": "2026-07-30",
+   "venue": "",
+   "sim": 0.431,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MemHarness: Memory Is Reconstructed, Not Replayed"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 18,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "knowledge conflict in-context single conflicting document position sensitivity counterfactual context override 2025 arXiv"
+  },
+  {
+   "query": "data poisoning fraction of corrupted samples threshold fine-tuning mixture proportion behaviour 2025 arXiv"
+  }
+ ]
+}
