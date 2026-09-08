@@ -1,0 +1,340 @@
+[
+ {
+  "axis": "compiled and static alternatives to retrieval",
+  "gaps": [
+   {
+    "gap": "No card establishes whether distilling trajectories into compiled skills, strategies, or tutorials beats query-time retrieval of the raw trajectories at matched prompt length, and SkillEvolBench's finding that raw reuse often wins leaves the source of any compilation gain (distillation, weighting, auditability, or simply extra context) unresolved.",
+    "card_ids": [
+     "arxiv:2511.07800",
+     "arxiv:2512.23760",
+     "arxiv:2604.07791",
+     "arxiv:2605.24117",
+     "arxiv:2606.03951",
+     "arxiv:2509.16189"
+    ],
+    "evidence_needed": "A controlled comparison on the same tasks and model of (a) compiled skill/strategy memory, (b) retrieved raw trajectories, and (c) a no-memory control, all at matched token budget, with the memory-construction step ablated from any policy RL."
+   },
+   {
+    "gap": "Whether a retriever contributes anything beyond a fixed curated exemplar set or a static playbook is not isolated: several systems build memory but do not state whether it is consumed via per-query retrieval or supplied statically, and none compares against random or fixed exemplars.",
+    "card_ids": [
+     "arxiv:2605.13880",
+     "arxiv:2406.14596",
+     "arxiv:2604.07487",
+     "arxiv:2512.04106",
+     "arxiv:2606.03951"
+    ],
+    "evidence_needed": "Head-to-head runs of the same memory bank delivered by (a) similarity retrieval, (b) a fixed curated subset, and (c) random exemplars, reporting the retrieval-minus-static delta per environment."
+   },
+   {
+    "gap": "No card tests a long-context condition that places the entire memory bank (all trajectories, all strategies, or all exemplars) in the prompt at once, so whether retrieval is necessary or merely a substitute for context length is open.",
+    "card_ids": [
+     "arxiv:2605.24117",
+     "arxiv:2512.04106",
+     "arxiv:2603.21520",
+     "s2:f2b0e4a048464616619a85b86f61df77ac4ac6b0"
+    ],
+    "evidence_needed": "A whole-bank long-context arm (and a long-context-without-cache arm for the quiz system) compared against top-k retrieval on the same items, with accuracy and token cost reported as bank size grows."
+   },
+   {
+    "gap": "The run-to-run variance of memory-induced gains is unreported across the axis, even where gains are described as unstable under frozen deployment, so it is unknown which reported deltas exceed seed noise.",
+    "card_ids": [
+     "arxiv:2511.07800",
+     "arxiv:2605.24117",
+     "arxiv:2605.13880",
+     "s2:f2b0e4a048464616619a85b86f61df77ac4ac6b0"
+    ],
+    "evidence_needed": "Multiple seeded runs per condition with confidence intervals on the memory-minus-baseline delta, on benchmarks large enough (more than the 150-question set) to bound the seed noise."
+   },
+   {
+    "gap": "How gains scale with memory or bank size, and what the memory route costs per step (extra generation calls, retrieval, injected tokens, clutter as the store grows), is not reported, so the cost-normalized value of retrieval versus compiled memory is unknown.",
+    "card_ids": [
+     "arxiv:2603.21520",
+     "arxiv:2406.14596",
+     "arxiv:2607.20972",
+     "arxiv:2604.07791",
+     "arxiv:2604.07487"
+    ],
+    "evidence_needed": "Curves of task success and total tokens (including any auxiliary context-generation call) against memory size, from a handful of entries up to the full bank, for both retrieved and static delivery."
+   }
+  ]
+ },
+ {
+  "axis": "environment properties that make retrieval necessary",
+  "gaps": [
+   {
+    "gap": "None of these papers isolates the contribution of query-time retrieval from the content it retrieves, because no control compiles the same experience once into a static prompt, fixed exemplar set, or playbook, so it is unresolved whether the environment actually requires retrieval or only requires the knowledge.",
+    "card_ids": [
+     "arxiv:2509.24183",
+     "arxiv:2604.07791",
+     "arxiv:2511.20857",
+     "arxiv:2605.13880",
+     "arxiv:2605.24117"
+    ],
+    "evidence_needed": "A matched-content ablation in which the identical tutorial, trajectory, or skill bank is delivered either through a retriever or as a single static compiled context, with the accuracy difference reported per environment."
+   },
+   {
+    "gap": "It is unresolved whether memory-benchmark deficits stem from the retrieval mechanism or from the sheer inability of the model to apply history, because no benchmark reports a whole-history long-context replay or no-memory baseline alongside the memory backends.",
+    "card_ids": [
+     "arxiv:2601.19935",
+     "arxiv:2605.12493",
+     "arxiv:2510.01353",
+     "arxiv:2602.16313",
+     "arxiv:2602.02007",
+     "arxiv:2606.24775"
+    ],
+    "evidence_needed": "Scores from the same benchmarks with the full interaction history (or timeline) placed directly in a long context, and with no memory at all, so that the retrieval-versus-application split of the deficit can be quantified."
+   },
+   {
+    "gap": "The reported gains of memory and experience-reuse mechanisms are not accompanied by run-to-run variance, so it is unknown whether observed differences between memory conditions exceed agent stochasticity, especially where the papers themselves describe gains as unstable.",
+    "card_ids": [
+     "arxiv:2605.22219",
+     "arxiv:2602.08316",
+     "arxiv:2510.01353",
+     "arxiv:2511.20857",
+     "arxiv:2602.16313",
+     "arxiv:2606.24775",
+     "arxiv:2605.24117",
+     "arxiv:2605.13880"
+    ],
+    "evidence_needed": "Multi-seed repeated runs per memory condition with confidence intervals on the accuracy gap, showing which memory-versus-baseline differences are statistically separable from noise."
+   },
+   {
+    "gap": "Whether stored environment-specific procedures or prior trajectories actually improve downstream action-taking, rather than only evidence gathering or fact recall, is unresolved, since benchmarks score question answering or attribute failures without testing the procedural-memory fix.",
+    "card_ids": [
+     "arxiv:2605.22219",
+     "arxiv:2605.12493",
+     "arxiv:2602.16313",
+     "arxiv:2601.19935"
+    ],
+    "evidence_needed": "An intervention experiment that supplies agents with site-specific playbooks or retrieved prior trajectories and measures the change in end-to-end task success and in the scope-drift and parameter-grounding failure rates."
+   },
+   {
+    "gap": "How much of the benefit of experience retrieval depends on task relatedness or near-duplication within the stream is unresolved, because gains are measured on explicitly linked or sequential tasks while token cost and scaling with memory size are not reported.",
+    "card_ids": [
+     "arxiv:2602.08316",
+     "arxiv:2511.20857",
+     "arxiv:2604.07791",
+     "arxiv:2605.13880",
+     "arxiv:2605.24117"
+    ],
+    "evidence_needed": "Gains plotted against a controlled measure of task similarity (including unrelated and diverse sequences) together with per-step retrieval cost and memory-bank size, revealing the relatedness threshold below which retrieval stops paying off."
+   }
+  ]
+ },
+ {
+  "axis": "the query and the retriever",
+  "gaps": [
+   {
+    "gap": "Almost no paper on this axis isolates the contribution of query-time retrieval itself by comparing against a matched-length random, fixed, or once-compiled exemplar/document set, so it is unresolved how much reported gains come from the retriever versus merely having relevant-looking content in context.",
+    "card_ids": [
+     "arxiv:2603.18272",
+     "arxiv:2509.24183",
+     "arxiv:2604.04949",
+     "arxiv:2511.20857",
+     "arxiv:2406.14596",
+     "arxiv:2603.24690",
+     "arxiv:2602.12192",
+     "arxiv:2604.08920",
+     "arxiv:2509.16189"
+    ],
+    "evidence_needed": "A controlled study on the same model and task that holds prompt length fixed and swaps retrieved items for random, fixed-curated, and compiled-once static versions of the same bank, reporting the accuracy gap with run-to-run variance."
+   },
+   {
+    "gap": "Retrieval-based methods are rarely compared against simply placing the whole history, document, or memory bank in a long context without any retriever, so whether retrieval is necessary or merely convenient at current context lengths remains open.",
+    "card_ids": [
+     "arxiv:2512.17220",
+     "arxiv:2601.19935",
+     "arxiv:2605.12493",
+     "arxiv:2603.02473",
+     "arxiv:2602.02007",
+     "arxiv:2509.21035",
+     "arxiv:2606.24775",
+     "s2:ed199025da9dc8cd2a6daea44970d50977bac11b"
+    ],
+    "evidence_needed": "Head-to-head accuracy and token-cost curves on the same benchmarks for retrieval versus full-history or full-document long-context replay, across bank sizes that span below and above the model's context window."
+   },
+   {
+    "gap": "Retriever-quality improvements (utility-trained, trajectory-trained, agentic, reranked) are validated on retrieval metrics or QA over document corpora, and it is untested whether they translate into end-task success or transfer to experience/trajectory memory banks in agentic settings.",
+    "card_ids": [
+     "arxiv:2605.04018",
+     "arxiv:2601.11888",
+     "arxiv:2604.04949",
+     "arxiv:2608.22695",
+     "arxiv:2607.26497",
+     "arxiv:2603.02473",
+     "arxiv:2602.02007",
+     "arxiv:2505.15561",
+     "arxiv:2505.12065"
+    ],
+    "evidence_needed": "Experiments that plug the same improved retriever into an agent operating over a trajectory or exemplar memory bank and report downstream task success rather than recall, Match@1, or QA accuracy alone."
+   },
+   {
+    "gap": "Learned or adaptive retrieval-control policies (when to retrieve, how much, over what interface) are not quantified against always-retrieve, never-retrieve, or fixed-schedule baselines, and their per-query cost is unaccounted, so the value of the decision itself is unknown.",
+    "card_ids": [
+     "s2:93def179dbebdaf187c0bce1f494a2bbd39ddc19",
+     "arxiv:2607.07380",
+     "arxiv:2510.16724",
+     "arxiv:2605.05242",
+     "arxiv:2509.21035",
+     "arxiv:2407.03955"
+    ],
+    "evidence_needed": "Ablations reporting accuracy and total token/latency cost of the adaptive policy against always-retrieve and never-retrieve arms on the same tasks, including the overhead of the controller itself."
+   },
+   {
+    "gap": "The asymmetric effect of retrieved memory quality is unresolved: wrong or unfiltered retrieved experience is shown to hurt, but the symmetric benefit of correct retrieval, its dependence on task relatedness or near-duplicates within a stream, and whether static instructions induce the same compliance behavior are not measured.",
+    "card_ids": [
+     "arxiv:2607.10608",
+     "arxiv:2602.08316",
+     "arxiv:2511.20857",
+     "arxiv:2605.22219",
+     "arxiv:2607.20972"
+    ],
+    "evidence_needed": "A design that varies retrieved-memory correctness and task relatedness (oracle, autonomous, random, and compiled-static conditions) on the same task sequences and reports success rate deltas with run-to-run variance."
+   }
+  ]
+ },
+ {
+  "axis": "scaling both routes",
+  "gaps": [
+   {
+    "gap": "Whether retrieval or long-context wins depends on scale and crossover points that have only been measured with a single reader/routing model each, so it is unresolved whether the crossover shifts with reader capability, tokenizer, or memory design.",
+    "card_ids": [
+     "arxiv:2603.04814",
+     "arxiv:2607.26497",
+     "arxiv:2608.22695",
+     "arxiv:2411.05000"
+    ],
+    "evidence_needed": "A corpus- or history-size sweep repeated across several reader models of differing effective context length, reporting where retrieval overtakes in-context reading in accuracy and cost for each model."
+   },
+   {
+    "gap": "Retrieval methods are almost never compared against a no-retrieval whole-corpus long-context arm at matched token budget or against random/fixed selection, so the retriever's marginal contribution is unmeasured.",
+    "card_ids": [
+     "arxiv:2506.03989",
+     "arxiv:2508.14817",
+     "s2:ed199025da9dc8cd2a6daea44970d50977bac11b",
+     "arxiv:2602.12192",
+     "s2:f2b0e4a048464616619a85b86f61df77ac4ac6b0",
+     "arxiv:2605.24117"
+    ],
+    "evidence_needed": "An ablation on the same generator that holds the token budget fixed and swaps the retriever for full-context, random, and fixed passage selection, reporting accuracy deltas with run-to-run variance."
+   },
+   {
+    "gap": "Retrieval and memory results are scored on fact recall, evidence gathering, or selection accuracy rather than downstream task success, so whether retrieved facts, trajectories, or capabilities improve action-taking is unshown.",
+    "card_ids": [
+     "arxiv:2603.04814",
+     "arxiv:2605.12493",
+     "arxiv:2608.22695",
+     "arxiv:2509.16442"
+    ],
+    "evidence_needed": "End-to-end agent evaluations that pair retrieval or memory conditions with measured task completion after acting on the retrieved content, not only QA or Match@1 scores."
+   },
+   {
+    "gap": "Saturation with the number of retrieved exemplars or shots, and whether a whole-bank long-context prompt matches retrieval past that point, is untested.",
+    "card_ids": [
+     "arxiv:2512.04106",
+     "arxiv:2603.24690",
+     "arxiv:2509.16442"
+    ],
+    "evidence_needed": "Shot-count sweeps beyond current caps (20 shots, 8 shots) that include a whole-bank in-context condition and report where accuracy plateaus versus token cost."
+   },
+   {
+    "gap": "Scaling conclusions come from document corpora or synthetic haystacks, so it is unresolved whether they transfer to agent memory banks of trajectories and experience.",
+    "card_ids": [
+     "arxiv:2607.26497",
+     "arxiv:2411.05000",
+     "arxiv:2605.24117",
+     "arxiv:2605.12493"
+    ],
+    "evidence_needed": "A scaling sweep over trajectory or experience banks comparing retrieval, long-context and agentic search on both recall and downstream task success, with token cost and variance reported."
+   }
+  ]
+ },
+ {
+  "axis": "evaluation and cost",
+  "gaps": [
+   {
+    "gap": "Almost no memory or retrieval evaluation includes a same-budget control arm that supplies the whole history, full document or a compiled static summary without a retriever, so it is unresolved whether query-time retrieval beats long-context replay or compilation at matched token cost.",
+    "card_ids": [
+     "arxiv:2603.04814",
+     "arxiv:2506.03989",
+     "arxiv:2505.10413",
+     "arxiv:2510.01353",
+     "arxiv:2602.16313",
+     "arxiv:2603.02473",
+     "arxiv:2602.02007",
+     "arxiv:2605.12493",
+     "arxiv:2606.24775",
+     "arxiv:2605.24117",
+     "arxiv:2509.21035",
+     "s2:ed199025da9dc8cd2a6daea44970d50977bac11b"
+    ],
+    "evidence_needed": "A controlled comparison on the same tasks and generators of retrieval versus full-history long context versus a once-compiled static summary at matched token budgets, reporting accuracy and cost side by side."
+   },
+   {
+    "gap": "Reported gains from retrieved experience or exemplars are rarely compared against random or fixed selections at matched prompt length, so the retriever's contribution beyond simply having trajectories or passages in context is not isolated.",
+    "card_ids": [
+     "arxiv:2603.18272",
+     "arxiv:2506.03989",
+     "arxiv:2508.14817",
+     "arxiv:2603.21520",
+     "arxiv:2604.04949",
+     "arxiv:2605.24117",
+     "arxiv:2605.13880",
+     "arxiv:2607.10608",
+     "s2:f2b0e4a048464616619a85b86f61df77ac4ac6b0"
+    ],
+    "evidence_needed": "Ablations that swap the retriever for random, fixed and oracle selections at equal prompt length and report the accuracy delta attributable to retrieval quality on each benchmark."
+   },
+   {
+    "gap": "Memory benchmarks mostly score factual recall or evidence gathering rather than downstream task success, so whether recalled experience actually improves action selection in agentic tasks remains unshown.",
+    "card_ids": [
+     "arxiv:2603.04814",
+     "arxiv:2605.12493",
+     "arxiv:2602.16313",
+     "arxiv:2608.22695",
+     "arxiv:2607.20972",
+     "arxiv:2608.20627"
+    ],
+    "evidence_needed": "Experiments that measure end-task success rate with and without memory in interactive environments while separately reporting recall accuracy, so the two can be correlated."
+   },
+   {
+    "gap": "Run-to-run variance of memory and retrieval gains is almost never reported, and several papers describe gains as unstable or driven by near-duplicate tasks, so the statistical reliability of reported deltas is unresolved.",
+    "card_ids": [
+     "arxiv:2508.14817",
+     "arxiv:2602.08316",
+     "arxiv:2509.21035",
+     "arxiv:2510.01353",
+     "arxiv:2511.20857",
+     "arxiv:2602.16313",
+     "arxiv:2606.24775",
+     "arxiv:2603.02473",
+     "arxiv:2605.24117",
+     "arxiv:2605.13880",
+     "arxiv:2603.14468",
+     "arxiv:2507.05257",
+     "s2:ed199025da9dc8cd2a6daea44970d50977bac11b",
+     "s2:f2b0e4a048464616619a85b86f61df77ac4ac6b0"
+    ],
+    "evidence_needed": "Multi-seed runs with confidence intervals on the memory-versus-baseline difference, plus a breakdown separating gains on near-duplicate tasks from gains on novel tasks."
+   },
+   {
+    "gap": "Token and dollar cost of retrieved or injected context is seldom accounted for alongside accuracy, and how prompt caching shifts the retrieval-versus-static-prefix trade-off is untested, so accuracy-cost curves for memory are not established.",
+    "card_ids": [
+     "arxiv:2506.04301",
+     "s2:62b577ec192e84f2bb2143ea1e43c23dc81bf3e3",
+     "arxiv:2605.05242",
+     "arxiv:2605.12493",
+     "arxiv:2510.01353",
+     "arxiv:2602.16313",
+     "arxiv:2604.04949",
+     "arxiv:2502.18017",
+     "arxiv:2507.05257",
+     "arxiv:2505.12065",
+     "arxiv:2607.20972",
+     "s2:ed199025da9dc8cd2a6daea44970d50977bac11b"
+    ],
+    "evidence_needed": "Accuracy-versus-cumulative-token-cost curves for retrieval, static-prefix and long-context conditions under both cached and uncached pricing across increasing memory-store sizes."
+   }
+  ]
+ }
+]
