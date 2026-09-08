@@ -53,3 +53,5 @@ pick_and_place 0.81, look_at_in_light 0.76, clean_then_place 0.42; mean 11.5 ste
 games (cool / heat / pick_two types) are being collected with the same launcher (`start_own_rollouts.sh 32 <servers> 0`).
 Use: the brief's "both pools" rule (expert = off-policy text, self-rollout = on-policy); note the pool is success-filtered and
 type-skewed toward what the k=0 agent already solves, which several judges flagged as a selection confound for dose claims.
+Final (2026-09-08): all 3,553 train games, 0 errors, 1,892 won (0.533); success by type pick_and_place 0.81, look_at_in_light 0.76,
+pick_two 0.51, cool 0.41, clean 0.40, heat 0.26. The pool now covers all six types (1,892 on-policy successes vs 1,465 expert items).

@@ -76,6 +76,18 @@ to the last twelve months, and one on the closest named method. Report what came
 including empty results, the query strings and the channel that answered. Do not write experiment code.
 """ + S2_FIRST + """
 
+Two further requirements, both checked mechanically before review:
+- Falsifiable Predictions: for every prediction write the outcome that would falsify it AND the arm or cell that can
+  produce that outcome. If no arm can produce it (the split never gives the model that information; an append-only
+  store cannot forget; a warm-started adapter always relearns faster than a cold one; the estimand is an identity of
+  another quantity you compare it to; the falsifier lies inside your stated confidence interval), the prediction is
+  entailed by the design and must be removed or the design changed. A proposal whose headline prediction is entailed
+  is sent back before any judge sees it.
+- One of your literature searches must be phrased in the home vocabulary of the mechanism, with no agent, memory,
+  retrieval, experience or benchmark words (e.g. "data poisoning number of poison samples threshold" rather than
+  "stale items in the agent's memory bank"); label it `home:` in the Preprint Collision Check. Papers that pre-empt
+  a claim are usually found there, not under the agent-memory phrasing.
+
 Standard IDEA JSON fields: Name, Title, Short Hypothesis, Related Work, Abstract, Experiments, Baselines and Ablations,
 Falsifiable Predictions, Measurement and Noise Control, Preprint Collision Check, Risk Factors and Limitations."""
 
@@ -105,9 +117,23 @@ GATE_ADJUDICATE_USER = """A:
 B:
 {b}"""
 
-NOVELTY_KEYS_SYSTEM = """Extract from this proposal, as short phrases, the search keys a reviewer would use to find prior work that already
-makes its claim: "mechanism" (what causes what), "estimand" (the quantity measured), "controls" (named control arms),
-"environment" (benchmarks/models). Return JSON with those four keys, each a list of 1-3 phrases."""
+NOVELTY_KEYS_SYSTEM = """Extract search keys for a collision check on this proposal. Reviewers of earlier rounds found the papers that
+pre-empted a claim by searching the literature the mechanism came FROM, not the agent-memory literature the proposal is
+written in; produce both. Return JSON with these keys, each a list of 1-3 short query strings (no boolean syntax):
+"agent": the claim in the proposal's own vocabulary (agent memory, retrieval, distillation, benchmark names).
+"mechanism_home": the general phenomenon the claim is an instance of, phrased WITHOUT the words agent, memory, retrieved,
+  experience, bank, episode, trajectory or any benchmark name, in the vocabulary of the field where it was first studied
+  (examples: "training with retrieved context reduces parametric encoding" -> "retrieval-augmented fine-tuning irrelevant
+  context robustness distractor documents"; "stale items poison the store" -> "data poisoning number of poison samples
+  threshold fine-tuning"; "relearning after a rule reversal" -> "spurious forgetting relearning savings continual
+  fine-tuning"; "which substrate wins a conflict" -> "knowledge conflict parametric versus contextual knowledge preference").
+"adjacent": the nearest published result DIRECTION in a neighbouring field that would pre-empt the predicted sign
+  (name the phenomenon, e.g. "narrow fine-tuning generalizes broadly emergent misalignment", "diversity beats quantity in
+  SFT data scaling", "in-context demonstrations override explicit instructions").
+"baseline": the cheapest intervention a practitioner would try first, which the proposal must beat (e.g. "static
+  instruction stating the procedure", "inoculation prompting", "temporal validity filter for retrieval").
+"methods": named methods from Related Work, for id lookups.
+"environment": benchmarks/models named."""
 
 REVIEW_SYSTEM_OPENBOOK_SUFFIX = """
 
@@ -125,3 +151,45 @@ novelty on what you verified, not on what the proposal asserts."""
 NOVELTY_CARD_HEADER = """=== NOVELTY CARD (automated search; evidence, not a verdict) ===
 For each candidate: id · date · venue · similarity of its abstract to the proposal's hypothesis · channel.
 """
+
+
+ENTAIL_SYSTEM = """You are checking research proposals BEFORE review for predictions that cannot come out against the hypothesis.
+For EACH proposal, number the items of "Falsifiable Predictions" P1, P2, ... in order of appearance (split prose at each
+stated prediction). For each prediction:
+1. depends_on: the arms, split, retriever, update rule or estimand it rests on (from Experiments / Baselines).
+2. falsifier: the outcome that would falsify it, as the proposal states or implies it.
+3. Decide whether that outcome is REACHABLE under the stated design or excluded by construction. Excluded-by-construction
+   includes: the falsifying outcome needs information the split never gives the model; the estimand is an algebraic
+   identity of another quantity it is compared with (shared measured terms); the update rule cannot produce it (an
+   append-only store cannot forget, a chunk-trained adapter cannot retain, a warm-started adapter relearns faster than a
+   cold one); the retriever cannot deliver the item class the prediction is about; a ceiling or floor forces the sign;
+   the effect re-describes how a pool was built or filtered; a control deletes the very tokens the outcome is scored on;
+   the arm that would show the opposite is absent.
+4. Decide whether the falsifier is DISTINGUISHABLE at the stated power: compare the margin or threshold with the stated
+   CI or MDE; if the falsifier lies inside the stated noise, the prediction is unresolvable, not open.
+5. label: "entailed" (falsifier unreachable), "near_entailed" (reachable only through a mechanism the proposal does not
+   name or control), "unresolvable" (reachable but inside the stated noise), "open". One sentence of reason; for
+   anything but "open", the minimal change (an arm, a split, an estimand, seeds) that would make it open.
+Also list shared_terms: pairs of predictions whose estimands share a measured term so that one determines the other.
+Be literal and adversarial; do not credit intentions. Per proposal return
+{"name": "...", "predictions": [{"id": "P1", "depends_on": "...", "falsifier": "...", "label": "...", "reason": "...", "fix": "..."}],
+ "shared_terms": ["P1-P3: ..."], "headline": "P1", "headline_status": "open|entailed|near_entailed|unresolvable",
+ "n_open": 0, "n_entailed": 0, "n_near": 0, "n_unresolvable": 0, "verdict": "pass|revise"}
+where headline is the prediction the Title or Short Hypothesis rests on, and verdict is "revise" when the headline is not
+"open" or when fewer than half of the predictions are "open"."""
+
+ENTAIL_USER = """### proposal: {name}
+Title: {title}
+Short Hypothesis: {hypothesis}
+
+Experiments:
+{experiments}
+
+Baselines and Ablations:
+{baselines}
+
+Falsifiable Predictions:
+{predictions}
+
+Measurement and Noise Control:
+{noise}"""

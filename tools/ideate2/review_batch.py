@@ -24,6 +24,9 @@ def emit(a):
         if names and name not in names: continue
         card_path = os.path.join(a.novelty, f"{name}.card.md") if a.novelty else None
         card = open(card_path).read() if card_path and os.path.exists(card_path) else None
+        ent_path = os.path.join(a.entail, f"{name}.entail.md") if getattr(a, "entail", None) else None
+        if ent_path and os.path.exists(ent_path):                   # Stage 2.8 report travels with the novelty card
+            card = (card or "") + "\n\n" + open(ent_path).read()
         system, user = R.build(idea, brief, card)
         for k in range(a.round, a.round + a.n):
             be.emit("review", f"{name}_r{k}", system, user, tools=["Bash", "WebSearch"], model=a.model); n += 1
@@ -73,6 +76,7 @@ if __name__ == "__main__":
     e = sub.add_parser("emit"); e.add_argument("--ideas", required=True); e.add_argument("--brief", required=True); e.add_argument("--novelty")
     e.add_argument("--out", required=True); e.add_argument("--round", type=int, default=1); e.add_argument("--n", type=int, default=1)
     e.add_argument("--names"); e.add_argument("--backend", default="harness"); e.add_argument("--model", default="opus")
+    e.add_argument("--entail", help="dir with <name>.entail.md from entail.py collect (attached after the novelty card)")
     c = sub.add_parser("collect"); c.add_argument("--out", required=True); c.add_argument("--mapping", required=True)
     r = sub.add_parser("rank"); r.add_argument("--out", required=True)
     a = ap.parse_args(); {"emit": emit, "collect": collect, "rank": rank}[a.cmd](a)
