@@ -1,0 +1,60 @@
+{
+ "author": "Fable 5.1, 2026-09-08; Stage 0 for the per-item credit-assignment brief",
+ "axes": [
+  {
+   "name": "counterfactual attribution",
+   "definition": "estimating the causal effect of an individual retrieved item on an episode's outcome: leave-one-out and ablation re-runs, Shapley-style values, contrastive traces, and what they cost",
+   "queries": [
+    "counterfactual attribution of retrieved memory items to agent success",
+    "Shapley values for retrieved documents contribution retrieval augmented generation",
+    "leave-one-out ablation of in-context examples effect on outcome",
+    "which retrieved experience caused the action attribution in agent memory"
+   ],
+   "foundational": "data attribution and influence of in-context examples on language model outputs"
+  },
+  {
+   "name": "learned utility and reinforcement over memory",
+   "definition": "systems that update an item's utility from feedback: RL over episodic memory, utility tags, decay and reinforcement rules, and the failure modes of crediting co-retrieved items",
+   "queries": [
+    "reinforcement learning over episodic memory utility of items self-evolving agent",
+    "memory utility estimation from sparse feedback co-retrieved items misleading credit",
+    "memory reward trap utility updates agent memory",
+    "learning to retrieve experiences from task rewards agent"
+   ],
+   "foundational": "learning retrieval policies from downstream reward"
+  },
+  {
+   "name": "set-level effects",
+   "definition": "interference and interaction among retrieved items: order and position, conflicting items, redundancy, the retrieved set as the unit of harm or help rather than the item",
+   "queries": [
+    "interaction effects among retrieved memory items interference agent",
+    "position and order sensitivity of in-context examples agent trajectories",
+    "conflicting retrieved memories set composition effect on agent",
+    "controlled memory interference in continual LLM agents"
+   ],
+   "foundational": "order and interaction effects of in-context demonstrations"
+  },
+  {
+   "name": "generalization and drift of item value",
+   "definition": "whether an item's value is a property of the item or of the query, consumer and time: utility-based pruning, usage-decay forgetting, stale value, transfer of utility estimates across tasks",
+   "queries": [
+    "utility-based memory pruning agent experience refinement outdated items",
+    "memory item value depends on query and context generalizability of utility estimates",
+    "usage-based forgetting decay in agent memory",
+    "self-evolving memory utility scores drift over long streams"
+   ],
+   "foundational": "forgetting and pruning policies for agent experience memory"
+  },
+  {
+   "name": "measurement of per-item estimates",
+   "definition": "noise, selection effects and winner's curse in per-item value estimates; how many episodes an estimate needs; benchmarks and metrics that score memories at the item level",
+   "queries": [
+    "noise and instability of per-example influence estimates",
+    "selection bias winner's curse in data valuation and subset selection",
+    "data attribution for in-context learning influence functions reliability",
+    "item-level evaluation metrics for agent memory systems"
+   ],
+   "foundational": "reliability of data valuation methods"
+  }
+ ]
+}

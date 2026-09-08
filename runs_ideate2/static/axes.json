@@ -1,0 +1,60 @@
+{
+ "author": "Fable 5.1, 2026-09-08; Stage 0 for the retriever-vs-static-prompt brief (when memory needs a query)",
+ "axes": [
+  {
+   "name": "compiled and static alternatives to retrieval",
+   "definition": "instructions, cheatsheets, playbooks and fixed exemplar sets compiled from experience once and reused without a retriever, versus query-time retrieval; prompt optimizers as compilers",
+   "queries": [
+    "compile agent experience into system prompt instructions instead of retrieval",
+    "static few-shot exemplars versus retrieved demonstrations for agent tasks",
+    "cheatsheet or playbook memory compiled guidelines agent",
+    "prompt optimization from trajectories versus experience memory agents"
+   ],
+   "foundational": "compiling demonstrations into instructions for language model agents"
+  },
+  {
+   "name": "environment properties that make retrieval necessary",
+   "definition": "task templates and near-duplicates, instance-specific bindings, task diversity, procedure-bound versus binding-bound gains, and how benchmark structure inflates memory gains",
+   "queries": [
+    "when does retrieval augmentation help versus a static prompt task diversity",
+    "instance-specific information in demonstrations versus procedural templates agent",
+    "benchmark task templates near-duplicate leakage inflates agent memory gains",
+    "generalization of experience reuse across task types WebShop ALFWorld"
+   ],
+   "foundational": "what in-context demonstrations contribute beyond format and task recognition"
+  },
+  {
+   "name": "the query and the retriever",
+   "definition": "what the query is (goal, state, failure), when to retrieve (start, on stall), retrieval quality against random or fixed exemplars, and retrievers that are decorative",
+   "queries": [
+    "query formulation for experience retrieval state-aware retrieval agent",
+    "when to retrieve adaptive retrieval decision agent memory",
+    "retrieval quality versus random demonstrations in-context learning agents",
+    "mid-episode retrieval triggered by failure or stall agent"
+   ],
+   "foundational": "adaptive retrieval decisions for language models"
+  },
+  {
+   "name": "scaling both routes",
+   "definition": "bank size versus prompt length; many-shot in-context learning with the whole bank in a long context; saturation with the number of exemplars; long-context versus retrieval",
+   "queries": [
+    "many-shot in-context learning entire experience bank in long context agent",
+    "long context versus retrieval augmented generation comparison",
+    "number of in-context examples saturation diminishing returns",
+    "prompt length cost versus retrieval cost agent deployment"
+   ],
+   "foundational": "long-context models versus retrieval augmentation"
+  },
+  {
+   "name": "evaluation and cost",
+   "definition": "prompt caching of static prefixes, token accounting, cross-environment generality of the retrieval advantage, run-to-run noise of memory gains",
+   "queries": [
+    "prompt caching static prefix inference cost language model agents",
+    "cost accuracy trade-off retrieval versus long static prompt",
+    "cross-environment evaluation of agent memory ALFWorld WebShop TextCraft",
+    "run-to-run variance of agent memory gains measurement"
+   ],
+   "foundational": "evaluating retrieval-augmented agents fairly"
+  }
+ ]
+}
