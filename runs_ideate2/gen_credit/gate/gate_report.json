@@ -1,0 +1,683 @@
+{
+ "thresholds": {
+  "idea": 0.632,
+  "prior": 0.551,
+  "pair_mean": 0.523,
+  "pair_sd": 0.073
+ },
+ "clusters": [
+  [
+   "hole_backfill_static_counterfactual",
+   "masked_harm_pairwise_removal",
+   "item_value_consumer_decomposition",
+   "stage_conditional_item_value",
+   "guilt_by_coretrieval",
+   "pairwise_removal_interaction_audit"
+  ],
+  [
+   "stale_item_score_lag_after_rule_change",
+   "per_item_loo_reliability_and_winners_curse"
+  ],
+  [
+   "responsible_item_attribution_benchmark",
+   "memory_failure_blame_item_vs_set"
+  ]
+ ],
+ "prior_flags": [
+  {
+   "idea": "hole_backfill_static_counterfactual",
+   "sim": 0.597,
+   "source": "archive",
+   "text": "archive:memory_item_value_reliability: Item Value Is Not an Item Property: A Generalizability Audit of Per-Item Utility Estimates in Self-Editing Agent Memory. Every agent-memory curation method (veri"
+  },
+  {
+   "idea": "masked_harm_pairwise_removal",
+   "sim": 0.632,
+   "source": "archive",
+   "text": "archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from Organically Accumulated Agent Memory Lives in the Retrieved Set, Not the Item, and a Disagreement Gate Beats Item-Level U"
+  },
+  {
+   "idea": "masked_harm_pairwise_removal",
+   "sim": 0.576,
+   "source": "digest",
+   "text": "arxiv:2607.10608: Agents consuming retrieved memory fall into a compliance trap: they adopt conflicting memory at the first exposed decision point even when it is task-wrong, repeated exposure amplifi"
+  },
+  {
+   "idea": "item_value_consumer_decomposition",
+   "sim": 0.622,
+   "source": "archive",
+   "text": "archive:instruction_conditioned_complementarity: What Does the Prompt Already Say? Instruction-Conditioned Complementarity Decides When Retrieved Experience Helps, Hurts, or Just Costs Tokens. The mar"
+  },
+  {
+   "idea": "item_value_consumer_decomposition",
+   "sim": 0.558,
+   "source": "brief",
+   "text": "Measurement C (running): static per-type procedure prompts vs retrieval; a retrieved item whose value is fully captured"
+  },
+  {
+   "idea": "stale_item_score_lag_after_rule_change",
+   "sim": 0.613,
+   "source": "archive",
+   "text": "archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injection Timing Sets the Sign of Experience Memory's Effect on Agent Traces, and a Two-Parameter Stall Trigger Matches a Lea"
+  },
+  {
+   "idea": "stage_conditional_item_value",
+   "sim": 0.674,
+   "source": "archive",
+   "text": "archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injection Timing Sets the Sign of Experience Memory's Effect on Agent Traces, and a Two-Parameter Stall Trigger Matches a Lea"
+  },
+  {
+   "idea": "stage_conditional_item_value",
+   "sim": 0.652,
+   "source": "digest",
+   "text": "arxiv:2607.10608: Agents consuming retrieved memory fall into a compliance trap: they adopt conflicting memory at the first exposed decision point even when it is task-wrong, repeated exposure amplifi"
+  },
+  {
+   "idea": "guilt_by_coretrieval",
+   "sim": 0.679,
+   "source": "digest",
+   "text": "arxiv:2608.02508: Trajectory-indexed memory utilities disperse feedback over a growing state space and jointly assigned trajectory rewards contaminate co-retrieved memories (the memory-reward trap), a"
+  },
+  {
+   "idea": "guilt_by_coretrieval",
+   "sim": 0.671,
+   "source": "archive",
+   "text": "archive:memory_budget_confound: One Item Is the Budget: Token Volume, Not Memory Content, Explains Both the Harm and the Apparent Gains of Agentic Memory Curation. In experience-memory agents, the val"
+  },
+  {
+   "idea": "admission_pruning_audit_random_holdout",
+   "sim": 0.643,
+   "source": "digest",
+   "text": "arxiv:2606.03329: Rewarding a chunk-wise memory agent by how much its final memory raises the per-token log-likelihood of the ground-truth answer, applied only on successful trajectories and normalize"
+  },
+  {
+   "idea": "admission_pruning_audit_random_holdout",
+   "sim": 0.632,
+   "source": "archive",
+   "text": "archive:memory_surrogate_validity: Good Memory, Wrong Endpoint: Retrieval Recall, LLM-Judge Quality and Admission F1 Do Not Rank Agent Experience Memories by Execution Success. The metrics used to dev"
+  },
+  {
+   "idea": "admission_pruning_audit_random_holdout",
+   "sim": 0.613,
+   "source": "brief",
+   "text": "5. Measurement of per-item estimates (22 cards). Benchmarks score end-to-end outcomes only (Evo-Memory 2511.20857,"
+  },
+  {
+   "idea": "utility_half_life_consumer_swap",
+   "sim": 0.562,
+   "source": "archive",
+   "text": "archive:memory_budget_confound: One Item Is the Budget: Token Volume, Not Memory Content, Explains Both the Harm and the Apparent Gains of Agentic Memory Curation. In experience-memory agents, the val"
+  },
+  {
+   "idea": "per_item_loo_reliability_and_winners_curse",
+   "sim": 0.619,
+   "source": "archive",
+   "text": "archive:memory_item_value_reliability: Item Value Is Not an Item Property: A Generalizability Audit of Per-Item Utility Estimates in Self-Editing Agent Memory. Every agent-memory curation method (veri"
+  },
+  {
+   "idea": "per_item_loo_reliability_and_winners_curse",
+   "sim": 0.605,
+   "source": "digest",
+   "text": "arxiv:2606.22844: Retrieval alone does not make a memory valid evidence for the current query, and restoring each fragment's original episodic context (time, session span, participants) and checking i"
+  },
+  {
+   "idea": "responsible_item_attribution_benchmark",
+   "sim": 0.7,
+   "source": "archive",
+   "text": "archive:stale_true_state_facts_redaction: Stale-True, Not Wrong: Episode-Specific State Facts Carry the Natural Harm of Agent Experience Memory, and Fact-Level Redaction Beats Abstention. In an organi"
+  },
+  {
+   "idea": "surrogate_endpoints_for_item_credit",
+   "sim": 0.623,
+   "source": "digest",
+   "text": "s2:05c14833b7cee3408bf72d25cf0bee2c4b0d70b0: Scoring replay-buffer transitions by a weighted combination of reward magnitude and TD error and evicting low-utility ones speeds learning and improves fin"
+  },
+  {
+   "idea": "surrogate_endpoints_for_item_credit",
+   "sim": 0.582,
+   "source": "brief",
+   "text": "5. Measurement of per-item estimates (22 cards). Benchmarks score end-to-end outcomes only (Evo-Memory 2511.20857,"
+  },
+  {
+   "idea": "surrogate_endpoints_for_item_credit",
+   "sim": 0.576,
+   "source": "archive",
+   "text": "archive:substitutes_not_complements: Substitutes, Not Complements: Clause-Level Evidence That Optimized Instructions Shrink an Agent's Useful Memory-Injection Budget. Prompt-optimized instructions and"
+  },
+  {
+   "idea": "pairwise_removal_interaction_audit",
+   "sim": 0.605,
+   "source": "archive",
+   "text": "archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from Organically Accumulated Agent Memory Lives in the Retrieved Set, Not the Item, and a Disagreement Gate Beats Item-Level U"
+  },
+  {
+   "idea": "memory_failure_blame_item_vs_set",
+   "sim": 0.664,
+   "source": "digest",
+   "text": "arxiv:2607.10608: Agents consuming retrieved memory fall into a compliance trap: they adopt conflicting memory at the first exposed decision point even when it is task-wrong, repeated exposure amplifi"
+  },
+  {
+   "idea": "memory_failure_blame_item_vs_set",
+   "sim": 0.661,
+   "source": "archive",
+   "text": "archive:stale_true_state_facts_redaction: Stale-True, Not Wrong: Episode-Specific State Facts Carry the Natural Harm of Agent Experience Memory, and Fact-Level Redaction Beats Abstention. In an organi"
+  }
+ ],
+ "pairs": [
+  {
+   "a": "hole_backfill_static_counterfactual",
+   "b": "masked_harm_pairwise_removal",
+   "sim": 0.522,
+   "kind": "idea-idea",
+   "pair_id": "hole_backfill_static_counterfactual__masked_harm_pairwise_removal"
+  },
+  {
+   "a": "hole_backfill_static_counterfactual",
+   "b": "item_value_consumer_decomposition",
+   "sim": 0.654,
+   "kind": "idea-idea",
+   "pair_id": "hole_backfill_static_counterfactual__item_value_consumer_decomposit"
+  },
+  {
+   "a": "hole_backfill_static_counterfactual",
+   "b": "stage_conditional_item_value",
+   "sim": 0.595,
+   "kind": "idea-idea",
+   "pair_id": "hole_backfill_static_counterfactual__stage_conditional_item_value"
+  },
+  {
+   "a": "hole_backfill_static_counterfactual",
+   "b": "guilt_by_coretrieval",
+   "sim": 0.594,
+   "kind": "idea-idea",
+   "pair_id": "hole_backfill_static_counterfactual__guilt_by_coretrieval"
+  },
+  {
+   "a": "hole_backfill_static_counterfactual",
+   "b": "pairwise_removal_interaction_audit",
+   "sim": 0.508,
+   "kind": "idea-idea",
+   "pair_id": "hole_backfill_static_counterfactual__pairwise_removal_interaction_a"
+  },
+  {
+   "a": "masked_harm_pairwise_removal",
+   "b": "item_value_consumer_decomposition",
+   "sim": 0.568,
+   "kind": "idea-idea",
+   "pair_id": "masked_harm_pairwise_removal__item_value_consumer_decomposit"
+  },
+  {
+   "a": "masked_harm_pairwise_removal",
+   "b": "stage_conditional_item_value",
+   "sim": 0.668,
+   "kind": "idea-idea",
+   "pair_id": "masked_harm_pairwise_removal__stage_conditional_item_value"
+  },
+  {
+   "a": "masked_harm_pairwise_removal",
+   "b": "guilt_by_coretrieval",
+   "sim": 0.595,
+   "kind": "idea-idea",
+   "pair_id": "masked_harm_pairwise_removal__guilt_by_coretrieval"
+  },
+  {
+   "a": "masked_harm_pairwise_removal",
+   "b": "pairwise_removal_interaction_audit",
+   "sim": 0.644,
+   "kind": "idea-idea",
+   "pair_id": "masked_harm_pairwise_removal__pairwise_removal_interaction_a"
+  },
+  {
+   "a": "item_value_consumer_decomposition",
+   "b": "stage_conditional_item_value",
+   "sim": 0.59,
+   "kind": "idea-idea",
+   "pair_id": "item_value_consumer_decomposition__stage_conditional_item_value"
+  },
+  {
+   "a": "item_value_consumer_decomposition",
+   "b": "guilt_by_coretrieval",
+   "sim": 0.633,
+   "kind": "idea-idea",
+   "pair_id": "item_value_consumer_decomposition__guilt_by_coretrieval"
+  },
+  {
+   "a": "item_value_consumer_decomposition",
+   "b": "pairwise_removal_interaction_audit",
+   "sim": 0.61,
+   "kind": "idea-idea",
+   "pair_id": "item_value_consumer_decomposition__pairwise_removal_interaction_a"
+  },
+  {
+   "a": "stage_conditional_item_value",
+   "b": "guilt_by_coretrieval",
+   "sim": 0.637,
+   "kind": "idea-idea",
+   "pair_id": "stage_conditional_item_value__guilt_by_coretrieval"
+  },
+  {
+   "a": "stage_conditional_item_value",
+   "b": "pairwise_removal_interaction_audit",
+   "sim": 0.674,
+   "kind": "idea-idea",
+   "pair_id": "stage_conditional_item_value__pairwise_removal_interaction_a"
+  },
+  {
+   "a": "guilt_by_coretrieval",
+   "b": "pairwise_removal_interaction_audit",
+   "sim": 0.535,
+   "kind": "idea-idea",
+   "pair_id": "guilt_by_coretrieval__pairwise_removal_interaction_a"
+  },
+  {
+   "a": "stale_item_score_lag_after_rule_change",
+   "b": "per_item_loo_reliability_and_winners_curse",
+   "sim": 0.7,
+   "kind": "idea-idea",
+   "pair_id": "stale_item_score_lag_after_rule_change__per_item_loo_reliability_and_w"
+  },
+  {
+   "a": "responsible_item_attribution_benchmark",
+   "b": "memory_failure_blame_item_vs_set",
+   "sim": 0.751,
+   "kind": "idea-idea",
+   "pair_id": "responsible_item_attribution_benchmark__memory_failure_blame_item_vs_s"
+  },
+  {
+   "a": "hole_backfill_static_counterfactual",
+   "b": "archive:archive:memory_item_value_reliability: Item Value Is Not an Item Property: A Gen",
+   "sim": 0.597,
+   "kind": "idea-archive",
+   "prior_text": "archive:memory_item_value_reliability: Item Value Is Not an Item Property: A Generalizability Audit of Per-Item Utility Estimates in Self-Editing Agent Memory. Every agent-memory curation method (verify-before-write, contradiction pruning, LLM-judge filtering, learned admission control) presumes that an individual memory item has a stable, estimable utility. We claim that presumption is false as a matter of measurable fact: the stable item main effect is a minority of the explainable outcome variance, being dominated by item-by-query interaction, so (i) the probe budget needed to rank items reliably exceeds what any published system spends by one to two orders of magnitude, (ii) items identified as harmful on one episode sample do not transfer as harmful to held-out episodes — pruning them is no better than removing the same number of items at random, and (iii) published cheap quality proxies correlate near zero with the stable component of item value. The constructive corollary: at matched compute, controlling the bank-level injection budget dominates item-level curation, and any item-level prune should be gated by a posterior credible interval rather than a point score. Self-editing agent memory rests on an unexamined statistical premise: that an individual stored experience has a utility that can be estimated well enough to decide whether to keep, rewrite, or delete it. We audit that premise directly. On tool-augmented multi-hop QA with an open-weight 14B agent, we randomize which subset of a frozen memory bank is injected per episode and fit a datamodel-style regression of episode success on item-presence indicators, then run a generalizability study: a variance-components model decomposing item effects into a stable item main effect, an item-by-query interaction, and decoding noise, from which we derive the number of probe episodes per item required for a target ranking reliability. We test transfer decisively: items flagged harmful on one half of the probe episodes are pruned, and the resulting bank is evaluated on a disjoint, instance-paired held-out set against pruning an equally sized random subset — the control that isolates the value of the curation decision from the value of merely shrinking the bank. Two baselines can refute us: a faithful reimplementation of A-MAC's five-factor admission score used as the prune signal, and a GEPA-style reflective search that selects the demonstration slot at compute matched to our entire estimation phase, sidestepping per-item estimation altogether. We predict a minority stable component, split-half rank reliability below 0.35 at ~85 observations per item, a required budget above 800 observations per item for reliability 0.8, harm labels that do not transfer beyond random removal, near-zero proxy correlations, and fewer than 10% of items with a posterior credible interval excluding zero. High reliability, or transferring harm labels, would refute us and vindicate the curation literature. The whole design is one environment, one primary model, ~22,000 episodes, and under $200 of API — arithmetic given.",
+   "pair_id": "hole_backfill_static_counterfactual__archive:archive:memory_item_va"
+  },
+  {
+   "a": "masked_harm_pairwise_removal",
+   "b": "archive:archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from O",
+   "sim": 0.632,
+   "kind": "idea-archive",
+   "prior_text": "archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from Organically Accumulated Agent Memory Lives in the Retrieved Set, Not the Item, and a Disagreement Gate Beats Item-Level Utility Filtering at Zero Clean-Setting Cost. When a bank is accumulated organically over a task stream with no planted conflicts, the items that break tasks are not individually low-utility; harm concentrates in retrievals where the top-k items disagree about the next action for the current state. A read-time gate that abstains from injection when a cheap action-consistency score over the retrieved set falls below a threshold, with no extra LLM call, removes at least 70 percent of the natural paired harm while keeping at least 80 percent of the gain on agreeing retrievals, whereas item-level utility filtering, validity or provenance and recency gating, spurious-cue calibration, learned abstention and reliance steering do not, because they act on item properties that do not predict which retrievals break tasks. Every proposed defence against harmful retrieved memory acts on items: utility scores, validity or provenance states, recency, spurious-cue calibration, a learned abstain decision, or a global reliance setting. We test the alternative that harm from an organically accumulated experience bank is a property of the retrieved set. Over three randomized ALFWorld task streams, a 27B agent accumulates raw and distilled items through a ReMe-style write path with no planted conflicts, and banks are frozen at three checkpoints so staleness arises naturally. On held-out tasks every retrieval is labelled post hoc from expert plans and bank timestamps at the item level (right, wrong, stale, conflicting) and at the set level (agree-right, agree-wrong, disagree), and per-retrieval harm is estimated with paired no-memory runs and Entry-Propagation-Recovery tallies. A likelihood-ratio test asks which label explains broken outcomes. Eight read-time controls are then run head to head on the same seeds and banks: a disagreement gate based on a cheap action-consistency score, MemRL-style utility filtering, validity and provenance or recency gating, CAMEL-style calibration, an RSCB-MC-style learned abstain policy, reliance-steering instructions, an LLM-judge conflict verifier, and an oracle gate, each scored on harm removed, gain retained, clean-setting cost on agree-right retrievals, and token cost. A by-product is the first task-execution partition of failures into wrong retrieval, arbitration failure, and failure to apply a correctly retrieved item.",
+   "pair_id": "masked_harm_pairwise_removal__archive:archive:retrieved_set_"
+  },
+  {
+   "a": "masked_harm_pairwise_removal",
+   "b": "digest:arxiv:2607.10608: Agents consuming retrieved memory fall into a compliance trap:",
+   "sim": 0.576,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2607.10608: Agents consuming retrieved memory fall into a compliance trap: they adopt conflicting memory at the first exposed decision point even when it is task-wrong, repeated exposure amplifies the error, recovery is weak, and once agents comply their success collapses to a low floor so stronger agents suffer larger absolute damage.",
+   "pair_id": "masked_harm_pairwise_removal__digest:arxiv:2607.10608: Agent"
+  },
+  {
+   "a": "item_value_consumer_decomposition",
+   "b": "archive:archive:instruction_conditioned_complementarity: What Does the Prompt Already Sa",
+   "sim": 0.622,
+   "kind": "idea-archive",
+   "prior_text": "archive:instruction_conditioned_complementarity: What Does the Prompt Already Say? Instruction-Conditioned Complementarity Decides When Retrieved Experience Helps, Hurts, or Just Costs Tokens. The marginal value of an injected memory item is relational: it is determined by the item's content relative to what the agent's *instruction* already states, not by the item's similarity to the query nor by its similarity to other retrieved items. Labeling each unit of guidance in a retrieved item against the instruction as REDUNDANT (already asserted), NOVEL (instruction silent) or CONFLICTING (instruction asserts something incompatible) yields a three-way decomposition that predicts per-instance outcomes: fixes track novel units, breaks track conflicting units, redundant units are pure token cost. Consequences we test: (a) the *same* memory bank flips from helpful to inert when the instruction is optimized, because its units become redundant; (b) surgically deleting only the redundant units preserves accuracy at ~half the injected tokens while a token-matched random deletion does not; (c) deleting novel units destroys the fixes; (d) a retrieval rule that scores candidates by instruction-conditional novel-unit yield per token beats similarity top-k and item-diversity MMR at matched budget. Agentic memory retrieves past experience by similarity to the query and injects it alongside a task instruction that a prompt optimizer is separately rewriting. Both texts carry guidance; nothing in either pipeline checks whether they carry the *same* guidance. We propose that an item's marginal value is relational — it depends on what the instruction already says — and that this single variable explains the fix/break/token-cost structure of memory injection that recent empirical work documents but does not predict. We decompose the instruction and each retrieved item into atomic guidance units and label every item unit against the instruction as redundant, novel, or conflicting, using an off-the-shelf NLI model as the primary instrument (LLM and human labels used for validation only). We test three things on one environment with one primary model. First, relationality: holding the bank, retriever and retrievals fixed, we run under a short hand-written instruction and under an optimizer-produced long instruction, and predict that the same items flip from mostly novel to substantially redundant and that memory's paired gain collapses accordingly. Second, causality: unit-level surgery at matched token budget — delete only the redundant units, delete a token-matched random subset, delete the novel units, or delete a subset chosen against a *decoy* instruction — so the taxonomy can be falsified without touching the retriever. Third, exploitation: a complementarity retrieval rule scoring candidates by instruction-conditional novel-unit yield per token, against similarity top-k, MMR item-diversity, and a cheap embedding-overlap proxy at matched injected-token budgets. All comparisons are instance-paired with McNemar tests, null replicates, and a stated 5-point minimum detectable effect at n=500. The whole program is ~27k agent episodes on one 4×A100 node and under $100 of API.",
+   "pair_id": "item_value_consumer_decomposition__archive:archive:instruction_co"
+  },
+  {
+   "a": "item_value_consumer_decomposition",
+   "b": "brief:Measurement C (running): static per-type procedure prompts vs retrieval; a retri",
+   "sim": 0.558,
+   "kind": "idea-brief",
+   "prior_text": "Measurement C (running): static per-type procedure prompts vs retrieval; a retrieved item whose value is fully captured",
+   "pair_id": "item_value_consumer_decomposition__brief:Measurement C (running):"
+  },
+  {
+   "a": "stale_item_score_lag_after_rule_change",
+   "b": "archive:archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injec",
+   "sim": 0.613,
+   "kind": "idea-archive",
+   "prior_text": "archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injection Timing Sets the Sign of Experience Memory's Effect on Agent Traces, and a Two-Parameter Stall Trigger Matches a Learned Retrieval Policy. For a fixed bank, fixed query, fixed k and the very same retrieved items, revealing the items at the first detected stall (repeated, invalid or state-preserving action) instead of at the first decision point flips the paired effect on ALFWorld from harm-or-null to gain, because at a stall the agent has its own trajectory evidence to arbitrate against wrong items whereas at entry it must comply blind. A swept two-parameter static stall trigger (stall length n, injection cap M) lands inside the seed-noise band of MemCon-style and RSCB-MC-style learned when-to-retrieve policies at lower token cost, and transfers across backbones (8B, 27B, 120B) and to WebShop without relearning, whereas the learned policies must be relearned. Experience memories for LLM agents almost always inject retrieved items at episode start, and the recent alternative is a learned policy that decides when or whether to retrieve. Neither literature asks whether the time of injection alone changes the sign of memory's effect for the same items, and no learned policy has been compared with a tuned static trigger. We fix the bank, the query, k and the retrieved items, and vary only the reveal time: episode start, first detected stall, fixed late step, every step, reimplemented MemCon-style and RSCB-MC-style learned policies, and an oracle-timed upper bound, on ALFWorld and WebShop with three local backbones. Paired McNemar tests on identical task-seed pairs separate timing from content; a stall-triggered generic-reflection control and a stall-triggered random-item control separate memory content from a replanning nudge. Entry-Propagation-Recovery tallies against ALFWorld's expert plans test the mechanism: compliance rates should be similar across arms, but success conditional on compliance should be much higher at a stall than at entry. We then sweep the static trigger's two parameters on one backbone, freeze it, and swap backbones and environments, comparing against the learned policies frozen and relearned. The deliverable is a pre-registered answer to whether when-to-retrieve is a learning problem or a two-number heuristic, and whether the pilot's start-of-episode harm is a timing artefact.",
+   "pair_id": "stale_item_score_lag_after_rule_change__archive:archive:stall_triggere"
+  },
+  {
+   "a": "stage_conditional_item_value",
+   "b": "archive:archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injec",
+   "sim": 0.674,
+   "kind": "idea-archive",
+   "prior_text": "archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injection Timing Sets the Sign of Experience Memory's Effect on Agent Traces, and a Two-Parameter Stall Trigger Matches a Learned Retrieval Policy. For a fixed bank, fixed query, fixed k and the very same retrieved items, revealing the items at the first detected stall (repeated, invalid or state-preserving action) instead of at the first decision point flips the paired effect on ALFWorld from harm-or-null to gain, because at a stall the agent has its own trajectory evidence to arbitrate against wrong items whereas at entry it must comply blind. A swept two-parameter static stall trigger (stall length n, injection cap M) lands inside the seed-noise band of MemCon-style and RSCB-MC-style learned when-to-retrieve policies at lower token cost, and transfers across backbones (8B, 27B, 120B) and to WebShop without relearning, whereas the learned policies must be relearned. Experience memories for LLM agents almost always inject retrieved items at episode start, and the recent alternative is a learned policy that decides when or whether to retrieve. Neither literature asks whether the time of injection alone changes the sign of memory's effect for the same items, and no learned policy has been compared with a tuned static trigger. We fix the bank, the query, k and the retrieved items, and vary only the reveal time: episode start, first detected stall, fixed late step, every step, reimplemented MemCon-style and RSCB-MC-style learned policies, and an oracle-timed upper bound, on ALFWorld and WebShop with three local backbones. Paired McNemar tests on identical task-seed pairs separate timing from content; a stall-triggered generic-reflection control and a stall-triggered random-item control separate memory content from a replanning nudge. Entry-Propagation-Recovery tallies against ALFWorld's expert plans test the mechanism: compliance rates should be similar across arms, but success conditional on compliance should be much higher at a stall than at entry. We then sweep the static trigger's two parameters on one backbone, freeze it, and swap backbones and environments, comparing against the learned policies frozen and relearned. The deliverable is a pre-registered answer to whether when-to-retrieve is a learning problem or a two-number heuristic, and whether the pilot's start-of-episode harm is a timing artefact.",
+   "pair_id": "stage_conditional_item_value__archive:archive:stall_triggere"
+  },
+  {
+   "a": "stage_conditional_item_value",
+   "b": "digest:arxiv:2607.10608: Agents consuming retrieved memory fall into a compliance trap:",
+   "sim": 0.652,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2607.10608: Agents consuming retrieved memory fall into a compliance trap: they adopt conflicting memory at the first exposed decision point even when it is task-wrong, repeated exposure amplifies the error, recovery is weak, and once agents comply their success collapses to a low floor so stronger agents suffer larger absolute damage.",
+   "pair_id": "stage_conditional_item_value__digest:arxiv:2607.10608: Agent"
+  },
+  {
+   "a": "guilt_by_coretrieval",
+   "b": "digest:arxiv:2608.02508: Trajectory-indexed memory utilities disperse feedback over a g",
+   "sim": 0.679,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2608.02508: Trajectory-indexed memory utilities disperse feedback over a growing state space and jointly assigned trajectory rewards contaminate co-retrieved memories (the memory-reward trap), and representing utility with a fixed-dimensional reduced-order per-task state concentrates feedback and limits persistent reward contamination.",
+   "pair_id": "guilt_by_coretrieval__digest:arxiv:2608.02508: Traje"
+  },
+  {
+   "a": "guilt_by_coretrieval",
+   "b": "archive:archive:memory_budget_confound: One Item Is the Budget: Token Volume, Not Memory",
+   "sim": 0.671,
+   "kind": "idea-archive",
+   "prior_text": "archive:memory_budget_confound: One Item Is the Budget: Token Volume, Not Memory Content, Explains Both the Harm and the Apparent Gains of Agentic Memory Curation. In experience-memory agents, the value of injected retrieved experience saturates after roughly one item, while its cost grows with injected tokens regardless of relevance. Two consequences follow, both falsifiable: (i) length-matched decoy experience — same environment, wrong task — reproduces most of the harm of correctly retrieved experience at the same injection volume; (ii) published curation methods (reconstruction, self-organizing memory) lose most or all of their advantage over raw top-k retrieval once the raw baseline is given the same per-instance injected-token budget the curated output happens to consume. The practical corollary is that k=1 raw retrieval, tuned once, is competitive with curation at a fraction of the cost. Agentic memory systems retrieve distilled past experience and inject it into an LLM agent's context. A 2026 wave of papers documents that this often hurts, attributes the harm to memory content — staleness, conflict, the abstraction gap between stored experience and the current state — and proposes a content-side remedy: reconstruction, reorganization, pruning. Each remedy also changes how many tokens get injected, and none of the papers we could find matches its raw-retrieval baseline on that budget. We ask whether the harm, and the reported cure, are about content at all. A pilot observation motivates the doubt: for a fixed memory bank, cutting injection from seven retrieved items to three eliminated a significant harm (McNemar p<0.05, replicated) without changing a single item. We propose a decomposition that separates the *content* value of retrieved experience from the *load* cost of the tokens carrying it. Holding bank, retriever, scaffold, tools and decoding fixed, we vary relevance (correct retrieval vs. length-matched decoys drawn from the same environment but the wrong task, and from an unrelated environment), item count, and total injected tokens (equalized by padding and truncation), with a gold-trajectory oracle bounding content value from above and a cross-encoder reranker instantiating the content-selection alternative. We then apply the missing control to two reimplemented curation methods: give raw top-k the same per-instance injected-token budget the curated output consumes, and add a compression-only rewrite that strips situational grounding from reconstruction. The sharp prediction is that content value saturates after about one item while load cost is roughly linear in tokens and largely relevance-independent, so that tuned k=1 raw retrieval lands within 2 points of the best curation method. Analysis is fully paired, with null replicates that fix the noise floor and a pre-registered minimum detectable effect.",
+   "pair_id": "guilt_by_coretrieval__archive:archive:memory_budget_"
+  },
+  {
+   "a": "admission_pruning_audit_random_holdout",
+   "b": "digest:arxiv:2606.03329: Rewarding a chunk-wise memory agent by how much its final memo",
+   "sim": 0.643,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2606.03329: Rewarding a chunk-wise memory agent by how much its final memory raises the per-token log-likelihood of the ground-truth answer, applied only on successful trajectories and normalized, improves RL training over sparse or lexical intermediate rewards.",
+   "pair_id": "admission_pruning_audit_random_holdout__digest:arxiv:2606.03329: Rewar"
+  },
+  {
+   "a": "admission_pruning_audit_random_holdout",
+   "b": "archive:archive:memory_surrogate_validity: Good Memory, Wrong Endpoint: Retrieval Recall",
+   "sim": 0.632,
+   "kind": "idea-archive",
+   "prior_text": "archive:memory_surrogate_validity: Good Memory, Wrong Endpoint: Retrieval Recall, LLM-Judge Quality and Admission F1 Do Not Rank Agent Experience Memories by Execution Success. The metrics used to develop and compare agent experience memories - recall/MRR of labeled-relevant episodes, LLM-judge quality or utility scores of stored items, admission-gate precision/recall as in A-MAC, and memory reward-model scores - are surrogate endpoints whose validity for the true endpoint, task-execution success, has never been measured. Across a pre-registered family of memory configurations that spans the surrogates' ranges (retriever, k, item form, admission gate, backbone) the surrogate-endpoint rank correlation is weak (Kendall tau below 0.5 after correcting for the endpoint's own test-retest reliability), recall is non-monotone with execution beyond small k, no single surrogate explains more than half of the treatment effect (Freedman's proportion explained), and selecting the configuration by the best surrogate yields a system indistinguishable from the memoryless control. A cheap execution-anchored probe (agreement of the first three memory-conditioned actions with a verified success trajectory) is a valid surrogate at about a tenth of the episode cost. Agent experience memories are tuned, pruned and compared with proxies: recall of relevant episodes, an LLM judge's quality score, admission-gate F1 on curated records, or a reward model's rating. Papers report these proxies as if they measured what the memory is for, which is to raise task-execution success. We treat them as surrogate endpoints and measure their validity directly. On ALFWorld (1,465 tasks) and WebShop we build one pool of successful and failed episodes and a pre-registered family of 20 memory configurations crossing retriever (BM25, dense, structural oracle, random, adversarial-nearest-wrong), k in {1,3,7}, item form (raw trajectory, insight), admission gate (none, LLM judge, five-factor A-MAC-style, self-consistency) and two open backbones. For each configuration we compute every surrogate and the paired execution-success delta against the memoryless control over the same tasks and seeds. Validity is reported three ways: Kendall tau between surrogate and endpoint across configurations, attenuation-corrected by the endpoint's test-retest reliability from null replicates; Freedman's proportion of treatment effect explained; and selection regret, the endpoint loss from choosing the configuration the surrogate prefers. Adversarial items that are plausible but task-wrong test whether judges can see harm. We expect recall to be non-monotone with execution beyond k=1, judge scores to be blind to harm, gate F1 to misrank gates, and selection by surrogate to land within noise of no memory. As a constructive result we validate a prefix-agreement probe, the agreement of the first three memory-conditioned actions with a verified success trajectory, which must reach tau at least 0.7 to be recommended. The outcome that refutes the thesis, any existing surrogate reaching corrected tau at least 0.8 with proportion explained at least 0.8, would equally be worth publishing because it would license the field's current practice.",
+   "pair_id": "admission_pruning_audit_random_holdout__archive:archive:memory_surroga"
+  },
+  {
+   "a": "admission_pruning_audit_random_holdout",
+   "b": "brief:5. Measurement of per-item estimates (22 cards). Benchmarks score end-to-end out",
+   "sim": 0.613,
+   "kind": "idea-brief",
+   "prior_text": "5. Measurement of per-item estimates (22 cards). Benchmarks score end-to-end outcomes only (Evo-Memory 2511.20857,",
+   "pair_id": "admission_pruning_audit_random_holdout__brief:5. Measurement of per-it"
+  },
+  {
+   "a": "utility_half_life_consumer_swap",
+   "b": "archive:archive:memory_budget_confound: One Item Is the Budget: Token Volume, Not Memory",
+   "sim": 0.562,
+   "kind": "idea-archive",
+   "prior_text": "archive:memory_budget_confound: One Item Is the Budget: Token Volume, Not Memory Content, Explains Both the Harm and the Apparent Gains of Agentic Memory Curation. In experience-memory agents, the value of injected retrieved experience saturates after roughly one item, while its cost grows with injected tokens regardless of relevance. Two consequences follow, both falsifiable: (i) length-matched decoy experience — same environment, wrong task — reproduces most of the harm of correctly retrieved experience at the same injection volume; (ii) published curation methods (reconstruction, self-organizing memory) lose most or all of their advantage over raw top-k retrieval once the raw baseline is given the same per-instance injected-token budget the curated output happens to consume. The practical corollary is that k=1 raw retrieval, tuned once, is competitive with curation at a fraction of the cost. Agentic memory systems retrieve distilled past experience and inject it into an LLM agent's context. A 2026 wave of papers documents that this often hurts, attributes the harm to memory content — staleness, conflict, the abstraction gap between stored experience and the current state — and proposes a content-side remedy: reconstruction, reorganization, pruning. Each remedy also changes how many tokens get injected, and none of the papers we could find matches its raw-retrieval baseline on that budget. We ask whether the harm, and the reported cure, are about content at all. A pilot observation motivates the doubt: for a fixed memory bank, cutting injection from seven retrieved items to three eliminated a significant harm (McNemar p<0.05, replicated) without changing a single item. We propose a decomposition that separates the *content* value of retrieved experience from the *load* cost of the tokens carrying it. Holding bank, retriever, scaffold, tools and decoding fixed, we vary relevance (correct retrieval vs. length-matched decoys drawn from the same environment but the wrong task, and from an unrelated environment), item count, and total injected tokens (equalized by padding and truncation), with a gold-trajectory oracle bounding content value from above and a cross-encoder reranker instantiating the content-selection alternative. We then apply the missing control to two reimplemented curation methods: give raw top-k the same per-instance injected-token budget the curated output consumes, and add a compression-only rewrite that strips situational grounding from reconstruction. The sharp prediction is that content value saturates after about one item while load cost is roughly linear in tokens and largely relevance-independent, so that tuned k=1 raw retrieval lands within 2 points of the best curation method. Analysis is fully paired, with null replicates that fix the noise floor and a pre-registered minimum detectable effect.",
+   "pair_id": "utility_half_life_consumer_swap__archive:archive:memory_budget_"
+  },
+  {
+   "a": "per_item_loo_reliability_and_winners_curse",
+   "b": "archive:archive:memory_item_value_reliability: Item Value Is Not an Item Property: A Gen",
+   "sim": 0.619,
+   "kind": "idea-archive",
+   "prior_text": "archive:memory_item_value_reliability: Item Value Is Not an Item Property: A Generalizability Audit of Per-Item Utility Estimates in Self-Editing Agent Memory. Every agent-memory curation method (verify-before-write, contradiction pruning, LLM-judge filtering, learned admission control) presumes that an individual memory item has a stable, estimable utility. We claim that presumption is false as a matter of measurable fact: the stable item main effect is a minority of the explainable outcome variance, being dominated by item-by-query interaction, so (i) the probe budget needed to rank items reliably exceeds what any published system spends by one to two orders of magnitude, (ii) items identified as harmful on one episode sample do not transfer as harmful to held-out episodes — pruning them is no better than removing the same number of items at random, and (iii) published cheap quality proxies correlate near zero with the stable component of item value. The constructive corollary: at matched compute, controlling the bank-level injection budget dominates item-level curation, and any item-level prune should be gated by a posterior credible interval rather than a point score. Self-editing agent memory rests on an unexamined statistical premise: that an individual stored experience has a utility that can be estimated well enough to decide whether to keep, rewrite, or delete it. We audit that premise directly. On tool-augmented multi-hop QA with an open-weight 14B agent, we randomize which subset of a frozen memory bank is injected per episode and fit a datamodel-style regression of episode success on item-presence indicators, then run a generalizability study: a variance-components model decomposing item effects into a stable item main effect, an item-by-query interaction, and decoding noise, from which we derive the number of probe episodes per item required for a target ranking reliability. We test transfer decisively: items flagged harmful on one half of the probe episodes are pruned, and the resulting bank is evaluated on a disjoint, instance-paired held-out set against pruning an equally sized random subset — the control that isolates the value of the curation decision from the value of merely shrinking the bank. Two baselines can refute us: a faithful reimplementation of A-MAC's five-factor admission score used as the prune signal, and a GEPA-style reflective search that selects the demonstration slot at compute matched to our entire estimation phase, sidestepping per-item estimation altogether. We predict a minority stable component, split-half rank reliability below 0.35 at ~85 observations per item, a required budget above 800 observations per item for reliability 0.8, harm labels that do not transfer beyond random removal, near-zero proxy correlations, and fewer than 10% of items with a posterior credible interval excluding zero. High reliability, or transferring harm labels, would refute us and vindicate the curation literature. The whole design is one environment, one primary model, ~22,000 episodes, and under $200 of API — arithmetic given.",
+   "pair_id": "per_item_loo_reliability_and_winners_curse__archive:archive:memory_item_va"
+  },
+  {
+   "a": "per_item_loo_reliability_and_winners_curse",
+   "b": "digest:arxiv:2606.22844: Retrieval alone does not make a memory valid evidence for the ",
+   "sim": 0.605,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2606.22844: Retrieval alone does not make a memory valid evidence for the current query, and restoring each fragment's original episodic context (time, session span, participants) and checking it against query-implied conditions consistently improves long-term memory performance.",
+   "pair_id": "per_item_loo_reliability_and_winners_curse__digest:arxiv:2606.22844: Retri"
+  },
+  {
+   "a": "responsible_item_attribution_benchmark",
+   "b": "archive:archive:stale_true_state_facts_redaction: Stale-True, Not Wrong: Episode-Specifi",
+   "sim": 0.7,
+   "kind": "idea-archive",
+   "prior_text": "archive:stale_true_state_facts_redaction: Stale-True, Not Wrong: Episode-Specific State Facts Carry the Natural Harm of Agent Experience Memory, and Fact-Level Redaction Beats Abstention. In an organically accumulated ALFWorld experience bank, the items that hurt are not procedurally wrong items but procedurally right items carrying state facts (object-receptacle placements, open/closed states) that were true in the source episode and are false in the target task. Per-task harm scales with the number of stale-true facts injected, not with injected tokens; the compliance-trap entry point is the first navigation action, which targets a receptacle named in a stale fact; and a read-time redaction that replaces state facts with typed placeholders at matched token length removes the harm at zero clean-task cost, whereas abstention, utility filtering and provenance gating buy safety with clean-task loss. Negative transfer from agent experience memory has been diagnosed with deliberately injected conflicts, in-task failed attempts, or misleading external documents; how much harm an organically accumulated bank causes, and through which items, is unmeasured. We build an experience bank over an ALFWorld task stream with a standard success-gated write path, retrieve it for a disjoint evaluation set, and label every injected item post hoc against the target task's ground-truth initial state, which is available from the game file. This yields a deterministic, LLM-judge-free label for each stored fact (true-in-target or stale) and for each item (right, stale-true, wrong, conflicting). We claim that the harm is carried by stale-true facts inside procedurally correct items: per-task net failure flips are explained by the count of stale facts and not by injected tokens, and the first divergent action in harmed episodes targets a receptacle named in a stale fact at well above the rate of a permuted-fact control. We then compare read-time controls head to head at matched k and matched tokens: typed-placeholder redaction of state facts, permuted facts, oracle facts, abstention, utility filtering, provenance gating and reliance steering, each on clean and on stale tasks separately. The prediction is that redaction alone removes the harm at the same k that produced it without paying on clean tasks. The design directly tests the program's earlier conclusion that volume rather than content was the lever.",
+   "pair_id": "responsible_item_attribution_benchmark__archive:archive:stale_true_sta"
+  },
+  {
+   "a": "surrogate_endpoints_for_item_credit",
+   "b": "digest:s2:05c14833b7cee3408bf72d25cf0bee2c4b0d70b0: Scoring replay-buffer transitions b",
+   "sim": 0.623,
+   "kind": "idea-digest",
+   "prior_text": "s2:05c14833b7cee3408bf72d25cf0bee2c4b0d70b0: Scoring replay-buffer transitions by a weighted combination of reward magnitude and TD error and evicting low-utility ones speeds learning and improves final returns over static retention schemes.",
+   "pair_id": "surrogate_endpoints_for_item_credit__digest:s2:05c14833b7cee3408bf7"
+  },
+  {
+   "a": "surrogate_endpoints_for_item_credit",
+   "b": "brief:5. Measurement of per-item estimates (22 cards). Benchmarks score end-to-end out",
+   "sim": 0.582,
+   "kind": "idea-brief",
+   "prior_text": "5. Measurement of per-item estimates (22 cards). Benchmarks score end-to-end outcomes only (Evo-Memory 2511.20857,",
+   "pair_id": "surrogate_endpoints_for_item_credit__brief:5. Measurement of per-it"
+  },
+  {
+   "a": "surrogate_endpoints_for_item_credit",
+   "b": "archive:archive:substitutes_not_complements: Substitutes, Not Complements: Clause-Level ",
+   "sim": 0.576,
+   "kind": "idea-archive",
+   "prior_text": "archive:substitutes_not_complements: Substitutes, Not Complements: Clause-Level Evidence That Optimized Instructions Shrink an Agent's Useful Memory-Injection Budget. Prompt-optimized instructions and retrieved episodic memory carry overlapping procedural information, so their combination is sub-additive: the accuracy-optimal injection budget k* falls from the high-k regime (4–8 items) under a minimal instruction to the low-k regime (0–2 items) under an instruction that contains the task's procedural clauses, and the harm is *relational* — deleting the specific instruction clause that a memory item duplicates restores that item's marginal value, while deleting a length-matched unrelated clause does not. Agent frameworks stack a self-editing experience memory on top of an automatic prompt optimizer and report end-to-end gains without asking how the two components interact. Pilot measurements motivating this work show that (i) injecting a full retrieved memory bank fixed zero test items and broke six to seven (McNemar p<0.05, replicated), (ii) reducing injection from seven items to three eliminated the harm from the *same* bank, making injection volume the causal lever, and (iii) re-scoring the same candidate moved the headline metric by 0.05–0.14, so most published deltas in this area sit under the noise floor. We propose one explanatory hypothesis that ties these together: optimized instructions and retrieved experience are informational *substitutes*. An instruction that already states a procedural regularity leaves a memory item encoding that same regularity no marginal information but a full share of the interference cost, so the accuracy-optimal injection budget shrinks as the instruction absorbs procedure.\n\nThe design is built around one causal test rather than a correlational one. We decompose a GEPA-evolved instruction into procedural clauses and build a graded ladder (minimal → half the clauses → full evolved instruction, plus a hand-written strong instruction that contains no optimizer output). The primary grid crosses this ladder with five injection budgets on one multi-hop QA agent and one 7B open model, item-paired on a fixed set of 800 items, and pre-registers only the *regime-level* claim (argmax-k moves from {4,8} to {0,1,2}) and the monotone ordering of the k-slope. The mechanism is then decided by a clause-knockout difference-in-differences: for each query we inject the single retrieved item that most duplicates a specific clause, and compare deleting *that* clause against deleting a length-matched unrelated clause. Substitution predicts the item recovers value only under the targeted knockout; a ceiling/saturation effect or any global property of the optimized instruction predicts no difference. Length-matched neutral padding (dilution), foreign-instruction redundancy (item-intrinsic quality), MMR inter-item redundancy, RECOMP-style compression, ReasoningBank-style write-time curation, and a joint (instruction, k) optimizer are the competing explanations we run against. Powered replications on a second model family and a second QA task are conditional on the primary result. Full plan: 76 paired evaluation passes ≈ 182k model generations plus 6 optimizer runs ≈ 1.5 GPU-days on one 4×A100 node, and ≈$70 of frontier API.",
+   "pair_id": "surrogate_endpoints_for_item_credit__archive:archive:substitutes_no"
+  },
+  {
+   "a": "pairwise_removal_interaction_audit",
+   "b": "archive:archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from O",
+   "sim": 0.605,
+   "kind": "idea-archive",
+   "prior_text": "archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from Organically Accumulated Agent Memory Lives in the Retrieved Set, Not the Item, and a Disagreement Gate Beats Item-Level Utility Filtering at Zero Clean-Setting Cost. When a bank is accumulated organically over a task stream with no planted conflicts, the items that break tasks are not individually low-utility; harm concentrates in retrievals where the top-k items disagree about the next action for the current state. A read-time gate that abstains from injection when a cheap action-consistency score over the retrieved set falls below a threshold, with no extra LLM call, removes at least 70 percent of the natural paired harm while keeping at least 80 percent of the gain on agreeing retrievals, whereas item-level utility filtering, validity or provenance and recency gating, spurious-cue calibration, learned abstention and reliance steering do not, because they act on item properties that do not predict which retrievals break tasks. Every proposed defence against harmful retrieved memory acts on items: utility scores, validity or provenance states, recency, spurious-cue calibration, a learned abstain decision, or a global reliance setting. We test the alternative that harm from an organically accumulated experience bank is a property of the retrieved set. Over three randomized ALFWorld task streams, a 27B agent accumulates raw and distilled items through a ReMe-style write path with no planted conflicts, and banks are frozen at three checkpoints so staleness arises naturally. On held-out tasks every retrieval is labelled post hoc from expert plans and bank timestamps at the item level (right, wrong, stale, conflicting) and at the set level (agree-right, agree-wrong, disagree), and per-retrieval harm is estimated with paired no-memory runs and Entry-Propagation-Recovery tallies. A likelihood-ratio test asks which label explains broken outcomes. Eight read-time controls are then run head to head on the same seeds and banks: a disagreement gate based on a cheap action-consistency score, MemRL-style utility filtering, validity and provenance or recency gating, CAMEL-style calibration, an RSCB-MC-style learned abstain policy, reliance-steering instructions, an LLM-judge conflict verifier, and an oracle gate, each scored on harm removed, gain retained, clean-setting cost on agree-right retrievals, and token cost. A by-product is the first task-execution partition of failures into wrong retrieval, arbitration failure, and failure to apply a correctly retrieved item.",
+   "pair_id": "pairwise_removal_interaction_audit__archive:archive:retrieved_set_"
+  },
+  {
+   "a": "memory_failure_blame_item_vs_set",
+   "b": "digest:arxiv:2607.10608: Agents consuming retrieved memory fall into a compliance trap:",
+   "sim": 0.664,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2607.10608: Agents consuming retrieved memory fall into a compliance trap: they adopt conflicting memory at the first exposed decision point even when it is task-wrong, repeated exposure amplifies the error, recovery is weak, and once agents comply their success collapses to a low floor so stronger agents suffer larger absolute damage.",
+   "pair_id": "memory_failure_blame_item_vs_set__digest:arxiv:2607.10608: Agent"
+  },
+  {
+   "a": "memory_failure_blame_item_vs_set",
+   "b": "archive:archive:stale_true_state_facts_redaction: Stale-True, Not Wrong: Episode-Specifi",
+   "sim": 0.661,
+   "kind": "idea-archive",
+   "prior_text": "archive:stale_true_state_facts_redaction: Stale-True, Not Wrong: Episode-Specific State Facts Carry the Natural Harm of Agent Experience Memory, and Fact-Level Redaction Beats Abstention. In an organically accumulated ALFWorld experience bank, the items that hurt are not procedurally wrong items but procedurally right items carrying state facts (object-receptacle placements, open/closed states) that were true in the source episode and are false in the target task. Per-task harm scales with the number of stale-true facts injected, not with injected tokens; the compliance-trap entry point is the first navigation action, which targets a receptacle named in a stale fact; and a read-time redaction that replaces state facts with typed placeholders at matched token length removes the harm at zero clean-task cost, whereas abstention, utility filtering and provenance gating buy safety with clean-task loss. Negative transfer from agent experience memory has been diagnosed with deliberately injected conflicts, in-task failed attempts, or misleading external documents; how much harm an organically accumulated bank causes, and through which items, is unmeasured. We build an experience bank over an ALFWorld task stream with a standard success-gated write path, retrieve it for a disjoint evaluation set, and label every injected item post hoc against the target task's ground-truth initial state, which is available from the game file. This yields a deterministic, LLM-judge-free label for each stored fact (true-in-target or stale) and for each item (right, stale-true, wrong, conflicting). We claim that the harm is carried by stale-true facts inside procedurally correct items: per-task net failure flips are explained by the count of stale facts and not by injected tokens, and the first divergent action in harmed episodes targets a receptacle named in a stale fact at well above the rate of a permuted-fact control. We then compare read-time controls head to head at matched k and matched tokens: typed-placeholder redaction of state facts, permuted facts, oracle facts, abstention, utility filtering, provenance gating and reliance steering, each on clean and on stale tasks separately. The prediction is that redaction alone removes the harm at the same k that produced it without paying on clean tasks. The design directly tests the program's earlier conclusion that volume rather than content was the lever.",
+   "pair_id": "memory_failure_blame_item_vs_set__archive:archive:stale_true_sta"
+  }
+ ],
+ "nearest": {
+  "hole_backfill_static_counterfactual": [
+   [
+    "item_value_consumer_decomposition",
+    0.654
+   ],
+   [
+    "slot_vs_item_credit_permutation",
+    0.598
+   ],
+   [
+    "stage_conditional_item_value",
+    0.595
+   ]
+  ],
+  "masked_harm_pairwise_removal": [
+   [
+    "stage_conditional_item_value",
+    0.668
+   ],
+   [
+    "pairwise_removal_interaction_audit",
+    0.644
+   ],
+   [
+    "guilt_by_coretrieval",
+    0.595
+   ]
+  ],
+  "item_credit_variance_decomposition": [
+   [
+    "hole_backfill_static_counterfactual",
+    0.569
+   ],
+   [
+    "surrogate_endpoints_for_item_credit",
+    0.563
+   ],
+   [
+    "admission_pruning_audit_random_holdout",
+    0.529
+   ]
+  ],
+  "item_value_consumer_decomposition": [
+   [
+    "hole_backfill_static_counterfactual",
+    0.654
+   ],
+   [
+    "guilt_by_coretrieval",
+    0.633
+   ],
+   [
+    "pairwise_removal_interaction_audit",
+    0.61
+   ]
+  ],
+  "stale_item_score_lag_after_rule_change": [
+   [
+    "per_item_loo_reliability_and_winners_curse",
+    0.7
+   ],
+   [
+    "hole_backfill_static_counterfactual",
+    0.586
+   ],
+   [
+    "item_value_consumer_decomposition",
+    0.562
+   ]
+  ],
+  "stage_conditional_item_value": [
+   [
+    "pairwise_removal_interaction_audit",
+    0.674
+   ],
+   [
+    "masked_harm_pairwise_removal",
+    0.668
+   ],
+   [
+    "guilt_by_coretrieval",
+    0.637
+   ]
+  ],
+  "guilt_by_coretrieval": [
+   [
+    "stage_conditional_item_value",
+    0.637
+   ],
+   [
+    "item_value_consumer_decomposition",
+    0.633
+   ],
+   [
+    "masked_harm_pairwise_removal",
+    0.595
+   ]
+  ],
+  "admission_pruning_audit_random_holdout": [
+   [
+    "surrogate_endpoints_for_item_credit",
+    0.605
+   ],
+   [
+    "guilt_by_coretrieval",
+    0.576
+   ],
+   [
+    "hole_backfill_static_counterfactual",
+    0.57
+   ]
+  ],
+  "utility_half_life_consumer_swap": [
+   [
+    "guilt_by_coretrieval",
+    0.574
+   ],
+   [
+    "item_value_consumer_decomposition",
+    0.555
+   ],
+   [
+    "masked_harm_pairwise_removal",
+    0.543
+   ]
+  ],
+  "per_item_loo_reliability_and_winners_curse": [
+   [
+    "stale_item_score_lag_after_rule_change",
+    0.7
+   ],
+   [
+    "pairwise_removal_interaction_audit",
+    0.618
+   ],
+   [
+    "guilt_by_coretrieval",
+    0.593
+   ]
+  ],
+  "responsible_item_attribution_benchmark": [
+   [
+    "memory_failure_blame_item_vs_set",
+    0.751
+   ],
+   [
+    "stage_conditional_item_value",
+    0.578
+   ],
+   [
+    "per_item_loo_reliability_and_winners_curse",
+    0.569
+   ]
+  ],
+  "surrogate_endpoints_for_item_credit": [
+   [
+    "admission_pruning_audit_random_holdout",
+    0.605
+   ],
+   [
+    "guilt_by_coretrieval",
+    0.573
+   ],
+   [
+    "item_credit_variance_decomposition",
+    0.563
+   ]
+  ],
+  "pairwise_removal_interaction_audit": [
+   [
+    "stage_conditional_item_value",
+    0.674
+   ],
+   [
+    "masked_harm_pairwise_removal",
+    0.644
+   ],
+   [
+    "per_item_loo_reliability_and_winners_curse",
+    0.618
+   ]
+  ],
+  "memory_failure_blame_item_vs_set": [
+   [
+    "responsible_item_attribution_benchmark",
+    0.751
+   ],
+   [
+    "stage_conditional_item_value",
+    0.591
+   ],
+   [
+    "pairwise_removal_interaction_audit",
+    0.583
+   ]
+  ],
+  "slot_vs_item_credit_permutation": [
+   [
+    "hole_backfill_static_counterfactual",
+    0.598
+   ],
+   [
+    "per_item_loo_reliability_and_winners_curse",
+    0.582
+   ],
+   [
+    "guilt_by_coretrieval",
+    0.546
+   ]
+  ]
+ }
+}
