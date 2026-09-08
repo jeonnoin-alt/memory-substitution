@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__retrieval_timing_is_budgeting",
+ "kind": "entail_revise",
+ "name": "retrieval_timing_is_budgeting",
+ "prompt_file": "runs_ideate2/gen_static/entail/jobs/entail_revise__retrieval_timing_is_budgeting.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

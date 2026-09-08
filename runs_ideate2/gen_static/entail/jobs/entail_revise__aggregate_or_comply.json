@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__aggregate_or_comply",
+ "kind": "entail_revise",
+ "name": "aggregate_or_comply",
+ "prompt_file": "runs_ideate2/gen_static/entail/jobs/entail_revise__aggregate_or_comply.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

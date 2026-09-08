@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__many_shot_averages_detours",
+ "kind": "entail_revise",
+ "name": "many_shot_averages_detours",
+ "prompt_file": "runs_ideate2/gen_static/entail/jobs/entail_revise__many_shot_averages_detours.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

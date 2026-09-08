@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__binding_scope_leakage_ladder",
+ "kind": "entail_revise",
+ "name": "binding_scope_leakage_ladder",
+ "prompt_file": "runs_ideate2/gen_static/entail/jobs/entail_revise__binding_scope_leakage_ladder.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

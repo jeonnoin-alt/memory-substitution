@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__bindings_need_a_query_only_when_untestable",
+ "kind": "entail_revise",
+ "name": "bindings_need_a_query_only_when_untestable",
+ "prompt_file": "runs_ideate2/gen_static/entail/jobs/entail_revise__bindings_need_a_query_only_when_untestable.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}

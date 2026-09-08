@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__compile_the_statistics_not_the_trajectory",
+ "kind": "entail_revise",
+ "name": "compile_the_statistics_not_the_trajectory",
+ "prompt_file": "runs_ideate2/gen_static/entail/jobs/entail_revise__compile_the_statistics_not_the_trajectory.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}
