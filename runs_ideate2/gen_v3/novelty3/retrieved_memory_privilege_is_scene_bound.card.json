@@ -1,0 +1,219 @@
+{
+ "name": "retrieved_memory_privilege_is_scene_bound",
+ "keys": {
+  "agent": [
+   "privileged information self-distillation retrieved agent memory memory-free student ALFWorld",
+   "decomposing retained in-context gain into type-level procedure prior versus item-specific scene bindings",
+   "privilege illusion on-policy self-distillation memory-conditioned teacher seen versus unseen scenes"
+  ],
+  "mechanism_home": [
+   "privileged information distillation which part of the privilege gap is closable by the student",
+   "reference-induced rote shortcut component versus question-conditioned transferable component of self-distillation",
+   "unrelated reference substitution preserves self-distillation gain context-induced effect"
+  ],
+  "adjacent": [
+   "substituting an unrelated problem-solution pair keeps most of the privileged self-distillation gain",
+   "purified OPSD reference-induced rote shortcut versus transferable component",
+   "alignment to the reference does not predict benefit from privileged information"
+  ],
+  "baseline": [
+   "self-distillation with an empty privileged context (P-CD0)",
+   "plain SFT on bank trajectories with a memory-free prompt",
+   "anchored privileged distillation fix (DAPD)"
+  ],
+  "methods": [
+   "OPSD; pi-Distill; OP2SD; Purified OPSD",
+   "Rethinking Privileged Information in OPSD; DAPD; DOPD",
+   "Experience Distillation; Latent OPSD; MiniLM retrieval"
+  ],
+  "environment": [
+   "ALFWorld valid_seen valid_unseen pick_two_obj_and_place",
+   "Qwen3-32B frozen teacher",
+   "QLoRA nf4 r=32 vLLM"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "privileged information distillation which part of the privilege gap is closable by the student"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "reference-induced rote shortcut component versus question-conditioned transferable component of self-distillation"
+  },
+  {
+   "class": "agent",
+   "query": "privileged information self-distillation retrieved agent memory memory-free student ALFWorld"
+  },
+  {
+   "class": "agent",
+   "query": "decomposing retained in-context gain into type-level procedure prior versus item-specific scene bindings"
+  },
+  {
+   "class": "adjacent",
+   "query": "substituting an unrelated problem-solution pair keeps most of the privileged self-distillation gain"
+  },
+  {
+   "class": "baseline",
+   "query": "self-distillation with an empty privileged context (P-CD0)"
+  },
+  {
+   "class": "methods",
+   "query": "OPSD; pi-Distill; OP2SD; Purified OPSD Rethinking Privileged Information in OPSD; DAPD; DOPD Experience Distillation; Latent OPSD; MiniLM retrieval privileged information self-distillation retrieved a"
+  },
+  {
+   "class": "agent",
+   "query": "privileged information self-distillation retrieved agent memory memory-free student ALFWorld ALFWorld valid_seen valid_unseen pick_two_obj_and_place Qwen3-32B frozen teacher"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.09228",
+   "date": "2026-08-10",
+   "venue": "",
+   "sim": 0.61,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "mechanism_home",
+    "methods"
+   ],
+   "title": "Privileged Solutions or Context-Induced Teacher Behavior? Dissecting On-Policy Self-Distillation"
+  },
+  {
+   "id": "arxiv:2606.29502",
+   "date": "2026-06-28",
+   "venue": "arXiv.org",
+   "sim": 0.584,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "UCOB: Learning to Utilize and Evolve Agentic Skills via Credit-Aware On-Policy Bidirectional Self-Distillation"
+  },
+  {
+   "id": "arxiv:2608.05219",
+   "date": "2026-08-05",
+   "venue": "",
+   "sim": 0.565,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "When Privileged Guidance Misaligns: State-Matched Routing and Contextualized Self-Distillation for Multi-Turn Agents"
+  },
+  {
+   "id": "arxiv:2606.26790",
+   "date": "2026-06-25",
+   "venue": "arXiv.org",
+   "sim": 0.556,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "OPID: On-Policy Skill Distillation for Agentic Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2608.14144",
+   "date": "2026-08-14",
+   "venue": "",
+   "sim": 0.541,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Self-Supervised Visual On-Policy Distillation"
+  },
+  {
+   "id": "arxiv:2608.01837",
+   "date": "2026-08-03",
+   "venue": "",
+   "sim": 0.54,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "PCSD: Persistent Consistency for Self-Distillation in Agentic Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2605.21606",
+   "date": "2026-05-20",
+   "venue": "",
+   "sim": 0.536,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "When Are Teacher Tokens Reliable? Position-Weighted On-Policy Self-Distillation for Reasoning"
+  },
+  {
+   "id": "arxiv:2605.20643",
+   "date": "2026-05-20",
+   "venue": "",
+   "sim": 0.511,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "baseline"
+   ],
+   "title": "AVSD: Adaptive-View Self-Distillation by Balancing Consensus and Teacher-Specific Privileged Signals"
+  },
+  {
+   "id": "arxiv:2608.05987",
+   "date": "2026-08-06",
+   "venue": "",
+   "sim": 0.507,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2606.29863",
+   "date": "2026-06-29",
+   "venue": "arXiv.org",
+   "sim": 0.491,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "KbSD: Knowledge Boundary aware Self-Distillation for Behavioral Calibration in Agentic Search"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 17,
+  "agent": 24,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "privileged information distillation which part of the privilege gap is closable by the student 2025 arXiv"
+  },
+  {
+   "query": "reference-induced rote shortcut component versus question-conditioned transferable component of self-distillation 2025 arXiv"
+  }
+ ]
+}

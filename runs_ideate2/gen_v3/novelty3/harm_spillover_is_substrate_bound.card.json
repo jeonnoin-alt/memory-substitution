@@ -1,0 +1,219 @@
+{
+ "name": "harm_spillover_is_substrate_bound",
+ "keys": {
+  "agent": [
+   "wrong-procedure agent memory harm in context versus internalized by SFT and on-policy distillation",
+   "poisoned retrieved memory dose-response spillover to sibling task types ALFWorld",
+   "compliance trap task-conflicting retrieved memory internalization clean memory override"
+  ],
+  "mechanism_home": [
+   "data poisoning fraction threshold versus linear dose response fine-tuning",
+   "fine-tuning on corrupted demonstrations spreads errors to related tasks cross-task generalization of learned mistakes",
+   "knowledge conflict clean context overriding parametric errors on-policy distillation error attenuation"
+  ],
+  "adjacent": [
+   "near-constant number of poison samples suffices regardless of dataset size",
+   "narrow fine-tuning generalizes broadly emergent misalignment",
+   "on-policy distillation reduces compounding of teacher errors compared to SFT imitation"
+  ],
+  "baseline": [
+   "filter poisoned items from the store before training or retrieval",
+   "place clean matched memory back in context at inference",
+   "corridor regularization or trait-direction projection during SFT"
+  ],
+  "methods": [
+   "The Compliance Trap; Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation; Bias amplification through distillation",
+   "MemTrapBench; MemSyco-Bench; corridor regularization",
+   "OPSD; Experience Distillation; P-CD0"
+  ],
+  "environment": [
+   "ALFWorld heat_then_place cool_then_place valid_seen valid_unseen",
+   "QLoRA LoRA rank 8",
+   "274 validation games 3 seeds"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "data poisoning fraction threshold versus linear dose response fine-tuning"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "fine-tuning on corrupted demonstrations spreads errors to related tasks cross-task generalization of learned mistakes"
+  },
+  {
+   "class": "agent",
+   "query": "wrong-procedure agent memory harm in context versus internalized by SFT and on-policy distillation"
+  },
+  {
+   "class": "agent",
+   "query": "poisoned retrieved memory dose-response spillover to sibling task types ALFWorld"
+  },
+  {
+   "class": "adjacent",
+   "query": "near-constant number of poison samples suffices regardless of dataset size"
+  },
+  {
+   "class": "baseline",
+   "query": "filter poisoned items from the store before training or retrieval"
+  },
+  {
+   "class": "methods",
+   "query": "The Compliance Trap; Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation; Bias amplification through distillation MemTrapBench; MemSyco-Bench; corridor regularization OPSD; Experience Dis"
+  },
+  {
+   "class": "agent",
+   "query": "wrong-procedure agent memory harm in context versus internalized by SFT and on-policy distillation ALFWorld heat_then_place cool_then_place valid_seen valid_unseen QLoRA LoRA rank 8"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.03509",
+   "date": "2026-08-04",
+   "venue": "",
+   "sim": 0.574,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "SkillJack: Persistent Skill Backdoors in Self-Evolving Agents"
+  },
+  {
+   "id": "arxiv:2512.16962",
+   "date": "2025-12-18",
+   "venue": "",
+   "sim": 0.53,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MemoryGraft: Persistent Compromise of LLM Agents via Poisoned Experience Retrieval"
+  },
+  {
+   "id": "arxiv:2501.11759",
+   "date": "2025-01-20",
+   "venue": "",
+   "sim": 0.528,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Poison-RAG: Adversarial Data Poisoning Attacks on Retrieval-Augmented Generation in Recommender Systems"
+  },
+  {
+   "id": "arxiv:2510.07192",
+   "date": "2025-10-08",
+   "venue": "",
+   "sim": 0.48,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "baseline",
+    "mechanism_home"
+   ],
+   "title": "Poisoning Attacks on LLMs Require a Near-constant Number of Poison\n  Samples"
+  },
+  {
+   "id": "arxiv:2303.03592",
+   "date": "2023-03-07",
+   "venue": "",
+   "sim": 0.476,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Exploring the Limits of Model-Targeted Indiscriminate Data Poisoning\n  Attacks"
+  },
+  {
+   "id": "arxiv:2601.01090",
+   "date": "2026-01-03",
+   "venue": "",
+   "sim": 0.476,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Harm in AI-Driven Societies: An Audit of Toxicity Adoption on Chirper.ai"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.473,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2310.13828",
+   "date": "2023-10-20",
+   "venue": "",
+   "sim": 0.462,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Nightshade: Prompt-Specific Poisoning Attacks on Text-to-Image\n  Generative Models"
+  },
+  {
+   "id": "arxiv:2602.07398",
+   "date": "2026-02-07",
+   "venue": "",
+   "sim": 0.462,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "AgentSys: Secure and Dynamic LLM Agents Through Explicit Hierarchical Memory Management"
+  },
+  {
+   "id": "arxiv:2106.09667",
+   "date": "2021-06-17",
+   "venue": "",
+   "sim": 0.452,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Poisoning and Backdooring Contrastive Learning"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 18,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "data poisoning fraction threshold versus linear dose response fine-tuning 2025 arXiv"
+  },
+  {
+   "query": "fine-tuning on corrupted demonstrations spreads errors to related tasks cross-task generalization of learned mistakes 2025 arXiv"
+  }
+ ]
+}

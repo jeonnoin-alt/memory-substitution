@@ -1,0 +1,230 @@
+{
+ "name": "context_wins_substrate_conflict",
+ "keys": {
+  "agent": [
+   "conflict between weights-trained procedure and retrieved stale memory context dominates agent",
+   "stale retrieved items compliance after rule change hybrid agent memory eviction",
+   "fresh retrieved items repair stale fine-tuned weights post-shift stream recovery"
+  ],
+  "mechanism_home": [
+   "knowledge conflict parametric versus contextual knowledge preference",
+   "counterfactual context overrides fine-tuned parametric facts knowledge editing conflict",
+   "in-context instruction following versus fine-tuned behavior which prevails prompt override"
+  ],
+  "adjacent": [
+   "language models prefer contextual knowledge over parametric when context is coherent",
+   "in-context demonstrations override explicit instructions",
+   "fine-tuning on correct facts does not prevent following misleading context sycophancy"
+  ],
+  "baseline": [
+   "temporal validity filter for retrieval evict stale items",
+   "critique prompt instructing agent to verify memory against observations",
+   "retrain weights on new procedure only"
+  ],
+  "methods": [
+   "compliance trap",
+   "STALE benchmark",
+   "CK-PLUG",
+   "UniMem",
+   "COVE",
+   "continual learning as retrieval",
+   "AgentCL",
+   "OAKS",
+   "FOREVER",
+   "Agent-Dice",
+   "self-generated replay",
+   "Do Self-Evolving Agents Forget",
+   "faulty consolidation",
+   "insight governance"
+  ],
+  "environment": [
+   "ALFWorld",
+   "QLoRA SFT",
+   "continual LoRA",
+   "FIFO bounded bank",
+   "MiniLM retrieval"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "knowledge conflict parametric versus contextual knowledge preference"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "counterfactual context overrides fine-tuned parametric facts knowledge editing conflict"
+  },
+  {
+   "class": "agent",
+   "query": "conflict between weights-trained procedure and retrieved stale memory context dominates agent"
+  },
+  {
+   "class": "agent",
+   "query": "stale retrieved items compliance after rule change hybrid agent memory eviction"
+  },
+  {
+   "class": "adjacent",
+   "query": "language models prefer contextual knowledge over parametric when context is coherent"
+  },
+  {
+   "class": "baseline",
+   "query": "temporal validity filter for retrieval evict stale items"
+  },
+  {
+   "class": "methods",
+   "query": "compliance trap STALE benchmark CK-PLUG conflict between weights-trained procedure and retrieved sta"
+  },
+  {
+   "class": "agent",
+   "query": "conflict between weights-trained procedure and retrieved stale memory context dominates agent ALFWorld QLoRA SFT"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.04574",
+   "date": "2026-08-05",
+   "venue": "",
+   "sim": 0.587,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "When Memory Lies: An Empirical Study of Spatial Memory Staleness in VLM Agents"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.58,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2607.08716",
+   "date": "2026-07-09",
+   "venue": "",
+   "sim": 0.566,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents"
+  },
+  {
+   "id": "arxiv:2605.24941",
+   "date": "2026-05-24",
+   "venue": "",
+   "sim": 0.539,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Memory-Induced Tool-Drift in LLM Agents"
+  },
+  {
+   "id": "arxiv:2605.30690",
+   "date": "2026-05-29",
+   "venue": "",
+   "sim": 0.532,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "ElasticMem: Latent Memory as a Learnable Resource for LLM Agents"
+  },
+  {
+   "id": "arxiv:2602.18628",
+   "date": "2026-02-20",
+   "venue": "",
+   "sim": 0.528,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Non-Interfering Weight Fields: Treating Model Parameters as a Continuously Extensible Function"
+  },
+  {
+   "id": "arxiv:2603.04549",
+   "date": "2026-03-04",
+   "venue": "",
+   "sim": 0.527,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Adaptive Memory Admission Control for LLM Agents"
+  },
+  {
+   "id": "arxiv:2606.13174",
+   "date": "2026-06-11",
+   "venue": "",
+   "sim": 0.513,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Getting Better at Working With You: Compiling User Corrections into Runtime Enforcement for Coding Agents"
+  },
+  {
+   "id": "arxiv:2605.26252",
+   "date": "2026-05-25",
+   "venue": "",
+   "sim": 0.51,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Is Agent Memory a Database? Rethinking Data Foundations for Long-Term AI Agent Memory"
+  },
+  {
+   "id": "arxiv:2606.26511",
+   "date": "2026-06-25",
+   "venue": "",
+   "sim": 0.507,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "baseline"
+   ],
+   "title": "Temporal Validity in Retrieval Memory: Eliminating Stale-Fact Errors for AI Agents over Evolving Knowledge"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 25,
+  "agent": 18,
+  "adjacent": 18,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "knowledge conflict parametric versus contextual knowledge preference 2025 arXiv"
+  },
+  {
+   "query": "counterfactual context overrides fine-tuned parametric facts knowledge editing conflict 2025 arXiv"
+  }
+ ]
+}

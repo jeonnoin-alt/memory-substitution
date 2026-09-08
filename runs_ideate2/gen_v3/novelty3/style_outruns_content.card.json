@@ -1,0 +1,216 @@
+{
+ "name": "style_outruns_content",
+ "keys": {
+  "agent": [
+   "planted dispositions in agent memory generalize across task types beyond internalized procedures",
+   "marker adoption transfer under SFT and memory-conditioned on-policy self-distillation sanitization ALFWorld",
+   "durability of planted traits versus content gain under continued training on clean data"
+  ],
+  "mechanism_home": [
+   "style versus facts what fine-tuning injects stylistic features generalize faster than knowledge",
+   "superficial alignment hypothesis format learned from few examples generalizes broadly",
+   "recently learned stylistic behaviour forgotten faster than task knowledge under continued fine-tuning"
+  ],
+  "adjacent": [
+   "style transfers from few examples while facts need many (From Style to Facts)",
+   "narrow fine-tuning generalizes broadly emergent misalignment",
+   "SFT memorizes RL generalizes; subliminal learning as a fragile LoRA artefact with inverted-U in rank"
+  ],
+  "baseline": [
+   "sanitize explicit markers from the training data",
+   "one epoch of continued fine-tuning on clean marker-free data",
+   "in-context instruction or contradicting context to suppress the marker"
+  ],
+  "methods": [
+   "Subliminal learning; steering-vector account; Subliminal Learning is a LoRA Artifact; corridor regularization",
+   "Channel Location Constrains Auditability; Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation",
+   "From Style to Facts; SFT Memorizes RL Generalizes; OPSD"
+  ],
+  "environment": [
+   "ALFWorld clean_then_place heat_then_place cool_then_place pick_two_obj_and_place valid_seen valid_unseen",
+   "QLoRA nf4 r=32 rank ladder 8 128",
+   "274 games 3 seeds"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "style versus facts what fine-tuning injects stylistic features generalize faster than knowledge"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "superficial alignment hypothesis format learned from few examples generalizes broadly"
+  },
+  {
+   "class": "agent",
+   "query": "planted dispositions in agent memory generalize across task types beyond internalized procedures"
+  },
+  {
+   "class": "agent",
+   "query": "marker adoption transfer under SFT and memory-conditioned on-policy self-distillation sanitization ALFWorld"
+  },
+  {
+   "class": "adjacent",
+   "query": "style transfers from few examples while facts need many (From Style to Facts)"
+  },
+  {
+   "class": "baseline",
+   "query": "sanitize explicit markers from the training data"
+  },
+  {
+   "class": "methods",
+   "query": "Subliminal learning; steering-vector account; Subliminal Learning is a LoRA Artifact; corridor regularization Channel Location Constrains Auditability; Subliminal Transfer of Unsafe Behaviors in AI Ag"
+  },
+  {
+   "class": "agent",
+   "query": "planted dispositions in agent memory generalize across task types beyond internalized procedures ALFWorld clean_then_place heat_then_place cool_then_place pick_two_obj_and_place valid_seen valid_unsee"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2512.13564",
+   "date": "2025-12-15",
+   "venue": "",
+   "sim": 0.565,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Memory in the Age of AI Agents"
+  },
+  {
+   "id": "arxiv:2602.06052",
+   "date": "2026-01-14",
+   "venue": "",
+   "sim": 0.562,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Rethinking Memory Mechanisms of Foundation Agents in the Second Half: A Survey"
+  },
+  {
+   "id": "arxiv:2605.01078",
+   "date": "2026-05-01",
+   "venue": "",
+   "sim": 0.547,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "A Sentence Relation-Based Approach to Sanitizing Malicious Instructions"
+  },
+  {
+   "id": "arxiv:2606.20661",
+   "date": "2026-06-09",
+   "venue": "",
+   "sim": 0.546,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "From Knowing to Acting: Benchmarking Self-Awareness Capability of LLM Agents"
+  },
+  {
+   "id": "arxiv:2305.16338",
+   "date": "2023-05-24",
+   "venue": "",
+   "sim": 0.545,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Think Before You Act: Decision Transformers with Internal Working Memory"
+  },
+  {
+   "id": "arxiv:2603.27006",
+   "date": "2026-03-27",
+   "venue": "arXiv.org",
+   "sim": 0.54,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "The Last Fingerprint: How Markdown Training Shapes LLM Prose"
+  },
+  {
+   "id": "arxiv:2605.29463",
+   "date": "2026-05-31",
+   "venue": "",
+   "sim": 0.529,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Honest Lying: Understanding Memory Confabulation in Reflexive Agents"
+  },
+  {
+   "id": "arxiv:2407.00788",
+   "date": "2024-06-30",
+   "venue": "",
+   "sim": 0.529,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "InstantStyle-Plus: Style Transfer with Content-Preserving in\n  Text-to-Image Generation"
+  },
+  {
+   "id": "arxiv:2601.07470",
+   "date": "2026-01-12",
+   "venue": "",
+   "sim": 0.52,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Learning How to Remember: A Meta-Cognitive Management Method for Structured and Transferable Agent Memory"
+  },
+  {
+   "id": "s2:06ddbe4affb617135c3f9edd77e5a6d67a14f45a",
+   "date": "2021-12-15",
+   "venue": "2021 IEEE International Conference on Big Data (Big Data)",
+   "sim": 0.511,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "A Dropout Style Model Augmentation for Cross Domain Few-Shot Learning"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 17,
+  "agent": 19,
+  "adjacent": 18,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "style versus facts what fine-tuning injects stylistic features generalize faster than knowledge 2025 arXiv"
+  },
+  {
+   "query": "superficial alignment hypothesis format learned from few examples generalizes broadly 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,230 @@
+{
+ "name": "train_dose_sets_substrate",
+ "keys": {
+  "agent": [
+   "retrieved episodes in training prompt dose k_train reduces memory-free retention agent distillation",
+   "training-time memory dose fragility to mismatched memory at deployment",
+   "relevance-destroyed decoy context at training time agent SFT"
+  ],
+  "mechanism_home": [
+   "information abundance paradox relevant training context reduces parametric encoding context reliance",
+   "retrieval-augmented fine-tuning with relevant documents in the prompt reduces knowledge internalization",
+   "loss already explained by context gradient signal absorbed by conditioning shortcut learning"
+  ],
+  "adjacent": [
+   "retrieval-augmented fine-tuning with irrelevant distractor documents improves robustness",
+   "training with abundant relevant context increases context reliance intermediate optimum",
+   "shortcut learning easy features suppress learning of harder features"
+  ],
+  "baseline": [
+   "fine-tune without retrieved context in prompt then deploy with retrieval",
+   "context dropout during fine-tuning intermittent conditioning",
+   "irrelevant distractor documents mixed into training prompts"
+  ],
+  "methods": [
+   "information-abundance paradox",
+   "retrieval-augmented SFT",
+   "MemHarness",
+   "PMD procedural memory distillation",
+   "UCOB",
+   "OPSD",
+   "OPCD",
+   "Skill-SD",
+   "learned privileged context",
+   "DAPD",
+   "DOPD",
+   "OP2SD",
+   "latent learning episodic memory"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "QLoRA SFT",
+   "context distillation",
+   "MiniLM retrieval",
+   "vLLM ReAct"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "information abundance paradox relevant training context reduces parametric encoding context reliance"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "retrieval-augmented fine-tuning with relevant documents in the prompt reduces knowledge internalization"
+  },
+  {
+   "class": "agent",
+   "query": "retrieved episodes in training prompt dose k_train reduces memory-free retention agent distillation"
+  },
+  {
+   "class": "agent",
+   "query": "training-time memory dose fragility to mismatched memory at deployment"
+  },
+  {
+   "class": "adjacent",
+   "query": "retrieval-augmented fine-tuning with irrelevant distractor documents improves robustness"
+  },
+  {
+   "class": "baseline",
+   "query": "fine-tune without retrieved context in prompt then deploy with retrieval"
+  },
+  {
+   "class": "methods",
+   "query": "information-abundance paradox retrieval-augmented SFT MemHarness retrieved episodes in training prompt dose k_train reduces m"
+  },
+  {
+   "class": "agent",
+   "query": "retrieved episodes in training prompt dose k_train reduces memory-free retention agent distillation ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.12218",
+   "date": "2026-08-12",
+   "venue": "",
+   "sim": 0.588,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home",
+    "methods"
+   ],
+   "title": "Information Abundance Paradox: Long-Context Training Undermines Parametric Knowledge"
+  },
+  {
+   "id": "arxiv:2106.01606",
+   "date": "2022-03-13",
+   "venue": "",
+   "sim": 0.586,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Exploring Memorization in Adversarial Training"
+  },
+  {
+   "id": "arxiv:2605.10828",
+   "date": "2026-05-11",
+   "venue": "",
+   "sim": 0.583,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "The First Drop of Ink: Nonlinear Impact of Misleading Information in Long-Context Reasoning"
+  },
+  {
+   "id": "arxiv:2412.16545",
+   "date": "2024-12-21",
+   "venue": "",
+   "sim": 0.577,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Attention Entropy is a Key Factor: An Analysis of Parallel Context\n  Encoding with Full-attention-based Pre-trained Language Models"
+  },
+  {
+   "id": "arxiv:2509.16189",
+   "date": "2025-09-19",
+   "venue": "",
+   "sim": 0.571,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Latent learning: episodic memory complements parametric learning by\n  enabling flexible reuse of experiences"
+  },
+  {
+   "id": "arxiv:2601.15394",
+   "date": "2026-01-21",
+   "venue": "",
+   "sim": 0.564,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Memorization Dynamics in Knowledge Distillation for Language Models"
+  },
+  {
+   "id": "arxiv:2410.01380",
+   "date": "2024-10-02",
+   "venue": "",
+   "sim": 0.563,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Knowledge Entropy Decay during Language Model Pretraining Hinders New Knowledge Acquisition"
+  },
+  {
+   "id": "arxiv:2512.02543",
+   "date": "2025-12-02",
+   "venue": "",
+   "sim": 0.563,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Inference-Time Distillation: Cost-Efficient Agents Without Fine-Tuning or Manual Prompt Engineering"
+  },
+  {
+   "id": "arxiv:2508.12220",
+   "date": "2025-08-17",
+   "venue": "",
+   "sim": 0.545,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Unlearning at Scale: Implementing the Right to be Forgotten in Large Language Models"
+  },
+  {
+   "id": "arxiv:2605.12380",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.544,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Trust the Batch, On- or Off-Policy: Adaptive Policy Optimization for RL Post-Training"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 15,
+  "agent": 18,
+  "adjacent": 8,
+  "baseline": 17,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "information abundance paradox relevant training context reduces parametric encoding context reliance 2025 arXiv"
+  },
+  {
+   "query": "retrieval-augmented fine-tuning with relevant documents in the prompt reduces knowledge internalization 2025 arXiv"
+  }
+ ]
+}

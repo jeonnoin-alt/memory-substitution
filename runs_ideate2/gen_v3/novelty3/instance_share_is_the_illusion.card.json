@@ -1,0 +1,233 @@
+{
+ "name": "instance_share_is_the_illusion",
+ "keys": {
+  "agent": [
+   "privilege illusion retrieved agent memory instance-bound versus type-level share distillation",
+   "memory-conditioned self-teacher on-policy self-distillation memory-free student ALFWorld",
+   "oracle own walkthrough versus same-type walkthroughs in-context gain decomposition"
+  ],
+  "mechanism_home": [
+   "privileged information distillation what the student can and cannot replicate information asymmetry",
+   "on-policy self-distillation privileged context teacher student gap",
+   "instance-specific versus task-general information in demonstrations transfer learning"
+  ],
+  "adjacent": [
+   "self-distillation gains come from context-induced teacher behaviour not privileged information",
+   "learning using privileged information generalization bound student cannot exploit teacher-only features",
+   "oracle demonstrations of the same instance inflate few-shot accuracy leakage"
+  ],
+  "baseline": [
+   "context distillation with empty block self-training P-CD0",
+   "direct SFT on raw walkthroughs",
+   "same-type exemplars from other scenes in prompt"
+  ],
+  "methods": [
+   "OP2SD",
+   "DAPD",
+   "DOPD",
+   "Experience Distillation",
+   "CardDistill SkillLens",
+   "LOPSD",
+   "SMRC-SD",
+   "OPSD critical review",
+   "reverse-KL on-policy distillation",
+   "context distillation"
+  ],
+  "environment": [
+   "ALFWorld",
+   "QLoRA rank-32",
+   "ReAct",
+   "traj_data walkthrough",
+   "valid_seen valid_unseen"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "privileged information distillation what the student can and cannot replicate information asymmetry"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "on-policy self-distillation privileged context teacher student gap"
+  },
+  {
+   "class": "agent",
+   "query": "privilege illusion retrieved agent memory instance-bound versus type-level share distillation"
+  },
+  {
+   "class": "agent",
+   "query": "memory-conditioned self-teacher on-policy self-distillation memory-free student ALFWorld"
+  },
+  {
+   "class": "adjacent",
+   "query": "self-distillation gains come from context-induced teacher behaviour not privileged information"
+  },
+  {
+   "class": "baseline",
+   "query": "context distillation with empty block self-training P-CD0"
+  },
+  {
+   "class": "methods",
+   "query": "OP2SD DAPD DOPD privilege illusion retrieved agent memory instance-bound ver"
+  },
+  {
+   "class": "agent",
+   "query": "privilege illusion retrieved agent memory instance-bound versus type-level share distillation ALFWorld QLoRA rank-32"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.09228",
+   "date": "2026-08-10",
+   "venue": "",
+   "sim": 0.518,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "mechanism_home"
+   ],
+   "title": "Privileged Solutions or Context-Induced Teacher Behavior? Dissecting On-Policy Self-Distillation"
+  },
+  {
+   "id": "arxiv:2606.17628",
+   "date": "2026-06-16",
+   "venue": "",
+   "sim": 0.499,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "OPD-Evolver: Cultivating Holistic Agent Evolver via On-Policy Distillation"
+  },
+  {
+   "id": "arxiv:2608.05987",
+   "date": "2026-08-06",
+   "venue": "",
+   "sim": 0.493,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2608.01837",
+   "date": "2026-08-03",
+   "venue": "",
+   "sim": 0.471,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "PCSD: Persistent Consistency for Self-Distillation in Agentic Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2608.13040",
+   "date": "2026-08-13",
+   "venue": "",
+   "sim": 0.469,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "mechanism_home",
+    "methods"
+   ],
+   "title": "Latent On-Policy Self-Distillation"
+  },
+  {
+   "id": "arxiv:2605.20643",
+   "date": "2026-05-20",
+   "venue": "",
+   "sim": 0.467,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "AVSD: Adaptive-View Self-Distillation by Balancing Consensus and Teacher-Specific Privileged Signals"
+  },
+  {
+   "id": "arxiv:2604.10674",
+   "date": "2026-04-12",
+   "venue": "",
+   "sim": 0.453,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "mechanism_home"
+   ],
+   "title": "Skill-SD: Skill-Conditioned Self-Distillation for Multi-turn LLM Agents"
+  },
+  {
+   "id": "arxiv:2602.04942",
+   "date": "2026-02-04",
+   "venue": "",
+   "sim": 0.428,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "mechanism_home"
+   ],
+   "title": "Privileged Information Distillation for Language Models"
+  },
+  {
+   "id": "arxiv:2605.27140",
+   "date": "2026-05-26",
+   "venue": "",
+   "sim": 0.418,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "StepOPSD: Step-Aware Online Preference Distillation for Agent Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2608.01735",
+   "date": "2026-08-03",
+   "venue": "",
+   "sim": 0.413,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "agent",
+    "mechanism_home",
+    "methods"
+   ],
+   "title": "DAPD: Dual-Anchored Policy Distillation"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 20,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "privileged information distillation what the student can and cannot replicate information asymmetry 2025 arXiv"
+  },
+  {
+   "query": "on-policy self-distillation privileged context teacher student gap 2025 arXiv"
+  }
+ ]
+}

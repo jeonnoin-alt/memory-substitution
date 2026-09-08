@@ -316,3 +316,9 @@ shift and templates 7/57; Fable keys in five classes 13/57. Inspection of the mi
 literature is older (RAG robustness 2023–24, knowledge-conflict 2023, knowledge-preference 2024, poisoning 2025) and the S2
 call carried a 12-month window while HF Papers indexes recent arXiv only; home/adjacent/baseline queries now go to S2 without
 a date window (`novelty3` rerun below).
+Rerun with the window lifted (`novelty3`): 17/57 — the older knowledge-conflict, RAG-robustness, relearning and poisoning papers
+now appear under `mechanism_home`/`adjacent` (2407.13048, 2503.15888, 2310.01558, 2505.22310, 2602.03379, 2510.07192). What the
+card still cannot do is what the judges did: refine a query after reading a first result; the remaining misses are second-hop
+finds (e.g. 2608.29118 emergent-misalignment, 2603.11076 DIVE, 2510.04340 inoculation prompting). Recall 6→17/57 for the same
+S2/HF budget; judges keep the `home:` vocabulary instruction and the card's class labels as their starting point.
+Health metrics to report on every future run: entailment flag rate per idea, and card recall against judge-found papers.

@@ -1,0 +1,225 @@
+{
+ "name": "success_filter_lockin_under_shift",
+ "keys": {
+  "agent": [
+   "success-only experience memory self-collected agent hidden rule change lock-in recovery",
+   "self-reinforcing stale memory retrieval bank versus continual LoRA distribution shift",
+   "exogenous expert refresh dose breaks agent memory loop failure-decayed memory"
+  ],
+  "mechanism_home": [
+   "self-training confirmation bias selection feedback loop model collapse recursive training own outputs",
+   "positive feedback loop in recommender systems filter bubble winner-take-all popularity bias",
+   "exploration-exploitation lock-in self-generated data selection bias online learning"
+  ],
+  "adjacent": [
+   "model collapse training on own generated outputs loses tail distribution",
+   "recommender feedback loop degenerate popularity concentration echo chamber",
+   "small fraction of fresh human data prevents model collapse accumulate not replace"
+  ],
+  "baseline": [
+   "failure-based utility decay of memory items",
+   "FIFO eviction bounded memory",
+   "expert reference trajectories injected periodically"
+  ],
+  "methods": [
+   "Live-Evo",
+   "RoMeRL memory-reward trap",
+   "Escaping the Self-Confirmation Trap",
+   "Zombie Agents",
+   "When Continual Learning Moves to Memory",
+   "HarnessEvolve"
+  ],
+  "environment": [
+   "ALFWorld",
+   "QLoRA",
+   "Qwen3-32B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "self-training confirmation bias selection feedback loop model collapse recursive training own outputs"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "positive feedback loop in recommender systems filter bubble winner-take-all popularity bias"
+  },
+  {
+   "class": "agent",
+   "query": "success-only experience memory self-collected agent hidden rule change lock-in recovery"
+  },
+  {
+   "class": "agent",
+   "query": "self-reinforcing stale memory retrieval bank versus continual LoRA distribution shift"
+  },
+  {
+   "class": "adjacent",
+   "query": "model collapse training on own generated outputs loses tail distribution"
+  },
+  {
+   "class": "baseline",
+   "query": "failure-based utility decay of memory items"
+  },
+  {
+   "class": "methods",
+   "query": "Live-Evo RoMeRL memory-reward trap Escaping the Self-Confirmation Trap success-only experience memory self-collected agent hidden r"
+  },
+  {
+   "class": "agent",
+   "query": "success-only experience memory self-collected agent hidden rule change lock-in recovery ALFWorld QLoRA"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.00017",
+   "date": "2026-06-29",
+   "venue": "",
+   "sim": 0.622,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "baseline"
+   ],
+   "title": "Memory Reward Inflation in Self-Improving LLM Agents"
+  },
+  {
+   "id": "arxiv:2608.02508",
+   "date": "2026-08-10",
+   "venue": "",
+   "sim": 0.617,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "baseline",
+    "methods"
+   ],
+   "title": "RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States"
+  },
+  {
+   "id": "arxiv:2607.03702",
+   "date": "2026-07-04",
+   "venue": "",
+   "sim": 0.598,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Agent Reinforcement Learning via Pivotal-Aware Self-Feedback Retry"
+  },
+  {
+   "id": "arxiv:2606.24428",
+   "date": "2026-06-23",
+   "venue": "",
+   "sim": 0.598,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "Escaping the Self-Confirmation Trap: An Execute-Distill-Verify Paradigm for Agentic Experience Learning"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.585,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "baseline",
+    "methods"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2606.24595",
+   "date": "2026-06-23",
+   "venue": "",
+   "sim": 0.559,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MEMPROBE: Probing Long-Term Agent Memory via Hidden User-State Recovery"
+  },
+  {
+   "id": "arxiv:2603.02473",
+   "date": "2026-04-12",
+   "venue": "",
+   "sim": 0.547,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory"
+  },
+  {
+   "id": "arxiv:2607.08716",
+   "date": "2026-07-09",
+   "venue": "",
+   "sim": 0.526,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents"
+  },
+  {
+   "id": "arxiv:2607.29468",
+   "date": "2026-07-31",
+   "venue": "",
+   "sim": 0.517,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Self-Play Meets Skill Evolution: Self-Evolving Search Agents that Pose, Solve, and Remember"
+  },
+  {
+   "id": "arxiv:2607.07663",
+   "date": "2026-07-08",
+   "venue": "",
+   "sim": 0.494,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 19,
+  "adjacent": 8,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "self-training confirmation bias selection feedback loop model collapse recursive training own outputs 2025 arXiv"
+  },
+  {
+   "query": "positive feedback loop in recommender systems filter bubble winner-take-all popularity bias 2025 arXiv"
+  }
+ ]
+}

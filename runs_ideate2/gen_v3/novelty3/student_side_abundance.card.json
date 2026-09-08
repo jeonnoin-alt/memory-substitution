@@ -1,0 +1,219 @@
+{
+ "name": "student_side_abundance",
+ "keys": {
+  "agent": [
+   "training-time retrieved memory dose suppresses parametric encoding of agent experience step-level SFT",
+   "memory-in-prompt fine-tuning versus memory-conditioned teacher distillation memory-free agent accuracy",
+   "retrieved episodes in student prompt during SFT lower action-token loss reduce internalization ALFWorld"
+  ],
+  "mechanism_home": [
+   "information abundance paradox longer training context reduces parametric encoding intermediate optimum",
+   "retrieval-augmented fine-tuning context reliance versus parametric knowledge internalization irrelevant context",
+   "easier training signal lowers loss to close shortcut learning gradient starvation less weight learning"
+  ],
+  "adjacent": [
+   "privileged-context teacher distillation into context-free student beats training with the context in the student prompt",
+   "context dropout during retrieval-augmented fine-tuning improves closed-book robustness",
+   "training prompt choice changes learning dynamics prompt adaptation for fine-tuning"
+  ],
+  "baseline": [
+   "fine-tune without retrieved context (k=0) then deploy with retrieval",
+   "context dropout randomly removing the retrieved block on a fraction of training examples",
+   "single fixed-dose context distillation from a conditioned teacher"
+  ],
+  "methods": [
+   "Information Abundance Paradox",
+   "Training Prompt Matters",
+   "Experience Distillation; On-Policy Context Distillation (OPCD); retrieval-augmented agent training with LoRA; QLoRA; ReAct"
+  ],
+  "environment": [
+   "ALFWorld valid_seen valid_unseen heat-then-place",
+   "QLoRA nf4 rank 32 one epoch",
+   "two A100 GPUs"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "information abundance paradox longer training context reduces parametric encoding intermediate optimum"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "retrieval-augmented fine-tuning context reliance versus parametric knowledge internalization irrelevant context"
+  },
+  {
+   "class": "agent",
+   "query": "training-time retrieved memory dose suppresses parametric encoding of agent experience step-level SFT"
+  },
+  {
+   "class": "agent",
+   "query": "memory-in-prompt fine-tuning versus memory-conditioned teacher distillation memory-free agent accuracy"
+  },
+  {
+   "class": "adjacent",
+   "query": "privileged-context teacher distillation into context-free student beats training with the context in the student prompt"
+  },
+  {
+   "class": "baseline",
+   "query": "fine-tune without retrieved context (k=0) then deploy with retrieval"
+  },
+  {
+   "class": "methods",
+   "query": "Information Abundance Paradox Training Prompt Matters Experience Distillation; On-Policy Context Distillation (OPCD); retrieval-augmented agent training with LoRA; QLoRA; ReAct training-time retrieved"
+  },
+  {
+   "class": "agent",
+   "query": "training-time retrieved memory dose suppresses parametric encoding of agent experience step-level SFT ALFWorld valid_seen valid_unseen heat-then-place QLoRA nf4 rank 32 one epoch"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2605.20616",
+   "date": "2026-05-20",
+   "venue": "",
+   "sim": 0.643,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Auto-Dreamer: Learning Offline Memory Consolidation for Language Agents"
+  },
+  {
+   "id": "arxiv:2604.27003",
+   "date": "2026-04-29",
+   "venue": "",
+   "sim": 0.625,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "When Continual Learning Moves to Memory: A Study of Experience Reuse in LLM Agents"
+  },
+  {
+   "id": "arxiv:2605.09932",
+   "date": "2026-05-11",
+   "venue": "",
+   "sim": 0.618,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "FocuSFT: Bilevel Optimization for Dilution-Aware Long-Context Fine-Tuning"
+  },
+  {
+   "id": "arxiv:2308.07707",
+   "date": "2023-08-15",
+   "venue": "",
+   "sim": 0.609,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Fast Machine Unlearning Without Retraining Through Selective Synaptic\n  Dampening"
+  },
+  {
+   "id": "arxiv:2608.12218",
+   "date": "2026-08-12",
+   "venue": "",
+   "sim": 0.598,
+   "channels": [
+    "hf",
+    "s2"
+   ],
+   "via": [
+    "mechanism_home",
+    "methods"
+   ],
+   "title": "Information Abundance Paradox: Long-Context Training Undermines Parametric Knowledge"
+  },
+  {
+   "id": "arxiv:2506.08184",
+   "date": "2025-06-09",
+   "venue": "",
+   "sim": 0.587,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Unable to Forget: Proactive lnterference Reveals Working Memory Limits\n  in LLMs Beyond Context Length"
+  },
+  {
+   "id": "arxiv:2603.15994",
+   "date": "2026-03-16",
+   "venue": "",
+   "sim": 0.586,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "mechanism_home"
+   ],
+   "title": "Selective Memory for Artificial Intelligence: Write-Time Gating with Hierarchical Archiving"
+  },
+  {
+   "id": "arxiv:2602.04942",
+   "date": "2026-02-04",
+   "venue": "",
+   "sim": 0.581,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Privileged Information Distillation for Language Models"
+  },
+  {
+   "id": "arxiv:2509.26226",
+   "date": "2025-09-30",
+   "venue": "",
+   "sim": 0.58,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Thinking-Free Policy Initialization Makes Distilled Reasoning Models\n  More Effective and Efficient Reasoners"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.576,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 27,
+  "agent": 24,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "information abundance paradox longer training context reduces parametric encoding intermediate optimum 2025 arXiv"
+  },
+  {
+   "query": "retrieval-augmented fine-tuning context reliance versus parametric knowledge internalization irrelevant context 2025 arXiv"
+  }
+ ]
+}

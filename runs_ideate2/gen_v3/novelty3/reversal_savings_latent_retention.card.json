@@ -1,0 +1,222 @@
+{
+ "name": "reversal_savings_latent_retention",
+ "keys": {
+  "agent": [
+   "rule reversal relearning savings continual LoRA versus retrieval memory agent ALFWorld",
+   "self-evolving agent forgetting memory channel versus model channel reacquisition",
+   "bounded FIFO memory bank no retention stale tax unbounded bank rule reversal"
+  ],
+  "mechanism_home": [
+   "spurious forgetting relearning savings continual fine-tuning latent knowledge retained",
+   "unlearning is not deletion suppressed knowledge recoverable by relearning fine-tuning",
+   "reversal learning savings rapid reacquisition after interference catastrophic forgetting"
+  ],
+  "adjacent": [
+   "fine-tuning performance loss reflects alignment shift not knowledge loss shallow forgetting",
+   "unlearned knowledge recovers with few relearning samples relearning attack",
+   "catastrophic forgetting is shallow linear probe recovers old task representations"
+  ],
+  "baseline": [
+   "reset adapter retrain from scratch each phase",
+   "replay buffer experience replay 1:1 with new chunk",
+   "unbounded retrieval memory keep all items"
+  ],
+  "methods": [
+   "Do Self-Evolving Agents Forget",
+   "When Continual Learning Moves to Memory",
+   "FOREVER replay scheduling",
+   "Forgetting in Language Models self-generated replay",
+   "Spurious Forgetting",
+   "Unlearning Isn't Deletion",
+   "UniMem",
+   "COVE"
+  ],
+  "environment": [
+   "ALFWorld",
+   "QLoRA",
+   "Qwen3-32B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "spurious forgetting relearning savings continual fine-tuning latent knowledge retained"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "unlearning is not deletion suppressed knowledge recoverable by relearning fine-tuning"
+  },
+  {
+   "class": "agent",
+   "query": "rule reversal relearning savings continual LoRA versus retrieval memory agent ALFWorld"
+  },
+  {
+   "class": "agent",
+   "query": "self-evolving agent forgetting memory channel versus model channel reacquisition"
+  },
+  {
+   "class": "adjacent",
+   "query": "fine-tuning performance loss reflects alignment shift not knowledge loss shallow forgetting"
+  },
+  {
+   "class": "baseline",
+   "query": "reset adapter retrain from scratch each phase"
+  },
+  {
+   "class": "methods",
+   "query": "Do Self-Evolving Agents Forget When Continual Learning Moves to Memory FOREVER replay scheduling rule reversal relearning savings continual LoRA versus retri"
+  },
+  {
+   "class": "agent",
+   "query": "rule reversal relearning savings continual LoRA versus retrieval memory agent ALFWorld ALFWorld QLoRA"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2505.22310",
+   "date": "2025-05-28",
+   "venue": "",
+   "sim": 0.555,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "From Dormant to Deleted: Tamper-Resistant Unlearning Through Weight-Space Regularization"
+  },
+  {
+   "id": "arxiv:2608.11233",
+   "date": "2026-07-31",
+   "venue": "",
+   "sim": 0.513,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Retrofitting Recurrent Depth into a Pretrained Language Model: Installation, Extrapolation, Transfer, and Retention at Two Parameter Budgets"
+  },
+  {
+   "id": "arxiv:2402.08096",
+   "date": "2024-02-12",
+   "venue": "",
+   "sim": 0.512,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "An Efficient Rehearsal Scheme for Catastrophic Forgetting Mitigation\n  during Multi-stage Fine-tuning"
+  },
+  {
+   "id": "arxiv:2601.18699",
+   "date": "2026-01-26",
+   "venue": "",
+   "sim": 0.51,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "mechanism_home"
+   ],
+   "title": "Mechanistic Analysis of Catastrophic Forgetting in Large Language Models During Continual Fine-tuning"
+  },
+  {
+   "id": "arxiv:2512.20634",
+   "date": "2025-12-02",
+   "venue": "arXiv.org",
+   "sim": 0.507,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Real Time Detection and Quantitative Analysis of Spurious Forgetting in Continual Learning"
+  },
+  {
+   "id": "arxiv:2607.19749",
+   "date": "2026-07-22",
+   "venue": "",
+   "sim": 0.491,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "The World Model Remembers, the Actor Forgets: Dream Rehearsal for Continual Model-Based RL"
+  },
+  {
+   "id": "arxiv:2604.20006",
+   "date": "2026-04-21",
+   "venue": "",
+   "sim": 0.488,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "From Recall to Forgetting: Benchmarking Long-Term Memory for Personalized Agents"
+  },
+  {
+   "id": "arxiv:2510.16089",
+   "date": "2025-10-17",
+   "venue": "arXiv.org",
+   "sim": 0.485,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "STABLE: Gated Continual Learning for Large Language Models"
+  },
+  {
+   "id": "arxiv:2410.06606",
+   "date": "2024-10-15",
+   "venue": "",
+   "sim": 0.483,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Dissecting Fine-Tuning Unlearning in Large Language Models"
+  },
+  {
+   "id": "arxiv:2406.06564",
+   "date": "2024-06-03",
+   "venue": "",
+   "sim": 0.479,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "SwitchLoRA: Switched Low-Rank Adaptation Can Learn Full-Rank Information"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 20,
+  "adjacent": 10,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "spurious forgetting relearning savings continual fine-tuning latent knowledge retained 2025 arXiv"
+  },
+  {
+   "query": "unlearning is not deletion suppressed knowledge recoverable by relearning fine-tuning 2025 arXiv"
+  }
+ ]
+}
