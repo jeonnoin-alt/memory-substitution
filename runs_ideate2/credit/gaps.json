@@ -1,0 +1,328 @@
+[
+ {
+  "axis": "counterfactual attribution",
+  "gaps": [
+   {
+    "gap": "Credit is assigned to the whole retrieved set, prompt, agent, or memory-write action rather than to individual stored or retrieved memory items, so no method estimates which specific items helped or hurt inside an agentic memory system.",
+    "card_ids": [
+     "arxiv:2606.29502",
+     "arxiv:2605.04811",
+     "arxiv:2606.16285",
+     "arxiv:2605.30712",
+     "arxiv:2602.23440",
+     "arxiv:2605.05716"
+    ],
+    "evidence_needed": "An agentic-memory experiment that assigns credit at the item level within a multi-item retrieved set and shows that item-level credit predicts outcome changes under per-item removal better than set-level or action-level credit."
+   },
+   {
+    "gap": "Attribution scores used as training or ranking signals (token-level attribution, outcome-calibrated memory attribution, confidence-gain DIG, SNC per-action credit) have not been validated against counterfactual re-runs that actually remove or replace the attributed content.",
+    "card_ids": [
+     "arxiv:2607.21106",
+     "arxiv:2606.17628",
+     "arxiv:2509.12765",
+     "arxiv:2607.27652"
+    ],
+    "evidence_needed": "Correlation between each proxy attribution score and the measured outcome change from REMOVE/REPLACE interventions on the same items, reported across models and tasks."
+   },
+   {
+    "gap": "The noise, variance across seeds and repeated LLM calls, and the number of episodes, branches or rollouts needed for per-item or per-action credit estimates to be reliable are not reported by any card, nor is the compute cost of obtaining them.",
+    "card_ids": [
+     "arxiv:2607.21106",
+     "arxiv:2605.04811",
+     "arxiv:2606.16285",
+     "arxiv:2507.04480",
+     "arxiv:2604.05467",
+     "arxiv:2602.23440",
+     "arxiv:2607.27652"
+    ],
+    "evidence_needed": "Variance and convergence curves of per-item credit estimates as a function of repeated runs, branch count or episode count, together with the LLM-call cost at each reliability level."
+   },
+   {
+    "gap": "Per-item attribution is computed one item at a time or at component level, so non-additive interactions among co-retrieved items (redundancy, conflict, complementarity, ordering) that the set-level cards show to be pervasive are not captured by the item-level estimators.",
+    "card_ids": [
+     "arxiv:2509.12765",
+     "arxiv:2604.05467",
+     "arxiv:2507.04480",
+     "arxiv:2605.05716"
+    ],
+    "evidence_needed": "A comparison of single-item scores against exact or approximated Shapley values and paired-removal effects on the same retrieved sets, quantifying how often single-item scores mis-rank items when interactions are present."
+   },
+   {
+    "gap": "Whether item-level credit estimates transfer across queries, generator or executor models, and a growing memory repository is untested, and single-shot RAG attribution has not been extended to multi-step agent trajectories with persistent memory.",
+    "card_ids": [
+     "arxiv:2507.04480",
+     "arxiv:2509.12765",
+     "arxiv:2605.30712",
+     "arxiv:2606.17628",
+     "arxiv:2604.05467"
+    ],
+    "evidence_needed": "Item credit measured under one model, query distribution and repository size and re-measured after swapping the model, shifting the query distribution and growing the repository, in a multi-step agent setting with persistent memory."
+   }
+  ]
+ },
+ {
+  "axis": "learned utility and reinforcement over memory",
+  "gaps": [
+   {
+    "gap": "Whether learned per-item utility estimates (Q-values, RPE/critic scores, reduced-order utility coordinates, attribution-derived rewards, survival importance) actually agree with the counterfactual effect of removing or adding that individual memory item has not been measured in any of these systems.",
+    "card_ids": [
+     "arxiv:2605.08374",
+     "arxiv:2608.02508",
+     "arxiv:2607.21106",
+     "arxiv:2603.14597",
+     "arxiv:2607.22562",
+     "arxiv:2606.17628",
+     "arxiv:2606.00547",
+     "arxiv:2511.10030"
+    ],
+    "evidence_needed": "Leave-one-out or add-one-in re-runs on a fixed query set per stored item, reporting the correlation between each system's utility score and the measured outcome delta, with a per-item accuracy of the pruning/admission decisions it implies."
+   },
+   {
+    "gap": "Feedback is assigned to the whole retrieved set, the memory-conditioned prompt, a pipeline agent, or a write action rather than to individual items, so how credit should be split among co-retrieved memories and whether co-retrieval contaminates item value remains unresolved.",
+    "card_ids": [
+     "arxiv:2606.29502",
+     "arxiv:2605.30712",
+     "arxiv:2605.04811",
+     "arxiv:2606.16285",
+     "arxiv:2605.08374",
+     "arxiv:2608.02508",
+     "arxiv:2604.00131",
+     "arxiv:2306.07929",
+     "arxiv:2511.20857"
+    ],
+    "evidence_needed": "Controlled experiments with mixed retrieved sets (one known-helpful item plus known-harmful or neutral items) that measure how much reward each item's utility estimate absorbs, compared against per-item ground truth from set-subsampling counterfactuals."
+   },
+   {
+    "gap": "The noise, variance, and sample cost of per-item utility estimates (how many episodes, branches, or feedback events are required for a stable estimate) are not reported by any system.",
+    "card_ids": [
+     "arxiv:2606.29502",
+     "arxiv:2607.21106",
+     "arxiv:2605.04811",
+     "arxiv:2606.16285",
+     "arxiv:2601.03192",
+     "arxiv:2608.02508"
+    ],
+    "evidence_needed": "Learning curves of utility-estimate error versus number of feedback episodes per item, with bootstrap variance and the branch/rollout budget needed to reach a fixed rank-correlation with counterfactual item value."
+   },
+   {
+    "gap": "Whether learned item utilities remain valid as the task stream drifts, the memory store grows, the environment changes, or the consumer model is replaced, and whether stale or wrong items accumulate under self-evolving updates, is untested.",
+    "card_ids": [
+     "arxiv:2512.10696",
+     "arxiv:2605.08374",
+     "arxiv:2512.07287",
+     "arxiv:2602.05832",
+     "arxiv:2606.00547",
+     "arxiv:2605.30712",
+     "arxiv:2603.29247",
+     "arxiv:2602.17930",
+     "arxiv:2606.17628",
+     "arxiv:2603.18079"
+    ],
+    "evidence_needed": "Longitudinal runs with a controlled distribution or executor swap partway through the stream, tracking each item's estimated utility against its re-measured counterfactual value and the fraction of stale or harmful items retained over time."
+   },
+   {
+    "gap": "Utility-driven pruning, forgetting, decay, and admission rules are not validated for their error rate, i.e. whether discarded or bypassed items were harmless and whether frequently used but wrong items get reinforced, and predicted write-time utility is not compared with realized downstream utility.",
+    "card_ids": [
+     "arxiv:2512.10696",
+     "arxiv:2603.04549",
+     "arxiv:2603.14597",
+     "arxiv:2607.22562",
+     "s2:eddd445307658518949b54ad4acc0f06c5f660a3",
+     "arxiv:2604.00131",
+     "s2:84a2ed6eddc5e89a8c58d92265189d0d79bcdc8b",
+     "s2:05c14833b7cee3408bf72d25cf0bee2c4b0d70b0"
+    ],
+    "evidence_needed": "Audit of pruned, decayed, and admitted items by re-inserting or withholding them on held-out queries, reporting false-prune and false-bypass rates and the calibration between predicted and realized item utility."
+   }
+  ]
+ },
+ {
+  "axis": "set-level effects",
+  "gaps": [
+   {
+    "gap": "No method for scoring memory items (utility coordinates, DAG Q-values, aggregate dependence metrics) has been checked against counterfactual leave-one-out removal of individual memories, so it is unknown whether learned or behavioral per-item scores track true causal item value.",
+    "card_ids": [
+     "arxiv:2608.02508",
+     "arxiv:2605.08374",
+     "arxiv:2601.05107"
+    ],
+    "evidence_needed": "Run the same agent with and without each scored memory on held-out tasks and report the correlation between the method's per-item score and the measured outcome change."
+   },
+   {
+    "gap": "How harm from a co-retrieved memory depends on the number and composition of the rest of the retrieved set (conflicting plus correct items, co-retrieved siblings at the same DAG level, synergistic multi-hop supports) is untested in multi-step agent settings, with interaction effects shown only for single-shot RAG or at the scaffolding-component level.",
+    "card_ids": [
+     "arxiv:2607.10608",
+     "arxiv:2605.08374",
+     "arxiv:2604.05467",
+     "arxiv:2605.05716"
+    ],
+    "evidence_needed": "Factorial or Shapley-style manipulation of retrieved-set size and composition (conflicting/correct/redundant items) in a multi-step agent benchmark, reporting per-item marginal effects and pairwise interaction terms."
+   },
+   {
+    "gap": "Interference-driven failures are measured only at the question or trajectory level, so which stored item caused a failure, or which retrieved items were correctly favored or suppressed in conflict resolution, is never attributed at the item level.",
+    "card_ids": [
+     "arxiv:2605.18565",
+     "arxiv:2507.05257",
+     "arxiv:2604.27003",
+     "arxiv:2606.22844"
+    ],
+    "evidence_needed": "Item-level scoring on interference benchmarks that links each failed question to the specific stored or retrieved item responsible, validated by removing or correcting that item and observing recovery."
+   },
+   {
+    "gap": "Interference and per-item effects have been characterized under synthetic controlled relationships, single-shot RAG, or small QA models, leaving open whether the same set-level effects appear in naturally accumulated memories over multi-step agent trajectories.",
+    "card_ids": [
+     "arxiv:2608.07622",
+     "arxiv:2604.05467",
+     "arxiv:2507.04480",
+     "arxiv:2607.27652"
+    ],
+    "evidence_needed": "Apply the CMI, CUE-R, or Shapley-style interventions to memories accumulated by an agent across a real multi-episode task stream and test whether the interference and attribution patterns replicate."
+   },
+   {
+    "gap": "The variance and cost of per-item estimates across repeated LLM calls, seeds, or rollouts is unreported, so it is unknown how many samples are needed for stable item-level attribution and whether estimates transfer across queries.",
+    "card_ids": [
+     "arxiv:2604.05467",
+     "arxiv:2507.04480",
+     "arxiv:2607.27652"
+    ],
+    "evidence_needed": "Repeat per-item interventions or credit assignments across multiple seeds and rollouts, reporting confidence intervals, sample-size curves for estimate stability, and cross-query rank agreement."
+   }
+  ]
+ },
+ {
+  "axis": "generalization and drift of item value",
+  "gaps": [
+   {
+    "gap": "Whether learned per-item value estimates (Q-values, retrieval values, utility scores, evolved templates) remain valid as the task stream drifts, the environment changes, the policy improves, or the memory store grows is asserted but never measured longitudinally, so stale or invalidated items may keep high scores and be reused.",
+    "card_ids": [
+     "arxiv:2605.08374",
+     "arxiv:2606.00547",
+     "arxiv:2512.07287",
+     "arxiv:2602.05832",
+     "arxiv:2602.17930",
+     "arxiv:2601.03192",
+     "arxiv:2604.20006",
+     "arxiv:2606.06448",
+     "arxiv:2510.09720",
+     "arxiv:2608.07622",
+     "arxiv:2512.18746"
+    ],
+    "evidence_needed": "Track each item's stored utility estimate against its periodically re-measured counterfactual contribution across a drifting task stream and report when and how far the two diverge, including the share of high-scored items that have become harmful."
+   },
+   {
+    "gap": "Whether item utility learned under one consumer model, executor, task domain, or query distribution transfers when the consumer or distribution changes is untested; model-agnosticism and cross-task transfer claims are made at the system level without isolating per-item value.",
+    "card_ids": [
+     "arxiv:2512.10696",
+     "arxiv:2605.30712",
+     "s2:05c14833b7cee3408bf72d25cf0bee2c4b0d70b0",
+     "arxiv:2512.18746",
+     "arxiv:2604.27003"
+    ],
+    "evidence_needed": "Measure per-item utility under one executor and query distribution, then hold the memory fixed while swapping the executor or shifting the distribution, and report the rank correlation between original and re-measured per-item values and the fraction of items whose value sign flips."
+   },
+   {
+    "gap": "Write-time or admission-time utility predictions (future-utility factors, surprise/RPE scores, score-based admission thresholds) are never checked against the realized downstream utility of admitted items, and the cost of false negatives (rejected or bypassed items later needed) is unmeasured.",
+    "card_ids": [
+     "arxiv:2603.04549",
+     "arxiv:2603.14597",
+     "arxiv:2603.18079",
+     "arxiv:2604.02280"
+    ],
+    "evidence_needed": "Log admission scores for every candidate, admit a random held-out sample regardless of score, and correlate predicted score with each item's subsequently measured counterfactual contribution, reporting the outcome loss attributable to rejected items."
+   },
+   {
+    "gap": "Forgetting, decay, pruning, and validity-based demotion rules are validated only by aggregate accuracy, with no item-level check that removed or demoted items were actually harmless, no isolation of decay from freshness or read-gating components, and no test of whether frequency-based reinforcement entrenches wrong items.",
+    "card_ids": [
+     "arxiv:2607.22562",
+     "arxiv:2512.10696",
+     "arxiv:2604.02280",
+     "arxiv:2606.22844",
+     "s2:eddd445307658518949b54ad4acc0f06c5f660a3",
+     "s2:84a2ed6eddc5e89a8c58d92265189d0d79bcdc8b",
+     "arxiv:2604.00131"
+    ],
+    "evidence_needed": "Counterfactually reinsert pruned or demoted items (and remove retained ones) on the same query set to measure the fraction whose status change alters outcomes, with ablations separating decay schedule, freshness signal, and usage-frequency reinforcement."
+   },
+   {
+    "gap": "Item value appears to be state-, stage-, and sequence-conditional (skills mislead in some states, usefulness shifts across interaction stages, verbatim replay yields negative transfer, retrieved memory induces anchoring or sycophancy), yet no work measures how a single item's value varies across contexts or attributes negative transfer to specific items.",
+    "card_ids": [
+     "arxiv:2606.29502",
+     "arxiv:2607.28272",
+     "arxiv:2606.00547",
+     "arxiv:2604.27003",
+     "arxiv:2601.05107",
+     "arxiv:2607.01071",
+     "arxiv:2509.16189"
+    ],
+    "evidence_needed": "Measure the same item's counterfactual contribution across stratified states, interaction stages, and task sequences and report the within-item variance and the share of items that are helpful in one context and harmful in another."
+   }
+  ]
+ },
+ {
+  "axis": "measurement of per-item estimates",
+  "gaps": [
+   {
+    "gap": "Per-item causal value of stored memories is unmeasured in multi-step, persistent-memory agent settings: the agentic memory benchmarks score only end-to-end task outcomes and never attribute a failure to a specific retrieved item, while intervention-based per-item measurement exists only for single-shot RAG.",
+    "card_ids": [
+     "arxiv:2511.20857",
+     "arxiv:2605.18565",
+     "arxiv:2602.16313",
+     "arxiv:2507.05257",
+     "arxiv:2604.20006",
+     "arxiv:2606.24775",
+     "arxiv:2604.05467",
+     "arxiv:2507.04480"
+    ],
+    "evidence_needed": "A multi-session agentic benchmark that reports leave-one-out or REMOVE/REPLACE effects for each stored item alongside task accuracy and attributes each observed failure to the specific retrieved items responsible."
+   },
+   {
+    "gap": "Proxy per-item utility signals (reduced-order utility coordinates, token-level attribution rewards, PRM proxy rewards, LLM-judge step rewards, single-document confidence gain) are never checked against the counterfactual effect of removing the same item.",
+    "card_ids": [
+     "arxiv:2608.02508",
+     "arxiv:2607.21106",
+     "arxiv:2606.00547",
+     "arxiv:2602.23440",
+     "arxiv:2509.12765"
+    ],
+    "evidence_needed": "Rank correlation between each proxy score and the measured leave-one-out effect on the same items and tasks, with the disagreement cases characterized."
+   },
+   {
+    "gap": "Learned credit is assigned at units coarser than the memory item (pipeline agent, memory-write action, whole final memory, reasoning or query step, memory as a whole), so the value of an individual stored item at retrieval time is not estimated.",
+    "card_ids": [
+     "arxiv:2605.04811",
+     "arxiv:2606.16285",
+     "arxiv:2606.03329",
+     "arxiv:2602.23440",
+     "arxiv:2603.29247"
+    ],
+    "evidence_needed": "An experiment that decomposes the coarse credit signal into per-item credit and shows it predicts item-level intervention effects or improves item selection beyond the coarse signal."
+   },
+   {
+    "gap": "The variance, cross-seed stability and sample or compute cost of per-item estimates (number of rollouts, branches, episodes or LLM calls needed for a stable score) are not reported by any method that produces them.",
+    "card_ids": [
+     "arxiv:2604.05467",
+     "arxiv:2507.04480",
+     "arxiv:2607.27652",
+     "arxiv:2605.04811",
+     "arxiv:2607.21106",
+     "arxiv:2606.16285",
+     "arxiv:2602.23440"
+    ],
+    "evidence_needed": "Repeated-run and cross-seed variance of per-item scores plotted against the number of rollouts or LLM calls, with the compute cost to reach a stable estimate per item."
+   },
+   {
+    "gap": "Per-item estimates are computed one item at a time and ignore the composition of the co-retrieved set (redundancy, conflict, ordering, interference), even though non-additive multi-hop effects, compliance to conflicting entries and reward contamination across co-retrieved memories are observed.",
+    "card_ids": [
+     "arxiv:2509.12765",
+     "arxiv:2607.10608",
+     "arxiv:2511.20857",
+     "arxiv:2606.24775",
+     "arxiv:2604.05467",
+     "arxiv:2608.02508",
+     "arxiv:2507.04480"
+    ],
+    "evidence_needed": "Measuring each item's effect under controlled variation of the co-retrieved set (adding or removing conflicting or redundant items, reordering) to test whether per-item values are stable or interaction-dependent."
+   }
+  ]
+ }
+]

@@ -1,0 +1,340 @@
+[
+ {
+  "axis": "producer-consumer mismatch",
+  "gaps": [
+   {
+    "gap": "No paper reports what fraction of the producing agent's own gain a different consumer retains, so the retention ratio of transferred memory, skills, or teacher competence across model pairs is unmeasured.",
+    "card_ids": [
+     "arxiv:2604.14004",
+     "arxiv:2605.11032",
+     "arxiv:2607.26643",
+     "arxiv:2606.01139",
+     "arxiv:2606.18216"
+    ],
+    "evidence_needed": "A matrix over named producer-consumer pairs reporting the producer's self-gain and the consumer's gain from the same artifact on the same tasks, expressed as a retained-gain ratio with seeds."
+   },
+   {
+    "gap": "Reported gains from foreign experience are not separated from the gain of simply having any memory, because no card compares against a pool the consumer collects itself at matched collection cost or against re-running without the memory.",
+    "card_ids": [
+     "arxiv:2608.07169",
+     "arxiv:2604.14004",
+     "arxiv:2606.19911",
+     "arxiv:2605.23899",
+     "arxiv:2501.11425",
+     "arxiv:2411.13451",
+     "arxiv:2606.01139",
+     "arxiv:2608.26730"
+    ],
+    "evidence_needed": "A controlled comparison where the consumer receives (a) producer-built memory and (b) memory built from its own trajectories at equal token or compute budget, reporting the delta between the two arms."
+   },
+   {
+    "gap": "How transfer effectiveness changes with the size and direction of the producer-consumer capability gap and with family or architecture mismatch is untested, since most studies use a single teacher, a single family, or unnamed model pairs.",
+    "card_ids": [
+     "arxiv:2506.14728",
+     "arxiv:2608.17050",
+     "arxiv:2605.30723",
+     "arxiv:2606.01139",
+     "arxiv:2606.19911",
+     "arxiv:2606.18216",
+     "arxiv:2606.13594",
+     "arxiv:2605.11695"
+    ],
+    "evidence_needed": "Sweeps over several producer sizes and families for a fixed consumer (and the reverse, weak-to-strong) showing gain as a function of capability gap and cross-family versus same-family pairing."
+   },
+   {
+    "gap": "Whether erroneous or harmful producer contributions propagate to the consumer, and whether the consumer can detect them at read time, is asserted or ignored rather than measured.",
+    "card_ids": [
+     "arxiv:2604.14004",
+     "arxiv:2605.23899",
+     "arxiv:2506.14728",
+     "arxiv:2608.17050",
+     "arxiv:2606.19911",
+     "arxiv:2605.11032"
+    ],
+    "evidence_needed": "Experiments that inject known-bad or conflicting entries at controlled rates into the shared store and report consumer performance degradation plus read-time detection precision/recall."
+   },
+   {
+    "gap": "Transfer is not validated when the consumer's action space, tool format, tokenizer, or task set differs from the producer's, nor to a third consumer not involved in refining the artifact, so the role of explicit reader-side adaptation over no adaptation is unknown.",
+    "card_ids": [
+     "arxiv:2509.14257",
+     "arxiv:2607.28048",
+     "arxiv:2607.26643",
+     "arxiv:2306.09082",
+     "arxiv:2606.13594",
+     "arxiv:2605.11032"
+    ],
+    "evidence_needed": "Held-out consumer and held-out task evaluations where the interface differs from the producer's, comparing an adaptation or rehydration step against direct injection of the unmodified artifact."
+   }
+  ]
+ },
+ {
+  "axis": "what transfers and what contaminates",
+  "gaps": [
+   {
+    "gap": "Almost every system is evaluated with the same backbone writing and reading its memory, skills or rules, so whether a store built by one model helps, does nothing for, or harms a different reader model is unresolved even though two cards show skill utility is strongly model-dependent.",
+    "card_ids": [
+     "arxiv:2605.18401",
+     "arxiv:2605.24117",
+     "arxiv:2608.31100",
+     "arxiv:2512.11485",
+     "arxiv:2606.17591",
+     "arxiv:2512.12818",
+     "arxiv:2601.11100",
+     "arxiv:2608.26730",
+     "arxiv:2406.14596",
+     "arxiv:2605.30723",
+     "arxiv:2605.23899"
+    ],
+    "evidence_needed": "A writer-by-reader matrix over several backbone families and scales using one fixed memory or skill store, reporting per-pair gain and the fraction of the writer's own gain each reader retains."
+   },
+   {
+    "gap": "Teacher- or foreign-sourced memory is never compared against memory the consumer collects itself at matched collection and inference cost, so the gain attributable to the producer's capability is confounded with the gain from having any memory at all.",
+    "card_ids": [
+     "arxiv:2608.07169",
+     "arxiv:2604.14004",
+     "arxiv:2605.23899",
+     "arxiv:2506.14728",
+     "arxiv:2606.18216",
+     "arxiv:2607.26643",
+     "arxiv:2608.31100"
+    ],
+    "evidence_needed": "A matched-budget ablation in which the same student receives teacher memory versus self-collected memory of equal token or episode cost, swept across teacher-student capability gaps and reporting seeds."
+   },
+   {
+    "gap": "No card evaluates whether a reader can detect or reject harmful retrieved entries (low-level traces, seemingly relevant skills, grafted or trust-laundered experience notes) at read time, nor whether susceptibility to such contamination depends on the writer-reader capability gap.",
+    "card_ids": [
+     "arxiv:2604.14004",
+     "arxiv:2605.23899",
+     "arxiv:2608.11888",
+     "arxiv:2512.16962",
+     "arxiv:2605.22842",
+     "arxiv:2602.00428",
+     "arxiv:2506.14728",
+     "arxiv:2602.05965",
+     "arxiv:2607.28272"
+    ],
+    "evidence_needed": "A benchmark mixing verified-helpful and verified-harmful entries, including benign-looking experience notes, that measures each reader model's accept/reject precision and the resulting downstream task change as a function of author-reader capability gap."
+   },
+   {
+    "gap": "Provenance, trust and information-flow controls are validated on synthetic or adversarial workloads only, so their cost on legitimate transfer, namely how much useful foreign content they block and how they change task performance on non-adversarial multi-writer content, is unmeasured.",
+    "card_ids": [
+     "arxiv:2608.10509",
+     "arxiv:2606.25115",
+     "arxiv:2605.22842",
+     "arxiv:2608.11436",
+     "arxiv:2605.25869",
+     "arxiv:2404.09982"
+    ],
+    "evidence_needed": "Paired runs on real non-adversarial multi-writer workloads with and without provenance gating, reporting task accuracy, the share of useful foreign entries blocked, and per-query latency and token overhead."
+   },
+   {
+    "gap": "The claim that transferability rises with experience compression is untested and sits against findings that raw-trajectory reuse often beats distilled skills and that summaries lose state-contingent cues, so which abstraction level transfers versus contaminates, at matched inference cost, is unresolved.",
+    "card_ids": [
+     "arxiv:2604.15877",
+     "arxiv:2605.24117",
+     "arxiv:2608.31100",
+     "arxiv:2604.14004",
+     "arxiv:2608.07169",
+     "arxiv:2607.10113"
+    ],
+    "evidence_needed": "A controlled experiment that holds the source experience fixed, varies only the compression level, and measures transfer gain and negative-transfer rate for in-domain, cross-domain and cross-model readers at equal per-reader token cost."
+   }
+  ]
+ },
+ {
+  "axis": "shared and population memory",
+  "gaps": [
+   {
+    "gap": "It is unresolved whether contributions from writers of differing capability should be trusted or weighted differently, and whether a weaker consumer actually gains from a stronger producer's memory, because nearly every shared store is evaluated with copies of the same model or a single backbone.",
+    "card_ids": [
+     "arxiv:2607.05844",
+     "arxiv:2606.19911",
+     "arxiv:2606.25115",
+     "arxiv:2605.20563",
+     "arxiv:2605.18401",
+     "arxiv:2602.00428",
+     "arxiv:2605.22842",
+     "arxiv:2606.24775",
+     "arxiv:2605.06130",
+     "arxiv:2605.11032"
+    ],
+    "evidence_needed": "A controlled producer-consumer matrix over backbones of different capability (strong-to-weak, weak-to-strong, mixed) writing to and reading from one shared store, reporting consumer gain and error adoption against same-model and no-memory baselines, with writer-capability trust weighting as an ablation."
+   },
+   {
+    "gap": "How the value and the contamination of a shared store change with the number and diversity of contributing agents is untested, since multi-writer deployments are reported as designs or with few writers and no scaling curves.",
+    "card_ids": [
+     "arxiv:2603.14312",
+     "arxiv:2607.05844",
+     "arxiv:2505.18279",
+     "arxiv:2404.09982",
+     "arxiv:2605.20563",
+     "arxiv:2607.24759",
+     "arxiv:2601.07004"
+    ],
+    "evidence_needed": "Experiments that vary the count and model diversity of writers to a single shared store (e.g., 1, 2, 4, 8, 16) and report reader accuracy, conflict rate, and contamination rate as curves on a live multi-writer deployment rather than a design report."
+   },
+   {
+    "gap": "Whether provenance, trust-gating, and information-flow defenses hold when the poisoned entry is a benign-looking successful-experience record rather than a policy-formatted document or synthetic adversarial task, and what those gates cost on legitimate non-adversarial reuse, is unmeasured.",
+    "card_ids": [
+     "arxiv:2512.16962",
+     "arxiv:2605.22842",
+     "arxiv:2608.10509",
+     "arxiv:2608.11436",
+     "arxiv:2602.05965",
+     "arxiv:2605.18401",
+     "arxiv:2602.03036",
+     "arxiv:2605.11032",
+     "arxiv:2602.00428"
+    ],
+    "evidence_needed": "A red-team benchmark in which benign-looking grafted experience records are injected into a shared experience store, reporting attack success under provenance reranking, action gating, and IFC, alongside the downstream task-performance change of the same gates on clean content relative to a plain semantic retriever."
+   },
+   {
+    "gap": "Reported gains from shared or governed memory are never compared against a self-collected or unbudgeted memory pool at matched cost, and the overhead of the governance machinery (curation, policy checks, TEE-protected retrieval, controller training, atomization) is not reported in the same units as the gains.",
+    "card_ids": [
+     "arxiv:2606.25115",
+     "arxiv:2606.19911",
+     "arxiv:2608.10509",
+     "arxiv:2601.07004",
+     "arxiv:2505.18279",
+     "arxiv:2602.05965",
+     "arxiv:2605.18401",
+     "arxiv:2605.25869",
+     "arxiv:2602.03036"
+    ],
+    "evidence_needed": "A head-to-head comparison of shared or governed memory against a self-collected or unbudgeted pool at matched collection-plus-inference token and latency budget, with governance overhead measured and subtracted from the reported gain."
+   },
+   {
+    "gap": "It is unknown whether surfacing conflicts, negative results, and recorded dead ends changes reader behavior (fewer repeated failures, correct abstention) beyond making them visible, since conflict-preserving stores tie on accuracy, the wiki substrate's failure-avoidance is untested, and the curation loop is shown in one domain with a single writer.",
+    "card_ids": [
+     "arxiv:2607.24759",
+     "arxiv:2607.05844",
+     "arxiv:2606.17591",
+     "arxiv:2603.14312"
+    ],
+    "evidence_needed": "An intervention study comparing readers given conflict objects, failure records, or governed rule stores against readers with collapsed or overwrite-based memory on repeated-failure rate, abstention correctness, and task accuracy across at least two domains and multiple writers."
+   }
+  ]
+ },
+ {
+  "axis": "adapting foreign experience to the reader",
+  "gaps": [
+   {
+    "gap": "Nearly every adaptation method is validated only on experience the agent itself produced, so it is unresolved whether reconstruction, analogical adaptation, or abstraction still helps when the retrieved experience was written by a different, weaker, or stronger model than the reader.",
+    "card_ids": [
+     "arxiv:2607.28272",
+     "arxiv:2604.05533",
+     "arxiv:2406.14596",
+     "arxiv:2512.11485",
+     "arxiv:2306.09082"
+    ],
+    "evidence_needed": "A controlled experiment that holds the adaptation method fixed and swaps the writer of the stored experience (same model, weaker model, stronger model, different family) against the same reader, reporting task success relative to a self-written-experience baseline."
+   },
+   {
+    "gap": "Transfer mechanisms that are learned against one consumer (a context augmentation model, a latent memory composer, a frozen memory table plus reader, or a KV-cache transformation) have not been shown to carry over to a different backbone, capability gap, or architecture family, so it is unresolved how much reader-specific training every new consumer requires.",
+    "card_ids": [
+     "arxiv:2604.07487",
+     "arxiv:2602.03036",
+     "arxiv:2608.17050",
+     "arxiv:2606.13594",
+     "arxiv:2605.30723"
+    ],
+    "evidence_needed": "Train the transfer component against one backbone and evaluate it zero-shot on held-out backbones spanning scale and family, reporting how much of the source-backbone gain survives versus the cost of re-adapting per consumer."
+   },
+   {
+    "gap": "Reader-side adaptation is known to be model-dependent, yet no paper quantifies how much of the producer's benefit the consumer actually keeps or whether adaptation still helps when the writer is much stronger or much weaker than the reader, leaving the retained-benefit ratio across capability gaps unmeasured.",
+    "card_ids": [
+     "arxiv:2605.30723",
+     "arxiv:2606.01139",
+     "arxiv:2605.11032",
+     "arxiv:2606.18216",
+     "arxiv:2607.28048"
+    ],
+    "evidence_needed": "A matrix of writer and reader models across several capability gaps in both directions reporting the fraction of the writer's gain retained by the reader with and without the adaptation step against a no-adaptation baseline."
+   },
+   {
+    "gap": "Adapting foreign experience is assumed to be beneficial, but whether the adaptation step also propagates the writer's errors, harmful skills, or poisoned entries into the reader, and whether readers can detect such contamination at read time, is unexamined.",
+    "card_ids": [
+     "arxiv:2608.17050",
+     "arxiv:2605.23899",
+     "arxiv:2605.22842",
+     "arxiv:2512.11485",
+     "arxiv:2602.03036"
+    ],
+    "evidence_needed": "Inject a controlled fraction of erroneous, mismatched, or benign-looking poisoned entries into the foreign experience store and measure the reader's task success and the rate at which the adaptation or read step flags or discards them relative to clean stores."
+   },
+   {
+    "gap": "The inference and pipeline cost of adapting foreign experience (per-step reconstruction, reflection-SFT-RL training, teacher runs and re-executions, evolution search) is not compared against plain retrieval or the reader collecting its own experience on a matched budget, so it is unresolved whether adaptation is worth its cost.",
+    "card_ids": [
+     "arxiv:2607.28272",
+     "arxiv:2604.07487",
+     "arxiv:2607.28048",
+     "arxiv:2605.30723",
+     "arxiv:2606.01139",
+     "arxiv:2605.23899"
+    ],
+    "evidence_needed": "Report task gain per unit of token and compute spend for adaptation methods versus plain retrieval and versus self-collected experience under an equalized collection-plus-training budget."
+   }
+  ]
+ },
+ {
+  "axis": "evaluation and cost of transfer",
+  "gaps": [
+   {
+    "gap": "No study compares transferred memory, skills, or teacher trajectories against a pool the consumer collects for itself at matched experience-collection cost, so the gain attributable to the foreign producer is not separated from the gain of having any memory at all.",
+    "card_ids": [
+     "arxiv:2608.07169",
+     "arxiv:2604.14004",
+     "arxiv:2606.19911",
+     "arxiv:2605.27762",
+     "arxiv:2605.23899",
+     "arxiv:2606.01139"
+    ],
+    "evidence_needed": "A controlled comparison in which the consumer receives either the producer's artifact or a self-collected pool built with the same trajectory or token budget, reporting the accuracy difference with seeds and variance."
+   },
+   {
+    "gap": "The consumer-side inference-token and per-episode compute cost of using transferred or retained experience is not reported alongside the task gain, so cost-matched comparisons across memory pathways (raw trajectories, distilled skills, summaries, proactive injection, online LoRA) are missing.",
+    "card_ids": [
+     "arxiv:2608.07169",
+     "arxiv:2608.04003",
+     "arxiv:2605.24117",
+     "arxiv:2608.31100",
+     "arxiv:2606.04536",
+     "arxiv:2604.15877"
+    ],
+    "evidence_needed": "Gain-per-inference-token or gain-per-compute curves for each pathway on the same tasks at equalized reader budget, including the injected context and any online update cost."
+   },
+   {
+    "gap": "Memory and skill benchmarks evaluate a single-writer, single-reader setting, so whether artifacts written by one model, harness, or framework help a different reader, and how much of the writer's gain the reader retains, remains unmeasured.",
+    "card_ids": [
+     "arxiv:2606.24775",
+     "arxiv:2608.04003",
+     "arxiv:2605.24117",
+     "arxiv:2608.31100",
+     "arxiv:2603.07670",
+     "arxiv:2606.01139",
+     "arxiv:2604.14004"
+    ],
+    "evidence_needed": "A writer-by-reader matrix over several model pairs (including weaker-to-stronger and stronger-to-weaker) reporting the fraction of the writer's own gain that each reader keeps under fixed benchmark conditions."
+   },
+   {
+    "gap": "Skill-induced failures and negative transfer are documented, but no reader-side filter is evaluated for its ability to reject harmful skills, traces, or conflicting contributions before execution, and whether harm correlates with author-reader mismatch is untested.",
+    "card_ids": [
+     "arxiv:2608.11888",
+     "arxiv:2605.23899",
+     "arxiv:2604.14004",
+     "arxiv:2606.19911"
+    ],
+    "evidence_needed": "An experiment that varies author-reader model pairing, measures the harmful-artifact rate per pairing, and reports the precision and recall of a read-time rejection filter together with the resulting change in task accuracy and cost."
+   },
+   {
+    "gap": "Parametric memory (consolidated adapters, fast LoRA weights, conditional update authorization) is evaluated only on a single environment or single backbone, so its portability to other backbones or environments and its efficiency claims relative to retrieval memory are asserted rather than measured under matched conditions.",
+    "card_ids": [
+     "arxiv:2605.27762",
+     "arxiv:2606.04536",
+     "arxiv:2608.26730"
+    ],
+    "evidence_needed": "Cross-backbone and cross-environment reuse trials of the trained adapters or authorization rules, with the retained performance and the training-plus-inference cost reported against a retrieval-based baseline built from the same experience."
+   }
+  ]
+ }
+]
