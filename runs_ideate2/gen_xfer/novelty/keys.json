@@ -1,0 +1,505 @@
+{
+ "reconstruction_pays_only_across_the_writer_gap": {
+  "agent": [
+   "reader-side reconstruction of retrieved experience into own action format versus verbatim injection",
+   "cross-model experience transfer agent memory rewrite plan token-matched ALFWorld",
+   "critique-and-reconstruct memory replay gain depends on writer-reader policy distance"
+  ],
+  "mechanism_home": [
+   "cross-embodiment demonstration translation domain gap imitation learning",
+   "reformatting demonstrations into learner's own output format gain scales with demonstrator-learner policy distance",
+   "self-generated versus external demonstrations in-context learning format alignment"
+  ],
+  "adjacent": [
+   "self-generated in-context demonstrations match human-written demonstrations",
+   "on-policy distillation beats off-policy imitation under distribution shift",
+   "paraphrasing demonstrations into the model's own words improves in-context learning"
+  ],
+  "baseline": [
+   "static procedure prompt",
+   "verbatim demonstration injection at matched tokens",
+   "rewriting placebo applied to the instruction prompt"
+  ],
+  "methods": [
+   "MemHarness",
+   "AdaCoM",
+   "ImMimic"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B"
+  ]
+ },
+ "reconstruction_launders_planted_procedure_errors": {
+  "agent": [
+   "memory poisoning benign-looking planted wrong trajectories reader-side rewriting propagates errors",
+   "keep/discard gate for retrieved experience items detection recall own-style versus foreign writer",
+   "agent memory contamination defense precision recall ALFWorld experience bank"
+  ],
+  "mechanism_home": [
+   "paraphrasing evades detectors error propagation through rewriting",
+   "self-preference bias evaluators fail to detect errors in own-style text",
+   "wrong labels in-context demonstrations label noise robustness"
+  ],
+  "adjacent": [
+   "LLM judges prefer their own generations self-preference bias",
+   "paraphrase attacks evade AI-generated text detectors",
+   "in-context learning is robust to wrong demonstration labels"
+  ],
+  "baseline": [
+   "keyword consistency rule filter",
+   "NLI-based pruning of retrieved passages",
+   "static procedure prompt"
+  ],
+  "methods": [
+   "MemoryGraft",
+   "SkillJack",
+   "SONAR"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B"
+  ]
+ },
+ "rewriter_trained_against_one_reader_matched_cost": {
+  "agent": [
+   "experience rewriter trained by execution feedback transfer across backbones reader specificity",
+   "model-aware skill adaptation rewriter transfer fraction to held-out agent",
+   "learned context augmentation for agents versus self-collected experience at equal GPU-hours"
+  ],
+  "mechanism_home": [
+   "prompt optimization transferability across models optimized prompts overfit the target model",
+   "prompt tuning transfer across model sizes transferability metric",
+   "learned data augmentation policy transfer across architectures"
+  ],
+  "adjacent": [
+   "optimized prompts transfer poorly across models model-specific prompt optimization",
+   "self-generated training data beats external data at matched compute",
+   "learned prompt compression is model-agnostic"
+  ],
+  "baseline": [
+   "prompted untrained rewriter",
+   "verbatim injection at matched tokens",
+   "equal compute spent on self-collected data"
+  ],
+  "methods": [
+   "SkillRevise",
+   "CLEAR",
+   "PANDA"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B"
+  ]
+ },
+ "self_pool_break_even": {
+  "agent": [
+   "self-collected experience pool versus expert walkthroughs matched collection cost agent memory retrieval",
+   "break-even budget self-generated successes reproduce teacher trajectory in-context gain",
+   "agent memory distillation student own pool per-type coverage saturation k=3"
+  ],
+  "mechanism_home": [
+   "self-generated versus expert demonstrations sample efficiency in-context learning",
+   "demonstration selection coverage saturation number of same-class examples diminishing returns",
+   "demonstration-regularized reinforcement learning sample complexity expert data versus self-play"
+  ],
+  "adjacent": [
+   "rejection sampling self-training matches distillation from a stronger teacher",
+   "diminishing returns in number of in-context demonstrations saturation",
+   "model-generated data beats human data at equal budget"
+  ],
+  "baseline": [
+   "static per-type procedure prompt",
+   "own success-filtered pool at full budget",
+   "similarity-selected few-shot demonstrations"
+  ],
+  "methods": [
+   "Agent Memory Distillation",
+   "inference-time distillation",
+   "demonstration-regularized RL"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B"
+  ]
+ },
+ "reader_pays_writer_detours": {
+  "agent": [
+   "consumer-side token cost of retrieved trajectories reader episode length inherits item length",
+   "experience pool cost per successful episode writer trajectory length versus success",
+   "gain per consumer token cross-writer agent memory transfer ALFWorld"
+  ],
+  "mechanism_home": [
+   "in-context demonstration length controls output length verbosity imitation",
+   "extraneousness-aware imitation learning irrelevant segments in demonstrations",
+   "suboptimal demonstration pruning imitation learning"
+  ],
+  "adjacent": [
+   "output length follows demonstration length in in-context learning",
+   "longer reasoning demonstrations raise inference cost without accuracy gain",
+   "filtering noisy demonstrations improves imitation policy"
+  ],
+  "baseline": [
+   "static procedure prompt at matched tokens",
+   "truncating demonstrations to a fixed token budget",
+   "shortest-demonstration selection"
+  ],
+  "methods": [
+   "AgentDiet",
+   "MemoryCPT",
+   "Extraneousness-Aware Imitation Learning"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B"
+  ]
+ },
+ "leave_one_type_out_split": {
+  "agent": [
+   "leave-one-type-out held-out task type agent experience retrieval transfer ALFWorld",
+   "retrieval versus fine-tuning cross-task-type generalization embodied agent memory",
+   "expert trajectory retrieval negative transfer unseen task type ALFWorld"
+  ],
+  "mechanism_home": [
+   "in-context learning wrong-task demonstrations harm cross-task demonstration transfer",
+   "leave-one-task-out evaluation few-shot demonstrations vs fine-tuning compositional generalization",
+   "demonstration task mismatch out-of-distribution in-context learning versus parameter-efficient fine-tuning"
+  ],
+  "adjacent": [
+   "in-context learning relies on task-specific demonstrations and fails under task shift",
+   "fine-tuning generalizes to held-out tasks better than retrieval of mismatched examples",
+   "nearest-neighbor retrieval of wrong-domain examples hurts more than random examples"
+  ],
+  "baseline": [
+   "static instruction listing procedures for the remaining task types",
+   "random unrelated-type demonstrations placebo",
+   "zero-shot no-retrieval reader"
+  ],
+  "methods": [
+   "PAST-Bench",
+   "S3Gym",
+   "AgentCL",
+   "MemHarness",
+   "PEAM",
+   "CrossICL",
+   "QLoRA"
+  ],
+  "environment": [
+   "ALFWorld valid_seen valid_unseen",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B"
+  ]
+ },
+ "complementarity_not_proximity": {
+  "agent": [
+   "cross-model experience pool transfer writer reader complementarity agent memory",
+   "agent memory distillation teacher student compatibility retrieved trajectories",
+   "foreign writer experience bank beats self-collected pool ALFWorld"
+  ],
+  "mechanism_home": [
+   "demonstrator compatibility imitation learning multiple demonstrators policy agreement",
+   "teacher student complementarity error correlation ensemble transfer",
+   "demonstration selection by demonstrator success on learner failure modes"
+  ],
+  "adjacent": [
+   "stronger teacher is not always better teacher capacity gap in distillation",
+   "diversity beats quantity in SFT data scaling",
+   "on-policy self-generated data outperforms expert data for fine-tuning"
+  ],
+  "baseline": [
+   "static per-type procedure prompt",
+   "reader's own success-filtered pool at matched episode budget",
+   "select demonstrator by overall success rate"
+  ],
+  "methods": [
+   "Agent Memory Distillation",
+   "Skill is Not One-Size-Fits-All",
+   "retrieval-based behavior cloning",
+   "closer_beats_stronger"
+  ],
+  "environment": [
+   "ALFWorld 274 validation games",
+   "Qwen3-32B EXAONE-4.0-32B gpt-oss-120b",
+   "vLLM"
+  ]
+ },
+ "thoughts_do_not_travel": {
+  "agent": [
+   "cross-backbone agent experience transfer ReAct thoughts action-only re-serialization",
+   "model-aware skill rewriter retrieved trajectory adaptation reader scaffold",
+   "stripping reasoning text from stored trajectories improves cross-model transfer"
+  ],
+  "mechanism_home": [
+   "rationale mismatch teacher student chain-of-thought distillation",
+   "in-context demonstrations with explanations rationale helpfulness across models",
+   "self-generated rationales versus teacher rationales student in-context learning"
+  ],
+  "adjacent": [
+   "chain-of-thought explanations in demonstrations help only when generated by the model itself",
+   "model-written rationales outperform human-written rationales for fine-tuning",
+   "incorrect or irrelevant reasoning in demonstrations barely affects in-context accuracy"
+  ],
+  "baseline": [
+   "deterministic action-observation strip of demonstrations",
+   "reader re-writes thoughts for foreign demonstrations",
+   "static procedure prompt"
+  ],
+  "methods": [
+   "Skill is Not One-Size-Fits-All",
+   "SkillAligner",
+   "SkillAdaptor",
+   "SkillRevise",
+   "symbolic chain-of-thought distillation",
+   "token-selective distillation"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B EXAONE-4.0-32B gpt-oss-120b",
+   "ReAct"
+  ]
+ },
+ "shared_blind_spot": {
+  "agent": [
+   "contaminated experience bank mislabeled failures agent memory poisoning writer identity",
+   "read-time detection of poisoned memory items self-judge versus cross-model judge",
+   "agent memory poisoning harm by writer reader policy proximity"
+  ],
+  "mechanism_home": [
+   "confirmation bias pseudo-labeling self-training cross-model disagreement",
+   "self-evaluation blind spot LLM cannot detect its own errors self-verification",
+   "self-preference bias LLM-as-judge prefers own generations"
+  ],
+  "adjacent": [
+   "LLM judges favor their own outputs self-preference bias",
+   "models cannot self-correct reasoning without external feedback",
+   "cross pseudo-labeling reduces confirmation bias in semi-supervised learning"
+  ],
+  "baseline": [
+   "terminal failure line regex filter",
+   "self-judgment plausibility filter at read time",
+   "provenance gating trust score for memory items"
+  ],
+  "methods": [
+   "MemoryGraft",
+   "Compliance Trap",
+   "MemAudit",
+   "Bayesian trust scoring",
+   "cross pseudo-labeling"
+  ],
+  "environment": [
+   "ALFWorld 3,553 training games",
+   "Qwen3-32B EXAONE-4.0-32B gpt-oss-120b",
+   "vLLM 0.13"
+  ]
+ },
+ "coverage_not_headcount": {
+  "agent": [
+   "multi-agent shared experience store matched collection budget reader gain",
+   "population of writers task-type coverage predicts memory transfer",
+   "number of contributing policies retrieval conflict shared memory pool"
+  ],
+  "mechanism_home": [
+   "multi-demonstrator imitation learning demonstrator diversity coverage compatibility",
+   "ensemble diversity complementary channels scaling number of models",
+   "data mixture coverage versus number of sources fixed budget"
+  ],
+  "adjacent": [
+   "diversity beats quantity in SFT data scaling",
+   "non-monotonic scaling with team size when experience is reused",
+   "coverage of skill space predicts fine-tuning generalization more than data volume"
+  ],
+  "baseline": [
+   "reader's own pool at matched budget",
+   "static per-type procedure prompt",
+   "self pool plus expert-only bank"
+  ],
+  "methods": [
+   "Memory Sharing",
+   "Multi-Agent Transactive Memory",
+   "StateFuse",
+   "Scaling Teams or Scaling Time",
+   "demonstration compatibility"
+  ],
+  "environment": [
+   "ALFWorld 274 validation games",
+   "Qwen3-32B EXAONE-4.0-32B gpt-oss-120b",
+   "BM25 dense retriever"
+  ]
+ },
+ "one_bad_apple_population_vote": {
+  "agent": [
+   "poisoned experience store agent memory retrieval top-k contamination",
+   "multi-writer shared trajectory bank poisoning defense cross-writer consensus",
+   "MemoryGraft implanted successful experiences ALFWorld memory injection harm"
+  ],
+  "mechanism_home": [
+   "RAG poisoning presence in retrieved passages versus fraction number of poisoned documents",
+   "retrieved passage clustering consensus filter to isolate poisoned documents PoisonedRAG defense",
+   "poisoning attack absolute number of poison samples independent of dataset size"
+  ],
+  "adjacent": [
+   "pretraining poisoning depends on absolute number of poison documents not fraction",
+   "in-context learning single incorrect demonstration flips prediction sensitivity to one distractor",
+   "provenance-based filtering blind to trusted-label poison label flipping attacks"
+  ],
+  "baseline": [
+   "provenance exclusion of low-quality source",
+   "LLM critique of retrieved passages before answering self-verification",
+   "majority vote consensus filter across retrieved passages"
+  ],
+  "methods": [
+   "MemoryGraft",
+   "TrustRAG",
+   "TriShieldRAG",
+   "PoisonedRAG",
+   "MAP-Graph"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B",
+   "gpt-oss-120b"
+  ]
+ },
+ "who_gets_read": {
+  "agent": [
+   "trust-weighted retrieval multi-writer experience store agent memory provenance reranking",
+   "retriever prefers self-generated trajectories shared memory bank homophily",
+   "writer quality weighting population trajectory retrieval ALFWorld"
+  ],
+  "mechanism_home": [
+   "dense retriever source bias toward LLM-generated text self-preference neural retrievers",
+   "retriever bias toward text generated by the same model as the query fluency term specificity",
+   "source quality prior reranking author reputation weighting information retrieval"
+  ],
+  "adjacent": [
+   "LLM evaluators favor their own generations self-preference bias",
+   "dense retrievers prefer LLM-generated documents over human-written source bias",
+   "expert trust weighting beats uniform aggregation in crowdsourcing label aggregation"
+  ],
+  "baseline": [
+   "uniform semantic retrieval without source weighting",
+   "BM25 retrieval on task string",
+   "global source quality boost reranking"
+  ],
+  "methods": [
+   "MAP-Graph",
+   "SuperLocalMemory",
+   "MATM",
+   "BM25"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "gpt-oss-120b",
+   "EXAONE-4.0-32B"
+  ]
+ },
+ "compression_erases_the_writer": {
+  "agent": [
+   "raw trajectories versus distilled skills agent experience transfer across backbones",
+   "memory abstraction level summaries procedures cross-model transfer ALFWorld",
+   "experience compression transferability writer reader mismatch agent memory"
+  ],
+  "mechanism_home": [
+   "distributional misalignment student teacher reasoning traces filtering tokens improbable under student",
+   "in-context demonstrations from a different model versus self-generated demonstrations familiarity",
+   "abstraction level of demonstrations generalization concrete versus abstract examples in-context learning"
+  ],
+  "adjacent": [
+   "self-generated training data beats stronger model data distribution mismatch small model distillation",
+   "high-level insights transfer while low-level traces cause negative transfer",
+   "model-generated in-context demonstrations improve own performance self-familiar examples"
+  ],
+  "baseline": [
+   "static instruction stating the procedure",
+   "raw success-filtered self trajectories in context",
+   "token-matched retrieved summaries"
+  ],
+  "methods": [
+   "SkillEvolBench",
+   "memory transfer learning coding agents",
+   "procedural memory benchmark",
+   "reasoning trace filtering student-tailored distillation"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B",
+   "gpt-oss-120b"
+  ]
+ },
+ "own_errors_pass_the_gate": {
+  "agent": [
+   "reader verifies retrieved trajectories self-authored contamination detection agent memory",
+   "memory poisoning defense self-consistency validation A-MemGuard experience store",
+   "agent memory contamination authorship familiarity detection recall"
+  ],
+  "mechanism_home": [
+   "LLM self-preference bias evaluator favors own generations familiarity perplexity",
+   "self-recognition bias in LLM-as-a-judge verification error detection",
+   "self-bias in self-refinement reduced by external feedback"
+  ],
+  "adjacent": [
+   "LLM evaluators recognize and favor their own outputs",
+   "self-preference bias tracks perplexity familiarity",
+   "self-verification fails to catch own reasoning errors self-critique blind spot"
+  ],
+  "baseline": [
+   "static instruction stating the procedure as external reference",
+   "majority vote self-consistency verification",
+   "perplexity-based anomaly filter for retrieved items"
+  ],
+  "methods": [
+   "MemoryGraft",
+   "A-MemGuard",
+   "SkillJack",
+   "trust laundering policy-formatted documents"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B",
+   "gpt-oss-120b"
+  ]
+ },
+ "search_disposition_contagion": {
+  "agent": [
+   "retrieved trajectories transfer writer exploration behavior agent memory negative transfer",
+   "verbatim replay retrieved experience search length step budget exhaustion ALFWorld",
+   "foreign experience pool disposition copying agent memory reconstruction"
+  ],
+  "mechanism_home": [
+   "imitation learning from suboptimal demonstrations copies demonstrator inefficiency",
+   "in-context demonstrations copy surface behavior style rather than capability",
+   "verbosity contagion in-context examples length copying LLM output length"
+  ],
+  "adjacent": [
+   "imitation of proprietary LLMs copies style not capability",
+   "in-context examples override instructions demonstration format and length copying",
+   "behavioral cloning inherits demonstrator suboptimality dose dependent"
+  ],
+  "baseline": [
+   "static instruction stating the procedure",
+   "strip search segment keep manipulation steps only",
+   "reconstruct retrieved experience for current state before acting"
+  ],
+  "methods": [
+   "MemHarness",
+   "ILMAR",
+   "PREFIL",
+   "SkillEvolBench"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B",
+   "gpt-oss-120b"
+  ]
+ }
+}
