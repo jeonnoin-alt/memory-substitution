@@ -1,0 +1,158 @@
+{
+ "complementarity_not_proximity__search_disposition_contagion": {
+  "label": "distinct",
+  "reason": "A claims the retained-gain ratio is governed by writer-reader complementarity on the reader's failure types (proximity inert); B claims the reader behaviourally copies the writer's exploration disposition (search length, receptacle order) from the search segment and pays for it in timeouts. Different central claims, different mechanisms and different outcome variables despite a shared ALFWorld writer-manipulation design."
+ },
+ "reconstruction_pays_only_across_the_writer_gap__search_disposition_contagion": {
+  "label": "distinct",
+  "reason": "A is about a read-time treatment (reader rewrites retrieved items) whose benefit scales with policy distance rather than writer capability; B is about involuntary transfer of the writer's search behaviour and its removal by segment stripping. Neither the claim nor the mechanism coincides."
+ },
+ "reconstruction_pays_only_across_the_writer_gap__complementarity_not_proximity": {
+  "label": "distinct",
+  "reason": "A's estimand is the reconstruction increment over token-matched verbatim injection and its ordering by policy distance; B's estimand is the verbatim retained-gain ratio and its determination by complementarity, with proximity declared inert. The mechanisms (format/policy translation vs failure-type coverage) differ, and B never applies the reconstruction treatment that carries A's claim."
+ },
+ "shared_blind_spot__own_errors_pass_the_gate": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both claim that self-authored (or proximate) contamination is both more harmful and least detectable by the reader, tested with the same planted-error families on ALFWorld in a reader x host-writer cross design. B adds the perplexity/self-preference channel with a paraphrase manipulation, a static-procedure external reference predicted to halve the gap, and a content-detector-vs-writer-identity-gate cost comparison, which would change what a reader concludes about the cause and the fix."
+ },
+ "self_pool_break_even__complementarity_not_proximity": {
+  "label": "distinct",
+  "reason": "A claims foreign pools only pay in a coverage-limited regime and quantifies the self-collection budget at which the advantage vanishes; B claims a per-cell rule in which complementarity, not proximity or capability, sets how much of a foreign pool's gain survives. Shared baselines (self pool at matched cost, retained-gain ratio) do not make the claims or mechanisms the same."
+ },
+ "self_pool_break_even__brief:Self-pool control at mat": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "B is only the brief's required control (compare any foreign arm against a reader-collected pool at matched collection cost); A adopts exactly that control but turns it into the object of measurement with nested collection budgets, a per-type coverage cap, a break-even budget B*, and cost per net point, which the bare control does not yield."
+ },
+ "compression_erases_the_writer__archive:archive:provenance_gap": {
+  "label": "distinct",
+  "reason": "A claims an abstraction-level x writer-identity interaction (raw wins on self pools, compression wins on foreign pools) and reconciles two published positions on compression; B claims utility is set by the signed writer-reader capability gap and that reader-in-the-loop selection, not authorship, is the cure, with a GEPA masking result. Different mechanisms, different manipulated variables and different domains."
+ },
+ "complementarity_not_proximity__brief:Retained-gain ratio is t": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "B specifies only the estimand and its reporting granularity (retained-gain ratio per writer x reader cell with seeds); A uses that estimand but adds offline predictors computed before any transfer cell (action-agreement proximity and the complementarity statistic kappa) and a falsifiable threshold rule rho > 1 iff kappa > 0.05, which is a claim the measurement convention alone does not contain."
+ },
+ "own_errors_pass_the_gate__archive:archive:gate_reads_sty": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "The archived claim already establishes that text-only gates score surface form rather than truth, with restyled wrong records admitted at the clean rate; A keeps that mechanism but makes familiarity writer-relative, measuring detection as a reader x host-writer interaction at read time with item perplexity and a paraphrase manipulation, plus the detector's cost on legitimate foreign transfer. That authorship control is absent from the archived write-time audit and would change the conclusion about who to trust as verifier."
+ },
+ "reconstruction_pays_only_across_the_writer_gap__brief:4. Adapting foreign expe": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "B is the brief's literature cluster naming the same mechanism (reconstruction/analogical adaptation of retrieved experience before acting); A supplies the manipulation that cluster lacks by varying writer identity at fixed task set and tokens, separating policy distance from writer capability and netting out a reconstruction placebo."
+ },
+ "reconstruction_pays_only_across_the_writer_gap__archive:archive:provenance_gap": {
+  "label": "distinct",
+  "reason": "Both concern writer-reader provenance, but A's claim is that read-time reconstruction's increment is ordered by writer-reader policy distance and explicitly not by writer capability, while B's claim is a signed capability-gap account in which reader authorship is the wrong cure and reader-in-the-loop selection is the right one; the driving variable and the proposed remedy differ and their predictions conflict."
+ },
+ "compression_erases_the_writer__digest:arxiv:2604.14004: A uni": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both rest on the same mechanism that abstraction level governs transferability because low-level traces carry non-transferable specifics, but A adds a writer-identity manipulation (self vs foreign pool at matched capability and tokens) that B never runs, turning B's main effect into one cell of an interaction whose sign can reverse."
+ },
+ "shared_blind_spot__archive:archive:provenance_gap": {
+  "label": "distinct",
+  "reason": "A is about contaminated items (failures relabelled as successes) whose harm and read-time detectability scale with writer-reader proximity, including a judge x writer diagonal deficit; B is about clean successful items and a signed capability gap fixed by selection, and says nothing about contamination or detection."
+ },
+ "rewriter_trained_against_one_reader_matched_cost__brief:Retained-gain ratio is t": {
+  "label": "distinct",
+  "reason": "B is only a statement of an estimand (retained-gain ratio per writer x reader cell), not a claim about how much of a learned rewriter's increment survives a change of reader or how that fraction tracks policy proximity versus capability."
+ },
+ "reader_pays_writer_detours__archive:archive:memory_budget_": {
+  "label": "distinct",
+  "reason": "B locates the effect in injected-token load, with content value saturating after about one item so that length-matched decoys reproduce the harm; A posits a different mechanism, the reader imitating the retrieved item's step structure so that consumer-side generated tokens and steps are inherited from the writer's path length at fixed content, tested by replay-verified pruning and padding."
+ },
+ "search_disposition_contagion__brief:4. Adapting foreign expe": {
+  "label": "distinct",
+  "reason": "B is a literature-cluster heading listing adaptation methods (reconstruction, analogical adaptation), not a claim that a reader inherits the writer's exploration disposition from the search segment of retrieved items."
+ },
+ "coverage_not_headcount__brief:Retained-gain ratio is t": {
+  "label": "distinct",
+  "reason": "B merely names the retained-gain ratio as the per-cell estimand; it makes no claim that a multi-writer store's value at fixed collection budget is explained by a pre-read coverage-complement statistic while writer headcount and diversity class add nothing."
+ },
+ "search_disposition_contagion__archive:archive:provenance_gap": {
+  "label": "distinct",
+  "reason": "A claims foreign items transmit the writer's search length and receptacle-visiting order separately from the manipulation procedure, with a dose-response and segment stripping as the cure; B's claim is a signed capability gap governing item utility with selection as the cure, and it neither posits nor measures behavioural disposition contagion."
+ },
+ "who_gets_read__archive:archive:provenance_gap": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both hold that selection over provenance, rather than item authorship, governs what a reader gets from a shared store, but A measures the retrieval stage itself (self-writer over-retrieval under trajectory-text queries) and pits a costless writer-side per-type success weighting against reader-side calibration, a contrast B does not run and one that would change B's conclusion that the cure must be reader-in-the-loop."
+ },
+ "reader_pays_writer_detours__brief:Self-pool control at mat": {
+  "label": "distinct",
+  "reason": "B is a methodological control (compare any foreign-experience arm against a self-collected pool at matched collection cost), not a claim about consumer-side cost being inherited from the writer's episode length."
+ },
+ "own_errors_pass_the_gate__digest:arxiv:2605.27762: Movin": {
+  "label": "distinct",
+  "reason": "A claims read-time verification of retrieved experience fails selectively on self-authored contamination (self-preference/familiarity bias), while B proposes moving memory from retrieval into parameter-resident consolidated skills for efficiency and forgetting; neither the claim nor the mechanism overlaps."
+ },
+ "compression_erases_the_writer__brief:Retained-gain ratio is t": {
+  "label": "distinct",
+  "reason": "B is a measurement convention (report retained-gain ratio per writer x reader cell with seeds), not a claim, whereas A claims a writer-identity x compression-level interaction whose sign flips between self and foreign pools; A merely adopts B's reporting unit."
+ },
+ "reconstruction_launders_planted_procedure_errors__archive:archive:opposite_sided": {
+  "label": "distinct",
+  "reason": "A is about manufactured contamination, laundering by read-time reconstruction and a diagonal detection deficit in the writer x reader matrix; B is about in-context versus parametric substrates failing on opposite sides of a distribution shift with no planted errors and no writer-identity manipulation."
+ },
+ "self_pool_break_even__search_disposition_contagion": {
+  "label": "distinct",
+  "reason": "A claims the foreign pool's advantage is only a collection-cost saving that vanishes past a coverage-limited break-even budget; B claims the reader copies the writer's exploration disposition (search length and receptacle order) separately from its procedures, at a cost in timeouts. Different mechanisms and different estimands."
+ },
+ "rewriter_trained_against_one_reader_matched_cost__archive:archive:memory_in_the_": {
+  "label": "distinct",
+  "reason": "A trains a rewriter against one reader and swaps the reader to measure a transfer fraction ordered by policy proximity; B trains the agent itself with memory in the loop and swaps the bank to decompose the gain into content, crutch and read skill. The trained object and the swapped factor are reversed, and the central claims differ."
+ },
+ "one_bad_apple_population_vote__archive:archive:provenance_gap": {
+  "label": "distinct",
+  "reason": "A is about planted wrong records in a population store, harm scaling with presence in the retrieved set rather than share, and a cross-writer agreement detector; B is about clean transfer utility governed by the signed writer-reader capability gap and reader-in-the-loop selection versus authorship, with a prompt-optimizer masking result."
+ },
+ "coverage_not_headcount__archive:archive:closer_beats_s": {
+  "label": "distinct",
+  "reason": "Both offer an offline predictor of cross-writer transfer that beats builder capability, but the predictor and mechanism differ: A's is task-type coverage complement computed from collection logs at matched budget, B's is the consumer's teacher-forced log-likelihood of the builder's action sequences (policy proximity) on a fixed retrieved set."
+ },
+ "self_pool_break_even__archive:archive:collection_pol": {
+  "label": "distinct",
+  "reason": "A asks how little self-collection is needed before a foreign pool stops paying (a static budget/coverage break-even), while B claims that memory-conditioned collection episodes cause self-reinforcing diversity collapse in a growing bank; different phenomena, different manipulated variables."
+ },
+ "shared_blind_spot__digest:arxiv:2605.22842: Memor": {
+  "label": "distinct",
+  "reason": "A claims contamination harm and read-time detection failure scale with writer-reader policy proximity, with a diagonal deficit in the judge x writer table; B claims memory-layer attacks are misattributed to model failure and that provenance-aware information-flow control at the session boundary blocks a laundering chain, which is a defender-diagnosis and access-control claim, not a proximity effect."
+ },
+ "shared_blind_spot__brief:Writer identity is manip": {
+  "label": "distinct",
+  "reason": "B is a design constraint from the brief (manipulate writer identity while holding task set, bank construction and retriever fixed) rather than a claim; A satisfies that constraint but its claim, that harm and detection failure are ordered by writer-reader proximity, is not stated in B."
+ },
+ "thoughts_do_not_travel__brief:Writer identity is manip": {
+  "label": "distinct",
+  "reason": "B is a truncated design-constraint sentence about manipulating writer identity while holding task set, bank construction and retriever fixed; it makes no claim about reasoning text being the non-transferable component or about a deterministic strip matching a learned rewriter."
+ },
+ "reconstruction_pays_only_across_the_writer_gap__self_pool_break_even": {
+  "label": "distinct",
+  "reason": "A claims read-time reconstruction pays in proportion to writer-reader policy distance (and not capability) at matched tokens; B claims foreign-pool advantage is a coverage-limited collection-cost saving with a computable break-even self-collection budget. Shared ALFWorld setup and self-pool-at-matched-cost control, but different central variables and mechanisms."
+ },
+ "who_gets_read__digest:arxiv:2505.18279: A two": {
+  "label": "distinct",
+  "reason": "B is a systems/governance claim that a two-tier private/shared memory with immutable provenance and policy-driven read/write transforms enables safe, auditable sharing; A is an empirical claim about retrieval-level style homophily and about weighting writers by their per-type collection success beating uniform and proximity weighting."
+ },
+ "who_gets_read__brief:Writer identity is manip": {
+  "label": "distinct",
+  "reason": "B is a fragmentary methodological constraint (writer identity manipulated, fixed task set/bank/retriever) with no claim about which writer gets retrieved or how trust weights should be set."
+ },
+ "search_disposition_contagion__digest:arxiv:2607.28272: Verba": {
+  "label": "distinct",
+  "reason": "B's mechanism is that verbatim replay is state-mismatched and that critique-and-reconstruct fixes it; A's mechanism is that a specific trajectory attribute, the writer's exploration disposition, is copied independently of the procedure and costs success through step-budget exhaustion, with segment stripping (not reconstruction) as the remedy and a manufactured search-padding dose-response as the test."
+ },
+ "leave_one_type_out_split__archive:archive:collection_pol": {
+  "label": "distinct",
+  "reason": "A is about evaluation splits: within-type banks inflate transfer, gains are type-bound, and weights retain portable competence under leave-one-type-out. B is about a self-editing loop whose retrieval-conditioned collection policy contracts bank diversity. Different causes, different objects of study."
+ },
+ "reconstruction_pays_only_across_the_writer_gap__digest:arxiv:2607.28272: Verba": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both rest on the same mechanism, reader-side reconstruction of retrieved experience conditioned on current state beating verbatim replay; A adds the writer-identity manipulation, matched-token comparison and reconstruction placebo, which would change the conclusion by confining the benefit to foreign, policy-distant writers rather than to memory in general."
+ },
+ "complementarity_not_proximity__archive:archive:provenance_gap": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both claim retained utility of a foreign item is governed by a signed writer-reader capability relation rather than by authorship or nearness; A decomposes that statistic per task type (writer's success on the reader's failure types) and adds a fixed-capability proximity contrast, and its prediction that a stronger writer helps where the reader fails would reverse the archived downward-transfer-is-harmful conclusion."
+ },
+ "one_bad_apple_population_vote__brief:Writer identity is manip": {
+  "label": "distinct",
+  "reason": "B is a truncated statement of the shared design constraint; it says nothing about planted wrong records, presence-versus-share harm geometry, or a cross-writer disagreement vote as a detector."
+ }
+}

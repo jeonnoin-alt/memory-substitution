@@ -1,0 +1,793 @@
+{
+ "thresholds": {
+  "idea": 0.639,
+  "prior": 0.549,
+  "pair_mean": 0.5,
+  "pair_sd": 0.093
+ },
+ "clusters": [
+  [
+   "compile_the_statistics_not_the_trajectory",
+   "aggregate_or_comply",
+   "whole_bank_confusability_ladder",
+   "many_shot_averages_detours",
+   "near_duplicate_needle_crossover"
+  ],
+  [
+   "bindings_need_a_query_only_when_untestable",
+   "protocol_bindings_procedure_count"
+  ],
+  [
+   "exemplar_lottery",
+   "recall_success_dissociation",
+   "rank_flat_retriever_is_a_type_classifier"
+  ]
+ ],
+ "prior_flags": [
+  {
+   "idea": "compile_the_statistics_not_the_trajectory",
+   "sim": 0.638,
+   "source": "brief",
+   "text": "2. Environment properties that make retrieval necessary (13 cards). State-gated retrieval failures (SGR-Bench"
+  },
+  {
+   "idea": "compile_the_statistics_not_the_trajectory",
+   "sim": 0.565,
+   "source": "digest",
+   "text": "arxiv:2505.12065: Both exact and overly approximate retrieval degrade search-agent efficiency, and scheduling and retrieval stalls cause cascading latency; high-recall approximate retrieval with prior"
+  },
+  {
+   "idea": "compile_the_statistics_not_the_trajectory",
+   "sim": 0.562,
+   "source": "archive",
+   "text": "archive:need_blind_compaction_audit: Need-Blind by Construction: A Counterfactual Audit of What Agent Context Compaction Drops, and Why Summary Fidelity Does Not Predict Task Success. The task-success"
+  },
+  {
+   "idea": "aggregate_or_comply",
+   "sim": 0.647,
+   "source": "archive",
+   "text": "archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from Organically Accumulated Agent Memory Lives in the Retrieved Set, Not the Item, and a Disagreement Gate Beats Item-Level U"
+  },
+  {
+   "idea": "relocated_bindings_demand",
+   "sim": 0.633,
+   "source": "archive",
+   "text": "archive:decorative_retriever: When Is a Retriever Decorative? Retrieval-Set Overlap Predicts Whether Procedural Agent Memory Must Be Retrieved or Can Be Frozen. Per-instance retrieval in procedural ag"
+  },
+  {
+   "idea": "protocol_bindings_procedure_count",
+   "sim": 0.565,
+   "source": "archive",
+   "text": "archive:decorative_retriever: When Is a Retriever Decorative? Retrieval-Set Overlap Predicts Whether Procedural Agent Memory Must Be Retrieved or Can Be Frozen. Per-instance retrieval in procedural ag"
+  },
+  {
+   "idea": "protocol_bindings_procedure_count",
+   "sim": 0.564,
+   "source": "digest",
+   "text": "arxiv:2505.12065: Both exact and overly approximate retrieval degrade search-agent efficiency, and scheduling and retrieval stalls cause cascading latency; high-recall approximate retrieval with prior"
+  },
+  {
+   "idea": "binding_scope_leakage_ladder",
+   "sim": 0.624,
+   "source": "digest",
+   "text": "arxiv:2603.04814: A fact-based memory system (Mem0) and long-context LLM inference have structurally different accuracy-cost profiles: long context wins on factual recall for most benchmarks, but the "
+  },
+  {
+   "idea": "binding_scope_leakage_ladder",
+   "sim": 0.618,
+   "source": "archive",
+   "text": "archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injection Timing Sets the Sign of Experience Memory's Effect on Agent Traces, and a Two-Parameter Stall Trigger Matches a Lea"
+  },
+  {
+   "idea": "cached_prefix_frontier",
+   "sim": 0.7,
+   "source": "brief",
+   "text": "5. Evaluation and cost (33 cards). Cost models with prompt caching (2603.04814, AdaptiveScale), agent compute scaling"
+  },
+  {
+   "idea": "cached_prefix_frontier",
+   "sim": 0.587,
+   "source": "archive",
+   "text": "archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injection Timing Sets the Sign of Experience Memory's Effect on Agent Traces, and a Two-Parameter Stall Trigger Matches a Lea"
+  },
+  {
+   "idea": "exemplar_lottery",
+   "sim": 0.61,
+   "source": "archive",
+   "text": "archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injection Timing Sets the Sign of Experience Memory's Effect on Agent Traces, and a Two-Parameter Stall Trigger Matches a Lea"
+  },
+  {
+   "idea": "exemplar_lottery",
+   "sim": 0.562,
+   "source": "brief",
+   "text": "The static arm is the baseline, not an ablation. Every retrieval claim is reported as retrieval minus the best"
+  },
+  {
+   "idea": "recall_success_dissociation",
+   "sim": 0.674,
+   "source": "archive",
+   "text": "archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injection Timing Sets the Sign of Experience Memory's Effect on Agent Traces, and a Two-Parameter Stall Trigger Matches a Lea"
+  },
+  {
+   "idea": "whole_bank_confusability_ladder",
+   "sim": 0.645,
+   "source": "digest",
+   "text": "arxiv:2505.12065: Both exact and overly approximate retrieval degrade search-agent efficiency, and scheduling and retrieval stalls cause cascading latency; high-recall approximate retrieval with prior"
+  },
+  {
+   "idea": "whole_bank_confusability_ladder",
+   "sim": 0.597,
+   "source": "brief",
+   "text": "2. Environment properties that make retrieval necessary (13 cards). State-gated retrieval failures (SGR-Bench"
+  },
+  {
+   "idea": "whole_bank_confusability_ladder",
+   "sim": 0.59,
+   "source": "archive",
+   "text": "archive:opposite_sided_failure_under_shift: Stale in Context, Eroded in Weights: In-Context and Parametric Experience Fail on Opposite Sides of a Distribution Shift, and Only One Failure Is Predictabl"
+  },
+  {
+   "idea": "many_shot_averages_detours",
+   "sim": 0.623,
+   "source": "archive",
+   "text": "archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from Organically Accumulated Agent Memory Lives in the Retrieved Set, Not the Item, and a Disagreement Gate Beats Item-Level U"
+  },
+  {
+   "idea": "many_shot_averages_detours",
+   "sim": 0.559,
+   "source": "brief",
+   "text": "2. Environment properties that make retrieval necessary (13 cards). State-gated retrieval failures (SGR-Bench"
+  },
+  {
+   "idea": "near_duplicate_needle_crossover",
+   "sim": 0.644,
+   "source": "brief",
+   "text": "Whole-bank long-context arm whenever the bank fits the 16k context (it does for ALFWorld at ~140 tokens per item up"
+  },
+  {
+   "idea": "state_key_pays_only_for_planted_bindings",
+   "sim": 0.583,
+   "source": "brief",
+   "text": "The static arm is the baseline, not an ablation. Every retrieval claim is reported as retrieval minus the best"
+  },
+  {
+   "idea": "state_key_pays_only_for_planted_bindings",
+   "sim": 0.576,
+   "source": "digest",
+   "text": "arxiv:2604.08920: Retrieval objectives should shift from topical relevance to LLM-centric utility, because in RAG retrieval effectiveness must be judged by its contribution to generation quality rathe"
+  },
+  {
+   "idea": "retrieval_timing_is_budgeting",
+   "sim": 0.627,
+   "source": "archive",
+   "text": "archive:decorative_retriever: When Is a Retriever Decorative? Retrieval-Set Overlap Predicts Whether Procedural Agent Memory Must Be Retrieved or Can Be Frozen. Per-instance retrieval in procedural ag"
+  },
+  {
+   "idea": "retrieval_timing_is_budgeting",
+   "sim": 0.595,
+   "source": "digest",
+   "text": "arxiv:2505.12065: Both exact and overly approximate retrieval degrade search-agent efficiency, and scheduling and retrieval stalls cause cascading latency; high-recall approximate retrieval with prior"
+  },
+  {
+   "idea": "rank_flat_retriever_is_a_type_classifier",
+   "sim": 0.612,
+   "source": "archive",
+   "text": "archive:instruction_conditioned_complementarity: What Does the Prompt Already Say? Instruction-Conditioned Complementarity Decides When Retrieved Experience Helps, Hurts, or Just Costs Tokens. The mar"
+  },
+  {
+   "idea": "rank_flat_retriever_is_a_type_classifier",
+   "sim": 0.581,
+   "source": "digest",
+   "text": "arxiv:2602.12192: Attention scores of selected retrieval heads can be trained into a lightweight listwise reranker that outperforms state-of-the-art pointwise and listwise rerankers and sets a new sta"
+  }
+ ],
+ "pairs": [
+  {
+   "a": "compile_the_statistics_not_the_trajectory",
+   "b": "aggregate_or_comply",
+   "sim": 0.47,
+   "kind": "idea-idea",
+   "pair_id": "compile_the_statistics_not_the_trajectory__aggregate_or_comply",
+   "label": "same_mechanism_new_measurement",
+   "reason": "Both state the same mechanism — compilation aggregates across episodes before the agent sees anything while per-query retrieval exposes the agent to individual items — and share the playbook, whole-bank and retrieval arms; B measures robustness under a manipulated contamination rate (voting vs compliance), a control A does not run, while A measures the information content of the aggregate via a compiler sample-size ladder, so each would change how a reader reads the other's aggregation claim."
+  },
+  {
+   "a": "compile_the_statistics_not_the_trajectory",
+   "b": "whole_bank_confusability_ladder",
+   "sim": 0.639,
+   "kind": "idea-idea",
+   "pair_id": "compile_the_statistics_not_the_trajectory__whole_bank_confusability_ladde",
+   "label": "distinct",
+   "reason": "A claims a rule-compiled cross-episode statistic (object->receptacle frequencies) carries information no k retrieved trajectories or raw whole bank contains, with an n-ladder as the aggregation signature; B claims the whole-bank/retrieval crossover is set by near-miss composition rather than prompt length. Both use a whole-bank arm but the central claim and the manipulated variable differ."
+  },
+  {
+   "a": "compile_the_statistics_not_the_trajectory",
+   "b": "many_shot_averages_detours",
+   "sim": 0.548,
+   "kind": "idea-idea",
+   "pair_id": "compile_the_statistics_not_the_trajectory__many_shot_averages_detours",
+   "label": "distinct",
+   "reason": "A credits an offline rule-compiled aggregate (location frequencies) with carrying information no k items hold and predicts the long-context reader does not compute it from raw items; B credits the long-context reader itself with consensus-averaging detour noise that top-k inherits. Different aggregating agent, different manipulated variable (compiler sample size and shuffling vs bank detour rate and pruning), and opposed predictions for the whole-bank arm."
+  },
+  {
+   "a": "compile_the_statistics_not_the_trajectory",
+   "b": "near_duplicate_needle_crossover",
+   "sim": 0.544,
+   "kind": "idea-idea",
+   "pair_id": "compile_the_statistics_not_the_trajectory__near_duplicate_needle_crossove",
+   "label": "distinct",
+   "reason": "B attributes retrieval's bank-size advantage to instance-level near-duplicates that the in-context reader cannot find, a coverage/lookup account tested by planting duplicates; A claims a compiled cross-episode statistic supplies something no retrieved item set contains, tested by a compiler-n ladder and a shuffled-table control. Different mechanisms and different measured quantities."
+  },
+  {
+   "a": "aggregate_or_comply",
+   "b": "whole_bank_confusability_ladder",
+   "sim": 0.548,
+   "kind": "idea-idea",
+   "pair_id": "aggregate_or_comply__whole_bank_confusability_ladde",
+   "label": "distinct",
+   "reason": "A manipulates the fraction of replay-validated wrong-procedure items to ask where items are combined (compliance vs majority voting) across compiler, reader and retriever; B holds all items correct and grows near-miss confusable items to locate the bank size at which whole-bank reading crosses below retrieval. Different item validity, different manipulated quantity, and different headline claims (robustness ordering vs composition-set crossover)."
+  },
+  {
+   "a": "aggregate_or_comply",
+   "b": "many_shot_averages_detours",
+   "sim": 0.681,
+   "kind": "idea-idea",
+   "pair_id": "aggregate_or_comply__many_shot_averages_detours",
+   "label": "same_mechanism_new_measurement",
+   "reason": "Both test whether an aggregating route (whole bank, compiled artifact) is robust to per-item bank noise while top-k retrieval complies with the items it injects, but A doses replay-validated wrong-procedure contamination and adds LLM- and rule-compiled playbook arms while B uses detours in the agent's own successes with step-count and imitation-signature readouts, so the two support different conclusions about which noise the routes differ on."
+  },
+  {
+   "a": "aggregate_or_comply",
+   "b": "near_duplicate_needle_crossover",
+   "sim": 0.588,
+   "kind": "idea-idea",
+   "pair_id": "aggregate_or_comply__near_duplicate_needle_crossove",
+   "label": "distinct",
+   "reason": "A manipulates the contamination rate of wrong-procedure items to ask where items are combined (retrieval complies at minority contamination, compilers aggregate, long-context reader either way); B manipulates near-duplicate rate and bank size to ask why bigger banks help retrieval at all. Same route set but different planted quantity, different mechanism and different predicted outcome."
+  },
+  {
+   "a": "whole_bank_confusability_ladder",
+   "b": "many_shot_averages_detours",
+   "sim": 0.722,
+   "kind": "idea-idea",
+   "pair_id": "whole_bank_confusability_ladder__many_shot_averages_detours",
+   "label": "distinct",
+   "reason": "A manipulates bank composition (near-miss wrong-procedure lookalikes vs redundant/filler growth) to find where the whole-bank route falls behind retrieval, whereas B manipulates noise inside otherwise correct items (self-pool detours) and claims consensus reading averages it out while retrieval commits to it; different independent variables and different mechanisms for the route gap."
+  },
+  {
+   "a": "whole_bank_confusability_ladder",
+   "b": "near_duplicate_needle_crossover",
+   "sim": 0.686,
+   "kind": "idea-idea",
+   "pair_id": "whole_bank_confusability_ladder__near_duplicate_needle_crossove",
+   "label": "same_mechanism_new_measurement",
+   "reason": "Both run whole-bank-in-context versus top-k over a bank-size ladder with planted item composition and argue the crossover is a composition effect rather than prompt length, but B manipulates helpful instance-level near-duplicates across WebShop and ALFWorld where A manipulates harmful near-miss distractors on ALFWorld only, and their predictions about size-free composition effects diverge."
+  },
+  {
+   "a": "many_shot_averages_detours",
+   "b": "near_duplicate_needle_crossover",
+   "sim": 0.654,
+   "kind": "idea-idea",
+   "pair_id": "many_shot_averages_detours__near_duplicate_needle_crossove",
+   "label": "distinct",
+   "reason": "A attributes the whole-bank-versus-retrieval gap to per-item noise averaging (detoured self-pool trajectories) with retrieval committing to detours, while B attributes retrieval's bank-size advantage entirely to instance-level near-duplicates the in-context reader cannot locate in a growing haystack; different manipulations and opposite accounts of which route wins and why."
+  },
+  {
+   "a": "bindings_need_a_query_only_when_untestable",
+   "b": "protocol_bindings_procedure_count",
+   "sim": 0.676,
+   "kind": "idea-idea",
+   "pair_id": "bindings_need_a_query_only_when_untestable__protocol_bindings_procedure_co",
+   "label": "distinct",
+   "reason": "Both plant hidden structure in ALFWorld with a wrapper to ask when a cached prompt still needs a query, but A's manipulated property is whether an instance binding can be tested at run time at fixed procedure count, while B's is the number of procedures and the size of the smallest compiled form; the mechanisms and the resulting rules for when retrieval is necessary are different."
+  },
+  {
+   "a": "exemplar_lottery",
+   "b": "recall_success_dissociation",
+   "sim": 0.645,
+   "kind": "idea-idea",
+   "pair_id": "exemplar_lottery__recall_success_dissociation",
+   "label": "distinct",
+   "reason": "A's claim is that retrieval's reported gain is the spread of the static exemplar draw distribution, tested by resampling fixed prompts and one-time curation rules, while B's is a recall-success dissociation governed by whether the retrieved binding is recoverable in-episode, tested by manipulating retriever recall and duplicate availability across two environments."
+  },
+  {
+   "a": "exemplar_lottery",
+   "b": "rank_flat_retriever_is_a_type_classifier",
+   "sim": 0.535,
+   "kind": "idea-idea",
+   "pair_id": "exemplar_lottery__rank_flat_retriever_is_a_type_",
+   "label": "same_mechanism_new_measurement",
+   "reason": "Both rest on the same mechanism — on a template environment the retriever carries no per-instance information beyond type match, so a static prompt can replace it — but A measures the static arm's draw distribution (draw/seed/game variance, best held-out draw, one-time curation rules) whereas B measures within-type similarity rank ladders, leave-out ladders and framing/compliance harm; the two make opposing predictions about how much within-type item choice moves success, which would change a reader's conclusion."
+  },
+  {
+   "a": "recall_success_dissociation",
+   "b": "rank_flat_retriever_is_a_type_classifier",
+   "sim": 0.785,
+   "kind": "idea-idea",
+   "pair_id": "recall_success_dissociation__rank_flat_retriever_is_a_type_",
+   "label": "same_mechanism_new_measurement",
+   "reason": "Both claim retrieval's success contribution on ALFWorld is a step at type match and that removing near-duplicate/same-binding items does not move success, but A adds the WebShop non-recoverable-binding arm that makes recall informative while B adds similarity-rank ladders, wrong-type harm/framing arms and a cached per-type sub-bank; each extra control would change a reader's conclusion about when recall matters."
+  },
+  {
+   "a": "compile_the_statistics_not_the_trajectory",
+   "b": "brief:2. Environment properties that make retrieval necessary (13 cards). State-gated ",
+   "sim": 0.638,
+   "kind": "idea-brief",
+   "prior_text": "2. Environment properties that make retrieval necessary (13 cards). State-gated retrieval failures (SGR-Bench",
+   "pair_id": "compile_the_statistics_not_the_trajectory__brief:2. Environment propertie",
+   "label": "distinct",
+   "reason": "B is a brief section heading enumerating environment properties that make retrieval necessary; it states no claim about compiled aggregate statistics beating retrieved trajectories, which is A's entire thesis."
+  },
+  {
+   "a": "compile_the_statistics_not_the_trajectory",
+   "b": "digest:arxiv:2505.12065: Both exact and overly approximate retrieval degrade search-age",
+   "sim": 0.565,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2505.12065: Both exact and overly approximate retrieval degrade search-agent efficiency, and scheduling and retrieval stalls cause cascading latency; high-recall approximate retrieval with priority-aware scheduling and non-stall retrieval removes these bottlenecks without hurting generation quality.",
+   "pair_id": "compile_the_statistics_not_the_trajectory__digest:arxiv:2505.12065: Both ",
+   "label": "distinct",
+   "reason": "B concerns retrieval-serving efficiency, scheduling and latency in search agents; A claims a rule-compiled cross-episode location-frequency cheatsheet beats retrieved trajectories on search-bound ALFWorld types because aggregation is something per-query retrieval cannot do. No shared claim or mechanism."
+  },
+  {
+   "a": "compile_the_statistics_not_the_trajectory",
+   "b": "archive:archive:need_blind_compaction_audit: Need-Blind by Construction: A Counterfactua",
+   "sim": 0.562,
+   "kind": "idea-archive",
+   "prior_text": "archive:need_blind_compaction_audit: Need-Blind by Construction: A Counterfactual Audit of What Agent Context Compaction Drops, and Why Summary Fidelity Does Not Predict Task Success. The task-success loss that context compaction causes in long-horizon tool-use agents is concentrated in a small set of load-bearing history items (identifiable by counterfactual masking of the history), LLM summarizers retain load-bearing items at no higher rate than non-load-bearing ones (they are need-blind), and therefore load-bearing retention, not compression ratio or summary fidelity, predicts the success loss; a pinning rule derived from counterfactual need labels on disjoint task types recovers most of the loss at matched tokens, whereas same-size recency or salience pinning does not. Every compaction scheme for long-horizon agents (LLM summarization, deterministic eviction, indexed archives, parallel blocks, learned compaction) is evaluated by end-task success, so what a locally plausible summary discards, and how often the discarded item is one a later step needs, is unmeasured beyond the single governance-constraint case. We propose a counterfactual audit: for reference episodes solved with full context, we mask each pre-boundary history item individually at a fixed compaction boundary and measure, first by teacher-forced action divergence at every later step and then by paired stochastic continuations, whether removing that item changes the agent's later actions and success. Items whose removal lowers continuation success are load-bearing. We then apply six compaction families at the same boundary and measure each family's retention of load-bearing versus non-load-bearing items (entailment judge validated against human annotation), its generic fidelity (ROUGE, LLM-judge faithfulness, compression ratio) and its paired downstream success loss. The central claim is that LLM summarizers are need-blind: their retention rate for load-bearing items equals their retention rate for everything else, so their success loss is explained by load-bearing drop events and not by fidelity metrics. As a constructive test, we learn a type-level pinning rule from need labels on one split of ALFWorld task types and apply it on held-out types at matched total tokens, against random, recency, salience and task-statement-only pinning and against an oracle that pins the counterfactual load-bearing set. We run 8B, 27B-class dense and 120B MoE open-weight backbones on ALFWorld (primary) and WebShop, with paired designs, null replicates and pre-registered thresholds.",
+   "pair_id": "compile_the_statistics_not_the_trajectory__archive:archive:need_blind_com",
+   "label": "distinct",
+   "reason": "B studies within-episode context compaction, asking which history items are load-bearing and whether summarizers retain them; A studies whether a rule-compiled cross-episode statistic from a trajectory bank beats retrieved trajectories. Different objects (episode history vs experience bank), different mechanisms (need-blind dropping vs aggregation retrieval cannot carry)."
+  },
+  {
+   "a": "aggregate_or_comply",
+   "b": "archive:archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from O",
+   "sim": 0.647,
+   "kind": "idea-archive",
+   "prior_text": "archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from Organically Accumulated Agent Memory Lives in the Retrieved Set, Not the Item, and a Disagreement Gate Beats Item-Level Utility Filtering at Zero Clean-Setting Cost. When a bank is accumulated organically over a task stream with no planted conflicts, the items that break tasks are not individually low-utility; harm concentrates in retrievals where the top-k items disagree about the next action for the current state. A read-time gate that abstains from injection when a cheap action-consistency score over the retrieved set falls below a threshold, with no extra LLM call, removes at least 70 percent of the natural paired harm while keeping at least 80 percent of the gain on agreeing retrievals, whereas item-level utility filtering, validity or provenance and recency gating, spurious-cue calibration, learned abstention and reliance steering do not, because they act on item properties that do not predict which retrievals break tasks. Every proposed defence against harmful retrieved memory acts on items: utility scores, validity or provenance states, recency, spurious-cue calibration, a learned abstain decision, or a global reliance setting. We test the alternative that harm from an organically accumulated experience bank is a property of the retrieved set. Over three randomized ALFWorld task streams, a 27B agent accumulates raw and distilled items through a ReMe-style write path with no planted conflicts, and banks are frozen at three checkpoints so staleness arises naturally. On held-out tasks every retrieval is labelled post hoc from expert plans and bank timestamps at the item level (right, wrong, stale, conflicting) and at the set level (agree-right, agree-wrong, disagree), and per-retrieval harm is estimated with paired no-memory runs and Entry-Propagation-Recovery tallies. A likelihood-ratio test asks which label explains broken outcomes. Eight read-time controls are then run head to head on the same seeds and banks: a disagreement gate based on a cheap action-consistency score, MemRL-style utility filtering, validity and provenance or recency gating, CAMEL-style calibration, an RSCB-MC-style learned abstain policy, reliance-steering instructions, an LLM-judge conflict verifier, and an oracle gate, each scored on harm removed, gain retained, clean-setting cost on agree-right retrievals, and token cost. A by-product is the first task-execution partition of failures into wrong retrieval, arbitration failure, and failure to apply a correctly retrieved item.",
+   "pair_id": "aggregate_or_comply__archive:archive:retrieved_set_",
+   "label": "distinct",
+   "reason": "A plants a controlled contamination rate to compare how retrieval, LLM/rule-compiled playbooks and whole-bank reading combine items, whereas B forbids planted conflicts, localizes harm in organically accumulated banks to disagreement within the retrieved set, and benchmarks read-time abstention gates against item-level filtering; different designs, outcomes and deliverables."
+  },
+  {
+   "a": "relocated_bindings_demand",
+   "b": "archive:archive:decorative_retriever: When Is a Retriever Decorative? Retrieval-Set Over",
+   "sim": 0.633,
+   "kind": "idea-archive",
+   "prior_text": "archive:decorative_retriever: When Is a Retriever Decorative? Retrieval-Set Overlap Predicts Whether Procedural Agent Memory Must Be Retrieved or Can Be Frozen. Per-instance retrieval in procedural agent memory (ExpeL/ReasoningBank/Memp-style) is decorative in exactly the regimes the field evaluates in, and there is a cheap, pre-deployment statistic that says when. Concretely: (a) **the frozen-subset swap** — replacing top-k retrieval with the *same k items, fixed for every query, verbatim, no LLM rewriting* — costs <2 accuracy points in every cell whose measured top-k retrieval-set Jaccard overlap exceeds 0.5; (b) that same overlap statistic, computable from the retriever alone in seconds with zero agent rollouts, predicts the retrieval premium **out of sample** across ~20 cells spanning overlap 0.05–1.0, with all overlap<0.25 cells showing a premium ≥8 points; and (c) the sign of the injection-volume effect is the *same* function of overlap — more retrieved items hurt at high overlap and help at low overlap, which reinterprets ReasoningBank's own \"retrieving more memories hurts\" ablation (49.7%@k=1 → 44.4%@k=4) as a redundancy artifact of a low-diversity retrieval set rather than a general \"quality over quantity\" law. One measured quantity, two phenomena, no agent runs required to predict either. Procedural agent memory is built as a retrieval system — distil training episodes into a bank, retrieve top-k per instance, inject — and every evaluation we can find compares it against *no memory*. Nobody re-runs the agent with the retriever replaced by a fixed subset of its own bank.\n\nWe do, and we do it across a designed sweep of retrieval-set diversity. The centerpiece is the **frozen-subset swap**: hold the agent, tools, decoding, bank, item count and injected tokens fixed, and replace per-instance top-k retrieval with the *k most frequently retrieved items on a dev split, verbatim, identical for every query*. No frontier model touches this arm, so a null cannot be attributed to a clever compiler. We run this swap in ~20 cells spanning measured top-k Jaccard overlap from ~0.05 to 1.0, moving overlap by four independent knobs — task-family breadth (single ALFWorld task type vs. all six vs. a mixed ALFWorld+multi-hop-QA bank), bank size (N=100→1000), retriever (dense vs. BM25 vs. MMR-diversified), and injection budget (k∈{1,3,7}) — plus a non-compilable near-duplicate bank as the low-overlap anchor.\n\nThree claims, in order of how much of the paper they carry. **(i)** Wherever overlap > 0.5, the frozen-subset swap costs < 2 points (TOST equivalence at a 4-point margin; random-effects meta-estimate CI excluding 4). **(ii)** Overlap, computed from the retriever alone with zero agent rollouts, predicts the retrieval premium *out of sample* (leave-one-cell-out, permutation-tested against a grand-mean predictor), with a fitted crossing threshold — this is a deployable diagnostic, not a benchmark number. **(iii)** The sign of the injection-volume effect is the same function of overlap, which reinterprets ReasoningBank's published k-ablation (49.7%@k=1 → 44.4%@k=4, read as \"quality over quantity\") as a redundancy artifact, and makes an opposite-sign prediction to the interference account of Neural Procedural Memory (2606.29824) in an MMR-retriever cell we run.\n\nWe implement both ExpeL-style and ReasoningBank-style bank construction, token-match every static arm to the retrieval arm per instance, include an off-domain compiled control to rule out \"any well-written static block of this length helps,\" and pre-register gates under which the study is reported as uninterpretable. ~23k evaluation episodes, three base models (8B/14B/32B), instance-paired McNemar and TOST, null replicates, stated MDE. No prompt optimizer is run; that arm was cut on purpose.",
+   "pair_id": "relocated_bindings_demand__archive:archive:decorative_ret",
+   "label": "same_mechanism_new_measurement",
+   "reason": "Both hold that per-instance retrieval is decorative unless the retrieved content must vary with the instance, and that a fixed/compiled substitute then matches it; but A causally manipulates that condition by editing the PDDL initial state (binding demand) and the bank's same-scene supply, and tests a compiled location table, where B only measures retrieval-set Jaccard overlap and a frozen-subset swap. The causal manipulation and the compiled-table recovery would change a reader's conclusion about why retrieval is decorative."
+  },
+  {
+   "a": "protocol_bindings_procedure_count",
+   "b": "archive:archive:decorative_retriever: When Is a Retriever Decorative? Retrieval-Set Over",
+   "sim": 0.565,
+   "kind": "idea-archive",
+   "prior_text": "archive:decorative_retriever: When Is a Retriever Decorative? Retrieval-Set Overlap Predicts Whether Procedural Agent Memory Must Be Retrieved or Can Be Frozen. Per-instance retrieval in procedural agent memory (ExpeL/ReasoningBank/Memp-style) is decorative in exactly the regimes the field evaluates in, and there is a cheap, pre-deployment statistic that says when. Concretely: (a) **the frozen-subset swap** — replacing top-k retrieval with the *same k items, fixed for every query, verbatim, no LLM rewriting* — costs <2 accuracy points in every cell whose measured top-k retrieval-set Jaccard overlap exceeds 0.5; (b) that same overlap statistic, computable from the retriever alone in seconds with zero agent rollouts, predicts the retrieval premium **out of sample** across ~20 cells spanning overlap 0.05–1.0, with all overlap<0.25 cells showing a premium ≥8 points; and (c) the sign of the injection-volume effect is the *same* function of overlap — more retrieved items hurt at high overlap and help at low overlap, which reinterprets ReasoningBank's own \"retrieving more memories hurts\" ablation (49.7%@k=1 → 44.4%@k=4) as a redundancy artifact of a low-diversity retrieval set rather than a general \"quality over quantity\" law. One measured quantity, two phenomena, no agent runs required to predict either. Procedural agent memory is built as a retrieval system — distil training episodes into a bank, retrieve top-k per instance, inject — and every evaluation we can find compares it against *no memory*. Nobody re-runs the agent with the retriever replaced by a fixed subset of its own bank.\n\nWe do, and we do it across a designed sweep of retrieval-set diversity. The centerpiece is the **frozen-subset swap**: hold the agent, tools, decoding, bank, item count and injected tokens fixed, and replace per-instance top-k retrieval with the *k most frequently retrieved items on a dev split, verbatim, identical for every query*. No frontier model touches this arm, so a null cannot be attributed to a clever compiler. We run this swap in ~20 cells spanning measured top-k Jaccard overlap from ~0.05 to 1.0, moving overlap by four independent knobs — task-family breadth (single ALFWorld task type vs. all six vs. a mixed ALFWorld+multi-hop-QA bank), bank size (N=100→1000), retriever (dense vs. BM25 vs. MMR-diversified), and injection budget (k∈{1,3,7}) — plus a non-compilable near-duplicate bank as the low-overlap anchor.\n\nThree claims, in order of how much of the paper they carry. **(i)** Wherever overlap > 0.5, the frozen-subset swap costs < 2 points (TOST equivalence at a 4-point margin; random-effects meta-estimate CI excluding 4). **(ii)** Overlap, computed from the retriever alone with zero agent rollouts, predicts the retrieval premium *out of sample* (leave-one-cell-out, permutation-tested against a grand-mean predictor), with a fitted crossing threshold — this is a deployable diagnostic, not a benchmark number. **(iii)** The sign of the injection-volume effect is the same function of overlap, which reinterprets ReasoningBank's published k-ablation (49.7%@k=1 → 44.4%@k=4, read as \"quality over quantity\") as a redundancy artifact, and makes an opposite-sign prediction to the interference account of Neural Procedural Memory (2606.29824) in an MMR-retriever cell we run.\n\nWe implement both ExpeL-style and ReasoningBank-style bank construction, token-match every static arm to the retrieval arm per instance, include an off-domain compiled control to rule out \"any well-written static block of this length helps,\" and pre-register gates under which the study is reported as uninterpretable. ~23k evaluation episodes, three base models (8B/14B/32B), instance-paired McNemar and TOST, null replicates, stated MDE. No prompt optimizer is run; that arm was cut on purpose.",
+   "pair_id": "protocol_bindings_procedure_count__archive:archive:decorative_ret",
+   "label": "same_mechanism_new_measurement",
+   "reason": "Both rest on the same mechanism — per-instance retrieval is decorative unless the content the task needs varies beyond what one static block can cover, and the premium is predicted by a cheap property of the bank/task distribution. A adds a causal manipulation of procedure count (planted protocol-keyed preconditions) plus a factorized-compiled and oracle-routed arm that B never runs, and its result (minimum compiled size, not diversity or item count, is the operative property) would change how a reader reads B's overlap diagnostic."
+  },
+  {
+   "a": "protocol_bindings_procedure_count",
+   "b": "digest:arxiv:2505.12065: Both exact and overly approximate retrieval degrade search-age",
+   "sim": 0.564,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2505.12065: Both exact and overly approximate retrieval degrade search-agent efficiency, and scheduling and retrieval stalls cause cascading latency; high-recall approximate retrieval with priority-aware scheduling and non-stall retrieval removes these bottlenecks without hurting generation quality.",
+   "pair_id": "protocol_bindings_procedure_count__digest:arxiv:2505.12065: Both ",
+   "label": "distinct",
+   "reason": "B is a systems paper about search-agent latency — approximate-retrieval recall, scheduling and retrieval stalls — while A is about whether a cached static prompt can substitute for experience retrieval on task success as procedure count grows; no shared claim or mechanism."
+  },
+  {
+   "a": "binding_scope_leakage_ladder",
+   "b": "digest:arxiv:2603.04814: A fact-based memory system (Mem0) and long-context LLM inferen",
+   "sim": 0.624,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2603.04814: A fact-based memory system (Mem0) and long-context LLM inference have structurally different accuracy-cost profiles: long context wins on factual recall for most benchmarks, but the memory system becomes cheaper after roughly ten turns at 100k-token context, with the break-even point falling as context grows.",
+   "pair_id": "binding_scope_leakage_ladder__digest:arxiv:2603.04814: A fac",
+   "label": "distinct",
+   "reason": "A claims the scope of instance bindings (global/scene/instance) sets the smallest compiled substitute for retrieval and the share of gain that is near-duplicate leakage; B is an accuracy-cost break-even comparison between a fact memory system and long-context inference. No shared mechanism."
+  },
+  {
+   "a": "binding_scope_leakage_ladder",
+   "b": "archive:archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injec",
+   "sim": 0.618,
+   "kind": "idea-archive",
+   "prior_text": "archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injection Timing Sets the Sign of Experience Memory's Effect on Agent Traces, and a Two-Parameter Stall Trigger Matches a Learned Retrieval Policy. For a fixed bank, fixed query, fixed k and the very same retrieved items, revealing the items at the first detected stall (repeated, invalid or state-preserving action) instead of at the first decision point flips the paired effect on ALFWorld from harm-or-null to gain, because at a stall the agent has its own trajectory evidence to arbitrate against wrong items whereas at entry it must comply blind. A swept two-parameter static stall trigger (stall length n, injection cap M) lands inside the seed-noise band of MemCon-style and RSCB-MC-style learned when-to-retrieve policies at lower token cost, and transfers across backbones (8B, 27B, 120B) and to WebShop without relearning, whereas the learned policies must be relearned. Experience memories for LLM agents almost always inject retrieved items at episode start, and the recent alternative is a learned policy that decides when or whether to retrieve. Neither literature asks whether the time of injection alone changes the sign of memory's effect for the same items, and no learned policy has been compared with a tuned static trigger. We fix the bank, the query, k and the retrieved items, and vary only the reveal time: episode start, first detected stall, fixed late step, every step, reimplemented MemCon-style and RSCB-MC-style learned policies, and an oracle-timed upper bound, on ALFWorld and WebShop with three local backbones. Paired McNemar tests on identical task-seed pairs separate timing from content; a stall-triggered generic-reflection control and a stall-triggered random-item control separate memory content from a replanning nudge. Entry-Propagation-Recovery tallies against ALFWorld's expert plans test the mechanism: compliance rates should be similar across arms, but success conditional on compliance should be much higher at a stall than at entry. We then sweep the static trigger's two parameters on one backbone, freeze it, and swap backbones and environments, comparing against the learned policies frozen and relearned. The deliverable is a pre-registered answer to whether when-to-retrieve is a learning problem or a two-number heuristic, and whether the pilot's start-of-episode harm is a timing artefact.",
+   "pair_id": "binding_scope_leakage_ladder__archive:archive:stall_triggere",
+   "label": "distinct",
+   "reason": "A varies the scope of instance bindings and the bank's supply of scope-matched items to determine the compiled substitute for retrieval; B varies only the reveal time of a fixed retrieved set and claims timing flips the sign of memory's effect. Different manipulated variable and mechanism."
+  },
+  {
+   "a": "cached_prefix_frontier",
+   "b": "brief:5. Evaluation and cost (33 cards). Cost models with prompt caching (2603.04814, ",
+   "sim": 0.7,
+   "kind": "idea-brief",
+   "prior_text": "5. Evaluation and cost (33 cards). Cost models with prompt caching (2603.04814, AdaptiveScale), agent compute scaling",
+   "pair_id": "cached_prefix_frontier__brief:5. Evaluation and cost (",
+   "label": "distinct",
+   "reason": "B is a literature-bucket heading listing cost-model and compute-scaling work under prompt caching, not a claim; it contains no measured accuracy-GPU-second frontier, no multi-turn agent cache accounting, and none of A's specific predictions about cache-reversed route ranking or the sub-25% retrieval premium."
+  },
+  {
+   "a": "cached_prefix_frontier",
+   "b": "archive:archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injec",
+   "sim": 0.587,
+   "kind": "idea-archive",
+   "prior_text": "archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injection Timing Sets the Sign of Experience Memory's Effect on Agent Traces, and a Two-Parameter Stall Trigger Matches a Learned Retrieval Policy. For a fixed bank, fixed query, fixed k and the very same retrieved items, revealing the items at the first detected stall (repeated, invalid or state-preserving action) instead of at the first decision point flips the paired effect on ALFWorld from harm-or-null to gain, because at a stall the agent has its own trajectory evidence to arbitrate against wrong items whereas at entry it must comply blind. A swept two-parameter static stall trigger (stall length n, injection cap M) lands inside the seed-noise band of MemCon-style and RSCB-MC-style learned when-to-retrieve policies at lower token cost, and transfers across backbones (8B, 27B, 120B) and to WebShop without relearning, whereas the learned policies must be relearned. Experience memories for LLM agents almost always inject retrieved items at episode start, and the recent alternative is a learned policy that decides when or whether to retrieve. Neither literature asks whether the time of injection alone changes the sign of memory's effect for the same items, and no learned policy has been compared with a tuned static trigger. We fix the bank, the query, k and the retrieved items, and vary only the reveal time: episode start, first detected stall, fixed late step, every step, reimplemented MemCon-style and RSCB-MC-style learned policies, and an oracle-timed upper bound, on ALFWorld and WebShop with three local backbones. Paired McNemar tests on identical task-seed pairs separate timing from content; a stall-triggered generic-reflection control and a stall-triggered random-item control separate memory content from a replanning nudge. Entry-Propagation-Recovery tallies against ALFWorld's expert plans test the mechanism: compliance rates should be similar across arms, but success conditional on compliance should be much higher at a stall than at entry. We then sweep the static trigger's two parameters on one backbone, freeze it, and swap backbones and environments, comparing against the learned policies frozen and relearned. The deliverable is a pre-registered answer to whether when-to-retrieve is a learning problem or a two-number heuristic, and whether the pilot's start-of-episode harm is a timing artefact.",
+   "pair_id": "cached_prefix_frontier__archive:archive:stall_triggere",
+   "label": "distinct",
+   "reason": "A is a cost claim: under prefix caching the ranking of static, whole-bank and retrieved prefixes is set by distinct-prefix count and decode-time context length, so matched-token budgets mis-rank routes. B is an accuracy/timing claim about when items are revealed. No shared mechanism."
+  },
+  {
+   "a": "exemplar_lottery",
+   "b": "archive:archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injec",
+   "sim": 0.61,
+   "kind": "idea-archive",
+   "prior_text": "archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injection Timing Sets the Sign of Experience Memory's Effect on Agent Traces, and a Two-Parameter Stall Trigger Matches a Learned Retrieval Policy. For a fixed bank, fixed query, fixed k and the very same retrieved items, revealing the items at the first detected stall (repeated, invalid or state-preserving action) instead of at the first decision point flips the paired effect on ALFWorld from harm-or-null to gain, because at a stall the agent has its own trajectory evidence to arbitrate against wrong items whereas at entry it must comply blind. A swept two-parameter static stall trigger (stall length n, injection cap M) lands inside the seed-noise band of MemCon-style and RSCB-MC-style learned when-to-retrieve policies at lower token cost, and transfers across backbones (8B, 27B, 120B) and to WebShop without relearning, whereas the learned policies must be relearned. Experience memories for LLM agents almost always inject retrieved items at episode start, and the recent alternative is a learned policy that decides when or whether to retrieve. Neither literature asks whether the time of injection alone changes the sign of memory's effect for the same items, and no learned policy has been compared with a tuned static trigger. We fix the bank, the query, k and the retrieved items, and vary only the reveal time: episode start, first detected stall, fixed late step, every step, reimplemented MemCon-style and RSCB-MC-style learned policies, and an oracle-timed upper bound, on ALFWorld and WebShop with three local backbones. Paired McNemar tests on identical task-seed pairs separate timing from content; a stall-triggered generic-reflection control and a stall-triggered random-item control separate memory content from a replanning nudge. Entry-Propagation-Recovery tallies against ALFWorld's expert plans test the mechanism: compliance rates should be similar across arms, but success conditional on compliance should be much higher at a stall than at entry. We then sweep the static trigger's two parameters on one backbone, freeze it, and swap backbones and environments, comparing against the learned policies frozen and relearned. The deliverable is a pre-registered answer to whether when-to-retrieve is a learning problem or a two-number heuristic, and whether the pilot's start-of-episode harm is a timing artefact.",
+   "pair_id": "exemplar_lottery__archive:archive:stall_triggere",
+   "label": "distinct",
+   "reason": "A claims retrieval's gain over a fixed prompt is the spread of the exemplar-draw lottery (a selection-variance claim measured over random bank draws), while B claims injection timing alone flips the sign of memory's effect and that a two-parameter stall trigger matches learned when-to-retrieve policies. Different mechanisms and different manipulated variables (which items are drawn vs when the same items are revealed)."
+  },
+  {
+   "a": "exemplar_lottery",
+   "b": "brief:The static arm is the baseline, not an ablation. Every retrieval claim is report",
+   "sim": 0.562,
+   "kind": "idea-brief",
+   "prior_text": "The static arm is the baseline, not an ablation. Every retrieval claim is reported as retrieval minus the best",
+   "pair_id": "exemplar_lottery__brief:The static arm is the ba",
+   "label": "same_mechanism_new_measurement",
+   "reason": "The brief states the same framing A adopts — the static arm is the baseline and retrieval must be reported net of the best static arm — but A measures a quantity the brief does not: the full draw distribution of fixed exemplar prompts, its variance decomposition, and where retrieval sits in that distribution, which shifts the conclusion from 'subtract the best draw' to 'report against the spread'."
+  },
+  {
+   "a": "recall_success_dissociation",
+   "b": "archive:archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injec",
+   "sim": 0.674,
+   "kind": "idea-archive",
+   "prior_text": "archive:stall_triggered_injection: Retrieve When Stuck, Not When Starting: Injection Timing Sets the Sign of Experience Memory's Effect on Agent Traces, and a Two-Parameter Stall Trigger Matches a Learned Retrieval Policy. For a fixed bank, fixed query, fixed k and the very same retrieved items, revealing the items at the first detected stall (repeated, invalid or state-preserving action) instead of at the first decision point flips the paired effect on ALFWorld from harm-or-null to gain, because at a stall the agent has its own trajectory evidence to arbitrate against wrong items whereas at entry it must comply blind. A swept two-parameter static stall trigger (stall length n, injection cap M) lands inside the seed-noise band of MemCon-style and RSCB-MC-style learned when-to-retrieve policies at lower token cost, and transfers across backbones (8B, 27B, 120B) and to WebShop without relearning, whereas the learned policies must be relearned. Experience memories for LLM agents almost always inject retrieved items at episode start, and the recent alternative is a learned policy that decides when or whether to retrieve. Neither literature asks whether the time of injection alone changes the sign of memory's effect for the same items, and no learned policy has been compared with a tuned static trigger. We fix the bank, the query, k and the retrieved items, and vary only the reveal time: episode start, first detected stall, fixed late step, every step, reimplemented MemCon-style and RSCB-MC-style learned policies, and an oracle-timed upper bound, on ALFWorld and WebShop with three local backbones. Paired McNemar tests on identical task-seed pairs separate timing from content; a stall-triggered generic-reflection control and a stall-triggered random-item control separate memory content from a replanning nudge. Entry-Propagation-Recovery tallies against ALFWorld's expert plans test the mechanism: compliance rates should be similar across arms, but success conditional on compliance should be much higher at a stall than at entry. We then sweep the static trigger's two parameters on one backbone, freeze it, and swap backbones and environments, comparing against the learned policies frozen and relearned. The deliverable is a pre-registered answer to whether when-to-retrieve is a learning problem or a two-number heuristic, and whether the pilot's start-of-episode harm is a timing artefact.",
+   "pair_id": "recall_success_dissociation__archive:archive:stall_triggere",
+   "label": "distinct",
+   "reason": "A manipulates retriever recall and duplicate availability and reports success residual over the best static prompt, whereas B holds the bank, query, k and retrieved items fixed and varies only the moment of injection, claiming stall-triggered reveal flips the sign of memory's effect; different independent variables and different claims."
+  },
+  {
+   "a": "whole_bank_confusability_ladder",
+   "b": "digest:arxiv:2505.12065: Both exact and overly approximate retrieval degrade search-age",
+   "sim": 0.645,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2505.12065: Both exact and overly approximate retrieval degrade search-agent efficiency, and scheduling and retrieval stalls cause cascading latency; high-recall approximate retrieval with priority-aware scheduling and non-stall retrieval removes these bottlenecks without hurting generation quality.",
+   "pair_id": "whole_bank_confusability_ladder__digest:arxiv:2505.12065: Both ",
+   "label": "distinct",
+   "reason": "A asks what bank composition (near-miss density) makes whole-bank-in-context lose to top-k retrieval on agent task success; B is a serving-systems result about approximate-retrieval recall, scheduling stalls and latency in search agents. Different objects of study and no shared mechanism."
+  },
+  {
+   "a": "whole_bank_confusability_ladder",
+   "b": "brief:2. Environment properties that make retrieval necessary (13 cards). State-gated ",
+   "sim": 0.597,
+   "kind": "idea-brief",
+   "prior_text": "2. Environment properties that make retrieval necessary (13 cards). State-gated retrieval failures (SGR-Bench",
+   "pair_id": "whole_bank_confusability_ladder__brief:2. Environment propertie",
+   "label": "distinct",
+   "reason": "B is a topic heading about environment properties that make retrieval necessary (state-gated retrieval failures) and states no claim about whole-bank reading; A makes the specific claim that near-miss bank composition, not prompt length, sets the whole-bank vs top-k crossover."
+  },
+  {
+   "a": "whole_bank_confusability_ladder",
+   "b": "archive:archive:opposite_sided_failure_under_shift: Stale in Context, Eroded in Weights:",
+   "sim": 0.59,
+   "kind": "idea-archive",
+   "prior_text": "archive:opposite_sided_failure_under_shift: Stale in Context, Eroded in Weights: In-Context and Parametric Experience Fail on Opposite Sides of a Distribution Shift, and Only One Failure Is Predictable from the Bank. Over a task stream with a mid-stream conflicting shift that makes stored procedures wrong, an in-context experience store's post-shift dip is a read-path phenomenon whose size tracks the fraction of retrieved items that are pre-shift, that self-corrects once post-shift items dominate retrieval, and that costs pre-shift competence nothing; a parametric store built by continual LoRA on the same stream's successes shows no retrieval-fraction dependence, recovers as a function of update count, and erodes pre-shift competence monotonically with post-shift updates unless replay is paid. The two substrates fail on opposite sides of the shift, and the in-context failure is predictable from bank composition alone. The parametric and in-context substrates for agent experience are each said to have a stability-plasticity problem, but they have never been run on the same stream with the same shift, and their failures are described with the same word, forgetting, although they cannot be the same mechanism: a bank forgets nothing and a LoRA retrieves nothing. We build a 600-episode ALFWorld stream with three phases (original rules, a conflicting shift, revert) and two shift types: an action-grammar change that makes stored trajectories syntactically wrong, and a benign task-mix change where stale items are merely irrelevant. On one 7B backbone we run six substrates through the same stream: in-context banks with raw, utility-scored and recency-weighted retrieval; continual LoRA on the stream's successes with and without a costed replay budget; and a no-memory control. Every 50 episodes a frozen probe evaluates each substrate on held-out tasks under current-phase rules and under phase-1 rules, paired across substrates. For the in-context substrate we log, per probe, the fraction of retrieved items that are pre-shift and label each item right, stale-wrong or irrelevant; for the parametric substrate we log update count and replay tokens. The pre-registered predictions are that the in-context dip is explained by stale fraction and vanishes when it is zero, that its recovery time is predictable from bank composition, that parametric erosion of phase-1 competence grows with post-shift updates while the bank's does not, and that the benign shift produces neither. The preservation cost of each substrate at matched recovery is reported in tokens and GPU-seconds. The result is the first opposite-sided characterization of the two substrates on the same stream and a bank-composition predictor for in-context drag.",
+   "pair_id": "whole_bank_confusability_ladder__archive:archive:opposite_sided",
+   "label": "distinct",
+   "reason": "Both use bank composition as a predictor, but A's claim is about near-miss confusability determining where whole-bank-in-context loses to top-k retrieval on a static bank, while B's is about in-context versus parametric stores failing on opposite sides of a mid-stream distribution shift, with staleness as the composition variable. Different manipulations, different comparison axes."
+  },
+  {
+   "a": "many_shot_averages_detours",
+   "b": "archive:archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from O",
+   "sim": 0.623,
+   "kind": "idea-archive",
+   "prior_text": "archive:retrieved_set_disagreement_gate: Abstain When They Disagree: Harm from Organically Accumulated Agent Memory Lives in the Retrieved Set, Not the Item, and a Disagreement Gate Beats Item-Level Utility Filtering at Zero Clean-Setting Cost. When a bank is accumulated organically over a task stream with no planted conflicts, the items that break tasks are not individually low-utility; harm concentrates in retrievals where the top-k items disagree about the next action for the current state. A read-time gate that abstains from injection when a cheap action-consistency score over the retrieved set falls below a threshold, with no extra LLM call, removes at least 70 percent of the natural paired harm while keeping at least 80 percent of the gain on agreeing retrievals, whereas item-level utility filtering, validity or provenance and recency gating, spurious-cue calibration, learned abstention and reliance steering do not, because they act on item properties that do not predict which retrievals break tasks. Every proposed defence against harmful retrieved memory acts on items: utility scores, validity or provenance states, recency, spurious-cue calibration, a learned abstain decision, or a global reliance setting. We test the alternative that harm from an organically accumulated experience bank is a property of the retrieved set. Over three randomized ALFWorld task streams, a 27B agent accumulates raw and distilled items through a ReMe-style write path with no planted conflicts, and banks are frozen at three checkpoints so staleness arises naturally. On held-out tasks every retrieval is labelled post hoc from expert plans and bank timestamps at the item level (right, wrong, stale, conflicting) and at the set level (agree-right, agree-wrong, disagree), and per-retrieval harm is estimated with paired no-memory runs and Entry-Propagation-Recovery tallies. A likelihood-ratio test asks which label explains broken outcomes. Eight read-time controls are then run head to head on the same seeds and banks: a disagreement gate based on a cheap action-consistency score, MemRL-style utility filtering, validity and provenance or recency gating, CAMEL-style calibration, an RSCB-MC-style learned abstain policy, reliance-steering instructions, an LLM-judge conflict verifier, and an oracle gate, each scored on harm removed, gain retained, clean-setting cost on agree-right retrievals, and token cost. A by-product is the first task-execution partition of failures into wrong retrieval, arbitration failure, and failure to apply a correctly retrieved item.",
+   "pair_id": "many_shot_averages_detours__archive:archive:retrieved_set_",
+   "label": "distinct",
+   "reason": "A claims many-shot whole-bank reading averages out per-item detour noise that top-k commits to, with detour rate and item count as the manipulated variables; B claims harm from organically accumulated banks is a set-level disagreement property and proposes a read-time abstention gate. Different noise source (detours vs conflicting actions), different intervention (read everything vs abstain), and neither claim entails the other."
+  },
+  {
+   "a": "many_shot_averages_detours",
+   "b": "brief:2. Environment properties that make retrieval necessary (13 cards). State-gated ",
+   "sim": 0.559,
+   "kind": "idea-brief",
+   "prior_text": "2. Environment properties that make retrieval necessary (13 cards). State-gated retrieval failures (SGR-Bench",
+   "pair_id": "many_shot_averages_detours__brief:2. Environment propertie",
+   "label": "distinct",
+   "reason": "B is a scan category header about environment properties (state-gated retrieval failures) that make retrieval necessary; A claims whole-bank many-shot context averages out per-item detour noise where top-k commits to it. No shared claim or mechanism beyond the general topic."
+  },
+  {
+   "a": "near_duplicate_needle_crossover",
+   "b": "brief:Whole-bank long-context arm whenever the bank fits the 16k context (it does for ",
+   "sim": 0.644,
+   "kind": "idea-brief",
+   "prior_text": "Whole-bank long-context arm whenever the bank fits the 16k context (it does for ALFWorld at ~140 tokens per item up",
+   "pair_id": "near_duplicate_needle_crossover__brief:Whole-bank long-context ",
+   "label": "distinct",
+   "reason": "B is only a design instruction to include a whole-bank long-context arm when the bank fits 16k; it asserts no claim about why retrieval beats whole-bank. A's claim, that retrieval's bank-size advantage is entirely a near-duplicate coverage effect that vanishes when duplicates are removed, is nowhere in B."
+  },
+  {
+   "a": "state_key_pays_only_for_planted_bindings",
+   "b": "brief:The static arm is the baseline, not an ablation. Every retrieval claim is report",
+   "sim": 0.583,
+   "kind": "idea-brief",
+   "prior_text": "The static arm is the baseline, not an ablation. Every retrieval claim is reported as retrieval minus the best",
+   "pair_id": "state_key_pays_only_for_planted_bindings__brief:The static arm is the ba",
+   "label": "distinct",
+   "reason": "B is a reporting convention (report retrieval as a difference from the best static arm) that A adopts as a baseline; A's central claim is a separate one, that the retrieval residual equals the within-type bank variance the query key can index, tested with a planted scene-binding rate ladder."
+  },
+  {
+   "a": "state_key_pays_only_for_planted_bindings",
+   "b": "digest:arxiv:2604.08920: Retrieval objectives should shift from topical relevance to LL",
+   "sim": 0.576,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2604.08920: Retrieval objectives should shift from topical relevance to LLM-centric utility, because in RAG retrieval effectiveness must be judged by its contribution to generation quality rather than relevance-ranking metrics alone.",
+   "pair_id": "state_key_pays_only_for_planted_bindings__digest:arxiv:2604.08920: Retri",
+   "label": "distinct",
+   "reason": "B is a general position that retrieval should be judged by utility to generation rather than topical relevance; A makes a concrete, testable claim about which query key can index scene-keyed bindings and a planted-rate ladder that predicts the residual over the best static prompt. A's mechanism (key-indexable within-type bank variance) is absent from B."
+  },
+  {
+   "a": "retrieval_timing_is_budgeting",
+   "b": "archive:archive:decorative_retriever: When Is a Retriever Decorative? Retrieval-Set Over",
+   "sim": 0.627,
+   "kind": "idea-archive",
+   "prior_text": "archive:decorative_retriever: When Is a Retriever Decorative? Retrieval-Set Overlap Predicts Whether Procedural Agent Memory Must Be Retrieved or Can Be Frozen. Per-instance retrieval in procedural agent memory (ExpeL/ReasoningBank/Memp-style) is decorative in exactly the regimes the field evaluates in, and there is a cheap, pre-deployment statistic that says when. Concretely: (a) **the frozen-subset swap** — replacing top-k retrieval with the *same k items, fixed for every query, verbatim, no LLM rewriting* — costs <2 accuracy points in every cell whose measured top-k retrieval-set Jaccard overlap exceeds 0.5; (b) that same overlap statistic, computable from the retriever alone in seconds with zero agent rollouts, predicts the retrieval premium **out of sample** across ~20 cells spanning overlap 0.05–1.0, with all overlap<0.25 cells showing a premium ≥8 points; and (c) the sign of the injection-volume effect is the *same* function of overlap — more retrieved items hurt at high overlap and help at low overlap, which reinterprets ReasoningBank's own \"retrieving more memories hurts\" ablation (49.7%@k=1 → 44.4%@k=4) as a redundancy artifact of a low-diversity retrieval set rather than a general \"quality over quantity\" law. One measured quantity, two phenomena, no agent runs required to predict either. Procedural agent memory is built as a retrieval system — distil training episodes into a bank, retrieve top-k per instance, inject — and every evaluation we can find compares it against *no memory*. Nobody re-runs the agent with the retriever replaced by a fixed subset of its own bank.\n\nWe do, and we do it across a designed sweep of retrieval-set diversity. The centerpiece is the **frozen-subset swap**: hold the agent, tools, decoding, bank, item count and injected tokens fixed, and replace per-instance top-k retrieval with the *k most frequently retrieved items on a dev split, verbatim, identical for every query*. No frontier model touches this arm, so a null cannot be attributed to a clever compiler. We run this swap in ~20 cells spanning measured top-k Jaccard overlap from ~0.05 to 1.0, moving overlap by four independent knobs — task-family breadth (single ALFWorld task type vs. all six vs. a mixed ALFWorld+multi-hop-QA bank), bank size (N=100→1000), retriever (dense vs. BM25 vs. MMR-diversified), and injection budget (k∈{1,3,7}) — plus a non-compilable near-duplicate bank as the low-overlap anchor.\n\nThree claims, in order of how much of the paper they carry. **(i)** Wherever overlap > 0.5, the frozen-subset swap costs < 2 points (TOST equivalence at a 4-point margin; random-effects meta-estimate CI excluding 4). **(ii)** Overlap, computed from the retriever alone with zero agent rollouts, predicts the retrieval premium *out of sample* (leave-one-cell-out, permutation-tested against a grand-mean predictor), with a fitted crossing threshold — this is a deployable diagnostic, not a benchmark number. **(iii)** The sign of the injection-volume effect is the same function of overlap, which reinterprets ReasoningBank's published k-ablation (49.7%@k=1 → 44.4%@k=4, read as \"quality over quantity\") as a redundancy artifact, and makes an opposite-sign prediction to the interference account of Neural Procedural Memory (2606.29824) in an MMR-retriever cell we run.\n\nWe implement both ExpeL-style and ReasoningBank-style bank construction, token-match every static arm to the retrieval arm per instance, include an off-domain compiled control to rule out \"any well-written static block of this length helps,\" and pre-register gates under which the study is reported as uninterpretable. ~23k evaluation episodes, three base models (8B/14B/32B), instance-paired McNemar and TOST, null replicates, stated MDE. No prompt optimizer is run; that arm was cut on purpose.",
+   "pair_id": "retrieval_timing_is_budgeting__archive:archive:decorative_ret",
+   "label": "distinct",
+   "reason": "A bounds the value of when-to-retrieve policies by the mass of episodes where retrieval fails but the static prompt succeeds, and tests stall-triggered and failure-keyed retrieval; B is about whether the per-query selection itself can be frozen, with timing held at episode start throughout. Different decision variable (when vs which) and different mechanism."
+  },
+  {
+   "a": "retrieval_timing_is_budgeting",
+   "b": "digest:arxiv:2505.12065: Both exact and overly approximate retrieval degrade search-age",
+   "sim": 0.595,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2505.12065: Both exact and overly approximate retrieval degrade search-agent efficiency, and scheduling and retrieval stalls cause cascading latency; high-recall approximate retrieval with priority-aware scheduling and non-stall retrieval removes these bottlenecks without hurting generation quality.",
+   "pair_id": "retrieval_timing_is_budgeting__digest:arxiv:2505.12065: Both ",
+   "label": "distinct",
+   "reason": "B is a serving-systems result about approximate-retrieval recall, scheduling and latency stalls in search agents; A is an accuracy-side claim that the value of any retrieval-timing policy is bounded by the mass of episodes where retrieval fails and the static prompt succeeds. The shared word 'stall' refers to serving stalls in B and agent behavioural stalls in A."
+  },
+  {
+   "a": "rank_flat_retriever_is_a_type_classifier",
+   "b": "archive:archive:instruction_conditioned_complementarity: What Does the Prompt Already Sa",
+   "sim": 0.612,
+   "kind": "idea-archive",
+   "prior_text": "archive:instruction_conditioned_complementarity: What Does the Prompt Already Say? Instruction-Conditioned Complementarity Decides When Retrieved Experience Helps, Hurts, or Just Costs Tokens. The marginal value of an injected memory item is relational: it is determined by the item's content relative to what the agent's *instruction* already states, not by the item's similarity to the query nor by its similarity to other retrieved items. Labeling each unit of guidance in a retrieved item against the instruction as REDUNDANT (already asserted), NOVEL (instruction silent) or CONFLICTING (instruction asserts something incompatible) yields a three-way decomposition that predicts per-instance outcomes: fixes track novel units, breaks track conflicting units, redundant units are pure token cost. Consequences we test: (a) the *same* memory bank flips from helpful to inert when the instruction is optimized, because its units become redundant; (b) surgically deleting only the redundant units preserves accuracy at ~half the injected tokens while a token-matched random deletion does not; (c) deleting novel units destroys the fixes; (d) a retrieval rule that scores candidates by instruction-conditional novel-unit yield per token beats similarity top-k and item-diversity MMR at matched budget. Agentic memory retrieves past experience by similarity to the query and injects it alongside a task instruction that a prompt optimizer is separately rewriting. Both texts carry guidance; nothing in either pipeline checks whether they carry the *same* guidance. We propose that an item's marginal value is relational — it depends on what the instruction already says — and that this single variable explains the fix/break/token-cost structure of memory injection that recent empirical work documents but does not predict. We decompose the instruction and each retrieved item into atomic guidance units and label every item unit against the instruction as redundant, novel, or conflicting, using an off-the-shelf NLI model as the primary instrument (LLM and human labels used for validation only). We test three things on one environment with one primary model. First, relationality: holding the bank, retriever and retrievals fixed, we run under a short hand-written instruction and under an optimizer-produced long instruction, and predict that the same items flip from mostly novel to substantially redundant and that memory's paired gain collapses accordingly. Second, causality: unit-level surgery at matched token budget — delete only the redundant units, delete a token-matched random subset, delete the novel units, or delete a subset chosen against a *decoy* instruction — so the taxonomy can be falsified without touching the retriever. Third, exploitation: a complementarity retrieval rule scoring candidates by instruction-conditional novel-unit yield per token, against similarity top-k, MMR item-diversity, and a cheap embedding-overlap proxy at matched injected-token budgets. All comparisons are instance-paired with McNemar tests, null replicates, and a stated 5-point minimum detectable effect at n=500. The whole program is ~27k agent episodes on one 4×A100 node and under $100 of API.",
+   "pair_id": "rank_flat_retriever_is_a_type_classifier__archive:archive:instruction_co",
+   "label": "distinct",
+   "reason": "Both deny that query similarity predicts an item's value, but A's claim is that success is a step function of type match so the retriever reduces to a type classifier plus a similarity-scaled compliance hazard, tested by rank and leave-out ladders; B's is that value is relational to what the instruction already asserts, tested by redundant/novel/conflicting unit surgery. Different explanatory variable and different interventions."
+  },
+  {
+   "a": "rank_flat_retriever_is_a_type_classifier",
+   "b": "digest:arxiv:2602.12192: Attention scores of selected retrieval heads can be trained in",
+   "sim": 0.581,
+   "kind": "idea-digest",
+   "prior_text": "arxiv:2602.12192: Attention scores of selected retrieval heads can be trained into a lightweight listwise reranker that outperforms state-of-the-art pointwise and listwise rerankers and sets a new state of the art on LoCoMo.",
+   "pair_id": "rank_flat_retriever_is_a_type_classifier__digest:arxiv:2602.12192: Atten",
+   "label": "distinct",
+   "reason": "B builds a better listwise reranker from retrieval-head attention scores and evaluates ranking quality on LoCoMo; A argues the experience retriever's contribution to agent task success is a step function of type match so within-type rank is irrelevant. Opposite premises and different outcome measures."
+  }
+ ],
+ "nearest": {
+  "compile_the_statistics_not_the_trajectory": [
+   [
+    "whole_bank_confusability_ladder",
+    0.639
+   ],
+   [
+    "protocol_bindings_procedure_count",
+    0.603
+   ],
+   [
+    "state_key_pays_only_for_planted_bindings",
+    0.592
+   ]
+  ],
+  "aggregate_or_comply": [
+   [
+    "many_shot_averages_detours",
+    0.681
+   ],
+   [
+    "near_duplicate_needle_crossover",
+    0.588
+   ],
+   [
+    "whole_bank_confusability_ladder",
+    0.548
+   ]
+  ],
+  "bindings_need_a_query_only_when_untestable": [
+   [
+    "protocol_bindings_procedure_count",
+    0.676
+   ],
+   [
+    "state_key_pays_only_for_planted_bindings",
+    0.552
+   ],
+   [
+    "compile_the_statistics_not_the_trajectory",
+    0.539
+   ]
+  ],
+  "relocated_bindings_demand": [
+   [
+    "retrieval_timing_is_budgeting",
+    0.601
+   ],
+   [
+    "recall_success_dissociation",
+    0.557
+   ],
+   [
+    "compile_the_statistics_not_the_trajectory",
+    0.552
+   ]
+  ],
+  "protocol_bindings_procedure_count": [
+   [
+    "bindings_need_a_query_only_when_untestable",
+    0.676
+   ],
+   [
+    "compile_the_statistics_not_the_trajectory",
+    0.603
+   ],
+   [
+    "retrieval_timing_is_budgeting",
+    0.574
+   ]
+  ],
+  "binding_scope_leakage_ladder": [
+   [
+    "recall_success_dissociation",
+    0.564
+   ],
+   [
+    "whole_bank_confusability_ladder",
+    0.558
+   ],
+   [
+    "retrieval_timing_is_budgeting",
+    0.549
+   ]
+  ],
+  "cached_prefix_frontier": [
+   [
+    "aggregate_or_comply",
+    0.492
+   ],
+   [
+    "many_shot_averages_detours",
+    0.481
+   ],
+   [
+    "retrieval_timing_is_budgeting",
+    0.456
+   ]
+  ],
+  "exemplar_lottery": [
+   [
+    "recall_success_dissociation",
+    0.645
+   ],
+   [
+    "state_key_pays_only_for_planted_bindings",
+    0.568
+   ],
+   [
+    "rank_flat_retriever_is_a_type_classifier",
+    0.535
+   ]
+  ],
+  "recall_success_dissociation": [
+   [
+    "rank_flat_retriever_is_a_type_classifier",
+    0.785
+   ],
+   [
+    "exemplar_lottery",
+    0.645
+   ],
+   [
+    "state_key_pays_only_for_planted_bindings",
+    0.611
+   ]
+  ],
+  "whole_bank_confusability_ladder": [
+   [
+    "many_shot_averages_detours",
+    0.722
+   ],
+   [
+    "near_duplicate_needle_crossover",
+    0.686
+   ],
+   [
+    "compile_the_statistics_not_the_trajectory",
+    0.639
+   ]
+  ],
+  "many_shot_averages_detours": [
+   [
+    "whole_bank_confusability_ladder",
+    0.722
+   ],
+   [
+    "aggregate_or_comply",
+    0.681
+   ],
+   [
+    "near_duplicate_needle_crossover",
+    0.654
+   ]
+  ],
+  "near_duplicate_needle_crossover": [
+   [
+    "whole_bank_confusability_ladder",
+    0.686
+   ],
+   [
+    "many_shot_averages_detours",
+    0.654
+   ],
+   [
+    "aggregate_or_comply",
+    0.588
+   ]
+  ],
+  "state_key_pays_only_for_planted_bindings": [
+   [
+    "recall_success_dissociation",
+    0.611
+   ],
+   [
+    "whole_bank_confusability_ladder",
+    0.594
+   ],
+   [
+    "compile_the_statistics_not_the_trajectory",
+    0.592
+   ]
+  ],
+  "retrieval_timing_is_budgeting": [
+   [
+    "relocated_bindings_demand",
+    0.601
+   ],
+   [
+    "whole_bank_confusability_ladder",
+    0.599
+   ],
+   [
+    "recall_success_dissociation",
+    0.588
+   ]
+  ],
+  "rank_flat_retriever_is_a_type_classifier": [
+   [
+    "recall_success_dissociation",
+    0.785
+   ],
+   [
+    "whole_bank_confusability_ladder",
+    0.61
+   ],
+   [
+    "many_shot_averages_detours",
+    0.545
+   ]
+  ]
+ },
+ "decisions": {
+  "compile_the_statistics_not_the_trajectory": "keep_note",
+  "aggregate_or_comply": "keep_note",
+  "whole_bank_confusability_ladder": "keep_note",
+  "exemplar_lottery": "keep_note",
+  "recall_success_dissociation": "keep_note",
+  "relocated_bindings_demand": "keep_note",
+  "protocol_bindings_procedure_count": "keep_note"
+ }
+}

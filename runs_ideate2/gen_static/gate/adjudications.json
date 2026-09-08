@@ -1,0 +1,162 @@
+{
+ "recall_success_dissociation__rank_flat_retriever_is_a_type_": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both claim retrieval's success contribution on ALFWorld is a step at type match and that removing near-duplicate/same-binding items does not move success, but A adds the WebShop non-recoverable-binding arm that makes recall informative while B adds similarity-rank ladders, wrong-type harm/framing arms and a cached per-type sub-bank; each extra control would change a reader's conclusion about when recall matters."
+ },
+ "whole_bank_confusability_ladder__many_shot_averages_detours": {
+  "label": "distinct",
+  "reason": "A manipulates bank composition (near-miss wrong-procedure lookalikes vs redundant/filler growth) to find where the whole-bank route falls behind retrieval, whereas B manipulates noise inside otherwise correct items (self-pool detours) and claims consensus reading averages it out while retrieval commits to it; different independent variables and different mechanisms for the route gap."
+ },
+ "cached_prefix_frontier__brief:5. Evaluation and cost (": {
+  "label": "distinct",
+  "reason": "B is a literature-bucket heading listing cost-model and compute-scaling work under prompt caching, not a claim; it contains no measured accuracy-GPU-second frontier, no multi-turn agent cache accounting, and none of A's specific predictions about cache-reversed route ranking or the sub-25% retrieval premium."
+ },
+ "whole_bank_confusability_ladder__near_duplicate_needle_crossove": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both run whole-bank-in-context versus top-k over a bank-size ladder with planted item composition and argue the crossover is a composition effect rather than prompt length, but B manipulates helpful instance-level near-duplicates across WebShop and ALFWorld where A manipulates harmful near-miss distractors on ALFWorld only, and their predictions about size-free composition effects diverge."
+ },
+ "aggregate_or_comply__many_shot_averages_detours": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both test whether an aggregating route (whole bank, compiled artifact) is robust to per-item bank noise while top-k retrieval complies with the items it injects, but A doses replay-validated wrong-procedure contamination and adds LLM- and rule-compiled playbook arms while B uses detours in the agent's own successes with step-count and imitation-signature readouts, so the two support different conclusions about which noise the routes differ on."
+ },
+ "bindings_need_a_query_only_when_untestable__protocol_bindings_procedure_co": {
+  "label": "distinct",
+  "reason": "Both plant hidden structure in ALFWorld with a wrapper to ask when a cached prompt still needs a query, but A's manipulated property is whether an instance binding can be tested at run time at fixed procedure count, while B's is the number of procedures and the size of the smallest compiled form; the mechanisms and the resulting rules for when retrieval is necessary are different."
+ },
+ "recall_success_dissociation__archive:archive:stall_triggere": {
+  "label": "distinct",
+  "reason": "A manipulates retriever recall and duplicate availability and reports success residual over the best static prompt, whereas B holds the bank, query, k and retrieved items fixed and varies only the moment of injection, claiming stall-triggered reveal flips the sign of memory's effect; different independent variables and different claims."
+ },
+ "many_shot_averages_detours__near_duplicate_needle_crossove": {
+  "label": "distinct",
+  "reason": "A attributes the whole-bank-versus-retrieval gap to per-item noise averaging (detoured self-pool trajectories) with retrieval committing to detours, while B attributes retrieval's bank-size advantage entirely to instance-level near-duplicates the in-context reader cannot locate in a growing haystack; different manipulations and opposite accounts of which route wins and why."
+ },
+ "aggregate_or_comply__archive:archive:retrieved_set_": {
+  "label": "distinct",
+  "reason": "A plants a controlled contamination rate to compare how retrieval, LLM/rule-compiled playbooks and whole-bank reading combine items, whereas B forbids planted conflicts, localizes harm in organically accumulated banks to disagreement within the retrieved set, and benchmarks read-time abstention gates against item-level filtering; different designs, outcomes and deliverables."
+ },
+ "exemplar_lottery__recall_success_dissociation": {
+  "label": "distinct",
+  "reason": "A's claim is that retrieval's reported gain is the spread of the static exemplar draw distribution, tested by resampling fixed prompts and one-time curation rules, while B's is a recall-success dissociation governed by whether the retrieved binding is recoverable in-episode, tested by manipulating retriever recall and duplicate availability across two environments."
+ },
+ "whole_bank_confusability_ladder__digest:arxiv:2505.12065: Both ": {
+  "label": "distinct",
+  "reason": "A asks what bank composition (near-miss density) makes whole-bank-in-context lose to top-k retrieval on agent task success; B is a serving-systems result about approximate-retrieval recall, scheduling stalls and latency in search agents. Different objects of study and no shared mechanism."
+ },
+ "near_duplicate_needle_crossover__brief:Whole-bank long-context ": {
+  "label": "distinct",
+  "reason": "B is only a design instruction to include a whole-bank long-context arm when the bank fits 16k; it asserts no claim about why retrieval beats whole-bank. A's claim, that retrieval's bank-size advantage is entirely a near-duplicate coverage effect that vanishes when duplicates are removed, is nowhere in B."
+ },
+ "compile_the_statistics_not_the_trajectory__whole_bank_confusability_ladde": {
+  "label": "distinct",
+  "reason": "A claims a rule-compiled cross-episode statistic (object->receptacle frequencies) carries information no k retrieved trajectories or raw whole bank contains, with an n-ladder as the aggregation signature; B claims the whole-bank/retrieval crossover is set by near-miss composition rather than prompt length. Both use a whole-bank arm but the central claim and the manipulated variable differ."
+ },
+ "compile_the_statistics_not_the_trajectory__brief:2. Environment propertie": {
+  "label": "distinct",
+  "reason": "B is a brief section heading enumerating environment properties that make retrieval necessary; it states no claim about compiled aggregate statistics beating retrieved trajectories, which is A's entire thesis."
+ },
+ "relocated_bindings_demand__archive:archive:decorative_ret": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both hold that per-instance retrieval is decorative unless the retrieved content must vary with the instance, and that a fixed/compiled substitute then matches it; but A causally manipulates that condition by editing the PDDL initial state (binding demand) and the bank's same-scene supply, and tests a compiled location table, where B only measures retrieval-set Jaccard overlap and a frozen-subset swap. The causal manipulation and the compiled-table recovery would change a reader's conclusion about why retrieval is decorative."
+ },
+ "retrieval_timing_is_budgeting__archive:archive:decorative_ret": {
+  "label": "distinct",
+  "reason": "A bounds the value of when-to-retrieve policies by the mass of episodes where retrieval fails but the static prompt succeeds, and tests stall-triggered and failure-keyed retrieval; B is about whether the per-query selection itself can be frozen, with timing held at episode start throughout. Different decision variable (when vs which) and different mechanism."
+ },
+ "binding_scope_leakage_ladder__digest:arxiv:2603.04814: A fac": {
+  "label": "distinct",
+  "reason": "A claims the scope of instance bindings (global/scene/instance) sets the smallest compiled substitute for retrieval and the share of gain that is near-duplicate leakage; B is an accuracy-cost break-even comparison between a fact memory system and long-context inference. No shared mechanism."
+ },
+ "many_shot_averages_detours__archive:archive:retrieved_set_": {
+  "label": "distinct",
+  "reason": "A claims many-shot whole-bank reading averages out per-item detour noise that top-k commits to, with detour rate and item count as the manipulated variables; B claims harm from organically accumulated banks is a set-level disagreement property and proposes a read-time abstention gate. Different noise source (detours vs conflicting actions), different intervention (read everything vs abstain), and neither claim entails the other."
+ },
+ "binding_scope_leakage_ladder__archive:archive:stall_triggere": {
+  "label": "distinct",
+  "reason": "A varies the scope of instance bindings and the bank's supply of scope-matched items to determine the compiled substitute for retrieval; B varies only the reveal time of a fixed retrieved set and claims timing flips the sign of memory's effect. Different manipulated variable and mechanism."
+ },
+ "rank_flat_retriever_is_a_type_classifier__archive:archive:instruction_co": {
+  "label": "distinct",
+  "reason": "Both deny that query similarity predicts an item's value, but A's claim is that success is a step function of type match so the retriever reduces to a type classifier plus a similarity-scaled compliance hazard, tested by rank and leave-out ladders; B's is that value is relational to what the instruction already asserts, tested by redundant/novel/conflicting unit surgery. Different explanatory variable and different interventions."
+ },
+ "exemplar_lottery__archive:archive:stall_triggere": {
+  "label": "distinct",
+  "reason": "A claims retrieval's gain over a fixed prompt is the spread of the exemplar-draw lottery (a selection-variance claim measured over random bank draws), while B claims injection timing alone flips the sign of memory's effect and that a two-parameter stall trigger matches learned when-to-retrieve policies. Different mechanisms and different manipulated variables (which items are drawn vs when the same items are revealed)."
+ },
+ "whole_bank_confusability_ladder__brief:2. Environment propertie": {
+  "label": "distinct",
+  "reason": "B is a topic heading about environment properties that make retrieval necessary (state-gated retrieval failures) and states no claim about whole-bank reading; A makes the specific claim that near-miss bank composition, not prompt length, sets the whole-bank vs top-k crossover."
+ },
+ "retrieval_timing_is_budgeting__digest:arxiv:2505.12065: Both ": {
+  "label": "distinct",
+  "reason": "B is a serving-systems result about approximate-retrieval recall, scheduling and latency stalls in search agents; A is an accuracy-side claim that the value of any retrieval-timing policy is bounded by the mass of episodes where retrieval fails and the static prompt succeeds. The shared word 'stall' refers to serving stalls in B and agent behavioural stalls in A."
+ },
+ "whole_bank_confusability_ladder__archive:archive:opposite_sided": {
+  "label": "distinct",
+  "reason": "Both use bank composition as a predictor, but A's claim is about near-miss confusability determining where whole-bank-in-context loses to top-k retrieval on a static bank, while B's is about in-context versus parametric stores failing on opposite sides of a mid-stream distribution shift, with staleness as the composition variable. Different manipulations, different comparison axes."
+ },
+ "aggregate_or_comply__near_duplicate_needle_crossove": {
+  "label": "distinct",
+  "reason": "A manipulates the contamination rate of wrong-procedure items to ask where items are combined (retrieval complies at minority contamination, compilers aggregate, long-context reader either way); B manipulates near-duplicate rate and bank size to ask why bigger banks help retrieval at all. Same route set but different planted quantity, different mechanism and different predicted outcome."
+ },
+ "cached_prefix_frontier__archive:archive:stall_triggere": {
+  "label": "distinct",
+  "reason": "A is a cost claim: under prefix caching the ranking of static, whole-bank and retrieved prefixes is set by distinct-prefix count and decode-time context length, so matched-token budgets mis-rank routes. B is an accuracy/timing claim about when items are revealed. No shared mechanism."
+ },
+ "state_key_pays_only_for_planted_bindings__brief:The static arm is the ba": {
+  "label": "distinct",
+  "reason": "B is a reporting convention (report retrieval as a difference from the best static arm) that A adopts as a baseline; A's central claim is a separate one, that the retrieval residual equals the within-type bank variance the query key can index, tested with a planted scene-binding rate ladder."
+ },
+ "rank_flat_retriever_is_a_type_classifier__digest:arxiv:2602.12192: Atten": {
+  "label": "distinct",
+  "reason": "B builds a better listwise reranker from retrieval-head attention scores and evaluates ranking quality on LoCoMo; A argues the experience retriever's contribution to agent task success is a step function of type match so within-type rank is irrelevant. Opposite premises and different outcome measures."
+ },
+ "state_key_pays_only_for_planted_bindings__digest:arxiv:2604.08920: Retri": {
+  "label": "distinct",
+  "reason": "B is a general position that retrieval should be judged by utility to generation rather than topical relevance; A makes a concrete, testable claim about which query key can index scene-keyed bindings and a planted-rate ladder that predicts the residual over the best static prompt. A's mechanism (key-indexable within-type bank variance) is absent from B."
+ },
+ "compile_the_statistics_not_the_trajectory__digest:arxiv:2505.12065: Both ": {
+  "label": "distinct",
+  "reason": "B concerns retrieval-serving efficiency, scheduling and latency in search agents; A claims a rule-compiled cross-episode location-frequency cheatsheet beats retrieved trajectories on search-bound ALFWorld types because aggregation is something per-query retrieval cannot do. No shared claim or mechanism."
+ },
+ "protocol_bindings_procedure_count__archive:archive:decorative_ret": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both rest on the same mechanism — per-instance retrieval is decorative unless the content the task needs varies beyond what one static block can cover, and the premium is predicted by a cheap property of the bank/task distribution. A adds a causal manipulation of procedure count (planted protocol-keyed preconditions) plus a factorized-compiled and oracle-routed arm that B never runs, and its result (minimum compiled size, not diversity or item count, is the operative property) would change how a reader reads B's overlap diagnostic."
+ },
+ "protocol_bindings_procedure_count__digest:arxiv:2505.12065: Both ": {
+  "label": "distinct",
+  "reason": "B is a systems paper about search-agent latency — approximate-retrieval recall, scheduling and retrieval stalls — while A is about whether a cached static prompt can substitute for experience retrieval on task success as procedure count grows; no shared claim or mechanism."
+ },
+ "compile_the_statistics_not_the_trajectory__archive:archive:need_blind_com": {
+  "label": "distinct",
+  "reason": "B studies within-episode context compaction, asking which history items are load-bearing and whether summarizers retain them; A studies whether a rule-compiled cross-episode statistic from a trajectory bank beats retrieved trajectories. Different objects (episode history vs experience bank), different mechanisms (need-blind dropping vs aggregation retrieval cannot carry)."
+ },
+ "exemplar_lottery__brief:The static arm is the ba": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "The brief states the same framing A adopts — the static arm is the baseline and retrieval must be reported net of the best static arm — but A measures a quantity the brief does not: the full draw distribution of fixed exemplar prompts, its variance decomposition, and where retrieval sits in that distribution, which shifts the conclusion from 'subtract the best draw' to 'report against the spread'."
+ },
+ "many_shot_averages_detours__brief:2. Environment propertie": {
+  "label": "distinct",
+  "reason": "B is a scan category header about environment properties (state-gated retrieval failures) that make retrieval necessary; A claims whole-bank many-shot context averages out per-item detour noise where top-k commits to it. No shared claim or mechanism beyond the general topic."
+ },
+ "compile_the_statistics_not_the_trajectory__many_shot_averages_detours": {
+  "label": "distinct",
+  "reason": "A credits an offline rule-compiled aggregate (location frequencies) with carrying information no k items hold and predicts the long-context reader does not compute it from raw items; B credits the long-context reader itself with consensus-averaging detour noise that top-k inherits. Different aggregating agent, different manipulated variable (compiler sample size and shuffling vs bank detour rate and pruning), and opposed predictions for the whole-bank arm."
+ },
+ "aggregate_or_comply__whole_bank_confusability_ladde": {
+  "label": "distinct",
+  "reason": "A manipulates the fraction of replay-validated wrong-procedure items to ask where items are combined (compliance vs majority voting) across compiler, reader and retriever; B holds all items correct and grows near-miss confusable items to locate the bank size at which whole-bank reading crosses below retrieval. Different item validity, different manipulated quantity, and different headline claims (robustness ordering vs composition-set crossover)."
+ },
+ "compile_the_statistics_not_the_trajectory__near_duplicate_needle_crossove": {
+  "label": "distinct",
+  "reason": "B attributes retrieval's bank-size advantage to instance-level near-duplicates that the in-context reader cannot find, a coverage/lookup account tested by planting duplicates; A claims a compiled cross-episode statistic supplies something no retrieved item set contains, tested by a compiler-n ladder and a shuffled-table control. Different mechanisms and different measured quantities."
+ },
+ "exemplar_lottery__rank_flat_retriever_is_a_type_": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both rest on the same mechanism — on a template environment the retriever carries no per-instance information beyond type match, so a static prompt can replace it — but A measures the static arm's draw distribution (draw/seed/game variance, best held-out draw, one-time curation rules) whereas B measures within-type similarity rank ladders, leave-out ladders and framing/compliance harm; the two make opposing predictions about how much within-type item choice moves success, which would change a reader's conclusion."
+ },
+ "compile_the_statistics_not_the_trajectory__aggregate_or_comply": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both state the same mechanism — compilation aggregates across episodes before the agent sees anything while per-query retrieval exposes the agent to individual items — and share the playbook, whole-bank and retrieval arms; B measures robustness under a manipulated contamination rate (voting vs compliance), a control A does not run, while A measures the information content of the aggregate via a compiler sample-size ladder, so each would change how a reader reads the other's aggregation claim."
+ }
+}

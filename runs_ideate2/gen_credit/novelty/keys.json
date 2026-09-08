@@ -1,0 +1,547 @@
+{
+ "hole_backfill_static_counterfactual": {
+  "agent": [
+   "leave-one-out credit of retrieved experience item vs next-ranked backfill replacement",
+   "per-item counterfactual value memory bank pruning realized loss",
+   "static procedure placebo replacement retrieved trajectory credit ALFWorld"
+  ],
+  "mechanism_home": [
+   "feature attribution reference value choice removal versus replacement baseline",
+   "leave-one-out data valuation additivity predicts subset removal loss",
+   "semantic missingness baseline plausible replacement input attribution"
+  ],
+  "adjacent": [
+   "attribution reference distribution changes feature importance ranking",
+   "sum of leave-one-out values overpredicts group removal effect non-additivity",
+   "document removal in RAG replaced by next candidate marginal utility"
+  ],
+  "baseline": [
+   "nested-k slot credit from existing logs",
+   "random pruning of the store",
+   "static instruction stating the procedure"
+  ],
+  "methods": [
+   "CUE-R REMOVE REPLACE DUPLICATE",
+   "Shapley source attribution RAG",
+   "DIG confidence gain",
+   "local additive attribution taxonomy",
+   "semantic missingness baselines",
+   "UCOB",
+   "ExpSuite",
+   "TreeMem",
+   "HiMPO",
+   "ReMe",
+   "SF-AMS"
+  ],
+  "environment": [
+   "ALFWorld valid_seen valid_unseen",
+   "k_sweep_final nested-k logs",
+   "second local backbone"
+  ]
+ },
+ "masked_harm_pairwise_removal": {
+  "agent": [
+   "single-item removal credit masked by co-retrieved conflicting or redundant memory",
+   "pairwise removal interaction term retrieved items agent memory pruning",
+   "Shapley attribution retrieved documents redundancy synergy multi-step agent"
+  ],
+  "mechanism_home": [
+   "interaction index pairwise removal masking redundancy complementarity feature attribution",
+   "Shapley-Taylor interaction submodularity violation attribution",
+   "leave-one-out data valuation duplicates mask contribution"
+  ],
+  "adjacent": [
+   "duplicate documents in context dose effect repeated evidence increases reliance",
+   "conflicting context documents majority overrides correct one knowledge conflict",
+   "leave-one-out underestimates redundant data value Shapley captures it"
+  ],
+  "baseline": [
+   "single-removal leave-one-out per-item score",
+   "additive sum of single credits",
+   "set-level disagreement gate"
+  ],
+  "methods": [
+   "Shapley source attribution RAG",
+   "cross-component interference agent scaffolds",
+   "CUE-R",
+   "compliance trap conflicting memory",
+   "controlled memory interference",
+   "RoMeRL memory-reward trap",
+   "shapiq",
+   "Shapley-Taylor interaction index"
+  ],
+  "environment": [
+   "ALFWorld 274 valid games",
+   "second backbone consumer swap"
+  ]
+ },
+ "item_credit_variance_decomposition": {
+  "agent": [
+   "between-item variance of leave-one-out credit experience bank ICC re-run noise",
+   "per-item memory utility score reliability winner's curse pruning",
+   "number of re-runs for stable per-item rank retrieved memory"
+  ],
+  "mechanism_home": [
+   "data valuation leave-one-out instability stochastic training re-run noise Banzhaf",
+   "intraclass correlation variance decomposition item effect versus noise attribution reliability",
+   "winner's curse selection on noisy estimates regression to the mean"
+  ],
+  "adjacent": [
+   "leave-one-out data values unstable across random seeds Banzhaf robust",
+   "instance attribution rank correlation across training runs low",
+   "optimizer's curse selection bias overestimates chosen item value"
+  ],
+  "baseline": [
+   "random pruning",
+   "class-level score instead of per-item score",
+   "nested-k slot credit from existing logs"
+  ],
+  "methods": [
+   "Data Shapley",
+   "Data Banzhaf",
+   "SCARV",
+   "FreeShap",
+   "amortized Shapley",
+   "TreeMem",
+   "Shapley-RAG",
+   "HiMPO",
+   "AttriMem",
+   "MemQ",
+   "RoMeRL",
+   "SF-AMS"
+  ],
+  "environment": [
+   "ALFWorld valid_seen valid_unseen",
+   "second backbone consumer swap"
+  ]
+ },
+ "item_value_consumer_decomposition": {
+  "agent": [
+   "retrieved item counterfactual value transfer across executor models agent memory",
+   "model-agnostic experience bank per-item utility consumer-specific residual",
+   "value-guided memory item selection under a different reader LLM"
+  ],
+  "mechanism_home": [
+   "data valuation model dependence transfer of data values across models",
+   "proxy model transfer of data curation decisions unreliable",
+   "retrieval-augmented generation document utility depends on generator model"
+  ],
+  "adjacent": [
+   "data selection with small proxy model does not transfer to large model",
+   "influence scores model-specific low cross-model rank correlation",
+   "in-context example utility model-dependent selection transfer"
+  ],
+  "baseline": [
+   "static instruction stating the procedure",
+   "similarity top-k retrieval",
+   "random selection from candidates"
+  ],
+  "methods": [
+   "CUE-R",
+   "document Shapley RAG",
+   "DIG confidence gain",
+   "ExpGraph ExpSuite",
+   "ReMe",
+   "CHIME",
+   "Data Shapley",
+   "DataInf",
+   "DataDecide"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-14B",
+   "Qwen3-8B",
+   "Llama-3.1-8B-Instruct",
+   "32B replica"
+  ]
+ },
+ "stale_item_score_lag_after_rule_change": {
+  "agent": [
+   "stale memory items after rule change score lag outcome-reinforced utility pruning",
+   "co-retrieval contamination credit assignment memory items non-stationary",
+   "memory-reward trap stale items survive pruning after drift"
+  ],
+  "mechanism_home": [
+   "credit assignment lag under nonstationarity reward contamination jointly rewarded components",
+   "rotting bandits decaying arm value detection delay",
+   "prioritized replay priority staleness lag"
+  ],
+  "adjacent": [
+   "concept drift detection delay ensemble member weighting nonstationary",
+   "shared reward credit assignment free-rider multi-agent",
+   "rotting bandit arms value decays with pulls regret"
+  ],
+  "baseline": [
+   "temporal validity filter for retrieval",
+   "usage-decay recency score",
+   "leave-one-out anchored online scorer"
+  ],
+  "methods": [
+   "SF-AMS",
+   "Oblivion",
+   "MemQ TD(lambda)",
+   "budgeted forgetting",
+   "RoMeRL",
+   "Memora",
+   "MINTEval",
+   "compliance trap",
+   "insight governance non-stationary",
+   "PlanFence",
+   "RAW-UCB rotting bandits",
+   "prioritized experience replay"
+  ],
+  "environment": [
+   "ALFWorld clean-type games",
+   "two 32B replicas"
+  ]
+ },
+ "stage_conditional_item_value": {
+  "agent": [
+   "stage-conditional counterfactual value of retrieved experience multi-step agent",
+   "retrieval timing within episode when to retrieve memory item harm recovery",
+   "step-level credit assignment retrieved memory items ALFWorld"
+  ],
+  "mechanism_home": [
+   "action advising when to advise budget state importance teacher student",
+   "intervention timing value of a hint depends on decision state",
+   "mismatched in-context demonstration harm conditional on task phase"
+  ],
+  "adjacent": [
+   "advice at high-uncertainty states yields most gain action advising",
+   "wrong or mismatched demonstrations hurt more than no demonstration in-context learning",
+   "value of information is state dependent rather than item dependent"
+  ],
+  "baseline": [
+   "static instruction stating the procedure at every step",
+   "retrieve at every decision step observation-conditioned retrieval",
+   "reader rewrites the retrieved item to the current state before use"
+  ],
+  "methods": [
+   "SLEA-RL MERIT U-EHR MemHarness UCOB",
+   "memory anchoring compliance trap",
+   "action advising when-to-advise budget state importance teacher bridge"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B"
+  ]
+ },
+ "guilt_by_coretrieval": {
+  "agent": [
+   "reward contamination of learned per-item memory utility co-retrieved items",
+   "memory-reward trap credit assignment to retrieved memory items",
+   "leave-one-out ground truth for learned memory utilities forced retrieval"
+  ],
+  "mechanism_home": [
+   "structural credit assignment shared reward co-occurring components spurious credit",
+   "correlated features share attribution feature importance co-occurrence bias",
+   "data valuation noisy leave-one-out values number of retraining samples"
+  ],
+  "adjacent": [
+   "Shapley attribution fails additivity under feature interaction and correlation",
+   "shared team reward makes individual contribution estimates biased lazy contributor",
+   "duplicated or correlated data points distort leave-one-out data values"
+  ],
+  "baseline": [
+   "leave-one-out re-run on a random subsample of episodes",
+   "retrieval frequency usage count scoring",
+   "similarity-only ranking without learned utility"
+  ],
+  "methods": [
+   "RoMeRL MemQ REMEMBERER MemRL",
+   "Memory-R2 CHIME UCOB ExpSuite",
+   "CUE-R document Shapley source attribution RAG Data Shapley"
+  ],
+  "environment": [
+   "ALFWorld"
+  ]
+ },
+ "admission_pruning_audit_random_holdout": {
+  "agent": [
+   "write-time admission scores versus realized counterfactual memory item value",
+   "outcome-based pruning versus random pruning of agent memory store",
+   "randomized holdout audit of memory admission and pruning rules feedback count"
+  ],
+  "mechanism_home": [
+   "coreset selection heuristic scores versus random subset strong baseline",
+   "data pruning score-based versus random pruning at low sample counts",
+   "training data attribution scores weak correlation with retraining ground truth"
+  ],
+  "adjacent": [
+   "random subset selection matches sophisticated data selection methods",
+   "beyond neural scaling laws data pruning metrics compared to random baseline",
+   "cache admission policy versus random replacement competitive"
+  ],
+  "baseline": [
+   "admit everything with no admission filter",
+   "random pruning at matched count",
+   "novelty threshold by cosine similarity to existing store"
+  ],
+  "methods": [
+   "A-MAC RPE-critic router SF-AMS Oblivion ReMe",
+   "DIG confidence gain Memory Reward Inflation utility-driven replay",
+   "Data Shapley DVGS"
+  ],
+  "environment": [
+   "ALFWorld 3553-game stream expert bank self pool"
+  ]
+ },
+ "utility_half_life_consumer_swap": {
+  "agent": [
+   "learned memory utility transfer after reader swap store growth layout shift",
+   "leave-one-out memory item value across backbones seen versus unseen layouts",
+   "wrong-procedure memory items harm persists helpful items value collapses"
+  ],
+  "mechanism_home": [
+   "training data attribution transfer across models data value model dependence",
+   "asymmetric transferability harmful examples versus beneficial examples across learners",
+   "distribution shift invalidates learned ranking revalidation versus relearning cost"
+  ],
+  "adjacent": [
+   "adversarial examples transfer across models more than benign perturbations",
+   "poisoned samples transfer across architectures data Shapley values do not",
+   "mislabeled data detection consistent across models while useful-data ranking varies"
+  ],
+  "baseline": [
+   "recency decay time-based freshness weighting",
+   "re-learn utilities from the stream under the new reader",
+   "similarity-only ranking"
+  ],
+  "methods": [
+   "ExpSuite MemQ MERIT ReMe SF-AMS",
+   "Memora MINTEval compliance trap freshness-weighted memory",
+   "linear datamodeling score AirRep"
+  ],
+  "environment": [
+   "ALFWorld valid_seen valid_unseen",
+   "Qwen3-32B Qwen3-14B Llama-3.1-8B-Instruct",
+   "vLLM A100"
+  ]
+ },
+ "per_item_loo_reliability_and_winners_curse": {
+  "agent": [
+   "per-item leave-one-out value reliability number of retrievals agent memory",
+   "winner's curse top-ranked memory items re-run shrinkage",
+   "LOO-score pruning versus random pruning retrieval threshold ALFWorld"
+  ],
+  "mechanism_home": [
+   "reliability of per-unit estimates variance components intraclass correlation replications",
+   "winner's curse selection bias regression to the mean empirical Bayes shrinkage",
+   "leave-one-out data value noise under stochastic training rank robustness"
+  ],
+  "adjacent": [
+   "Data Banzhaf robust ranking under noisy utility",
+   "influence and leave-one-out estimates unstable across random seeds retraining",
+   "seed variance dominates between-condition differences in fine-tuning evaluation"
+  ],
+  "baseline": [
+   "random pruning at matched count",
+   "success-conditioned usage count scoring",
+   "nested-k position contrast as free estimator"
+  ],
+  "methods": [
+   "Data Shapley Data Banzhaf Source Attribution RAG CUE-R",
+   "ReMe SF-AMS RoMeRL MemQ DIG",
+   "compound estimation binomials Scorio VIGOR"
+  ],
+  "environment": [
+   "ALFWorld expert bank k=3",
+   "Qwen3-32B"
+  ]
+ },
+ "responsible_item_attribution_benchmark": {
+  "agent": [
+   "attributing agent failure to retrieved memory item counterfactual intervention ALFWorld",
+   "self-reported memory use faithfulness versus leave-one-out re-run",
+   "seed-replicated leave-one-out attribution retrieved items multi-step agent"
+  ],
+  "mechanism_home": [
+   "counterfactual document removal attribution stochastic evaluation replication noise",
+   "self-explanation faithfulness versus counterfactual feature ablation",
+   "leave-one-out versus Shapley attribution disagreement redundant features"
+  ],
+  "adjacent": [
+   "self-explanations are unfaithful to counterfactual feature importance",
+   "redundant features hide leave-one-out attribution",
+   "single-run evaluation noise makes attribution unreliable"
+  ],
+  "baseline": [
+   "single-seed leave-one-out removal",
+   "position rank prior top-ranked document blamed",
+   "LLM self-report of which context passage was used"
+  ],
+  "methods": [
+   "CUE-R",
+   "Shapley source attribution RAG",
+   "CausalFlow",
+   "A2P",
+   "ErrorProbe",
+   "CC-SHAP",
+   "compliance trap",
+   "MemoryArena",
+   "MemoryAgentBench"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "Evo-Memory",
+   "MemoryArena",
+   "MemoryAgentBench",
+   "MINTEval",
+   "Memora"
+  ]
+ },
+ "surrogate_endpoints_for_item_credit": {
+  "agent": [
+   "surrogate process endpoints per-item leave-one-out memory value variance reduction",
+   "goal-condition progress steps-to-success as proxy for retrieved item credit",
+   "teacher-forced log-probability confidence gain versus counterfactual item removal"
+  ],
+  "mechanism_home": [
+   "surrogate endpoint validation bias variance reduction trials",
+   "control variates variance reduction binary outcome evaluation",
+   "process reward versus outcome reward correlation bias"
+  ],
+  "adjacent": [
+   "process reward models misaligned with final outcome correctness",
+   "surrogate endpoint fails to predict true endpoint treatment effect",
+   "early stopping evaluation predicting outcomes from intermediate behaviour"
+  ],
+  "baseline": [
+   "success-only leave-one-out with more seeds",
+   "early-halt re-runs scored by progress",
+   "generation confidence gain document scoring"
+  ],
+  "methods": [
+   "DIG",
+   "MERIT",
+   "SLATE",
+   "AttriMem",
+   "ProgRM",
+   "Progress Advantage",
+   "EarlyEval",
+   "CUE-R",
+   "Shapley source attribution RAG"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "PDDL goal predicates"
+  ]
+ },
+ "pairwise_removal_interaction_audit": {
+  "agent": [
+   "pairwise removal interaction retrieved memory items leave-one-out versus Shapley multi-step agent",
+   "non-additive credit co-retrieved items ALFWorld manufactured sets",
+   "seeds needed for stable removal sign retrieved set"
+  ],
+  "mechanism_home": [
+   "Shapley interaction index redundancy complementarity synergy attribution",
+   "leave-one-out misranks features under redundancy and masking",
+   "non-additivity of ablation effects stochastic evaluation noise"
+  ],
+  "adjacent": [
+   "submodularity violations among scaffold components factorial ablation",
+   "multi-hop evidence interaction non-additive removal effects",
+   "redundant documents zero marginal removal effect"
+  ],
+  "baseline": [
+   "single leave-one-out removal score",
+   "additive model predicting joint removal from singles",
+   "confidence-gain single-item proxy"
+  ],
+  "methods": [
+   "CUE-R",
+   "Shapley source attribution RAG",
+   "DG-Mem",
+   "RoMeRL",
+   "MemQ",
+   "compliance trap",
+   "shapiq",
+   "joint Shapley",
+   "DIG"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "vLLM",
+   "A100"
+  ]
+ },
+ "memory_failure_blame_item_vs_set": {
+  "agent": [
+   "memory-harmed games culprit item removal restores success ALFWorld",
+   "single culprit versus set-caused failure retrieved memory items",
+   "action-copy proxy identifies harmful retrieved item"
+  ],
+  "mechanism_home": [
+   "distracting passages top-ranked harm retrieval-augmented generation causal attribution",
+   "single-cause versus diffuse failure attribution counterfactual removal",
+   "background context dependence of harmful document effect"
+  ],
+  "adjacent": [
+   "distracting top-ranked passages matter more than position in RAG",
+   "blame assignment to agents and steps in multi-agent failures",
+   "similar but wrong demonstrations cause copying errors in in-context learning"
+  ],
+  "baseline": [
+   "position rank blame slot 1",
+   "retrieval score blame",
+   "static procedure instruction in prompt"
+  ],
+  "methods": [
+   "compliance trap",
+   "MemAudit",
+   "Who&When",
+   "FALAT",
+   "A2P",
+   "TraceElephant",
+   "conformal error attribution",
+   "DIG",
+   "MINTEval",
+   "Memora",
+   "MemoryAgentBench"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "A100"
+  ]
+ },
+ "slot_vs_item_credit_permutation": {
+  "agent": [
+   "position credit versus content credit retrieved memory permutation ALFWorld",
+   "primacy premium retrieved experience order multi-step agent",
+   "nested-k per-position credit confounds slot and item"
+  ],
+  "mechanism_home": [
+   "demonstration order sensitivity in-context learning permutation",
+   "primacy effect context position long-context lost in the middle",
+   "permutation invariance violations order-induced errors prompts"
+  ],
+  "adjacent": [
+   "few-shot demonstration order changes accuracy drastically",
+   "distracting top-ranked passages matter more than position",
+   "option order primacy bias in multiple-choice question answering"
+  ],
+  "baseline": [
+   "random ordering versus retrieval-score ordering",
+   "static procedure instruction in prompt",
+   "single leave-one-out ignoring order"
+  ],
+  "methods": [
+   "lost in the middle",
+   "PICASO",
+   "compliance trap",
+   "DIG",
+   "CUE-R",
+   "pairwise audit CONFLICT class"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "A100",
+   "k-sweep logs"
+  ]
+ }
+}
