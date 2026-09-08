@@ -1,0 +1,477 @@
+{
+ "compile_the_statistics_not_the_trajectory": {
+  "agent": [
+   "compiled cheatsheet object location statistics beats retrieved trajectories ALFWorld",
+   "experience bank aggregate statistics versus top-k trajectory retrieval matched tokens",
+   "rule-compiled cross-episode statistics static prompt versus raw retrieval agent memory"
+  ],
+  "mechanism_home": [
+   "object receptacle location priors population frequency object search",
+   "aggregated frequency statistics versus exemplars in-context learning sample size scaling",
+   "semantic object placement priors household environments"
+  ],
+  "adjacent": [
+   "summary statistics beat raw examples in-context learning",
+   "few-shot exemplar content matters less than format in-context",
+   "commonsense object location priors improve embodied object search"
+  ],
+  "baseline": [
+   "static procedure playbook prompt",
+   "LLM-written object location prior table without experience",
+   "raw whole bank in context"
+  ],
+  "methods": [
+   "Dynamic Cheatsheet",
+   "ICAL",
+   "SkillEvolBench",
+   "strategy graphs verifier-promoted skill graphs PerSim SymSearch"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B"
+  ]
+ },
+ "aggregate_or_comply": {
+  "agent": [
+   "compiled playbook versus top-k retrieval versus whole-bank context contaminated experience bank",
+   "retrieved memory compliance wrong-procedure items dose-response agent success",
+   "memory poisoning contamination rate compiled versus retrieved agent memory"
+  ],
+  "mechanism_home": [
+   "in-context demonstrations label noise robustness minority contamination",
+   "phase transition poisoning ratio threshold aggregation defense",
+   "majority voting versus compliance conflicting instructions in-context"
+  ],
+  "adjacent": [
+   "label correctness barely matters in in-context demonstrations",
+   "data poisoning phase transition at poisoning ratio",
+   "LLMs follow conflicting context over parametric knowledge"
+  ],
+  "baseline": [
+   "consensus-based validation of memory items",
+   "temporal validity filter for retrieval",
+   "fixed exemplar set static prompt"
+  ],
+  "methods": [
+   "compliance trap",
+   "MemoryGraft PoisonedEvolution A-MemGuard",
+   "MemAPO",
+   "Run-Off Election"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B"
+  ]
+ },
+ "bindings_need_a_query_only_when_untestable": {
+  "agent": [
+   "scene-keyed retrieval versus compiled table instance-specific bindings ALFWorld",
+   "retrieval residual over compiled artifact hidden appliance binding feedback regime",
+   "agent memory query necessity run-time testable bindings"
+  ],
+  "mechanism_home": [
+   "silent failure versus informative feedback trial-and-error exploration hidden state",
+   "partially observable hidden environment parameters exploration versus lookup table",
+   "run-time testing versus stored instance-specific knowledge"
+  ],
+  "adjacent": [
+   "agents commit too soon premature commitment silent failures",
+   "environment feedback enables in-context exploration hidden dynamics",
+   "task recognition versus task learning in-context demonstrations"
+  ],
+  "baseline": [
+   "static rule try then switch if nothing happens",
+   "compiled per-scene lookup table keyed on observation",
+   "goal-keyed retrieval k=3"
+  ],
+  "methods": [
+   "SGR-Bench",
+   "Mem2ActBench SWE-ContextBench",
+   "Agent Workflow Memory",
+   "ICAL"
+  ],
+  "environment": [
+   "ALFWorld",
+   "TextWorld"
+  ]
+ },
+ "relocated_bindings_demand": {
+  "agent": [
+   "scene-keyed experience retrieval residual over compiled procedure relocated objects ALFWorld",
+   "binding demand and supply retrieval versus static prompt matched tokens",
+   "same-scene item location retrieval versus compiled location table"
+  ],
+  "mechanism_home": [
+   "object search off-canonical placement semantic priors fail search cost",
+   "instance-specific state knowledge versus commonsense priors under step budget",
+   "relatedness of examples manipulated versus observed transfer"
+  ],
+  "adjacent": [
+   "semantic priors hurt object search when objects are misplaced",
+   "retrieved examples help only when correctly selected",
+   "state-grounded dynamic retrieval web agents"
+  ],
+  "baseline": [
+   "type-conditioned fixed exemplars",
+   "compiled scene-object location table",
+   "whole bank in context"
+  ],
+  "methods": [
+   "RAP retrieval-augmented planning",
+   "VTM-Nav",
+   "SWE-ContextBench SGR-Bench",
+   "compliance trap"
+  ],
+  "environment": [
+   "ALFWorld",
+   "WebShop",
+   "PDDL expert"
+  ]
+ },
+ "protocol_bindings_procedure_count": {
+  "agent": [
+   "retrieval residual over cached type-agnostic prompt routing residual procedure count ALFWorld",
+   "in-context selection among many procedures versus retriever selection",
+   "factorized compiled prompt removes retrieval advantage agent memory"
+  ],
+  "mechanism_home": [
+   "in-context routing collapse registry size capability selection",
+   "tool selection many tools in prompt versus tool retrieval task success",
+   "compositional factorized rule set versus enumerated rules prompt length"
+  ],
+  "adjacent": [
+   "in-context routing collapses as registry grows",
+   "lost in the middle long context many options",
+   "factorized representations generalize combinatorially"
+  ],
+  "baseline": [
+   "all procedures in one prompt",
+   "oracle-routed single procedure",
+   "tool retrieval by query"
+  ],
+  "methods": [
+   "Enrich-Retrieve-Rank",
+   "WALL-E 2.0",
+   "Toolshed ScaleMCP Graph RAG-Tool Fusion",
+   "SGR-Bench Mem2ActBench"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B Qwen3-8B"
+  ]
+ },
+ "binding_scope_leakage_ladder": {
+  "agent": [
+   "experience bank retrieval near-duplicate leakage gain ALFWorld",
+   "agent memory gain versus compiled static prompt instance scope",
+   "trajectory retrieval duplicate rate memory benchmark inflation"
+  ],
+  "mechanism_home": [
+   "train-test overlap deduplication score inflation near-duplicate contamination",
+   "in-context example similarity to test input copying versus rule abstraction",
+   "benchmark contamination rephrased samples performance inflation"
+  ],
+  "adjacent": [
+   "retrieval-augmented gains vanish after deduplication of test overlap",
+   "few-shot demonstrations act as rule specification not instance copying",
+   "long-context baselines match memory methods on scoped tasks"
+  ],
+  "baseline": [
+   "compiled task-type instruction sentence in static prompt",
+   "lookup table of scene facts as static prefix",
+   "whole corpus in context without retrieval"
+  ],
+  "methods": [
+   "Evo-Memory ReMe EvoMemBench",
+   "AgentCL SWE-ContextBench compliance trap memory",
+   "ConTAM contamination deduplicating training data"
+  ],
+  "environment": [
+   "ALFWorld PDDL expert trajectories",
+   "TextWorld relocated object placements"
+  ]
+ },
+ "cached_prefix_frontier": {
+  "agent": [
+   "prefix caching cost of retrieved experience versus static prompt agent",
+   "whole-bank in-context versus top-k retrieval accuracy GPU cost frontier",
+   "agent memory serving cost matched token budget mis-ranking"
+  ],
+  "mechanism_home": [
+   "prefix caching KV cache reuse throughput distinct prompts serving cost",
+   "long prompt decode cost attention context length GPU seconds",
+   "prompt caching cost model long context versus retrieval"
+  ],
+  "adjacent": [
+   "long-context in-context learning matches retrieval accuracy at higher cost",
+   "KV cache hit rate determines multi-turn serving throughput",
+   "few retrieved shots beat many-shot at lower compute"
+  ],
+  "baseline": [
+   "matched token budget comparison of prompts",
+   "static few-shot exemplar prompt with prefix caching",
+   "full bank in context under prompt caching"
+  ],
+  "methods": [
+   "Mem0 prompt caching cost model long context",
+   "KVFlow AdaptiveScale prefix cache hit rate",
+   "InferScale HYPIC Preping playbook"
+  ],
+  "environment": [
+   "ALFWorld Qwen3-32B vLLM prefix caching",
+   "A100 GPU seconds per episode"
+  ]
+ },
+ "exemplar_lottery": {
+  "agent": [
+   "retrieval gain over fixed exemplar prompt variance across draws agent",
+   "trajectory exemplar selection variance ALFWorld retrieval versus fixed",
+   "experience retrieval selection robustness static prompt distribution"
+  ],
+  "mechanism_home": [
+   "few-shot demonstration selection variance random draws sensitivity",
+   "kNN demonstration retrieval versus best random demonstration set",
+   "prompt sensitivity example choice order variance calibration"
+  ],
+  "adjacent": [
+   "retrieved demonstrations beat random demonstrations on mean not maximum",
+   "prompt optimization over candidate few-shot sets outperforms retrieval",
+   "shorter demonstrations perform better than longer ones"
+  ],
+  "baseline": [
+   "best of several random fixed few-shot prompts on validation",
+   "shortest successful examples per type as fixed prompt",
+   "medoid exemplar selection fixed prompt"
+  ],
+  "methods": [
+   "Traj-Bootstrap self-generated example database",
+   "ICAL insight exemplars calibrate before use",
+   "SkillEvolBench kNN demonstration selection"
+  ],
+  "environment": [
+   "ALFWorld Qwen3-32B expert bank",
+   "valid_seen valid_unseen"
+  ]
+ },
+ "recall_success_dissociation": {
+  "agent": [
+   "retriever recall versus task success dissociation agent experience retrieval",
+   "oracle retriever same-task trajectory success residual over static prompt",
+   "duplicate availability in experience bank WebShop ALFWorld"
+  ],
+  "mechanism_home": [
+   "retrieval metric correlation with downstream task quality retrieval-augmented generation",
+   "retriever contribution isolation reader end-task performance",
+   "information recoverability by exploration versus provided context"
+  ],
+  "adjacent": [
+   "retrieval quality metrics weakly predict end-task accuracy in RAG",
+   "wrong retrieved context is adopted over correct exploration",
+   "correctly selected related examples help mis-selected examples harm"
+  ],
+  "baseline": [
+   "fixed few-shot exemplars token matched",
+   "compiled procedure instruction prompt",
+   "random retrieval control"
+  ],
+  "methods": [
+   "SWE-ContextBench compliance trap memory",
+   "ExpeL Reflexion Traj-Bootstrap",
+   "LoCoMo retrieval versus write strategy"
+  ],
+  "environment": [
+   "ALFWorld WebShop Qwen3-32B",
+   "BM25 retrieval k=3"
+  ]
+ },
+ "whole_bank_confusability_ladder": {
+  "agent": [
+   "whole bank in context versus top-k trajectory retrieval bank size crossover",
+   "near-miss trajectories confusable exemplars agent memory",
+   "long-context experience prefix versus retrieval weaker reader"
+  ],
+  "mechanism_home": [
+   "many-shot in-context learning distractor examples confusable labels",
+   "long-context in-context learning attention to similar examples selection",
+   "in-context routing collapse with option count retrieve then rank"
+  ],
+  "adjacent": [
+   "long-context ICL matches retrieval as shots grow",
+   "few well-chosen examples beat many examples",
+   "effective context length shorter than advertised distractors"
+  ],
+  "baseline": [
+   "top-k BM25 retrieval of exemplars",
+   "fixed random subset of examples at matched budget",
+   "type-conditioned fixed exemplars"
+  ],
+  "methods": [
+   "Enrich-Retrieve-Rank capability registry",
+   "MANYICLBENCH many-shot in-context learning Bertsch",
+   "Mem0 long context SkillEvolBench compliance trap"
+  ],
+  "environment": [
+   "ALFWorld Qwen3-32B Qwen3-8B",
+   "TextWorld cooking games vLLM prefix caching"
+  ]
+ },
+ "many_shot_averages_detours": {
+  "agent": [
+   "whole-bank in-context trajectories vs top-k retrieval detour noise self-generated experience ALFWorld",
+   "many-shot trajectory exemplars robust to noisy on-policy experience bank",
+   "top-k retrieved trajectories imitate detours step-limit failures"
+  ],
+  "mechanism_home": [
+   "many-shot in-context learning robustness to noisy demonstrations",
+   "in-context learning consensus across many demonstrations versus nearest-example copying",
+   "imitation learning from suboptimal demonstrations compounding errors"
+  ],
+  "adjacent": [
+   "long-context ICL gains come from attention to similar examples not cumulative learning",
+   "in-context learning with noisy labels many-shot robustness",
+   "noise-robust behavioral cloning from suboptimal demonstrations"
+  ],
+  "baseline": [
+   "prune detours from demonstrations before use",
+   "fixed type-conditioned exemplar prompt",
+   "random selection of k demonstrations at matched length"
+  ],
+  "methods": [
+   "ExpeL",
+   "MemoryGraft",
+   "Reinforced ICL"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "Qwen3-8B"
+  ]
+ },
+ "near_duplicate_needle_crossover": {
+  "agent": [
+   "trajectory retrieval bank size near-duplicate exemplars WebShop ALFWorld",
+   "retrieval versus whole-bank in-context experience haystack size",
+   "near-duplicate leakage in agent experience retrieval"
+  ],
+  "mechanism_home": [
+   "in-context lookup degrades with context length needle in haystack",
+   "near-duplicate test-train overlap inflates retrieval gains",
+   "corpus size scaling retrieval recall near-duplicates"
+  ],
+  "adjacent": [
+   "random many-shot converges to retrieval with long context",
+   "lost in the middle long-context lookup degradation with distractors",
+   "near-duplicate train-test contamination inflates few-shot gains"
+  ],
+  "baseline": [
+   "fixed two random exemplars cached prompt",
+   "compiled procedure paragraph static prompt",
+   "deduplicate bank before retrieval"
+  ],
+  "methods": [
+   "Synapse",
+   "Agent Workflow Memory",
+   "ExpeL"
+  ],
+  "environment": [
+   "WebShop",
+   "ALFWorld",
+   "Qwen3-32B"
+  ]
+ },
+ "state_key_pays_only_for_planted_bindings": {
+  "agent": [
+   "observation-keyed versus goal-keyed experience retrieval ALFWorld scene bindings",
+   "state-conditioned trajectory retrieval versus static prompt object location",
+   "retrieval residual over best static prompt within-type variance"
+  ],
+  "mechanism_home": [
+   "query key conditional variance what the query can index retrieval value",
+   "state-conditioned versus instruction-conditioned demonstration selection",
+   "long-context table lookup versus single-row retrieval"
+  ],
+  "adjacent": [
+   "retrieval helps only when the query carries information absent from the prompt",
+   "long-context in-context lookup matches retrieval",
+   "incorrect context misleads more than correct context helps knowledge conflict"
+  ],
+  "baseline": [
+   "type-conditioned fixed exemplar prompt",
+   "whole binding table in cached static prompt",
+   "goal-keyed top-k retrieval"
+  ],
+  "methods": [
+   "Synapse",
+   "FocusMem",
+   "RAP"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "bge-m3"
+  ]
+ },
+ "retrieval_timing_is_budgeting": {
+  "agent": [
+   "when to retrieve experience memory stall-triggered retrieval oracle bound ALFWorld",
+   "failure-keyed retrieval at stall recovery segments compiled rulebook",
+   "adaptive retrieval timing agent memory always-retrieve baseline"
+  ],
+  "mechanism_home": [
+   "active retrieval when to retrieve oracle upper bound",
+   "adaptive retrieval marginal correctness over no-retrieval under budget",
+   "uncertainty-triggered retrieval versus always-retrieve"
+  ],
+  "adjacent": [
+   "adaptive RAG rarely beats always-retrieve oracle decision bound",
+   "FLARE active retrieval uncertainty trigger gains",
+   "error recovery rules in system prompt match self-reflection"
+  ],
+  "baseline": [
+   "always-retrieve at episode start",
+   "static recovery rulebook in cached prompt",
+   "fixed-step retrieval schedule"
+  ],
+  "methods": [
+   "FLARE",
+   "Adaptive-RAG",
+   "Reflexion"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B"
+  ]
+ },
+ "rank_flat_retriever_is_a_type_classifier": {
+  "agent": [
+   "experience retrieval similarity rank within task type ALFWorld success",
+   "near-duplicate removal leave-out retrieval trajectory bank",
+   "wrong-type retrieved memory harm similarity framing warning"
+  ],
+  "mechanism_home": [
+   "kNN demonstration selection versus random within-class rank ladder in-context learning",
+   "demonstration similarity rank sensitivity in-context learning",
+   "misleading demonstrations harm scaled by similarity in-context learning framing"
+  ],
+  "adjacent": [
+   "ranking-based demonstration selection not uniformly superior to random",
+   "label-space coverage matters more than instance similarity in demonstration selection",
+   "in-context demonstrations override explicit instructions"
+  ],
+  "baseline": [
+   "type-conditioned fixed exemplars static prompt",
+   "random within-type demonstrations at matched length",
+   "per-type cached sub-bank prompt"
+  ],
+  "methods": [
+   "KATE",
+   "EPR",
+   "ExpeL"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "bge-m3"
+  ]
+ }
+}
