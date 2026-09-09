@@ -1,0 +1,10 @@
+{
+ "id": "entail__batch03",
+ "kind": "entail",
+ "name": "batch03",
+ "prompt_file": "runs_ideate2/gen_xfer/entail_r2/jobs/entail__batch03.prompt.md",
+ "tools": [],
+ "model": "opus",
+ "expects": "json",
+ "status": "pending"
+}
