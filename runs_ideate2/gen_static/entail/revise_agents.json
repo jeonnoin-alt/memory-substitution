@@ -1,1 +1,8 @@
-{"aggregate_or_comply":"ab7bce618f95d8abd"}
+{
+ "aggregate_or_comply": "ab7bce618f95d8abd",
+ "binding_scope_leakage_ladder": "af9462f559c88a1d2",
+ "bindings_need_a_query_only_when_untestable": "adfdc0499f3dd990c",
+ "compile_the_statistics_not_the_trajectory": "a65fa4d941cdaff41",
+ "many_shot_averages_detours": "ab9a1d26d07dada72",
+ "near_duplicate_needle_crossover": "ae7f27bb4d76c396e"
+}
