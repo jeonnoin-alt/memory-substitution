@@ -6,5 +6,6 @@
  "many_shot_averages_detours": "ab9a1d26d07dada72",
  "near_duplicate_needle_crossover": "ae7f27bb4d76c396e",
  "recall_success_dissociation": "addf6bd040d4075ef",
- "retrieval_timing_is_budgeting": "a698dcddd0f3885e8"
+ "retrieval_timing_is_budgeting": "a698dcddd0f3885e8",
+ "whole_bank_confusability_ladder": "a5b962c9d689abcec"
 }
