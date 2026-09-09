@@ -55,3 +55,32 @@ Use: the brief's "both pools" rule (expert = off-policy text, self-rollout = on-
 type-skewed toward what the k=0 agent already solves, which several judges flagged as a selection confound for dose claims.
 Final (2026-09-08): all 3,553 train games, 0 errors, 1,892 won (0.533); success by type pick_and_place 0.81, look_at_in_light 0.76,
 pick_two 0.51, cool 0.41, clean 0.40, heat 0.26. The pool now covers all six types (1,892 on-policy successes vs 1,465 expert items).
+
+# Measurement C (static procedure prompts vs retrieval), finished 2026-09-09
+
+`code/run_static.py` → `runs/static/static_c.jsonl`; 5 arms × 274 games × 2 seeds (11, 23) = 2,740 episodes, 0 errors; same
+games and seeds as `runs/sweep/k_sweep_final.jsonl`, so every contrast below is paired per game (274 games, seeds averaged),
+95 % CI from a 2,000-draw game bootstrap. Arms: `static3` (3 fixed expert exemplars of the game's type, ~430 tokens, cached),
+`static1`, `instr` (one procedure sentence for the type), `instr_all` (all six procedures, type-agnostic), `blind1` (one
+wrong-type exemplar, length placebo). Success: static3 0.666, instr_all 0.637, static1 0.615, instr 0.615, blind1 0.513
+(k-sweep: k0 0.542, k1 0.71, k3 0.838, k7 0.86).
+
+| paired contrast | net | 95 % CI |
+|---|---|---|
+| static3 − k0 | +12.4 | [+7.7, +17.3] |
+| k3 − static3 (**retrieval residual over the best static arm**) | +17.2 | [+11.9, +22.4] |
+| k7 − static3 | +19.5 | [+14.4, +24.8] |
+| k1 − static3 | +9.1 | [+4.0, +14.1] |
+| instr_all − k0 | +9.5 | [+5.3, +13.9] |
+| k3 − instr_all | +20.1 | [+14.8, +25.4] |
+| static3 − blind1 | +15.3 | [+10.2, +20.4] |
+
+By split, k3 − static3: seen +14.3 [+6.8, +21.8], unseen +20.1 [+13.1, +27.6]. By type, k3 − static3: clean +26.7 [+17.2, +36.2],
+heat +25.6 [+12.8, +39.7], cool +19.6 [+4.3, +34.8], pick_and_place +11.9 [+3.4, +21.2], pick_two +9.8 [−3.7, +23.2],
+look_at +4.8 [−11.3, +21.0]; static3 − k0 by type: clean +28.4, cool +19.6, heat +15.4, pick_two +8.5, pick_and_place +3.4, look_at −9.7.
+
+Reading: the best fixed prompt recovers ~42 % of the k=3 gain (12.4 of 29.6) and retrieval keeps a residual of ~17 net over it,
+larger on unseen than on seen and carried by the three procedure types. So the retrieval residual over the best static arm at the
+natural bank is **not** inside the ±8 floor; proposals that predicted a null residual there (e.g. `rank_flat` P1, `state_key` P1,
+the `exemplar_lottery` premise) start from a measured +17.2. The cheap type-agnostic prompt (`instr_all`) is +9.5 over k0 and
+−20.1 under k3; the wrong-type placebo is −3 under k0 (harm from a mismatched exemplar is real but small).

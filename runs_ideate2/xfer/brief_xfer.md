@@ -41,6 +41,8 @@ This track asks for the sharp claim about who can read whose experience, and at 
 - **Carried over:** noise floor of a paired 274-game × 2-seed cell ≈ ±8 net points; the 51 archived ideas (appendix), three of
   which sit on this topic.
 
+**Measurement C, finished 2026-09-09 (paired per game with the k-sweep, 274 games × 2 seeds):** the best static arm is `static3` (3 fixed type-conditioned expert exemplars, ~430 tokens, cached). static3 − k0 = **+12.4 net** [+7.7, +17.3]; k3 − static3 = **+17.2 net** [+11.9, +22.4] (seen +14.3, unseen +20.1; clean +26.7 / heat +25.6 / cool +19.6, pick types +10 to +12, look-at +4.8 with CI including 0); k7 − static3 = +19.5; k1 − static3 = +9.1. The type-agnostic six-procedure prompt (`instr_all`) is +9.5 over k0 and −20.1 under k3; the wrong-type placebo (`blind1`) is −3 under k0. Binding: any prediction about the retrieval residual over the best static arm at the natural bank must be stated against this measured +17.2 (CI half-width ≈ ±5), not against an assumed null; a claim that the residual vanishes must name the manipulation that removes it. Full table in `runs/STEP0_RESULTS.md`.
+
 ## What the Stage-0 scan says, by axis (gap ids as in `digest.md`)
 1. **Producer–consumer mismatch** (20 cards). Teacher→student memory without training gives +27 pp on AppWorld for 4B–8B
    students with a GPT-5-mini teacher, "teacher effectiveness depends on both teacher capability and student compatibility"
@@ -96,6 +98,8 @@ This track asks for the sharp claim about who can read whose experience, and at 
   transfer, data poisoning, imitation from suboptimal demonstrations, ensemble diversity), no agent/memory/benchmark words.
 - **Power and budget:** paired cells, ±8 net at 274 × 2 seeds; margins as fractions of the Gate-0 effect; cell-by-cell episode
   counts; both A100s busy (one serves a reader while the other serves a writer or trains); days, not weeks.
+
+- **Measurement C, finished 2026-09-09 (paired per game with the k-sweep, 274 games × 2 seeds):** the best static arm is `static3` (3 fixed type-conditioned expert exemplars, ~430 tokens, cached). static3 − k0 = **+12.4 net** [+7.7, +17.3]; k3 − static3 = **+17.2 net** [+11.9, +22.4] (seen +14.3, unseen +20.1; clean +26.7 / heat +25.6 / cool +19.6, pick types +10 to +12, look-at +4.8 with CI including 0); k7 − static3 = +19.5; k1 − static3 = +9.1. The type-agnostic six-procedure prompt (`instr_all`) is +9.5 over k0 and −20.1 under k3; the wrong-type placebo (`blind1`) is −3 under k0. **Binding:** any prediction about the retrieval residual over the best static arm at the natural bank must be stated against this measured +17.2 (CI half-width ≈ ±5), not against an assumed null; a claim that the residual vanishes must name the manipulation that removes it. Full table in `runs/STEP0_RESULTS.md`.
 
 ## Open questions this track should attack (pick one and make it sharp)
 - **Q1 The writer × reader matrix and its self-pool control (G1, G2, G7, G21, G23).** Three writers (expert, Qwen3-32B self,

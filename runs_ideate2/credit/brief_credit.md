@@ -38,6 +38,8 @@ estimated at a cost the program can pay, and predict where it fails.
 - **Cost:** ~20 episodes/min on two replicas; a leave-one-out re-run of one episode costs one episode; Shapley over a k=3 set
   costs 7 re-runs per episode.
 
+**Measurement C, finished 2026-09-09 (paired per game with the k-sweep, 274 games × 2 seeds):** the best static arm is `static3` (3 fixed type-conditioned expert exemplars, ~430 tokens, cached). static3 − k0 = **+12.4 net** [+7.7, +17.3]; k3 − static3 = **+17.2 net** [+11.9, +22.4] (seen +14.3, unseen +20.1; clean +26.7 / heat +25.6 / cool +19.6, pick types +10 to +12, look-at +4.8 with CI including 0); k7 − static3 = +19.5; k1 − static3 = +9.1. The type-agnostic six-procedure prompt (`instr_all`) is +9.5 over k0 and −20.1 under k3; the wrong-type placebo (`blind1`) is −3 under k0. Binding: any prediction about the retrieval residual over the best static arm at the natural bank must be stated against this measured +17.2 (CI half-width ≈ ±5), not against an assumed null; a claim that the residual vanishes must name the manipulation that removes it. Full table in `runs/STEP0_RESULTS.md`.
+
 ## What the Stage-0 scan says, by axis (gap ids as in `digest.md`)
 1. **Counterfactual attribution** (12 cards). Intervention-based per-item measurement exists for single-shot RAG (CUE-R
    REMOVE/REPLACE/DUPLICATE 2604.05467; document-level Shapley 2507.04480; DIG confidence gain 2509.12765) and at the
@@ -85,6 +87,8 @@ estimated at a cost the program can pay, and predict where it fails.
 - **Home-vocabulary search**: data valuation, influence functions, Shapley attribution, credit assignment in RL, replay
   prioritization, off-policy evaluation; one query with no agent/memory/benchmark words.
 - **Power and budget**: paired cells; per-class cells sized to ±5 net; re-run budgets stated cell by cell; both GPUs busy.
+
+- **Measurement C, finished 2026-09-09 (paired per game with the k-sweep, 274 games × 2 seeds):** the best static arm is `static3` (3 fixed type-conditioned expert exemplars, ~430 tokens, cached). static3 − k0 = **+12.4 net** [+7.7, +17.3]; k3 − static3 = **+17.2 net** [+11.9, +22.4] (seen +14.3, unseen +20.1; clean +26.7 / heat +25.6 / cool +19.6, pick types +10 to +12, look-at +4.8 with CI including 0); k7 − static3 = +19.5; k1 − static3 = +9.1. The type-agnostic six-procedure prompt (`instr_all`) is +9.5 over k0 and −20.1 under k3; the wrong-type placebo (`blind1`) is −3 under k0. **Binding:** any prediction about the retrieval residual over the best static arm at the natural bank must be stated against this measured +17.2 (CI half-width ≈ ±5), not against an assumed null; a claim that the residual vanishes must name the manipulation that removes it. Full table in `runs/STEP0_RESULTS.md`.
 
 ## Open questions this track should attack (pick one and make it sharp)
 - **Q1 Do learned utilities track counterfactual item value (G6, G11, G22)?** Implement one published scorer per family

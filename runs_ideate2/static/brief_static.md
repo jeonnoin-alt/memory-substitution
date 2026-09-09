@@ -41,6 +41,8 @@ distribution makes a query necessary, and how to tell before building a retrieve
 - **Cost:** a static prefix is prefix-cached by vLLM; retrieval injects a different prefix per episode, so the token cost
   difference is measurable on this node (prefill tokens per episode are logged).
 
+**Measurement C, finished 2026-09-09 (paired per game with the k-sweep, 274 games × 2 seeds):** the best static arm is `static3` (3 fixed type-conditioned expert exemplars, ~430 tokens, cached). static3 − k0 = **+12.4 net** [+7.7, +17.3]; k3 − static3 = **+17.2 net** [+11.9, +22.4] (seen +14.3, unseen +20.1; clean +26.7 / heat +25.6 / cool +19.6, pick types +10 to +12, look-at +4.8 with CI including 0); k7 − static3 = +19.5; k1 − static3 = +9.1. The type-agnostic six-procedure prompt (`instr_all`) is +9.5 over k0 and −20.1 under k3; the wrong-type placebo (`blind1`) is −3 under k0. Binding: any prediction about the retrieval residual over the best static arm at the natural bank must be stated against this measured +17.2 (CI half-width ≈ ±5), not against an assumed null; a claim that the residual vanishes must name the manipulation that removes it. Full table in `runs/STEP0_RESULTS.md`.
+
 ## What the Stage-0 scan says, by axis (gap ids as in `digest.md`)
 1. **Compiled and static alternatives** (13 cards). Strategy graphs distilled from trajectories (2511.07800), skill graphs
    promoted by verifier replay (2512.23760), tool-graph memory (2604.07791), tutorials from screen recordings (2606.03951),
@@ -93,6 +95,8 @@ distribution makes a query necessary, and how to tell before building a retrieve
 - **Home-vocabulary search**: in-context example selection, demonstration retrieval vs random demonstrations, few-shot
   saturation, long-context vs RAG, prompt compression; one query without agent/memory/benchmark words.
 - **Must pass the four archived ideas** on this question (appendix A) by manipulating what they only observed.
+
+- **Measurement C, finished 2026-09-09 (paired per game with the k-sweep, 274 games × 2 seeds):** the best static arm is `static3` (3 fixed type-conditioned expert exemplars, ~430 tokens, cached). static3 − k0 = **+12.4 net** [+7.7, +17.3]; k3 − static3 = **+17.2 net** [+11.9, +22.4] (seen +14.3, unseen +20.1; clean +26.7 / heat +25.6 / cool +19.6, pick types +10 to +12, look-at +4.8 with CI including 0); k7 − static3 = +19.5; k1 − static3 = +9.1. The type-agnostic six-procedure prompt (`instr_all`) is +9.5 over k0 and −20.1 under k3; the wrong-type placebo (`blind1`) is −3 under k0. **Binding:** any prediction about the retrieval residual over the best static arm at the natural bank must be stated against this measured +17.2 (CI half-width ≈ ±5), not against an assumed null; a claim that the residual vanishes must name the manipulation that removes it. Full table in `runs/STEP0_RESULTS.md`.
 
 ## Open questions this track should attack (pick one and make it sharp)
 - **Q1 What Measurement C leaves: the residual of retrieval over the best static prompt (G2, G6, G11, G22).** Per type, is
