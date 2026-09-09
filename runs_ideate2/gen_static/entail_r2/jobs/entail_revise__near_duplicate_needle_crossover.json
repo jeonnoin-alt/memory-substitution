@@ -1,0 +1,12 @@
+{
+ "id": "entail_revise__near_duplicate_needle_crossover",
+ "kind": "entail_revise",
+ "name": "near_duplicate_needle_crossover",
+ "prompt_file": "runs_ideate2/gen_static/entail_r2/jobs/entail_revise__near_duplicate_needle_crossover.prompt.md",
+ "tools": [
+  "Bash"
+ ],
+ "model": "fable",
+ "expects": "json",
+ "status": "pending"
+}
