@@ -1,0 +1,30 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7693.98it/s]
+hole_backfill_static_counterfactual: 8 queries, 82 candidates ({'mechanism_home': 17, 'agent': 24, 'adjacent': 18, 'baseline': 18, 'methods': 8}), top sim 0.489
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7976.86it/s]
+masked_harm_pairwise_removal: 8 queries, 62 candidates ({'mechanism_home': 18, 'agent': 23, 'adjacent': 9, 'baseline': 8, 'methods': 8}), top sim 0.51
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6895.22it/s]
+item_credit_variance_decomposition: 8 queries, 75 candidates ({'mechanism_home': 17, 'agent': 22, 'adjacent': 18, 'baseline': 16, 'methods': 8}), top sim 0.57
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7364.66it/s]
+item_value_consumer_decomposition: 8 queries, 83 candidates ({'mechanism_home': 30, 'agent': 21, 'adjacent': 8, 'baseline': 18, 'methods': 8}), top sim 0.501
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 8095.23it/s]
+stale_item_score_lag_after_rule_change: 8 queries, 74 candidates ({'mechanism_home': 16, 'agent': 19, 'adjacent': 18, 'baseline': 18, 'methods': 8}), top sim 0.525
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6528.23it/s]
+stage_conditional_item_value: 8 queries, 69 candidates ({'mechanism_home': 25, 'agent': 21, 'adjacent': 8, 'baseline': 9, 'methods': 8}), top sim 0.525
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6504.93it/s]
+guilt_by_coretrieval: 8 queries, 63 candidates ({'mechanism_home': 22, 'agent': 17, 'adjacent': 11, 'baseline': 8, 'methods': 8}), top sim 0.582
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7557.78it/s]
+admission_pruning_audit_random_holdout: 8 queries, 57 candidates ({'mechanism_home': 27, 'agent': 16, 'adjacent': 8, 'baseline': 0, 'methods': 8}), top sim 0.589
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7362.06it/s]
+utility_half_life_consumer_swap: 8 queries, 83 candidates ({'mechanism_home': 28, 'agent': 22, 'adjacent': 8, 'baseline': 18, 'methods': 8}), top sim 0.455
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7633.89it/s]
+per_item_loo_reliability_and_winners_curse: 8 queries, 71 candidates ({'mechanism_home': 21, 'agent': 16, 'adjacent': 18, 'baseline': 8, 'methods': 8}), top sim 0.468
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7524.20it/s]
+responsible_item_attribution_benchmark: 8 queries, 73 candidates ({'mechanism_home': 25, 'agent': 20, 'adjacent': 8, 'baseline': 18, 'methods': 8}), top sim 0.531
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 8057.64it/s]
+surrogate_endpoints_for_item_credit: 8 queries, 78 candidates ({'mechanism_home': 36, 'agent': 18, 'adjacent': 8, 'baseline': 14, 'methods': 3}), top sim 0.549
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7519.59it/s]
+pairwise_removal_interaction_audit: 8 queries, 70 candidates ({'mechanism_home': 24, 'agent': 16, 'adjacent': 10, 'baseline': 17, 'methods': 8}), top sim 0.53
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5680.21it/s]
+memory_failure_blame_item_vs_set: 8 queries, 47 candidates ({'mechanism_home': 18, 'agent': 18, 'adjacent': 8, 'baseline': 1, 'methods': 8}), top sim 0.561
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7333.34it/s]
+slot_vs_item_credit_permutation: 8 queries, 75 candidates ({'mechanism_home': 27, 'agent': 17, 'adjacent': 8, 'baseline': 18, 'methods': 8}), top sim 0.491

@@ -1,0 +1,224 @@
+{
+ "name": "item_value_consumer_decomposition",
+ "keys": {
+  "agent": [
+   "retrieved item counterfactual value transfer across executor models agent memory",
+   "model-agnostic experience bank per-item utility consumer-specific residual",
+   "value-guided memory item selection under a different reader LLM"
+  ],
+  "mechanism_home": [
+   "data valuation model dependence transfer of data values across models",
+   "proxy model transfer of data curation decisions unreliable",
+   "retrieval-augmented generation document utility depends on generator model"
+  ],
+  "adjacent": [
+   "data selection with small proxy model does not transfer to large model",
+   "influence scores model-specific low cross-model rank correlation",
+   "in-context example utility model-dependent selection transfer"
+  ],
+  "baseline": [
+   "static instruction stating the procedure",
+   "similarity top-k retrieval",
+   "random selection from candidates"
+  ],
+  "methods": [
+   "CUE-R",
+   "document Shapley RAG",
+   "DIG confidence gain",
+   "ExpGraph ExpSuite",
+   "ReMe",
+   "CHIME",
+   "Data Shapley",
+   "DataInf",
+   "DataDecide"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-14B",
+   "Qwen3-8B",
+   "Llama-3.1-8B-Instruct",
+   "32B replica"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "data valuation model dependence transfer of data values across models"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "proxy model transfer of data curation decisions unreliable"
+  },
+  {
+   "class": "agent",
+   "query": "retrieved item counterfactual value transfer across executor models agent memory"
+  },
+  {
+   "class": "agent",
+   "query": "model-agnostic experience bank per-item utility consumer-specific residual"
+  },
+  {
+   "class": "adjacent",
+   "query": "data selection with small proxy model does not transfer to large model"
+  },
+  {
+   "class": "baseline",
+   "query": "static instruction stating the procedure"
+  },
+  {
+   "class": "methods",
+   "query": "CUE-R document Shapley RAG DIG confidence gain retrieved item counterfactual value transfer across executor"
+  },
+  {
+   "class": "agent",
+   "query": "retrieved item counterfactual value transfer across executor models agent memory ALFWorld Qwen3-14B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2604.05467",
+   "date": "2026-04-07",
+   "venue": "",
+   "sim": 0.501,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "CUE-R: Beyond the Final Answer in Retrieval-Augmented Generation"
+  },
+  {
+   "id": "arxiv:2608.22856",
+   "date": "2026-08-24",
+   "venue": "",
+   "sim": 0.453,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Same Agent, Different Answers: A Repeat-Aware Audit of Corpus-Induced Answer Churn in Retrieval-Augmented QA"
+  },
+  {
+   "id": "arxiv:2603.29247",
+   "date": "2026-03-31",
+   "venue": "",
+   "sim": 0.452,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MemRerank: Preference Memory for Personalized Product Reranking"
+  },
+  {
+   "id": "arxiv:2211.06800",
+   "date": "2022-11-13",
+   "venue": "Neural Information Processing Systems",
+   "sim": 0.445,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "CS-Shapley: Class-wise Shapley Values for Data Valuation in Classification"
+  },
+  {
+   "id": "arxiv:2605.03534",
+   "date": "2026-07-24",
+   "venue": "",
+   "sim": 0.419,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "SURE-RAG: Sufficiency and Uncertainty-Aware Evidence Verification for Selective Retrieval-Augmented Generation"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.412,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "s2:8f6cfaf9c2d6fbaf890870b4918c65962b8b0a1b",
+   "date": "2025-05-09",
+   "venue": "Journal of economic surveys (Print)",
+   "sim": 0.381,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Enterprise Data Valuation—A Targeted Literature Review"
+  },
+  {
+   "id": "arxiv:2508.10180",
+   "date": "2026-04-25",
+   "venue": "",
+   "sim": 0.361,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "For-Value: Efficient Forward-Only Data Valuation for finetuning LLMs and VLMs"
+  },
+  {
+   "id": "arxiv:2212.11468",
+   "date": "2022-12-22",
+   "venue": "",
+   "sim": 0.356,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "IPProtect: protecting the intellectual property of visual datasets\n  during data valuation"
+  },
+  {
+   "id": "arxiv:2608.27953",
+   "date": "2026-08-28",
+   "venue": "",
+   "sim": 0.345,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Illusion of What If: Evaluating the Breakdown of Counterfactual Reasoning in LLMs"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 30,
+  "agent": 21,
+  "adjacent": 8,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "data valuation model dependence transfer of data values across models 2025 arXiv"
+  },
+  {
+   "query": "proxy model transfer of data curation decisions unreliable 2025 arXiv"
+  }
+ ]
+}

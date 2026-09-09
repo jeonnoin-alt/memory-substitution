@@ -1,0 +1,221 @@
+{
+ "name": "slot_vs_item_credit_permutation",
+ "keys": {
+  "agent": [
+   "position credit versus content credit retrieved memory permutation ALFWorld",
+   "primacy premium retrieved experience order multi-step agent",
+   "nested-k per-position credit confounds slot and item"
+  ],
+  "mechanism_home": [
+   "demonstration order sensitivity in-context learning permutation",
+   "primacy effect context position long-context lost in the middle",
+   "permutation invariance violations order-induced errors prompts"
+  ],
+  "adjacent": [
+   "few-shot demonstration order changes accuracy drastically",
+   "distracting top-ranked passages matter more than position",
+   "option order primacy bias in multiple-choice question answering"
+  ],
+  "baseline": [
+   "random ordering versus retrieval-score ordering",
+   "static procedure instruction in prompt",
+   "single leave-one-out ignoring order"
+  ],
+  "methods": [
+   "lost in the middle",
+   "PICASO",
+   "compliance trap",
+   "DIG",
+   "CUE-R",
+   "pairwise audit CONFLICT class"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "A100",
+   "k-sweep logs"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "demonstration order sensitivity in-context learning permutation"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "primacy effect context position long-context lost in the middle"
+  },
+  {
+   "class": "agent",
+   "query": "position credit versus content credit retrieved memory permutation ALFWorld"
+  },
+  {
+   "class": "agent",
+   "query": "primacy premium retrieved experience order multi-step agent"
+  },
+  {
+   "class": "adjacent",
+   "query": "few-shot demonstration order changes accuracy drastically"
+  },
+  {
+   "class": "baseline",
+   "query": "random ordering versus retrieval-score ordering"
+  },
+  {
+   "class": "methods",
+   "query": "lost in the middle PICASO compliance trap position credit versus content credit retrieved memory permu"
+  },
+  {
+   "class": "agent",
+   "query": "position credit versus content credit retrieved memory permutation ALFWorld ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2505.14432",
+   "date": "2025-05-20",
+   "venue": "",
+   "sim": 0.491,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Rank-K: Test-Time Reasoning for Listwise Reranking"
+  },
+  {
+   "id": "arxiv:2508.15709",
+   "date": "2025-08-21",
+   "venue": "",
+   "sim": 0.488,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Position Bias Mitigates Position Bias:Mitigate Position Bias Through\n  Inter-Position Knowledge Distillation"
+  },
+  {
+   "id": "arxiv:2608.04569",
+   "date": "2026-08-05",
+   "venue": "",
+   "sim": 0.438,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Relevant but Incomplete: Referential Dangling as a Paradigm-Level Failure Mode in Hard Prompt Compression"
+  },
+  {
+   "id": "s2:44481c567a8e49955d4c5e1082b2ad949c0e597b",
+   "date": "2022-04-25",
+   "venue": "Journal of Cognitive Neuroscience",
+   "sim": 0.426,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Neural Patterns in Parietal Cortex and Hippocampus Distinguish Retrieval of Start versus End Positions in Working Memory"
+  },
+  {
+   "id": "s2:c93e22ce1271b4b7bde426bb654fab9b6a5e1bcd",
+   "date": "2026-07-19",
+   "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+   "sim": 0.42,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "OPS: An Order-Preserving Sorting Network for Information Retrieval"
+  },
+  {
+   "id": "s2:c3cde74185032de85b3650cc39fababb3073f2e7",
+   "date": "2020-05-01",
+   "venue": "International Transactions in Operational Research",
+   "sim": 0.404,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "A multistage heuristic for storage and retrieval problems in a warehouse with random storage"
+  },
+  {
+   "id": "arxiv:2405.01117",
+   "date": "2024-05-02",
+   "venue": "",
+   "sim": 0.404,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Faster Learned Sparse Retrieval with Block-Max Pruning"
+  },
+  {
+   "id": "arxiv:2505.15561",
+   "date": "2025-05-21",
+   "venue": "",
+   "sim": 0.393,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "baseline"
+   ],
+   "title": "Do RAG Systems Suffer From Positional Bias?"
+  },
+  {
+   "id": "arxiv:2606.16494",
+   "date": "2026-06-15",
+   "venue": "arXiv.org",
+   "sim": 0.369,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Lost at the End: Primacy Bias in Multimodal Retrieval-Augmented Question Answering"
+  },
+  {
+   "id": "arxiv:2312.06648",
+   "date": "2023-12-11",
+   "venue": "",
+   "sim": 0.362,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Dense X Retrieval: What Retrieval Granularity Should We Use?"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 27,
+  "agent": 17,
+  "adjacent": 8,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "demonstration order sensitivity in-context learning permutation 2025 arXiv"
+  },
+  {
+   "query": "primacy effect context position long-context lost in the middle 2025 arXiv"
+  }
+ ]
+}

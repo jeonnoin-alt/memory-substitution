@@ -1,0 +1,220 @@
+{
+ "name": "shared_blind_spot",
+ "keys": {
+  "agent": [
+   "contaminated experience bank mislabeled failures agent memory poisoning writer identity",
+   "read-time detection of poisoned memory items self-judge versus cross-model judge",
+   "agent memory poisoning harm by writer reader policy proximity"
+  ],
+  "mechanism_home": [
+   "confirmation bias pseudo-labeling self-training cross-model disagreement",
+   "self-evaluation blind spot LLM cannot detect its own errors self-verification",
+   "self-preference bias LLM-as-judge prefers own generations"
+  ],
+  "adjacent": [
+   "LLM judges favor their own outputs self-preference bias",
+   "models cannot self-correct reasoning without external feedback",
+   "cross pseudo-labeling reduces confirmation bias in semi-supervised learning"
+  ],
+  "baseline": [
+   "terminal failure line regex filter",
+   "self-judgment plausibility filter at read time",
+   "provenance gating trust score for memory items"
+  ],
+  "methods": [
+   "MemoryGraft",
+   "Compliance Trap",
+   "MemAudit",
+   "Bayesian trust scoring",
+   "cross pseudo-labeling"
+  ],
+  "environment": [
+   "ALFWorld 3,553 training games",
+   "Qwen3-32B EXAONE-4.0-32B gpt-oss-120b",
+   "vLLM 0.13"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "confirmation bias pseudo-labeling self-training cross-model disagreement"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "self-evaluation blind spot LLM cannot detect its own errors self-verification"
+  },
+  {
+   "class": "agent",
+   "query": "contaminated experience bank mislabeled failures agent memory poisoning writer identity"
+  },
+  {
+   "class": "agent",
+   "query": "read-time detection of poisoned memory items self-judge versus cross-model judge"
+  },
+  {
+   "class": "adjacent",
+   "query": "LLM judges favor their own outputs self-preference bias"
+  },
+  {
+   "class": "baseline",
+   "query": "terminal failure line regex filter"
+  },
+  {
+   "class": "methods",
+   "query": "MemoryGraft Compliance Trap MemAudit contaminated experience bank mislabeled failures agent memor"
+  },
+  {
+   "class": "agent",
+   "query": "contaminated experience bank mislabeled failures agent memory poisoning writer identity ALFWorld 3,553 training games Qwen3-32B EXAONE-4.0-32B gpt-oss-120b"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2607.09803",
+   "date": "2026-07-09",
+   "venue": "arXiv.org",
+   "sim": 0.445,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Spectral Origins of the Self-Correction Blind Spot in Autoregressive Generation"
+  },
+  {
+   "id": "arxiv:2505.18807",
+   "date": "2025-05-24",
+   "venue": "",
+   "sim": 0.425,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Mitigating Deceptive Alignment via Self-Monitoring"
+  },
+  {
+   "id": "arxiv:2510.26847",
+   "date": "2025-10-30",
+   "venue": "",
+   "sim": 0.421,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Broken-Token: Filtering Obfuscated Prompts by Counting Characters-Per-Token"
+  },
+  {
+   "id": "arxiv:2607.05189",
+   "date": "2026-07-06",
+   "venue": "",
+   "sim": 0.412,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "When Claws Remember but Do Not Tell: Stealthy Memory Injection in Persistent Personal Agents"
+  },
+  {
+   "id": "arxiv:2507.02778",
+   "date": "2025-07-03",
+   "venue": "",
+   "sim": 0.41,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Self-Correction Bench: Revealing and Addressing the Self-Correction\n  Blind Spot in LLMs"
+  },
+  {
+   "id": "arxiv:2601.05504",
+   "date": "2026-01-12",
+   "venue": "",
+   "sim": 0.408,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "Memory Poisoning Attack and Defense on Memory Based LLM-Agents"
+  },
+  {
+   "id": "arxiv:2608.20202",
+   "date": "2026-08-20",
+   "venue": "",
+   "sim": 0.408,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "MemTrapBench: Benchmarking Cognitive Traps in LLM Memory Use"
+  },
+  {
+   "id": "arxiv:2509.16704",
+   "date": "2025-09-20",
+   "venue": "",
+   "sim": 0.385,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "When Confidence Fails: Revisiting Pseudo-Label Selection in\n  Semi-supervised Semantic Segmentation"
+  },
+  {
+   "id": "arxiv:2512.16962",
+   "date": "2025-12-18",
+   "venue": "",
+   "sim": 0.384,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "MemoryGraft: Persistent Compromise of LLM Agents via Poisoned Experience Retrieval"
+  },
+  {
+   "id": "arxiv:2608.18091",
+   "date": "2026-06-06",
+   "venue": "",
+   "sim": 0.38,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Self- and Other-Labels Induce Bidirectional Bias in LLM Judges"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 30,
+  "agent": 20,
+  "adjacent": 15,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "confirmation bias pseudo-labeling self-training cross-model disagreement 2025 arXiv"
+  },
+  {
+   "query": "self-evaluation blind spot LLM cannot detect its own errors self-verification 2025 arXiv"
+  }
+ ]
+}

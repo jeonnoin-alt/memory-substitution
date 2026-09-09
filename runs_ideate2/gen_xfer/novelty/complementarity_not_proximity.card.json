@@ -1,0 +1,217 @@
+{
+ "name": "complementarity_not_proximity",
+ "keys": {
+  "agent": [
+   "cross-model experience pool transfer writer reader complementarity agent memory",
+   "agent memory distillation teacher student compatibility retrieved trajectories",
+   "foreign writer experience bank beats self-collected pool ALFWorld"
+  ],
+  "mechanism_home": [
+   "demonstrator compatibility imitation learning multiple demonstrators policy agreement",
+   "teacher student complementarity error correlation ensemble transfer",
+   "demonstration selection by demonstrator success on learner failure modes"
+  ],
+  "adjacent": [
+   "stronger teacher is not always better teacher capacity gap in distillation",
+   "diversity beats quantity in SFT data scaling",
+   "on-policy self-generated data outperforms expert data for fine-tuning"
+  ],
+  "baseline": [
+   "static per-type procedure prompt",
+   "reader's own success-filtered pool at matched episode budget",
+   "select demonstrator by overall success rate"
+  ],
+  "methods": [
+   "Agent Memory Distillation",
+   "Skill is Not One-Size-Fits-All",
+   "retrieval-based behavior cloning",
+   "closer_beats_stronger"
+  ],
+  "environment": [
+   "ALFWorld 274 validation games",
+   "Qwen3-32B EXAONE-4.0-32B gpt-oss-120b",
+   "vLLM"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "demonstrator compatibility imitation learning multiple demonstrators policy agreement"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "teacher student complementarity error correlation ensemble transfer"
+  },
+  {
+   "class": "agent",
+   "query": "cross-model experience pool transfer writer reader complementarity agent memory"
+  },
+  {
+   "class": "agent",
+   "query": "agent memory distillation teacher student compatibility retrieved trajectories"
+  },
+  {
+   "class": "adjacent",
+   "query": "stronger teacher is not always better teacher capacity gap in distillation"
+  },
+  {
+   "class": "baseline",
+   "query": "static per-type procedure prompt"
+  },
+  {
+   "class": "methods",
+   "query": "Agent Memory Distillation Skill is Not One-Size-Fits-All retrieval-based behavior cloning cross-model experience pool transfer writer reader complemen"
+  },
+  {
+   "class": "agent",
+   "query": "cross-model experience pool transfer writer reader complementarity agent memory ALFWorld 274 validation games Qwen3-32B EXAONE-4.0-32B gpt-oss-120b"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.17050",
+   "date": "2026-08-17",
+   "venue": "",
+   "sim": 0.474,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Cross-Model Memory Transfer via Target-Side Reader Adaptation"
+  },
+  {
+   "id": "arxiv:2505.18502",
+   "date": "2025-05-24",
+   "venue": "",
+   "sim": 0.434,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Knowledge Grafting of Large Language Models"
+  },
+  {
+   "id": "arxiv:2202.01096",
+   "date": "2022-02-02",
+   "venue": "",
+   "sim": 0.397,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Identifying Suitable Tasks for Inductive Transfer Through the Analysis\n  of Feature Attributions"
+  },
+  {
+   "id": "arxiv:2605.31191",
+   "date": "2026-05-29",
+   "venue": "",
+   "sim": 0.397,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Student Capacity Moderates Knowledge Distillation Effectiveness: A Systematic Study Across ResNet Teacher-Student Pairs on CIFAR-10"
+  },
+  {
+   "id": "arxiv:2402.16932",
+   "date": "2024-02-26",
+   "venue": "",
+   "sim": 0.359,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "PromptSet: A Programmer's Prompting Dataset"
+  },
+  {
+   "id": "arxiv:2509.14257",
+   "date": "2025-09-12",
+   "venue": "",
+   "sim": 0.359,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "From Correction to Mastery: Reinforced Distillation of Large Language\n  Model Agents"
+  },
+  {
+   "id": "arxiv:2601.14249",
+   "date": "2026-01-20",
+   "venue": "",
+   "sim": 0.348,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Which Reasoning Trajectories Teach Students to Reason Better? A Simple Metric of Informative Alignment"
+  },
+  {
+   "id": "s2:e323f52445b7725c3695ef57bc3ba23e75d538b0",
+   "date": "2026-08-13",
+   "venue": "Applied Sciences",
+   "sim": 0.348,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "A Dual-Teacher Distilled MoE Agent for Complex Industrial Document Analysis"
+  },
+  {
+   "id": "arxiv:2601.07470",
+   "date": "2026-01-12",
+   "venue": "",
+   "sim": 0.334,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Learning How to Remember: A Meta-Cognitive Management Method for Structured and Transferable Agent Memory"
+  },
+  {
+   "id": "arxiv:2602.14038",
+   "date": "2026-02-15",
+   "venue": "",
+   "sim": 0.332,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Choosing How to Remember: Adaptive Memory Structures for LLM Agents"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 25,
+  "agent": 29,
+  "adjacent": 8,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "demonstrator compatibility imitation learning multiple demonstrators policy agreement 2025 arXiv"
+  },
+  {
+   "query": "teacher student complementarity error correlation ensemble transfer 2025 arXiv"
+  }
+ ]
+}

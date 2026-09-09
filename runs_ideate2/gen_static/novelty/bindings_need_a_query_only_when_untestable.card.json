@@ -1,0 +1,216 @@
+{
+ "name": "bindings_need_a_query_only_when_untestable",
+ "keys": {
+  "agent": [
+   "scene-keyed retrieval versus compiled table instance-specific bindings ALFWorld",
+   "retrieval residual over compiled artifact hidden appliance binding feedback regime",
+   "agent memory query necessity run-time testable bindings"
+  ],
+  "mechanism_home": [
+   "silent failure versus informative feedback trial-and-error exploration hidden state",
+   "partially observable hidden environment parameters exploration versus lookup table",
+   "run-time testing versus stored instance-specific knowledge"
+  ],
+  "adjacent": [
+   "agents commit too soon premature commitment silent failures",
+   "environment feedback enables in-context exploration hidden dynamics",
+   "task recognition versus task learning in-context demonstrations"
+  ],
+  "baseline": [
+   "static rule try then switch if nothing happens",
+   "compiled per-scene lookup table keyed on observation",
+   "goal-keyed retrieval k=3"
+  ],
+  "methods": [
+   "SGR-Bench",
+   "Mem2ActBench SWE-ContextBench",
+   "Agent Workflow Memory",
+   "ICAL"
+  ],
+  "environment": [
+   "ALFWorld",
+   "TextWorld"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "silent failure versus informative feedback trial-and-error exploration hidden state"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "partially observable hidden environment parameters exploration versus lookup table"
+  },
+  {
+   "class": "agent",
+   "query": "scene-keyed retrieval versus compiled table instance-specific bindings ALFWorld"
+  },
+  {
+   "class": "agent",
+   "query": "retrieval residual over compiled artifact hidden appliance binding feedback regime"
+  },
+  {
+   "class": "adjacent",
+   "query": "agents commit too soon premature commitment silent failures"
+  },
+  {
+   "class": "baseline",
+   "query": "static rule try then switch if nothing happens"
+  },
+  {
+   "class": "methods",
+   "query": "SGR-Bench Mem2ActBench SWE-ContextBench Agent Workflow Memory scene-keyed retrieval versus compiled table instance-specifi"
+  },
+  {
+   "class": "agent",
+   "query": "scene-keyed retrieval versus compiled table instance-specific bindings ALFWorld ALFWorld TextWorld"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2506.10609",
+   "date": "2025-12-22",
+   "venue": "",
+   "sim": 0.484,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MSTAR: Box-free Multi-query Scene Text Retrieval with Attention Recycling"
+  },
+  {
+   "id": "arxiv:2606.30473",
+   "date": "2026-06-29",
+   "venue": "",
+   "sim": 0.459,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Field Order Should Not Matter: Permutation-Invariant Embedding Model Fine-Tuning for Structured Metadata Retrieval"
+  },
+  {
+   "id": "arxiv:2605.22219",
+   "date": "2026-05-21",
+   "venue": "",
+   "sim": 0.428,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "SGR-Bench: Benchmarking Search Agents on State-Gated Retrieval"
+  },
+  {
+   "id": "arxiv:2601.13111",
+   "date": "2026-08-30",
+   "venue": "",
+   "sim": 0.427,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "CORE-T: COherent REtrieval of Tables for Text-to-SQL"
+  },
+  {
+   "id": "arxiv:2605.09698",
+   "date": "2026-05-10",
+   "venue": "",
+   "sim": 0.401,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Ambig-DS: A Benchmark for Task-Framing Ambiguity in Data-Science Agents"
+  },
+  {
+   "id": "arxiv:2411.07132",
+   "date": "2024-11-11",
+   "venue": "",
+   "sim": 0.395,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Token Merging for Training-Free Semantic Binding in Text-to-Image\n  Synthesis"
+  },
+  {
+   "id": "arxiv:2608.24794",
+   "date": "2026-08-25",
+   "venue": "",
+   "sim": 0.371,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "CAFE: Self-Improving Search Agents Need Co-Evolving Feedback"
+  },
+  {
+   "id": "arxiv:2604.24040",
+   "date": "2026-04-27",
+   "venue": "",
+   "sim": 0.369,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Improving Robustness of Tabular Retrieval via Representational Stability"
+  },
+  {
+   "id": "arxiv:2605.08747",
+   "date": "2026-06-02",
+   "venue": "",
+   "sim": 0.366,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Done, But Not Sure: Disentangling World Completion from Self-Termination in Embodied Agents"
+  },
+  {
+   "id": "arxiv:2608.28458",
+   "date": "2026-08-28",
+   "venue": "",
+   "sim": 0.363,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Acquire, Repair, Preserve: A Diagnosis-Guided Post-Training Recipe for Small-Model Dialogue Game Agents"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 10,
+  "adjacent": 10,
+  "baseline": 7,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "silent failure versus informative feedback trial-and-error exploration hidden state 2025 arXiv"
+  },
+  {
+   "query": "partially observable hidden environment parameters exploration versus lookup table 2025 arXiv"
+  }
+ ]
+}

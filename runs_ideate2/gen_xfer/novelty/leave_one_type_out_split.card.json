@@ -1,0 +1,221 @@
+{
+ "name": "leave_one_type_out_split",
+ "keys": {
+  "agent": [
+   "leave-one-type-out held-out task type agent experience retrieval transfer ALFWorld",
+   "retrieval versus fine-tuning cross-task-type generalization embodied agent memory",
+   "expert trajectory retrieval negative transfer unseen task type ALFWorld"
+  ],
+  "mechanism_home": [
+   "in-context learning wrong-task demonstrations harm cross-task demonstration transfer",
+   "leave-one-task-out evaluation few-shot demonstrations vs fine-tuning compositional generalization",
+   "demonstration task mismatch out-of-distribution in-context learning versus parameter-efficient fine-tuning"
+  ],
+  "adjacent": [
+   "in-context learning relies on task-specific demonstrations and fails under task shift",
+   "fine-tuning generalizes to held-out tasks better than retrieval of mismatched examples",
+   "nearest-neighbor retrieval of wrong-domain examples hurts more than random examples"
+  ],
+  "baseline": [
+   "static instruction listing procedures for the remaining task types",
+   "random unrelated-type demonstrations placebo",
+   "zero-shot no-retrieval reader"
+  ],
+  "methods": [
+   "PAST-Bench",
+   "S3Gym",
+   "AgentCL",
+   "MemHarness",
+   "PEAM",
+   "CrossICL",
+   "QLoRA"
+  ],
+  "environment": [
+   "ALFWorld valid_seen valid_unseen",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "in-context learning wrong-task demonstrations harm cross-task demonstration transfer"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "leave-one-task-out evaluation few-shot demonstrations vs fine-tuning compositional generalization"
+  },
+  {
+   "class": "agent",
+   "query": "leave-one-type-out held-out task type agent experience retrieval transfer ALFWorld"
+  },
+  {
+   "class": "agent",
+   "query": "retrieval versus fine-tuning cross-task-type generalization embodied agent memory"
+  },
+  {
+   "class": "adjacent",
+   "query": "in-context learning relies on task-specific demonstrations and fails under task shift"
+  },
+  {
+   "class": "baseline",
+   "query": "static instruction listing procedures for the remaining task types"
+  },
+  {
+   "class": "methods",
+   "query": "PAST-Bench S3Gym AgentCL leave-one-type-out held-out task type agent experience retri"
+  },
+  {
+   "class": "agent",
+   "query": "leave-one-type-out held-out task type agent experience retrieval transfer ALFWorld ALFWorld valid_seen valid_unseen Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2509.14921",
+   "date": "2025-09-08",
+   "venue": "2025 IEEE International Joint Conference on Biometrics (IJCB)",
+   "sim": 0.456,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Trade-offs in Cross-Domain Generalization of Foundation Model Fine-Tuned for Biometric Applications"
+  },
+  {
+   "id": "arxiv:2608.16715",
+   "date": "2026-08-17",
+   "venue": "",
+   "sim": 0.425,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "MatchingPolicy: Correspondence-Aware Policy Enables Cross-Object In-Context Learning"
+  },
+  {
+   "id": "arxiv:2005.00944",
+   "date": "2020-05-02",
+   "venue": "",
+   "sim": 0.383,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Understanding and Improving Information Transfer in Multi-Task Learning"
+  },
+  {
+   "id": "arxiv:2608.22510",
+   "date": "2026-08-23",
+   "venue": "",
+   "sim": 0.383,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "ClawProBench: Trace-Aware Evaluation of AI Agents with Runtime Coverage and Frozen Workplace-Style Holdouts"
+  },
+  {
+   "id": "s2:c55b18c712a193197daddd5ca9649db19c668da4",
+   "date": "2025-07-11",
+   "venue": "Applied Sciences",
+   "sim": 0.365,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Cross-Lingual Summarization for Low-Resource Languages Using Multilingual Retrieval-Based In-Context Learning"
+  },
+  {
+   "id": "arxiv:2603.26316",
+   "date": "2026-03-27",
+   "venue": "",
+   "sim": 0.363,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "SALMUBench: A Benchmark for Sensitive Association-Level Multimodal Unlearning"
+  },
+  {
+   "id": "arxiv:2508.21066",
+   "date": "2025-08-28",
+   "venue": "",
+   "sim": 0.361,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "OneReward: Unified Mask-Guided Image Generation via Multi-Task Human\n  Preference Learning"
+  },
+  {
+   "id": "arxiv:2608.11772",
+   "date": "2026-08-12",
+   "venue": "",
+   "sim": 0.34,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Diagnosis Before Recovery: Turning Agent Failures into Selective Self-Correction"
+  },
+  {
+   "id": "arxiv:2210.03871",
+   "date": "2022-10-08",
+   "venue": "",
+   "sim": 0.33,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Data-Efficiency with a Single GPU: An Exploration of Transfer Methods\n  for Small Language Models"
+  },
+  {
+   "id": "arxiv:2204.03511",
+   "date": "2022-04-07",
+   "venue": "",
+   "sim": 0.317,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Interval Bound Interpolation for Few-shot Learning with Few Tasks"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 27,
+  "agent": 27,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "in-context learning wrong-task demonstrations harm cross-task demonstration transfer 2025 arXiv"
+  },
+  {
+   "query": "leave-one-task-out evaluation few-shot demonstrations vs fine-tuning compositional generalization 2025 arXiv"
+  }
+ ]
+}

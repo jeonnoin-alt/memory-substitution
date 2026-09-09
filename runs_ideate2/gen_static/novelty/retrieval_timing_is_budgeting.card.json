@@ -1,0 +1,215 @@
+{
+ "name": "retrieval_timing_is_budgeting",
+ "keys": {
+  "agent": [
+   "when to retrieve experience memory stall-triggered retrieval oracle bound ALFWorld",
+   "failure-keyed retrieval at stall recovery segments compiled rulebook",
+   "adaptive retrieval timing agent memory always-retrieve baseline"
+  ],
+  "mechanism_home": [
+   "active retrieval when to retrieve oracle upper bound",
+   "adaptive retrieval marginal correctness over no-retrieval under budget",
+   "uncertainty-triggered retrieval versus always-retrieve"
+  ],
+  "adjacent": [
+   "adaptive RAG rarely beats always-retrieve oracle decision bound",
+   "FLARE active retrieval uncertainty trigger gains",
+   "error recovery rules in system prompt match self-reflection"
+  ],
+  "baseline": [
+   "always-retrieve at episode start",
+   "static recovery rulebook in cached prompt",
+   "fixed-step retrieval schedule"
+  ],
+  "methods": [
+   "FLARE",
+   "Adaptive-RAG",
+   "Reflexion"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "active retrieval when to retrieve oracle upper bound"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "adaptive retrieval marginal correctness over no-retrieval under budget"
+  },
+  {
+   "class": "agent",
+   "query": "when to retrieve experience memory stall-triggered retrieval oracle bound ALFWorld"
+  },
+  {
+   "class": "agent",
+   "query": "failure-keyed retrieval at stall recovery segments compiled rulebook"
+  },
+  {
+   "class": "adjacent",
+   "query": "adaptive RAG rarely beats always-retrieve oracle decision bound"
+  },
+  {
+   "class": "baseline",
+   "query": "always-retrieve at episode start"
+  },
+  {
+   "class": "methods",
+   "query": "FLARE Adaptive-RAG Reflexion when to retrieve experience memory stall-triggered retrieval"
+  },
+  {
+   "class": "agent",
+   "query": "when to retrieve experience memory stall-triggered retrieval oracle bound ALFWorld ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2607.00725",
+   "date": "2026-07-01",
+   "venue": "",
+   "sim": 0.62,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "What Survives Into Context: A Diagnostic for Budget-Constrained Multi-Hop RAG and When Submodular Evidence Packing Improves It"
+  },
+  {
+   "id": "arxiv:2607.24010",
+   "date": "2026-07-27",
+   "venue": "arXiv.org",
+   "sim": 0.572,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "When Should Active RAG Retrieve? A Budget-Aware Evaluation of Utility, Calibration, and Cost"
+  },
+  {
+   "id": "arxiv:2406.16048",
+   "date": "2024-06-23",
+   "venue": "",
+   "sim": 0.565,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Evaluating D-MERIT of Partial-annotation on Information Retrieval"
+  },
+  {
+   "id": "arxiv:2407.12883",
+   "date": "2024-07-16",
+   "venue": "",
+   "sim": 0.561,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive\n  Retrieval"
+  },
+  {
+   "id": "arxiv:2405.01117",
+   "date": "2024-05-02",
+   "venue": "",
+   "sim": 0.547,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Faster Learned Sparse Retrieval with Block-Max Pruning"
+  },
+  {
+   "id": "arxiv:2601.06551",
+   "date": "2026-01-10",
+   "venue": "",
+   "sim": 0.532,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "L-RAG: Balancing Context and Retrieval with Entropy-Based Lazy Loading"
+  },
+  {
+   "id": "arxiv:2603.15599",
+   "date": "2026-03-16",
+   "venue": "",
+   "sim": 0.53,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "SmartSearch: How Ranking Beats Structure for Conversational Memory Retrieval"
+  },
+  {
+   "id": "arxiv:2602.03689",
+   "date": "2026-02-03",
+   "venue": "",
+   "sim": 0.516,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Rethinking the Reranker: Boundary-Aware Evidence Selection for Robust Retrieval-Augmented Generation"
+  },
+  {
+   "id": "arxiv:2605.22219",
+   "date": "2026-05-21",
+   "venue": "",
+   "sim": 0.508,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "SGR-Bench: Benchmarking Search Agents on State-Gated Retrieval"
+  },
+  {
+   "id": "arxiv:2601.19827",
+   "date": "2026-01-27",
+   "venue": "",
+   "sim": 0.496,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "When Iterative RAG Beats Ideal Evidence: A Diagnostic Study in Scientific Multi-hop Question Answering"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 24,
+  "agent": 17,
+  "adjacent": 8,
+  "baseline": 12,
+  "methods": 1
+ },
+ "web_jobs": [
+  {
+   "query": "active retrieval when to retrieve oracle upper bound 2025 arXiv"
+  },
+  {
+   "query": "adaptive retrieval marginal correctness over no-retrieval under budget 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,216 @@
+{
+ "name": "exemplar_lottery",
+ "keys": {
+  "agent": [
+   "retrieval gain over fixed exemplar prompt variance across draws agent",
+   "trajectory exemplar selection variance ALFWorld retrieval versus fixed",
+   "experience retrieval selection robustness static prompt distribution"
+  ],
+  "mechanism_home": [
+   "few-shot demonstration selection variance random draws sensitivity",
+   "kNN demonstration retrieval versus best random demonstration set",
+   "prompt sensitivity example choice order variance calibration"
+  ],
+  "adjacent": [
+   "retrieved demonstrations beat random demonstrations on mean not maximum",
+   "prompt optimization over candidate few-shot sets outperforms retrieval",
+   "shorter demonstrations perform better than longer ones"
+  ],
+  "baseline": [
+   "best of several random fixed few-shot prompts on validation",
+   "shortest successful examples per type as fixed prompt",
+   "medoid exemplar selection fixed prompt"
+  ],
+  "methods": [
+   "Traj-Bootstrap self-generated example database",
+   "ICAL insight exemplars calibrate before use",
+   "SkillEvolBench kNN demonstration selection"
+  ],
+  "environment": [
+   "ALFWorld Qwen3-32B expert bank",
+   "valid_seen valid_unseen"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "few-shot demonstration selection variance random draws sensitivity"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "kNN demonstration retrieval versus best random demonstration set"
+  },
+  {
+   "class": "agent",
+   "query": "retrieval gain over fixed exemplar prompt variance across draws agent"
+  },
+  {
+   "class": "agent",
+   "query": "trajectory exemplar selection variance ALFWorld retrieval versus fixed"
+  },
+  {
+   "class": "adjacent",
+   "query": "retrieved demonstrations beat random demonstrations on mean not maximum"
+  },
+  {
+   "class": "baseline",
+   "query": "best of several random fixed few-shot prompts on validation"
+  },
+  {
+   "class": "methods",
+   "query": "Traj-Bootstrap self-generated example database ICAL insight exemplars calibrate before use SkillEvolBench kNN demonstration selection retrieval gain over fixed exemplar prompt variance across dr"
+  },
+  {
+   "class": "agent",
+   "query": "retrieval gain over fixed exemplar prompt variance across draws agent ALFWorld Qwen3-32B expert bank valid_seen valid_unseen"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:1811.08008",
+   "date": "2018-11-19",
+   "venue": "",
+   "sim": 0.457,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "End-to-End Retrieval in Continuous Space"
+  },
+  {
+   "id": "arxiv:2608.23252",
+   "date": "2026-08-24",
+   "venue": "",
+   "sim": 0.432,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Laws of Context Allocation: Causal Measurement and Closed-Loop Orchestration in Generative Search"
+  },
+  {
+   "id": "arxiv:2606.21249",
+   "date": "2026-06-19",
+   "venue": "",
+   "sim": 0.424,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Does RoPE Prevent or Degrade Retrieval Heads? A Mechanistic Analysis Across Model Families"
+  },
+  {
+   "id": "arxiv:2205.06205",
+   "date": "2022-05-12",
+   "venue": "",
+   "sim": 0.413,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "kNN-Embed: Locally Smoothed Embedding Mixtures For Multi-interest\n  Candidate Retrieval"
+  },
+  {
+   "id": "arxiv:2412.20309",
+   "date": "2024-12-29",
+   "venue": "",
+   "sim": 0.394,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Understanding the Impact of Confidence in Retrieval Augmented\n  Generation: A Case Study in the Medical Domain"
+  },
+  {
+   "id": "arxiv:2503.02269",
+   "date": "2025-03-04",
+   "venue": "",
+   "sim": 0.392,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Experience Replay with Random Reshuffling"
+  },
+  {
+   "id": "arxiv:2409.16146",
+   "date": "2024-09-24",
+   "venue": "",
+   "sim": 0.378,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Controlling Risk of Retrieval-augmented Generation: A Counterfactual\n  Prompting Framework"
+  },
+  {
+   "id": "arxiv:2405.16122",
+   "date": "2024-05-25",
+   "venue": "",
+   "sim": 0.373,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "Prompt Optimization with EASE? Efficient Ordering-aware Automated\n  Selection of Exemplars"
+  },
+  {
+   "id": "arxiv:2208.03354",
+   "date": "2022-08-05",
+   "venue": "",
+   "sim": 0.37,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "A Sketch Is Worth a Thousand Words: Image Retrieval with Text and Sketch"
+  },
+  {
+   "id": "arxiv:2608.25500",
+   "date": "2026-08-26",
+   "venue": "",
+   "sim": 0.361,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "CaSKG: Counterfactual-Causal Skill Graphs for Scalable Agent Skill Retrieval"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 34,
+  "agent": 21,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "few-shot demonstration selection variance random draws sensitivity 2025 arXiv"
+  },
+  {
+   "query": "kNN demonstration retrieval versus best random demonstration set 2025 arXiv"
+  }
+ ]
+}

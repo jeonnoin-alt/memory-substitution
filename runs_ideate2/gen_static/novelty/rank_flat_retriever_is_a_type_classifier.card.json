@@ -1,0 +1,216 @@
+{
+ "name": "rank_flat_retriever_is_a_type_classifier",
+ "keys": {
+  "agent": [
+   "experience retrieval similarity rank within task type ALFWorld success",
+   "near-duplicate removal leave-out retrieval trajectory bank",
+   "wrong-type retrieved memory harm similarity framing warning"
+  ],
+  "mechanism_home": [
+   "kNN demonstration selection versus random within-class rank ladder in-context learning",
+   "demonstration similarity rank sensitivity in-context learning",
+   "misleading demonstrations harm scaled by similarity in-context learning framing"
+  ],
+  "adjacent": [
+   "ranking-based demonstration selection not uniformly superior to random",
+   "label-space coverage matters more than instance similarity in demonstration selection",
+   "in-context demonstrations override explicit instructions"
+  ],
+  "baseline": [
+   "type-conditioned fixed exemplars static prompt",
+   "random within-type demonstrations at matched length",
+   "per-type cached sub-bank prompt"
+  ],
+  "methods": [
+   "KATE",
+   "EPR",
+   "ExpeL"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "bge-m3"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "kNN demonstration selection versus random within-class rank ladder in-context learning"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "demonstration similarity rank sensitivity in-context learning"
+  },
+  {
+   "class": "agent",
+   "query": "experience retrieval similarity rank within task type ALFWorld success"
+  },
+  {
+   "class": "agent",
+   "query": "near-duplicate removal leave-out retrieval trajectory bank"
+  },
+  {
+   "class": "adjacent",
+   "query": "ranking-based demonstration selection not uniformly superior to random"
+  },
+  {
+   "class": "baseline",
+   "query": "type-conditioned fixed exemplars static prompt"
+  },
+  {
+   "class": "methods",
+   "query": "KATE EPR ExpeL experience retrieval similarity rank within task type ALFWor"
+  },
+  {
+   "class": "agent",
+   "query": "experience retrieval similarity rank within task type ALFWorld success ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2402.14334",
+   "date": "2024-02-22",
+   "venue": "",
+   "sim": 0.608,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "INSTRUCTIR: A Benchmark for Instruction Following of Information\n  Retrieval Models"
+  },
+  {
+   "id": "arxiv:2408.04887",
+   "date": "2024-08-09",
+   "venue": "",
+   "sim": 0.555,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Relevance Filtering for Embedding-based Retrieval"
+  },
+  {
+   "id": "arxiv:2605.22219",
+   "date": "2026-05-21",
+   "venue": "",
+   "sim": 0.538,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "SGR-Bench: Benchmarking Search Agents on State-Gated Retrieval"
+  },
+  {
+   "id": "arxiv:2504.06116",
+   "date": "2025-04-08",
+   "venue": "",
+   "sim": 0.526,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "To Match or Not to Match: Revisiting Image Matching for Reliable Visual\n  Place Recognition"
+  },
+  {
+   "id": "arxiv:2512.12980",
+   "date": "2025-12-15",
+   "venue": "",
+   "sim": 0.525,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Reveal Hidden Pitfalls and Navigate Next Generation of Vector Similarity Search from Task-Centric Views"
+  },
+  {
+   "id": "arxiv:2310.14408",
+   "date": "2023-10-22",
+   "venue": "",
+   "sim": 0.513,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "PaRaDe: Passage Ranking using Demonstrations with Large Language Models"
+  },
+  {
+   "id": "arxiv:2606.10388",
+   "date": "2026-08-20",
+   "venue": "",
+   "sim": 0.507,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Right Family, Wrong Skill: Benchmarking Risk Exposure in Agent Skill Retrieval"
+  },
+  {
+   "id": "arxiv:2608.25500",
+   "date": "2026-08-26",
+   "venue": "",
+   "sim": 0.495,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "CaSKG: Counterfactual-Causal Skill Graphs for Scalable Agent Skill Retrieval"
+  },
+  {
+   "id": "arxiv:2605.27140",
+   "date": "2026-05-26",
+   "venue": "",
+   "sim": 0.494,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "StepOPSD: Step-Aware Online Preference Distillation for Agent Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2501.13726",
+   "date": "2025-01-23",
+   "venue": "",
+   "sim": 0.476,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "RPO: Retrieval Preference Optimization for Robust Retrieval-Augmented\n  Generation"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 11,
+  "agent": 22,
+  "adjacent": 8,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "kNN demonstration selection versus random within-class rank ladder in-context learning 2025 arXiv"
+  },
+  {
+   "query": "demonstration similarity rank sensitivity in-context learning 2025 arXiv"
+  }
+ ]
+}

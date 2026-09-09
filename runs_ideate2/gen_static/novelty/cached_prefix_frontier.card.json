@@ -1,0 +1,217 @@
+{
+ "name": "cached_prefix_frontier",
+ "keys": {
+  "agent": [
+   "prefix caching cost of retrieved experience versus static prompt agent",
+   "whole-bank in-context versus top-k retrieval accuracy GPU cost frontier",
+   "agent memory serving cost matched token budget mis-ranking"
+  ],
+  "mechanism_home": [
+   "prefix caching KV cache reuse throughput distinct prompts serving cost",
+   "long prompt decode cost attention context length GPU seconds",
+   "prompt caching cost model long context versus retrieval"
+  ],
+  "adjacent": [
+   "long-context in-context learning matches retrieval accuracy at higher cost",
+   "KV cache hit rate determines multi-turn serving throughput",
+   "few retrieved shots beat many-shot at lower compute"
+  ],
+  "baseline": [
+   "matched token budget comparison of prompts",
+   "static few-shot exemplar prompt with prefix caching",
+   "full bank in context under prompt caching"
+  ],
+  "methods": [
+   "Mem0 prompt caching cost model long context",
+   "KVFlow AdaptiveScale prefix cache hit rate",
+   "InferScale HYPIC Preping playbook"
+  ],
+  "environment": [
+   "ALFWorld Qwen3-32B vLLM prefix caching",
+   "A100 GPU seconds per episode"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "prefix caching KV cache reuse throughput distinct prompts serving cost"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "long prompt decode cost attention context length GPU seconds"
+  },
+  {
+   "class": "agent",
+   "query": "prefix caching cost of retrieved experience versus static prompt agent"
+  },
+  {
+   "class": "agent",
+   "query": "whole-bank in-context versus top-k retrieval accuracy GPU cost frontier"
+  },
+  {
+   "class": "adjacent",
+   "query": "long-context in-context learning matches retrieval accuracy at higher cost"
+  },
+  {
+   "class": "baseline",
+   "query": "matched token budget comparison of prompts"
+  },
+  {
+   "class": "methods",
+   "query": "Mem0 prompt caching cost model long context KVFlow AdaptiveScale prefix cache hit rate InferScale HYPIC Preping playbook prefix caching cost of retrieved experience versus static pr"
+  },
+  {
+   "class": "agent",
+   "query": "prefix caching cost of retrieved experience versus static prompt agent ALFWorld Qwen3-32B vLLM prefix caching A100 GPU seconds per episode"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2607.23159",
+   "date": "2026-07-30",
+   "venue": "",
+   "sim": 0.64,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "CachedSearch: Training-Free Cached Exploration for Test-Time Search in Video Diffusion"
+  },
+  {
+   "id": "arxiv:2607.12161",
+   "date": "2026-07-15",
+   "venue": "",
+   "sim": 0.59,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Token Reduction Is Not Cost Reduction"
+  },
+  {
+   "id": "arxiv:2606.20474",
+   "date": "2026-06-19",
+   "venue": "",
+   "sim": 0.579,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "UltraQuant: 4-bit KV Caching for Context-Heavy Agents"
+  },
+  {
+   "id": "arxiv:2606.01065",
+   "date": "2026-05-31",
+   "venue": "arXiv.org",
+   "sim": 0.573,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Leyline: KV Cache Directives for Agentic Inference"
+  },
+  {
+   "id": "arxiv:2605.22850",
+   "date": "2026-05-16",
+   "venue": "arXiv.org",
+   "sim": 0.565,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "ObjectCache: Layerwise Object-Storage Retrieval for KV Cache Reuse"
+  },
+  {
+   "id": "arxiv:2606.21238",
+   "date": "2026-06-19",
+   "venue": "",
+   "sim": 0.552,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Recency/Frequency Adaptive KV Caching for Large Language Model Serving"
+  },
+  {
+   "id": "arxiv:2507.07400",
+   "date": "2025-07-10",
+   "venue": "",
+   "sim": 0.533,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "mechanism_home",
+    "methods"
+   ],
+   "title": "KVFlow: Efficient Prefix Caching for Accelerating LLM-Based Multi-Agent Workflows"
+  },
+  {
+   "id": "arxiv:2604.03143",
+   "date": "2026-04-03",
+   "venue": "arXiv.org",
+   "sim": 0.531,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "TokenDance: Scaling Multi-Agent LLM Serving via Collective KV Cache Sharing"
+  },
+  {
+   "id": "s2:6db782df823d9da204a59180305aba81d47b3997",
+   "date": "2026-09-02",
+   "venue": "Proceedings of the 19th ACM International Systems and Storage Conference",
+   "sim": 0.525,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "To Keep or Not to Keep: Learning KV Cache Retention in Disaggregated LLM Serving Systems"
+  },
+  {
+   "id": "arxiv:2605.08441",
+   "date": "2026-05-08",
+   "venue": "",
+   "sim": 0.521,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "DUET: Optimize Token-Budget Allocation for Reinforcement Learning with Verifiable Rewards"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 35,
+  "agent": 22,
+  "adjacent": 18,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "prefix caching KV cache reuse throughput distinct prompts serving cost 2025 arXiv"
+  },
+  {
+   "query": "long prompt decode cost attention context length GPU seconds 2025 arXiv"
+  }
+ ]
+}

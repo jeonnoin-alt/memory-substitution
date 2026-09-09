@@ -1,0 +1,217 @@
+{
+ "name": "near_duplicate_needle_crossover",
+ "keys": {
+  "agent": [
+   "trajectory retrieval bank size near-duplicate exemplars WebShop ALFWorld",
+   "retrieval versus whole-bank in-context experience haystack size",
+   "near-duplicate leakage in agent experience retrieval"
+  ],
+  "mechanism_home": [
+   "in-context lookup degrades with context length needle in haystack",
+   "near-duplicate test-train overlap inflates retrieval gains",
+   "corpus size scaling retrieval recall near-duplicates"
+  ],
+  "adjacent": [
+   "random many-shot converges to retrieval with long context",
+   "lost in the middle long-context lookup degradation with distractors",
+   "near-duplicate train-test contamination inflates few-shot gains"
+  ],
+  "baseline": [
+   "fixed two random exemplars cached prompt",
+   "compiled procedure paragraph static prompt",
+   "deduplicate bank before retrieval"
+  ],
+  "methods": [
+   "Synapse",
+   "Agent Workflow Memory",
+   "ExpeL"
+  ],
+  "environment": [
+   "WebShop",
+   "ALFWorld",
+   "Qwen3-32B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "in-context lookup degrades with context length needle in haystack"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "near-duplicate test-train overlap inflates retrieval gains"
+  },
+  {
+   "class": "agent",
+   "query": "trajectory retrieval bank size near-duplicate exemplars WebShop ALFWorld"
+  },
+  {
+   "class": "agent",
+   "query": "retrieval versus whole-bank in-context experience haystack size"
+  },
+  {
+   "class": "adjacent",
+   "query": "random many-shot converges to retrieval with long context"
+  },
+  {
+   "class": "baseline",
+   "query": "fixed two random exemplars cached prompt"
+  },
+  {
+   "class": "methods",
+   "query": "Synapse Agent Workflow Memory ExpeL trajectory retrieval bank size near-duplicate exemplars WebS"
+  },
+  {
+   "class": "agent",
+   "query": "trajectory retrieval bank size near-duplicate exemplars WebShop ALFWorld WebShop ALFWorld"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2408.04887",
+   "date": "2024-08-09",
+   "venue": "",
+   "sim": 0.543,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Relevance Filtering for Embedding-based Retrieval"
+  },
+  {
+   "id": "arxiv:2607.00394",
+   "date": "2026-07-01",
+   "venue": "",
+   "sim": 0.499,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "When Classic Cache Policies Fail: Learning-Augmented Replacement for Semantic Retrieval Buffers"
+  },
+  {
+   "id": "arxiv:2505.20368",
+   "date": "2025-05-26",
+   "venue": "",
+   "sim": 0.464,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Hierarchical Retrieval with Evidence Curation for Open-Domain Financial\n  Question Answering on Standardized Documents"
+  },
+  {
+   "id": "arxiv:2603.05697",
+   "date": "2026-03-05",
+   "venue": "",
+   "sim": 0.458,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MultiHaystack: Benchmarking Multimodal Retrieval and Reasoning over 40K Images, Videos, and Documents"
+  },
+  {
+   "id": "arxiv:2607.00725",
+   "date": "2026-07-01",
+   "venue": "",
+   "sim": 0.452,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "What Survives Into Context: A Diagnostic for Budget-Constrained Multi-Hop RAG and When Submodular Evidence Packing Improves It"
+  },
+  {
+   "id": "arxiv:2605.27105",
+   "date": "2026-05-27",
+   "venue": "",
+   "sim": 0.45,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Lost in the Evidence? Reproducing Document Position and Context Size Effects in RAG"
+  },
+  {
+   "id": "arxiv:2402.05136",
+   "date": "2024-02-06",
+   "venue": "",
+   "sim": 0.431,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "LV-Eval: A Balanced Long-Context Benchmark with 5 Length Levels Up to\n  256K"
+  },
+  {
+   "id": "arxiv:2502.05167",
+   "date": "2025-02-07",
+   "venue": "",
+   "sim": 0.425,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "mechanism_home"
+   ],
+   "title": "NoLiMa: Long-Context Evaluation Beyond Literal Matching"
+  },
+  {
+   "id": "arxiv:2608.25500",
+   "date": "2026-08-26",
+   "venue": "",
+   "sim": 0.415,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "CaSKG: Counterfactual-Causal Skill Graphs for Scalable Agent Skill Retrieval"
+  },
+  {
+   "id": "arxiv:2311.04934",
+   "date": "2023-11-07",
+   "venue": "",
+   "sim": 0.411,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Prompt Cache: Modular Attention Reuse for Low-Latency Inference"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 18,
+  "adjacent": 8,
+  "baseline": 17,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "in-context lookup degrades with context length needle in haystack 2025 arXiv"
+  },
+  {
+   "query": "near-duplicate test-train overlap inflates retrieval gains 2025 arXiv"
+  }
+ ]
+}

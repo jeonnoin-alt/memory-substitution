@@ -1,0 +1,215 @@
+{
+ "name": "whole_bank_confusability_ladder",
+ "keys": {
+  "agent": [
+   "whole bank in context versus top-k trajectory retrieval bank size crossover",
+   "near-miss trajectories confusable exemplars agent memory",
+   "long-context experience prefix versus retrieval weaker reader"
+  ],
+  "mechanism_home": [
+   "many-shot in-context learning distractor examples confusable labels",
+   "long-context in-context learning attention to similar examples selection",
+   "in-context routing collapse with option count retrieve then rank"
+  ],
+  "adjacent": [
+   "long-context ICL matches retrieval as shots grow",
+   "few well-chosen examples beat many examples",
+   "effective context length shorter than advertised distractors"
+  ],
+  "baseline": [
+   "top-k BM25 retrieval of exemplars",
+   "fixed random subset of examples at matched budget",
+   "type-conditioned fixed exemplars"
+  ],
+  "methods": [
+   "Enrich-Retrieve-Rank capability registry",
+   "MANYICLBENCH many-shot in-context learning Bertsch",
+   "Mem0 long context SkillEvolBench compliance trap"
+  ],
+  "environment": [
+   "ALFWorld Qwen3-32B Qwen3-8B",
+   "TextWorld cooking games vLLM prefix caching"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "many-shot in-context learning distractor examples confusable labels"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "long-context in-context learning attention to similar examples selection"
+  },
+  {
+   "class": "agent",
+   "query": "whole bank in context versus top-k trajectory retrieval bank size crossover"
+  },
+  {
+   "class": "agent",
+   "query": "near-miss trajectories confusable exemplars agent memory"
+  },
+  {
+   "class": "adjacent",
+   "query": "long-context ICL matches retrieval as shots grow"
+  },
+  {
+   "class": "baseline",
+   "query": "top-k BM25 retrieval of exemplars"
+  },
+  {
+   "class": "methods",
+   "query": "Enrich-Retrieve-Rank capability registry MANYICLBENCH many-shot in-context learning Bertsch Mem0 long context SkillEvolBench compliance trap whole bank in context versus top-k trajectory retrieval ban"
+  },
+  {
+   "class": "agent",
+   "query": "whole bank in context versus top-k trajectory retrieval bank size crossover ALFWorld Qwen3-32B Qwen3-8B TextWorld cooking games vLLM prefix caching"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2402.07440",
+   "date": "2024-02-12",
+   "venue": "",
+   "sim": 0.666,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Benchmarking and Building Long-Context Retrieval Models with LoCo and\n  M2-BERT"
+  },
+  {
+   "id": "arxiv:2606.22778",
+   "date": "2026-06-22",
+   "venue": "",
+   "sim": 0.62,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "HAKARI-Bench: A Lightweight Benchmark for Comparing Retrieval Architectures and Efficiency Settings under Unified Conditions"
+  },
+  {
+   "id": "arxiv:1406.3170",
+   "date": "2014-06-12",
+   "venue": "Annual Symposium on Combinatorial Pattern Matching",
+   "sim": 0.614,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Compact Indexes for Flexible Top- k k Retrieval"
+  },
+  {
+   "id": "arxiv:2608.06305",
+   "date": "2026-08-06",
+   "venue": "",
+   "sim": 0.607,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Beyond Top-K: Replacing Black-Box Retrieval with Interpretable Agentic Operations"
+  },
+  {
+   "id": "arxiv:2607.00394",
+   "date": "2026-07-01",
+   "venue": "",
+   "sim": 0.604,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "When Classic Cache Policies Fail: Learning-Augmented Replacement for Semantic Retrieval Buffers"
+  },
+  {
+   "id": "arxiv:2502.13542",
+   "date": "2025-02-19",
+   "venue": "",
+   "sim": 0.569,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Activation-aware Probe-Query: Effective Key-Value Retrieval for\n  Long-Context LLMs Inference"
+  },
+  {
+   "id": "arxiv:2602.20732",
+   "date": "2026-02-24",
+   "venue": "",
+   "sim": 0.522,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "CHESS: Context-aware Hierarchical Efficient Semantic Selection for Long-Context LLM Inference"
+  },
+  {
+   "id": "arxiv:2603.04238",
+   "date": "2026-03-04",
+   "venue": "",
+   "sim": 0.513,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Retrieval or Representation? Reassessing Benchmark Gaps in Multilingual and Visually Rich RAG"
+  },
+  {
+   "id": "arxiv:2608.21450",
+   "date": "2026-08-19",
+   "venue": "",
+   "sim": 0.507,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Beyond Visual Similarity: Entity-Aligned Retrieval for Knowledge-Based Visual Question Answering"
+  },
+  {
+   "id": "s2:db7348b987400b62504a338018ce352588312202",
+   "date": 2025,
+   "venue": "Fire",
+   "sim": 0.494,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "LexiSemIR: A Two-Stage Re-ranking Framework with BM25 and Zero-Shot Bi-Encoder"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 24,
+  "agent": 26,
+  "adjacent": 10,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "many-shot in-context learning distractor examples confusable labels 2025 arXiv"
+  },
+  {
+   "query": "long-context in-context learning attention to similar examples selection 2025 arXiv"
+  }
+ ]
+}

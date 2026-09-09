@@ -1,0 +1,216 @@
+{
+ "name": "compile_the_statistics_not_the_trajectory",
+ "keys": {
+  "agent": [
+   "compiled cheatsheet object location statistics beats retrieved trajectories ALFWorld",
+   "experience bank aggregate statistics versus top-k trajectory retrieval matched tokens",
+   "rule-compiled cross-episode statistics static prompt versus raw retrieval agent memory"
+  ],
+  "mechanism_home": [
+   "object receptacle location priors population frequency object search",
+   "aggregated frequency statistics versus exemplars in-context learning sample size scaling",
+   "semantic object placement priors household environments"
+  ],
+  "adjacent": [
+   "summary statistics beat raw examples in-context learning",
+   "few-shot exemplar content matters less than format in-context",
+   "commonsense object location priors improve embodied object search"
+  ],
+  "baseline": [
+   "static procedure playbook prompt",
+   "LLM-written object location prior table without experience",
+   "raw whole bank in context"
+  ],
+  "methods": [
+   "Dynamic Cheatsheet",
+   "ICAL",
+   "SkillEvolBench",
+   "strategy graphs verifier-promoted skill graphs PerSim SymSearch"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "object receptacle location priors population frequency object search"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "aggregated frequency statistics versus exemplars in-context learning sample size scaling"
+  },
+  {
+   "class": "agent",
+   "query": "compiled cheatsheet object location statistics beats retrieved trajectories ALFWorld"
+  },
+  {
+   "class": "agent",
+   "query": "experience bank aggregate statistics versus top-k trajectory retrieval matched tokens"
+  },
+  {
+   "class": "adjacent",
+   "query": "summary statistics beat raw examples in-context learning"
+  },
+  {
+   "class": "baseline",
+   "query": "static procedure playbook prompt"
+  },
+  {
+   "class": "methods",
+   "query": "Dynamic Cheatsheet ICAL SkillEvolBench compiled cheatsheet object location statistics beats retriev"
+  },
+  {
+   "class": "agent",
+   "query": "compiled cheatsheet object location statistics beats retrieved trajectories ALFWorld ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2607.22643",
+   "date": "2026-06-24",
+   "venue": "",
+   "sim": 0.495,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Reason Before You Retrieve: Agentic Planning for Multi-modal RAG"
+  },
+  {
+   "id": "arxiv:2606.17183",
+   "date": "2026-06-15",
+   "venue": "",
+   "sim": 0.446,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "VL-MemKnG: Hybrid Memory with a Spatio-Temporal Knowledge Graph for Question Answering over Long Egocentric Navigation Trajectories"
+  },
+  {
+   "id": "arxiv:2506.22056",
+   "date": "2025-06-27",
+   "venue": "",
+   "sim": 0.413,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Universal Retrieval for Multimodal Trajectory Modeling"
+  },
+  {
+   "id": "arxiv:2108.00159",
+   "date": "2021-07-31",
+   "venue": "",
+   "sim": 0.405,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Learning Embeddings that Capture Spatial Semantics for Indoor Navigation"
+  },
+  {
+   "id": "arxiv:2110.06864",
+   "date": "2021-10-13",
+   "venue": "",
+   "sim": 0.388,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "ByteTrack: Multi-Object Tracking by Associating Every Detection Box"
+  },
+  {
+   "id": "arxiv:2404.07553",
+   "date": "2024-04-11",
+   "venue": "",
+   "sim": 0.376,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "SFSORT: Scene Features-based Simple Online Real-Time Tracker"
+  },
+  {
+   "id": "arxiv:2607.09711",
+   "date": "2026-06-23",
+   "venue": "",
+   "sim": 0.354,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "EvoClawBench: Can Agents Learn Reusable Skills from Their Own Runs?"
+  },
+  {
+   "id": "arxiv:2607.15491",
+   "date": "2026-07-16",
+   "venue": "",
+   "sim": 0.353,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Trajectory-aware Cross-view Geo-localization with Sequential Observations"
+  },
+  {
+   "id": "arxiv:2405.00200",
+   "date": "2024-04-30",
+   "venue": "",
+   "sim": 0.345,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "In-Context Learning with Long-Context Models: An In-Depth Exploration"
+  },
+  {
+   "id": "arxiv:2603.17554",
+   "date": "2026-03-18",
+   "venue": "",
+   "sim": 0.332,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Prompt-Free Universal Region Proposal Network"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 18,
+  "agent": 18,
+  "adjacent": 8,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "object receptacle location priors population frequency object search 2025 arXiv"
+  },
+  {
+   "query": "aggregated frequency statistics versus exemplars in-context learning sample size scaling 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,215 @@
+{
+ "name": "per_item_loo_reliability_and_winners_curse",
+ "keys": {
+  "agent": [
+   "per-item leave-one-out value reliability number of retrievals agent memory",
+   "winner's curse top-ranked memory items re-run shrinkage",
+   "LOO-score pruning versus random pruning retrieval threshold ALFWorld"
+  ],
+  "mechanism_home": [
+   "reliability of per-unit estimates variance components intraclass correlation replications",
+   "winner's curse selection bias regression to the mean empirical Bayes shrinkage",
+   "leave-one-out data value noise under stochastic training rank robustness"
+  ],
+  "adjacent": [
+   "Data Banzhaf robust ranking under noisy utility",
+   "influence and leave-one-out estimates unstable across random seeds retraining",
+   "seed variance dominates between-condition differences in fine-tuning evaluation"
+  ],
+  "baseline": [
+   "random pruning at matched count",
+   "success-conditioned usage count scoring",
+   "nested-k position contrast as free estimator"
+  ],
+  "methods": [
+   "Data Shapley Data Banzhaf Source Attribution RAG CUE-R",
+   "ReMe SF-AMS RoMeRL MemQ DIG",
+   "compound estimation binomials Scorio VIGOR"
+  ],
+  "environment": [
+   "ALFWorld expert bank k=3",
+   "Qwen3-32B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "reliability of per-unit estimates variance components intraclass correlation replications"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "winner's curse selection bias regression to the mean empirical Bayes shrinkage"
+  },
+  {
+   "class": "agent",
+   "query": "per-item leave-one-out value reliability number of retrievals agent memory"
+  },
+  {
+   "class": "agent",
+   "query": "winner's curse top-ranked memory items re-run shrinkage"
+  },
+  {
+   "class": "adjacent",
+   "query": "Data Banzhaf robust ranking under noisy utility"
+  },
+  {
+   "class": "baseline",
+   "query": "random pruning at matched count"
+  },
+  {
+   "class": "methods",
+   "query": "Data Shapley Data Banzhaf Source Attribution RAG CUE-R ReMe SF-AMS RoMeRL MemQ DIG compound estimation binomials Scorio VIGOR per-item leave-one-out value reliability number of retrieval"
+  },
+  {
+   "class": "agent",
+   "query": "per-item leave-one-out value reliability number of retrievals agent memory ALFWorld expert bank k=3 Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2603.13017",
+   "date": "2026-03-13",
+   "venue": "",
+   "sim": 0.468,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Structured Distillation for Personalized Agent Memory: 11x Token Reduction with Retrieval Preservation"
+  },
+  {
+   "id": "arxiv:2206.08063",
+   "date": "2022-06-16",
+   "venue": "",
+   "sim": 0.452,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Towards Robust Ranker for Text Retrieval"
+  },
+  {
+   "id": "arxiv:2605.10268",
+   "date": "2026-05-11",
+   "venue": "",
+   "sim": 0.439,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MemReread: Enhancing Agentic Long-Context Reasoning via Memory-Guided Rereading"
+  },
+  {
+   "id": "arxiv:2602.16493",
+   "date": "2026-02-18",
+   "venue": "",
+   "sim": 0.414,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MMA: Multimodal Memory Agent"
+  },
+  {
+   "id": "arxiv:2605.12493",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.405,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues"
+  },
+  {
+   "id": "arxiv:2607.27958",
+   "date": "2026-07-30",
+   "venue": "",
+   "sim": 0.395,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Σ-Mem: An Online Reliability Memory for LLM-based Multi-Agent Systems"
+  },
+  {
+   "id": "arxiv:2608.00017",
+   "date": "2026-06-29",
+   "venue": "",
+   "sim": 0.395,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Memory Reward Inflation in Self-Improving LLM Agents"
+  },
+  {
+   "id": "arxiv:2601.06112",
+   "date": "2026-01-03",
+   "venue": "",
+   "sim": 0.377,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "ReliabilityBench: Evaluating LLM Agent Reliability Under Production-Like Stress Conditions"
+  },
+  {
+   "id": "arxiv:2303.12878",
+   "date": "2023-03-22",
+   "venue": "",
+   "sim": 0.376,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Robust Consensus in Ranking Data Analysis: Definitions, Properties and\n  Computational Issues"
+  },
+  {
+   "id": "arxiv:2605.08137",
+   "date": "2026-05-02",
+   "venue": "",
+   "sim": 0.363,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Weight Pruning Amplifies Bias: A Multi-Method Study of Compressed LLMs for Edge AI"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 21,
+  "agent": 16,
+  "adjacent": 18,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "reliability of per-unit estimates variance components intraclass correlation replications 2025 arXiv"
+  },
+  {
+   "query": "winner's curse selection bias regression to the mean empirical Bayes shrinkage 2025 arXiv"
+  }
+ ]
+}

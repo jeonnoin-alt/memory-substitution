@@ -1,0 +1,216 @@
+{
+ "name": "state_key_pays_only_for_planted_bindings",
+ "keys": {
+  "agent": [
+   "observation-keyed versus goal-keyed experience retrieval ALFWorld scene bindings",
+   "state-conditioned trajectory retrieval versus static prompt object location",
+   "retrieval residual over best static prompt within-type variance"
+  ],
+  "mechanism_home": [
+   "query key conditional variance what the query can index retrieval value",
+   "state-conditioned versus instruction-conditioned demonstration selection",
+   "long-context table lookup versus single-row retrieval"
+  ],
+  "adjacent": [
+   "retrieval helps only when the query carries information absent from the prompt",
+   "long-context in-context lookup matches retrieval",
+   "incorrect context misleads more than correct context helps knowledge conflict"
+  ],
+  "baseline": [
+   "type-conditioned fixed exemplar prompt",
+   "whole binding table in cached static prompt",
+   "goal-keyed top-k retrieval"
+  ],
+  "methods": [
+   "Synapse",
+   "FocusMem",
+   "RAP"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "bge-m3"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "query key conditional variance what the query can index retrieval value"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "state-conditioned versus instruction-conditioned demonstration selection"
+  },
+  {
+   "class": "agent",
+   "query": "observation-keyed versus goal-keyed experience retrieval ALFWorld scene bindings"
+  },
+  {
+   "class": "agent",
+   "query": "state-conditioned trajectory retrieval versus static prompt object location"
+  },
+  {
+   "class": "adjacent",
+   "query": "retrieval helps only when the query carries information absent from the prompt"
+  },
+  {
+   "class": "baseline",
+   "query": "type-conditioned fixed exemplar prompt"
+  },
+  {
+   "class": "methods",
+   "query": "Synapse FocusMem RAP observation-keyed versus goal-keyed experience retrieval ALF"
+  },
+  {
+   "class": "agent",
+   "query": "observation-keyed versus goal-keyed experience retrieval ALFWorld scene bindings ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2602.05152",
+   "date": "2026-02-05",
+   "venue": "",
+   "sim": 0.603,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "RAG without Forgetting: Continual Query-Infused Key Memory"
+  },
+  {
+   "id": "arxiv:2402.16457",
+   "date": "2024-02-26",
+   "venue": "",
+   "sim": 0.58,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "RetrievalQA: Assessing Adaptive Retrieval-Augmented Generation for\n  Short-form Open-Domain Question Answering"
+  },
+  {
+   "id": "arxiv:2603.26667",
+   "date": "2026-01-06",
+   "venue": "",
+   "sim": 0.527,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "M-RAG: Semantic Key-Value Indexing for Retrieval-Augmented Generation"
+  },
+  {
+   "id": "arxiv:2604.08920",
+   "date": "2026-04-10",
+   "venue": "",
+   "sim": 0.525,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Beyond Relevance: Utility-Centric Retrieval in the LLM Era"
+  },
+  {
+   "id": "arxiv:2605.01965",
+   "date": "2026-07-13",
+   "venue": "",
+   "sim": 0.517,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Retrieval with Multiple Query Vectors through Anomalous Pattern Detection"
+  },
+  {
+   "id": "arxiv:2105.04651",
+   "date": "2021-05-10",
+   "venue": "",
+   "sim": 0.509,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Not All Relevance Scores are Equal: Efficient Uncertainty and\n  Calibration Modeling for Deep Retrieval Models"
+  },
+  {
+   "id": "arxiv:2607.00725",
+   "date": "2026-07-01",
+   "venue": "",
+   "sim": 0.509,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "What Survives Into Context: A Diagnostic for Budget-Constrained Multi-Hop RAG and When Submodular Evidence Packing Improves It"
+  },
+  {
+   "id": "arxiv:2305.15053",
+   "date": "2023-05-24",
+   "venue": "",
+   "sim": 0.504,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Decomposing Complex Queries for Tip-of-the-tongue Retrieval"
+  },
+  {
+   "id": "arxiv:2505.15561",
+   "date": "2025-05-21",
+   "venue": "",
+   "sim": 0.501,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Do RAG Systems Suffer From Positional Bias?"
+  },
+  {
+   "id": "arxiv:2607.24368",
+   "date": "2026-07-27",
+   "venue": "",
+   "sim": 0.497,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Keep It InMind: Benchmarking the Implicit-Association Blind Spot in Agent Memory"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 36,
+  "agent": 20,
+  "adjacent": 11,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "query key conditional variance what the query can index retrieval value 2025 arXiv"
+  },
+  {
+   "query": "state-conditioned versus instruction-conditioned demonstration selection 2025 arXiv"
+  }
+ ]
+}

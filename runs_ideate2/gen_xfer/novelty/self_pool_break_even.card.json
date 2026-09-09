@@ -1,0 +1,218 @@
+{
+ "name": "self_pool_break_even",
+ "keys": {
+  "agent": [
+   "self-collected experience pool versus expert walkthroughs matched collection cost agent memory retrieval",
+   "break-even budget self-generated successes reproduce teacher trajectory in-context gain",
+   "agent memory distillation student own pool per-type coverage saturation k=3"
+  ],
+  "mechanism_home": [
+   "self-generated versus expert demonstrations sample efficiency in-context learning",
+   "demonstration selection coverage saturation number of same-class examples diminishing returns",
+   "demonstration-regularized reinforcement learning sample complexity expert data versus self-play"
+  ],
+  "adjacent": [
+   "rejection sampling self-training matches distillation from a stronger teacher",
+   "diminishing returns in number of in-context demonstrations saturation",
+   "model-generated data beats human data at equal budget"
+  ],
+  "baseline": [
+   "static per-type procedure prompt",
+   "own success-filtered pool at full budget",
+   "similarity-selected few-shot demonstrations"
+  ],
+  "methods": [
+   "Agent Memory Distillation",
+   "inference-time distillation",
+   "demonstration-regularized RL"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "self-generated versus expert demonstrations sample efficiency in-context learning"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "demonstration selection coverage saturation number of same-class examples diminishing returns"
+  },
+  {
+   "class": "agent",
+   "query": "self-collected experience pool versus expert walkthroughs matched collection cost agent memory retrieval"
+  },
+  {
+   "class": "agent",
+   "query": "break-even budget self-generated successes reproduce teacher trajectory in-context gain"
+  },
+  {
+   "class": "adjacent",
+   "query": "rejection sampling self-training matches distillation from a stronger teacher"
+  },
+  {
+   "class": "baseline",
+   "query": "static per-type procedure prompt"
+  },
+  {
+   "class": "methods",
+   "query": "Agent Memory Distillation inference-time distillation demonstration-regularized RL self-collected experience pool versus expert walkthroughs ma"
+  },
+  {
+   "class": "agent",
+   "query": "self-collected experience pool versus expert walkthroughs matched collection cost agent memory retrieval ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2412.17256",
+   "date": "2024-12-23",
+   "venue": "",
+   "sim": 0.503,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "B-STaR: Monitoring and Balancing Exploration and Exploitation in\n  Self-Taught Reasoners"
+  },
+  {
+   "id": "arxiv:2607.18955",
+   "date": "2026-07-21",
+   "venue": "",
+   "sim": 0.459,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "H^2SD: Hybrid Hindsight Self-Distillation"
+  },
+  {
+   "id": "arxiv:2604.12002",
+   "date": "2026-04-13",
+   "venue": "arXiv.org",
+   "sim": 0.444,
+   "channels": [
+    "hf",
+    "s2"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Self-Distillation Zero: Self-Revision Turns Binary Rewards into Dense Supervision"
+  },
+  {
+   "id": "arxiv:2606.24428",
+   "date": "2026-06-23",
+   "venue": "",
+   "sim": 0.427,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "Escaping the Self-Confirmation Trap: An Execute-Distill-Verify Paradigm for Agentic Experience Learning"
+  },
+  {
+   "id": "arxiv:2506.14702",
+   "date": "2025-06-17",
+   "venue": "",
+   "sim": 0.416,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Treasure Hunt: Real-time Targeting of the Long Tail using Training-Time\n  Markers"
+  },
+  {
+   "id": "arxiv:2605.12493",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.408,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues"
+  },
+  {
+   "id": "arxiv:2208.10967",
+   "date": "2022-08-23",
+   "venue": "",
+   "sim": 0.393,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "The Value of Out-of-Distribution Data"
+  },
+  {
+   "id": "arxiv:2606.03197",
+   "date": "2026-06-02",
+   "venue": "",
+   "sim": 0.39,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "MemTrain: Self-Supervised Context Memory Training"
+  },
+  {
+   "id": "arxiv:2603.18272",
+   "date": "2026-03-18",
+   "venue": "",
+   "sim": 0.389,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Retrieval-Augmented LLM Agents: Learning to Learn from Experience"
+  },
+  {
+   "id": "arxiv:2606.05152",
+   "date": "2026-06-03",
+   "venue": "",
+   "sim": 0.384,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Reinforcement Learning from Rich Feedback with Distributional DAgger"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 19,
+  "adjacent": 17,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "self-generated versus expert demonstrations sample efficiency in-context learning 2025 arXiv"
+  },
+  {
+   "query": "demonstration selection coverage saturation number of same-class examples diminishing returns 2025 arXiv"
+  }
+ ]
+}

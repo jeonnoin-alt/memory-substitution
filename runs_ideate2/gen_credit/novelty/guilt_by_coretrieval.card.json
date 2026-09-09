@@ -1,0 +1,216 @@
+{
+ "name": "guilt_by_coretrieval",
+ "keys": {
+  "agent": [
+   "reward contamination of learned per-item memory utility co-retrieved items",
+   "memory-reward trap credit assignment to retrieved memory items",
+   "leave-one-out ground truth for learned memory utilities forced retrieval"
+  ],
+  "mechanism_home": [
+   "structural credit assignment shared reward co-occurring components spurious credit",
+   "correlated features share attribution feature importance co-occurrence bias",
+   "data valuation noisy leave-one-out values number of retraining samples"
+  ],
+  "adjacent": [
+   "Shapley attribution fails additivity under feature interaction and correlation",
+   "shared team reward makes individual contribution estimates biased lazy contributor",
+   "duplicated or correlated data points distort leave-one-out data values"
+  ],
+  "baseline": [
+   "leave-one-out re-run on a random subsample of episodes",
+   "retrieval frequency usage count scoring",
+   "similarity-only ranking without learned utility"
+  ],
+  "methods": [
+   "RoMeRL MemQ REMEMBERER MemRL",
+   "Memory-R2 CHIME UCOB ExpSuite",
+   "CUE-R document Shapley source attribution RAG Data Shapley"
+  ],
+  "environment": [
+   "ALFWorld"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "structural credit assignment shared reward co-occurring components spurious credit"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "correlated features share attribution feature importance co-occurrence bias"
+  },
+  {
+   "class": "agent",
+   "query": "reward contamination of learned per-item memory utility co-retrieved items"
+  },
+  {
+   "class": "agent",
+   "query": "memory-reward trap credit assignment to retrieved memory items"
+  },
+  {
+   "class": "adjacent",
+   "query": "Shapley attribution fails additivity under feature interaction and correlation"
+  },
+  {
+   "class": "baseline",
+   "query": "leave-one-out re-run on a random subsample of episodes"
+  },
+  {
+   "class": "methods",
+   "query": "RoMeRL MemQ REMEMBERER MemRL Memory-R2 CHIME UCOB ExpSuite CUE-R document Shapley source attribution RAG Data Shapley reward contamination of learned per-item memory utility co-r"
+  },
+  {
+   "class": "agent",
+   "query": "reward contamination of learned per-item memory utility co-retrieved items ALFWorld"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.00017",
+   "date": "2026-06-29",
+   "venue": "",
+   "sim": 0.582,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Memory Reward Inflation in Self-Improving LLM Agents"
+  },
+  {
+   "id": "arxiv:2604.05467",
+   "date": "2026-04-07",
+   "venue": "",
+   "sim": 0.561,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "CUE-R: Beyond the Final Answer in Retrieval-Augmented Generation"
+  },
+  {
+   "id": "arxiv:2211.08714",
+   "date": "2022-11-16",
+   "venue": "",
+   "sim": 0.507,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "mechanism_home"
+   ],
+   "title": "Reward Gaming in Conditional Text Generation"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.486,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2608.02508",
+   "date": "2026-08-10",
+   "venue": "",
+   "sim": 0.482,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States"
+  },
+  {
+   "id": "arxiv:2606.06475",
+   "date": "2026-06-04",
+   "venue": "",
+   "sim": 0.475,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "RREDCoT: Segment-Level Reward Redistribution for Reasoning Models"
+  },
+  {
+   "id": "arxiv:2601.03468",
+   "date": "2026-01-06",
+   "venue": "",
+   "sim": 0.474,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Understanding Reward Hacking in Text-to-Image Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2506.16507",
+   "date": "2025-06-19",
+   "venue": "",
+   "sim": 0.47,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Robust Reward Modeling via Causal Rubrics"
+  },
+  {
+   "id": "arxiv:2607.21106",
+   "date": "2026-07-23",
+   "venue": "",
+   "sim": 0.467,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "AttriMem: Attribution-Guided Process Feedback for Agent Memory Learning"
+  },
+  {
+   "id": "arxiv:2601.08435",
+   "date": "2026-01-13",
+   "venue": "",
+   "sim": 0.437,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Fine-Mem: Fine-Grained Feedback Alignment for Long-Horizon Memory Management"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 22,
+  "agent": 17,
+  "adjacent": 11,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "structural credit assignment shared reward co-occurring components spurious credit 2025 arXiv"
+  },
+  {
+   "query": "correlated features share attribution feature importance co-occurrence bias 2025 arXiv"
+  }
+ ]
+}

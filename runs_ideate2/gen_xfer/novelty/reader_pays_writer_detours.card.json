@@ -1,0 +1,217 @@
+{
+ "name": "reader_pays_writer_detours",
+ "keys": {
+  "agent": [
+   "consumer-side token cost of retrieved trajectories reader episode length inherits item length",
+   "experience pool cost per successful episode writer trajectory length versus success",
+   "gain per consumer token cross-writer agent memory transfer ALFWorld"
+  ],
+  "mechanism_home": [
+   "in-context demonstration length controls output length verbosity imitation",
+   "extraneousness-aware imitation learning irrelevant segments in demonstrations",
+   "suboptimal demonstration pruning imitation learning"
+  ],
+  "adjacent": [
+   "output length follows demonstration length in in-context learning",
+   "longer reasoning demonstrations raise inference cost without accuracy gain",
+   "filtering noisy demonstrations improves imitation policy"
+  ],
+  "baseline": [
+   "static procedure prompt at matched tokens",
+   "truncating demonstrations to a fixed token budget",
+   "shortest-demonstration selection"
+  ],
+  "methods": [
+   "AgentDiet",
+   "MemoryCPT",
+   "Extraneousness-Aware Imitation Learning"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "in-context demonstration length controls output length verbosity imitation"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "extraneousness-aware imitation learning irrelevant segments in demonstrations"
+  },
+  {
+   "class": "agent",
+   "query": "consumer-side token cost of retrieved trajectories reader episode length inherits item length"
+  },
+  {
+   "class": "agent",
+   "query": "experience pool cost per successful episode writer trajectory length versus success"
+  },
+  {
+   "class": "adjacent",
+   "query": "output length follows demonstration length in in-context learning"
+  },
+  {
+   "class": "baseline",
+   "query": "static procedure prompt at matched tokens"
+  },
+  {
+   "class": "methods",
+   "query": "AgentDiet MemoryCPT Extraneousness-Aware Imitation Learning consumer-side token cost of retrieved trajectories reader ep"
+  },
+  {
+   "class": "agent",
+   "query": "consumer-side token cost of retrieved trajectories reader episode length inherits item length ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2606.04095",
+   "date": "2026-06-02",
+   "venue": "",
+   "sim": 0.414,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "POLARIS: Guiding Small Models to Write Long Stories"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.386,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2605.10268",
+   "date": "2026-05-11",
+   "venue": "",
+   "sim": 0.377,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "MemReread: Enhancing Agentic Long-Context Reasoning via Memory-Guided Rereading"
+  },
+  {
+   "id": "arxiv:2607.00725",
+   "date": "2026-07-01",
+   "venue": "",
+   "sim": 0.373,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "What Survives Into Context: A Diagnostic for Budget-Constrained Multi-Hop RAG and When Submodular Evidence Packing Improves It"
+  },
+  {
+   "id": "arxiv:2510.09535",
+   "date": "2025-10-10",
+   "venue": "",
+   "sim": 0.373,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Mitigating Overthinking through Reasoning Shaping"
+  },
+  {
+   "id": "arxiv:2411.07954",
+   "date": "2024-11-12",
+   "venue": "",
+   "sim": 0.36,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Learning Memory Mechanisms for Decision Making through Demonstrations"
+  },
+  {
+   "id": "arxiv:2312.12345",
+   "date": "2023-12-19",
+   "venue": "",
+   "sim": 0.345,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "On the Effectiveness of Retrieval, Alignment, and Replay in Manipulation"
+  },
+  {
+   "id": "arxiv:2310.05199",
+   "date": "2023-10-08",
+   "venue": "",
+   "sim": 0.336,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Loose lips sink ships: Mitigating Length Bias in Reinforcement Learning\n  from Human Feedback"
+  },
+  {
+   "id": "arxiv:2606.04557",
+   "date": "2026-06-03",
+   "venue": "arXiv.org",
+   "sim": 0.333,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Cartridges at Scale: Training Modular KV Caches over Large Document Collections"
+  },
+  {
+   "id": "arxiv:2605.11212",
+   "date": "2026-06-05",
+   "venue": "",
+   "sim": 0.331,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "ReVision: Scaling Computer-Use Agents via Temporal Visual Redundancy Reduction"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 18,
+  "adjacent": 8,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "in-context demonstration length controls output length verbosity imitation 2025 arXiv"
+  },
+  {
+   "query": "extraneousness-aware imitation learning irrelevant segments in demonstrations 2025 arXiv"
+  }
+ ]
+}

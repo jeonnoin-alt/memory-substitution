@@ -1,0 +1,218 @@
+{
+ "name": "many_shot_averages_detours",
+ "keys": {
+  "agent": [
+   "whole-bank in-context trajectories vs top-k retrieval detour noise self-generated experience ALFWorld",
+   "many-shot trajectory exemplars robust to noisy on-policy experience bank",
+   "top-k retrieved trajectories imitate detours step-limit failures"
+  ],
+  "mechanism_home": [
+   "many-shot in-context learning robustness to noisy demonstrations",
+   "in-context learning consensus across many demonstrations versus nearest-example copying",
+   "imitation learning from suboptimal demonstrations compounding errors"
+  ],
+  "adjacent": [
+   "long-context ICL gains come from attention to similar examples not cumulative learning",
+   "in-context learning with noisy labels many-shot robustness",
+   "noise-robust behavioral cloning from suboptimal demonstrations"
+  ],
+  "baseline": [
+   "prune detours from demonstrations before use",
+   "fixed type-conditioned exemplar prompt",
+   "random selection of k demonstrations at matched length"
+  ],
+  "methods": [
+   "ExpeL",
+   "MemoryGraft",
+   "Reinforced ICL"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "Qwen3-8B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "many-shot in-context learning robustness to noisy demonstrations"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "in-context learning consensus across many demonstrations versus nearest-example copying"
+  },
+  {
+   "class": "agent",
+   "query": "whole-bank in-context trajectories vs top-k retrieval detour noise self-generated experience ALFWorld"
+  },
+  {
+   "class": "agent",
+   "query": "many-shot trajectory exemplars robust to noisy on-policy experience bank"
+  },
+  {
+   "class": "adjacent",
+   "query": "long-context ICL gains come from attention to similar examples not cumulative learning"
+  },
+  {
+   "class": "baseline",
+   "query": "prune detours from demonstrations before use"
+  },
+  {
+   "class": "methods",
+   "query": "ExpeL MemoryGraft Reinforced ICL whole-bank in-context trajectories vs top-k retrieval detour"
+  },
+  {
+   "class": "agent",
+   "query": "whole-bank in-context trajectories vs top-k retrieval detour noise self-generated experience ALFWorld ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2608.15797",
+   "date": "2026-08-16",
+   "venue": "",
+   "sim": 0.491,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "KV-Rescue: Recovering Reasoning Language Model KV Eviction Loss via Stepwise Interleaving"
+  },
+  {
+   "id": "arxiv:2603.02473",
+   "date": "2026-04-12",
+   "venue": "",
+   "sim": 0.485,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory"
+  },
+  {
+   "id": "arxiv:2503.08640",
+   "date": "2025-03-11",
+   "venue": "",
+   "sim": 0.479,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Efficient Many-Shot In-Context Learning with Dynamic Block-Sparse\n  Attention"
+  },
+  {
+   "id": "arxiv:2501.08248",
+   "date": "2025-01-14",
+   "venue": "",
+   "sim": 0.47,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Eliciting In-context Retrieval and Reasoning for Long-context Large\n  Language Models"
+  },
+  {
+   "id": "arxiv:2405.00200",
+   "date": "2024-04-30",
+   "venue": "",
+   "sim": 0.464,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "mechanism_home",
+    "methods"
+   ],
+   "title": "In-Context Learning with Long-Context Models: An In-Depth Exploration"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.433,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2307.08771",
+   "date": "2023-07-17",
+   "venue": "",
+   "sim": 0.416,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "UPSCALE: Unconstrained Channel Pruning"
+  },
+  {
+   "id": "arxiv:2605.07804",
+   "date": "2026-06-01",
+   "venue": "",
+   "sim": 0.405,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Prune-OPD: Efficient and Reliable On-Policy Distillation for Long-Horizon Reasoning"
+  },
+  {
+   "id": "arxiv:2603.24690",
+   "date": "2026-03-25",
+   "venue": "",
+   "sim": 0.404,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "UniICL: Systematizing Unified Multimodal In-context Learning through a Capability-Oriented Taxonomy"
+  },
+  {
+   "id": "arxiv:2301.11321",
+   "date": "2023-01-26",
+   "venue": "",
+   "sim": 0.391,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Trajectory-Aware Eligibility Traces for Off-Policy Reinforcement\n  Learning"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 15,
+  "agent": 19,
+  "adjacent": 9,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "many-shot in-context learning robustness to noisy demonstrations 2025 arXiv"
+  },
+  {
+   "query": "in-context learning consensus across many demonstrations versus nearest-example copying 2025 arXiv"
+  }
+ ]
+}

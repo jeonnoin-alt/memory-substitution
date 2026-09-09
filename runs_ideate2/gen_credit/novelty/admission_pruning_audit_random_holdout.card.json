@@ -1,0 +1,214 @@
+{
+ "name": "admission_pruning_audit_random_holdout",
+ "keys": {
+  "agent": [
+   "write-time admission scores versus realized counterfactual memory item value",
+   "outcome-based pruning versus random pruning of agent memory store",
+   "randomized holdout audit of memory admission and pruning rules feedback count"
+  ],
+  "mechanism_home": [
+   "coreset selection heuristic scores versus random subset strong baseline",
+   "data pruning score-based versus random pruning at low sample counts",
+   "training data attribution scores weak correlation with retraining ground truth"
+  ],
+  "adjacent": [
+   "random subset selection matches sophisticated data selection methods",
+   "beyond neural scaling laws data pruning metrics compared to random baseline",
+   "cache admission policy versus random replacement competitive"
+  ],
+  "baseline": [
+   "admit everything with no admission filter",
+   "random pruning at matched count",
+   "novelty threshold by cosine similarity to existing store"
+  ],
+  "methods": [
+   "A-MAC RPE-critic router SF-AMS Oblivion ReMe",
+   "DIG confidence gain Memory Reward Inflation utility-driven replay",
+   "Data Shapley DVGS"
+  ],
+  "environment": [
+   "ALFWorld 3553-game stream expert bank self pool"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "coreset selection heuristic scores versus random subset strong baseline"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "data pruning score-based versus random pruning at low sample counts"
+  },
+  {
+   "class": "agent",
+   "query": "write-time admission scores versus realized counterfactual memory item value"
+  },
+  {
+   "class": "agent",
+   "query": "outcome-based pruning versus random pruning of agent memory store"
+  },
+  {
+   "class": "adjacent",
+   "query": "random subset selection matches sophisticated data selection methods"
+  },
+  {
+   "class": "baseline",
+   "query": "admit everything with no admission filter"
+  },
+  {
+   "class": "methods",
+   "query": "A-MAC RPE-critic router SF-AMS Oblivion ReMe DIG confidence gain Memory Reward Inflation utility-driven replay Data Shapley DVGS write-time admission scores versus realized counterfactual m"
+  },
+  {
+   "class": "agent",
+   "query": "write-time admission scores versus realized counterfactual memory item value ALFWorld 3553-game stream expert bank self pool"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2007.12986",
+   "date": "2020-08-24",
+   "venue": "",
+   "sim": 0.589,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Counterfactual Evaluation of Slate Recommendations with Sequential Reward Interactions"
+  },
+  {
+   "id": "arxiv:2510.04816",
+   "date": "2025-10-06",
+   "venue": "",
+   "sim": 0.544,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "On Predicting Post-Click Conversion Rate via Counterfactual Inference"
+  },
+  {
+   "id": "arxiv:2605.01048",
+   "date": "2026-05-01",
+   "venue": "",
+   "sim": 0.526,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Compared to What? Baselines and Metrics for Counterfactual Prompting"
+  },
+  {
+   "id": "arxiv:2210.15809",
+   "date": "2022-10-28",
+   "venue": "",
+   "sim": 0.518,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Coverage-centric Coreset Selection for High Pruning Rates"
+  },
+  {
+   "id": "arxiv:2202.02643",
+   "date": "2022-02-05",
+   "venue": "",
+   "sim": 0.513,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "The Unreasonable Effectiveness of Random Pruning: Return of the Most\n  Naive Baseline for Sparse Training"
+  },
+  {
+   "id": "arxiv:2406.04327",
+   "date": "2024-06-06",
+   "venue": "",
+   "sim": 0.503,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Causal Estimation of Memorisation Profiles"
+  },
+  {
+   "id": "arxiv:2108.13264",
+   "date": "2021-08-30",
+   "venue": "",
+   "sim": 0.5,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Deep Reinforcement Learning at the Edge of the Statistical Precipice"
+  },
+  {
+   "id": "arxiv:2403.12166",
+   "date": "2024-03-18",
+   "venue": "",
+   "sim": 0.498,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "The Power of Few: Accelerating and Enhancing Data Reweighting with\n  Coreset Selection"
+  },
+  {
+   "id": "arxiv:1803.03635",
+   "date": "2018-03-09",
+   "venue": "",
+   "sim": 0.477,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks"
+  },
+  {
+   "id": "arxiv:2607.25659",
+   "date": "2026-07-28",
+   "venue": "",
+   "sim": 0.467,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "CoRT: Counterfactual Replay for Token-Level Rubric-Guided Policy Optimization"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 27,
+  "agent": 16,
+  "adjacent": 8,
+  "baseline": 0,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "coreset selection heuristic scores versus random subset strong baseline 2025 arXiv"
+  },
+  {
+   "query": "data pruning score-based versus random pruning at low sample counts 2025 arXiv"
+  }
+ ]
+}

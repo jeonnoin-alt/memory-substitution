@@ -1,0 +1,220 @@
+{
+ "name": "relocated_bindings_demand",
+ "keys": {
+  "agent": [
+   "scene-keyed experience retrieval residual over compiled procedure relocated objects ALFWorld",
+   "binding demand and supply retrieval versus static prompt matched tokens",
+   "same-scene item location retrieval versus compiled location table"
+  ],
+  "mechanism_home": [
+   "object search off-canonical placement semantic priors fail search cost",
+   "instance-specific state knowledge versus commonsense priors under step budget",
+   "relatedness of examples manipulated versus observed transfer"
+  ],
+  "adjacent": [
+   "semantic priors hurt object search when objects are misplaced",
+   "retrieved examples help only when correctly selected",
+   "state-grounded dynamic retrieval web agents"
+  ],
+  "baseline": [
+   "type-conditioned fixed exemplars",
+   "compiled scene-object location table",
+   "whole bank in context"
+  ],
+  "methods": [
+   "RAP retrieval-augmented planning",
+   "VTM-Nav",
+   "SWE-ContextBench SGR-Bench",
+   "compliance trap"
+  ],
+  "environment": [
+   "ALFWorld",
+   "WebShop",
+   "PDDL expert"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "object search off-canonical placement semantic priors fail search cost"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "instance-specific state knowledge versus commonsense priors under step budget"
+  },
+  {
+   "class": "agent",
+   "query": "scene-keyed experience retrieval residual over compiled procedure relocated objects ALFWorld"
+  },
+  {
+   "class": "agent",
+   "query": "binding demand and supply retrieval versus static prompt matched tokens"
+  },
+  {
+   "class": "adjacent",
+   "query": "semantic priors hurt object search when objects are misplaced"
+  },
+  {
+   "class": "baseline",
+   "query": "type-conditioned fixed exemplars"
+  },
+  {
+   "class": "methods",
+   "query": "RAP retrieval-augmented planning VTM-Nav SWE-ContextBench SGR-Bench scene-keyed experience retrieval residual over compiled proc"
+  },
+  {
+   "class": "agent",
+   "query": "scene-keyed experience retrieval residual over compiled procedure relocated objects ALFWorld ALFWorld WebShop"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2609.00638",
+   "date": "2026-09-01",
+   "venue": "",
+   "sim": 0.598,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "It Takes Two to Match: Co-Evolving Generative Retriever with Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2607.11326",
+   "date": "2026-07-13",
+   "venue": "",
+   "sim": 0.539,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Prompt Generation Technical Report"
+  },
+  {
+   "id": "arxiv:2604.14878",
+   "date": "2026-04-16",
+   "venue": "",
+   "sim": 0.513,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "GenRec: A Preference-Oriented Generative Framework for Large-Scale Recommendation"
+  },
+  {
+   "id": "arxiv:2503.01222",
+   "date": "2025-03-03",
+   "venue": "",
+   "sim": 0.508,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Retrieval-Augmented Perception: High-Resolution Image Perception Meets\n  Visual RAG"
+  },
+  {
+   "id": "arxiv:2606.23105",
+   "date": "2026-06-22",
+   "venue": "",
+   "sim": 0.487,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Compression and Retrieval: Implicit Memory Retrieval for Video World Models"
+  },
+  {
+   "id": "arxiv:2605.23655",
+   "date": "2026-05-22",
+   "venue": "arXiv.org",
+   "sim": 0.478,
+   "channels": [
+    "hf",
+    "s2"
+   ],
+   "via": [
+    "adjacent",
+    "mechanism_home"
+   ],
+   "title": "CVSearch: Empowering Multimodal LLMs with Cognitive Visual Search for High-Resolution Image Perception"
+  },
+  {
+   "id": "arxiv:2508.11431",
+   "date": "2025-08-15",
+   "venue": "",
+   "sim": 0.448,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Remove360: Benchmarking Residuals After Object Removal in 3D Gaussian\n  Splatting"
+  },
+  {
+   "id": "arxiv:2409.11136",
+   "date": "2024-09-17",
+   "venue": "",
+   "sim": 0.435,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Promptriever: Instruction-Trained Retrievers Can Be Prompted Like\n  Language Models"
+  },
+  {
+   "id": "arxiv:2108.00159",
+   "date": "2021-07-31",
+   "venue": "",
+   "sim": 0.426,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "mechanism_home"
+   ],
+   "title": "Learning Embeddings that Capture Spatial Semantics for Indoor Navigation"
+  },
+  {
+   "id": "arxiv:2409.12558",
+   "date": "2024-09-19",
+   "venue": "",
+   "sim": 0.406,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "RAD-Bench: Evaluating Large Language Models Capabilities in Retrieval\n  Augmented Dialogues"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 17,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "object search off-canonical placement semantic priors fail search cost 2025 arXiv"
+  },
+  {
+   "query": "instance-specific state knowledge versus commonsense priors under step budget 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,225 @@
+{
+ "name": "item_credit_variance_decomposition",
+ "keys": {
+  "agent": [
+   "between-item variance of leave-one-out credit experience bank ICC re-run noise",
+   "per-item memory utility score reliability winner's curse pruning",
+   "number of re-runs for stable per-item rank retrieved memory"
+  ],
+  "mechanism_home": [
+   "data valuation leave-one-out instability stochastic training re-run noise Banzhaf",
+   "intraclass correlation variance decomposition item effect versus noise attribution reliability",
+   "winner's curse selection on noisy estimates regression to the mean"
+  ],
+  "adjacent": [
+   "leave-one-out data values unstable across random seeds Banzhaf robust",
+   "instance attribution rank correlation across training runs low",
+   "optimizer's curse selection bias overestimates chosen item value"
+  ],
+  "baseline": [
+   "random pruning",
+   "class-level score instead of per-item score",
+   "nested-k slot credit from existing logs"
+  ],
+  "methods": [
+   "Data Shapley",
+   "Data Banzhaf",
+   "SCARV",
+   "FreeShap",
+   "amortized Shapley",
+   "TreeMem",
+   "Shapley-RAG",
+   "HiMPO",
+   "AttriMem",
+   "MemQ",
+   "RoMeRL",
+   "SF-AMS"
+  ],
+  "environment": [
+   "ALFWorld valid_seen valid_unseen",
+   "second backbone consumer swap"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "data valuation leave-one-out instability stochastic training re-run noise Banzhaf"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "intraclass correlation variance decomposition item effect versus noise attribution reliability"
+  },
+  {
+   "class": "agent",
+   "query": "between-item variance of leave-one-out credit experience bank ICC re-run noise"
+  },
+  {
+   "class": "agent",
+   "query": "per-item memory utility score reliability winner's curse pruning"
+  },
+  {
+   "class": "adjacent",
+   "query": "leave-one-out data values unstable across random seeds Banzhaf robust"
+  },
+  {
+   "class": "baseline",
+   "query": "random pruning"
+  },
+  {
+   "class": "methods",
+   "query": "Data Shapley Data Banzhaf SCARV between-item variance of leave-one-out credit experience ban"
+  },
+  {
+   "class": "agent",
+   "query": "between-item variance of leave-one-out credit experience bank ICC re-run noise ALFWorld valid_seen valid_unseen second backbone consumer swap"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2509.09855",
+   "date": "2025-09-11",
+   "venue": "",
+   "sim": 0.57,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "An Information-Theoretic Framework for Credit Risk Modeling: Unifying Industry Practice with Statistical Theory for Fair and Interpretable Scorecards"
+  },
+  {
+   "id": "arxiv:2511.03807",
+   "date": "2025-11-05",
+   "venue": "",
+   "sim": 0.519,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Fair and Explainable Credit-Scoring under Concept Drift: Adaptive Explanation Frameworks for Evolving Populations"
+  },
+  {
+   "id": "arxiv:2608.08202",
+   "date": "2026-08-08",
+   "venue": "",
+   "sim": 0.5,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "Beyond Aggregate Calibration: Decomposing Income-Conditional Recall Disparities in Automated Credit Default Prediction"
+  },
+  {
+   "id": "arxiv:2605.29376",
+   "date": "2026-05-28",
+   "venue": "",
+   "sim": 0.443,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Three-Currency HJM for Brazilian Credit Markets"
+  },
+  {
+   "id": "arxiv:2608.07069",
+   "date": "2026-08-07",
+   "venue": "",
+   "sim": 0.392,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Invisible to the Machine: Auditing AI Restaurant, Cafe, and Bar Recommendation Against a Complete Market Census"
+  },
+  {
+   "id": "arxiv:2502.14766",
+   "date": "2025-02-20",
+   "venue": "",
+   "sim": 0.358,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Multi-Layer Deep xVA: Structural Credit Models, Measure Changes and\n  Convergence Analysis"
+  },
+  {
+   "id": "arxiv:2606.15716",
+   "date": "2026-06-14",
+   "venue": "",
+   "sim": 0.353,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "How to Score Experts for One-Shot MoE Expert Pruning: A Unified Formulation and Selection Principle"
+  },
+  {
+   "id": "arxiv:2602.00521",
+   "date": "2026-01-31",
+   "venue": "",
+   "sim": 0.343,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Diagnosing the Reliability of LLM-as-a-Judge via Item Response Theory"
+  },
+  {
+   "id": "arxiv:2506.12510",
+   "date": "2025-06-14",
+   "venue": "",
+   "sim": 0.34,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Credit risk for large portfolios of green and brown loans: extending the\n  ASRF model"
+  },
+  {
+   "id": "arxiv:2501.11638",
+   "date": "2025-01-20",
+   "venue": "",
+   "sim": 0.338,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Class Imbalance in Anomaly Detection: Learning from an Exactly Solvable\n  Model"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 17,
+  "agent": 22,
+  "adjacent": 18,
+  "baseline": 16,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "data valuation leave-one-out instability stochastic training re-run noise Banzhaf 2025 arXiv"
+  },
+  {
+   "query": "intraclass correlation variance decomposition item effect versus noise attribution reliability 2025 arXiv"
+  }
+ ]
+}

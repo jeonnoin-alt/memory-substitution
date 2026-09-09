@@ -1,0 +1,227 @@
+{
+ "name": "stale_item_score_lag_after_rule_change",
+ "keys": {
+  "agent": [
+   "stale memory items after rule change score lag outcome-reinforced utility pruning",
+   "co-retrieval contamination credit assignment memory items non-stationary",
+   "memory-reward trap stale items survive pruning after drift"
+  ],
+  "mechanism_home": [
+   "credit assignment lag under nonstationarity reward contamination jointly rewarded components",
+   "rotting bandits decaying arm value detection delay",
+   "prioritized replay priority staleness lag"
+  ],
+  "adjacent": [
+   "concept drift detection delay ensemble member weighting nonstationary",
+   "shared reward credit assignment free-rider multi-agent",
+   "rotting bandit arms value decays with pulls regret"
+  ],
+  "baseline": [
+   "temporal validity filter for retrieval",
+   "usage-decay recency score",
+   "leave-one-out anchored online scorer"
+  ],
+  "methods": [
+   "SF-AMS",
+   "Oblivion",
+   "MemQ TD(lambda)",
+   "budgeted forgetting",
+   "RoMeRL",
+   "Memora",
+   "MINTEval",
+   "compliance trap",
+   "insight governance non-stationary",
+   "PlanFence",
+   "RAW-UCB rotting bandits",
+   "prioritized experience replay"
+  ],
+  "environment": [
+   "ALFWorld clean-type games",
+   "two 32B replicas"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "credit assignment lag under nonstationarity reward contamination jointly rewarded components"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "rotting bandits decaying arm value detection delay"
+  },
+  {
+   "class": "agent",
+   "query": "stale memory items after rule change score lag outcome-reinforced utility pruning"
+  },
+  {
+   "class": "agent",
+   "query": "co-retrieval contamination credit assignment memory items non-stationary"
+  },
+  {
+   "class": "adjacent",
+   "query": "concept drift detection delay ensemble member weighting nonstationary"
+  },
+  {
+   "class": "baseline",
+   "query": "temporal validity filter for retrieval"
+  },
+  {
+   "class": "methods",
+   "query": "SF-AMS Oblivion MemQ TD(lambda) stale memory items after rule change score lag outcome-reinf"
+  },
+  {
+   "class": "agent",
+   "query": "stale memory items after rule change score lag outcome-reinforced utility pruning ALFWorld clean-type games two 32B replicas"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2606.26511",
+   "date": "2026-06-25",
+   "venue": "",
+   "sim": 0.525,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "Temporal Validity in Retrieval Memory: Eliminating Stale-Fact Errors for AI Agents over Evolving Knowledge"
+  },
+  {
+   "id": "arxiv:2608.25553",
+   "date": "2026-08-28",
+   "venue": "",
+   "sim": 0.509,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "When Stale Constraints Go Unchecked: Budgeted Verification Failures in Inherited Agent Memory"
+  },
+  {
+   "id": "arxiv:2605.17639",
+   "date": "2026-05-17",
+   "venue": "",
+   "sim": 0.504,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Temporal Decay of Co-Citation Predictability: A 20-Year Statute Retrieval Benchmark from 396M Ukrainian Court Citations"
+  },
+  {
+   "id": "arxiv:2607.18722",
+   "date": "2026-07-21",
+   "venue": "",
+   "sim": 0.461,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "mechanism_home",
+    "methods"
+   ],
+   "title": "Stale but Stable: Staleness-Adaptive Trust Regions for Stabilizing Asynchronous Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2603.02473",
+   "date": "2026-04-12",
+   "venue": "",
+   "sim": 0.417,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory"
+  },
+  {
+   "id": "arxiv:2605.06132",
+   "date": "2026-05-07",
+   "venue": "",
+   "sim": 0.417,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MemReranker: Reasoning-Aware Reranking for Agent Memory Retrieval"
+  },
+  {
+   "id": "arxiv:2604.27306",
+   "date": "2026-04-30",
+   "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+   "sim": 0.416,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "NuggetIndex: Governed Atomic Retrieval for Maintainable RAG"
+  },
+  {
+   "id": "arxiv:2607.12893",
+   "date": "2026-07-14",
+   "venue": "",
+   "sim": 0.406,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MemOps: Benchmarking Lifecycle Memory Operations in Long-Horizon Conversations"
+  },
+  {
+   "id": "arxiv:1811.11043",
+   "date": "2018-11-27",
+   "venue": "",
+   "sim": 0.405,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Rotting bandits are not harder than stochastic ones"
+  },
+  {
+   "id": "arxiv:2510.08109",
+   "date": "2025-10-09",
+   "venue": "arXiv.org",
+   "sim": 0.397,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "VersionRAG: Version-Aware Retrieval-Augmented Generation for Evolving Documents"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 19,
+  "adjacent": 18,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "credit assignment lag under nonstationarity reward contamination jointly rewarded components 2025 arXiv"
+  },
+  {
+   "query": "rotting bandits decaying arm value detection delay 2025 arXiv"
+  }
+ ]
+}

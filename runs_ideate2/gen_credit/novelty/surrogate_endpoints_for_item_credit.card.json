@@ -1,0 +1,223 @@
+{
+ "name": "surrogate_endpoints_for_item_credit",
+ "keys": {
+  "agent": [
+   "surrogate process endpoints per-item leave-one-out memory value variance reduction",
+   "goal-condition progress steps-to-success as proxy for retrieved item credit",
+   "teacher-forced log-probability confidence gain versus counterfactual item removal"
+  ],
+  "mechanism_home": [
+   "surrogate endpoint validation bias variance reduction trials",
+   "control variates variance reduction binary outcome evaluation",
+   "process reward versus outcome reward correlation bias"
+  ],
+  "adjacent": [
+   "process reward models misaligned with final outcome correctness",
+   "surrogate endpoint fails to predict true endpoint treatment effect",
+   "early stopping evaluation predicting outcomes from intermediate behaviour"
+  ],
+  "baseline": [
+   "success-only leave-one-out with more seeds",
+   "early-halt re-runs scored by progress",
+   "generation confidence gain document scoring"
+  ],
+  "methods": [
+   "DIG",
+   "MERIT",
+   "SLATE",
+   "AttriMem",
+   "ProgRM",
+   "Progress Advantage",
+   "EarlyEval",
+   "CUE-R",
+   "Shapley source attribution RAG"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "PDDL goal predicates"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "surrogate endpoint validation bias variance reduction trials"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "control variates variance reduction binary outcome evaluation"
+  },
+  {
+   "class": "agent",
+   "query": "surrogate process endpoints per-item leave-one-out memory value variance reduction"
+  },
+  {
+   "class": "agent",
+   "query": "goal-condition progress steps-to-success as proxy for retrieved item credit"
+  },
+  {
+   "class": "adjacent",
+   "query": "process reward models misaligned with final outcome correctness"
+  },
+  {
+   "class": "baseline",
+   "query": "success-only leave-one-out with more seeds"
+  },
+  {
+   "class": "methods",
+   "query": "DIG MERIT SLATE surrogate process endpoints per-item leave-one-out memory va"
+  },
+  {
+   "class": "agent",
+   "query": "surrogate process endpoints per-item leave-one-out memory value variance reduction ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2505.19706",
+   "date": "2025-05-26",
+   "venue": "",
+   "sim": 0.549,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Error Typing for Smarter Rewards: Improving Process Reward Models with\n  Error-Aware Hierarchical Supervision"
+  },
+  {
+   "id": "arxiv:2602.23440",
+   "date": "2026-02-26",
+   "venue": "",
+   "sim": 0.543,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Truncated Step-Level Sampling with Process Rewards for Retrieval-Augmented Reasoning"
+  },
+  {
+   "id": "arxiv:2607.08522",
+   "date": "2026-07-09",
+   "venue": "",
+   "sim": 0.53,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Stop Guessing When to Stop Testing: Efficient Model Evaluation with Just Enough Data"
+  },
+  {
+   "id": "arxiv:2601.21912",
+   "date": "2026-01-29",
+   "venue": "",
+   "sim": 0.514,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "ProRAG: Process-Supervised Reinforcement Learning for Retrieval-Augmented Generation"
+  },
+  {
+   "id": "arxiv:2412.01981",
+   "date": "2024-12-02",
+   "venue": "",
+   "sim": 0.51,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Free Process Rewards without Process Labels"
+  },
+  {
+   "id": "arxiv:2405.03834",
+   "date": "2024-05-06",
+   "venue": "",
+   "sim": 0.509,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Covariance-free Bi-fidelity Control Variates Importance Sampling for Rare Event Reliability Analysis"
+  },
+  {
+   "id": "arxiv:2606.25852",
+   "date": "2026-06-24",
+   "venue": "",
+   "sim": 0.486,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Semantic Consistency Policy Optimization for Reinforcement Learning of LLM Agents"
+  },
+  {
+   "id": "arxiv:2511.19794",
+   "date": "2025-11-24",
+   "venue": "",
+   "sim": 0.484,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "When +1% Is Not Enough: A Paired Bootstrap Protocol for Evaluating Small Improvements"
+  },
+  {
+   "id": "arxiv:2509.03403",
+   "date": "2025-09-03",
+   "venue": "",
+   "sim": 0.481,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Beyond Correctness: Harmonizing Process and Outcome Rewards through RL\n  Training"
+  },
+  {
+   "id": "arxiv:2310.20380",
+   "date": "2023-10-31",
+   "venue": "",
+   "sim": 0.476,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "mechanism_home"
+   ],
+   "title": "Dropout Strategy in Reinforcement Learning: Limiting the Surrogate\n  Objective Variance in Policy Optimization Methods"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 36,
+  "agent": 18,
+  "adjacent": 8,
+  "baseline": 14,
+  "methods": 3
+ },
+ "web_jobs": [
+  {
+   "query": "surrogate endpoint validation bias variance reduction trials 2025 arXiv"
+  },
+  {
+   "query": "control variates variance reduction binary outcome evaluation 2025 arXiv"
+  }
+ ]
+}

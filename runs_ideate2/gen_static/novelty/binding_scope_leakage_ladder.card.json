@@ -1,0 +1,215 @@
+{
+ "name": "binding_scope_leakage_ladder",
+ "keys": {
+  "agent": [
+   "experience bank retrieval near-duplicate leakage gain ALFWorld",
+   "agent memory gain versus compiled static prompt instance scope",
+   "trajectory retrieval duplicate rate memory benchmark inflation"
+  ],
+  "mechanism_home": [
+   "train-test overlap deduplication score inflation near-duplicate contamination",
+   "in-context example similarity to test input copying versus rule abstraction",
+   "benchmark contamination rephrased samples performance inflation"
+  ],
+  "adjacent": [
+   "retrieval-augmented gains vanish after deduplication of test overlap",
+   "few-shot demonstrations act as rule specification not instance copying",
+   "long-context baselines match memory methods on scoped tasks"
+  ],
+  "baseline": [
+   "compiled task-type instruction sentence in static prompt",
+   "lookup table of scene facts as static prefix",
+   "whole corpus in context without retrieval"
+  ],
+  "methods": [
+   "Evo-Memory ReMe EvoMemBench",
+   "AgentCL SWE-ContextBench compliance trap memory",
+   "ConTAM contamination deduplicating training data"
+  ],
+  "environment": [
+   "ALFWorld PDDL expert trajectories",
+   "TextWorld relocated object placements"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "train-test overlap deduplication score inflation near-duplicate contamination"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "in-context example similarity to test input copying versus rule abstraction"
+  },
+  {
+   "class": "agent",
+   "query": "experience bank retrieval near-duplicate leakage gain ALFWorld"
+  },
+  {
+   "class": "agent",
+   "query": "agent memory gain versus compiled static prompt instance scope"
+  },
+  {
+   "class": "adjacent",
+   "query": "retrieval-augmented gains vanish after deduplication of test overlap"
+  },
+  {
+   "class": "baseline",
+   "query": "compiled task-type instruction sentence in static prompt"
+  },
+  {
+   "class": "methods",
+   "query": "Evo-Memory ReMe EvoMemBench AgentCL SWE-ContextBench compliance trap memory ConTAM contamination deduplicating training data experience bank retrieval near-duplicate leakage gain ALFWor"
+  },
+  {
+   "class": "agent",
+   "query": "experience bank retrieval near-duplicate leakage gain ALFWorld ALFWorld PDDL expert trajectories TextWorld relocated object placements"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2604.05467",
+   "date": "2026-04-07",
+   "venue": "",
+   "sim": 0.547,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "CUE-R: Beyond the Final Answer in Retrieval-Augmented Generation"
+  },
+  {
+   "id": "arxiv:2606.26511",
+   "date": "2026-06-25",
+   "venue": "",
+   "sim": 0.547,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Temporal Validity in Retrieval Memory: Eliminating Stale-Fact Errors for AI Agents over Evolving Knowledge"
+  },
+  {
+   "id": "arxiv:2605.09611",
+   "date": "2026-05-10",
+   "venue": "",
+   "sim": 0.51,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Byte-Exact Deduplication in Retrieval-Augmented Generation: A Three-Regime Empirical Analysis Across Public Benchmarks"
+  },
+  {
+   "id": "arxiv:2605.13941",
+   "date": "2026-05-13",
+   "venue": "",
+   "sim": 0.505,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "EvolveMem:Self-Evolving Memory Architecture via AutoResearch for LLM Agents"
+  },
+  {
+   "id": "arxiv:2511.20857",
+   "date": "2025-11-25",
+   "venue": "",
+   "sim": 0.495,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory"
+  },
+  {
+   "id": "arxiv:2608.05784",
+   "date": "2026-08-06",
+   "venue": "",
+   "sim": 0.493,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Activity Frames: Deterministic Screen-Activity Compilation for Agent Memory and Replay"
+  },
+  {
+   "id": "arxiv:2510.16809",
+   "date": "2025-10-19",
+   "venue": "",
+   "sim": 0.486,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "When Many-Shot Prompting Fails: An Empirical Study of LLM Code Translation"
+  },
+  {
+   "id": "arxiv:2609.01865",
+   "date": "2026-09-01",
+   "venue": "",
+   "sim": 0.486,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "ExecRetrieval: Measuring the Functional-Correctness Gap in Code-Embedding Retrieval"
+  },
+  {
+   "id": "arxiv:2411.04257",
+   "date": "2024-11-06",
+   "venue": "",
+   "sim": 0.482,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "LSHBloom: Memory-efficient, Extreme-scale Document Deduplication"
+  },
+  {
+   "id": "arxiv:2205.10487",
+   "date": "2022-05-21",
+   "venue": "",
+   "sim": 0.475,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Scaling Laws and Interpretability of Learning from Repeated Data"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 19,
+  "agent": 24,
+  "adjacent": 8,
+  "baseline": 11,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "train-test overlap deduplication score inflation near-duplicate contamination 2025 arXiv"
+  },
+  {
+   "query": "in-context example similarity to test input copying versus rule abstraction 2025 arXiv"
+  }
+ ]
+}

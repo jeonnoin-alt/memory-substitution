@@ -1,0 +1,217 @@
+{
+ "name": "aggregate_or_comply",
+ "keys": {
+  "agent": [
+   "compiled playbook versus top-k retrieval versus whole-bank context contaminated experience bank",
+   "retrieved memory compliance wrong-procedure items dose-response agent success",
+   "memory poisoning contamination rate compiled versus retrieved agent memory"
+  ],
+  "mechanism_home": [
+   "in-context demonstrations label noise robustness minority contamination",
+   "phase transition poisoning ratio threshold aggregation defense",
+   "majority voting versus compliance conflicting instructions in-context"
+  ],
+  "adjacent": [
+   "label correctness barely matters in in-context demonstrations",
+   "data poisoning phase transition at poisoning ratio",
+   "LLMs follow conflicting context over parametric knowledge"
+  ],
+  "baseline": [
+   "consensus-based validation of memory items",
+   "temporal validity filter for retrieval",
+   "fixed exemplar set static prompt"
+  ],
+  "methods": [
+   "compliance trap",
+   "MemoryGraft PoisonedEvolution A-MemGuard",
+   "MemAPO",
+   "Run-Off Election"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "in-context demonstrations label noise robustness minority contamination"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "phase transition poisoning ratio threshold aggregation defense"
+  },
+  {
+   "class": "agent",
+   "query": "compiled playbook versus top-k retrieval versus whole-bank context contaminated experience bank"
+  },
+  {
+   "class": "agent",
+   "query": "retrieved memory compliance wrong-procedure items dose-response agent success"
+  },
+  {
+   "class": "adjacent",
+   "query": "label correctness barely matters in in-context demonstrations"
+  },
+  {
+   "class": "baseline",
+   "query": "consensus-based validation of memory items"
+  },
+  {
+   "class": "methods",
+   "query": "compliance trap MemoryGraft PoisonedEvolution A-MemGuard MemAPO compiled playbook versus top-k retrieval versus whole-bank c"
+  },
+  {
+   "class": "agent",
+   "query": "compiled playbook versus top-k retrieval versus whole-bank context contaminated experience bank ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2602.02579",
+   "date": "2026-02-05",
+   "venue": "",
+   "sim": 0.53,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "ProphetKV: User-Query-Driven Selective Recomputation for Efficient KV Cache Reuse in Retrieval-Augmented Generation"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.528,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2608.20202",
+   "date": "2026-08-20",
+   "venue": "",
+   "sim": 0.51,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "MemTrapBench: Benchmarking Cognitive Traps in LLM Memory Use"
+  },
+  {
+   "id": "arxiv:2407.10670",
+   "date": "2024-07-15",
+   "venue": "",
+   "sim": 0.502,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Enhancing Retrieval and Managing Retrieval: A Four-Module Synergy for\n  Improved Quality and Efficiency in RAG Systems"
+  },
+  {
+   "id": "arxiv:2605.13941",
+   "date": "2026-05-13",
+   "venue": "",
+   "sim": 0.502,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "EvolveMem:Self-Evolving Memory Architecture via AutoResearch for LLM Agents"
+  },
+  {
+   "id": "arxiv:2505.17206",
+   "date": "2025-05-22",
+   "venue": "",
+   "sim": 0.502,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "FB-RAG: Improving RAG with Forward and Backward Lookup"
+  },
+  {
+   "id": "arxiv:2606.24595",
+   "date": "2026-06-23",
+   "venue": "",
+   "sim": 0.49,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "MEMPROBE: Probing Long-Term Agent Memory via Hidden User-State Recovery"
+  },
+  {
+   "id": "arxiv:2603.18718",
+   "date": "2026-03-19",
+   "venue": "",
+   "sim": 0.478,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "MemMA: Coordinating the Memory Cycle through Multi-Agent Reasoning and In-Situ Self-Evolution"
+  },
+  {
+   "id": "arxiv:2601.10681",
+   "date": "2026-01-15",
+   "venue": "",
+   "sim": 0.471,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Structure and Diversity Aware Context Bubble Construction for Enterprise Retrieval Augmented Systems"
+  },
+  {
+   "id": "arxiv:2606.26511",
+   "date": "2026-06-25",
+   "venue": "",
+   "sim": 0.468,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Temporal Validity in Retrieval Memory: Eliminating Stale-Fact Errors for AI Agents over Evolving Knowledge"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 19,
+  "adjacent": 8,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "in-context demonstrations label noise robustness minority contamination 2025 arXiv"
+  },
+  {
+   "query": "phase transition poisoning ratio threshold aggregation defense 2025 arXiv"
+  }
+ ]
+}

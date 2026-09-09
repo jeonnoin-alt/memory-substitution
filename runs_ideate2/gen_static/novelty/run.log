@@ -1,0 +1,30 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 8406.18it/s]
+compile_the_statistics_not_the_trajectory: 8 queries, 69 candidates ({'mechanism_home': 18, 'agent': 18, 'adjacent': 8, 'baseline': 18, 'methods': 8}), top sim 0.495
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7435.32it/s]
+aggregate_or_comply: 8 queries, 65 candidates ({'mechanism_home': 16, 'agent': 19, 'adjacent': 8, 'baseline': 18, 'methods': 8}), top sim 0.53
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 11241.15it/s]
+bindings_need_a_query_only_when_untestable: 8 queries, 50 candidates ({'mechanism_home': 16, 'agent': 10, 'adjacent': 10, 'baseline': 7, 'methods': 8}), top sim 0.484
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5449.57it/s]
+relocated_bindings_demand: 8 queries, 50 candidates ({'mechanism_home': 16, 'agent': 17, 'adjacent': 8, 'baseline': 8, 'methods': 8}), top sim 0.598
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6803.16it/s]
+protocol_bindings_procedure_count: 8 queries, 61 candidates ({'mechanism_home': 26, 'agent': 17, 'adjacent': 8, 'baseline': 8, 'methods': 8}), top sim 0.545
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6747.23it/s]
+binding_scope_leakage_ladder: 8 queries, 69 candidates ({'mechanism_home': 19, 'agent': 24, 'adjacent': 8, 'baseline': 11, 'methods': 8}), top sim 0.547
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5474.12it/s]
+cached_prefix_frontier: 8 queries, 86 candidates ({'mechanism_home': 35, 'agent': 22, 'adjacent': 18, 'baseline': 8, 'methods': 8}), top sim 0.64
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7840.63it/s]
+exemplar_lottery: 8 queries, 77 candidates ({'mechanism_home': 34, 'agent': 21, 'adjacent': 8, 'baseline': 8, 'methods': 8}), top sim 0.457
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5338.52it/s]
+recall_success_dissociation: 8 queries, 84 candidates ({'mechanism_home': 35, 'agent': 22, 'adjacent': 10, 'baseline': 18, 'methods': 8}), top sim 0.62
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7274.23it/s]
+whole_bank_confusability_ladder: 8 queries, 83 candidates ({'mechanism_home': 24, 'agent': 26, 'adjacent': 10, 'baseline': 18, 'methods': 8}), top sim 0.666
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6957.41it/s]
+many_shot_averages_detours: 8 queries, 56 candidates ({'mechanism_home': 15, 'agent': 19, 'adjacent': 9, 'baseline': 8, 'methods': 8}), top sim 0.491
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7464.18it/s]
+near_duplicate_needle_crossover: 8 queries, 62 candidates ({'mechanism_home': 16, 'agent': 18, 'adjacent': 8, 'baseline': 17, 'methods': 8}), top sim 0.543
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7678.06it/s]
+state_key_pays_only_for_planted_bindings: 8 queries, 93 candidates ({'mechanism_home': 36, 'agent': 20, 'adjacent': 11, 'baseline': 18, 'methods': 8}), top sim 0.603
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6909.09it/s]
+retrieval_timing_is_budgeting: 8 queries, 60 candidates ({'mechanism_home': 24, 'agent': 17, 'adjacent': 8, 'baseline': 12, 'methods': 1}), top sim 0.62
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6452.23it/s]
+rank_flat_retriever_is_a_type_classifier: 8 queries, 65 candidates ({'mechanism_home': 11, 'agent': 22, 'adjacent': 8, 'baseline': 18, 'methods': 8}), top sim 0.608

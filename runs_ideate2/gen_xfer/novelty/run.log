@@ -1,0 +1,30 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7967.57it/s]
+reconstruction_pays_only_across_the_writer_gap: 8 queries, 73 candidates ({'mechanism_home': 16, 'agent': 24, 'adjacent': 8, 'baseline': 18, 'methods': 8}), top sim 0.571
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7235.88it/s]
+reconstruction_launders_planted_procedure_errors: 8 queries, 69 candidates ({'mechanism_home': 17, 'agent': 18, 'adjacent': 14, 'baseline': 18, 'methods': 8}), top sim 0.501
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 17814.58it/s]
+rewriter_trained_against_one_reader_matched_cost: 8 queries, 78 candidates ({'mechanism_home': 34, 'agent': 19, 'adjacent': 16, 'baseline': 17, 'methods': 8}), top sim 0.532
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7147.83it/s]
+self_pool_break_even: 8 queries, 76 candidates ({'mechanism_home': 16, 'agent': 19, 'adjacent': 17, 'baseline': 18, 'methods': 8}), top sim 0.503
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5510.84it/s]
+reader_pays_writer_detours: 8 queries, 63 candidates ({'mechanism_home': 16, 'agent': 18, 'adjacent': 8, 'baseline': 18, 'methods': 8}), top sim 0.414
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6371.01it/s]
+leave_one_type_out_split: 8 queries, 72 candidates ({'mechanism_home': 27, 'agent': 27, 'adjacent': 8, 'baseline': 8, 'methods': 8}), top sim 0.456
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7744.53it/s]
+complementarity_not_proximity: 8 queries, 84 candidates ({'mechanism_home': 25, 'agent': 29, 'adjacent': 8, 'baseline': 18, 'methods': 8}), top sim 0.474
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7189.27it/s]
+thoughts_do_not_travel: 8 queries, 60 candidates ({'mechanism_home': 8, 'agent': 21, 'adjacent': 8, 'baseline': 18, 'methods': 8}), top sim 0.532
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6637.72it/s]
+shared_blind_spot: 8 queries, 87 candidates ({'mechanism_home': 30, 'agent': 20, 'adjacent': 15, 'baseline': 18, 'methods': 8}), top sim 0.445
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6145.61it/s]
+coverage_not_headcount: 8 queries, 71 candidates ({'mechanism_home': 16, 'agent': 24, 'adjacent': 14, 'baseline': 10, 'methods': 8}), top sim 0.435
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 8032.51it/s]
+one_bad_apple_population_vote: 8 queries, 48 candidates ({'mechanism_home': 13, 'agent': 18, 'adjacent': 8, 'baseline': 8, 'methods': 8}), top sim 0.428
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6072.69it/s]
+who_gets_read: 8 queries, 79 candidates ({'mechanism_home': 18, 'agent': 21, 'adjacent': 16, 'baseline': 18, 'methods': 8}), top sim 0.477
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6338.26it/s]
+compression_erases_the_writer: 8 queries, 96 candidates ({'mechanism_home': 33, 'agent': 22, 'adjacent': 18, 'baseline': 18, 'methods': 8}), top sim 0.537
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7455.64it/s]
+own_errors_pass_the_gate: 8 queries, 57 candidates ({'mechanism_home': 15, 'agent': 19, 'adjacent': 10, 'baseline': 9, 'methods': 8}), top sim 0.555
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 8042.96it/s]
+search_disposition_contagion: 8 queries, 70 candidates ({'mechanism_home': 18, 'agent': 20, 'adjacent': 8, 'baseline': 18, 'methods': 8}), top sim 0.534

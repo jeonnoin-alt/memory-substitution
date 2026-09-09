@@ -1,0 +1,216 @@
+{
+ "name": "utility_half_life_consumer_swap",
+ "keys": {
+  "agent": [
+   "learned memory utility transfer after reader swap store growth layout shift",
+   "leave-one-out memory item value across backbones seen versus unseen layouts",
+   "wrong-procedure memory items harm persists helpful items value collapses"
+  ],
+  "mechanism_home": [
+   "training data attribution transfer across models data value model dependence",
+   "asymmetric transferability harmful examples versus beneficial examples across learners",
+   "distribution shift invalidates learned ranking revalidation versus relearning cost"
+  ],
+  "adjacent": [
+   "adversarial examples transfer across models more than benign perturbations",
+   "poisoned samples transfer across architectures data Shapley values do not",
+   "mislabeled data detection consistent across models while useful-data ranking varies"
+  ],
+  "baseline": [
+   "recency decay time-based freshness weighting",
+   "re-learn utilities from the stream under the new reader",
+   "similarity-only ranking"
+  ],
+  "methods": [
+   "ExpSuite MemQ MERIT ReMe SF-AMS",
+   "Memora MINTEval compliance trap freshness-weighted memory",
+   "linear datamodeling score AirRep"
+  ],
+  "environment": [
+   "ALFWorld valid_seen valid_unseen",
+   "Qwen3-32B Qwen3-14B Llama-3.1-8B-Instruct",
+   "vLLM A100"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "training data attribution transfer across models data value model dependence"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "asymmetric transferability harmful examples versus beneficial examples across learners"
+  },
+  {
+   "class": "agent",
+   "query": "learned memory utility transfer after reader swap store growth layout shift"
+  },
+  {
+   "class": "agent",
+   "query": "leave-one-out memory item value across backbones seen versus unseen layouts"
+  },
+  {
+   "class": "adjacent",
+   "query": "adversarial examples transfer across models more than benign perturbations"
+  },
+  {
+   "class": "baseline",
+   "query": "recency decay time-based freshness weighting"
+  },
+  {
+   "class": "methods",
+   "query": "ExpSuite MemQ MERIT ReMe SF-AMS Memora MINTEval compliance trap freshness-weighted memory linear datamodeling score AirRep learned memory utility transfer after reader swap store grow"
+  },
+  {
+   "class": "agent",
+   "query": "learned memory utility transfer after reader swap store growth layout shift ALFWorld valid_seen valid_unseen Qwen3-32B Qwen3-14B Llama-3.1-8B-Instruct"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2202.01096",
+   "date": "2022-02-02",
+   "venue": "",
+   "sim": 0.455,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Identifying Suitable Tasks for Inductive Transfer Through the Analysis\n  of Feature Attributions"
+  },
+  {
+   "id": "arxiv:2605.12798",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.448,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Emergent and Subliminal Misalignment Through the Lens of Data-Mediated Transfer"
+  },
+  {
+   "id": "arxiv:2303.06167",
+   "date": "2023-03-10",
+   "venue": "",
+   "sim": 0.439,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Overwriting Pretrained Bias with Finetuning Data"
+  },
+  {
+   "id": "arxiv:2006.14512",
+   "date": "2020-06-25",
+   "venue": "",
+   "sim": 0.436,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Uncovering the Connections Between Adversarial Transferability and\n  Knowledge Transferability"
+  },
+  {
+   "id": "arxiv:2608.17050",
+   "date": "2026-08-17",
+   "venue": "",
+   "sim": 0.43,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Cross-Model Memory Transfer via Target-Side Reader Adaptation"
+  },
+  {
+   "id": "arxiv:2605.13941",
+   "date": "2026-05-13",
+   "venue": "",
+   "sim": 0.42,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "EvolveMem:Self-Evolving Memory Architecture via AutoResearch for LLM Agents"
+  },
+  {
+   "id": "arxiv:2608.02508",
+   "date": "2026-08-10",
+   "venue": "",
+   "sim": 0.416,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States"
+  },
+  {
+   "id": "arxiv:2609.02771",
+   "date": "2026-09-02",
+   "venue": "",
+   "sim": 0.411,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "From Reweighting to Rewriting: Unlocking the Intervention Effects of Influential Samples in Training Data Attribution"
+  },
+  {
+   "id": "arxiv:2604.27003",
+   "date": "2026-04-29",
+   "venue": "",
+   "sim": 0.41,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "When Continual Learning Moves to Memory: A Study of Experience Reuse in LLM Agents"
+  },
+  {
+   "id": "arxiv:2307.05741",
+   "date": "2023-07-11",
+   "venue": "",
+   "sim": 0.407,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Towards Robust and Efficient Continual Language Learning"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 28,
+  "agent": 22,
+  "adjacent": 8,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "training data attribution transfer across models data value model dependence 2025 arXiv"
+  },
+  {
+   "query": "asymmetric transferability harmful examples versus beneficial examples across learners 2025 arXiv"
+  }
+ ]
+}

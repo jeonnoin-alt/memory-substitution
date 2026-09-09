@@ -1,0 +1,219 @@
+{
+ "name": "search_disposition_contagion",
+ "keys": {
+  "agent": [
+   "retrieved trajectories transfer writer exploration behavior agent memory negative transfer",
+   "verbatim replay retrieved experience search length step budget exhaustion ALFWorld",
+   "foreign experience pool disposition copying agent memory reconstruction"
+  ],
+  "mechanism_home": [
+   "imitation learning from suboptimal demonstrations copies demonstrator inefficiency",
+   "in-context demonstrations copy surface behavior style rather than capability",
+   "verbosity contagion in-context examples length copying LLM output length"
+  ],
+  "adjacent": [
+   "imitation of proprietary LLMs copies style not capability",
+   "in-context examples override instructions demonstration format and length copying",
+   "behavioral cloning inherits demonstrator suboptimality dose dependent"
+  ],
+  "baseline": [
+   "static instruction stating the procedure",
+   "strip search segment keep manipulation steps only",
+   "reconstruct retrieved experience for current state before acting"
+  ],
+  "methods": [
+   "MemHarness",
+   "ILMAR",
+   "PREFIL",
+   "SkillEvolBench"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B",
+   "gpt-oss-120b"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "imitation learning from suboptimal demonstrations copies demonstrator inefficiency"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "in-context demonstrations copy surface behavior style rather than capability"
+  },
+  {
+   "class": "agent",
+   "query": "retrieved trajectories transfer writer exploration behavior agent memory negative transfer"
+  },
+  {
+   "class": "agent",
+   "query": "verbatim replay retrieved experience search length step budget exhaustion ALFWorld"
+  },
+  {
+   "class": "adjacent",
+   "query": "imitation of proprietary LLMs copies style not capability"
+  },
+  {
+   "class": "baseline",
+   "query": "static instruction stating the procedure"
+  },
+  {
+   "class": "methods",
+   "query": "MemHarness ILMAR PREFIL retrieved trajectories transfer writer exploration behavior"
+  },
+  {
+   "class": "agent",
+   "query": "retrieved trajectories transfer writer exploration behavior agent memory negative transfer ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2607.28272",
+   "date": "2026-07-30",
+   "venue": "",
+   "sim": 0.534,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MemHarness: Memory Is Reconstructed, Not Replayed"
+  },
+  {
+   "id": "arxiv:2304.00121",
+   "date": "2023-03-31",
+   "venue": "",
+   "sim": 0.519,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Decoding the End-to-end Writing Trajectory in Scholarly Manuscripts"
+  },
+  {
+   "id": "arxiv:2603.02473",
+   "date": "2026-04-12",
+   "venue": "",
+   "sim": 0.486,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory"
+  },
+  {
+   "id": "arxiv:2606.11680",
+   "date": "2026-06-10",
+   "venue": "",
+   "sim": 0.454,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Organize then Retrieve: Hierarchical Memory Navigation for Efficient Agents"
+  },
+  {
+   "id": "arxiv:2502.15010",
+   "date": "2025-06-12",
+   "venue": "",
+   "sim": 0.423,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Obliviate: Efficient Unmemorization for Protecting Intellectual Property in Large Language Models"
+  },
+  {
+   "id": "arxiv:2603.25158",
+   "date": "2026-03-26",
+   "venue": "",
+   "sim": 0.421,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills"
+  },
+  {
+   "id": "arxiv:2307.05741",
+   "date": "2023-07-11",
+   "venue": "",
+   "sim": 0.402,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Towards Robust and Efficient Continual Language Learning"
+  },
+  {
+   "id": "arxiv:2109.08603",
+   "date": "2021-09-17",
+   "venue": "",
+   "sim": 0.4,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Is Curiosity All You Need? On the Utility of Emergent Behaviours from\n  Curious Exploration"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.397,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2603.03379",
+   "date": "2026-03-03",
+   "venue": "",
+   "sim": 0.363,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "MemSifter: Offloading LLM Memory Retrieval via Outcome-Driven Proxy Reasoning"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 18,
+  "agent": 20,
+  "adjacent": 8,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "imitation learning from suboptimal demonstrations copies demonstrator inefficiency 2025 arXiv"
+  },
+  {
+   "query": "in-context demonstrations copy surface behavior style rather than capability 2025 arXiv"
+  }
+ ]
+}

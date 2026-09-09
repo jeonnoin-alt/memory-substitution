@@ -1,0 +1,219 @@
+{
+ "name": "compression_erases_the_writer",
+ "keys": {
+  "agent": [
+   "raw trajectories versus distilled skills agent experience transfer across backbones",
+   "memory abstraction level summaries procedures cross-model transfer ALFWorld",
+   "experience compression transferability writer reader mismatch agent memory"
+  ],
+  "mechanism_home": [
+   "distributional misalignment student teacher reasoning traces filtering tokens improbable under student",
+   "in-context demonstrations from a different model versus self-generated demonstrations familiarity",
+   "abstraction level of demonstrations generalization concrete versus abstract examples in-context learning"
+  ],
+  "adjacent": [
+   "self-generated training data beats stronger model data distribution mismatch small model distillation",
+   "high-level insights transfer while low-level traces cause negative transfer",
+   "model-generated in-context demonstrations improve own performance self-familiar examples"
+  ],
+  "baseline": [
+   "static instruction stating the procedure",
+   "raw success-filtered self trajectories in context",
+   "token-matched retrieved summaries"
+  ],
+  "methods": [
+   "SkillEvolBench",
+   "memory transfer learning coding agents",
+   "procedural memory benchmark",
+   "reasoning trace filtering student-tailored distillation"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B",
+   "gpt-oss-120b"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "distributional misalignment student teacher reasoning traces filtering tokens improbable under student"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "in-context demonstrations from a different model versus self-generated demonstrations familiarity"
+  },
+  {
+   "class": "agent",
+   "query": "raw trajectories versus distilled skills agent experience transfer across backbones"
+  },
+  {
+   "class": "agent",
+   "query": "memory abstraction level summaries procedures cross-model transfer ALFWorld"
+  },
+  {
+   "class": "adjacent",
+   "query": "self-generated training data beats stronger model data distribution mismatch small model distillation"
+  },
+  {
+   "class": "baseline",
+   "query": "static instruction stating the procedure"
+  },
+  {
+   "class": "methods",
+   "query": "SkillEvolBench memory transfer learning coding agents procedural memory benchmark raw trajectories versus distilled skills agent experience tr"
+  },
+  {
+   "class": "agent",
+   "query": "raw trajectories versus distilled skills agent experience transfer across backbones ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2604.14004",
+   "date": "2026-04-15",
+   "venue": "",
+   "sim": 0.537,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Memory Transfer Learning: How Memories are Transferred Across Domains in Coding Agents"
+  },
+  {
+   "id": "arxiv:2605.23899",
+   "date": "2026-05-22",
+   "venue": "",
+   "sim": 0.462,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "From Raw Experience to Skill Consumption: A Systematic Study of Model-Generated Agent Skills"
+  },
+  {
+   "id": "arxiv:2510.07773",
+   "date": "2025-10-09",
+   "venue": "",
+   "sim": 0.462,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Trajectory Conditioned Cross-embodiment Skill Transfer"
+  },
+  {
+   "id": "arxiv:2505.18502",
+   "date": "2025-05-24",
+   "venue": "",
+   "sim": 0.46,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Knowledge Grafting of Large Language Models"
+  },
+  {
+   "id": "arxiv:2603.25158",
+   "date": "2026-03-26",
+   "venue": "",
+   "sim": 0.456,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills"
+  },
+  {
+   "id": "arxiv:2605.10194",
+   "date": "2026-05-11",
+   "venue": "arXiv.org",
+   "sim": 0.438,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "TRACE: Distilling Where It Matters via Token-Routed Self On-Policy Alignment"
+  },
+  {
+   "id": "arxiv:2606.11173",
+   "date": "2026-06-09",
+   "venue": "arXiv.org",
+   "sim": 0.426,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "The Role of Feedback Alignment in Self-Distillation"
+  },
+  {
+   "id": "arxiv:2602.08234",
+   "date": "2026-02-09",
+   "venue": "",
+   "sim": 0.42,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2607.05202",
+   "date": "2026-07-06",
+   "venue": "",
+   "sim": 0.405,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "EvoAgentBench: Benchmarking Agent Self-Evolution via Ability Transfer"
+  },
+  {
+   "id": "arxiv:2601.07470",
+   "date": "2026-01-12",
+   "venue": "",
+   "sim": 0.403,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Learning How to Remember: A Meta-Cognitive Management Method for Structured and Transferable Agent Memory"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 33,
+  "agent": 22,
+  "adjacent": 18,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "distributional misalignment student teacher reasoning traces filtering tokens improbable under student 2025 arXiv"
+  },
+  {
+   "query": "in-context demonstrations from a different model versus self-generated demonstrations familiarity 2025 arXiv"
+  }
+ ]
+}

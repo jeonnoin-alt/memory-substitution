@@ -1,0 +1,221 @@
+{
+ "name": "one_bad_apple_population_vote",
+ "keys": {
+  "agent": [
+   "poisoned experience store agent memory retrieval top-k contamination",
+   "multi-writer shared trajectory bank poisoning defense cross-writer consensus",
+   "MemoryGraft implanted successful experiences ALFWorld memory injection harm"
+  ],
+  "mechanism_home": [
+   "RAG poisoning presence in retrieved passages versus fraction number of poisoned documents",
+   "retrieved passage clustering consensus filter to isolate poisoned documents PoisonedRAG defense",
+   "poisoning attack absolute number of poison samples independent of dataset size"
+  ],
+  "adjacent": [
+   "pretraining poisoning depends on absolute number of poison documents not fraction",
+   "in-context learning single incorrect demonstration flips prediction sensitivity to one distractor",
+   "provenance-based filtering blind to trusted-label poison label flipping attacks"
+  ],
+  "baseline": [
+   "provenance exclusion of low-quality source",
+   "LLM critique of retrieved passages before answering self-verification",
+   "majority vote consensus filter across retrieved passages"
+  ],
+  "methods": [
+   "MemoryGraft",
+   "TrustRAG",
+   "TriShieldRAG",
+   "PoisonedRAG",
+   "MAP-Graph"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B",
+   "gpt-oss-120b"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "RAG poisoning presence in retrieved passages versus fraction number of poisoned documents"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "retrieved passage clustering consensus filter to isolate poisoned documents PoisonedRAG defense"
+  },
+  {
+   "class": "agent",
+   "query": "poisoned experience store agent memory retrieval top-k contamination"
+  },
+  {
+   "class": "agent",
+   "query": "multi-writer shared trajectory bank poisoning defense cross-writer consensus"
+  },
+  {
+   "class": "adjacent",
+   "query": "pretraining poisoning depends on absolute number of poison documents not fraction"
+  },
+  {
+   "class": "baseline",
+   "query": "provenance exclusion of low-quality source"
+  },
+  {
+   "class": "methods",
+   "query": "MemoryGraft TrustRAG TriShieldRAG poisoned experience store agent memory retrieval top-k conta"
+  },
+  {
+   "class": "agent",
+   "query": "poisoned experience store agent memory retrieval top-k contamination ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2609.00470",
+   "date": "2026-08-31",
+   "venue": "",
+   "sim": 0.428,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "TRIS: A Tri-Layer Retrieval Integrity Sieve Against Knowledge Poisoning"
+  },
+  {
+   "id": "arxiv:2106.09667",
+   "date": "2021-06-17",
+   "venue": "",
+   "sim": 0.405,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Poisoning and Backdooring Contrastive Learning"
+  },
+  {
+   "id": "arxiv:2605.26574",
+   "date": "2026-05-26",
+   "venue": "",
+   "sim": 0.403,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "GradSentry: Gradient Spectral Entropy for Backdoor Sample Filtering in Large Language Model Fine-Tuning"
+  },
+  {
+   "id": "arxiv:2604.19274",
+   "date": "2026-04-21",
+   "venue": "",
+   "sim": 0.394,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "HarDBench: A Benchmark for Draft-Based Co-Authoring Jailbreak Attacks for Safe Human-LLM Collaborative Writing"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.378,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2608.06947",
+   "date": "2026-08-07",
+   "venue": "",
+   "sim": 0.367,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "When Context Bites: Detecting RAG Poisoning via Document-Level Attention Collapse"
+  },
+  {
+   "id": "arxiv:2505.12574",
+   "date": "2025-05-18",
+   "venue": "",
+   "sim": 0.359,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "PoisonArena: Uncovering Competing Poisoning Attacks in\n  Retrieval-Augmented Generation"
+  },
+  {
+   "id": "arxiv:2501.11759",
+   "date": "2025-01-20",
+   "venue": "",
+   "sim": 0.357,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Poison-RAG: Adversarial Data Poisoning Attacks on Retrieval-Augmented Generation in Recommender Systems"
+  },
+  {
+   "id": "arxiv:2601.05504",
+   "date": "2026-01-12",
+   "venue": "",
+   "sim": 0.355,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "Memory Poisoning Attack and Defense on Memory Based LLM-Agents"
+  },
+  {
+   "id": "arxiv:2402.07867",
+   "date": "2024-02-12",
+   "venue": "",
+   "sim": 0.35,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 13,
+  "agent": 18,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "RAG poisoning presence in retrieved passages versus fraction number of poisoned documents 2025 arXiv"
+  },
+  {
+   "query": "retrieved passage clustering consensus filter to isolate poisoned documents PoisonedRAG defense 2025 arXiv"
+  }
+ ]
+}

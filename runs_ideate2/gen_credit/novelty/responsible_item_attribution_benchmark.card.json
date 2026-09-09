@@ -1,0 +1,229 @@
+{
+ "name": "responsible_item_attribution_benchmark",
+ "keys": {
+  "agent": [
+   "attributing agent failure to retrieved memory item counterfactual intervention ALFWorld",
+   "self-reported memory use faithfulness versus leave-one-out re-run",
+   "seed-replicated leave-one-out attribution retrieved items multi-step agent"
+  ],
+  "mechanism_home": [
+   "counterfactual document removal attribution stochastic evaluation replication noise",
+   "self-explanation faithfulness versus counterfactual feature ablation",
+   "leave-one-out versus Shapley attribution disagreement redundant features"
+  ],
+  "adjacent": [
+   "self-explanations are unfaithful to counterfactual feature importance",
+   "redundant features hide leave-one-out attribution",
+   "single-run evaluation noise makes attribution unreliable"
+  ],
+  "baseline": [
+   "single-seed leave-one-out removal",
+   "position rank prior top-ranked document blamed",
+   "LLM self-report of which context passage was used"
+  ],
+  "methods": [
+   "CUE-R",
+   "Shapley source attribution RAG",
+   "CausalFlow",
+   "A2P",
+   "ErrorProbe",
+   "CC-SHAP",
+   "compliance trap",
+   "MemoryArena",
+   "MemoryAgentBench"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "Evo-Memory",
+   "MemoryArena",
+   "MemoryAgentBench",
+   "MINTEval",
+   "Memora"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "counterfactual document removal attribution stochastic evaluation replication noise"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "self-explanation faithfulness versus counterfactual feature ablation"
+  },
+  {
+   "class": "agent",
+   "query": "attributing agent failure to retrieved memory item counterfactual intervention ALFWorld"
+  },
+  {
+   "class": "agent",
+   "query": "self-reported memory use faithfulness versus leave-one-out re-run"
+  },
+  {
+   "class": "adjacent",
+   "query": "self-explanations are unfaithful to counterfactual feature importance"
+  },
+  {
+   "class": "baseline",
+   "query": "single-seed leave-one-out removal"
+  },
+  {
+   "class": "methods",
+   "query": "CUE-R Shapley source attribution RAG CausalFlow attributing agent failure to retrieved memory item counterfa"
+  },
+  {
+   "class": "agent",
+   "query": "attributing agent failure to retrieved memory item counterfactual intervention ALFWorld ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2606.25449",
+   "date": "2026-07-21",
+   "venue": "",
+   "sim": 0.531,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Reclaim Evaluation: A Lossy Memory Is Worse Than an Empty One"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.522,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2608.20627",
+   "date": "2026-08-20",
+   "venue": "",
+   "sim": 0.501,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "When Failures Propagate: Causal Failure Attribution in Agentic Retrieval-Augmented Generation"
+  },
+  {
+   "id": "arxiv:2604.05467",
+   "date": "2026-04-07",
+   "venue": "",
+   "sim": 0.433,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "CUE-R: Beyond the Final Answer in Retrieval-Augmented Generation"
+  },
+  {
+   "id": "arxiv:2509.10401",
+   "date": "2025-09-12",
+   "venue": "",
+   "sim": 0.432,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "Abduct, Act, Predict: Scaffolding Causal Inference for Automated Failure Attribution in Multi-Agent Systems"
+  },
+  {
+   "id": "arxiv:2605.29463",
+   "date": "2026-05-31",
+   "venue": "",
+   "sim": 0.43,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Honest Lying: Understanding Memory Confabulation in Reflexive Agents"
+  },
+  {
+   "id": "arxiv:2605.25338",
+   "date": "2026-05-25",
+   "venue": "",
+   "sim": 0.412,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "CausalFlow: Causal Attribution and Counterfactual Repair for LLM Agent Failures"
+  },
+  {
+   "id": "arxiv:2607.01480",
+   "date": "2026-07-01",
+   "venue": "",
+   "sim": 0.395,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Procedural Memory Distillation: Online Reflection for Self-Improving Language Models"
+  },
+  {
+   "id": "arxiv:2509.08682",
+   "date": "2025-09-10",
+   "venue": "",
+   "sim": 0.382,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "Automatic Failure Attribution and Critical Step Prediction Method for Multi-Agent Systems Based on Causal Inference"
+  },
+  {
+   "id": "arxiv:2605.24941",
+   "date": "2026-05-24",
+   "venue": "",
+   "sim": 0.371,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Memory-Induced Tool-Drift in LLM Agents"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 25,
+  "agent": 20,
+  "adjacent": 8,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "counterfactual document removal attribution stochastic evaluation replication noise 2025 arXiv"
+  },
+  {
+   "query": "self-explanation faithfulness versus counterfactual feature ablation 2025 arXiv"
+  }
+ ]
+}

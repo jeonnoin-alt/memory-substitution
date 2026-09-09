@@ -1,0 +1,215 @@
+{
+ "name": "stage_conditional_item_value",
+ "keys": {
+  "agent": [
+   "stage-conditional counterfactual value of retrieved experience multi-step agent",
+   "retrieval timing within episode when to retrieve memory item harm recovery",
+   "step-level credit assignment retrieved memory items ALFWorld"
+  ],
+  "mechanism_home": [
+   "action advising when to advise budget state importance teacher student",
+   "intervention timing value of a hint depends on decision state",
+   "mismatched in-context demonstration harm conditional on task phase"
+  ],
+  "adjacent": [
+   "advice at high-uncertainty states yields most gain action advising",
+   "wrong or mismatched demonstrations hurt more than no demonstration in-context learning",
+   "value of information is state dependent rather than item dependent"
+  ],
+  "baseline": [
+   "static instruction stating the procedure at every step",
+   "retrieve at every decision step observation-conditioned retrieval",
+   "reader rewrites the retrieved item to the current state before use"
+  ],
+  "methods": [
+   "SLEA-RL MERIT U-EHR MemHarness UCOB",
+   "memory anchoring compliance trap",
+   "action advising when-to-advise budget state importance teacher bridge"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "action advising when to advise budget state importance teacher student"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "intervention timing value of a hint depends on decision state"
+  },
+  {
+   "class": "agent",
+   "query": "stage-conditional counterfactual value of retrieved experience multi-step agent"
+  },
+  {
+   "class": "agent",
+   "query": "retrieval timing within episode when to retrieve memory item harm recovery"
+  },
+  {
+   "class": "adjacent",
+   "query": "advice at high-uncertainty states yields most gain action advising"
+  },
+  {
+   "class": "baseline",
+   "query": "static instruction stating the procedure at every step"
+  },
+  {
+   "class": "methods",
+   "query": "SLEA-RL MERIT U-EHR MemHarness UCOB memory anchoring compliance trap action advising when-to-advise budget state importance teacher bridge stage-conditional counterfactual value of retrieved experien"
+  },
+  {
+   "class": "agent",
+   "query": "stage-conditional counterfactual value of retrieved experience multi-step agent ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2605.27140",
+   "date": "2026-05-26",
+   "venue": "",
+   "sim": 0.525,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "StepOPSD: Step-Aware Online Preference Distillation for Agent Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.524,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2603.02473",
+   "date": "2026-04-12",
+   "venue": "",
+   "sim": 0.501,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory"
+  },
+  {
+   "id": "arxiv:2606.22844",
+   "date": "2026-06-22",
+   "venue": "",
+   "sim": 0.501,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "RaMem: Contextual Reinstatement for Long-term Agentic Memory"
+  },
+  {
+   "id": "arxiv:2604.18847",
+   "date": "2026-04-20",
+   "venue": "",
+   "sim": 0.477,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Human-Guided Harm Recovery for Computer Use Agents"
+  },
+  {
+   "id": "arxiv:2607.21106",
+   "date": "2026-07-23",
+   "venue": "",
+   "sim": 0.459,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "AttriMem: Attribution-Guided Process Feedback for Agent Memory Learning"
+  },
+  {
+   "id": "arxiv:2608.04530",
+   "date": "2026-08-05",
+   "venue": "",
+   "sim": 0.446,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "FocusMem: Factorizing Content, Readout, and Trust in Latent GUI Memory"
+  },
+  {
+   "id": "arxiv:2007.12986",
+   "date": "2020-08-24",
+   "venue": "",
+   "sim": 0.433,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Counterfactual Evaluation of Slate Recommendations with Sequential Reward Interactions"
+  },
+  {
+   "id": "arxiv:2603.18079",
+   "date": "2026-03-18",
+   "venue": "",
+   "sim": 0.431,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "SLEA-RL: Step-Level Experience Augmented Reinforcement Learning for Multi-Turn Agentic Training"
+  },
+  {
+   "id": "arxiv:2608.04509",
+   "date": "2026-08-05",
+   "venue": "",
+   "sim": 0.419,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "CARGO-VL: Counterfactual Arbitration with Risk-Constrained Group Optimization for Vision-Language Models"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 25,
+  "agent": 21,
+  "adjacent": 8,
+  "baseline": 9,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "action advising when to advise budget state importance teacher student 2025 arXiv"
+  },
+  {
+   "query": "intervention timing value of a hint depends on decision state 2025 arXiv"
+  }
+ ]
+}

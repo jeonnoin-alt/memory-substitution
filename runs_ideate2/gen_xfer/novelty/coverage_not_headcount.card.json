@@ -1,0 +1,219 @@
+{
+ "name": "coverage_not_headcount",
+ "keys": {
+  "agent": [
+   "multi-agent shared experience store matched collection budget reader gain",
+   "population of writers task-type coverage predicts memory transfer",
+   "number of contributing policies retrieval conflict shared memory pool"
+  ],
+  "mechanism_home": [
+   "multi-demonstrator imitation learning demonstrator diversity coverage compatibility",
+   "ensemble diversity complementary channels scaling number of models",
+   "data mixture coverage versus number of sources fixed budget"
+  ],
+  "adjacent": [
+   "diversity beats quantity in SFT data scaling",
+   "non-monotonic scaling with team size when experience is reused",
+   "coverage of skill space predicts fine-tuning generalization more than data volume"
+  ],
+  "baseline": [
+   "reader's own pool at matched budget",
+   "static per-type procedure prompt",
+   "self pool plus expert-only bank"
+  ],
+  "methods": [
+   "Memory Sharing",
+   "Multi-Agent Transactive Memory",
+   "StateFuse",
+   "Scaling Teams or Scaling Time",
+   "demonstration compatibility"
+  ],
+  "environment": [
+   "ALFWorld 274 validation games",
+   "Qwen3-32B EXAONE-4.0-32B gpt-oss-120b",
+   "BM25 dense retriever"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "multi-demonstrator imitation learning demonstrator diversity coverage compatibility"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "ensemble diversity complementary channels scaling number of models"
+  },
+  {
+   "class": "agent",
+   "query": "multi-agent shared experience store matched collection budget reader gain"
+  },
+  {
+   "class": "agent",
+   "query": "population of writers task-type coverage predicts memory transfer"
+  },
+  {
+   "class": "adjacent",
+   "query": "diversity beats quantity in SFT data scaling"
+  },
+  {
+   "class": "baseline",
+   "query": "reader's own pool at matched budget"
+  },
+  {
+   "class": "methods",
+   "query": "Memory Sharing Multi-Agent Transactive Memory StateFuse multi-agent shared experience store matched collection budge"
+  },
+  {
+   "class": "agent",
+   "query": "multi-agent shared experience store matched collection budget reader gain ALFWorld 274 validation games Qwen3-32B EXAONE-4.0-32B gpt-oss-120b"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2603.02473",
+   "date": "2026-04-12",
+   "venue": "",
+   "sim": 0.435,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory"
+  },
+  {
+   "id": "arxiv:2606.19911",
+   "date": "2026-06-18",
+   "venue": "",
+   "sim": 0.425,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "Multi-Agent Transactive Memory"
+  },
+  {
+   "id": "arxiv:2602.05965",
+   "date": "2026-02-05",
+   "venue": "",
+   "sim": 0.41,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Learning to Share: Selective Memory for Efficient Parallel Agentic Systems"
+  },
+  {
+   "id": "arxiv:2608.16033",
+   "date": "2026-08-17",
+   "venue": "",
+   "sim": 0.401,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "R^3-Bench: LLMs Struggle with Resource-Rational Reasoning under Shared Budgets"
+  },
+  {
+   "id": "arxiv:2607.27739",
+   "date": "2026-07-30",
+   "venue": "arXiv.org",
+   "sim": 0.392,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Measuring Alignment With Reader Highlights Net of Position and Length"
+  },
+  {
+   "id": "arxiv:2502.02904",
+   "date": "2025-02-05",
+   "venue": "",
+   "sim": 0.389,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "ScholaWrite: A Dataset of End-to-End Scholarly Writing Process"
+  },
+  {
+   "id": "arxiv:2606.10398",
+   "date": "2026-06-09",
+   "venue": "arXiv.org",
+   "sim": 0.377,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Selection, Not Salience: The Shape and Limits of Personalization in Social Highlighting"
+  },
+  {
+   "id": "arxiv:2505.18279",
+   "date": "2025-05-23",
+   "venue": "",
+   "sim": 0.377,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Collaborative Memory: Multi-User Memory Sharing in LLM Agents with Dynamic Access Control"
+  },
+  {
+   "id": "arxiv:2510.14763",
+   "date": "2025-10-16",
+   "venue": "",
+   "sim": 0.371,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "COIG-Writer: A High-Quality Dataset for Chinese Creative Writing with\n  Thought Processes"
+  },
+  {
+   "id": "arxiv:2602.08335",
+   "date": "2026-02-09",
+   "venue": "",
+   "sim": 0.363,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Who Deserves the Reward? SHARP: Shapley Credit-based Optimization for Multi-Agent System"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 24,
+  "adjacent": 14,
+  "baseline": 10,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "multi-demonstrator imitation learning demonstrator diversity coverage compatibility 2025 arXiv"
+  },
+  {
+   "query": "ensemble diversity complementary channels scaling number of models 2025 arXiv"
+  }
+ ]
+}

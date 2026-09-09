@@ -1,0 +1,221 @@
+{
+ "name": "recall_success_dissociation",
+ "keys": {
+  "agent": [
+   "retriever recall versus task success dissociation agent experience retrieval",
+   "oracle retriever same-task trajectory success residual over static prompt",
+   "duplicate availability in experience bank WebShop ALFWorld"
+  ],
+  "mechanism_home": [
+   "retrieval metric correlation with downstream task quality retrieval-augmented generation",
+   "retriever contribution isolation reader end-task performance",
+   "information recoverability by exploration versus provided context"
+  ],
+  "adjacent": [
+   "retrieval quality metrics weakly predict end-task accuracy in RAG",
+   "wrong retrieved context is adopted over correct exploration",
+   "correctly selected related examples help mis-selected examples harm"
+  ],
+  "baseline": [
+   "fixed few-shot exemplars token matched",
+   "compiled procedure instruction prompt",
+   "random retrieval control"
+  ],
+  "methods": [
+   "SWE-ContextBench compliance trap memory",
+   "ExpeL Reflexion Traj-Bootstrap",
+   "LoCoMo retrieval versus write strategy"
+  ],
+  "environment": [
+   "ALFWorld WebShop Qwen3-32B",
+   "BM25 retrieval k=3"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "retrieval metric correlation with downstream task quality retrieval-augmented generation"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "retriever contribution isolation reader end-task performance"
+  },
+  {
+   "class": "agent",
+   "query": "retriever recall versus task success dissociation agent experience retrieval"
+  },
+  {
+   "class": "agent",
+   "query": "oracle retriever same-task trajectory success residual over static prompt"
+  },
+  {
+   "class": "adjacent",
+   "query": "retrieval quality metrics weakly predict end-task accuracy in RAG"
+  },
+  {
+   "class": "baseline",
+   "query": "fixed few-shot exemplars token matched"
+  },
+  {
+   "class": "methods",
+   "query": "SWE-ContextBench compliance trap memory ExpeL Reflexion Traj-Bootstrap LoCoMo retrieval versus write strategy retriever recall versus task success dissociation agent expe"
+  },
+  {
+   "class": "agent",
+   "query": "retriever recall versus task success dissociation agent experience retrieval ALFWorld WebShop Qwen3-32B BM25 retrieval k=3"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2504.00573",
+   "date": "2025-04-01",
+   "venue": "",
+   "sim": 0.62,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Training a Utility-based Retriever Through Shared Context Attribution\n  for Retrieval-Augmented Language Models"
+  },
+  {
+   "id": "arxiv:2304.14856",
+   "date": "2023-04-28",
+   "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+   "sim": 0.605,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "A Unified Generative Retriever for Knowledge-Intensive Language Tasks via Prompt Learning"
+  },
+  {
+   "id": "arxiv:2407.03955",
+   "date": "2024-07-04",
+   "venue": "",
+   "sim": 0.569,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Meta-prompting Optimized Retrieval-augmented Generation"
+  },
+  {
+   "id": "arxiv:2607.28272",
+   "date": "2026-07-30",
+   "venue": "",
+   "sim": 0.558,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MemHarness: Memory Is Reconstructed, Not Replayed"
+  },
+  {
+   "id": "arxiv:2601.17532",
+   "date": "2026-01-24",
+   "venue": "",
+   "sim": 0.535,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "mechanism_home"
+   ],
+   "title": "Less is More for RAG: Information Gain Pruning for Generator-Aligned Reranking and Evidence Selection"
+  },
+  {
+   "id": "arxiv:2510.00137",
+   "date": "2025-09-30",
+   "venue": "arXiv.org",
+   "sim": 0.521,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Optimizing What Matters: AUC-Driven Learning for Robust Neural Retrieval"
+  },
+  {
+   "id": "arxiv:2503.01478",
+   "date": "2025-03-03",
+   "venue": "",
+   "sim": 0.52,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "adjacent",
+    "mechanism_home"
+   ],
+   "title": "SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction"
+  },
+  {
+   "id": "arxiv:2505.08445",
+   "date": "2025-05-13",
+   "venue": "arXiv.org",
+   "sim": 0.516,
+   "channels": [
+    "hf",
+    "s2"
+   ],
+   "via": [
+    "adjacent",
+    "mechanism_home"
+   ],
+   "title": "Optimizing Retrieval-Augmented Generation: Analysis of Hyperparameter Impact on Performance and Efficiency"
+  },
+  {
+   "id": "arxiv:2010.10999",
+   "date": "2020-10-21",
+   "venue": "",
+   "sim": 0.515,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Is Retriever Merely an Approximator of Reader?"
+  },
+  {
+   "id": "arxiv:2508.05909",
+   "date": "2025-08-08",
+   "venue": "AAAI Conference on Artificial Intelligence",
+   "sim": 0.509,
+   "channels": [
+    "hf",
+    "s2"
+   ],
+   "via": [
+    "adjacent",
+    "mechanism_home"
+   ],
+   "title": "Beyond Perplexity: Let the Reader Select Retrieval Summaries via Spectrum Projection Score"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 35,
+  "agent": 22,
+  "adjacent": 10,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "retrieval metric correlation with downstream task quality retrieval-augmented generation 2025 arXiv"
+  },
+  {
+   "query": "retriever contribution isolation reader end-task performance 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,216 @@
+{
+ "name": "reconstruction_launders_planted_procedure_errors",
+ "keys": {
+  "agent": [
+   "memory poisoning benign-looking planted wrong trajectories reader-side rewriting propagates errors",
+   "keep/discard gate for retrieved experience items detection recall own-style versus foreign writer",
+   "agent memory contamination defense precision recall ALFWorld experience bank"
+  ],
+  "mechanism_home": [
+   "paraphrasing evades detectors error propagation through rewriting",
+   "self-preference bias evaluators fail to detect errors in own-style text",
+   "wrong labels in-context demonstrations label noise robustness"
+  ],
+  "adjacent": [
+   "LLM judges prefer their own generations self-preference bias",
+   "paraphrase attacks evade AI-generated text detectors",
+   "in-context learning is robust to wrong demonstration labels"
+  ],
+  "baseline": [
+   "keyword consistency rule filter",
+   "NLI-based pruning of retrieved passages",
+   "static procedure prompt"
+  ],
+  "methods": [
+   "MemoryGraft",
+   "SkillJack",
+   "SONAR"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "paraphrasing evades detectors error propagation through rewriting"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "self-preference bias evaluators fail to detect errors in own-style text"
+  },
+  {
+   "class": "agent",
+   "query": "memory poisoning benign-looking planted wrong trajectories reader-side rewriting propagates errors"
+  },
+  {
+   "class": "agent",
+   "query": "keep/discard gate for retrieved experience items detection recall own-style versus foreign writer"
+  },
+  {
+   "class": "adjacent",
+   "query": "LLM judges prefer their own generations self-preference bias"
+  },
+  {
+   "class": "baseline",
+   "query": "keyword consistency rule filter"
+  },
+  {
+   "class": "methods",
+   "query": "MemoryGraft SkillJack SONAR memory poisoning benign-looking planted wrong trajectories r"
+  },
+  {
+   "class": "agent",
+   "query": "memory poisoning benign-looking planted wrong trajectories reader-side rewriting propagates errors ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "s2:1e1bf083aaa78cd524a45f8a775d2e607ddd057e",
+   "date": "2025-10-14",
+   "venue": "International Journal of Digital Accounting Research",
+   "sim": 0.501,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Rule induction from exceptions and outliers for continuous auditing"
+  },
+  {
+   "id": "arxiv:2505.19361",
+   "date": "2025-05-25",
+   "venue": "AAAI Conference on Artificial Intelligence",
+   "sim": 0.469,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Consistency-based Abductive Reasoning over Perceptual Errors of Multiple Pre-trained Models in Novel Environments"
+  },
+  {
+   "id": "arxiv:2603.02473",
+   "date": "2026-04-12",
+   "venue": "",
+   "sim": 0.451,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory"
+  },
+  {
+   "id": "arxiv:2603.15994",
+   "date": "2026-03-16",
+   "venue": "",
+   "sim": 0.448,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Selective Memory for Artificial Intelligence: Write-Time Gating with Hierarchical Archiving"
+  },
+  {
+   "id": "arxiv:2602.03485",
+   "date": "2026-02-03",
+   "venue": "",
+   "sim": 0.434,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Self-Verification Dilemma: Experience-Driven Suppression of Overused Checking in LLM Reasoning"
+  },
+  {
+   "id": "arxiv:2606.20093",
+   "date": "2026-06-18",
+   "venue": "arXiv.org",
+   "sim": 0.411,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "Self-Preference Is Weak or Absent in Verifiable Instruction-Following Revision: A Four-Model Test Under Genuine Authorship"
+  },
+  {
+   "id": "arxiv:2505.14608",
+   "date": "2026-06-08",
+   "venue": "",
+   "sim": 0.402,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Attacks on Machine-Text Detectors Retain Stylistic Fingerprints"
+  },
+  {
+   "id": "arxiv:2605.18549",
+   "date": "2026-05-18",
+   "venue": "",
+   "sim": 0.4,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Monitoring the Internal Monologue: Probe Trajectories Reveal Reasoning Dynamics"
+  },
+  {
+   "id": "arxiv:2512.01037",
+   "date": "2025-12-19",
+   "venue": "",
+   "sim": 0.395,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "When Safety Blocks Sense: Measuring Semantic Confusion in LLM Refusals"
+  },
+  {
+   "id": "arxiv:2505.17100",
+   "date": "2025-05-21",
+   "venue": "",
+   "sim": 0.383,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Any Large Language Model Can Be a Reliable Judge: Debiasing with a\n  Reasoning-based Bias Detector"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 17,
+  "agent": 18,
+  "adjacent": 14,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "paraphrasing evades detectors error propagation through rewriting 2025 arXiv"
+  },
+  {
+   "query": "self-preference bias evaluators fail to detect errors in own-style text 2025 arXiv"
+  }
+ ]
+}

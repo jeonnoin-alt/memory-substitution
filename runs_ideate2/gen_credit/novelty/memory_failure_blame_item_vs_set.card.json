@@ -1,0 +1,226 @@
+{
+ "name": "memory_failure_blame_item_vs_set",
+ "keys": {
+  "agent": [
+   "memory-harmed games culprit item removal restores success ALFWorld",
+   "single culprit versus set-caused failure retrieved memory items",
+   "action-copy proxy identifies harmful retrieved item"
+  ],
+  "mechanism_home": [
+   "distracting passages top-ranked harm retrieval-augmented generation causal attribution",
+   "single-cause versus diffuse failure attribution counterfactual removal",
+   "background context dependence of harmful document effect"
+  ],
+  "adjacent": [
+   "distracting top-ranked passages matter more than position in RAG",
+   "blame assignment to agents and steps in multi-agent failures",
+   "similar but wrong demonstrations cause copying errors in in-context learning"
+  ],
+  "baseline": [
+   "position rank blame slot 1",
+   "retrieval score blame",
+   "static procedure instruction in prompt"
+  ],
+  "methods": [
+   "compliance trap",
+   "MemAudit",
+   "Who&When",
+   "FALAT",
+   "A2P",
+   "TraceElephant",
+   "conformal error attribution",
+   "DIG",
+   "MINTEval",
+   "Memora",
+   "MemoryAgentBench"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "A100"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "distracting passages top-ranked harm retrieval-augmented generation causal attribution"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "single-cause versus diffuse failure attribution counterfactual removal"
+  },
+  {
+   "class": "agent",
+   "query": "memory-harmed games culprit item removal restores success ALFWorld"
+  },
+  {
+   "class": "agent",
+   "query": "single culprit versus set-caused failure retrieved memory items"
+  },
+  {
+   "class": "adjacent",
+   "query": "distracting top-ranked passages matter more than position in RAG"
+  },
+  {
+   "class": "baseline",
+   "query": "position rank blame slot 1"
+  },
+  {
+   "class": "methods",
+   "query": "compliance trap MemAudit Who&When memory-harmed games culprit item removal restores success AL"
+  },
+  {
+   "class": "agent",
+   "query": "memory-harmed games culprit item removal restores success ALFWorld ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.561,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2608.11772",
+   "date": "2026-08-12",
+   "venue": "",
+   "sim": 0.549,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Diagnosis Before Recovery: Turning Agent Failures into Selective Self-Correction"
+  },
+  {
+   "id": "arxiv:2608.20627",
+   "date": "2026-08-20",
+   "venue": "",
+   "sim": 0.545,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "When Failures Propagate: Causal Failure Attribution in Agentic Retrieval-Augmented Generation"
+  },
+  {
+   "id": "arxiv:2509.10401",
+   "date": "2025-09-12",
+   "venue": "",
+   "sim": 0.54,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Abduct, Act, Predict: Scaffolding Causal Inference for Automated Failure Attribution in Multi-Agent Systems"
+  },
+  {
+   "id": "arxiv:2606.08275",
+   "date": "2026-06-06",
+   "venue": "arXiv.org",
+   "sim": 0.497,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Causal Agent Replay: Counterfactual Attribution for LLM-Agent Failures"
+  },
+  {
+   "id": "arxiv:2605.29463",
+   "date": "2026-05-31",
+   "venue": "",
+   "sim": 0.486,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Honest Lying: Understanding Memory Confabulation in Reflexive Agents"
+  },
+  {
+   "id": "arxiv:2607.24368",
+   "date": "2026-07-27",
+   "venue": "",
+   "sim": 0.485,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Keep It InMind: Benchmarking the Implicit-Association Blind Spot in Agent Memory"
+  },
+  {
+   "id": "arxiv:2509.08682",
+   "date": "2025-09-10",
+   "venue": "",
+   "sim": 0.469,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Automatic Failure Attribution and Critical Step Prediction Method for Multi-Agent Systems Based on Causal Inference"
+  },
+  {
+   "id": "arxiv:2603.02473",
+   "date": "2026-04-12",
+   "venue": "",
+   "sim": 0.459,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory"
+  },
+  {
+   "id": "arxiv:2601.05504",
+   "date": "2026-01-12",
+   "venue": "",
+   "sim": 0.444,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "Memory Poisoning Attack and Defense on Memory Based LLM-Agents"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 18,
+  "agent": 18,
+  "adjacent": 8,
+  "baseline": 1,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "distracting passages top-ranked harm retrieval-augmented generation causal attribution 2025 arXiv"
+  },
+  {
+   "query": "single-cause versus diffuse failure attribution counterfactual removal 2025 arXiv"
+  }
+ ]
+}

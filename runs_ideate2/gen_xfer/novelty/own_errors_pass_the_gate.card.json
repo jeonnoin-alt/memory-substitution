@@ -1,0 +1,218 @@
+{
+ "name": "own_errors_pass_the_gate",
+ "keys": {
+  "agent": [
+   "reader verifies retrieved trajectories self-authored contamination detection agent memory",
+   "memory poisoning defense self-consistency validation A-MemGuard experience store",
+   "agent memory contamination authorship familiarity detection recall"
+  ],
+  "mechanism_home": [
+   "LLM self-preference bias evaluator favors own generations familiarity perplexity",
+   "self-recognition bias in LLM-as-a-judge verification error detection",
+   "self-bias in self-refinement reduced by external feedback"
+  ],
+  "adjacent": [
+   "LLM evaluators recognize and favor their own outputs",
+   "self-preference bias tracks perplexity familiarity",
+   "self-verification fails to catch own reasoning errors self-critique blind spot"
+  ],
+  "baseline": [
+   "static instruction stating the procedure as external reference",
+   "majority vote self-consistency verification",
+   "perplexity-based anomaly filter for retrieved items"
+  ],
+  "methods": [
+   "MemoryGraft",
+   "A-MemGuard",
+   "SkillJack",
+   "trust laundering policy-formatted documents"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B",
+   "gpt-oss-120b"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "LLM self-preference bias evaluator favors own generations familiarity perplexity"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "self-recognition bias in LLM-as-a-judge verification error detection"
+  },
+  {
+   "class": "agent",
+   "query": "reader verifies retrieved trajectories self-authored contamination detection agent memory"
+  },
+  {
+   "class": "agent",
+   "query": "memory poisoning defense self-consistency validation A-MemGuard experience store"
+  },
+  {
+   "class": "adjacent",
+   "query": "LLM evaluators recognize and favor their own outputs"
+  },
+  {
+   "class": "baseline",
+   "query": "static instruction stating the procedure as external reference"
+  },
+  {
+   "class": "methods",
+   "query": "MemoryGraft A-MemGuard SkillJack reader verifies retrieved trajectories self-authored contami"
+  },
+  {
+   "class": "agent",
+   "query": "reader verifies retrieved trajectories self-authored contamination detection agent memory ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2606.24428",
+   "date": "2026-06-23",
+   "venue": "",
+   "sim": 0.555,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Escaping the Self-Confirmation Trap: An Execute-Distill-Verify Paradigm for Agentic Experience Learning"
+  },
+  {
+   "id": "arxiv:2605.21856",
+   "date": "2026-05-21",
+   "venue": "",
+   "sim": 0.541,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Illusion of Reasoning: Exposing Evasive Data Contamination in LLMs via Zero-CoT Truncation"
+  },
+  {
+   "id": "arxiv:2605.24216",
+   "date": "2026-05-22",
+   "venue": "",
+   "sim": 0.512,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Agent-ToM: Learning to Monitor Autonomous LLM Agents via Theory-of-Mind Reasoning"
+  },
+  {
+   "id": "arxiv:2606.21884",
+   "date": "2026-06-20",
+   "venue": "",
+   "sim": 0.499,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "A Verifiable Search Is Not a Learnable Chain-of-Thought"
+  },
+  {
+   "id": "arxiv:2512.16962",
+   "date": "2025-12-18",
+   "venue": "",
+   "sim": 0.497,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MemoryGraft: Persistent Compromise of LLM Agents via Poisoned Experience Retrieval"
+  },
+  {
+   "id": "arxiv:2604.27586",
+   "date": "2026-04-30",
+   "venue": "",
+   "sim": 0.496,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Trace-Level Analysis of Information Contamination in Multi-Agent Systems"
+  },
+  {
+   "id": "arxiv:2608.00017",
+   "date": "2026-06-29",
+   "venue": "",
+   "sim": 0.493,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Memory Reward Inflation in Self-Improving LLM Agents"
+  },
+  {
+   "id": "arxiv:2603.27148",
+   "date": "2026-03-28",
+   "venue": "",
+   "sim": 0.487,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "SafetyDrift: Predicting When AI Agents Cross the Line Before They Actually Do"
+  },
+  {
+   "id": "arxiv:2608.03509",
+   "date": "2026-08-04",
+   "venue": "",
+   "sim": 0.479,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "SkillJack: Persistent Skill Backdoors in Self-Evolving Agents"
+  },
+  {
+   "id": "arxiv:2602.09383",
+   "date": "2026-02-10",
+   "venue": "",
+   "sim": 0.476,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 15,
+  "agent": 19,
+  "adjacent": 10,
+  "baseline": 9,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "LLM self-preference bias evaluator favors own generations familiarity perplexity 2025 arXiv"
+  },
+  {
+   "query": "self-recognition bias in LLM-as-a-judge verification error detection 2025 arXiv"
+  }
+ ]
+}

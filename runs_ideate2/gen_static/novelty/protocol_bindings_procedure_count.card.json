@@ -1,0 +1,218 @@
+{
+ "name": "protocol_bindings_procedure_count",
+ "keys": {
+  "agent": [
+   "retrieval residual over cached type-agnostic prompt routing residual procedure count ALFWorld",
+   "in-context selection among many procedures versus retriever selection",
+   "factorized compiled prompt removes retrieval advantage agent memory"
+  ],
+  "mechanism_home": [
+   "in-context routing collapse registry size capability selection",
+   "tool selection many tools in prompt versus tool retrieval task success",
+   "compositional factorized rule set versus enumerated rules prompt length"
+  ],
+  "adjacent": [
+   "in-context routing collapses as registry grows",
+   "lost in the middle long context many options",
+   "factorized representations generalize combinatorially"
+  ],
+  "baseline": [
+   "all procedures in one prompt",
+   "oracle-routed single procedure",
+   "tool retrieval by query"
+  ],
+  "methods": [
+   "Enrich-Retrieve-Rank",
+   "WALL-E 2.0",
+   "Toolshed ScaleMCP Graph RAG-Tool Fusion",
+   "SGR-Bench Mem2ActBench"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B Qwen3-8B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "in-context routing collapse registry size capability selection"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "tool selection many tools in prompt versus tool retrieval task success"
+  },
+  {
+   "class": "agent",
+   "query": "retrieval residual over cached type-agnostic prompt routing residual procedure count ALFWorld"
+  },
+  {
+   "class": "agent",
+   "query": "in-context selection among many procedures versus retriever selection"
+  },
+  {
+   "class": "adjacent",
+   "query": "in-context routing collapses as registry grows"
+  },
+  {
+   "class": "baseline",
+   "query": "all procedures in one prompt"
+  },
+  {
+   "class": "methods",
+   "query": "Enrich-Retrieve-Rank WALL-E 2.0 Toolshed ScaleMCP Graph RAG-Tool Fusion retrieval residual over cached type-agnostic prompt routing"
+  },
+  {
+   "class": "agent",
+   "query": "retrieval residual over cached type-agnostic prompt routing residual procedure count ALFWorld ALFWorld Qwen3-32B Qwen3-8B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2402.14334",
+   "date": "2024-02-22",
+   "venue": "",
+   "sim": 0.545,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "INSTRUCTIR: A Benchmark for Instruction Following of Information\n  Retrieval Models"
+  },
+  {
+   "id": "arxiv:2605.20630",
+   "date": "2026-05-20",
+   "venue": "",
+   "sim": 0.482,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Evaluating Temporal Semantic Caching and Workflow Optimization in Agentic Plan-Execute Pipelines"
+  },
+  {
+   "id": "arxiv:2607.25718",
+   "date": "2026-07-29",
+   "venue": "",
+   "sim": 0.46,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Tools Are Not Islands: Set-Level Tool Retrieval for LLM Agents via Query-Conditioned Hyperedge Prediction"
+  },
+  {
+   "id": "arxiv:2603.19415",
+   "date": "2026-03-19",
+   "venue": "",
+   "sim": 0.452,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Scalable Prompt Routing via Fine-Grained Latent Task Discovery"
+  },
+  {
+   "id": "arxiv:2608.22695",
+   "date": "2026-08-24",
+   "venue": "",
+   "sim": 0.451,
+   "channels": [
+    "hf",
+    "s2"
+   ],
+   "via": [
+    "adjacent",
+    "mechanism_home"
+   ],
+   "title": "Enrich-Retrieve-Rank: Scaling Capability Discovery Beyond In-Context Routing"
+  },
+  {
+   "id": "arxiv:2512.14465",
+   "date": "2025-12-16",
+   "venue": "",
+   "sim": 0.443,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Context-Picker: Dynamic context selection using multi-stage reinforcement learning"
+  },
+  {
+   "id": "arxiv:2607.26371",
+   "date": "2026-07-29",
+   "venue": "",
+   "sim": 0.429,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "A Controlled Candidate-Set Benchmark for Offline Satellite-Security Plan Decomposition"
+  },
+  {
+   "id": "arxiv:2603.13950",
+   "date": "2026-03-14",
+   "venue": "arXiv.org",
+   "sim": 0.423,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "ToolFlood: Beyond Selection - Hiding Valid Tools from LLM Agents via Semantic Covering"
+  },
+  {
+   "id": "arxiv:2408.01875",
+   "date": "2024-08-03",
+   "venue": "",
+   "sim": 0.423,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Re-Invoke: Tool Invocation Rewriting for Zero-Shot Tool Retrieval"
+  },
+  {
+   "id": "arxiv:2609.00834",
+   "date": "2026-09-01",
+   "venue": "",
+   "sim": 0.418,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Replacing Training with Memory: Listwise Selection for Text-to-SQL"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 26,
+  "agent": 17,
+  "adjacent": 8,
+  "baseline": 8,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "in-context routing collapse registry size capability selection 2025 arXiv"
+  },
+  {
+   "query": "tool selection many tools in prompt versus tool retrieval task success 2025 arXiv"
+  }
+ ]
+}

@@ -1,0 +1,219 @@
+{
+ "name": "rewriter_trained_against_one_reader_matched_cost",
+ "keys": {
+  "agent": [
+   "experience rewriter trained by execution feedback transfer across backbones reader specificity",
+   "model-aware skill adaptation rewriter transfer fraction to held-out agent",
+   "learned context augmentation for agents versus self-collected experience at equal GPU-hours"
+  ],
+  "mechanism_home": [
+   "prompt optimization transferability across models optimized prompts overfit the target model",
+   "prompt tuning transfer across model sizes transferability metric",
+   "learned data augmentation policy transfer across architectures"
+  ],
+  "adjacent": [
+   "optimized prompts transfer poorly across models model-specific prompt optimization",
+   "self-generated training data beats external data at matched compute",
+   "learned prompt compression is model-agnostic"
+  ],
+  "baseline": [
+   "prompted untrained rewriter",
+   "verbatim injection at matched tokens",
+   "equal compute spent on self-collected data"
+  ],
+  "methods": [
+   "SkillRevise",
+   "CLEAR",
+   "PANDA"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "prompt optimization transferability across models optimized prompts overfit the target model"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "prompt tuning transfer across model sizes transferability metric"
+  },
+  {
+   "class": "agent",
+   "query": "experience rewriter trained by execution feedback transfer across backbones reader specificity"
+  },
+  {
+   "class": "agent",
+   "query": "model-aware skill adaptation rewriter transfer fraction to held-out agent"
+  },
+  {
+   "class": "adjacent",
+   "query": "optimized prompts transfer poorly across models model-specific prompt optimization"
+  },
+  {
+   "class": "baseline",
+   "query": "prompted untrained rewriter"
+  },
+  {
+   "class": "methods",
+   "query": "SkillRevise CLEAR PANDA experience rewriter trained by execution feedback transfer a"
+  },
+  {
+   "class": "agent",
+   "query": "experience rewriter trained by execution feedback transfer across backbones reader specificity ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2210.07225",
+   "date": "2022-10-13",
+   "venue": "",
+   "sim": 0.532,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Unified Vision and Language Prompt Learning"
+  },
+  {
+   "id": "arxiv:2305.15685",
+   "date": "2023-05-25",
+   "venue": "",
+   "sim": 0.529,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "baseline"
+   ],
+   "title": "RewriteLM: An Instruction-Tuned Large Language Model for Text Rewriting"
+  },
+  {
+   "id": "arxiv:2606.05633",
+   "date": "2026-06-04",
+   "venue": "",
+   "sim": 0.521,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Answer Presence Drives RAG Rewriting Gains"
+  },
+  {
+   "id": "arxiv:2303.02861",
+   "date": "2023-03-06",
+   "venue": "",
+   "sim": 0.517,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Multitask Prompt Tuning Enables Parameter-Efficient Transfer Learning"
+  },
+  {
+   "id": "arxiv:2305.09857",
+   "date": "2023-05-17",
+   "venue": "",
+   "sim": 0.474,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "CoEdIT: Text Editing by Task-Specific Instruction Tuning"
+  },
+  {
+   "id": "arxiv:2402.08594",
+   "date": "2024-02-13",
+   "venue": "Conference on Empirical Methods in Natural Language Processing",
+   "sim": 0.444,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Bayesian Multi-Task Transfer Learning for Soft Prompt Tuning"
+  },
+  {
+   "id": "arxiv:2401.08189",
+   "date": "2024-01-16",
+   "venue": "",
+   "sim": 0.444,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "PRewrite: Prompt Rewriting with Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2305.17223",
+   "date": "2023-05-26",
+   "venue": "",
+   "sim": 0.441,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Do We Really Need a Large Number of Visual Prompts?"
+  },
+  {
+   "id": "arxiv:2305.14283",
+   "date": "2023-05-23",
+   "venue": "",
+   "sim": 0.438,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "baseline"
+   ],
+   "title": "Query Rewriting for Retrieval-Augmented Large Language Models"
+  },
+  {
+   "id": "arxiv:2408.04816",
+   "date": "2024-08-09",
+   "venue": "arXiv.org",
+   "sim": 0.435,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "adjacent",
+    "mechanism_home"
+   ],
+   "title": "FUSE-ing Language Models: Zero-Shot Adapter Discovery for Prompt Optimization Across Tokenizers"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 34,
+  "agent": 19,
+  "adjacent": 16,
+  "baseline": 17,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "prompt optimization transferability across models optimized prompts overfit the target model 2025 arXiv"
+  },
+  {
+   "query": "prompt tuning transfer across model sizes transferability metric 2025 arXiv"
+  }
+ ]
+}

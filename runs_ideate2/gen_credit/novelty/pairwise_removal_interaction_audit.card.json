@@ -1,0 +1,224 @@
+{
+ "name": "pairwise_removal_interaction_audit",
+ "keys": {
+  "agent": [
+   "pairwise removal interaction retrieved memory items leave-one-out versus Shapley multi-step agent",
+   "non-additive credit co-retrieved items ALFWorld manufactured sets",
+   "seeds needed for stable removal sign retrieved set"
+  ],
+  "mechanism_home": [
+   "Shapley interaction index redundancy complementarity synergy attribution",
+   "leave-one-out misranks features under redundancy and masking",
+   "non-additivity of ablation effects stochastic evaluation noise"
+  ],
+  "adjacent": [
+   "submodularity violations among scaffold components factorial ablation",
+   "multi-hop evidence interaction non-additive removal effects",
+   "redundant documents zero marginal removal effect"
+  ],
+  "baseline": [
+   "single leave-one-out removal score",
+   "additive model predicting joint removal from singles",
+   "confidence-gain single-item proxy"
+  ],
+  "methods": [
+   "CUE-R",
+   "Shapley source attribution RAG",
+   "DG-Mem",
+   "RoMeRL",
+   "MemQ",
+   "compliance trap",
+   "shapiq",
+   "joint Shapley",
+   "DIG"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "vLLM",
+   "A100"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "Shapley interaction index redundancy complementarity synergy attribution"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "leave-one-out misranks features under redundancy and masking"
+  },
+  {
+   "class": "agent",
+   "query": "pairwise removal interaction retrieved memory items leave-one-out versus Shapley multi-step agent"
+  },
+  {
+   "class": "agent",
+   "query": "non-additive credit co-retrieved items ALFWorld manufactured sets"
+  },
+  {
+   "class": "adjacent",
+   "query": "submodularity violations among scaffold components factorial ablation"
+  },
+  {
+   "class": "baseline",
+   "query": "single leave-one-out removal score"
+  },
+  {
+   "class": "methods",
+   "query": "CUE-R Shapley source attribution RAG DG-Mem pairwise removal interaction retrieved memory items leave-on"
+  },
+  {
+   "class": "agent",
+   "query": "pairwise removal interaction retrieved memory items leave-one-out versus Shapley multi-step agent ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2604.05467",
+   "date": "2026-04-07",
+   "venue": "",
+   "sim": 0.53,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "CUE-R: Beyond the Final Answer in Retrieval-Augmented Generation"
+  },
+  {
+   "id": "arxiv:2606.26511",
+   "date": "2026-06-25",
+   "venue": "",
+   "sim": 0.478,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Temporal Validity in Retrieval Memory: Eliminating Stale-Fact Errors for AI Agents over Evolving Knowledge"
+  },
+  {
+   "id": "arxiv:2607.10582",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.459,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "MemDecay: Region-Aware KV Cache Eviction for Efficient LLM Agent Inference"
+  },
+  {
+   "id": "arxiv:2607.10608",
+   "date": "2026-07-12",
+   "venue": "",
+   "sim": 0.455,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory"
+  },
+  {
+   "id": "arxiv:2602.17107",
+   "date": "2026-02-19",
+   "venue": "",
+   "sim": 0.451,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Owen-based Semantics and Hierarchy-Aware Explanation (O-Shap)"
+  },
+  {
+   "id": "arxiv:2501.02624",
+   "date": "2025-01-05",
+   "venue": "",
+   "sim": 0.441,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Simultaneous analysis of approximate leave-one-out cross-validation and mean-field inference"
+  },
+  {
+   "id": "arxiv:2407.04597",
+   "date": "2024-07-05",
+   "venue": "",
+   "sim": 0.421,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "Feature Attenuation of Defective Representation Can Resolve Incomplete\n  Masking on Anomaly Detection"
+  },
+  {
+   "id": "arxiv:2107.10171",
+   "date": "2021-03-03",
+   "venue": "Conference on Fairness, Accountability and Transparency",
+   "sim": 0.415,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "Leave-one-out Unfairness"
+  },
+  {
+   "id": "arxiv:2603.26316",
+   "date": "2026-03-27",
+   "venue": "",
+   "sim": 0.4,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "SALMUBench: A Benchmark for Sensitive Association-Level Multimodal Unlearning"
+  },
+  {
+   "id": "arxiv:2509.05316",
+   "date": "2025-08-29",
+   "venue": "",
+   "sim": 0.4,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Standard vs. Modular Sampling: Best Practices for Reliable LLM Unlearning"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 24,
+  "agent": 16,
+  "adjacent": 10,
+  "baseline": 17,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "Shapley interaction index redundancy complementarity synergy attribution 2025 arXiv"
+  },
+  {
+   "query": "leave-one-out misranks features under redundancy and masking 2025 arXiv"
+  }
+ ]
+}

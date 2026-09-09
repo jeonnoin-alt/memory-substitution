@@ -1,0 +1,224 @@
+{
+ "name": "hole_backfill_static_counterfactual",
+ "keys": {
+  "agent": [
+   "leave-one-out credit of retrieved experience item vs next-ranked backfill replacement",
+   "per-item counterfactual value memory bank pruning realized loss",
+   "static procedure placebo replacement retrieved trajectory credit ALFWorld"
+  ],
+  "mechanism_home": [
+   "feature attribution reference value choice removal versus replacement baseline",
+   "leave-one-out data valuation additivity predicts subset removal loss",
+   "semantic missingness baseline plausible replacement input attribution"
+  ],
+  "adjacent": [
+   "attribution reference distribution changes feature importance ranking",
+   "sum of leave-one-out values overpredicts group removal effect non-additivity",
+   "document removal in RAG replaced by next candidate marginal utility"
+  ],
+  "baseline": [
+   "nested-k slot credit from existing logs",
+   "random pruning of the store",
+   "static instruction stating the procedure"
+  ],
+  "methods": [
+   "CUE-R REMOVE REPLACE DUPLICATE",
+   "Shapley source attribution RAG",
+   "DIG confidence gain",
+   "local additive attribution taxonomy",
+   "semantic missingness baselines",
+   "UCOB",
+   "ExpSuite",
+   "TreeMem",
+   "HiMPO",
+   "ReMe",
+   "SF-AMS"
+  ],
+  "environment": [
+   "ALFWorld valid_seen valid_unseen",
+   "k_sweep_final nested-k logs",
+   "second local backbone"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "feature attribution reference value choice removal versus replacement baseline"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "leave-one-out data valuation additivity predicts subset removal loss"
+  },
+  {
+   "class": "agent",
+   "query": "leave-one-out credit of retrieved experience item vs next-ranked backfill replacement"
+  },
+  {
+   "class": "agent",
+   "query": "per-item counterfactual value memory bank pruning realized loss"
+  },
+  {
+   "class": "adjacent",
+   "query": "attribution reference distribution changes feature importance ranking"
+  },
+  {
+   "class": "baseline",
+   "query": "nested-k slot credit from existing logs"
+  },
+  {
+   "class": "methods",
+   "query": "CUE-R REMOVE REPLACE DUPLICATE Shapley source attribution RAG DIG confidence gain leave-one-out credit of retrieved experience item vs next-ra"
+  },
+  {
+   "class": "agent",
+   "query": "leave-one-out credit of retrieved experience item vs next-ranked backfill replacement ALFWorld valid_seen valid_unseen k_sweep_final nested-k logs"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2604.05467",
+   "date": "2026-04-07",
+   "venue": "",
+   "sim": 0.489,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "CUE-R: Beyond the Final Answer in Retrieval-Augmented Generation"
+  },
+  {
+   "id": "arxiv:2608.01247",
+   "date": "2026-08-02",
+   "venue": "",
+   "sim": 0.443,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "baseline"
+   ],
+   "title": "RestoreKV: Recovering Full-Cache Behavior Under Aggressive Query-Agnostic KV Cache Eviction"
+  },
+  {
+   "id": "arxiv:2502.15082",
+   "date": "2025-02-20",
+   "venue": "",
+   "sim": 0.438,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "mechanism_home"
+   ],
+   "title": "UPCORE: Utility-Preserving Coreset Selection for Balanced Unlearning"
+  },
+  {
+   "id": "arxiv:2608.22856",
+   "date": "2026-08-24",
+   "venue": "",
+   "sim": 0.418,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Same Agent, Different Answers: A Repeat-Aware Audit of Corpus-Induced Answer Churn in Retrieval-Augmented QA"
+  },
+  {
+   "id": "arxiv:2511.11891",
+   "date": "2025-11-14",
+   "venue": "arXiv.org",
+   "sim": 0.415,
+   "channels": [
+    "s2"
+   ],
+   "via": [
+    "adjacent"
+   ],
+   "title": "FLEX: Feature Importance from Layered Counterfactual Explanations"
+  },
+  {
+   "id": "arxiv:2606.25852",
+   "date": "2026-06-24",
+   "venue": "",
+   "sim": 0.387,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Semantic Consistency Policy Optimization for Reinforcement Learning of LLM Agents"
+  },
+  {
+   "id": "arxiv:2605.09287",
+   "date": "2026-05-12",
+   "venue": "",
+   "sim": 0.385,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "PiCA: Pivot-Based Credit Assignment for Search Agentic Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2606.32017",
+   "date": "2026-06-30",
+   "venue": "",
+   "sim": 0.378,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "TRIAGE: Role-Typed Credit Assignment for Agentic Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2608.28128",
+   "date": "2026-08-28",
+   "venue": "",
+   "sim": 0.372,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "VICT: Verifier-Instrumented Credit Tracing for Long-Horizon LLM Agent Reinforcement Learning"
+  },
+  {
+   "id": "arxiv:2608.05102",
+   "date": "2026-08-05",
+   "venue": "",
+   "sim": 0.365,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "ABSeeker: Training Long-Horizon Search Agents via Answer-Backtracked Credit Assignment"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 17,
+  "agent": 24,
+  "adjacent": 18,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "feature attribution reference value choice removal versus replacement baseline 2025 arXiv"
+  },
+  {
+   "query": "leave-one-out data valuation additivity predicts subset removal loss 2025 arXiv"
+  }
+ ]
+}

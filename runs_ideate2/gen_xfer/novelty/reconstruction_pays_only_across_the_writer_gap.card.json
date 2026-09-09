@@ -1,0 +1,217 @@
+{
+ "name": "reconstruction_pays_only_across_the_writer_gap",
+ "keys": {
+  "agent": [
+   "reader-side reconstruction of retrieved experience into own action format versus verbatim injection",
+   "cross-model experience transfer agent memory rewrite plan token-matched ALFWorld",
+   "critique-and-reconstruct memory replay gain depends on writer-reader policy distance"
+  ],
+  "mechanism_home": [
+   "cross-embodiment demonstration translation domain gap imitation learning",
+   "reformatting demonstrations into learner's own output format gain scales with demonstrator-learner policy distance",
+   "self-generated versus external demonstrations in-context learning format alignment"
+  ],
+  "adjacent": [
+   "self-generated in-context demonstrations match human-written demonstrations",
+   "on-policy distillation beats off-policy imitation under distribution shift",
+   "paraphrasing demonstrations into the model's own words improves in-context learning"
+  ],
+  "baseline": [
+   "static procedure prompt",
+   "verbatim demonstration injection at matched tokens",
+   "rewriting placebo applied to the instruction prompt"
+  ],
+  "methods": [
+   "MemHarness",
+   "AdaCoM",
+   "ImMimic"
+  ],
+  "environment": [
+   "ALFWorld",
+   "Qwen3-32B",
+   "EXAONE-4.0-32B"
+  ]
+ },
+ "queries": [
+  {
+   "class": "mechanism_home",
+   "query": "cross-embodiment demonstration translation domain gap imitation learning"
+  },
+  {
+   "class": "mechanism_home",
+   "query": "reformatting demonstrations into learner's own output format gain scales with demonstrator-learner policy distance"
+  },
+  {
+   "class": "agent",
+   "query": "reader-side reconstruction of retrieved experience into own action format versus verbatim injection"
+  },
+  {
+   "class": "agent",
+   "query": "cross-model experience transfer agent memory rewrite plan token-matched ALFWorld"
+  },
+  {
+   "class": "adjacent",
+   "query": "self-generated in-context demonstrations match human-written demonstrations"
+  },
+  {
+   "class": "baseline",
+   "query": "static procedure prompt"
+  },
+  {
+   "class": "methods",
+   "query": "MemHarness AdaCoM ImMimic reader-side reconstruction of retrieved experience into own"
+  },
+  {
+   "class": "agent",
+   "query": "reader-side reconstruction of retrieved experience into own action format versus verbatim injection ALFWorld Qwen3-32B"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "arxiv:2607.28272",
+   "date": "2026-07-30",
+   "venue": "",
+   "sim": 0.571,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent",
+    "methods"
+   ],
+   "title": "MemHarness: Memory Is Reconstructed, Not Replayed"
+  },
+  {
+   "id": "arxiv:2603.15330",
+   "date": "2026-03-16",
+   "venue": "",
+   "sim": 0.569,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "MeMix: Writing Less, Remembering More for Streaming 3D Reconstruction"
+  },
+  {
+   "id": "arxiv:2605.10268",
+   "date": "2026-05-11",
+   "venue": "",
+   "sim": 0.493,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "MemReread: Enhancing Agentic Long-Context Reasoning via Memory-Guided Rereading"
+  },
+  {
+   "id": "arxiv:2308.05822",
+   "date": "2024-10-18",
+   "venue": "",
+   "sim": 0.424,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Encode-Store-Retrieve: Augmenting Human Memory through Language-Encoded Egocentric Perception"
+  },
+  {
+   "id": "arxiv:2512.16962",
+   "date": "2025-12-18",
+   "venue": "",
+   "sim": 0.422,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "MemoryGraft: Persistent Compromise of LLM Agents via Poisoned Experience Retrieval"
+  },
+  {
+   "id": "arxiv:2402.17097",
+   "date": "2024-02-27",
+   "venue": "",
+   "sim": 0.413,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Re-Ex: Revising after Explanation Reduces the Factual Errors in LLM\n  Responses"
+  },
+  {
+   "id": "arxiv:2608.26730",
+   "date": "2026-08-27",
+   "venue": "",
+   "sim": 0.398,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Knowing When Not to Reuse: Conditional Experience Transfer in Autonomous LLM Post-Training"
+  },
+  {
+   "id": "arxiv:2410.03577",
+   "date": "2024-10-04",
+   "venue": "",
+   "sim": 0.398,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "methods"
+   ],
+   "title": "Look Twice Before You Answer: Memory-Space Visual Retracing for\n  Hallucination Mitigation in Multimodal Large Language Models"
+  },
+  {
+   "id": "arxiv:2601.07470",
+   "date": "2026-01-12",
+   "venue": "",
+   "sim": 0.392,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Learning How to Remember: A Meta-Cognitive Management Method for Structured and Transferable Agent Memory"
+  },
+  {
+   "id": "arxiv:2504.15573",
+   "date": "2025-04-22",
+   "venue": "",
+   "sim": 0.382,
+   "channels": [
+    "hf"
+   ],
+   "via": [
+    "agent"
+   ],
+   "title": "Instruction-Tuning Data Synthesis from Scratch via Web Reconstruction"
+  }
+ ],
+ "candidates_by_class": {
+  "mechanism_home": 16,
+  "agent": 24,
+  "adjacent": 8,
+  "baseline": 18,
+  "methods": 8
+ },
+ "web_jobs": [
+  {
+   "query": "cross-embodiment demonstration translation domain gap imitation learning 2025 arXiv"
+  },
+  {
+   "query": "reformatting demonstrations into learner's own output format gain scales with demonstrator-learner policy distance 2025 arXiv"
+  }
+ ]
+}
