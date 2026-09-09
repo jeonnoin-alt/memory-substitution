@@ -173,6 +173,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-bet
 <div class="mast-meta"><span>run <b>2026-09-08 → 09</b></span><span>topics <b>3</b></span><span>proposals <b>45</b></span><span>status <b>revision stalled</b></span></div>
 </div>
 <p class="standfirst">Three research topics were taken through the full ideation pipeline in parallel, producing <strong>45 experiment proposals</strong> for LLM-agent memory. Every proposal has been screened for repackaging, checked against the literature, and put through an automated entailment check that asks whether each of its predictions could actually come out false. <strong>12 passed that check, 33 need revision, and 10 of those revisions are done.</strong> The remaining 23 are blocked on a model rate limit, not on a research decision.</p>
+<p class="standfirst" style="font-size:.97rem">This run replaced an earlier way of working: one proposal, rewritten thirteen times against reviewers, which plateaued and then declined. That history is written up in <code>docs/PROPOSAL_HISTORY_v1_v6.md</code>, and the filters below exist because of what it showed.</p>
 <div class="blockers">
 <div class="blocker"><h4>Blocked · revision stage</h4><p>The Fable usage limit was reached mid-run. Ten revision agents failed with a 429 and thirteen were never launched. Under the standing model policy, generation and revision are Fable's job and Opus is reserved for judging, so restarting these needs either the limit to reset or a policy call.</p></div>
 <div class="blocker warn"><h4>Idle · both GPUs</h4><p>Measurement C finished all 2,740 episodes and both A100s are now at 0 % utilisation. No follow-on GPU job is assigned. The vLLM replicas are still up and ready.</p></div>
@@ -742,6 +743,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-bet
 <div><dt>*/entail/jobs/entail_revise__*.prompt.md</dt><dd>The 23 revision prompts that are emitted and unrun.</dd></div>
 <div><dt>runs/static/static_c.jsonl</dt><dd>Measurement C, one row per episode, resumable.</dd></div>
 <div><dt>tools/ideate2/</dt><dd>The pipeline itself, one script per stage, plus DESIGN.md explaining why each filter exists.</dd></div>
+<div><dt>docs/PROPOSAL_HISTORY_v1_v6.md</dt><dd>What came before this run: thirteen versions of a single proposal judged against reviewers, why the loop was paused, and the three blocker families that recurred. Worth reading first — this pipeline exists because of what that record showed.</dd></div>
 </dl></div>
 </div></section>
 </main>
