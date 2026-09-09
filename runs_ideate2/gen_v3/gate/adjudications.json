@@ -1,0 +1,214 @@
+{
+ "instance_share_is_the_illusion__retrieved_memory_privilege_is_": {
+  "label": "same_claim_reworded",
+  "reason": "Both decompose the in-context gain from retrieved episodes into a type-level procedure share that a memory-free student can internalize and an instance/binding-bound share that does not distil and reappears as the unclosable privilege gap, using the same four token-matched teacher conditions (matched/oracle, same-type-other-scene, other-type decoy, empty P-CD0) and the same reverse-KL / off-policy CD / SFT arms; the differences are framing (objective-invariance vs. seen/unseen memorization) rather than a different claim or mechanism."
+ },
+ "train_dose_sets_substrate__student_side_abundance": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both run the same information-abundance mechanism on ALFWorld trajectories (k_train ladder in the student's SFT prompt, decoy control, delta-NLL/context-explained-loss as the predictor, self-rollout replicate), but B adds a teacher-side dose ladder (k-conditioned self-teacher with an empty student prompt) and predicts the two curves cross, converting the claim from 'dose chooses the substrate' into 'the effect exists only when the memory sits in the student's prompt' — a dissociation that changes where a practitioner should put the memory."
+ },
+ "first_item_additive_rest_substitutive__context_ceiling_substitution": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both study whether internalized weights and re-injected context are additive or substitutive after QLoRA SFT / context distillation on the same pool and backbone, but A's estimand is the student's dose-response shape (first-item gain preserved, slope beyond it collapsed, token-optimal student+k=1) while B measures the converse marginal — the value of weights given context relative to the untrained in-context ceiling — and costs a per-type retention router, which yields a different deployment recommendation."
+ },
+ "reversal_savings_latent_retention__first_item_additive_rest_subst": {
+  "label": "distinct",
+  "reason": "A is about continual adaptation over an A->B->A rule stream and whether behaviourally eroded knowledge is latently retained in weights (savings ratio vs. a reset LoRA, stale tax for bank policies); B is about the dose-response of retrieved experience at deployment after one-shot memory-free internalization, with no rule shift, erosion or recovery estimand."
+ },
+ "context_pays_for_its_own_tokens_breakeven__archive:archive:memory_budget_": {
+  "label": "distinct",
+  "reason": "A claims the accounting convention is wrong — retrieved episodes remove more total episode tokens (by converting 30-step timeouts into short successes) than they inject, moving the weights-versus-context break-even horizon; B claims retrieved content value saturates after about one item so that injected-token volume, not content, explains memory harm and the apparent gains of curation methods. Different mechanisms and different targets (cost axis for substrate comparison vs. a missing token-budget control on curation baselines)."
+ },
+ "train_dose_sets_substrate__archive:archive:memory_or_inst": {
+  "label": "distinct",
+  "reason": "A is about where training-time memory dose sends the experience (parametric encoding suppressed in proportion to the loss context already explains); B is about whether retrieved memory is substitutable by an optimized or offline-compiled instruction at inference. Neither the mechanism (gradient pressure during fine-tuning vs. prompt-optimization substitution) nor the estimand overlaps."
+ },
+ "context_ceiling_substitution__digest:arxiv:2607.21051: In-co": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "A takes the prior finding's mechanism as given (context distillation of interaction histories retains most of the in-context gain in the weights, SFT much less) and measures the quantity it never reports — the marginal value of the trained weights once the same memory is put back in context, per task type — plus a retention-informed routing policy on a cost axis, which changes the deployment conclusion from 'distil and drop the memory' to 'route memory only to unretained types'."
+ },
+ "student_side_abundance__archive:archive:memory_or_inst": {
+  "label": "distinct",
+  "reason": "A is a training-time claim about parametric encoding being suppressed only when the memory sits in the student's own prompt, measured by delta-NLL across student- and teacher-side dose ladders; B is an inference-time claim that memory's gain is substitutable by an instruction optimized on the same episodes. No shared mechanism or estimand."
+ },
+ "memory_carried_traits_need_tokens__retrieved_memory_privilege_is_": {
+  "label": "distinct",
+  "reason": "A asks whether a task-neutral behavioural trait planted in a self-teacher's retrieved memory transfers subliminally through clean tokens (trait rate at decision points, token masking and sanitised-SFT controls, a safety question); B asks which part of the memory-conditioned teacher's task performance gain a memory-free student can close (procedure vs. binding share). Same distillation setting, different claims and measurands."
+ },
+ "retrieved_memory_privilege_is_scene_bound__archive:archive:memory_or_inst": {
+  "label": "distinct",
+  "reason": "A decomposes the distillable part of a memory-conditioned teacher's advantage into type-level procedure versus item-specific bindings under on-policy self-distillation; B asks whether the memory's in-context gain survives against an instruction optimized on the same episodes, with no training of the agent's weights at all."
+ },
+ "instance_share_is_the_illusion__archive:archive:memory_or_inst": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both partition memory's value into a generic/type-level share that a cheaper static container can absorb and an instance-specific residual it cannot, but A moves the substitution into the weights (oracle vs same-type vs decoy teachers distilled under three objectives) and measures the shares as in-context cells, a decomposition B's instruction-optimization substitution ratio never isolates."
+ },
+ "context_ceiling_substitution__train_dose_sets_substrate": {
+  "label": "distinct",
+  "reason": "A's claim is about the two marginals after training (value of weights given context is ~0, so context's residual equals the unretained gain) and a retention-routed deployment policy, whereas B's claim is that the training-time dose k_train decides where experience is encoded, with a context-explained-loss signature; the shared pool, backbone and control arms are design overlap, not the same claim."
+ },
+ "train_dose_sets_substrate__digest:arxiv:2607.21051: In-co": {
+  "label": "distinct",
+  "reason": "The digest contrasts objectives (context distillation retains in-context gains, direct SFT does not) at a single implicit dose, while A's claim is a dose-response over k_train with a context-explained action-token loss as the predictive mechanism and a decoy control that separates relevance from prefix length."
+ },
+ "instance_share_is_the_illusion__memory_carried_traits_need_tok": {
+  "label": "distinct",
+  "reason": "A decomposes task-performance gain into type-level and instance-bound shares and asks which distils; B asks whether task-neutral behavioural dispositions planted in memory transfer subliminally through clean tokens, with trait rate at decision points as the measurand — different phenomenon, different estimand."
+ },
+ "harm_spillover_is_substrate_bound__archive:archive:retrieved_set_": {
+  "label": "distinct",
+  "reason": "A manufactures wrong-procedure items to compare harm channels across substrates (retrieval-gated in context vs procedure-diffuse in weights, with dose-response and sibling spillover), while B keeps harm in context only and claims it is a property of the retrieved set, testing read-time gates against item-level filters."
+ },
+ "student_side_abundance__retrieved_memory_privilege_is_": {
+  "label": "distinct",
+  "reason": "A varies where the dose sits (student prompt vs teacher prompt) and predicts crossing curves driven by the training loss memory removes; B holds the distillation objective fixed and varies what is retrieved for the teacher to separate the procedure-induced part from item bindings and scene memorization."
+ },
+ "success_filter_lockin_under_shift__archive:archive:retrieved_set_": {
+  "label": "distinct",
+  "reason": "A's claim is a read-write feedback loop under a hidden rule change producing lock-in in a bank but not a continual LoRA, measured on-stream with refresh-dose thresholds; B has no write side or weights substrate and claims only that read-time harm is a set-level rather than item-level property, defended by a disagreement gate."
+ },
+ "first_item_additive_rest_substitutive__student_side_abundance": {
+  "label": "distinct",
+  "reason": "A measures the deployment-time dose-response after memory-free internalization (first-item gain preserved, slope beyond it collapsed, hence student+k=1 on the token frontier), whereas B measures the training-time dose and its suppression of parametric encoding; A's memory-in-prompt arm is only a secondary reliance probe."
+ },
+ "retrieved_memory_privilege_is_scene_bound__digest:arxiv:2608.07169: Struc": {
+  "label": "distinct",
+  "reason": "The digest reports that a structured memory built from a large teacher's trajectories improves small agents in context with no training, while A studies what a memory-conditioned self-teacher can transfer into a memory-free student's weights and decomposes that into procedure versus binding components."
+ },
+ "success_filter_lockin_under_shift__digest:arxiv:2607.10608: Agent": {
+  "label": "distinct",
+  "reason": "The digest's compliance trap is a within-episode harm channel that A takes as a premise; A's own claim is the stream-level coupling of the success filter to the store's staleness, the bank-versus-LoRA recovery asymmetry, and the exogenous refresh dose that breaks the loop, none of which the digest measures."
+ },
+ "student_side_abundance__digest:arxiv:2608.07169: Struc": {
+  "label": "distinct",
+  "reason": "B is a training-free transfer of a teacher's hierarchical memory to small students, while A claims that memory placed in the student's own training prompt suppresses parametric encoding as a function of dose; neither the claim nor the mechanism overlaps."
+ },
+ "train_dose_sets_substrate__retrieved_memory_privilege_is_": {
+  "label": "distinct",
+  "reason": "A's claim is that training-time dose k_train routes experience between context and weights via context-explained loss, whereas B's claim is that only the type-level procedure share of a memory-conditioned teacher's privilege is internalizable while item bindings are not; different estimands and different mechanisms despite the shared node and pool."
+ },
+ "stale_dose_law_context_vs_weights__archive:archive:stale_true_sta": {
+  "label": "distinct",
+  "reason": "A asserts two substrate-specific dose laws (entry-gated in context, majority-gated in weights) under a manufactured rule change, while B asserts that the harm in an organic bank is carried by stale-true state facts inside procedurally correct items and is removed by read-time redaction; the harm carriers, the substrates compared and the mechanisms differ."
+ },
+ "reversal_savings_latent_retention__archive:archive:dormant_is_not": {
+  "label": "distinct",
+  "reason": "B is about which deletion criterion (recency/usage vs redundancy) a memory store should use when a dormant task family returns, whereas A's central claim is that parametric interference silences rather than erases, giving weights a free savings ratio on reversal that retrieval memory can only buy with a stale tax; the latent-retention claim is absent from B."
+ },
+ "first_item_additive_rest_substitutive__digest:arxiv:2607.21051: In-co": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both rest on the same mechanism, context distillation moving in-context experience gain into the weights, but A measures the full k-ladder with the memory put back after internalization (plus decoys, crutch and procedure-held-out probes), which B never reports and which changes the deployment conclusion from memory-free student to student+k=1 hybrid."
+ },
+ "context_ceiling_substitution__archive:archive:harm_does_not_": {
+  "label": "distinct",
+  "reason": "B asks whether the harm channel of a high-dose bank survives distillation (an asymmetric-filter claim about harm), while A asks whether trained weights add anything once benign memory is back and builds a retention-routed injection policy from it; the estimands (harm transfer vs value of weights given context) are different."
+ },
+ "first_item_additive_rest_substitutive__archive:archive:memory_budget_": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both claim the value of retrieved experience is concentrated in the first item so extra items buy tokens rather than accuracy and k=1 is token-optimal, but A adds the internalized-student ladder and the base-vs-student slope contrast (with crutch and held-out-type probes) that B, which only studies the untrained agent and curation baselines, does not run."
+ },
+ "memory_carried_traits_need_tokens__digest:arxiv:2606.22019: Wheth": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both claim that the carrier or channel through which a trait reaches the student decides whether transfer is subliminal, but A adds the on-policy reverse-KL objective, trait-token masking, a weight-identical self-teacher and the unconditional-expression measurement, which turn B's general auditability claim into a specific test of whether sanitising memory text suffices."
+ },
+ "instance_share_is_the_illusion__student_side_abundance": {
+  "label": "distinct",
+  "reason": "A decomposes the teacher's in-context gain into type-level and instance-bound shares and claims only the former distils regardless of objective, while B claims the training-time dose matters only when the memory sits in the student's prompt; one varies what is retrieved for the teacher, the other varies where the dose is placed."
+ },
+ "harm_spillover_is_substrate_bound__digest:arxiv:2607.10608: Agent": {
+  "label": "distinct",
+  "reason": "B characterises the in-context compliance trap alone, whereas A's claim is a substrate contrast, retrieval-gated linear harm in context versus thresholded procedure-diffuse spillover to sibling task types after internalization, with a spillover ratio and override fraction that B has no counterpart for."
+ },
+ "memory_carried_traits_need_tokens__archive:archive:memory_in_the_": {
+  "label": "distinct",
+  "reason": "A asks whether a task-neutral trait planted in a self-teacher's retrieved context transfers subliminally through clean tokens (token masking as the deciding manipulation), while B decomposes the accuracy gain of memory-in-the-loop training into content, untrained read benefit and read skill via a train-by-infer 2x2 with bank swap; different claims, different estimands, different mechanisms."
+ },
+ "style_outruns_content__archive:archive:commit_then_co": {
+  "label": "distinct",
+  "reason": "A is about what survives internalization into weights (planted dispositions generalize across task types and decay faster than content), while B is a pure in-context claim that memory harm comes from ordering/slot violation and is fixed by commit-then-consult; no shared mechanism."
+ },
+ "context_ceiling_substitution__student_side_abundance": {
+  "label": "distinct",
+  "reason": "A claims that after internalization the trained weights add nothing once the same pool is back in context (substitution at the in-context ceiling) and builds a retention-routed deployment policy; B claims that memory placed in the student's training prompt suppresses parametric encoding in proportion to context-explained loss, while teacher-side dose does not — a training-time dose mechanism, not a deployment-marginal one."
+ },
+ "reversal_savings_latent_retention__digest:arxiv:2605.10268: For a": {
+  "label": "distinct",
+  "reason": "A concerns savings on rule reversal separating latent retention in weights from all-or-nothing retention in a retrieval bank; B is a long-context reading method that skips intermediate retrieval and triggers decomposition plus rereading — unrelated claims."
+ },
+ "first_item_additive_rest_substitutive__instance_share_is_the_illusion": {
+  "label": "distinct",
+  "reason": "A's claim is a dose-response shape at deployment (first-item gain preserved, marginal slope beyond k=1 collapsed) with a token-cost consequence; B's is an information-theoretic decomposition of the teacher's advantage into a distillable type share and an undistillable instance-bound share, manipulated by oracle vs same-type items rather than by k."
+ },
+ "first_item_additive_rest_substitutive__retrieved_memory_privilege_is_": {
+  "label": "distinct",
+  "reason": "A measures how the value of retrieved items scales with k after memory-free internalization and its token-optimal deployment point; B asks which component of a memory-conditioned teacher (procedure prior vs item-specific bindings, seen vs unseen scenes) a memory-free student can reach — different manipulation and different estimand."
+ },
+ "context_pays_for_its_own_tokens_breakeven__digest:arxiv:2607.10608: Agent": {
+  "label": "distinct",
+  "reason": "A is a cost-accounting claim that memory shortens episodes by more tokens than it injects, flipping the weights-versus-context break-even; B is about agents complying with conflicting/wrong retrieved memory and collapsing in accuracy — no shared claim or mechanism."
+ },
+ "context_wins_substrate_conflict__archive:archive:memory_in_the_": {
+  "label": "distinct",
+  "reason": "A manufactures a procedure change and asks which substrate the agent follows when trained weights and retrieved context disagree (concluding eviction, not retraining, governs staleness); B decomposes what memory-in-the-loop training teaches with no rule shift and no weights-versus-context conflict."
+ },
+ "instance_share_is_the_illusion__digest:arxiv:2606.30626: Injec": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both rest on the same privilege-illusion mechanism — privileged context contains an information-asymmetry component the student cannot close, mixed with a closable capability gap — but A adds a measurement the prior does not have: it decomposes the privileged retrieved memory into a type-level procedure share and an instance-bound share via oracle/same-type/decoy/empty in-context cells and predicts the undistillable part is fixed by the information rather than the objective, readable before training, which changes what a reader concludes about remedies like advantage-gap routing."
+ },
+ "first_item_additive_rest_substitutive__train_dose_sets_substrate": {
+  "label": "distinct",
+  "reason": "A varies memory dose at deployment after memory-free training and claims a specific dose-response shape; B varies memory dose during training (k_train) and claims context in the training prompt suppresses parametric encoding in proportion to context-explained loss — opposite sides of the training/deployment axis with different mechanisms."
+ },
+ "reversal_savings_latent_retention__context_ceiling_substitution": {
+  "label": "distinct",
+  "reason": "A studies relearning savings across an A->B->A rule reversal to show weight erosion is partly reversible while retrieval memory pays a stale tax; B studies the marginal value of weights once the same pool is put back in context (substitution at the in-context ceiling) and a retention router. Different estimands (savings ratio and stale tax vs value-of-weights-given-context and residual context value) and different mechanisms."
+ },
+ "student_side_abundance__memory_carried_traits_need_tok": {
+  "label": "distinct",
+  "reason": "A tests whether training-time memory dose in the student's own prompt suppresses parametric encoding of task competence (memory-free accuracy vs delta-NLL), while B tests whether a behavioural trait carried in a self-teacher's retrieved memory transfers subliminally through clean tokens. Both contrast student-side and teacher-side memory under reverse-KL, but the measured quantity (task accuracy/retention vs trait expression rate) and the claim (information abundance vs subliminal-transfer requiring a parameter) are different."
+ },
+ "first_item_additive_rest_substitutive__memory_carried_traits_need_tok": {
+  "label": "distinct",
+  "reason": "A characterises the dose-response shape of retrieved memory after memory-free internalization (first-item gain preserved, marginal slope collapsed) for token-optimal deployment; B is about whether planted behavioural traits distil from a memory-carried vs parameter-carried teacher and whether token masking blocks it. Unrelated claims and measurands."
+ },
+ "train_dose_sets_substrate__memory_carried_traits_need_tok": {
+  "label": "distinct",
+  "reason": "A claims the training-time memory dose k_train governs how much procedure is encoded parametrically, indexed by context-explained loss; B claims trait transfer from a memory-conditioned self-teacher requires the trait's own tokens whereas a parameter-carried trait passes through clean ones. Different phenomena (competence encoding vs subliminal disposition transfer) with different controls and estimands."
+ },
+ "reversal_savings_latent_retention__student_side_abundance": {
+  "label": "distinct",
+  "reason": "A concerns recoverability of eroded knowledge under a continual A->B->A rule shift, comparing bank policies to continual/reset LoRA; B concerns how much memory sits in the training prompt and its effect on parametric encoding in a static single-phase setting. No shared central claim or mechanism."
+ },
+ "train_dose_sets_substrate__instance_share_is_the_illusion": {
+  "label": "distinct",
+  "reason": "A varies the amount of memory at training time and predicts a dose-dependent suppression of parametric encoding; B holds dose fixed and varies the information content of the teacher's memory (oracle vs same-type vs decoy) to decompose the in-context gain into a distillable type share and an undistillable instance-bound share. Different manipulations and different mechanisms."
+ },
+ "context_ceiling_substitution__retrieved_memory_privilege_is_": {
+  "label": "distinct",
+  "reason": "A's central claim is a converse marginal never measured in B: with memory back in context the trained weights add nothing, so a hybrid sits on the untrained in-context ceiling, motivating a retention router; B's claim is a content decomposition of the teacher's privilege into a closable procedure prior and an item-binding residual, using binding-destroying teacher conditions and seen/unseen splits that A does not run. Shared scaffolding but different claims and estimands."
+ },
+ "reversal_savings_latent_retention__memory_carried_traits_need_tok": {
+  "label": "distinct",
+  "reason": "A is about savings on rule reversal separating latent retention in weights from all-or-nothing retention in a retrieval bank; B is about whether behavioural traits carried in memory or in parameters transfer subliminally under distillation. Entirely different questions, designs and measurands."
+ },
+ "context_ceiling_substitution__memory_carried_traits_need_tok": {
+  "label": "distinct",
+  "reason": "A measures whether internalized weights add anything once the memory is restored to context and derives a token-saving router; B measures whether planted traits distil from memory-carried vs parameter-carried teachers and whether sanitising memory text is a sufficient defence. No overlap in central claim or mechanism."
+ },
+ "reversal_savings_latent_retention__instance_share_is_the_illusion": {
+  "label": "distinct",
+  "reason": "A studies reversibility of erosion under a temporally shifting rule across weight and bank substrates; B studies which share of a memory-conditioned teacher's in-context advantage a memory-free student can inherit in a static setting. Different mechanisms and different falsifiable predictions."
+ },
+ "reversal_savings_latent_retention__retrieved_memory_privilege_is_": {
+  "label": "distinct",
+  "reason": "A's claim is about temporal reversibility — savings on rule reversal showing weights retain a silenced mapping while a bank retains only at a stale-tax price — whereas B's claim is about which component (type procedure vs. item bindings) of a memory-conditioned teacher's advantage a memory-free student can internalize; the manipulations, estimands and mechanisms share only the ALFWorld/retrieval setting."
+ },
+ "reversal_savings_latent_retention__train_dose_sets_substrate": {
+  "label": "distinct",
+  "reason": "A asks how much eroded rule-A capability is recoverable after interference (savings ratio, stale tax) under a fixed training regime, while B asks how the amount of retrieved context present at training time (k_train dose) shifts encoding between prompt and weights via context-explained loss; neither the causal claim nor the manipulated variable coincides."
+ },
+ "context_ceiling_substitution__instance_share_is_the_illusion": {
+  "label": "same_mechanism_new_measurement",
+  "reason": "Both assert the same substitution identity — the part of the in-context gain not internalized survives exactly as the trained student's memory-present-minus-memory-free gap, so weights add ~nothing once memory is back — but B additionally manufactures the oracle/same-type/decoy teacher decomposition and cross-objective controls to attribute that residual to instance-bound information and predict it from two pre-training in-context cells, which changes the reader's conclusion from A's measured per-type routing policy to an a priori, objective-invariant property of the information."
+ }
+}

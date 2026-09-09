@@ -1,0 +1,22 @@
+[
+ {
+  "axis": "compiled and static alternatives to retrieval",
+  "query": "compile agent experience into system prompt instructions instead of retrieval 2025 2026 arXiv"
+ },
+ {
+  "axis": "environment properties that make retrieval necessary",
+  "query": "when does retrieval augmentation help versus a static prompt task diversity 2025 2026 arXiv"
+ },
+ {
+  "axis": "the query and the retriever",
+  "query": "query formulation for experience retrieval state-aware retrieval agent 2025 2026 arXiv"
+ },
+ {
+  "axis": "scaling both routes",
+  "query": "many-shot in-context learning entire experience bank in long context agent 2025 2026 arXiv"
+ },
+ {
+  "axis": "evaluation and cost",
+  "query": "prompt caching static prefix inference cost language model agents 2025 2026 arXiv"
+ }
+]

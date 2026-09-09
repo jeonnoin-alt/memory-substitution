@@ -1,0 +1,22 @@
+[
+ {
+  "axis": "counterfactual attribution",
+  "query": "counterfactual attribution of retrieved memory items to agent success 2025 2026 arXiv"
+ },
+ {
+  "axis": "learned utility and reinforcement over memory",
+  "query": "reinforcement learning over episodic memory utility of items self-evolving agent 2025 2026 arXiv"
+ },
+ {
+  "axis": "set-level effects",
+  "query": "interaction effects among retrieved memory items interference agent 2025 2026 arXiv"
+ },
+ {
+  "axis": "generalization and drift of item value",
+  "query": "utility-based memory pruning agent experience refinement outdated items 2025 2026 arXiv"
+ },
+ {
+  "axis": "measurement of per-item estimates",
+  "query": "noise and instability of per-example influence estimates 2025 2026 arXiv"
+ }
+]

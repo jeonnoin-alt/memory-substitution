@@ -16,3 +16,4 @@ __pycache__/
 *.env
 .anthropic_env
 .github_env
+*.pid

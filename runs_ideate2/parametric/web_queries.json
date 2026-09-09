@@ -1,0 +1,22 @@
+[
+ {
+  "axis": "internalization objectives",
+  "query": "context distillation agent experience into weights retain in-context gains 2025 2026 arXiv"
+ },
+ {
+  "axis": "what survives internalization",
+  "query": "privilege illusion student trained from privileged context teacher fails without context 2025 2026 arXiv"
+ },
+ {
+  "axis": "hybrids and routing between weights and context",
+  "query": "hybrid parametric and retrieval memory agent when to keep experience in context 2025 2026 arXiv"
+ },
+ {
+  "axis": "continual adaptation and shift",
+  "query": "continual LoRA fine-tuning agent task stream forgetting replay versus memory bank 2025 2026 arXiv"
+ },
+ {
+  "axis": "evaluation and cost of the two substrates",
+  "query": "matched compute comparison fine-tuning versus in-context learning agent cost per solved task 2025 2026 arXiv"
+ }
+]

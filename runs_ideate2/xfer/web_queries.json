@@ -1,0 +1,22 @@
+[
+ {
+  "axis": "producer-consumer mismatch",
+  "query": "agent memory distillation teacher trajectories transferred to small student without training 2025 2026 arXiv"
+ },
+ {
+  "axis": "what transfers and what contaminates",
+  "query": "demonstrations from another model propagate errors in-context agent 2025 2026 arXiv"
+ },
+ {
+  "axis": "shared and population memory",
+  "query": "shared memory multi-agent system experience pool conflicts among contributors 2025 2026 arXiv"
+ },
+ {
+  "axis": "adapting foreign experience to the reader",
+  "query": "adapt retrieved experience to the current agent reconstruct critique before acting 2025 2026 arXiv"
+ },
+ {
+  "axis": "evaluation and cost of transfer",
+  "query": "cost of collecting agent experience amortized across many models or readers 2025 2026 arXiv"
+ }
+]
