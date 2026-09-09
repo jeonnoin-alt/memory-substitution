@@ -1,3 +1,1 @@
-static recall_success_dissociation
-static retrieval_timing_is_budgeting
 static whole_bank_confusability_ladder
