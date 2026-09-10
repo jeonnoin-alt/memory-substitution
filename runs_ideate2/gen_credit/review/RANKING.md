@@ -2,11 +2,11 @@
 
 | # | idea | n | score | verdict | nov | sig | snd | fea | cla | collision | escalate |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | hole_backfill_static_counterfactual | 1 | 6.1 | borderline | 5.0 | 6.0 | 6.0 | 9.0 | 7.0 | - | yes |
-| 2 | item_credit_variance_decomposition | 1 | 5.8 | borderline | 6.0 | 6.0 | 4.0 | 8.0 | 7.0 | - | yes |
-| 3 | responsible_item_attribution_benchmark | 1 | 5.65 | borderline | 5.0 | 5.0 | 6.0 | 8.0 | 6.0 | - | yes |
-| 4 | per_item_loo_reliability_and_winners_curse | 1 | 5.55 | borderline | 5.0 | 5.0 | 6.0 | 8.0 | 5.0 | - | yes |
-| 5 | guilt_by_coretrieval | 1 | 5.5 | borderline | 5.0 | 5.0 | 5.0 | 8.0 | 7.0 | - | yes |
+| 1 | item_credit_variance_decomposition | 3 | 5.67 | reject | 5.67 | 5.67 | 4.33 | 8.0 | 6.67 | - | - |
+| 2 | responsible_item_attribution_benchmark | 3 | 5.58 | borderline | 5.33 | 5.0 | 5.33 | 7.67 | 6.33 | - | - |
+| 3 | per_item_loo_reliability_and_winners_curse | 1 | 5.55 | borderline | 5.0 | 5.0 | 6.0 | 8.0 | 5.0 | - | yes |
+| 4 | guilt_by_coretrieval | 1 | 5.5 | borderline | 5.0 | 5.0 | 5.0 | 8.0 | 7.0 | - | yes |
+| 5 | hole_backfill_static_counterfactual | 3 | 5.48 | borderline | 4.67 | 5.0 | 5.33 | 8.33 | 6.67 | - | - |
 | 6 | admission_pruning_audit_random_holdout | 1 | 5.35 | borderline | 6.0 | 5.0 | 4.0 | 6.0 | 7.0 | - | yes |
 | 7 | stale_item_score_lag_after_rule_change | 1 | 5.3 | borderline | 5.0 | 5.0 | 5.0 | 7.0 | 6.0 | - | yes |
 | 8 | item_value_consumer_decomposition | 1 | 5.15 | borderline | 5.0 | 5.0 | 4.0 | 7.0 | 7.0 | - | yes |

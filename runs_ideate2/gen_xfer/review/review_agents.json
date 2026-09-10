@@ -1,1 +1,17 @@
-{"complementarity_not_proximity_r1":"a315f70245b4250eb","compression_erases_the_writer_r1":"a899701b84d03725d","coverage_not_headcount_r1":"a674916d43584fdcb","leave_one_type_out_split_r1":"ad5d56e45691fd68e","one_bad_apple_population_vote_r1":"aaab795ef2bf7b09d","own_errors_pass_the_gate_r1":"a9e8edb1fa8cab686","reader_pays_writer_detours_r1":"a5c47013d8c39c50e","reconstruction_launders_planted_procedure_errors_r1":"a604493613bde13b0","reconstruction_pays_only_across_the_writer_gap_r1":"ab5b55c0447ac508b","rewriter_trained_on_one_reader_r1":"a3a13ed6d0426e932","search_disposition_contagion_r1":"abc46547f348b35a5","self_pool_break_even_r1":"aff10921c828befe9","shared_blind_spot_r1":"a846ff9cad8caf32e","thoughts_are_the_writer_r1":"a4f52b6a0352cc866","who_gets_read_r1":"aa2a367ca4a880d81"}
+{
+ "complementarity_not_proximity_r1": "a315f70245b4250eb",
+ "compression_erases_the_writer_r1": "a899701b84d03725d",
+ "coverage_not_headcount_r1": "a674916d43584fdcb",
+ "leave_one_type_out_split_r1": "ad5d56e45691fd68e",
+ "one_bad_apple_population_vote_r1": "aaab795ef2bf7b09d",
+ "own_errors_pass_the_gate_r1": "a9e8edb1fa8cab686",
+ "reader_pays_writer_detours_r1": "a5c47013d8c39c50e",
+ "reconstruction_launders_planted_procedure_errors_r1": "a604493613bde13b0",
+ "reconstruction_pays_only_across_the_writer_gap_r1": "ab5b55c0447ac508b",
+ "rewriter_trained_on_one_reader_r1": "a3a13ed6d0426e932",
+ "search_disposition_contagion_r1": "abc46547f348b35a5",
+ "self_pool_break_even_r1": "aff10921c828befe9",
+ "shared_blind_spot_r1": "a846ff9cad8caf32e",
+ "who_gets_read_r1": "aa2a367ca4a880d81",
+ "thoughts_do_not_travel_r1": "a4f52b6a0352cc866"
+}

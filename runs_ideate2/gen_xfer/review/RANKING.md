@@ -3,7 +3,7 @@
 | # | idea | n | score | verdict | nov | sig | snd | fea | cla | collision | escalate |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | shared_blind_spot | 1 | 5.9 | borderline | 5.0 | 6.0 | 6.0 | 7.0 | 7.0 | - | yes |
-| 2 | thoughts_are_the_writer | 1 | 5.9 | borderline | 5.0 | 6.0 | 6.0 | 7.0 | 7.0 | - | yes |
+| 2 | thoughts_do_not_travel | 1 | 5.9 | borderline | 5.0 | 6.0 | 6.0 | 7.0 | 7.0 | - | yes |
 | 3 | reader_pays_writer_detours | 1 | 5.75 | borderline | 5.0 | 5.0 | 6.0 | 8.0 | 7.0 | - | yes |
 | 4 | complementarity_not_proximity | 1 | 5.7 | borderline | 5.0 | 6.0 | 6.0 | 6.0 | 6.0 | - | yes |
 | 5 | who_gets_read | 1 | 5.7 | borderline | 6.0 | 5.0 | 5.0 | 7.0 | 7.0 | - | yes |

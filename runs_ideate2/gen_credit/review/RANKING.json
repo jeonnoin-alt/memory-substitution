@@ -1,53 +1,36 @@
 [
  {
-  "name": "hole_backfill_static_counterfactual",
-  "score": 6.1,
-  "verdict": "borderline",
-  "means": {
-   "novelty": 5.0,
-   "significance": 6.0,
-   "soundness": 6.0,
-   "feasibility": 9.0,
-   "clarity": 7.0
-  },
-  "n_reviews": 1,
-  "verified_collisions": [],
-  "novelty_capped": false,
-  "escalate": true,
-  "closest": "Two verified threats, at different levels. (i) Setting: CUE-R, arxiv:2604.05467 (verified via s2cli, 2026-04-07, cit 2) already does intervention-based per-evid"
- },
- {
   "name": "item_credit_variance_decomposition",
-  "score": 5.8,
-  "verdict": "borderline",
+  "score": 5.67,
+  "verdict": "reject",
   "means": {
-   "novelty": 6.0,
-   "significance": 6.0,
-   "soundness": 4.0,
+   "novelty": 5.67,
+   "significance": 5.67,
+   "soundness": 4.33,
    "feasibility": 8.0,
-   "clarity": 7.0
+   "clarity": 6.67
   },
-  "n_reviews": 1,
+  "n_reviews": 3,
   "verified_collisions": [],
   "novelty_capped": false,
-  "escalate": true,
+  "escalate": false,
   "closest": "Data Banzhaf (arxiv:2205.15466, verified via s2cli: AISTATS, 196 citations) is the real threat and the proposal cites it correctly. It already establishes the p"
  },
  {
   "name": "responsible_item_attribution_benchmark",
-  "score": 5.65,
+  "score": 5.58,
   "verdict": "borderline",
   "means": {
-   "novelty": 5.0,
+   "novelty": 5.33,
    "significance": 5.0,
-   "soundness": 6.0,
-   "feasibility": 8.0,
-   "clarity": 6.0
+   "soundness": 5.33,
+   "feasibility": 7.67,
+   "clarity": 6.33
   },
-  "n_reviews": 1,
+  "n_reviews": 3,
   "verified_collisions": [],
   "novelty_capped": false,
-  "escalate": true,
+  "escalate": false,
   "closest": "arXiv:2608.20627, 'When Failures Propagate: Causal Failure Attribution in Agentic RAG' (AgenticRAG-FP), 2026-08-20, verified with the literature command (HF cha"
  },
  {
@@ -83,6 +66,23 @@
   "novelty_capped": false,
   "escalate": true,
   "closest": "RoMeRL, arXiv:2608.02508 (VERIFIED via s2cli channel (a), S2 record 2026-08-03, HF record 2026-08-10). Its own abstract states that 'because trajectory-level re"
+ },
+ {
+  "name": "hole_backfill_static_counterfactual",
+  "score": 5.48,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 4.67,
+   "significance": 5.0,
+   "soundness": 5.33,
+   "feasibility": 8.33,
+   "clarity": 6.67
+  },
+  "n_reviews": 3,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "Two verified threats, at different levels. (i) Setting: CUE-R, arxiv:2604.05467 (verified via s2cli, 2026-04-07, cit 2) already does intervention-based per-evid"
  },
  {
   "name": "admission_pruning_audit_random_holdout",
