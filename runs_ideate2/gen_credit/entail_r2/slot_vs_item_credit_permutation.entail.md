@@ -1,0 +1,20 @@
+=== ENTAILMENT CHECK (automated pre-review; evidence, not a verdict) ===
+For each prediction: what would falsify it, and whether the stated arms can produce that outcome at the stated power.
+
+Proposal: slot_vs_item_credit_permutation — headline P2 is **open**; open 4 / entailed 0 / near-entailed 2 / unresolvable 0; verdict pass
+
+- P1 [open] falsifier: |f(R) - f(O)| >= 8 net, the CI then lying outside the +/-5 equivalence band.
+  reason: Primacy or recency can act even on consistent items - reversal demotes the most-similar item to the last slot - and 8 net is two design half-widths outside the band, with O' and the recomputation rule protecting the assumed variance.
+- P2 [open] falsifier: f(S1) - f(S3) <= +2 net (a slot-invariant reader); the CI then excludes +8.
+  reason: The contrast is purely positional by construction and nothing forces the same-type item to be worth more early, with +8 and +2 two half-widths apart; the one leak is that the S1 minus k0 >= +10 gate is read on the same S1 cells that enter the contrast, so passing it biases f(S1) upward inside the premium.
+- P3 [near_entailed] falsifier: f(C3) - f(C1) <= +1 net, including any negative value (recency dominance).
+  reason: Moving the conflict item from slot 1 to slot 3 necessarily promotes a natural same-type item into slot 1, so the contrast already contains the help-side slot-1 premium that P2 puts at >= +8 net; the falsifier therefore requires that premium to vanish too, no arm isolates the harm side, and the gate is read on the very C1 cell the contrast subtracts.
+  fix: Add an arm that moves only the conflict item while holding the natural items' slots fixed (a neutral filler swapped with the conflict item, or each C_s contrasted against an order-matched unplanted reference U_s), and run the harm gate on held-out seeds.
+- P4 [near_entailed] falsifier: D12 <= 0 (no step between slot 1 and slot 2, so any P3 premium is a slot-3 discount) or D23 <= -8 (slot 2 is the safest slot: lost-in-the-middle).
+  reason: D12 carries P3's confound - going from C1 to C2 promotes a natural same-type item from slot 2 into slot 1, exactly the manipulation P6 predicts is worth >= +7 net on the help side - so that branch's falsifier is unreachable whenever P6 holds, and only D23 carries harm-side content the help-side story does not already produce.
+  fix: Report D12 and D23 against order-matched unplanted references (or with the natural items' slots held fixed while only the conflict item moves) so the step is attributed to the conflict item rather than to the promoted same-type item.
+- P5 [open] falsifier: f(S1@7) - f(S7@7) <= 0 (the premium vanishes with longer context, or recency favours the final slot).
+  reason: A seven-item context can plausibly erase or reverse the premium since slot 7 sits nearest the query, and +9 versus 0 is two half-widths at 800 cells.
+- P6 [open] falsifier: f(S1) - f(S2) <= 0 (slot 2 is as good as slot 1, so P2's premium is really a slot-3 penalty).
+  reason: P2 fixes only S1 - S3 and leaves S2 free anywhere between them, so a gradient or a slot-3 discount is a genuinely reachable outcome with +7 versus 0 two half-widths apart; it does share the measured f(S1) cell with P2 and with the S1 gate.
+- shared terms: P3-P4: f(C3) - f(C1) = D12 + D23 exactly, so P4's two contrasts algebraically determine P3 on the same 1,280 cells - the three numbers are two degrees of freedom.; P2-P6: both contain the measured f(S1) cell, so a high draw on S1 raises the S1-S3 and the S1-S2 premium together.; P2-P6 and the gate: the S1 minus k0 >= +10 net gate is evaluated on the same S1 episodes that enter both contrasts, so gate passage biases f(S1) upward inside both.; P3-P4 and the gate: the C1 vs U >= 10 net harm gate is evaluated on the same C1 cell that is subtracted in f(C3) - f(C1) and f(C2) - f(C1), so selection noise on C1 inflates both premiums in the predicted direction.; P3-P4-P2/P6 (mechanism, not arithmetic): the C-arm contrasts move the natural same-type items whenever they move the conflict item, so the help-side premium measured by P2/P6 is a component of both harm-side estimands.

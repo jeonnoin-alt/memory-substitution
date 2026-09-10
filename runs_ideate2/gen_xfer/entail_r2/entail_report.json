@@ -1,0 +1,801 @@
+{
+ "compression_erases_the_writer": {
+  "name": "compression_erases_the_writer",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Self-pool cells L0/L1/L2 for each reader (Q->Qwen3, X->EXAONE) at 6 seeds, token-matched within +-10%, deterministic retriever; estimand D(self,L) = gain(L0) - gain(L) over k=0, two-cell half-width about +-3.",
+    "falsifier": "Any of the four self contrasts whose 95% CI covers 0 or whose upper bound is below +6, i.e. writer-written summaries or six-procedure distillations matching or beating the writer's own raw traces.",
+    "label": "open",
+    "reason": "Nothing in the construction forces raw above self-compressed - L2 injects all six type procedures at matched tokens and could beat k=3 raw - and a null D gives about [-3,+3], which the stated rule reads as falsified.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "Foreign writer-compressed cells (X->Qwen3, Q->EXAONE) at L0/L1/L2, 6 seeds, same retriever and token match; D(foreign,L) with half-width about +-3.",
+    "falsifier": "Any of the four foreign contrasts with a CI covering 0 or a lower bound above -6, and explicitly any single cell in which foreign raw beats foreign compressed.",
+    "label": "open",
+    "reason": "Foreign raw trajectories could out-perform the foreign writer's own summaries (format mismatch is not guaranteed to be fatal), so the sign is not fixed by the design and a null falsifies at the stated noise.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "Four cells per reader (self L0, self L2, foreign L0, foreign L2, or the L1 versions under the convergence rule) at 6 seeds; I(r) = D(self) - D(foreign), four-cell half-width about +-4.2, margin +8.",
+    "falsifier": "I(r) with a 95% CI covering 0, or negative for either reader.",
+    "label": "open",
+    "reason": "I(r) is arithmetic on P1's and P2's estimands (both at their margins force I >= +12), but its falsifier is reachable whenever either component fails, and +8 against +-4.2 keeps the null CI [-4.2,+4.2] clear of the boundary.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "Reader-compressed foreign L1/L2 cells against the writer-compressed foreign L1/L2 cells, per reader, 6 seeds, two-cell half-width about +-3, equivalence band +-6.",
+    "falsifier": "The compressor-identity difference with a 95% CI excluding 0 in either direction (reader wording helping or hurting).",
+    "label": "open",
+    "reason": "This is an equivalence claim confirmed by a null, but the band (+-6) is twice the stated half-width (+-3), so a real 6-point wording effect gives about [3,9] and is read as falsifying.",
+    "fix": ""
+   },
+   {
+    "id": "P5",
+    "depends_on": "Self L2, foreign L2 and the Measurement C static six-procedure cells at 6 seeds; two-cell half-width about +-3, equivalence band +-6 for clause 1 and a zero boundary for clause 2.",
+    "falsifier": "Self-L2 differing from foreign-L2 with a CI excluding 0, or either L2 cell exceeding the static expert prompt with a CI entirely above 0.",
+    "label": "open",
+    "reason": "The rival (writer identity as a main effect at every level) produces exactly this, and the trivial-by-construction case - near-identical L2 texts from the two writers - is caught by the pre-registered edit-distance rule that demotes clause 1 to a manipulation check.",
+    "fix": ""
+   },
+   {
+    "id": "P6",
+    "depends_on": "Self L0, self L0s, foreign L0, foreign L0s cells at 6 seeds with k raised to about 5 for token matching; S(r) is a four-cell contrast with stated half-width about +-4.2 and margin +6.",
+    "falsifier": "S(r) with a CI covering 0 or a negative point estimate (thoughts are filler regardless of author).",
+    "label": "unresolvable",
+    "reason": "The margin (+6) is only 1.4 times the four-cell half-width (+-4.2), violating the proposal's own 'twice the half-width' rule, so the predicted +6 gives about [1.8,10.2] and the null gives [-4.2,+4.2] - overlapping intervals that cannot separate the prediction from its falsifier.",
+    "fix": "Either raise S(r)'s margin to at least +8.4 (twice the stated four-cell half-width) or run the four L0/L0s cells at about 12 seeds so the four-cell half-width falls to about +-3."
+   }
+  ],
+  "shared_terms": [
+   "P1-P3: I(r) is literally D(self,L2) minus D(foreign,L2); P1 and P2 at their stated margins force I >= +12, so P3 cannot fail once both hold.",
+   "P2-P3: same shared estimand D(foreign,L2), and P2's falsifier (foreign raw winning) is also the main route to P3's falsifier.",
+   "P3-P5: both read gain(self L2) and gain(foreign L2); under P5's null, I(r) collapses to the raw self-minus-foreign gap and stops being an interaction with compression.",
+   "P4-P5: P4's writer-compressed foreign L2 cell is the same measured cell as P5's foreign L2 term.",
+   "P1-P6 and P2-P6: S(r) reuses gain(self L0) and gain(foreign L0), the L0 terms of D(self) and D(foreign)."
+  ],
+  "headline": "P3",
+  "headline_status": "open",
+  "n_open": 5,
+  "n_entailed": 0,
+  "n_near": 0,
+  "n_unresolvable": 1,
+  "verdict": "pass"
+ },
+ "leave_one_type_out_split": {
+  "name": "leave_one_type_out_split",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Proposal's P1a: cell 3 (LOTO expert, 8 seeds) minus cell 1 (k=0, 8 seeds), MDE +-4, boundary +8, with the premise that cell 6 minus cell 1 is at least +16 under the standard bank; LOTO banks keyed on the ALFWorld task-type label.",
+    "falsifier": "cell 3 minus cell 1 at or above +8 net, i.e. other-type expert items still carrying a large gain.",
+    "label": "open",
+    "reason": "Wrong-type demonstrations can still supply format, navigation and action-validity priming, so a >= +8 LOTO gain is reachable, and at +-4 both the predicted -8 and the rival +16 sit several MDE from the boundary.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "Proposal's P1b: LOTO cells 4, 5, 20, 21, 22 (other writer x reader pairs, MDE +-4 to +-8), counted only for writers whose standard-bank gain is at least +16.",
+    "falsifier": "Any qualifying LOTO cell at or above +8 net.",
+    "label": "open",
+    "reason": "Reachable in every listed cell, though the >= +16 qualification filter can silently drop a writer that shows a positive LOTO gain, and the 2-seed cell 22 carries an +-8 MDE equal to the decision boundary.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "Proposal's P2a: cell 6 (standard expert, 4 seeds) minus cell 7 (standard self, 4 seeds), MDE +-5.7, boundary +6, hypothesis value +9, rival at most 0.",
+    "falsifier": "cell 6 minus cell 7 below +6.",
+    "label": "unresolvable",
+    "reason": "The hypothesis's own predicted +9 lies only about half an MDE above the +6 boundary, so a true +9 reads as falsified a sizeable fraction of runs and the proposal's stated 'each value at least one MDE from the boundary' rule fails for this clause.",
+    "fix": "Run cells 6 and 7 at 8 seeds (MDE +-4) and move the boundary to +4, or restate the predicted separation so it sits at least one MDE above the boundary."
+   },
+   {
+    "id": "P4",
+    "depends_on": "Proposal's P2b: cell 3 (LOTO expert) minus cell 4 (LOTO self), 8 seeds each, MDE +-4, boundary -6, predicted -10; replicated in the EXAONE reader at cells 20/21 with MDE +-5.7.",
+    "falsifier": "cell 3 minus cell 4 above -6, i.e. self-pool wrong-type items harming as much as expert wrong-type items.",
+    "label": "open",
+    "reason": "Writer-independent wrong-type harm is a real and named outcome that the same two cells can show, and the predicted -10 sits one MDE below the boundary with the rival 0 one and a half MDE above.",
+    "fix": ""
+   },
+   {
+    "id": "P5",
+    "depends_on": "Proposal's P2c: cell 3 minus cell 1, 8 seeds, MDE +-4, boundary -4, predicted -8, gated on Gate 0 passing.",
+    "falsifier": "cell 3 minus cell 1 above -4 (wrong-type expert items merely ignored).",
+    "label": "open",
+    "reason": "A reader that ignores out-of-type items yields exactly 0 and is one MDE above the boundary, so the falsifier is reachable - but this is the identical estimand as P1 under a stricter boundary, so P1 follows from it.",
+    "fix": ""
+   },
+   {
+    "id": "P6",
+    "depends_on": "Gate 0: cell 10 (wrong-procedure graft at 100%, replay-checked to fail, 4 seeds, MDE +-5.7) against cell 1; harm of at least 6 net required before any P2/P4 harm claim.",
+    "falsifier": "Harm below 6 net, which voids the harm predictions rather than confirming them.",
+    "label": "open",
+    "reason": "A reader insensitive to retrieved content produces this outcome directly, and the predicted -15 is far outside the +-5.7 MDE around the 6-point gate.",
+    "fix": ""
+   },
+   {
+    "id": "P7",
+    "depends_on": "Proposal's P3a: cell 12 (LOTO adapter, memory-absent, per-request adapter selection) minus cell 2 (five-procedure static prompt, target type omitted, token-matched), 8 seeds each, MDE +-4, boundary +6, predicted +10.",
+    "falsifier": "cell 12 minus cell 2 below +6 (adapter overfits the trained types, or five procedures carry the same generic gain).",
+    "label": "open",
+    "reason": "Adapter and static-5 prompt carry the same five types' information in two substrates, so either ordering is reachable, and the predicted +10 and the rival 0 are one and one and a half MDE from the boundary.",
+    "fix": ""
+   },
+   {
+    "id": "P8",
+    "depends_on": "Proposal's P3b: cell 12 minus cell 3, MDE +-4, boundary +12, predicted +20, rival at most +4; both cells also carry P7 and P5.",
+    "falsifier": "cell 12 minus cell 3 below +12.",
+    "label": "near_entailed",
+    "reason": "cell12 - cell3 = (cell12 - cell2) + (cell2 - cell1) - (cell3 - cell1), so P7 at +6 and P5 at -4 already deliver +12 once the five-procedure prompt reaches its predicted +2 gain; the only route to the falsifier is a static-5 gain below +2, a quantity the proposal predicts but neither controls nor makes a claim on, and the proposal's own note credits only P1a, not P5.",
+    "fix": "Predict the static-5 prompt's gain over k=0 as its own clause with its own boundary, or restate P8 net of the static-5 prompt so its boundary is not the arithmetic sum of P7's and P5's margins."
+   },
+   {
+    "id": "P9",
+    "depends_on": "Proposal's P3c: cell 6 (standard expert retrieval, 4 seeds) minus cell 13 (all-type adapter, memory-absent, 4 seeds), MDE +-5.7, boundary +8, predicted +15.",
+    "falsifier": "cell 6 minus cell 13 below +8 (weights matching retrieval within-type).",
+    "label": "open",
+    "reason": "The all-type adapter is trained on the same expert pool that the standard bank retrieves, so it could match or beat retrieval within-type, and predicted +15 and rival 0 lie about 1.2 and 1.4 MDE from the boundary.",
+    "fix": ""
+   },
+   {
+    "id": "P10",
+    "depends_on": "Proposal's P4: cell 14 (LOTO adapter plus matching LOTO expert retrieval) minus cell 12 (memory-absent LOTO adapter), 8 seeds each, MDE +-4, boundary -4, predicted -8; gated on Gate 0.",
+    "falsifier": "cell 14 minus cell 12 above -4, i.e. weights making the reader robust to, or willing to ignore, wrong-type items.",
+    "label": "open",
+    "reason": "The robustness rival is a genuine outcome of the same paired cells and sits one MDE above the boundary; nothing in the adapter training forces the reader to keep following retrieved wrong-type procedures.",
+    "fix": ""
+   }
+  ],
+  "shared_terms": [
+   "P1-P5: identical estimand (cell 3 minus cell 1); P5's boundary of -4 logically implies P1's < +8, so P1 cannot fail if P5 holds.",
+   "P4-P5: both read cell 3, so a noisy LOTO expert cell moves the two clauses together.",
+   "P7-P5-P8: P8 is the algebraic sum of P7's margin, P5's margin and the measured static-5 gain (cell 2 minus cell 1).",
+   "P1-P3-P9: cell 6 (standard expert) supplies P1's +16 premise, P3's minuend and P9's minuend.",
+   "P7-P8-P10: the same LOTO adapter cell 12 is the reference in all three, so one adapter cell decides the whole substrate-flip block."
+  ],
+  "headline": "P1",
+  "headline_status": "open",
+  "n_open": 8,
+  "n_entailed": 0,
+  "n_near": 1,
+  "n_unresolvable": 1,
+  "verdict": "pass"
+ },
+ "own_errors_pass_the_gate": {
+  "name": "own_errors_pass_the_gate",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Q-host C1 rate cells (0% vs 50%) for the Qwen3 reader at 6 seeds over 674 games, paired by game, seed and retrieval rank with planted items substituted at the same rank; paired half-width about +-2.5, plus a contingent 100% cell.",
+    "falsifier": "Harm below 6 net at 50% and again at the contingent 100% cell.",
+    "label": "open",
+    "reason": "A reader that discounts retrieved items yields under 6 net harm at both rates, and a 6-point margin against +-2.5 separates the null cleanly; the two-stage rule delays falsification but does not block it.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "D0 recall on the pilot-selected headline family for the 2x2 of readers {Qwen3, EXAONE} x hosts {Q, X} at >= 1500 planted and 1500 clean game-paired items; gap SE about 1.8, reader x host interaction SE about 2.6; host E as the reader-main-effect check.",
+    "falsifier": "recall(self host) >= recall(foreign host) for either reader, or both readers ordering the hosts the same way (a pool-difficulty main effect with no interaction).",
+    "label": "open",
+    "reason": "The 30-80% foreign-recall selection rule keeps the measure off ceiling and floor, the crossed 2x2 makes a pure pool-difficulty result readable as a falsifier, and 10 points is about three gap half-widths - though outcomes between 0 and +10 neither confirm nor falsify.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "Paraphrase 2x2 on each reader's foreign-host headline items, self-paraphrases filtered to at or below the 75th-percentile reader NLL with best-of-4/8 escalation and >= 1300 within-item pairs; clause (a) within-item half-width about +-3, clause (b) difference-of-drops half-width about +-4.",
+    "falsifier": "(a) paired drop CI upper bound below 4, or paraphrases detected more often; (b) the difference of the self- and cross-paraphrase drops with an upper bound below 5.",
+    "label": "unresolvable",
+    "reason": "Clause (a) is decidable, but the mediation clause (b) - the one that separates familiarity from paraphrasing as such - sets a +5 margin against a +-4 half-width and falsifies only when the estimate falls below about +1, so a true zero difference escapes falsification roughly a third of the time and the predicted +5 and the null are not separable.",
+    "fix": "Raise the paraphrase arm to about 2,600 qualifying pairs (half-width about +-2.8) or set clause (b)'s margin at >= 8, so the null and the predicted value lie at least two half-widths apart."
+   },
+   {
+    "id": "P4",
+    "depends_on": "D0 and D1 scored on identical item sets per reader (within-item paired half-width about +-3); the gap clause gap_D1 <= 0.5 x gap_D0 is scored only if P2's D0 gap is >= 10 for that reader.",
+    "falsifier": "Self-host D1 lift with a CI upper bound below 4 for either reader, or gap_D1 - 0.5 x gap_D0 with a CI excluding 0 from above (D1 lifting both hosts equally).",
+    "label": "open",
+    "reason": "A static reference that helps both hosts equally, or barely at all, is reachable and explicitly named, and the 8-point lift margin is about 2.7 half-widths - although the gap clause states no half-width of its own and largely follows from the lift clause given gap_D1 = gap_D0 - self lift + foreign lift.",
+    "fix": ""
+   },
+   {
+    "id": "P5",
+    "depends_on": "Qwen3-reader C1 cells at 30% and 50% for hosts Q and X against their rate-0 twins, conditioned on episodes retrieving >= 1 planted item using the retrieval log that is identical in both arms; about 6,200 pairs per host, difference half-width about +-2.4 after a design effect of 1.5.",
+    "falsifier": "Self-minus-foreign paired loss with a CI upper bound below 5, which covers every world where foreign-written errors harm as much as or more than self-written ones.",
+    "label": "open",
+    "reason": "The rate-0 twin nets out each host pool's clean quality and the log-based conditioning selects the same (game, seed) rows in both arms, so nothing forces the sign - especially as these cells run with no detector at all, removing the detection mediator the hypothesis invokes.",
+    "fix": ""
+   },
+   {
+    "id": "P6",
+    "depends_on": "Clean rate-0 three-writer mixed store with and without the D0 gate (Qwen3 reader, 4 seeds, paired half-width about +-3), flagged items dropped and refilled from the next retrieved rank to matched k; false-positive rate on >= 1500 clean foreign items with half-width about 1.5.",
+    "falsifier": "False-positive rate >= 15% on clean foreign items, or a paired gating cost whose CI lower bound exceeds 3 (a cost of about 6 or more).",
+    "label": "near_entailed",
+    "reason": "On a clean store the gate can only swap a flagged item for the next-ranked clean item of the same type, so at the sub-10% (or even 15%) flag rate about 0.3 of 3 retrieved items change per episode and a >= 6 net cost is reachable only through a steep retrieval-rank-to-value falloff the design never measures or controls; the FPR clause and the cost clause are therefore not independent.",
+    "fix": "Add a random-drop-and-refill placebo at the measured flag rate and score the gating cost against it (rather than against the ungated store), so the cost clause tests the gate rather than the rank substitution it is confounded with."
+   }
+  ],
+  "shared_terms": [
+   "P1-P5: P5's self-host paired loss is computed from the same Q-host rate-0 and 50% cells that produce P1's Gate-0 harm, so a weak Gate-0 effect mechanically shrinks P5's self-host term.",
+   "P2-P4: gap_D0 in P4's second clause is P2's estimand, and the clause is only scored when P2 confirms, so P4's gap claim cannot come out against the hypothesis unless P2 has already come out for it.",
+   "P4 internal: gap_D1 = gap_D0 - self-host lift + foreign-host lift, so the >= 8 lift clause nearly delivers the 0.5 x gap clause unless D1 also lifts the foreign hosts.",
+   "P6 internal: the < 3 net cost clause follows from the < 10% false-positive clause plus refill-to-matched-k on a clean bank.",
+   "P2-P3: the paraphrase drops are measured against the same foreign-host D0 recalls that set P2's gap, so both rest on one D0 foreign-host measurement."
+  ],
+  "headline": "P2",
+  "headline_status": "open",
+  "n_open": 4,
+  "n_entailed": 0,
+  "n_near": 1,
+  "n_unresolvable": 1,
+  "verdict": "pass"
+ },
+ "coverage_not_headcount": {
+  "name": "coverage_not_headcount",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "COV = self(B/2)+gpt-oss(B/2) vs DOM (dominated writer, C=0 by construction, per-type counts equalized to SELF) vs SELF = self(B); Qwen3-32B reader, k=3, 274 games x 8 seeds, paired +/-3.2; plus COV vs static-procedure prompt on heat/clean/cool (~140 games, paired ~+/-6); secondary HCM vs SELF at 4 seeds.",
+    "falsifier": "95% CI upper bound of COV-DOM or of COV-SELF below 6 net (point <= +2.8), or COV - static on heat/clean/cool with upper bound below 6.",
+    "label": "open",
+    "reason": "Nothing in the construction forces gpt-oss items to beat T=1.2 items or the reader's own pool, and the null world (point <= 2.8) is resolvable at +/-3.2; the third clause is much weaker (falsifiable only at a point estimate <= 0 on the subset), but the disjunctive falsifier is carried by the two 8-seed contrasts.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "EC8 vs COV at frozen identical C and identical per-type item counts (8 seeds, paired +/-3.2), and EC4-cap vs EC4-prox at identical C, N and per-type counts (4 seeds plus the seed rule); TOST band +/-6.",
+    "falsifier": "EC8 - COV >= +6 or <= -6 net (or the same for EC4-cap vs EC4-prox) with the 95% CI excluding 0.",
+    "label": "open",
+    "reason": "Equalizing coverage and per-type counts still leaves writer identity, self share, below-self share and item phrasing free to move success, so a >=6 net difference in either direction is reachable, and at 8 seeds an observed +/-6 has CI [2.8, 9.2] excluding 0 while the 3.3-6 gray zone is covered by the pre-registered seed rule.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "DOM vs SELF at 8 seeds, paired +/-3.2, TOST band +/-6, with the self(B/2)-alone saturation gate (4 seeds, must be >= 3 net below SELF with CI excluding 0) and the self(B/4)+dominated(3B/4) fallback.",
+    "falsifier": "DOM - SELF <= -6 (item count or proximity governs) or >= +6 (phrasing diversity governs) with the 95% CI excluding 0.",
+    "label": "open",
+    "reason": "The one route that would force the predicted null by construction - a store already saturated at B/2, so any equal-count store scores the same - is named and gated with a fallback displacement, and a +/-6 difference is resolvable at +/-3.2; the gate itself is underpowered (a true 3-net deficit has a CI including 0 at 4 seeds, so the fallback will usually trigger), which weakens the interpretation but not the falsifiability.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "(gain_HCM-item - gain_SELF)/(gain_expert - gain_SELF) on heat/clean/cool (~140 games), Qwen3 reader, 4 seeds plus seed rule, joint bootstrap over games across numerator and denominator arms (subset paired CI ~+/-6).",
+    "falsifier": "ratio <= 0.4 with the joint-bootstrap 95% CI excluding 0.6.",
+    "label": "unresolvable",
+    "reason": "Falsification requires the CI on (num - 0.6*den) to clear 0, which at the stated ~+/-6 subset noise needs an expert-minus-self gain gap of roughly 35 net; the proposal states expert gains of +39..+55 but never states or gates gain_SELF on these types, and for any plausible denominator of 10-20 net the ratio CI is far too wide to exclude 0.6 in either direction.",
+    "fix": "Add a pre-registered denominator gate (gain_expert - gain_SELF >= ~30 net with its CI excluding that value, else P4 reported untested), or replace the ratio with the paired difference gain_HCM-item - gain_expert tested for equivalence at +/-6."
+   },
+   {
+    "id": "P5",
+    "depends_on": "EC8-skelV vs EC8-skel1 (same eight writers, identical C recomputed on retained pairs to within 0.01, identical per-type counts), Qwen3 reader, 4 seeds plus seed rule, with a manipulation check requiring a >= 0.30 absolute conflict-rate gap under both retrievers.",
+    "falsifier": "skelV - skel1 <= -6 (conflict governs) or >= +6 (skeleton diversity helps) with the 95% CI excluding 0.",
+    "label": "open",
+    "reason": "The manipulation is verified before scoring and the prediction is declared untested rather than confirmed if the conflict gap is not achieved, and a 6-net effect at 4 seeds gives CI [1.5, 10.5] excluding 0, so both falsifying worlds are reachable and resolvable.",
+    "fix": ""
+   },
+   {
+    "id": "P6",
+    "depends_on": "Spearman rho between gain over the reader's own matched pool and the frozen C across the 21 foreign-writer store x reader cells (many at 2 seeds, +/-8 cell noise), cluster bootstrap resampling games jointly across cells.",
+    "falsifier": "the cluster-bootstrap 95% CI includes 0, or the point estimate is below 0.3.",
+    "label": "open",
+    "reason": "The falsifier is not merely reachable but likely, since a large share of the 21 cells carry C values that are identical by construction (COV/EC8/EC4-prox/EC4-cap, skel1/skelV) and 2-seed cells attenuate rho, so ties plus noise can put the point below 0.3 with a CI covering 0.",
+    "fix": ""
+   }
+  ],
+  "shared_terms": [
+   "P1-P3: COV - DOM = (COV - SELF) - (DOM - SELF), so affirming P3's equivalence forces P1's two directional clauses to agree within the band; the DOM and SELF cells are shared measured terms.",
+   "P1-P2: the 8-seed COV cell is the subtrahend in EC8 - COV and the minuend in COV - SELF and COV - DOM, so a low COV pulls P1 toward falsification while making P2's equivalence easier to affirm.",
+   "P4-P1: gain_SELF is the reference in P1's COV - SELF contrast and appears in both the numerator and the denominator of P4's ratio, so the same measured SELF cell determines part of both.",
+   "P6-P1/P2/P5: rho is computed over the very gains that P1, P2 and P5 test, and the equal-coverage cells enter with C fixed by construction, so P6 is largely a re-description of the P1 contrast plus construction ties rather than an independent test."
+  ],
+  "headline": "P2",
+  "headline_status": "open",
+  "n_open": 5,
+  "n_entailed": 0,
+  "n_near": 0,
+  "n_unresolvable": 1,
+  "verdict": "pass"
+ },
+ "one_bad_apple_population_vote": {
+  "name": "one_bad_apple_population_vote",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "harm(grafts, share 1, k=3) divided by gain(clean P vs k=0) on heat/clean/cool (~110 games), Qwen3 reader, 8 seeds, under Gate 0 (>= 6 net) and the h >= 24 ratio precondition with the positive-control fallback.",
+    "falsifier": "ratio <= 0.3, i.e. the reader keeps most of the gain from the graft's untouched navigation and object-location content (ratio CI ~+/-0.15).",
+    "label": "open",
+    "reason": "Grafts retain navigation and object-location content so a 0.3 ratio is a real world roughly two CIs from the boundary, but the arm deletes every benign item from the top-3 by construction and, given the stated ~45 clean gain, the h >= 24 precondition already puts the ratio at ~0.53, so the falsifier survives only in the world where grafts fail that precondition and the positive control takes over the geometry arms.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "D2 = harm(share 1) - harm(share 1/3) at k=3 with deterministic mixing (exposure 1 in both cells) and randomized positions, 8 seeds, paired +/-6.5; boundary 0.35h with h measured in the same run.",
+    "falsifier": "D2 = 0.67h (about 16 net at h = 24), harm proportional to retrieved share; a majority-following reader gives D2 = h.",
+    "label": "open",
+    "reason": "The share-proportional world is reachable and sits 7.6 net above the 8.4-net boundary against the stated +/-6.5, and the displacement asymmetry (share 1 removes all three benign items, share 1/3 only one) biases D2 upward, toward falsification rather than toward the prediction; the one soft spot is that +/-6.5 is obtained by scaling a 274-game CI down to ~110 games with more seeds, which understates between-game variance.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "D3k = harm(one forced item at k=1) - harm(one forced item at k=7), each against the clean store at its own k, double difference +/-9; boundary 0.4*h1 with h1 = harm(one item at k=1).",
+    "falsifier": "D3k = 0.86 h1 (about 21 net at h1 = 24), harm following share.",
+    "label": "open",
+    "reason": "Reachable and about 11 net above the 9.6-net boundary against +/-9, and the k=1 cell's total displacement of the benign item pushes the estimate toward the falsifying side rather than protecting the claim, though confirmation needs a point estimate under ~0.6 net and the k=1-versus-k=7 displacement confound is not itself controlled by the placebo cell.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "X = mean over the 1/2/4-writer dilution cells of [harm_cell - h*s_cell] with s_cell read from the per-game retrieval logs, natural retrieval, 8 seeds, X carrying about +/-4 net; boundary 0.17h.",
+    "falsifier": "X = 0, harm exactly proportional to the logged mean planted share (a majority-following reader gives about -0.06h).",
+    "label": "open",
+    "reason": "The share world is reachable and the exposure and share terms are measured rather than assumed, but at 8 seeds an observed X = 0 gives CI [-4, +4] whose upper bound sits exactly on the 4-net boundary, so falsification depends on the pre-registered extension to 12 seeds (+/-3.3) rather than on the stated 8-seed power.",
+    "fix": ""
+   },
+   {
+    "id": "P5",
+    "depends_on": "D5 = harm(grafts, share 1) - harm(relabelled failures, share 1), paired between two poisoned arms, 8 seeds, +/-6.5; boundary 0.5h with h the share-1 harm of the kind used (the more harmful benign-looking kind).",
+    "falsifier": "D5 near 0 - the reader copies a failed run's wandering as readily as a wrong procedure - 12 net below the boundary at h = 24.",
+    "label": "open",
+    "reason": "Reachable and resolvable at +/-6.5 against a 12-net boundary; the shared h turns the test into harm(relabelled) <= 0.5h, and the max-harm selection rule bounds relabelled harm above by h but does nothing to push it below half of h, so the falsifying world stays live.",
+    "fix": ""
+   },
+   {
+    "id": "P6",
+    "depends_on": "D1 cross-writer skeleton vote at fixed m=8 with 1/2/3 other writers versus D1-self, scored offline on the retrieval logs against planted labels (n = 180 grafts per carrier, Wilson ~+/-0.07, ~+/-0.1 on a difference).",
+    "falsifier": "D1-self within 0.1 of D1, or D1 recall < 0.5, or the 1-other-writer pool already within 0.05 of the 3-writer recall.",
+    "label": "open",
+    "reason": "Grafts are built from the carrier's own correct trajectories, so D1-self is a genuinely competitive detector and the recall < 0.5 disjunct is resolvable at Wilson +/-0.07; the 0.1 and 0.05 disjuncts are tighter than the +/-0.1 difference CI and so resolve only at an observed difference near 0, but the disjunction as a whole can come out against the population claim.",
+    "fix": ""
+   },
+   {
+    "id": "P7",
+    "depends_on": "(a) recovery = [success(D1) - success(no detector)]/harm(1/3) at share 1/3, 8 seeds, ratio CI ~+/-0.3, scored only if harm(1/3) >= 12; (b) D1 recall minus D3 memory-absent recall on grafts at precision >= 0.7, Wilson +/-0.1.",
+    "falsifier": "(a) recovery <= 0.2; (b) D1 - D3 recall <= -0.25.",
+    "label": "open",
+    "reason": "(b) is cleanly resolvable (an observed -0.25 has CI [-0.35, -0.15], entirely below the -0.1 boundary) and (a)'s falsifier sits exactly one CI below its 0.5 boundary so it needs the seed extension; note separately that the Short Hypothesis's provenance clause is true by construction - the poison carries the carrier's own trusted label while D4 drops the lowest-collection-success writer - and it is correctly kept out of the predictions and scored only as a cost on legitimate reuse.",
+    "fix": ""
+   },
+   {
+    "id": "P8",
+    "depends_on": "harm(own-backbone carrier) - harm(foreign carrier) at share 2/3 with wrong-procedure content held identical across carriers, 2 carriers x 2 readers, all four cells at 8 seeds, paired +/-6.5; boundary 8 net.",
+    "falsifier": "difference 0 for either reader (harm depends on content only).",
+    "label": "open",
+    "reason": "Both crossings are run so the opposite sign is observable in either reader, and an observed 0 gives CI [-6.5, 6.5] entirely below the 8-net boundary; the margin is thin (confirmation needs about 14.5 net) and would vanish if the scaled +/-6.5 understates the true between-game variance.",
+    "fix": ""
+   }
+  ],
+  "shared_terms": [
+   "P1-P2/P3/P4/P5/P7/P8: h = share-1 harm of the kind used is P1's numerator and the scale of every other boundary; with the stated ~45 clean gain the h >= 24 precondition places P1's own ratio at ~0.53, above its 0.5 boundary, whenever the graft kind is carried forward.",
+   "P2-P7a: harm(share 1/3) is the subtrahend in D2 and the denominator of P7a's recovery ratio, and P7a's >= 12 scoring gate is implied by P2's own prediction (harm(1/3) >= 0.65h, about 15.6 at h = 24).",
+   "P2-P3: D2 and D3k are the same presence-versus-share test at fixed k and across k, each scaled by its own share-1 harm, and they share the k=3 one-item cell as the middle point.",
+   "P4-P2: the presence model X scores (e = 1-(1-s)^3) is anchored on the same h and calibrated against the same controlled-share cells P2 uses, so a low h shrinks both estimands together.",
+   "P6-P7a: D1 recall is P6's estimand and the ceiling on P7a's recovery (recovery <= recall), so a P6 failure mechanically produces P7a's falsifying world."
+  ],
+  "headline": "P2",
+  "headline_status": "open",
+  "n_open": 8,
+  "n_entailed": 0,
+  "n_near": 0,
+  "n_unresolvable": 0,
+  "verdict": "pass"
+ },
+ "reader_pays_writer_detours": {
+  "name": "reader_pays_writer_detours",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Tobit within-game, within-seed regression of the change in reader steps on the change in mean retrieved-item steps over 1,096 paired episodes in each manipulation pair (expert vs expert-padded with dose d ~ U[0,14] drawn per game and seed; self-raw vs self-pruned), retrieval ordering fixed across cells, replay-derived state-diff step labels, Qwen3 reader at k=3, 4 seeds.",
+    "falsifier": "the slope's 95% CI upper bound below 0.3 in either pair (the reader plans from the item rather than copying its path).",
+    "label": "open",
+    "reason": "A reader that ignores item structure gives slope 0, whose stated upper bound (about 0.14 padding, 0.24 pruning) falls below 0.3, and the dose is randomized within game so no construction forces a positive slope; the residual weakness is that item steps and item tokens move together in the padding pair and are separated only in a 2-seed side cell.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "self-pruned minus self-raw in both readers at 4 seeds, 90% CI inside [-6, +6], paired half-width about 3.7 net (MDE about 5.3).",
+    "falsifier": "pruned at least 6 net below raw with the 95% CI excluding 0 (the cue-discarding account).",
+    "label": "open",
+    "reason": "Empty-diff steps can carry object-location cues, so a >= 6 net drop is reachable and resolvable at 4 seeds; the named falsifier is one-sided, however, so a pruning gain of +6 or more would contradict 'success-neutral' without meeting any stated falsifier.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "expert-padded minus expert at 4 seeds with the 90% CI inside [-6, +6], gated on the expert-corrupted positive control being at least 6 net below expert; padding is replay-verified and content-preserving.",
+    "falsifier": "padded at least 6 net below expert with the CI excluding 0; if the corrupted arm misses 6 net harm the cell is declared insensitive and P3 is reported untested, not confirmed.",
+    "label": "open",
+    "reason": "Inserted detours can plausibly mislead the reader, the corrupted arm demonstrates the injection channel is live, and the sensitivity gate resolves to 'untested' rather than to confirmation; the same one-sided falsifier asymmetry as P2 applies.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "gain per 1k served tokens (net success over k=0 divided by mean served tokens per episode, where served tokens include the injected items in every request's prompt) for the expert pool versus self-raw, Qwen3 reader, 4 seeds, bootstrap ratio CI, plus the paired success-gain gap.",
+    "falsifier": "the ratio's 95% CI upper bound at most 1.0, or the success gap at least 8 net with CI excluding 0 so the cost ranking merely follows success.",
+    "label": "near_entailed",
+    "reason": "The per-token half is largely fixed by how the pools were rendered - self-raw items are longer, so served tokens are larger by construction and, at matched success, the ratio exceeds 1 without any reader behaviour being involved - so the only live falsifying route is the auxiliary success-gap clause, which decides a different question than 'cost reranks writers'.",
+    "fix": "Score the ratio in the token-matched cells that already exist (padded truncated to unpadded tokens, raw truncated to pruned tokens), or pre-register the served-token gap attributable to injected tokens alone and require the observed ratio to exceed that construction-implied value."
+   },
+   {
+    "id": "P5",
+    "depends_on": "EXAONE reader: slope on Qwen3-raw vs Qwen3-pruned (same Tobit estimand and 1,096 pairs as P1, SE about 0.12) and the own-pair-minus-foreign-pair slope difference with SE about 0.17, 4 seeds each.",
+    "falsifier": "(a) the Qwen3-pair slope's CI upper bound below 0.3; (b) the own-minus-foreign slope difference at least 0.2 with its CI excluding 0.",
+    "label": "unresolvable",
+    "reason": "Clause (a) is resolvable (a true slope of 0 gives an upper bound of about 0.24), but the distinctive no-self-recognition claim in (b) is affirmed by noise - with SE 0.17 the 95% half-width is 0.33, so a real self-recognition gap of 0.2 yields a CI including 0 and counts as confirmation, and only an observed gap above 0.33 could falsify.",
+    "fix": "State (b) as an explicit equivalence test (TOST) on the slope difference with a band matched to power, and pre-register enough seeds or dose spread to bring the difference SE to about 0.10 so a true 0.2 gap is falsifying rather than confirming."
+   }
+  ],
+  "shared_terms": [
+   "P1-P4: served tokens per episode are a function of reader steps, which is P1's dependent variable, so P4's per-token ratio is partly the slope P1 estimates (the proposal concedes this).",
+   "P1-P5: P5(a) is P1's estimand recomputed on the EXAONE reader over the same replay-derived item-step labels and the same pruning manipulation, so the two share the item-step measurement.",
+   "P2-P5: the self-raw versus self-pruned pair supplies both P2's success-neutrality contrast and the slope in P5's own-pair term, so a failed pruning manipulation moves both at once.",
+   "P2-P4 and P3-P4: the self-raw cell is P2's raw arm and P4's denominator pool, and the expert cell is P3's reference and P4's numerator pool, so the same two success gains enter three predictions."
+  ],
+  "headline": "P1",
+  "headline_status": "open",
+  "n_open": 3,
+  "n_entailed": 0,
+  "n_near": 1,
+  "n_unresolvable": 1,
+  "verdict": "pass"
+ },
+ "reconstruction_pays_only_across_the_writer_gap": {
+  "name": "reconstruction_pays_only_across_the_writer_gap",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "{W_self, W_far} x {C_v7, C_r3} on R1 at 8 seeds, D(w,r) = S(r,C_r3,w) - S(r,C_v7,w); W_far fixed by Gate 0(a) (W_other if its k7 gain over static3 >= +12 with CI excluding 0 at 4 seeds, else W_exp); M = max(G0/3, h_DiD).",
+    "falsifier": "The 95% cluster-bootstrap CI of D(W_far,R1) - D(W_self,R1) includes 0 or the point estimate is negative, i.e. reconstruction helps the reader's own bank as much as or more than the foreign bank.",
+    "label": "open",
+    "reason": "Both banks are run in both conditions at 8 seeds, the self bank is left at natural length so the compression route that would produce a large D(W_self) is deliberately live (capping is only P8), and no ceiling or gate forces the sign; the margin sits above the noise only by ~0.8 net (M = 6.5 if G0 = 19.5 versus h_DiD ~5.7), so a true-zero interaction falsifies barely 60% of the time.",
+    "fix": "Trigger the pre-registered 12-seed escalation on M - h_DiD < 2 rather than only on h_DiD > 7, so the null outcome sits clearly outside the CI."
+   },
+   {
+    "id": "P2",
+    "depends_on": "{W_scaf, W_self} x {C_v7, C_r3} on R1 at 8 seeds, with W_scaf verified within +/-5 net of W_self at k=0 and with a larger JS action-template divergence to R1 than W_self.",
+    "falsifier": "CI of D(W_scaf,R1) - D(W_self,R1) includes 0 or is negative: a different action scaffold from the same backbone at matched k=0 success gains nothing from reader-side rewriting.",
+    "label": "open",
+    "reason": "The scaffold bank is collected and both conditions are run on it, capability is held by the +/-5 verification rather than by the outcome, and nothing in the retriever, update rule or split prevents the two increments from coinciding.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "{W_cap, W_scaf, W_self} x {C_v7, C_r3} on R1 at 8 seeds; bank verification requires W_cap >= +8 net above W_self at k=0 and JS divergence(W_cap) not above divergence(W_scaf), else P3 is declared confounded; plus a 90% TOST on D(W_cap,R1) - D(W_self,R1) against +/-M.",
+    "falsifier": "D(W_scaf) - D(W_cap) has a CI including 0 or negative (capability, not policy distance, governs the increment), or the 90% CI of D(W_cap) - D(W_self) extends beyond +M.",
+    "label": "open",
+    "reason": "The primary contrast is reachable in both directions because thinking-mode traces are longer and can gain from the same compression route the proposal concedes for the self bank, but it is not capability-at-fixed-proximity as titled (the bank gate requires W_cap to be strictly closer to R1 than W_scaf, so proximity moves with capability across the two cells) and the equivalence half is unresolvable at the stated power, since a 90% CI half-width of ~4.8 inside +/-6.5 requires the point estimate within ~1.7 net.",
+    "fix": "Add a capability arm matched in JS divergence to W_scaf (or hold divergence equal by construction between W_cap and W_scaf), and run the TOST cells at >= 16 seeds so equivalence within +/-M is attainable rather than almost always 'inconclusive'."
+   },
+   {
+    "id": "P4",
+    "depends_on": "{W_scaf, W_temp} x {C_v7, C_r3} on R1 at 8 seeds; W_temp is same-scaffold T=0.7 collection verified within +/-5 net of W_self at k=0.",
+    "falsifier": "CI of D(W_scaf,R1) - D(W_temp,R1) includes 0 or is negative: the temperature-only bank, with the same phrasing but more diverse and longer trajectories, gains as much from rewriting.",
+    "label": "open",
+    "reason": "The temperature bank is actually collected and is the arm that would show the compression alternative, both conditions run on it at 8 seeds, and the DiD margin is at or above the stated 5.7 half-width.",
+    "fix": ""
+   },
+   {
+    "id": "P5",
+    "depends_on": "Two-cell paired contrasts S(C_r3) - S(C_v7) in (W_other,R1) and in (W_self,R2) at 8 seeds (+/-4), with the pilot token match forcing C_v7 (or a larger k) to carry at least the reconstruction arm's consumer tokens.",
+    "falsifier": "The CI includes 0 or is negative in either cell: seven verbatim foreign items at greater token cost do as well as three rewritten ones.",
+    "label": "open",
+    "reason": "This is the best-powered item in the set (margin ~6.5 against a +/-4 half-width, so a true null falsifies ~90% of the time), the comparator is strengthened rather than weakened by the pilot rule, and Gate 0(b) only screens out a broken rewrite prompt (a large drop), not a null.",
+    "fix": ""
+   },
+   {
+    "id": "P6",
+    "depends_on": "C_pl_static (rewrite of the three fixed static3 exemplars, no retrieval), C_pl_mis (rewrite of wrong-type retrieved items), static3 and the W_far C_v7/C_r3 cells on R1 at 8 seeds; tested only if D(W_far,R1) already has a CI excluding 0.",
+    "falsifier": "The placebo difference-of-differences CI includes 0 (rewriting fixed exemplars captures the increment, so it is a planning step rather than adaptation of the foreign item), or the mismatched rewrite gains >= M over static3.",
+    "label": "open",
+    "reason": "The first clause is genuinely reachable and is if anything biased against the hypothesis, since D(W_far) is scored over the strong C_v7 baseline while the placebo gain is scored over the much weaker static3 (+19.5 apart), but the second clause cannot come out against the hypothesis, because a rewrite of wrong-type items is compared with correct-type exemplars and its gain is negative by construction; the disjunctive falsifier keeps the item open.",
+    "fix": "Score C_pl_mis against the matched-type C_r3 cell (or against C_v7 on the same bank) rather than against static3, so the mismatched arm could in principle exceed M."
+   },
+   {
+    "id": "P7",
+    "depends_on": "{W_self, W_other} x {C_v7, C_r3} on R2 (EXAONE) at 8 seeds, with R2's own static3 cell; M_R2 = max(G0_R2/3, h_DiD) from S(R2,C_v7,W_self) - S(R2,static3).",
+    "falsifier": "CI of D(W_self,R2) - D(W_other,R2) includes 0 or is negative: rewriting does not help EXAONE read Qwen3's experience more than its own.",
+    "label": "open",
+    "reason": "The role reversal is run with both banks in both conditions on the second reader, both readers' self-pools are collected at the same episode budget, and the margin is floored at the realized DiD half-width so the null is outside the noise.",
+    "fix": ""
+   },
+   {
+    "id": "P8",
+    "depends_on": "{W_self^cap, W_far^cap} x {C_v7, C_r3} on R1 at 8 seeds, banks capped at 2x the expert median steps; the falsifier is stated conditionally on the uncapped P1 contrast having excluded 0.",
+    "falsifier": "The capped DiD CI includes 0 while the uncapped P1 contrast excluded it, i.e. the P1 increment was compression of long foreign items rather than translation.",
+    "label": "open",
+    "reason": "The length cap is the one manipulation that removes the compression route and it is actually run at full seeds, so the falsifier is reachable; note only that the falsifier is vacuous if P1 itself is null, and that when Gate 0 sets W_far = W_exp the expert bank is already at the cap, so the contrast changes only the self cell.",
+    "fix": "State P8 unconditionally (as its own DiD with its own margin) so it remains testable when P1 is indeterminate, and build a capped foreign bank distinct from W_exp even when W_far = W_exp."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2-P3: all three subtract the same measured D(W_self,R1), so one noisy self-bank cell moves three predictions together.",
+   "P2-P3-P4: all three use D(W_scaf,R1) as the positive term.",
+   "P1-P6: P6 is gated on, and reuses, D(W_far,R1) = S(R1,C_r3,W_far) - S(R1,C_v7,W_far).",
+   "P5-P7: S(R2,C_r3,W_self) - S(R2,C_v7,W_self) is P5's second cell and P7's first term, so P5 partly determines P7.",
+   "P1-P8: if Gate 0 sets W_far = W_exp, the expert bank is already inside the 2x-median cap, so D(W_far^cap) is the same measured cell as D(W_far) and P8 differs from P1 only by the capped self cell.",
+   "P1-P5-P6 (margins): M = max(G0/3, h_DiD) is computed from S(R1,C_v7,W_far) - S(R1,static3), cells that also enter P1, P5 and P6, so a low static3 cell raises every margin at once."
+  ],
+  "headline": "P1",
+  "headline_status": "open",
+  "n_open": 8,
+  "n_entailed": 0,
+  "n_near": 0,
+  "n_unresolvable": 0,
+  "verdict": "pass"
+ },
+ "rewriter_trained_against_one_reader_matched_cost": {
+  "name": "rewriter_trained_against_one_reader_matched_cost",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Within-reader paired contrasts D_B = S(B,C_RB) - S(B,C_RA) and D_A = S(A,C_RA) - S(A,C_RB) at 8 seeds (+/-4); R_A and R_B share store, candidate generator, backbone, hyperparameters and pair count and differ only in the in-loop reader; M1 = max(5, Ihat/2) with Ihat from Gate 0.",
+    "falsifier": "Either difference has a 95% CI upper bound below M1, i.e. the rewrites are reader-agnostic cleaning that transfers between readers.",
+    "label": "open",
+    "reason": "Both crossed cells exist for both readers, C_vtok cancels so no shared-baseline identity is involved, and the R_nf arm is there to attribute any specificity to the in-loop filter; power is thin but real, since falsification needs a point estimate below ~1 net against a +/-4 half-width, which a genuine null clears about 70% of the time.",
+    "fix": "Extend the four C_RA/C_RB cells to 12 seeds so a reader-agnostic outcome (point 0) falls clearly below M1 - halfwidth."
+   },
+   {
+    "id": "P2a",
+    "depends_on": "Cross-reader differences of increments I(R,r) = S(r,R) - S(r,C_vtok) over (A,A',B) at 8 seeds, stated half-width +/-5.7; margins max(6, Ihat/2) and 6; A' and B each verified within +/-5 net of A at k=0; Gate 0 conditions I(R_A,A) >= 10.",
+    "falsifier": "Either difference has a 95% CI upper bound below its margin, i.e. the backbone swap keeps the increment, or the scaffold change costs as much transfer as the backbone change.",
+    "label": "unresolvable",
+    "reason": "The margin (6) exceeds the stated half-width (5.7) by 0.3 net, so under the decision rule falsification requires a point estimate below 0.3: a genuinely falsifying world of full retention lands there only about half the time, and the substantively falsifying middle (the rewriter retaining 60-70% on the foreign backbone, i.e. a loss of 3-4 net) is permanently indeterminate.",
+    "fix": "Run the six increment cells at 16 seeds (or set every margin at 2x the realized half-width of the cross-reader difference) so that 'keeps most of the increment' is a resolvable outcome, not only exact full retention."
+   },
+   {
+    "id": "P2b",
+    "depends_on": "I(R_A,A'') - I(R_A,B) >= 6 at 8 seeds (+/-5.7), with A'' thinking-budget-tuned to sit 8-12 net above A at k=0 and a no-cell-above-85% ceiling guard, B verified within +/-5 of A.",
+    "falsifier": "CI upper bound below 6, i.e. the capability change at fixed backbone costs at least as much transfer as the backbone swap.",
+    "label": "unresolvable",
+    "reason": "Same knife edge as P2a (margin 6 against a 5.7 half-width forces the falsifying point estimate to lie below 0.3), and here the reduced headroom of A'' pushes the estimate toward the falsifier through a compression-of-headroom route the ceiling guard bounds only loosely, so most outcomes are reported as indeterminate.",
+    "fix": "Raise the A'' and B increment cells to 16 seeds and pre-register the falsifier as an upper bound below 3 net (or as the headroom-normalised increment), so a real capability loss is separable from noise."
+   },
+   {
+    "id": "P2c",
+    "depends_on": "One-sided 95% lower bound of I(R_A,A') - I(R_A,A) above -6 net; A and A' increment cells at 8 seeds, A' differing from A by scaffold only.",
+    "falsifier": "Point estimate at or below -6 with upper bound below 0, i.e. a scaffold change alone breaks the imported rewriter.",
+    "label": "open",
+    "reason": "The falsifying world (a plan written in A's action format being unusable under plan-then-act) would produce a loss well past -6 given Gate 0 fixes I(R_A,A) >= 10, so the falsifier sits outside the +/-5.7 noise rather than at its edge, and both cells are run.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "L = S(A,C_RA) - S(A,C_RA_empty) at 8 seeds (+/-4) against M3 = max(5, 2 Ihat/3); C_RA_empty gives the rewriter the task and first observation but no retrieved item.",
+    "falsifier": "Upper bound of L below M3, i.e. the item-free rewriter keeps most of its gain and what transfers is a memorised plan rather than adapted experience.",
+    "label": "open",
+    "reason": "The memory-absent arm is actually run at full seeds and the margin (~6.7 at Ihat = 10) clears the +/-4 half-width by enough that a rewriter which needs no items falsifies with ~90% probability; the proposal also pre-commits to relabelling P1/P2 if it fails.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "Delta = S(B,C_selfcost at k=3) - S(B,C_RA) with a one-sided 95% lower bound above -5; W_EXA+ sized from R_A's logged training GPU-hours; C_vtok is the k=1 arm (+9.1 over static3) while C_selfcost is read at k=3 (+17.2 in Measurement C).",
+    "falsifier": "Delta at or below -5 with upper bound below 0, i.e. the imported foreign-trained rewriter beats the same GPU-hours of B's own collected experience.",
+    "label": "near_entailed",
+    "reason": "Delta is algebraically [S(B,C_selfcost) - S(B,C_vtok)] - I(R_A,B), and the proposal's own Measurement-C numbers put the first bracket near +8, so falsification requires I(R_A,B) >= ~13 net on the held-out backbone, above the >= 10 that Gate 0 demands of the training reader itself, a transfer surplus no stated mechanism can produce; the proposal half-concedes this by noting P4 is entailed by P2 whenever I(R_A,B) < 5.",
+    "fix": "Set the non-inferiority margin from the measured S(B,C_selfcost) - S(B,C_vtok) gap rather than a fixed -5 (or compare C_selfcost against C_RA at matched consumer tokens), so the bracket cannot absorb the whole comparison."
+   },
+   {
+    "id": "P5",
+    "depends_on": "S(A,C_RA) minus the maximum of S(A,C_R0g) (8 seeds), S(A,C_R0s) and S(A,C_R0b3) (4 seeds each) >= 5 net with CI excluding 0; contrast half-width ~+/-4 to +/-4.9.",
+    "falsifier": "Upper bound below 5 against the best prompted cell, i.e. execution-filtered training buys nothing over prompting at three decoding budgets.",
+    "label": "open",
+    "reason": "All three prompted budgets are actually run, and taking the maximum of three noisy cells biases the difference downward under a null, so a world where training buys nothing produces a negative point estimate and falsifies comfortably despite the thin nominal margin.",
+    "fix": ""
+   },
+   {
+    "id": "P6",
+    "depends_on": "g(A,C_RA[W_EXA]) - g(A,C_v3[W_EXA]) >= 5 net at 8 seeds (C_static cancels, so it is the two-cell paired contrast S(A,C_RA[W_EXA]) - S(A,C_v3[W_EXA]), +/-4), with the ratio to g(B,C_v3[W_EXA]) reported by joint bootstrap.",
+    "falsifier": "Upper bound below 5, i.e. rewriting does not move reader A toward the writer's own gain on the writer-only bank, even against a k=3 verbatim comparator.",
+    "label": "open",
+    "reason": "Both cells on the EXAONE-only bank are run at 8 seeds against an information-matched (not token-matched) comparator, so the test is harder than Gate 0 rather than easier, and the ratio is reported but never used as a threshold, avoiding the shared-denominator identity.",
+    "fix": ""
+   }
+  ],
+  "shared_terms": [
+   "P1-P3-P5: all three are scored off the single cell S(A,C_RA), and Gate 0's Ihat (which contains that same cell) sets M1 and M3, so one high C_RA cell raises the estimate and its own bar together.",
+   "P2a-P2b-P4: all use I(R_A,B) = S(B,C_RA) - S(B,C_vtok); P4's Delta equals [S(B,C_selfcost) - S(B,C_vtok)] - I(R_A,B), so P4 is determined by P2a's transfer term plus an already-measured verbatim gap.",
+   "P2a-P2c: share I(R_A,A) and I(R_A,A'); if P2c confirms that A' is within 6 net of A, P2a's two clauses become the same test.",
+   "P1-P4: share S(B,C_RA), so a single mismeasured B cell moves the reader-specificity headline and the matched-cost non-inferiority in opposite directions.",
+   "Gate0-P2a-P2b: the margins max(6, Ihat/2) and M1 = max(5, Ihat/2) are functions of I(R_A,A), the same measured quantity that forms the positive term of the P2a difference."
+  ],
+  "headline": "P1",
+  "headline_status": "open",
+  "n_open": 5,
+  "n_entailed": 0,
+  "n_near": 1,
+  "n_unresolvable": 2,
+  "verdict": "pass"
+ },
+ "shared_blind_spot": {
+  "name": "shared_blind_spot",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Reader Q at contamination rate 0.5: D_Q = S(E-self cell) - S(Q-self cell), a single paired difference of two 12-seed cells (half-width 3.3) so the clean base cancels; premise harm(Q-self) >= 6 against the clean base (12 vs 8, half-width 3.65); reader-E mirror D_E at 6 seeds (4.6); contaminants type-matched, length-matched by selection and passed through the same coherence filter.",
+    "falsifier": "CI upper bound of D_Q below 5 net (point below ~1.7): foreign failures harm as much or nearly as much; or the premise fails (harm(Q-self) upper bound below 6 while the graft passes Gate 0); or D_E's CI lies entirely below zero, which would make Q-self items a writer property rather than proximity.",
+    "label": "open",
+    "reason": "Both contaminated cells are run at 12 seeds with the same masking, coherence filter and length matching, the mirror reader supplies the arm that separates proximity from a writer property, and a distant backbone's failures (invalid-command loops, over-long analysis) remain a live route to the falsifier at a margin 1.5 half-widths clear of the null.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "Pooled Q-prox-T and Q-prox-S at rate 0.5 (2 x 6 seeds) versus Q-self (12 seeds), half-width 3.3, margin 4 net, gated on the manipulation check pi(Q-prox) <= pi(Q-self) - 0.15 with k=0 within +/-3 net of Q-self; plus a descriptive weighted slope of harm on pi over five writers spanning >= 0.3 in pi.",
+    "falsifier": "S(Q-prox) - S(Q-self) upper bound below 4 net (a same-backbone policy at lower agreement harms as much as the reader's own), or the slope's CI includes zero while D_Q passes.",
+    "label": "open",
+    "reason": "The proximity variants are collected, gated on a real manipulation check and run in both flavours, so the falsifier is reachable, though the slack is thin (falsification needs a point estimate below ~0.7 against a 3.3 half-width) and the slope clause adds little independent risk, since pi(Q-self) is 1.0 by construction and D_Q is the slope's dominant lever.",
+    "fix": "Raise the pooled Q-prox cells to 12 seeds (margin at ~2x half-width) and pre-register the slope on the three non-headline writers only, so it can disagree with D_Q."
+   },
+   {
+    "id": "P3",
+    "depends_on": "Offline judge x writer recall table on 600 L0-masked items per writer, each judge set to a 5% false-rejection point calibrated on clean expert items; deficits deficit_Q and deficit_E >= 0.15 with two-cell SE ~0.029, tested as the judge x writer interaction with each judge's overall recall as covariate.",
+    "falsifier": "Either deficit has a 95% CI upper bound below 0.05, i.e. a writer's masked failures are as detectable by its own backbone as by a foreign one.",
+    "label": "near_entailed",
+    "reason": "A diagonal deficit is exactly what a judge's ordinary leniency toward its own backbone's text produces at an operating point calibrated only on clean expert items, and the covariate removes a judge's overall recall (a main effect) rather than that self-text leniency, so the falsifier is reachable only if a well-documented self-preference effect happens to be absent, a mechanism the proposal measures on clean self items but does not control in the deficit.",
+    "fix": "Calibrate each judge's 5% false-rejection point per writer column on that writer's clean successes (collect clean items for every writer, not only Q) or subtract the clean-item self-preference gap from each deficit, so the deficit measures failure detection rather than style familiarity."
+   },
+   {
+    "id": "P4",
+    "depends_on": "The same 600 items per writer scored item-paired at L0, L1 (true terminal state visible, failure line removed) and L2 (L1 plus the failure line), paired SE ~0.032; requires L0 < L1 < L2 for every judge, L1 recall in 0.30-0.85 in >= 4 of 5 columns, diagonal deficits >= 0.08 at L1 and <= 0.05 at L2; conditioned on L0 deficits >= 0.15.",
+    "falsifier": "At L1 both deficits have CI upper bounds below 0.05 while the L0 deficits are >= 0.15 (the blind spot was trust in the appended success line, a text artifact), or an L1 deficit exceeds its L0 deficit by more than its CI while the L2 deficit is >= 0.10.",
+    "label": "unresolvable",
+    "reason": "With a paired 95% half-width of ~0.063, an upper bound below 0.05 requires a point estimate below -0.013, and the falsifier demands this for both judges at once, so a world where the deficit truly vanishes at L1 is classified as falsifying only about one time in eight; the monotonicity clause adds no risk either, since L2 nests L1 which nests L0 in evidence, making L0 < L1 < L2 forced by construction.",
+    "fix": "State the L1 falsifier as an inferiority test on a single deficit (CI excluding 0.08, or the L0-minus-L1 drop CI excluding 0) and raise the per-writer item count from 600 to about 2,000 so the interval half-width falls well below the 0.05 threshold."
+   },
+   {
+    "id": "P5",
+    "depends_on": "Own-judgment and cross-judge (E) filters applied offline to the 50% Q-self bank at the matched 5% false-rejection point, each filtered bank then run at 8 seeds; R(f) = S(filter cell) - S(Q-self 50 cell) (8 vs 12, half-width 3.65) and S(cross) - S(own) (8 vs 8, half-width 4.0); plus E removing >= 0.15 more of the 600 contaminants than Q.",
+    "falsifier": "S(cross) - S(own) upper bound below 5 net (the own filter recovers as much, or neither recovers), or R(cross) upper bound below 3 net while E removes >= 0.4 of the contaminants (the foreign judge removes items but not the harmful ones).",
+    "label": "open",
+    "reason": "Both filtered banks are actually run at full seeds with the false-rejection point matched, and the two failure modes are separated by their own arms; note the confirmation is arithmetically hard rather than easy, because recovery is bounded above by harm(Q-self), which Gate 0 only requires to be >= 6, so R(cross) >= 6 needs near-complete removal at the gate minimum.",
+    "fix": "Express R(cross) as a fraction of the realised harm(Q-self) (as rho_c already is) instead of a fixed 6 net, so the prediction is not unachievable when harm sits at the Gate-0 floor."
+   },
+   {
+    "id": "P6",
+    "depends_on": "Graft v1 at 50% (8 seeds) against the clean base (8 vs 8, half-width 4.0) with margin 6 net, and the length-matched truncated clean placebo against Q-self (8 vs 12, half-width 3.65) with margin 4 net; Gate 0 already accepts the study if either the graft or Q-self costs >= 6 net, and graft v2 is a permitted single re-specification if v1 fails Gate 0.",
+    "falsifier": "The graft's harm CI upper bound below 6 net (manufactured wrong procedures do not propagate), or S(placebo) - S(Q-self) upper bound below 4 net (truncation alone accounts for the harm attributed to contamination).",
+    "label": "open",
+    "reason": "Both control arms are run at 8 seeds with fixed pre-registered recipes and the disjunctive falsifier is carried by the better-powered graft clause, though the item is weakened on both sides: the graft contrast is the same measurement as Gate 0 and gets a second chance through v2, the placebo clause falsifies only ~58% of the time under a true null, and the stated text is truncated mid-sentence so the placebo margin's power statement is incomplete.",
+    "fix": "Complete the truncated clause, run the placebo at 12 seeds, and pre-register that P6's graft clause is evaluated on v1 only (with v2 reported as a separate, labelled re-specification) so the positive control is not tested twice."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: both are paired differences taken against the same S(Q-self 50) 12-seed cell, and D_Q is the widest-pi lever in P2's five-writer harm-versus-pi slope, so a confirmed D_Q largely determines a positive slope.",
+   "P1-P5: R(own) and R(cross) are both differences from the same S(Q-self 50) cell that forms D_Q, so an error in that one cell moves the headline and the filter recovery together.",
+   "P3-P5: P5's requirement that E remove >= 0.15 more contaminants than Q is the same judge x writer recall at the same 5% operating point as P3's deficit_Q, so P3 determines that clause of P5.",
+   "P3-P4: the L0 deficits are P3's estimand and simultaneously P4's precondition and anchor, so P4 cannot be evaluated in the world where P3 fails.",
+   "P1-P6: Gate 0's graft-versus-clean test and P6's first clause are the same 8-seed contrast on the same cells, and P6's placebo clause reuses S(Q-self 50) from D_Q."
+  ],
+  "headline": "P1",
+  "headline_status": "open",
+  "n_open": 4,
+  "n_entailed": 0,
+  "n_near": 1,
+  "n_unresolvable": 1,
+  "verdict": "pass"
+ },
+ "thoughts_do_not_travel": {
+  "name": "thoughts_do_not_travel",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Phase A F1r vs F2 in the 6 cross cells (6 seeds) and F1 vs F2 in the 3 same-backbone cells, on byte-identical k=3 items per writer pool re-serialized into the reader's scaffold; static3-net scoring; pooled cluster-bootstrap widths +/-1.2 cross, +/-1.75 same, +/-2.1 interaction (+/-1.9/+/-2.7/+/-3.3 conservative).",
+    "falsifier": "pooled cross Delta_strip CI upper bound < +3 (foreign thoughts harmless or useful), or pooled same-backbone Delta_strip >= +3 with CI lower bound > 0 (deletion is a token-efficiency effect), or the interaction CI including 0.",
+    "label": "open",
+    "reason": "Both signs are producible because the same writer-authored thought strings are injected in the cross and the same-backbone cells, the pure-length explanation has its own arm that would trigger the second falsifier, and the +5-vs-+3 and +4-vs-0 gaps exceed the pooled half-widths on the measured and the conservative basis alike (only the 'byte-identical' wording is loose: the item content is shared across readers but the scaffold template is not).",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "F1 in the 6 cross cells at 2 seeds against F1r at 6 seeds (per-cell +/-4.3, pooled +/-1.75, conservative +/-2.7), and a second clause Delta_strip - Delta_scaffold that reuses the pooled cross S(F1r).",
+    "falsifier": "pooled Delta_scaffold >= +4 with CI lower bound > 0 AND Delta_scaffold >= Delta_strip (the scaffold, not the thoughts, is the non-transferable part).",
+    "label": "open",
+    "reason": "The F1 cross arm exists and a large scaffold effect is producible, but falsification is conjunctive so a scaffold effect co-equal with the strip effect escapes it, and the +2-vs-+4 separation (2.0) clears the pre-registered pooled +/-1.75 only barely and sits inside the proposal's own conservative +/-2.7 and inside the +/-4.3 per-cell fallback the noise section invokes when the realized width is wide.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "F4 (reader-model rewriter, output capped at the F2 token count via one tighter regeneration then truncation, cell valid only if mean F4 tokens are within 10% of F2) against F2 in the 6 cross cells at 4 seeds; +/-1.4 pooled (+/-2.1); re-based on memory-absent F4 if that arm exceeds static3 by >= 6.",
+    "falsifier": "pooled Delta_rewrite >= +4 with CI lower bound > 0, or 2 or more cells >= +6 with CI excluding 0 (content adaptation beyond form matters).",
+    "label": "open",
+    "reason": "A rewriter can restructure, drop steps or add procedure text inside the F2 budget, so the falsifier has a named and available mechanism; the residual bias is that hard truncation at the F2 count can mangle items and push Delta_rewrite toward the predicted null, and the token-validity check (mean within 10%) does not test well-formedness.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "(a) F3 (reader's own thoughts teacher-forced over the writer's actions, length-matched per step to F1r) vs F1r pooled over the 6 cross cells, 4 seeds, +/-1.4; (b) DoD combining the cross [F3 - F2] with the same-backbone [F1 - F2], corrected by the F5-self post-hoc offset, +/-2.2 (+/-3.4).",
+    "falsifier": "(a) CI upper bound < +3 (foreign actions or any attached thoughts do the harm); (b) |DoD| >= 5 with CI excluding 0 (own thoughts help only on own actions).",
+    "label": "open",
+    "reason": "(a) is a genuine authorship swap at fixed actions and length whose null is reachable and well separated from +5, and although (b) is exactly (P4a - P1a) + P1b up to the F5-self offset and so introduces no new arm, the unbounded upper tails of P4a and P1a leave |DoD| free to reach +/-5, though its 3-point margin is inside the conservative +/-3.4.",
+    "fix": ""
+   },
+   {
+    "id": "P5",
+    "depends_on": "F5 block, reader Q only, 6 seeds: F5-E and F5-G (E's and G's thoughts teacher-forced over Q's own action sequences, length-matched) against F5-self; +/-2.1 pooled (+/-3.3).",
+    "falsifier": "pooled S(F5-E,F5-G) - S(F5-self) CI upper bound >= 0 or point estimate >= -2 (the harm is a property of the whole foreign item, not of the thoughts).",
+    "label": "open",
+    "reason": "Three arms over identical action sequences make a harmless-foreign-thoughts outcome directly producible and the -5-vs--2 gap clears the measured +/-2.1, though provenance is confounded with post-hoc coherence (E and G are rationalising actions they would not have chosen) and only the self case has an offset arm to calibrate that.",
+    "fix": ""
+   },
+   {
+    "id": "P6",
+    "depends_on": "F6 (thoughts only, actions and observations deleted) in exactly 2 cross cells at 4 seeds, each chosen as the writer with the largest Phase-A verbatim deficit for readers Q and E, against static3 and against F2; +/-2.6 and +/-2.4 (+/-4.0, +/-3.7); no same-backbone F6 cell.",
+    "falsifier": "pooled F6 - static3 >= +6 with CI lower bound > 0, or S(F2) - S(F6) with CI upper bound < +5 (thoughts alone carry the procedure).",
+    "label": "near_entailed",
+    "reason": "The two F6 cells are selected on the outcome-correlated criterion of largest verbatim deficit, i.e. the pairings where the writer's material transfers worst, and the arm most likely to show thoughts carrying procedure (own thoughts read by their own backbone) is absent, so the placebo's falsifier survives only through a channel the design has filtered out; the second clause is additionally near-forced because F6 deletes the very action-observation tokens F2 is scored on.",
+    "fix": "Add one same-backbone F6 cell and one cross F6 cell with the smallest Phase-A verbatim deficit, pre-registered before Phase A results are read, so the thoughts-carry-procedure outcome has a cell where it could appear."
+   }
+  ],
+  "shared_terms": [
+   "P1-P4: both are differences from the same pooled cross S(F1r), and P4(b)'s DoD equals (P4a - P1a) + P1(b) up to the F5-self offset, so P4(b) is an algebraic recombination of P1 and P4(a) with no arm of its own.",
+   "P1-P2: Delta_strip and Delta_scaffold share the pooled cross S(F1r); P2's second clause is S(F2) - 2*S(F1r) + S(F1), so a single anomalous F1r estimate moves both predictions in opposite directions.",
+   "P1-P6: P6's S(F2) - S(F6) clause reuses the same pooled cross S(F2) as Delta_strip, so given P6's first clause (F6 approximately static3) it is determined by F2's gain over static3 rather than measuring anything new.",
+   "P4-P5: S(F5-self) is both P4(b)'s post-hoc offset correction and P5's comparator, so a mis-estimated F5-self shifts the DoD and the F5 contrast together.",
+   "P1-Gate 0: the recovery fraction reported under P1 has Gate 0's verbatim deficit as its denominator, and Gate 0's cross term S(F1, W->R) is the same arm as the minuend of P2's Delta_scaffold."
+  ],
+  "headline": "P1",
+  "headline_status": "open",
+  "n_open": 5,
+  "n_entailed": 0,
+  "n_near": 1,
+  "n_unresolvable": 0,
+  "verdict": "pass"
+ },
+ "complementarity_not_proximity": {
+  "name": "complementarity_not_proximity",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "Reader Q, 6 seeds, paired +/-4.6 at 95% and +/-3.9 at 90%: (a) Q-prox_m vs Q-self, with the screen requiring k=0 within +/-3 of Q-self and pi at least 0.10 below pi(Q-self,Q) (fallback: nearest candidate, pi gap only reported as a covariate); (b) Q-cap_m vs Q-prox_m at matched agreement, with Q-cap gated at k=0 >= Q-self + 12 (fallback: the Measurement-B QLoRA writer).",
+    "falsifier": "(a) Delta_prox <= -8 with 95% CI excluding 0; (b) Delta_cap <= -1 (CI then excludes +4), or Delta_cap >= Delta_m(X_m->Q) + 5.",
+    "label": "open",
+    "reason": "Both cells exist and either sign is producible at a separation of about 1.7 and 1.1 half-widths respectively, but P1 measures nothing beyond P2's cells (Delta_prox is identically P2's Delta_m for Q-prox and Delta_cap is Delta_m(Q-cap) - Delta_m(Q-prox)), the equivalence band leaves a -3.1 to -8 zone that neither confirms nor falsifies, and the named fallback can leave the agreement manipulation undelivered while the cell still runs.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "8 cross cells at 6 seeds (+/-4.6), each writer's bank count-matched per type to the reader's own success histogram with the deficit filled by the reader's own items, Delta_m = S_R(W_m) - S_R(R-self) (R_match where fill > 10%), and the kappa class table (high >= 0.08 / low <= 0.02) frozen from writers' collection-run per-type success against readers' k=0 per-type validation success.",
+    "falsifier": "any high-kappa cell with Delta_m <= +1, or any low-kappa cell with Delta_m >= +7; for the equal-capability pair, an asymmetric outcome in which only the stronger-overall writer's pool helps.",
+    "label": "open",
+    "reason": "The high-kappa branch is fully reachable, since a count-matched expert or stronger-backbone pool can plainly fail to beat the reader's own pool, and kappa is an offline statistic that is not algebraically tied to the measured Delta_m; the low-kappa branch is much weaker, because a writer with kappa near 0 has p_W(t) <= p_R(t) on the weighted types and therefore fewer than n_R(t) successes to contribute, so its bank is topped up with the reader's own items and Delta_m is pushed toward 0 by the fill rule rather than by complementarity, and the Q<->E sub-prediction is conditional on a measured kappa that can render it vacuous.",
+    "fix": "Restrict the low-kappa test to cells with fill = 0 (or report Delta_m recomputed on only the writer-sourced retrievals), and pre-register the Q<->E sub-prediction's antecedent as a gate with a stated action if the kappas do not both clear 0.08."
+   },
+   {
+    "id": "P3",
+    "depends_on": "The reader-Q triple at 6 seeds: X_comp (expert trajectories on a random subset of the reader's failed games of type t) vs X_int (expert trajectories on the subset G_t of games the reader solves), identical writer, identical per-type count n(t) = min(n_R(t), reader failure count), same retriever and template; +/-4.6.",
+    "falsifier": "Delta_comp <= +1 (CI excludes +6), i.e. the expert's value is optimality or format available on any game.",
+    "label": "open",
+    "reason": "The two arms differ in exactly one factor and a null is directly producible if the expert's contribution is format rather than coverage; the caveats are that the arms are not token-matched (failed-game trajectories are longer, giving a confirming result a length channel) and the +6-vs-+1 separation is only 1.09 half-widths, so mid-range outcomes decide nothing.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "The same triple: X_int vs self_int on the identical game subset G_t at identical count, TOST with the 90% CI (+/-3.9) inside +/-7, so confirmation needs an estimate within about +/-3.1.",
+    "falsifier": "Delta_opt >= +8 with CI excluding 0 (optimality is a live channel).",
+    "label": "open",
+    "reason": "Expert walkthroughs outscoring the reader's own solutions of the same games is a reachable outcome with an existing arm, but the falsifier is one-sided (a large negative confirms the equivalence), the X_int arm is shared with P3 so a single low X_int estimate confirms both predictions at once, and the +3.1-to-+8 band resolves neither way.",
+    "fix": ""
+   },
+   {
+    "id": "P5",
+    "depends_on": "blind3, reader Q, 6 seeds: wrong-type items at the k=3 token count against static3 (3 fixed type-conditioned expert exemplars, ~430 tokens); +/-4.6; prior blind1 measured at -3 under k=0.",
+    "falsifier": "blind3 - static3 >= +8 (CI excludes +3), i.e. context length alone helps, whereupon every rho is re-based on blind3.",
+    "label": "near_entailed",
+    "reason": "static3 already supplies the type-correct exemplar and the ReAct format, so the only channel left to a deliberately wrong-type pool is raw context length, a mechanism the design neither names as plausible nor equips with an arm, and the same measurement family already put the placebo at -3; the falsifier is reachable only through an uncontrolled route.",
+    "fix": "Add a token-matched right-type but content-scrambled (or filler) arm so the length channel is estimated separately from item relevance, or demote blind3 to a stated validity check rather than a falsifiable prediction."
+   }
+  ],
+  "shared_terms": [
+   "P1a-P2: Delta_prox = S(Q-prox_m) - S(Q-self) is exactly P2's Delta_m for the Q-prox cell, so one number decides the equivalence claim and the low-kappa branch.",
+   "P1b-P2: Delta_cap = Delta_m(Q-cap) - Delta_m(Q-prox) is a difference of two P2 cells, and its second falsifier imports P2's X_m->Q cell as well.",
+   "P3-P4: both rest on S(X_int); a low X_int simultaneously raises Delta_comp toward +6 and pushes Delta_opt negative, so a single under-performing arm can produce both confirmations.",
+   "P2-P5: static3 is the common base of every reported gain and every rho, so a P5 failure re-bases them all, although the paired Delta_m contrasts (W_m vs R-self) cancel it."
+  ],
+  "headline": "P2",
+  "headline_status": "open",
+  "n_open": 4,
+  "n_entailed": 0,
+  "n_near": 1,
+  "n_unresolvable": 0,
+  "verdict": "pass"
+ }
+}
