@@ -1,0 +1,259 @@
+[
+ {
+  "name": "shared_blind_spot",
+  "score": 5.9,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 6.0,
+   "feasibility": 7.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Two verified papers split the claim between them. (a) arXiv:2606.24428 (verified by id; 'Escaping the Self-Confirmation Trap: An Execute-Distill-Verify Paradigm"
+ },
+ {
+  "name": "thoughts_are_the_writer",
+  "score": 5.9,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 6.0,
+   "feasibility": 7.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Two verified papers threaten different halves. (1) arXiv:2603.13260, 'Explain in Your Own Words: Improving Reasoning via Token-Selective Dual Knowledge Distilla"
+ },
+ {
+  "name": "reader_pays_writer_detours",
+  "score": 5.75,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 6.0,
+   "feasibility": 8.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Three verified threats, none fatal. (1) 'The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory' (arXiv:2607.10608, verified via s2cli, S2 cha"
+ },
+ {
+  "name": "complementarity_not_proximity",
+  "score": 5.7,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 6.0,
+   "feasibility": 6.0,
+   "clarity": 6.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "arXiv:2601.14249 (verified via the literature command; ACL, 7 citations, 2026-01-20), 'Which Reasoning Trajectories Teach Students to Reason Better? A Simple Me"
+ },
+ {
+  "name": "who_gets_read",
+  "score": 5.7,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 6.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 7.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Verified via s2cli: Sigma-Mem, 'An Online Reliability Memory for LLM-based Multi-Agent Systems' (arXiv:2607.27958, 2026-07-30, verified by id) is the closest th"
+ },
+ {
+  "name": "own_errors_pass_the_gate",
+  "score": 5.6,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 4.0,
+   "significance": 6.0,
+   "soundness": 6.0,
+   "feasibility": 7.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [
+   "seven"
+  ],
+  "novelty_capped": true,
+  "escalate": false,
+  "closest": "arXiv:2507.02778 (Self-Correction Bench, verified via s2cli, s2+hf, 16 citations) is the strongest threat and the proposal never cites it. It establishes exactl"
+ },
+ {
+  "name": "reconstruction_pays_only_across_the_writer_gap",
+  "score": 5.5,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 6.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 6.0,
+   "clarity": 6.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Two verified threats. (1) arXiv:2605.30723, 'Skill is Not One-Size-Fits-All: Model-Aware Skill Alignment for LLM Agents' (2026-05-29; verified via the s2cli lit"
+ },
+ {
+  "name": "compression_erases_the_writer",
+  "score": 5.4,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 6.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Two verified papers squeeze the contribution from both sides. (a) arXiv:2605.30723, 'Skill is Not One-Size-Fits-All: Model-Aware Skill Alignment for LLM Agents'"
+ },
+ {
+  "name": "coverage_not_headcount",
+  "score": 5.3,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 7.0,
+   "clarity": 6.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "arXiv:2602.03794, 'Understanding Agent Scaling in LLM-Based Multi-Agent Systems via Diversity' (verified with s2cli paper; S2, 2026-02-03, 24 citations). Its th"
+ },
+ {
+  "name": "rewriter_trained_on_one_reader",
+  "score": 5.25,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 4.0,
+   "significance": 5.0,
+   "soundness": 6.0,
+   "feasibility": 7.0,
+   "clarity": 6.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "2605.30723, 'Skill is Not One-Size-Fits-All: Model-Aware Skill Alignment for LLM Agents' (verified via `s2cli.py paper`, 2026-05-29, cit 2, s2+hf). Its thesis i"
+ },
+ {
+  "name": "self_pool_break_even",
+  "score": 5.25,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 7.0,
+   "clarity": 8.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Verified via s2cli (S2 channel): arxiv:2505.00234, 'Self-Generated In-Context Examples Improve LLM Agents for Sequential Decision-Making Tasks' (NeurIPS 2025, 1"
+ },
+ {
+  "name": "leave_one_type_out_split",
+  "score": 5.1,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 4.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 7.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Verified via s2cli (S2+HF): arXiv:2608.14036, 'Demystifying Agent Skills: Why They Work - Until They Don't' (2026-08-14), which runs a contrastive study conclud"
+ },
+ {
+  "name": "search_disposition_contagion",
+  "score": 5.05,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 7.0,
+   "clarity": 6.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Verified with `s2cli.py paper`: MemHarness, arXiv:2607.28272 (2026-07-30, s2+hf) — 'most existing memory-augmented agents treat retrieved experiences as static "
+ },
+ {
+  "name": "one_bad_apple_population_vote",
+  "score": 4.9,
+  "verdict": "reject",
+  "means": {
+   "novelty": 4.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 6.0,
+   "clarity": 6.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "Two verified papers threaten the two halves. (1) A-MemGuard (arXiv:2510.02373, verified via s2cli `paper`, S2, 56 citations) is a proactive defense for LLM agen"
+ },
+ {
+  "name": "reconstruction_launders_planted_procedure_errors",
+  "score": 4.75,
+  "verdict": "reject",
+  "means": {
+   "novelty": 4.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 6.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "For the headline P4 (own-style detection blind spot), the closest threat is arXiv:2507.02778, Self-Correction Bench (verified via the literature command, s2, 16"
+ }
+]
