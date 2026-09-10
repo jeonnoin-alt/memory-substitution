@@ -1,37 +1,37 @@
 [
  {
-  "name": "shared_blind_spot",
-  "score": 5.9,
+  "name": "thoughts_do_not_travel",
+  "score": 5.87,
   "verdict": "borderline",
   "means": {
-   "novelty": 5.0,
+   "novelty": 5.33,
    "significance": 6.0,
    "soundness": 6.0,
-   "feasibility": 7.0,
-   "clarity": 7.0
+   "feasibility": 6.0,
+   "clarity": 6.67
   },
-  "n_reviews": 1,
+  "n_reviews": 3,
   "verified_collisions": [],
   "novelty_capped": false,
-  "escalate": true,
-  "closest": "Two verified papers split the claim between them. (a) arXiv:2606.24428 (verified by id; 'Escaping the Self-Confirmation Trap: An Execute-Distill-Verify Paradigm"
+  "escalate": false,
+  "closest": "Two verified papers threaten different halves. (1) arXiv:2603.13260, 'Explain in Your Own Words: Improving Reasoning via Token-Selective Dual Knowledge Distilla"
  },
  {
-  "name": "thoughts_do_not_travel",
-  "score": 5.9,
+  "name": "shared_blind_spot",
+  "score": 5.85,
   "verdict": "borderline",
   "means": {
    "novelty": 5.0,
-   "significance": 6.0,
+   "significance": 5.67,
    "soundness": 6.0,
    "feasibility": 7.0,
-   "clarity": 7.0
+   "clarity": 7.33
   },
-  "n_reviews": 1,
+  "n_reviews": 3,
   "verified_collisions": [],
   "novelty_capped": false,
-  "escalate": true,
-  "closest": "Two verified papers threaten different halves. (1) arXiv:2603.13260, 'Explain in Your Own Words: Improving Reasoning via Token-Selective Dual Knowledge Distilla"
+  "escalate": false,
+  "closest": "Two verified papers split the claim between them. (a) arXiv:2606.24428 (verified by id; 'Escaping the Self-Confirmation Trap: An Execute-Distill-Verify Paradigm"
  },
  {
   "name": "reader_pays_writer_detours",

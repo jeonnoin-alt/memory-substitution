@@ -2,12 +2,12 @@
 
 | # | idea | n | score | verdict | nov | sig | snd | fea | cla | collision | escalate |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | bindings_need_a_query_only_when_untestable | 1 | 6.1 | borderline | 6.0 | 6.0 | 6.0 | 7.0 | 6.0 | - | yes |
-| 2 | compile_the_statistics_not_the_trajectory | 1 | 6.05 | borderline | 6.0 | 5.0 | 6.0 | 8.0 | 7.0 | - | yes |
-| 3 | binding_scope_leakage_ladder | 1 | 5.95 | borderline | 6.0 | 6.0 | 5.0 | 7.0 | 7.0 | - | yes |
-| 4 | recall_success_dissociation | 1 | 5.9 | borderline | 5.0 | 6.0 | 6.0 | 7.0 | 7.0 | - | yes |
-| 5 | rank_flat_retriever_is_a_type_classifier | 1 | 5.8 | borderline | 6.0 | 5.0 | 5.0 | 8.0 | 7.0 | - | yes |
-| 6 | whole_bank_confusability_ladder | 1 | 5.75 | borderline | 5.0 | 6.0 | 5.0 | 8.0 | 7.0 | - | yes |
+| 1 | compile_the_statistics_not_the_trajectory | 3 | 6.1 | borderline | 5.67 | 5.0 | 6.33 | 8.0 | 7.67 | - | - |
+| 2 | recall_success_dissociation | 1 | 5.9 | borderline | 5.0 | 6.0 | 6.0 | 7.0 | 7.0 | - | yes |
+| 3 | rank_flat_retriever_is_a_type_classifier | 1 | 5.8 | borderline | 6.0 | 5.0 | 5.0 | 8.0 | 7.0 | - | yes |
+| 4 | binding_scope_leakage_ladder | 3 | 5.77 | borderline | 5.67 | 5.67 | 5.0 | 7.67 | 6.33 | - | - |
+| 5 | whole_bank_confusability_ladder | 1 | 5.75 | borderline | 5.0 | 6.0 | 5.0 | 8.0 | 7.0 | - | yes |
+| 6 | bindings_need_a_query_only_when_untestable | 3 | 5.65 | borderline | 5.33 | 5.33 | 5.67 | 7.0 | 6.0 | - | - |
 | 7 | many_shot_averages_detours | 1 | 5.65 | borderline | 5.0 | 5.0 | 6.0 | 8.0 | 6.0 | - | yes |
 | 8 | aggregate_or_comply | 1 | 5.5 | borderline | 5.0 | 5.0 | 5.0 | 8.0 | 7.0 | - | yes |
 | 9 | exemplar_lottery | 1 | 5.5 | borderline | 5.0 | 5.0 | 5.0 | 8.0 | 7.0 | - | yes |

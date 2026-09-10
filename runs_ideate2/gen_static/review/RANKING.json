@@ -1,54 +1,20 @@
 [
  {
-  "name": "bindings_need_a_query_only_when_untestable",
+  "name": "compile_the_statistics_not_the_trajectory",
   "score": 6.1,
   "verdict": "borderline",
   "means": {
-   "novelty": 6.0,
-   "significance": 6.0,
-   "soundness": 6.0,
-   "feasibility": 7.0,
-   "clarity": 6.0
-  },
-  "n_reviews": 1,
-  "verified_collisions": [],
-  "novelty_capped": false,
-  "escalate": true,
-  "closest": "Closest verified: MEMENTO, arXiv:2505.16348 ('Embodied Agents Meet Personalization: Investigating Challenges and Solutions Through the Lens of Memory Utilizatio"
- },
- {
-  "name": "compile_the_statistics_not_the_trajectory",
-  "score": 6.05,
-  "verdict": "borderline",
-  "means": {
-   "novelty": 6.0,
+   "novelty": 5.67,
    "significance": 5.0,
-   "soundness": 6.0,
+   "soundness": 6.33,
    "feasibility": 8.0,
-   "clarity": 7.0
+   "clarity": 7.67
   },
-  "n_reviews": 1,
+  "n_reviews": 3,
   "verified_collisions": [],
   "novelty_capped": false,
-  "escalate": true,
+  "escalate": false,
   "closest": "Three verified works, none cited by the proposal, are the real threat, and the omission is itself a novelty problem. (1) ExpeL, arXiv:2308.10144 (verified, HF) "
- },
- {
-  "name": "binding_scope_leakage_ladder",
-  "score": 5.95,
-  "verdict": "borderline",
-  "means": {
-   "novelty": 6.0,
-   "significance": 6.0,
-   "soundness": 5.0,
-   "feasibility": 7.0,
-   "clarity": 7.0
-  },
-  "n_reviews": 1,
-  "verified_collisions": [],
-  "novelty_capped": false,
-  "escalate": true,
-  "closest": "Closest verified methodological threat: ExecRetrieval (arXiv:2609.01865, verified via hf) plants controlled, execution-verified near-clone variants of each quer"
  },
  {
   "name": "recall_success_dissociation",
@@ -85,6 +51,23 @@
   "closest": "Three verified papers bound this, none of them fatally. (1) Rank-ICL (ICTIR 2026, verified via s2cli channel (a); S2 returns no arXiv id) already reports that r"
  },
  {
+  "name": "binding_scope_leakage_ladder",
+  "score": 5.77,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.67,
+   "significance": 5.67,
+   "soundness": 5.0,
+   "feasibility": 7.67,
+   "clarity": 6.33
+  },
+  "n_reviews": 3,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "Closest verified methodological threat: ExecRetrieval (arXiv:2609.01865, verified via hf) plants controlled, execution-verified near-clone variants of each quer"
+ },
+ {
   "name": "whole_bank_confusability_ladder",
   "score": 5.75,
   "verdict": "borderline",
@@ -100,6 +83,23 @@
   "novelty_capped": false,
   "escalate": true,
   "closest": "Two verified threats. (1) arXiv:2605.10828, 'The First Drop of Ink: Nonlinear Impact of Misleading Information in Long-Context Reasoning' (2026-05-11, verified "
+ },
+ {
+  "name": "bindings_need_a_query_only_when_untestable",
+  "score": 5.65,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.33,
+   "significance": 5.33,
+   "soundness": 5.67,
+   "feasibility": 7.0,
+   "clarity": 6.0
+  },
+  "n_reviews": 3,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "Closest verified: MEMENTO, arXiv:2505.16348 ('Embodied Agents Meet Personalization: Investigating Challenges and Solutions Through the Lens of Memory Utilizatio"
  },
  {
   "name": "many_shot_averages_detours",
