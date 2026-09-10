@@ -1,4 +1,5 @@
 {
  "aggregate_or_comply_r1": "aac8507eac8f54ca2",
- "binding_scope_leakage_ladder_r1": "aeaca30624d23b0a0"
+ "binding_scope_leakage_ladder_r1": "aeaca30624d23b0a0",
+ "bindings_need_a_query_only_when_untestable_r1": "aae7f905d496fc670"
 }
