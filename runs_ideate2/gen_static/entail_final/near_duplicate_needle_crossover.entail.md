@@ -1,0 +1,25 @@
+=== ENTAILMENT CHECK (automated pre-review; evidence, not a verdict) ===
+For each prediction: what would falsify it, and whether the stated arms can produce that outcome at the stated power.
+
+Proposal: near_duplicate_needle_crossover — headline P3 is **open**; open 2 / entailed 1 / near-entailed 3 / unresolvable 1; verdict revise
+
+- P1 [near_entailed] falsifier: RET-40 r=1 minus RET-40 r=0 within the +/-3 paired floor, i.e. the most similar same-category sibling transfers as well as the needle.
+  reason: The needle is a completed purchase of the exact target product id delivered into a 2-item context, so a null requires the reader to ignore a demonstration that contains the answer - a compliance failure the design logs (needle-use rate) but never manipulates.
+  fix: Add a redacted-needle arm (same trajectory with the product id and option clicks masked, search/procedure text intact) so a null is reachable through information content rather than non-compliance.
+- P2 [open] falsifier: Either contrast exceeds one third of the P1 gain (at least 5 points).
+  reason: Same-category siblings can plausibly carry search wording and option procedure beyond a fixed exemplar and 5 points sits above the +/-3 floor, though the falsifier is one-sided: RET-40 r=0 falling 5 or more points below the static arm violates the stated null without triggering it.
+- P3 [open] falsifier: Recovery-fraction lower bound above 0.5, or WB-40 r=1 needle-use within +/-3 of RET-40 r=1, or WB-12 r=1 minus WB-40 r=1 within the floor.
+  reason: Whether a reader locates a planted trajectory in a 12k-token prefix is a live empirical question and parts (b) and (c) carry 5- and 20-point margins against +/-3 floors, even though part (a)'s ratio falsifier is only detectable at true recoveries well above 0.5 (the proposal's own power note leaves roughly 0.25-0.75 undecided).
+- P4 [near_entailed] falsifier: RET-40 r=1h retains at least half the P1 gain, or WB-40 r=1h falls at least 7.5 points below WB-40 r=1.
+  reason: The retrieval half of the falsifier is excluded by construction - with an instruction-line-only index and identical templated lines the hit rate is designed to be about 0.05, capping any retained gain at roughly 0.05 x 15 = 0.8 points, far inside the +/-4.5 floor - so only the whole-bank half can come out against the prediction.
+  fix: Index instruction line plus trajectory body (or add a body-indexed retriever arm) so 'the retriever finds the needle from its body' becomes a reachable outcome.
+- P5 [near_entailed] falsifier: RET-72 r=0 minus static3 at least +12 net, or scene-r1 minus scene-r0 at least +12 net.
+  reason: By construction the r=0 bank contains only the material static3 already supplies (type-matched, binding-mismatched expert exemplars), so a +12 residual would have to come from per-game selection among items guaranteed to share no binding - a mechanism the design neither names nor isolates - and the confirmatory ladder has no middle rung since r=partial is exploratory at 2 seeds.
+  fix: Promote RET-72 r=partial to a confirmatory 4-seed arm and draw static3's exemplars from the same 72-item bank, so the r=0 contrast isolates selection instead of re-describing how the bank was filtered.
+- P6 [entailed] falsifier: RET-40 r=1 falls at least 7.5 points below RET-12 r=1 because the retriever loses the needle among 35 fillers.
+  reason: Fillers are constructed to share zero attribute phrases with any cluster instruction while needles share the product id or at least two attribute phrases, so BM25 plus embedding cannot lose the needle as filler count grows; the stated hit-rate precondition is itself a construction fact, not a measurement that can fail.
+  fix: Draw the added 28 fillers as hard negatives (same category, at least one shared attribute phrase, no shared product) so the hit rate is able to degrade with haystack size.
+- P7 [unresolvable] falsifier: The recovered fraction departs from the expected ~0.5.
+  reason: At a 15-point gain and a +/-4.5 floor the r=0.5 gain of about 7.5 carries a ratio interval of roughly 0.2-0.8, so no plausible true value is distinguishable from 0.5, and the item is declared non-confirmatory with no decision rule attached.
+  fix: Run r=0.5 at 4 seeds and pre-register a bound (for example the ratio interval excluding 0.25 and 0.75) so the dose-response has a decision rule.
+- shared terms: P1-P3: P3(a)'s recovery fraction has the P1 gain (RET-40 r=1 minus RET-40 r=0) as its denominator and its decidable range is defined from P1's measured value, so the same two cells determine both.; P1-P2, P1-P4, P1-P6: every confirmatory margin (one third or one half of the P1 gain) is read off P1's measurement, and RET-40 r=0 / r=1 are re-used as arms in P2, P4 and P6.; P3a-P3c: with same-product needles, needle-use (chosen product id equals the needle's) is nearly the success event itself, so the mediator gap in (c) is largely the success gap in (a)-(b) rather than an independent confirmation.; P5a-P5b: both are stated against Measurement C's +17.2 and share static3 as the subtrahend, with RET-72 r=1 serving as the calibration that gates (a)'s interpretability.

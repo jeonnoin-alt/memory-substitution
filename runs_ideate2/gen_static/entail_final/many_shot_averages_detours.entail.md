@@ -1,0 +1,23 @@
+=== ENTAILMENT CHECK (automated pre-review; evidence, not a verdict) ===
+For each prediction: what would falsify it, and whether the stated arms can produce that outcome at the stated power.
+
+Proposal: many_shot_averages_detours — headline P2 is **unresolvable**; open 7 / entailed 0 / near-entailed 0 / unresolvable 1; verdict revise
+
+- P1 [open] falsifier: RET S within +-8 net of RET E with no step increase.
+  reason: On-policy successes could plausibly help rather than hurt so the null is reachable, and the paired step median is a better-powered second channel; the net margin nonetheless equals the floor exactly and the mixed outcome (net null with a step increase) is left unassigned.
+- P1b [open] falsifier: static3-S within +-8 of static3 while P1 holds, making the deficit retrieval-specific rather than a few-items effect.
+  reason: Whether a few fixed detoured items transmit detours is genuinely undetermined by the construction, though the 8-point margin equals the stated floor and the prediction is undefined when P1 fails.
+- P2 [unresolvable] falsifier: Both routes lose the same amount within 8 net, or WB48 S loses more than RET S (the 2405.00200 copying outcome).
+  reason: The +9 margin is a four-cell difference-in-differences whose propagated paired floor is roughly 11-16 net, and larger again under the block-level bootstrap over 8 banks the design itself requires for WB cells, so a +9 interaction cannot be separated from equal losses at the stated noise; only the coarse copying branch is adequately powered.
+  fix: Pre-register an MDE computed for the 4-cell interaction under block clustering and add seeds or blocks until it is below 9, or move the headline onto the paired step-count outcome whose SD is already measured.
+- P3 [open] falsifier: WB6 S within 8 net of WB48 S or above it, or WB E rising by as much as WB S.
+  reason: The S rise can simply fail, which is a clean and reachable falsifier, but the WB-E-flat half is an equivalence claim set at exactly the floor whose sign the 0.87 ceiling may force if WB E6 already sits within 9 points of it, and the block-level bootstrap the design mandates for WB cells is not reflected in the +-8 floor.
+- P4 [open] falsifier: RET P within +-8 of RET Sh, with the two sub-cases (both above RET S = token effect; both at RET S = phrasing effect) pre-assigned.
+  reason: Sh is a real length control built from the same items with detours kept, so a null P-vs-Sh gap is reachable and both of its readings are pre-committed; the 9-point margin sits just above the stated floor.
+- P5 [open] falsifier: RET A within +-8 of RET S with no step increase, in which case retrieved detours have no leverage and the design stops.
+  reason: A is drawn from S itself, so the achieved detour contrast is only top-tercile versus pool mean and the expected effect is diluted toward the 8-point floor, but the null is reachable, k0 leaves ample headroom above any floor, and the paired step median adds power.
+- P6 [open] falsifier: The WB most-similar-item slope's CI excludes zero and its point estimate reaches b (copying).
+  reason: The copying outcome is reachable because the most-similar prefix item varies per game, and the design refuses to read the equivalence when the RET slope is underpowered; the weakness is that b is defined from the measured RET slope, so the falsification bar rises exactly when retrieval inheritance is strong.
+- P7 [open] falsifier: M1 and M2 within +-8 of each other, or M2 at least 8 net below M1 (inheritance grows with the count of detoured items).
+  reason: Both falsifying orderings are reachable and confirmation is diagnostic since M2 carries more detoured items yet is predicted better, but M1 holds one S item and M2 two, so position is confounded with count and a null M1-M2 gap is ambiguous between 'position does not matter' and a count effect cancelling a position effect.
+- shared terms: P1-P2: RET S - RET E is literally the second half of P2's difference-in-differences, so P1's outcome partly determines P2's.; P1-P4-P5-P7: all four read RET S (and P1, P4, P7 also RET E) as a common measured term, and P7 is additionally gated on P1's d.; P2-P3-P6: WB48 S is a term in all three, so a single anomalous whole-bank cell moves the headline interaction, the item-count dose and the mechanism equivalence together.; P5-P6: RET A is both the positive-control cell and half of the pooled RET slope, so a weak A manipulation weakens the mechanism test it is meant to license.; P1b-P1: static3 and static3-S are the static references against which the same S-vs-E deficit is re-expressed.

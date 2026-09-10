@@ -1,0 +1,22 @@
+=== ENTAILMENT CHECK (automated pre-review; evidence, not a verdict) ===
+For each prediction: what would falsify it, and whether the stated arms can produce that outcome at the stated power.
+
+Proposal: rank_flat_retriever_is_a_type_classifier — headline P1 is **open**; open 5 / entailed 0 / near-entailed 2 / unresolvable 0; verdict pass
+
+- P1 [open] falsifier: rank 1-3 exceeds rank 50-52 by more than 8 net
+  reason: deep-rank items lose object and receptacle match - a change the design itself measures via same-object and same-receptacle recall - so a real drop is reachable, and the fallback to the deepest available window only weakens the manipulation on a declared subset of thin types.
+- P2 [open] falsifier: either L1 or L2 drops success by 8 net or more
+  reason: the falsifier is reachable if object-matched neighbours carry the gain, but L2's retrieval from the remainder is the within-type rank ladder under another name, so P1's flatness would already force P2's null rather than P2 testing it independently.
+- P3 [near_entailed] falsifier: L3 stays more than 8 net above the placebo
+  reason: top-3 retrieval from a type-stripped bank is exactly the most-similar-wrong-type construction of P4, which the proposal predicts sits more than 8 net below the random wrong-type placebo, so under the proposal's own mechanism the one-sided falsifier cannot fire and the null is protected from below by the very harm P4 asserts.
+  fix: make the falsifier two-sided and add a random-wrong-type retrieved cell matched to the placebo's selection rule and item count, so L3 is compared with a like-for-like reference instead of a fixed single exemplar.
+- P4 [open] falsifier: the gap is smaller than 8 net
+  reason: compliance need not scale with similarity and the gap can plausibly come out under 8 net, although the contrast varies delivery (three retrieved items vs one fixed exemplar, with no stated token matching for the placebo) alongside similarity, so a pass would not isolate similarity.
+- P5 [open] falsifier: either neutral header shifts success by 8 net or more, or the mismatch warning fails to raise success by 8 net
+  reason: header effects on compliance are free to be large in either direction and the warning positive control can genuinely fail; the only structural risk is downside compression if P4's predicted harm leaves the 'Examples' cell near a floor, which the design does not bound in advance.
+- P6 [open] falsifier: the sub-bank is below rank 1-3 by more than 8 net
+  reason: many-shot dilution at ~11k tokens is a real failure route for the success clause even though the sub-bank contains the top-3 items, but the conjunction's cost clause is true by construction - a cached per-type prefix has lower uncached prefill than per-episode retrieval regardless of outcome - so only half the prediction is testable.
+- P7 [near_entailed] falsifier: the type-agnostic cell is below the type-conditioned cell by more than 8 net
+  reason: falsification requires whole-bank goal-keyed similarity to return wrong-type items at a material rate, which ALFWorld's templated and type-diagnostic goal sentences make close to impossible, and the wrong-type return rate is not among the reported secondary metrics, so the null is fixed by the encoder rather than tested by the arm.
+  fix: report the type-agnostic arm's wrong-type return rate as a gating manipulation check and add a degraded-key variant (type verb masked, or an object-only key) so a nonzero wrong-type rate exists for the prediction to be about.
+- shared terms: P1-P2: both are differences from the same rank 1-3 re-run cell, and L2's retrieval from the remainder is the within-type rank ladder by another name, so P1's flatness determines P2's null.; P3-P4: the L3 cell and the most-similar wrong-type harm cell are the same construction (top-3 by similarity among other-type items), so P4's predicted harm fixes where L3 sits relative to the random wrong-type placebo.; P4-P5: every framing cell is the similar-wrong arm with a different header, so P4's harm level is the baseline all P5 contrasts are measured from and a large P4 harm compresses P5's downside.; P1-P6: the sub-bank contains the rank 1-3 items, so P6's success clause is P1's flatness plus a context-dilution term measured against the same rank 1-3 cell.; P4-P7: P7 can only fail through the wrong-type items P4 uses as its harm channel, so the two predictions rest on the same unreported quantity - the retriever's wrong-type return rate.
