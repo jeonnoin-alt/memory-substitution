@@ -4,5 +4,8 @@
  "bindings_need_a_query_only_when_untestable_r1": "aae7f905d496fc670",
  "cached_prefix_frontier_r1": "a875b37a9563edb71",
  "compile_the_statistics_not_the_trajectory_r1": "ad35d5fb139962b8d",
- "exemplar_lottery_r1": "a2ced2b0827eee61d"
+ "exemplar_lottery_r1": "a2ced2b0827eee61d",
+ "many_shot_averages_detours_r1": "a14716ef2a0a8cb6a",
+ "near_duplicate_needle_crossover_r1": "a0b17620a141f9687",
+ "protocol_bindings_procedure_count_r1": "a1be08e7a520f2a41"
 }
