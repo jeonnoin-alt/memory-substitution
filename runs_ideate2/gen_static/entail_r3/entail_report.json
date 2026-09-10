@@ -1,0 +1,314 @@
+{
+ "many_shot_averages_detours": {
+  "name": "many_shot_averages_detours",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "RET S vs RET E (Measurement A) on the same 274 games x 2 seeds, goal-sentence top-3 retriever, success plus paired-median steps; self pool S (1,892 successes) against expert pool E.",
+    "falsifier": "RET S within +/-8 net of RET E AND no >=2-step paired-median increase.",
+    "label": "open",
+    "reason": "Both arms exist and are game-paired, and a self pool whose detours do not transfer gives exactly the null; the pre-assigned mixed outcome collapses confirmation to 'steps up >=2 OR success down >=8', which narrows the falsifying region without closing it, and a flat paired-median step difference is measurable at the stated episode-step SD of about 8 over 548 pairs.",
+    "fix": ""
+   },
+   {
+    "id": "P1b",
+    "depends_on": "static3-S (three fixed type-conditioned S exemplars, cached) vs Measurement C's static3 on the same pairs; read only if P1 holds.",
+    "falsifier": "static3-S within +/-8 net of static3 while P1 holds.",
+    "label": "open",
+    "reason": "Two cached static cells, game-paired at the stated ~5-net CI half-width, and the falsifier only requires three self exemplars not to hurt, which nothing in the pool construction precludes; the read-only-if-P1 gate limits coverage, not falsifiability.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "the four cells WB48 S, WB48 E, RET S, RET E on identical (game, seed) pairs, with the blinded cluster-robust seed-extension rule (clusters = block x seed = 16) run until MDE < 9, cap six seeds, and a pre-registered step-form fallback at the cap.",
+    "falsifier": "I's cluster-bootstrap 95 percent CI lying below +9 and covering zero (equal losses), or WB48 S losing more than RET S (the copying outcome).",
+    "label": "open",
+    "reason": "The stopping rule closes the gap it would otherwise have: once MDE < 9 is enforced, any point estimate under +9 yields a CI that reaches zero and therefore falsifies, both equal-losses and copying are attainable with the arms as built, and the step form (MDE about 1.0-1.3 steps against a -2 threshold) stays powered if the success MDE stalls at the cap.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "WB S6/S24/S48 against WB E6/E48, 8 random per-(block, seed) bank draws per cell, cluster bootstrap over 16 (block x seed) clusters, two seeds only since the seed extension covers the headline 2x2 alone; 0.87 success ceiling.",
+    "falsifier": "WB S6 within 8 net of WB S48 or above it, or WB E rising by as much.",
+    "label": "unresolvable",
+    "reason": "The proposal's own arithmetic puts the two-seed cluster-robust floor for a contrast containing a WB cell at about 11 net while the decision boundary sits between +8 and +9, and these arms are explicitly excluded from the seed extension, so both the claimed rise and its falsifier lie inside the stated noise; the E-flat half is additionally pre-excused whenever WB E6 is within 9 of the 0.87 ceiling, which retires the one disjunct a ceiling could otherwise force.",
+    "fix": "Pre-register a cluster-robust MDE for the WB S6 vs WB S48 dose contrast and extend seeds or bank draws until it is below the 9-net margin, and read the E-flat half on steps and step-limit failures where the ceiling does not bind."
+   },
+   {
+    "id": "P4",
+    "depends_on": "RET P vs RET Sh vs RET S (and RET E on covered games); Sh built from exactly P's source items, token-matched within 10 percent, replay-verified; RET S_P added if P covers under 80 percent of S.",
+    "falsifier": "RET P within +/-8 net of RET Sh (read as token-count or on-policy-phrasing effect depending on where both sit relative to RET S).",
+    "label": "open",
+    "reason": "P and Sh are separate arms over the same source items at matched tokens, so the null is directly attainable and both named alternative readings are measurable at the stated half-width; the live risk runs toward confirmation rather than entailment, since Sh's shortened observations could open a P>Sh gap that the kept detours did not cause.",
+    "fix": ""
+   },
+   {
+    "id": "P5",
+    "depends_on": "RET A (top within-stratum detour tercile of S, stratum weights matched to S) vs RET S on success and paired-median steps; stop rule attached.",
+    "falsifier": "RET A within +/-8 net of RET S with no >=2-step paired-median increase.",
+    "label": "open",
+    "reason": "A is strictly more detoured but matched on type and expert-solution length, so 'retrieved detours have no leverage' is a reachable outcome that stops the design; note that A is a third of S, so the retriever also draws from a smaller and less similar pool, a confound that biases toward confirming the control rather than toward its falsifier.",
+    "fix": ""
+   },
+   {
+    "id": "P6",
+    "depends_on": "the paired RET slope of episode steps on injected-item detour steps (RET S and RET A pooled, MDE about 0.2 steps pre-registered), against the WB48 S slopes on the most-similar prefix item's detour steps and on the bank-mean detour steps under a cluster bootstrap over 16 (block x seed) bank draws; b = half the measured RET slope; not tested unless the RET slope is at least twice its MDE.",
+    "falsifier": "the WB48 S most-similar slope's CI excluding zero with a point estimate reaching b (copying).",
+    "label": "unresolvable",
+    "reason": "No MDE is stated for the WB slopes under the 16-cluster bootstrap, and the bank-mean regressor takes only 16 distinct values and is itself declared exploratory, so the copying falsifier requires a CI to clear zero at a precision the design never establishes; the equivalence bound b is half a measured quantity, widening exactly when the RET effect is large, and the 'else underpowered' clause allows the whole test to be skipped.",
+    "fix": "Pre-register the WB48 S slope MDE from measured SDs under the same cluster bootstrap, fix b as an absolute pre-registered bound instead of half the observed RET slope, and raise the number of bank draws or clusters until an equivalence CI can fit inside b."
+   },
+   {
+    "id": "P7",
+    "depends_on": "RET M1 (self item at rank 1, expert at ranks 2-3) vs RET M2 (expert at rank 1, self at ranks 2-3) vs RET E, same retriever and games, conditional on P1 reaching d <= -8.",
+    "falsifier": "M1 and M2 within +/-8 of each other, or M2 at least 8 net below M1.",
+    "label": "open",
+    "reason": "Both composition cells are run and either falsifying pattern is directly measurable at the stated half-width; the weakness is that M1 carries one self item and M2 carries two, so rank position and detoured-item count are perfectly confounded and the confirmatory pattern has to beat the count effect rather than being isolated from it.",
+    "fix": ""
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: [RET S - RET E] is a term inside the headline interaction I, so a P1 null leaves I equal to WB48 S - WB48 E; the same two RET cells decide part of both.",
+   "P2-P2 (internal): the residual form, retrieval residual over the best same-pool static arm shrinking by >=9 on S with WB48 S as that arm, equals the interaction I whenever the best E static arm is WB48 E - an algebraic restatement of the same four cells, not an independent test, and the max-over-static-arms selection is applied to both pools.",
+   "P2-P3: WB48 S and WB48 E are the same measured cells in both, so the top rung of P3's ladder also sets half of the headline interaction.",
+   "P1-P4-P5: RET S is a shared measured cell (P1's treatment, P4's lower comparator, P5's reference), so one mis-estimated cell moves three predictions together.",
+   "P1-P6: the RET S and RET A per-episode step counts are the same measurements behind P1's and P5's step forms and P6's RET slope; P6's gate is essentially that step effect re-expressed per injected detour step.",
+   "P1-P1b and P1-P7: P1b and P7 are read only if P1 holds, so P1's outcome sets their coverage."
+  ],
+  "headline": "P2",
+  "headline_status": "open",
+  "n_open": 6,
+  "n_entailed": 0,
+  "n_near": 0,
+  "n_unresolvable": 2,
+  "verdict": "pass"
+ },
+ "binding_scope_leakage_ladder": {
+  "name": "binding_scope_leakage_ladder",
+  "predictions": [
+   {
+    "id": "P0",
+    "depends_on": "one new cached class-location table cell on the natural bank, paired against Measurement C's k3 and static3 rows on the same (game, seed) pairs, with k3 re-run only if the vLLM build changed.",
+    "falsifier": "table - k3 < -8 net in the anchor cell.",
+    "label": "open",
+    "reason": "The table is a genuinely different carrier (class-to-receptacle lists with no procedure or phrasing) and the measured +17.2 residual with a ~5-net half-width leaves ample room for it to fall more than 8 net short, so the scene-family reading is attainable; the two stated forms of P0 are one inequality given the fixed +17.2, not two tests.",
+    "fix": ""
+   },
+   {
+    "id": "P1",
+    "depends_on": "scene-scope relocated bank, s=1, 25-step limit; scene-query k=3 retrieval minus static3-relocated on 274 games x 2 seeds; gates the whole ladder.",
+    "falsifier": "< +8 net in that cell, in which case the ladder is not run.",
+    "label": "open",
+    "reason": "Relocated inits, regenerated experts and a 25-step limit make this a fresh measurement rather than a replay of the +17.2, and a null sits well outside the stated ~5-net half-width; the prior result makes the falsifier unlikely but not unreachable, and the 8-to-14 band decides nothing either way.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "global-scope relocation (placement a function of object class); positive control = full-bank retrieval minus static3-relocated >= +14, else P2 and P3 are declared not testable; P2 proper = compiled ~20-sentence static minus full-bank retrieval >= -8; type-agnostic six-procedure arm run at the same scope.",
+    "falsifier": "the compiled sentence more than 8 net below retrieval in the sentence cell.",
+    "label": "open",
+    "reason": "At global scope the compiled sentence is by construction an information-complete summary of the bank's bindings, so only a format-or-procedure channel can falsify it, but that channel is named and partly bounded by the type-agnostic arm at the same scope and a loss that size is outside the stated half-width.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "global scope, scene-query k=3 over the 20-item one-per-class bank versus the full relocated bank, same games and seeds.",
+    "falsifier": "the 20-item cell more than 8 net below the full-bank cell.",
+    "label": "open",
+    "reason": "The falsifier is reachable through retrieval rather than information: the full bank holds several items per class so top-3 more often surfaces the target class, while the 20-item bank gives one chance per class, and an equivalence CI of half-width about 5 fits inside the +/-8 window so the null side is decidable too.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "scene scope, s=1: the compiled (scene, class) table static (<=274 rows, cached) minus scene-query k=3 retrieval on the same pairs.",
+    "falsifier": "the table more than 8 net below retrieval in the table cell.",
+    "label": "open",
+    "reason": "Failing to look up one's own scene row among up to 274 is a real and separately measured failure mode, the two cells are independent measurements, and the margin sits outside the stated ~5-net half-width.",
+    "fix": ""
+   },
+   {
+    "id": "P5",
+    "depends_on": "instance scope, s=1, each eval game's own relocated expert trajectory in the bank, scene-query k=3, 25-step limit, minus static3-relocated; rank-1-3 composition logged; also gates P6.",
+    "falsifier": "< +20 net with a 95 percent CI excluding +28.",
+    "label": "open",
+    "reason": "Both named routes to the falsifier - the duplicate not ranked first, or not followed within 25 steps - are measurable and the rank composition is logged; the weakness is that the +28 threshold is never anchored to static3-relocated's measured level, so with the observed 0.87-order ceiling a high static baseline could force falsification for headroom reasons rather than for the claim.",
+    "fix": ""
+   },
+   {
+    "id": "P6a",
+    "depends_on": "instance-scope s=0.5 in two complementary draws against the s=0 cell; residual = retrieval minus static3-relocated; the term is restricted to duplicate-absent games and pooled to n = 274 x 2; read only if residual(1) >= +14.",
+    "falsifier": "N(0.5) >= residual(0) + 14, i.e. other games' duplicates seed a strategy that transfers to non-duplicated games.",
+    "label": "near_entailed",
+    "reason": "Instance-scope relocation is constructed so that another instance's trajectory carries no information about this instance's placement, so the only route to the falsifier is a generic search-strategy transfer the design never isolates - and the s=0 bank already supplies procedure from same-scene train items while the added foreign duplicates can only displace them at ranks 1-3, pushing N(0.5) down rather than up.",
+    "fix": "Add a bank-composition control at instance scope that holds bank size and rank composition fixed and varies only whether the extra same-scene items are other games' exact duplicates or matched non-duplicate trajectories (plus a dose at s=0.25/0.75), so the strategy-transfer channel can be shown to exist before its absence is claimed."
+   },
+   {
+    "id": "P6b",
+    "depends_on": "instance scope, s=1: the conflict-neighbour arm minus the neutral-neighbour arm, differing only in the two rank-2/3 items, same rank-1 duplicate, same slot format and matched token count, uncached.",
+    "falsifier": "conflict <= neutral - 14 net.",
+    "label": "open",
+    "reason": "This is a single manipulated pair with everything but the contradicting neighbours held fixed; hedging between trajectories and exhausting the 25-step limit is a plausible outcome, and a 14-net drop is well outside the stated ~5-net half-width.",
+    "fix": ""
+   },
+   {
+    "id": "P7",
+    "depends_on": "instance scope, s=1: the scene-restricted whole-bank prefix (<=80 same-scene items in fixed game-id order, own duplicate included, train items dropped by highest game id above 80) against the k=3 retrieval cell.",
+    "falsifier": "whole-bank >= retrieval - 8 net in that cell.",
+    "label": "open",
+    "reason": "Finding one's own instance among 80 same-scene trajectories on an exact goal-text match is a live outcome for a long-context reader, so the falsifier is reachable; the confound runs the other way, since the whole-bank arm also differs in prefix length and item set, so a confirmation could come from context length rather than from the missing query.",
+    "fix": ""
+   }
+  ],
+  "shared_terms": [
+   "P1-P4: both rest on the scene-scope s=1 retrieval cell and static3-relocated; P1's gate value is the quantity P4's non-inferiority is measured against, so one cell decides the gate and the table test.",
+   "P2-P3: the global full-bank retrieval cell is P2's positive control and P3's comparator; if that cell moves, both predictions move.",
+   "P5-P7: the instance-scope s=1 retrieval cell is P5's treatment and P7's reference, and the same cell's residual gates P6a and P6b.",
+   "P6a-P6b: pooled residual(0.5) = 0.5 x D(0.5) + 0.5 x N(0.5) is an identity, so any two of the three determine the third; the proposal keeps this out of the claims by reporting the slope and intercept over s descriptively, and P6a is decided by the s=0.5 and s=0 cells while P6b is decided by the conflict and neutral cells.",
+   "P0 (internal): 'table - k3 >= -8' and 'the table recovers at least +9 of the +17.2' are the same inequality given the fixed measured k3 - static3 = +17.2, both resting on the same k3 and static3 cells.",
+   "P6a/P6b: split from the proposal's single P6, which states two branches with separate manipulated pairs and separate falsifiers."
+  ],
+  "headline": "P6a",
+  "headline_status": "near_entailed",
+  "n_open": 8,
+  "n_entailed": 0,
+  "n_near": 1,
+  "n_unresolvable": 0,
+  "verdict": "revise"
+ },
+ "near_duplicate_needle_crossover": {
+  "name": "near_duplicate_needle_crossover",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "RET-40 r=1 vs RET-40 r=0 and RET-40 r=1x on the same 500x4 paired WebShop instructions; needle = a constructed success trajectory for the test product id; r=1x masks result ids/titles, clicked id, product title and option values while leaving query, actions and instruction line intact; paired floor +/-3 measured from k=0 seeds 1-2 vs 3-4.",
+    "falsifier": "(a) |RET-40 r=1 - r=0| inside +/-3, i.e. the sibling transfers as well as the needle and the design stops; (b) r=1x retains at least half of the P1a gain (>=7.5 points), i.e. the near-duplicate's value is instance-specific query wording the reader re-issues rather than its bindings.",
+    "label": "open",
+    "reason": "Both arms exist and the redaction leaves the instance query in the body, so a >=7.5-point r=1x residual is a physically reachable outcome well outside the +/-3 floor; note two tilts that do not close it: r=1x deletes exactly the product id and option tokens that WebShop's reward scores, and no arm anywhere in the design masks the instance query while keeping the bindings, so the falsifying mechanism can be inferred but never exhibited; (a) also leaves a very wide 3-to-15-point no-claim band and gates the whole design on a large gain.",
+    "fix": ""
+   },
+   {
+    "id": "P2",
+    "depends_on": "RET-40 r=0 against best static (the max of fixed-2, compiled and k=0 at matched tokens) and against WB-40 r=0, 4 seeds, floor +/-3, margin one third of the P1a gain (5 points).",
+    "falsifier": "Either |RET-40 r=0 - best static| or |RET-40 r=0 - WB-40 r=0| exceeds 5 points in either direction: sib-0 items carry category wording no static arm supplies, or 40 sib-0 items distract.",
+    "label": "open",
+    "reason": "Two-sided with every arm present, and the 5-point falsifier sits above the +/-3 floor; a 12k-token 40-item whole-bank context against a top-2 read can plausibly move more than 5 points, and taking the max over three static arms biases the contrast toward the negative falsifier rather than away from it, so the null is not protected.",
+    "fix": ""
+   },
+   {
+    "id": "P3",
+    "depends_on": "WB-40 r=1/r=0, WB-12 r=1/r=0 (the size-12 filler set is a subset of the 35, needle count held at 5 so density is not matched), RET-40 r=1/r=0, needle-use = first search query equals the needle's; paired bootstrap over instructions; floor +/-3, gain gated at >=15.",
+    "falsifier": "The recovery fraction's bootstrap lower bound exceeds 0.5, or WB-40 r=1's needle-use is within +/-3 of RET-40 r=1's, or WB-12 r=1 - WB-40 r=1 is inside +/-3.",
+    "label": "open",
+    "reason": "The needle is physically present in every whole-bank context, so a 32B reader over 12k tokens can drive recovery above 0.5 and needle-use to RET levels, and the self-declared 0.25-0.5 undecided band narrows but does not close the falsifying region; the sub-clauses can even contradict (recovery near 0 at both sizes confirms (a) while falsifying (b)), which makes the falsifier easier, not harder, to reach.",
+    "fix": ""
+   },
+   {
+    "id": "P4",
+    "depends_on": "RET-40 r=1h (needle instruction line replaced by the category template, body intact) restricted to the instructions where the templated needle lands in the retriever's top-2 (h expected 0.3-0.7, about 1,000 episodes, floor re-measured at about +/-4.5), compared as a ratio against r=1 - r=0 on the same instructions; and WB-40 r=1h vs WB-40 r=1 at 2 seeds (+/-4.5).",
+    "falsifier": "(a) r=1h - r=0 is at most one third (about 5 points) of the same instructions' r=1 - r=0: the reader recognises the exemplar by its instruction line, so retrieval is not use; (b) WB-40 r=1h is at least 7.5 points below WB-40 r=1.",
+    "label": "unresolvable",
+    "reason": "(a) is a ratio of two differences that each carry a +/-4.5 subset floor while the falsifying threshold is about 5 points and the confirming one about 10, so the implied ratio CI (roughly +/-0.4) swallows the whole 1/3-to-2/3 decision; the subset is additionally selected on the retriever's own success on the body, which correlates with body-only usability and pushes (a) toward its confirming side.",
+    "fix": "Score (a) as an absolute paired point difference against a threshold at least twice the re-measured subset floor instead of a ratio of two noisy differences, and either pre-select body-retrievable needles so h is near 1 or add seeds/instructions until the hit subset's floor is <= +/-2."
+   },
+   {
+    "id": "P5",
+    "depends_on": "ALFWorld 274x4 paired; RET-72 r=0/partial/r=1 over per-game 72-item banks against static3-none (three fixed type-conditioned exemplars whose object and receptacle classes appear in no evaluation goal, present in every bank) and against Measurement C's static3/+17.2; scene-r1 vs scene-r0 on at least 90 valid_seen games with seeds added to a +/-8 floor; floor +/-5.7 net.",
+    "falsifier": "RET-72 r=0 - static3-none >= +12 net (selection among binding-mismatched items carries the residual); or r=partial - r=0 inside the floor while r=1 - r=0 exceeds +8.6 (only the exact pair counts); or scene-r1 - scene-r0 >= +12.",
+    "label": "open",
+    "reason": "Every rung of the ladder has its own arm and the +12 falsifiers sit above the +/-5.7 (and +/-8 scene) floors, with the logged mediators giving the falsifying account a route; the r=0 contrast is if anything tilted toward its own falsifier because static3-none is a deliberately weakened baseline while the +17.2 it is measured against was taken over static3, and colliding games are dropped only from the r=0 contrast, so the comparison mixes baselines and populations; sub-clause (c) is declared exploratory and carries no threshold at all.",
+    "fix": ""
+   },
+   {
+    "id": "P6",
+    "depends_on": "RET-12 vs RET-40 r=1hn with sib-1 hard-negative fillers (same category, at least one shared attribute phrase), 2 seeds, floor +/-4.5, plus the logged top-2 needle hit rate at both sizes.",
+    "falsifier": "The hit rate at size 40 falls below 0.6 AND RET-40 r=1hn is at least 7.5 points below RET-12 r=1hn: the retriever loses the needle as the haystack grows.",
+    "label": "open",
+    "reason": "Top-2 over 35 same-category hard negatives can genuinely drop below 0.6 and cost more than the 7.5-point threshold, which exceeds the 2-seed +/-4.5 floor; the weakness is that the falsifier is a conjunction with a dead zone at hit rates 0.6-0.8 and that its falsifying branch is converted into a reporting rule (the size effect reported per logged hit rate) rather than a verdict against the hypothesis.",
+    "fix": ""
+   }
+  ],
+  "shared_terms": [
+   "P1-P3: the P1a gain (RET-40 r=1 - r=0) is the denominator of P3a's recovery fraction, and the >=15-point gate conditions on an upward fluctuation of that same term, which mechanically lowers every recovery fraction reported.",
+   "P1-P2, P1-P4, P1-P6: the same P1a gain sets P2's 5-point margin, P4's one-third/two-thirds thresholds and P6's 7.5-point threshold, so one draw of that single cell pair rescales four falsifiers at once.",
+   "P2-P3: RET-40 r=0 and WB-40 r=0 both appear in P2 and in P3a's recovery, so a low r=0 draw simultaneously moves P2 toward its falsifier and P3a toward its prediction.",
+   "P3a-P3b: WB-40 r=1 enters the recovery numerator and the size gap with opposite signs, so a low draw of that one cell confirms (a) and confirms (b) together and they cannot fail independently.",
+   "P1b-P4a: r=1x, r=1h and r=1 are all differenced against the same RET-40 r=0 cell, whose noise is common to both predictions.",
+   "P5a internal: RET-72 r=1 - r=0 both supplies the partial rung's one-third margin and is the calibration quantity, so the partial clause is scored against a threshold built from its own arms."
+  ],
+  "headline": "P3",
+  "headline_status": "open",
+  "n_open": 5,
+  "n_entailed": 0,
+  "n_near": 0,
+  "n_unresolvable": 1,
+  "verdict": "pass"
+ },
+ "retrieval_timing_is_budgeting": {
+  "name": "retrieval_timing_is_budgeting",
+  "predictions": [
+   {
+    "id": "P1",
+    "depends_on": "548 paired rows of static3_A (Measurement C's existing cell) vs static3_B (fresh re-run) and always-retrieve at two bank levels (cell 2 natural, cell 3 distractor); Delta_harm(L) = P(A succeeds, always(L) fails) - P(A succeeds, B fails); pre-registered floor +/-8 net.",
+    "falsifier": "Delta_harm(natural) >= 8 (timing has headroom), or Delta_harm(distractor) < 8 (the reader ignores twins and P6 never runs).",
+    "label": "near_entailed",
+    "reason": "The distractor level is built so that goal-keyed retrieval ties every mislabelled twin with its original and returns a wrong-type trajectory in about half the k=3 slots, and Measurement C already measured wrong-type content at about -15 under static3, so Delta_harm(distractor) >= 8 mostly re-describes how the twin bank was constructed and filtered; the falsifying route (twins retrieved but ignored) is asserted but never controlled or separately measured, and both clauses use a threshold of 8 that equals the stated +/-8 floor.",
+    "fix": "Add an unengineered distractor level (a measured-noise self-generated bank) alongside the 1:1 planted twins, log twin retrieval and attention as an outcome-independent manipulation check, and set both falsifiers at least 1.5x the floor (>=12 net) or add seeds until the floor is +/-4."
+   },
+   {
+    "id": "P2",
+    "depends_on": "Cell 4 (stall goal-key, natural) vs cell 2 (always, natural) on all 548 rows and on cell 4's firing rows; cell 6b (double-read) vs cell 2; cell 6 (step-10) vs cell 4; floor +/-8 net, subset floor 8*sqrt(548/n_fire), about 11 at n_fire = 274.",
+    "falsifier": "|cell 4 - cell 2| >= 8 net overall in either direction, or >= about 11 on the firing rows, or cell 6b - cell 2 >= 8 net (a delivery-position channel beyond harm avoidance).",
+    "label": "unresolvable",
+    "reason": "All three clauses are equivalence claims whose margin is exactly the pre-registered floor (8 against +/-8, 11 against +/-11), so no observed value can both support the null and exclude the falsifier - unlike the sibling design, no undecided band is left between floor and margin; the firing-row subset is moreover taken from cell 4's own stall log while cell 2 is scored unconditioned on those rows, a tilt toward (b)'s lower falsifier that the proposal names but does not remove (and which contradicts its own claim that firing is fixed by a common static3 trajectory); with firing on at most 50 percent of episodes, an 8-net whole-sample threshold requires a roughly 16-point within-row effect while the noise stays fixed.",
+    "fix": "Add seeds or games until the 548-row floor is at most half the 8-net margin, define firing rows from a single static3_B trigger log applied identically to both arms, and score stall contrasts on the firing subset against a floor scaled to that subset."
+   },
+   {
+    "id": "P6",
+    "depends_on": "Cell 5 (stall goal-key, distractor) vs cell 3b (a separately sampled always-distractor replicate) for G; Delta_harm(distractor) from cell 3 alone for the bound; Lambda = P(cell 5 succeeds, static3_A fails, cell 3 fails) - P(static3_B succeeds, static3_A fails, cell 3 fails); runs only if Delta_harm(distractor) >= 8; floor +/-8 net.",
+    "falsifier": "G > Delta_harm(distractor) + 8, or Lambda >= 8 (the stall arm solves, beyond test-retest, episodes neither the static prompt nor the start read solves), or G < 8.",
+    "label": "unresolvable",
+    "reason": "By the proposal's own statement that late-read-only mass is the only channel that can breach the bound, the upper falsifier and Lambda >= 8 are the same event, so the bound is a padded restatement of the harm-mass estimand it is compared against rather than an independent test; and every threshold sits at the stated noise - G's 8 against a +/-8 floor, a bound whose own Delta_harm term carries +/-8, and a Lambda that lives on the roughly 25 percent of rows where static3_A and cell 3 both fail, where the proposal's own sqrt(548/n) scaling implies a floor near +/-16 against a threshold of 8.",
+    "fix": "Give Lambda its own pre-registered CI on the doubly-failing subset with a falsifier above that subset's scaled floor; test the bound as a bootstrap CI on the difference G - Delta_harm(distractor) rather than a point comparison with a full-floor pad; add seeds until the 548-row floor is +/-4."
+   },
+   {
+    "id": "P3",
+    "depends_on": "Cells 8 (failure key, planted 5-item bank, k=1), 9 (random key over that same pool) and 7 (failure key over the expert pool), all read at the stall; floor +/-8 net; gates P4 and P5.",
+    "falsifier": "Either gap (cell 8 - cell 9, cell 8 - cell 7) is below 8 net: the failure text does not index the recovery, the reader ignores a 40-token mid-episode hint, or expert segments already carry the recovery.",
+    "label": "unresolvable",
+    "reason": "The 8-net threshold is identical to the pre-registered +/-8 floor, and the contrast is doubly diluted - stall reads fire on at most 50 percent of episodes and the random key already hits the right item on 20 percent of firings by construction - so an 8-net whole-sample gap demands roughly a 20-point effect on firing rows against unchanged noise; the pools are built at coverage 1.0 versus none, so only the magnitude of the gap, never its sign, is genuinely in question.",
+    "fix": "Score cells 7-9 on the firing rows with a subset-scaled floor, raise seeds until that floor is at most 4 net, and set the gap threshold at 1.5-2x it."
+   },
+   {
+    "id": "P4",
+    "depends_on": "Cells 10 (natural self pool, c_nat measured) and 11 (curated recovery-tagged windows, c_cur expected >= 0.8) against cell 8, failure key k=1 at the stall, with coverage guards; gated on P3.",
+    "falsifier": "Curated more than 8 net below planted (own detours unusable even when present), or natural within +/-8 net of curated (the natural pool already delivers recoveries by the failure key).",
+    "label": "unresolvable",
+    "reason": "The same 8-net number serves as both an equivalence margin (curated vs planted) and a difference threshold (natural vs curated) while being exactly the pre-registered floor, so one noisy estimate can decide neither clause; the curated pool is a subset of the natural pool reached by the same k=1 failure key, and the firing-rate dilution again halves any real effect, while the whole prediction inherits the gate on a P3 contrast that is itself unresolvable.",
+    "fix": "Pre-register a firing-row estimand with its own scaled floor and enough seeds to bring it to +/-4, and separate the equivalence margin from the difference threshold so both sit outside that floor."
+   },
+   {
+    "id": "P5",
+    "depends_on": "Cell 12 (static3 plus the 200-token recovery rulebook in the cached prefix, the whole-bank arm of the 5-item planted bank) vs cell 8, and cell 13 (rulebook plus planted stall retrieval) vs cell 12; content identical by construction; conditional on P3's first clause.",
+    "falsifier": "Cell 8 beats cell 12 by >= 8 net (recovery must arrive at the moment of failure), or cell 13 exceeds cell 12 by >= 8 net (delivery position adds value with content already in the prefix).",
+    "label": "unresolvable",
+    "reason": "Both thresholds equal the pre-registered +/-8 floor, leaving no band in which either clause is decided; and cell 13's retrieved item is verbatim already inside cell 12's cached prefix, so the only remaining channel is delivery salience on the at most 50 percent of episodes that fire, which an 8-net whole-sample threshold cannot register without a roughly 16-point within-row effect.",
+    "fix": "Score cell 13 - cell 12 on firing rows with a subset-scaled floor and enough seeds to reach +/-4, and set the cell 12 vs cell 8 equivalence margin strictly below the floor rather than equal to it."
+   }
+  ],
+  "shared_terms": [
+   "P1-P2: cell 2 is the always(natural) term inside Delta_harm(natural) and the comparator in P2(a), (b) and (c), so a single draw of cell 2 moves P1's natural falsifier and all three P2 falsifiers together (the proposal discloses this).",
+   "P1-P6: Delta_harm(distractor), computed from cell 3, is both P1's second clause and P6's upper bound, so P6's bound inherits P1's estimand and its +/-8 noise; cell 3 also supplies Lambda's conditioning event.",
+   "P6-P6 internal: G > Delta_harm(distractor) + 8 and Lambda >= 8 are the same event by the proposal's own decomposition (late-read-only mass is the only channel that can breach the bound), so P6's two falsifiers cannot occur independently.",
+   "P1-P6 (test-retest): the static3_A vs static3_B discordant term is subtracted in both Delta_harm and Lambda, so the static replicate's noise enters both the bound and the quantity tested against it.",
+   "P3-P4-P5: cell 8 anchors all three and gates two of them, so its noise moves every verdict in that block at once and a failure of P3's first clause voids P4 and P5 by declaration.",
+   "P5-P5 internal: cell 12 appears in both clauses (as the equivalence partner of cell 8 and as cell 13's baseline), so one draw sets both the equivalence and the increment."
+  ],
+  "headline": "P6",
+  "headline_status": "unresolvable",
+  "n_open": 0,
+  "n_entailed": 0,
+  "n_near": 1,
+  "n_unresolvable": 5,
+  "verdict": "revise"
+ }
+}
