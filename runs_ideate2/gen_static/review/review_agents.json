@@ -9,5 +9,6 @@
  "near_duplicate_needle_crossover_r1": "a0b17620a141f9687",
  "protocol_bindings_procedure_count_r1": "a1be08e7a520f2a41",
  "rank_flat_retriever_is_a_type_classifier_r1": "ad65beadc47ef87f5",
- "recall_success_dissociation_r1": "af77559ee4a520f20"
+ "recall_success_dissociation_r1": "af77559ee4a520f20",
+ "relocated_bindings_demand_r1": "af5dfe483d8fc419f"
 }
