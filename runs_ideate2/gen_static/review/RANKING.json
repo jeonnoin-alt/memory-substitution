@@ -1,0 +1,257 @@
+[
+ {
+  "name": "bindings_need_a_query_only_when_untestable",
+  "score": 6.1,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 6.0,
+   "significance": 6.0,
+   "soundness": 6.0,
+   "feasibility": 7.0,
+   "clarity": 6.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Closest verified: MEMENTO, arXiv:2505.16348 ('Embodied Agents Meet Personalization: Investigating Challenges and Solutions Through the Lens of Memory Utilizatio"
+ },
+ {
+  "name": "compile_the_statistics_not_the_trajectory",
+  "score": 6.05,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 6.0,
+   "significance": 5.0,
+   "soundness": 6.0,
+   "feasibility": 8.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Three verified works, none cited by the proposal, are the real threat, and the omission is itself a novelty problem. (1) ExpeL, arXiv:2308.10144 (verified, HF) "
+ },
+ {
+  "name": "binding_scope_leakage_ladder",
+  "score": 5.95,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 6.0,
+   "significance": 6.0,
+   "soundness": 5.0,
+   "feasibility": 7.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Closest verified methodological threat: ExecRetrieval (arXiv:2609.01865, verified via hf) plants controlled, execution-verified near-clone variants of each quer"
+ },
+ {
+  "name": "recall_success_dissociation",
+  "score": 5.9,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 6.0,
+   "feasibility": 7.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Verified: 2603.02473 'Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory' (verified via s2cli paper lookup; s2 2026-03-02, HF 2026-04-12) alre"
+ },
+ {
+  "name": "rank_flat_retriever_is_a_type_classifier",
+  "score": 5.8,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 6.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 8.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Three verified papers bound this, none of them fatally. (1) Rank-ICL (ICTIR 2026, verified via s2cli channel (a); S2 returns no arXiv id) already reports that r"
+ },
+ {
+  "name": "whole_bank_confusability_ladder",
+  "score": 5.75,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 5.0,
+   "feasibility": 8.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Two verified threats. (1) arXiv:2605.10828, 'The First Drop of Ink: Nonlinear Impact of Misleading Information in Long-Context Reasoning' (2026-05-11, verified "
+ },
+ {
+  "name": "many_shot_averages_detours",
+  "score": 5.65,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 6.0,
+   "feasibility": 8.0,
+   "clarity": 6.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Two verified papers split the claim between them. (1) arxiv:2405.00200 (Bertsch et al., NAACL, verified via s2cli `paper`, 157 cites): long-context ICL gains do"
+ },
+ {
+  "name": "aggregate_or_comply",
+  "score": 5.5,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 8.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Verified by `s2cli.py paper` (S2 channel): (1) 2607.10608 'The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory' (2026-07-12) already establ"
+ },
+ {
+  "name": "exemplar_lottery",
+  "score": 5.5,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 8.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Two, one for the mechanism and one for the domain. (a) VERIFIED: Lu et al., 'Fantastically Ordered Prompts and Where to Find Them' (arXiv:2104.08786, ACL, 1672 "
+ },
+ {
+  "name": "protocol_bindings_procedure_count",
+  "score": 5.25,
+  "verdict": "reject",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 8.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "VERIFIED: Enrich-Retrieve-Rank (arXiv:2608.22695, 2026-08-24, confirmed via s2cli paper; S2 and HF both returned it). It already asserts the proposal's mechanis"
+ },
+ {
+  "name": "cached_prefix_frontier",
+  "score": 5.05,
+  "verdict": "reject",
+  "means": {
+   "novelty": 4.0,
+   "significance": 4.0,
+   "soundness": 5.0,
+   "feasibility": 9.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "VERIFIED: arXiv:2607.12161, 'Token Reduction Is Not Cost Reduction' (2026-07-13, s2 lookup, cit 1). Its thesis is the proposal's thesis: context-reduction inter"
+ },
+ {
+  "name": "state_key_pays_only_for_planted_bindings",
+  "score": 5.05,
+  "verdict": "reject",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 7.0,
+   "clarity": 6.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "FocusMem, arXiv:2608.04530 (verified via s2cli, 2026-08-05): state-conditioned retrieval for GUI agents that is explicitly evaluated against 'a fully matched ac"
+ },
+ {
+  "name": "relocated_bindings_demand",
+  "score": 4.9,
+  "verdict": "reject",
+  "means": {
+   "novelty": 5.0,
+   "significance": 4.0,
+   "soundness": 4.0,
+   "feasibility": 7.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "Three verified threats, none a full collision. (a) arXiv:2608.14036 'Demystifying Agent Skills: Why They Work-Until They Don't' (2026-08-14, verified via s2cli "
+ },
+ {
+  "name": "near_duplicate_needle_crossover",
+  "score": 4.85,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 6.0,
+   "clarity": 5.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Bertsch et al., 'In-Context Learning with Long-Context Models' (arxiv:2405.00200, verified via s2cli/HF, 2024-04-30) is the closest pre-emption of the mechanism"
+ },
+ {
+  "name": "retrieval_timing_is_budgeting",
+  "score": 4.25,
+  "verdict": "reject",
+  "means": {
+   "novelty": 4.0,
+   "significance": 4.0,
+   "soundness": 3.0,
+   "feasibility": 8.0,
+   "clarity": 5.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "Verified: arXiv:2607.24010, 'When Should Active RAG Retrieve? A Budget-Aware Evaluation of Utility, Calibration, and Cost' (2026-07-27, verified via s2cli.py pa"
+ }
+]
