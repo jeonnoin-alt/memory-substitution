@@ -1,0 +1,257 @@
+[
+ {
+  "name": "hole_backfill_static_counterfactual",
+  "score": 6.1,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 6.0,
+   "soundness": 6.0,
+   "feasibility": 9.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Two verified threats, at different levels. (i) Setting: CUE-R, arxiv:2604.05467 (verified via s2cli, 2026-04-07, cit 2) already does intervention-based per-evid"
+ },
+ {
+  "name": "item_credit_variance_decomposition",
+  "score": 5.8,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 6.0,
+   "significance": 6.0,
+   "soundness": 4.0,
+   "feasibility": 8.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Data Banzhaf (arxiv:2205.15466, verified via s2cli: AISTATS, 196 citations) is the real threat and the proposal cites it correctly. It already establishes the p"
+ },
+ {
+  "name": "responsible_item_attribution_benchmark",
+  "score": 5.65,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 6.0,
+   "feasibility": 8.0,
+   "clarity": 6.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "arXiv:2608.20627, 'When Failures Propagate: Causal Failure Attribution in Agentic RAG' (AgenticRAG-FP), 2026-08-20, verified with the literature command (HF cha"
+ },
+ {
+  "name": "per_item_loo_reliability_and_winners_curse",
+  "score": 5.55,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 6.0,
+   "feasibility": 8.0,
+   "clarity": 5.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Two threats, one verified by ID and one only partly. (a) CUE-R (arXiv:2604.05467, verified via the literature command, S2, 2026-04-07) already does intervention"
+ },
+ {
+  "name": "guilt_by_coretrieval",
+  "score": 5.5,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 8.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "RoMeRL, arXiv:2608.02508 (VERIFIED via s2cli channel (a), S2 record 2026-08-03, HF record 2026-08-10). Its own abstract states that 'because trajectory-level re"
+ },
+ {
+  "name": "admission_pruning_audit_random_holdout",
+  "score": 5.35,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 6.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 6.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "Two threats, both verified via channel (a). (1) arXiv:2302.06960 'Data pruning and neural scaling laws: fundamental limitations of score-based algorithms' (TMLR"
+ },
+ {
+  "name": "stale_item_score_lag_after_rule_change",
+  "score": 5.3,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 5.0,
+   "feasibility": 7.0,
+   "clarity": 6.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "RoMeRL (arXiv:2608.02508, verified this session with s2cli paper: 'Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Redu"
+ },
+ {
+  "name": "item_value_consumer_decomposition",
+  "score": 5.15,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 7.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "ExpGraph 2605.30712 (VERIFIED via s2cli paper: 2026-05-29, 'Model-Agnostic Experience Learning with Graph-Structured Memory', abstract explicitly claims 'experi"
+ },
+ {
+  "name": "stage_conditional_item_value",
+  "score": 5.15,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 8.0,
+   "clarity": 6.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "The Compliance Trap (arXiv:2607.10608, verified via s2cli paper lookup and returned by my mechanism and recent queries) is the most direct threat: it is a traje"
+ },
+ {
+  "name": "surrogate_endpoints_for_item_credit",
+  "score": 5.15,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 4.0,
+   "soundness": 5.0,
+   "feasibility": 7.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "VERIFIED: EarlyEval, arXiv:2609.02783 (2026-09-02, confirmed via the literature command on both channels; abstract: trains LightGBM success/failure classifiers "
+ },
+ {
+  "name": "pairwise_removal_interaction_audit",
+  "score": 5.05,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 8.0,
+   "clarity": 5.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "arXiv:2605.05716, 'More Is Not Always Better: Cross-Component Interference in LLM Agent Scaffolding' (2026-05-07; VERIFIED via the literature command, returned "
+ },
+ {
+  "name": "utility_half_life_consumer_swap",
+  "score": 5.05,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 5.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 8.0,
+   "clarity": 5.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "arXiv:2605.30712 (verified by s2cli search on the S2 channel; note it is indexed as 'ExpGraph: Model-Agnostic Experience Learning with Graph-Structured Memory f"
+ },
+ {
+  "name": "memory_failure_blame_item_vs_set",
+  "score": 4.95,
+  "verdict": "reject",
+  "means": {
+   "novelty": 4.0,
+   "significance": 5.0,
+   "soundness": 4.0,
+   "feasibility": 8.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "Two verified threats. (1) arXiv:2608.11888 'Agent Skills Can Be Harmful: An Empirical Study of Skill-Induced Failures in LLM Agents' (2026-08-12, verified by `p"
+ },
+ {
+  "name": "slot_vs_item_credit_permutation",
+  "score": 4.95,
+  "verdict": "borderline",
+  "means": {
+   "novelty": 4.0,
+   "significance": 4.0,
+   "soundness": 5.0,
+   "feasibility": 8.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": true,
+  "closest": "The Compliance Trap, arXiv:2607.10608 (verified with s2cli `paper` and by search; hf+s2, 2026-07-12): same setting (an agent consuming retrieved conflicting mem"
+ },
+ {
+  "name": "masked_harm_pairwise_removal",
+  "score": 4.7,
+  "verdict": "reject",
+  "means": {
+   "novelty": 4.0,
+   "significance": 4.0,
+   "soundness": 4.0,
+   "feasibility": 8.0,
+   "clarity": 7.0
+  },
+  "n_reviews": 1,
+  "verified_collisions": [],
+  "novelty_capped": false,
+  "escalate": false,
+  "closest": "arxiv:2507.04480, 'Source Attribution in Retrieval-Augmented Generation' (verified via s2cli/S2: 2025-07-06, PKDD/ECML Workshops, 7 citations). Its stated aim i"
+ }
+]
