@@ -7,5 +7,6 @@
  "exemplar_lottery_r1": "a2ced2b0827eee61d",
  "many_shot_averages_detours_r1": "a14716ef2a0a8cb6a",
  "near_duplicate_needle_crossover_r1": "a0b17620a141f9687",
- "protocol_bindings_procedure_count_r1": "a1be08e7a520f2a41"
+ "protocol_bindings_procedure_count_r1": "a1be08e7a520f2a41",
+ "rank_flat_retriever_is_a_type_classifier_r1": "ad65beadc47ef87f5"
 }
